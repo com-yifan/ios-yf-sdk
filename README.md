@@ -1,11 +1,11 @@
 
-# 亿帆SDK对接⽂档: V5.0.0
+# 亿帆SDK对接⽂档: V5.0.0.19
 
 
 ## 1.开发⽂档修改记录
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
 |-------|:---------|----------|------------|
-| 5.0.0 |          |          | 2023.09.13 |
+| 5.0.0.19 |          |          | 2023.09.08 |
 
 
 ## 2.支持的SDK平台及广告位
@@ -32,9 +32,9 @@
 ### 3.2 引入SDK
 
 #### 方法一：
-右键点击⼯程，选择Add File to…，选择解压SDK包后得到的FCAdsSDK.framework，点击Add。或者
+右键点击⼯程，选择Add File to…，选择解压SDK包后得到的YFAdsSDK.framework，点击Add。或者
 将⽂件拖⼊XCode⼯程⽬录结构中，在弹出的界⾯中勾选“Copy items into destination group's
-folder(if needed)”，并确保Add To Targets勾选相应的target。同时将FCAdsSDK.framework ⽬录⾥⾯的FCAdsSDK.bundle⽂件导⼊Xcode。
+folder(if needed)”，并确保Add To Targets勾选相应的target。同时将YFAdsSDK.framework ⽬录⾥⾯的YFAdsSDK.bundle⽂件导⼊Xcode。
 
 
 #### <font color="red">方法二（推荐）：</font>
@@ -43,6 +43,7 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将F
 
 
 ```
+ pod 'YFAdsSDK', '5.0.0.14'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.14.42'
 #穿⼭甲⼴告
@@ -50,7 +51,7 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将F
 #快⼿⼴告SDK
  pod 'KSAdSDK', '3.3.51.1', :inhibit_warnings => false
 #百度⼴告SDK
- pod 'BaiduMobAdSDK', '5.313'
+ pod 'BaiduMobAdSDK', '5.323'
 ```
 
 #### <font color="red">注意事项：</font>
@@ -161,18 +162,6 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 ### 3.5 初始化SDK及全局配置
 
 ```
-    
-    [FCAdSDKManager setupSDKWithAppId:@"c5074e30-2310-4bf3-958a-5c933f029f4c" config:^FCAdSDKConfig * (FCAdSDKConfig * c) {
-#ifdef DEBUG
-        // 打开日志开关，线上环境请关闭z
-        c.level = FCAdLogLevel_Info;
-
-#endif
-
-        c.customIDFA = @"00000000-0000-0000-0000-000000000001";
-        return c;
-
-    }];
 ```
 
 ### 3.6 扩展字段参数
@@ -180,7 +169,6 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 ⽬前⽀持多维度的扩展字段，可以设置⾃定义数据，后台可以根据维度做云控和数据统计
 
 ```
-#import <FCAdsSDK/FCAdSplash.h>
 
 ```
 
@@ -191,12 +179,6 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 ### 4.1 开屏⼴告
 
 *开屏⼴告⽬前不⽀持横屏，⽀持的⼴告源：穿⼭甲、⼴点通、快⼿、百度
-
-添加头文件
-```
-#import <FCAdsSDK/FCAdSplash.h>
-
-```
  
 1.请求代码
  ```
@@ -264,12 +246,6 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 ### 4.2 横幅⼴告
 
-添加头文件
-```
-#import <FCAdsSDK/FCAdBanner.h>
-
-```
-
 1.请求代码
  ```
  - (void)loadAdAndShow {
@@ -322,12 +298,6 @@ fcAdBanner.delegate = self;
  ```
  
  ### 4.3 插屏⼴告
- 
- 添加头文件
-```
-#import <FCAdsSDK/FCAdInterstitial.h>
-
-```
 
 1.请求代码
  ```
@@ -378,12 +348,6 @@ fcAdBanner.delegate = self;
  ```
  
  ### 4.4 全屏视频⼴告
- 
-添加头文件
-```
-#import <FCAdsSDK/FCAdFullScreenVideo.h>
-
-```
 
 1.请求代码
  ```
@@ -436,12 +400,6 @@ fcAdFullScreenVideo.delegate=self;
  ```
 
 ### 4.4 激励视频⼴告
-
-添加头文件
-```
-#import <FCAdsSDK/FCAdRewardVideo.h>
-
-```
 
 1.请求代码
  ```
@@ -505,13 +463,7 @@ fcAdFullScreenVideo.delegate=self;
 
  ```
 
-### 4.5 信息流⼴告
-
-添加头文件
-```
-#import <FCAdsSDK/FCAdNativeExpress.h>
-#import <FCAdsSDK/FCAdNativeExpressView.h>
-```
+### 4.5 激励视频⼴告
 
 1.请求代码
  ```
