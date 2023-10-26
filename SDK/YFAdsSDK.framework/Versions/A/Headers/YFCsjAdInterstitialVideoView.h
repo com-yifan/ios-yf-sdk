@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFCsjAdInterstitialVideoView : UIView
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
--(void)loadAdData:(BUNativeAd *)dataObject;
+-(void)loadAdData:(BUNativeAd *)dataObject close: (void(^)(id))close;
 -(void)show;
 @end
 

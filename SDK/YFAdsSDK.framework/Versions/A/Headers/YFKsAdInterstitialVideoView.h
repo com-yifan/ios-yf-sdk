@@ -32,8 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<YFKsAdInterstitialVideoViewDelegate> delegate;
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
-- (void)loadAdData:(KSNativeAd *)nativeAd;
-@end
+-(void)loadAdData:(KSNativeAd *)dataObject close: (void(^)(id))close;
+;@end
 
 NS_ASSUME_NONNULL_END
 #endif

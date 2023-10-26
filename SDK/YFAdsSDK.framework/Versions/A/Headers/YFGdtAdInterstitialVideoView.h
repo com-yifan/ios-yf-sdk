@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 @property (nonatomic, strong) YFGdtAdMediaView *adInterView;
--(void)loadAdData:(id)unifiedNativeDataObject;
+
+-(void)loadAdData:(id)dataObject close: (void(^)(id))close;
+
 @end
 
 NS_ASSUME_NONNULL_END
