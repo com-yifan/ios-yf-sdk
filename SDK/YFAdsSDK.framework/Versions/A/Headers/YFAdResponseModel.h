@@ -58,6 +58,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger useCache;
 /// 配置超时时间
 @property (nonatomic, assign) NSInteger confCacheTimeout;
+// 小时展示上限 (单位次)。限制
+@property (nonatomic, assign) NSInteger showLimitHour;
+// 天展示上限(单位次) 。无该字段表示不限制
+@property (nonatomic, assign) NSInteger showLimitDay;
+// 展示间隔(单位毫秒)。无该字段表示不限制
+@property (nonatomic, assign) NSInteger showInterval;
 
 @end
 
@@ -101,6 +107,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger headBidding;
 @property (nonatomic, copy) NSString *potID;
 @property (nonatomic, copy) NSString *tpid;
+//1: 模板渲染 2: 自染-亿帆 / 联盟自渲染  3: 自染-开发者
+@property (nonatomic, assign) NSInteger renderID;
 
 @property (nonatomic, strong) FCAdParamConf *cfg;
 
