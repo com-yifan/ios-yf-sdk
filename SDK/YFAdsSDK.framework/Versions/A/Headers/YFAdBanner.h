@@ -4,7 +4,7 @@
 //
 
 #import "YFAdBaseAdapter.h"
-#import "YFAdSdkConfig.h"
+#import "YFAdSDKSetting.h"
 #import "YFAdBannerDelegate.h"
 #import <UIKit/UIKit.h>
 

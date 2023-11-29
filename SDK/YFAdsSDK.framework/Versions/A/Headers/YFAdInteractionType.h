@@ -6,17 +6,19 @@
 //
 
 typedef NS_ENUM(NSInteger, YFAdInteractionType) {
-    FCAdInteractionType_Unknown,        //unknown type
-    FCAdInteractionType_App,            //open downlaod page in app
-    FCAdInteractionType_Web,            //open webpage in app
-    FCAdInteractionType_DeepLink,       //open deeplink
-    FCAdInteractionType_AppStore,       //open appstore
+    YFAdInteractionType_Unknown,        //unknown type
+    YFAdInteractionType_App,            //open downlaod page in app
+    YFAdInteractionType_Web,            //open webpage in app
+    YFAdInteractionType_DeepLink,       //open deeplink
+    YFAdInteractionType_AppStore,       //open appstore
 };
 
-typedef NS_ENUM(NSInteger, FCAdMaterialType) {
-    FCAdMaterialTypeUnkown      =       0,      // unknown
-    FCAdMaterialTypeVideo       =       1,      // video
-    FCAdMaterialTypeSingle      =       2,      // single image
-    FCAdMaterialTypeAtlas       =       5,      // multiple image
+typedef NS_ENUM(NSInteger, YFAdMaterialType) {
+    YFAdMaterialTypeUnkown      =       0,      // unknown
+    YFAdMaterialTypeVideo       =       1,      // video
+    YFAdMaterialTypeSingle      =       2,      // single image
+    YFAdMaterialTypeAtlas       =       5,      // multiple image
 };
+
+
 

@@ -7,6 +7,7 @@
 #import "YFAdConst.h"
 #import "YFAdReportModel.h"
 #import "YFAdUtils.h"
+#import "YFPrivateKit.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) double time;
 /// 缓存时间
 @property (nonatomic, assign) NSInteger timeout;
-///  头部竞价
+/// 头部竞价
 @property (nonatomic, assign) NSInteger headBidding;
 
 - (instancetype)initWithSupplier:(id)supplier adspot:(id)adspot;

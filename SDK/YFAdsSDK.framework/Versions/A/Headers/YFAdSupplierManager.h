@@ -11,8 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 @class  FCAdWaterfall;
 @protocol FCAdSupplierManagerDelegate <NSObject>
 
-// MARK: ======================= 策略回调 =======================
-
 /// 加载策略Model成功
 - (void)fcAdSupplierManagerLoadSuccess:(id)model;
 /// 加载策略Model失败

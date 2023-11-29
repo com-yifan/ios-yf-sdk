@@ -5,7 +5,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "YFAdBaseAdapter.h"
-#import "YFAdSdkConfig.h"
+#import "YFAdSDKSetting.h"
 #import "YFAdSplashDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN

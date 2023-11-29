@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "YFAdSdkConfig.h"
+#import "YFAdSDKSetting.h"
 #import "YFAdInterstitialDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YFAdInterstitial : YFAdBaseAdapter <NSCopying>
 /// 广告方法回调代理
 @property (nonatomic, weak) id<YFAdInterstitialDelegate> delegate;
-
 
 - (instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;
 

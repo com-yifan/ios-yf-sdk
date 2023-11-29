@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "YFAdSdkConfig.h"
+#import "YFAdSDKSetting.h"
 #import "YFAdRewardVideoDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YFAdRewardVideo : YFAdBaseAdapter
 /// 广告方法回调代理
 @property (nonatomic, weak) id<YFAdRewardVideoDelegate> delegate;
+/// 用户ID
+@property (nonatomic, copy) NSString *userId;
+/// 拓展字段 json字符串
+@property (nonatomic, copy) NSString *extra;
 
 - (instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;        
 @end

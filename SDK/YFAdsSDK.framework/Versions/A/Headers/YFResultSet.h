@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 #endif
 
 @class YFDatabase;
-@class FMStatement;
+@class YFStatement;
 
 /** Represents the results of executing a query on an `<YFDatabase>`.
  
@@ -40,24 +40,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly) NSMutableDictionary *columnNameToIndexMap;
 
-/** `FMStatement` used by result set. */
+/** `YFStatement` used by result set. */
 
-@property (atomic, retain, nullable) FMStatement *statement;
+@property (atomic, retain, nullable) YFStatement *statement;
 
 ///------------------------------------
 /// @name Creating and closing a result set
 ///------------------------------------
 
-/** Create result set from `<FMStatement>`
+/** Create result set from `<YFStatement>`
  
- @param statement A `<FMStatement>` to be performed
+ @param statement A `<YFStatement>` to be performed
  
  @param aDB A `<YFDatabase>` to be used
  
  @return A `YFResultSet` on success; `nil` on failure
  */
 
-+ (instancetype)resultSetWithStatement:(FMStatement *)statement usingParentDatabase:(YFDatabase*)aDB;
++ (instancetype)resultSetWithStatement:(YFStatement *)statement usingParentDatabase:(YFDatabase*)aDB;
 
 /** Close result set */
 

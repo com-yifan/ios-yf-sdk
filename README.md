@@ -1,21 +1,21 @@
 
-# 亿帆SDK对接⽂档: V5.0.0.32
+# 亿帆SDK对接⽂档: V5.3.0.0
+
 
 ## 1.开发⽂档修改记录
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
 |-------|:---------|----------|------------|
-| 5.0.0.32 |          |          | 2023.11.07 |
-
+| 5.3.0.0 |          |          | 2023.11.29 |
 
 ## 2.支持的SDK平台及广告位
 
 | 平台 | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 |
 |-------|---|---|---|---|---|---|---|
 | 穿山甲   |5.2.0.5| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
-| 优量汇   |4.14.42| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
-| 百青藤   |5.313| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
-| 快手     |3.3.51.1| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-
+| 优量汇   |4.14.45| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
+| 百青藤   |5.324| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
+| 快手     |3.3.53| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 京东     |2.4.6| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 **注意:** 
 1.该版本是基于上述SDK平台版本进行开发的
 2.SDK⽀持的架构有：armv7 x86_64 arm64
@@ -42,15 +42,17 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 
 
 ```
- pod 'YFAdsSDK', '5.0.0.14'
+ pod 'YFAdsSDK', '5.3.0.0'
 #优量汇⼴告
- pod 'GDTMobSDK', '4.14.42'
+ pod 'GDTMobSDK', '4.14.50'
 #穿⼭甲⼴告
  pod 'Ads-CN', '5.2.0.5'
 #快⼿⼴告SDK
- pod 'KSAdSDK', '3.3.51.1', :inhibit_warnings => false
+ pod 'KSAdSDK', '3.3.53', :inhibit_warnings => false
 #百度⼴告SDK
- pod 'BaiduMobAdSDK', '5.323'
+ pod 'BaiduMobAdSDK', '5.33'
+#京东⼴告SDK
+ pod 'JADYun', '2.4.6' 
 ```
 
 #### <font color="red">注意事项：</font>
@@ -97,7 +99,6 @@ SKAdNetwork⽀持
 ⼴点通：f7s53z58qe.skadnetwork
 爱奇艺：27a282f54n.skadnetwork
 ```
-
 
 ```
 <key>SKAdNetworkItems</key>
@@ -194,9 +195,9 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
  
 2.回调方法
  ```
-/// 广告数据拉取成功
-- (void)fcAdUnifiedViewDidLoad {
- 
+/// 广告数据加载成功
+- (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
+
 }
 
 /// 广告曝光成功
@@ -210,11 +211,6 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 }
 
-/// 内部渠道开始加载时调用
-- (void)fcAdSupplierWillLoad:(NSString *)supplierId {
- 
-
-}
 
 /// 广告点击
 - (void)fcAdClicked {
@@ -260,8 +256,8 @@ fcAdBanner.delegate = self;
  
 2.回调方法
  ```
-/// 广告数据拉取成功回调
-- (void)fcAdUnifiedViewDidLoad {
+/// 广告数据加载成功
+- (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
 
 }
 
@@ -270,11 +266,6 @@ fcAdBanner.delegate = self;
 
 }
 
-
-/// 内部渠道开始加载时调用
-- (void)fcAdSupplierWillLoad:(NSString *)supplierId {
-
-}
 
 /// 广告曝光
 - (void)fcAdExposured {
@@ -310,8 +301,8 @@ fcAdBanner.delegate = self;
  
 2.回调方法
  ```
-/// 广告数据拉取成功回调
-- (void)fcAdUnifiedViewDidLoad {
+/// 广告数据加载成功
+- (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
 
 }
 
@@ -321,10 +312,6 @@ fcAdBanner.delegate = self;
 }
 
 
-/// 内部渠道开始加载时调用
-- (void)fcAdSupplierWillLoad:(NSString *)supplierId {
-
-}
 
 /// 广告曝光
 - (void)fcAdExposured {
@@ -360,9 +347,9 @@ fcAdFullScreenVideo.delegate=self;
  
 2.回调方法
  ```
-/// 请求广告数据成功后调用
-- (void)fcAdUnifiedViewDidLoad {
-   
+/// 广告数据加载成功
+- (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
+
 }
 
 /// 广告曝光
@@ -379,11 +366,6 @@ fcAdFullScreenVideo.delegate=self;
    
 }
 
-/// 内部渠道开始加载时调用
-- (void)fcAdSupplierWillLoad:(NSString *)supplierId {
-
-
-}
 
 /// 广告关闭
 - (void)fcAdDidClose {
@@ -413,8 +395,8 @@ fcAdFullScreenVideo.delegate=self;
 2.回调方法
  ```
 /// 广告数据加载成功
-- (void)fcAdUnifiedViewDidLoad {
-  
+- (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
+
 }
 
 /// 视频缓存成功
@@ -445,10 +427,7 @@ fcAdFullScreenVideo.delegate=self;
 
 }
 
-/// 内部渠道开始加载时调用
-- (void)fcAdSupplierWillLoad:(NSString *)supplierId {
-  
-}
+
 
 /// 广告关闭
 - (void)fcAdDidClose {
@@ -540,13 +519,6 @@ fcAdFullScreenVideo.delegate=self;
 
 }
 
-/// 内部渠道开始加载时调用
-- (void)fcAdSupplierWillLoad:(NSString *)supplierId {
-
-
-}
-
-
 /// 广告被关闭
 - (void)fcAdNativeExpressOnAdClosed:(FCAdNativeExpressView *)adView {
     //需要从tableview中删除
@@ -601,6 +573,102 @@ fcAdFullScreenVideo.delegate=self;
         return cell;
     }
 }
-
-
  ```
+### 4.6 错误码
+    ### 4.6 错误码
+       101 : @"请求失败",
+       102 : @"请求返回失败",
+       103 : @"请求网络状态码错误",
+       104 : @"请求返回内容解析错误",
+       105 : @"请求网络状态码错误",
+       110 : @"未设置打底渠道",
+       111 : @"CPT但本地无策略",
+       112 : @"有策略但未命中目标渠道",
+       113 : @"本地无策略",
+       114 : @"本地策略都执行失败",
+       115 : @"请求超出设定总时长",
+       116 : @"策略中未配置渠道",
+       
+       10000 : @"服务器异常",
+       10001 : @"跳转超时失败",
+       10002 : @"配置返回失败",
+       10003 : @"配置数据解析失败",
+       10004 : @"上报返回失败",
+       10005 : @"无广告返回，请联系管理员",
+       10007 : @"超出当前配置的每小时广告展示次数，请联系管理员",
+       10008 : @"超出当前配置的每天广告展示次数，请联系管理员",
+       10009 : @"超出当前配置的展示次数，请联系管理员",
+       10010 : @"广告单层超时",
+       
+       13001 : @"百度加载失败",
+       13002 : @"百度渲染失败",
+       13003 : @"百度缓存失败",
+
+       //京东
+       19001 : @"京东加载失败",
+       19002 : @"京东渲染失败",
+   
+       //亿帆
+       15001 : @"亿帆加载失败",
+       15002 : @"亿帆渲染失败",
+       
+       //穿山甲
+       11001  : @"穿山甲请求广告数据失败",
+       11002  : @"穿山甲接收广告加载失败",
+       11003  : @"穿山甲广告物料加载失败",
+       11004  : @"穿山甲广告渲染失败",
+       11005  : @"穿山甲视频广告播放完成发生错误",
+       11006  : @"穿山甲广告展示失败",
+       11007  : @"穿山甲广告异步请求的服务器验证失败",
+      
+       //优量汇
+       41001 : @"优量汇请求广告数据失败",
+       41002 : @"优量汇接收广告加载失败",
+       41003 : @"优量汇广告物料加载失败",
+       41004 : @"优量汇广告渲染失败",
+       41005 : @"优量汇视频广告播放完成发生错误",
+       41006 : @"优量汇广告展示失败",
+       41007 : @"优量汇广告异步请求的服务器验证失败",
+
+10000 : @"服务器异常",
+10001 : @"跳转超时失败",
+10002 : @"配置返回失败",
+10003 : @"配置数据解析失败",
+10004 : @"上报返回失败",
+10005 : @"无广告返回，请联系管理员",
+10007 : @"超出当前配置的每小时广告展示次数，请联系管理员",
+10008 : @"超出当前配置的每天广告展示次数，请联系管理员",
+10009 : @"超出当前配置的展示次数，请联系管理员",
+10010 : @"广告单层超时",
+       
+13001 : @"百度加载失败",
+13002 : @"百度渲染失败",
+13003 : @"百度缓存失败",
+
+//京东
+19001 : @"京东加载失败",
+19002 : @"京东渲染失败",
+   
+//亿帆
+15001 : @"亿帆加载失败",
+15002 : @"亿帆渲染失败",
+       
+//穿山甲
+11001 : @"穿山甲请求广告数据失败",
+11002 : @"穿山甲接收广告加载失败",
+11003 : @"穿山甲广告物料加载失败",
+11004 : @"穿山甲广告渲染失败",
+11005 : @"穿山甲视频广告播放完成发生错误",
+11006 : @"穿山甲广告展示失败",
+11007 : @"穿山甲广告异步请求的服务器验证失败",
+      
+//优量汇
+41001 : @"优量汇请求广告数据失败",
+41002 : @"优量汇接收广告加载失败",
+41003 : @"优量汇广告物料加载失败",
+41004 : @"优量汇广告渲染失败",
+41005 : @"优量汇视频广告播放完成发生错误",
+41006 : @"优量汇广告展示失败",
+41007 : @"优量汇广告异步请求的服务器验证失败",
+
+

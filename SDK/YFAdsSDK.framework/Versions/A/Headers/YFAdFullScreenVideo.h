@@ -5,7 +5,7 @@
 
 #import "YFAdBaseAdapter.h"
 #import <UIKit/UIKit.h>
-#import "YFAdSdkConfig.h"
+#import "YFAdSDKSetting.h"
 #import "YFAdFullScreenVideoDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN

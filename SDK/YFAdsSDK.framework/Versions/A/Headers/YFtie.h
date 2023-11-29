@@ -12,7 +12,6 @@
 #import <Foundation/Foundation.h>
 #endif
 
-
 //! Project version number for Lottie.
 FOUNDATION_EXPORT double LottieVersionNumber;
 

@@ -4,21 +4,30 @@
 
 
 #import <Foundation/Foundation.h>
-#import "YFAdSdkConfig.h"
+#import "YFAdSdkSetting.h"
 
 @class YFAdLog;
 
+#ifdef DEBUG
+# define YFLog(fmt, ...) NSLog((@"[%s]" "[line:%d] " fmt), __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define YFLog(...);
+#endif
 
+#define EAD_LEVEL_FATAL_LOG(format,...)  [YFAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:YFAdLogLevel_Fatal]
 
-#define EAD_LEVEL_FATAL_LOG(format,...)  [FCAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:FCAdLogLevel_Fatal]
+#define EAD_LEVEL_ERROR_LOG(format,...)  [YFAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:YFAdLogLevel_Error]
 
-#define EAD_LEVEL_ERROR_LOG(format,...)  [YFAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:FCAdLogLevel_Error]
+#define EAD_LEVEL_WARING_LOG(format,...)  [YFAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:YFAdLogLevel_Warning]
 
-#define EAD_LEVEL_WARING_LOG(format,...)  [FCAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:FCAdLogLevel_Warning]
+#define EAD_LEVEL_INFO_LOG(format,...)  [YFAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:YFAdLogLevel_Info]
 
-#define EAD_LEVEL_INFO_LOG(format,...)  [YFAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:FCAdLogLevel_Info]
+#define EAD_LEVEL_DEBUG_LOG(format,...)  [YFAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:YFAdLogLevel_Debug]
 
-#define EAD_LEVEL_DEBUG_LOG(format,...)  [FCAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__] level:FCAdLogLevel_Debug]
+//#ifdef DEBUG
+//#define GCLog(fmt, ...) NSLog((fmt), ##__VA_ARGS__);
+//#else
+//#define GCLog(...);
 
 
 #define YFAdLog(format,...)  [YFAdLog customLogWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__]]
@@ -31,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YFAdLog : NSObject
 
 // 日志输出方法
-+ (void)customLogWithFunction:(const char *)function lineNumber:(int)lineNumber formatString:(NSString *)formatString level:(FCAdLogLevel)level;
++ (void)customLogWithFunction:(const char *)function lineNumber:(int)lineNumber formatString:(NSString *)formatString level:(YFAdLogLevel)level;
 
 + (void)customLogWithFunction:(const char *)function lineNumber:(int)lineNumber formatString:(NSString *)formatString;
 

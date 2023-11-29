@@ -2,8 +2,7 @@
 //  Copyright © 2023 FC. All rights reserved.
 //
 
-#ifndef FCAdBaseDelegate_h
-#define FCAdBaseDelegate_h
+
 #import "YFAdCommonDelegate.h"
 // 策略相关的代理
 @protocol YFAdBaseDelegate <YFAdCommonDelegate>
@@ -19,4 +18,3 @@
 - (void)fcAdDidClose;
 
 @end
-#endif /*FCAdBaseDelegate_h */

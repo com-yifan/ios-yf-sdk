@@ -38,6 +38,8 @@ typedef NS_ENUM(NSUInteger, FCAdSDKReportEventType) {
     FCAdSDKReportEventTypeReady,
     /// 失败
     FCAdSDKReportEventTypeFail,
+    /// 自动点击
+    FCAdSDKReportEventTypeAuto,
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -61,6 +63,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger idfa;
 /// sdk版本
 @property (nonatomic, copy) NSString *sdkVer;
+/// idfa
+@property (nonatomic, copy) NSString * ia;
 
 @end
 
@@ -87,6 +91,7 @@ NS_ASSUME_NONNULL_BEGIN
 //1-应用打开；2-请求(聚合向广告网络发送请求)；3-填充(聚合向广告网络发送请求)；4-展示(聚合向广告网络发送请求)；5-点击(聚合统计的广告)；6-流量请求(应用向聚合发送请求)；7-流量填充(应用向聚合发送请求)|
 /// 事件类型
 @property (nonatomic, assign)FCAdSDKReportEventType eType;
+
 /// group ID
 @property (nonatomic, copy) NSString *gID;
 /// 是否bidding
@@ -115,26 +120,57 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger index;
 /// 展示模版 自渲染可用
 @property (nonatomic, copy) NSString * tpid;
-///  请求ID
+/// 请求ID
 @property (nonatomic, copy) NSString * rID;
-/// 关闭按钮尺寸
+/// 模版ID
+@property (nonatomic, assign) NSInteger renderID;
+
+
+/// 关闭按钮尺寸 
+/*
+ 1、最小
+ 2、小
+ 3、标准
+ 4、大
+ 5、最大
+ */
 @property (nonatomic, assign) NSInteger cbs;
-/// 点击热区
+/// 点击热区   1: 全屏可点   2: 仅按钮 3: 文案区域可点 4: 75%可点   5: 50%可点   6: 25%可点
 @property (nonatomic, assign) NSInteger cha;
 /// 返回物料数量
 @property (nonatomic, assign) NSInteger rmc;
-/// 视频静音
+/// 视频静音  1静音 0否
 @property (nonatomic, assign) NSInteger vm;
-/// 跳转后关闭广告
+/// 跳转后关闭广告 1关闭广告  0是不关闭
 @property (nonatomic, assign) NSInteger jc;
 /// 模板尺寸
 @property (nonatomic, assign) NSInteger ts;
-/// 关闭按钮位置
+/// 关闭按钮位置 1左上角 2右上角
 @property (nonatomic, assign) NSInteger cbp;
+/// 关闭按钮出现时间
+@property (nonatomic, assign) NSInteger cbst;
 /// 物理键返回(安卓)
 @property (nonatomic, assign) NSInteger pkb;
-/// 互动样式
+// 互动样式
+/*
+ 0: 无互动按钮
+ 1: 点击跳转(手指)
+ 2: 摇一摇
+ 3: 点击+摇一摇
+ 4: 扭一扭
+ 5: 点击+扭一扭
+ 6: 滑动跳转
+ 7:点击跳转(无手指)
+ 8：点击+滑动
+ */
 @property (nonatomic, assign) NSInteger is;
+/// 是否 自动跳转 0关闭 1是开启
+@property (nonatomic, assign) NSInteger ac;
+/// 1: 合规值 2: 中灵敏闽值 3:高灵敏闽值
+@property (nonatomic, assign) NSInteger istv;
+/// 平台错误码
+@property (nonatomic, copy) NSString *cd;
+
 
 @end
 NS_ASSUME_NONNULL_END

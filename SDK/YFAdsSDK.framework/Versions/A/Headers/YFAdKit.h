@@ -2,10 +2,8 @@
 
 
 #import <UIKit/UIKit.h>
-//! Project version number for JQLaunchAdKit.
-FOUNDATION_EXPORT double JQLaunchAdKitVersionNumber;
 
-//! Project version string for JQLaunchAdKit.
+FOUNDATION_EXPORT double JQLaunchAdKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char JQLaunchAdKitVersionString[];
 
 #import "YFAdCache.h"

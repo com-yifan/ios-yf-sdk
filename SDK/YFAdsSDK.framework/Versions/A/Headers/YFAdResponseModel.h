@@ -135,7 +135,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger pkb;
 /// 互动样式
 @property (nonatomic, assign) NSInteger is;
-
+/// 自动点击
+@property (nonatomic, assign) NSInteger ac;
+/// 关闭按钮出现时间
+@property (nonatomic, assign) NSInteger cbst;
+///  1: 合规值 2: 中灵敏闽值 3:高灵敏闽值
+@property (nonatomic, assign) NSInteger istv;
 @end
 
 NS_ASSUME_NONNULL_END

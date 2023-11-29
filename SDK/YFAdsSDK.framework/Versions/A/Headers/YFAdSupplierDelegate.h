@@ -3,19 +3,20 @@
 //
 
 
-#ifndef FCAdSupplierDelegate_h
-#define FCAdSupplierDelegate_h
+
 #import "YFAdReportModel.h"
 
 @class YFAdResponseModel;
 @class FCAdWaterfall;
 @class YFAdReportModel;
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol YFAdSupplierDelegate <NSObject>
 
 @optional
 
 /// 加载策略Model成功
-- (void)fcAdBaseAdapterLoadSuccess:(nonnull FCAdWaterfall *)model;
+- (void)fcAdBaseAdapterLoadSuccess:(id)model;
 /// 加载策略Model失败
 - (void)fcAdBaseAdapterLoadError:(nullable NSError *)error;
 /// 加载的 sortTag
@@ -30,4 +31,4 @@
 
 @end
 
-#endif
+NS_ASSUME_NONNULL_END

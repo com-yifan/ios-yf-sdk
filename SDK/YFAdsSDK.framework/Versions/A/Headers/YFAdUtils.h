@@ -6,24 +6,33 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YFSplashEnum.h"
+#import "YFMaterialMeta.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdUtils : NSObject
+
 /// 工具类对象
 + (instancetype)shareInstance;
 /// 获取当前网络状态
 - (NSInteger)getNetworkType;
+/// 获取当前网络状态
+- (NSInteger)getAdxNetworkType;
 /// 获取当前时间戳
 + (double)getCurrentDate;
 /// 获取IDFA 或者 UUID
 + (NSString *)getIDFAORUUID;
+/// IDFA
++ (NSString *)getIDFA;
+/// DeviceID
++ (NSString *)getDeviceID;
 /// UUID
 + (NSString *)uuidString;
 
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 /// 图片地址
-+(UIImage *)getImageURLWithName:(NSString *)imageName;
++ (UIImage *)getImageURLWithName:(NSString *)imageName;
 
 + (UIViewController *)getCurrentViewController;
 
@@ -31,15 +40,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)setConfDataWith:(NSString *)key data:(NSString *)jsonData;
 
-+ (UIImage *)boxblurImage:(UIImage *)image withBlurNumber:(CGFloat)blur;
-
-//绘制渐变色颜色的方法
-+ (CAGradientLayer *)setGradualChangingColor:(UIView *)view fromColor:(NSString *)fromHexColorStr toColor:(NSString *)toHexColorStr;
-
 // 设置关闭按钮
 + (CGSize)getCloseSizeByType:(NSInteger)type;
+
+// 设置跳过倒计时按钮
++ (CGSize)getJumpSizeByType:(YFSplashState)type;
+
 // 设置可点区域
 + (UIView *)setHotAreaView:(UIView *)superView containerSize:(CGSize)size type:(NSInteger)type;
+
++ (UIView *)setYFHotAreaView:(UIView *)superView containerSize:(CGSize)size type:(NSInteger)type;
 
 // 设置插屏大小
 + (CGSize)getInsertSizeByType:(NSInteger)type;
@@ -49,6 +59,19 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)getHiddenType:(NSInteger)type;
 
 + (BOOL)getVideoMuteType:(NSInteger)type;
+
++ (NSDictionary*)getJsonData:(NSString *)fileName fileType:(NSString *)fileType;
+
++ (NSString*)getDeviceModel;
+
++(void)toSaveDownTimer:(NSString*)time key:(NSString *)key;
++(NSString *)toGetDownTimerKey:(NSString*)key;
++(void)toRemoveDownTimerKey:(NSString*)key;
+
+
++ (CGFloat)getWidthWithTitle:(NSString *)title font:(UIFont *)font;
+
++(NSURL *)toSartVideoDownload:(NSString*)videoUrl;
 
 @end
 

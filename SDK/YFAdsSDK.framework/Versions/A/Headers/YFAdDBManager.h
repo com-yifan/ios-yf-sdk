@@ -32,24 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 创建表
 - (void)createTable:(NSString *)tableName;
 /// 添加上报信息
-- (void)addReportWithName:(NSString *)tableName
-                     adID:(NSString *)adID
-              adnAdID:(NSString *)adnAdID
-             adnAppID:(NSString *)adnAppID
-                adnID:(NSInteger)adnID
-                aType:(NSInteger)aType
-                 ecpm:(NSInteger)ecpm
-                  eID:(NSString *)eID
-                eType:(NSString *)eType
-                  gID:(NSString *)gID
-                isBid:(NSString *)isBid
-                  lID:(NSString *)lID
-                  sID:(NSString *)sID
-                    t:(NSString *)t
-                    tCost:(NSString *)tCost;
-
-
-/// 添加上报信息
 - (void)addReportWithModel:(YFAdEventModel *)model;
 
 - (NSMutableArray *)searchAllResultWithName:(NSString *)tableName;

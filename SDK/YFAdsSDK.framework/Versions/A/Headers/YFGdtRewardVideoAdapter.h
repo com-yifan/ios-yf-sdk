@@ -9,6 +9,7 @@
 #import "YFAdRewardVideoDelegate.h"
 
 
+
 @class YFAdRewardVideo;
 
 NS_ASSUME_NONNULL_BEGIN

@@ -4,7 +4,7 @@
 
 #import "YFAdBaseAdapter.h"
 #import <UIKit/UIKit.h>
-#import "YFAdSdkConfig.h"
+#import "YFAdSDKSetting.h"
 #import "YFAdNativeExpressDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,6 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 横幅广告容器
 @property(nonatomic, weak) UIView *adContainer;
 
+/// 是否必须展示Logo 默认: NO 注意: 强制展示Logo可能会影响收益 !!!
+@property (nonatomic, assign) BOOL showLogoRequire;
+/// 广告Logo
+@property(nonatomic, strong) UIImage *logoImage;
+/// 广告条数
+@property (nonatomic, assign) NSInteger count;
 
 /// @param pID 广告位
 /// @param viewController  viewController

@@ -12,43 +12,28 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 各渠道错误的详细原因
 @property (nonatomic, strong) NSMutableDictionary * errorDescriptions;
-
 /// 是否填充
 @property(nonatomic, assign) BOOL fill;
-///  并行加载数据成功次数
-@property(nonatomic, assign) NSInteger succCount;
-///  并行加载数据失败次数
-@property(nonatomic, assign) NSInteger failCount;
-/// 加载数据模式 串行 并行 夸并行
-@property(nonatomic, assign) NSInteger mode;
+
+@property(nonatomic, assign) NSUInteger ecpm;
 
 @property (nonatomic, strong) YFAdSupplierManager *mgr;
 /// 控制器(在一次广告周期中 不可更改, 不然会引起未知错误)
 @property(nonatomic, weak) UIViewController *viewController;
-
 /// 初始化广告位ID
 - (instancetype)initWithAdUnitID:(NSString *)pID;
-
 /// 加载广告
 - (void)loadAd;
-
 /// 展示广告
 - (void)showAd;
-
 /// 加载并展现
 - (void)loadAndShowAd;
-
-/**
- * 加载下个渠道
- */
-- (void)loadNextSupplierIfHas;
-
 /// 上报
 - (void)reportWithType:(FCAdSDKReportEventType)repoType supplier:(id)supplier error:(nullable NSError *)error;
-
+///  搜集错误
+- (void)collectErrorWithSupplier:(YFAdEventModel *)supplier error:(NSError *)error;
 /// 取消当前策略请求
 - (void)deallocAdapter;
-
 
 @end
 

@@ -3,8 +3,7 @@
 //
 
 
-#ifndef FCAdSplashProtocol_h
-#define FCAdSplashProtocol_h
+
 #import "YFAdBaseDelegate.h"
 @protocol YFAdSplashDelegate <YFAdBaseDelegate>
 @optional
@@ -18,4 +17,4 @@
 
 @end
 
-#endif 
+

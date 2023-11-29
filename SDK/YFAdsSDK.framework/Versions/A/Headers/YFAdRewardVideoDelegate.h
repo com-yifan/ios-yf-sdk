@@ -3,8 +3,6 @@
 //
 
 
-#ifndef FCAdRewardVideoProtocol_h
-#define FCAdRewardVideoProtocol_h
 #import "YFAdBaseDelegate.h"
 @protocol YFAdRewardVideoDelegate <YFAdBaseDelegate>
 @optional
@@ -20,4 +18,3 @@
 
 @end
 
-#endif
