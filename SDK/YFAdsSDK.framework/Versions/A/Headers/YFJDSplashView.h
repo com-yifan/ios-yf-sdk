@@ -5,12 +5,11 @@
 //  Created by feng on 2023/11/8.
 //
 
+
 #import <UIKit/UIKit.h>
 #if __has_include(<JADYun/JADYun.h>)
 #import <JADYun/JADYun.h>
-#import <JADYun/JADNativeAd.h>
 #import "YFAdInteractionType.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFJDSplashView : UIView
