@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name = "YFAdsSDK"
-  s.version = "5.3.0.0"
+  s.version = "5.3.0.1"
   s.summary = "iOS YFAdsSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
   s.authors = {"yifan"=>"576661787@qq.com"}
   s.homepage = "http://www.yifan.com/"
   s.description = "YFAdsSDK"
   s.requires_arc = true
-  s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "5.3.0.0" }
+  s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "5.3.0.1" }
   
   valid_archs = ['i386', 'armv7', 'x86_64', 'arm64']
    s.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 arm64' }
