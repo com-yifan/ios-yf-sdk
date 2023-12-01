@@ -1,11 +1,11 @@
 
-# 亿帆SDK对接⽂档: V5.3.0.1
+# 亿帆SDK对接⽂档: V5.3.0.3
 
 
 ## 1.开发⽂档修改记录
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
 |-------|:---------|----------|------------|
-| 5.3.0.1 |          |          | 2023.11.30 |
+| 5.3.0.3 |          |          | 2023.12.01 |
 
 ## 2.支持的SDK平台及广告位
 
@@ -161,7 +161,20 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 ### 3.5 初始化SDK及全局配置
 
+
 ```
+    [YFAdSDKManager setupSDKWithAppId:[YFEnvironmentManager getAPP_ID] config:^YFAdSDKSetting * (YFAdSDKSetting * c) {
+#ifdef DEBUG
+        // 打开日志开关，线上环境请关闭z
+        c.level = YFAdLogLevel_Info;
+
+#endif
+        c.level = YFAdLogLevel_Debug;
+
+        c.customIDFA = idfa;
+        return c;
+
+    }];
 ```
 
 ### 3.6 扩展字段参数
@@ -169,6 +182,9 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 ⽬前⽀持多维度的扩展字段，可以设置⾃定义数据，后台可以根据维度做云控和数据统计
 
 ```
+    [YFAdSDKSetting shareInstance].customIDFA = @"";
+    [YFAdSDKSetting shareInstance].device_geo_lat = @"";
+    [YFAdSDKSetting shareInstance].device_geo_lon = @"";
 
 ```
 

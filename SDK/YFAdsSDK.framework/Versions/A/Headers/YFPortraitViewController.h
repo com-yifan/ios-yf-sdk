@@ -46,8 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// defalut is UIStatusBarAnimationSlide.
 @property (nonatomic, assign) UIStatusBarAnimation statusBarAnimation;
 
-/// default is ZFDisablePortraitGestureTypesNone.
-@property (nonatomic, assign) ZFDisablePortraitGestureTypes disablePortraitGestureTypes;
+/// default is YFDisablePortraitGestureTypesNone.
+@property (nonatomic, assign) YFDisablePortraitGestureTypes disablePortraitGestureTypes;
 
 @property (nonatomic, assign) CGSize presentationSize;
 

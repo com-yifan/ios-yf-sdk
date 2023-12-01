@@ -110,7 +110,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  When the network changed
  */
-- (void)videoPlayer:(YFPlayerController *)videoPlayer reachabilityChanged:(ZFReachabilityStatus)status;
+- (void)videoPlayer:(YFPlayerController *)videoPlayer reachabilityChanged:(YFReachabilityStatus)status;
 
 #pragma mark - The video size changed
 

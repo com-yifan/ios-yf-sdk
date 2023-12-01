@@ -117,7 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFPlayerController (ZFPlayerTimeControl)
+@interface YFPlayerController (YFPlayerTimeControl)
 
 /// The player current play time.
 @property (nonatomic, readonly) NSTimeInterval currentTime;
@@ -144,7 +144,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFPlayerController (ZFPlayerPlaybackControl)
+@interface YFPlayerController (YFPlayerPlaybackControl)
 
 /// Resume playback record.default is NO.
 /// Memory storage playback records.
@@ -279,7 +279,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFPlayerController (ZFPlayerOrientationRotation)
+@interface YFPlayerController (YFPlayerOrientationRotation)
 
 @property (nonatomic, readonly) YFOrientationObserver *orientationObserver;
 
@@ -292,8 +292,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// default is YES.
 @property (nonatomic) BOOL allowOrentitaionRotation;
 
-/// When ZFFullScreenMode is ZFFullScreenModeLandscape the orientation is LandscapeLeft or LandscapeRight, this value is YES.
-/// When ZFFullScreenMode is ZFFullScreenModePortrait, while the player fullSceen this value is YES.
+/// When YFFullScreenMode is YFFullScreenModeLandscape the orientation is LandscapeLeft or LandscapeRight, this value is YES.
+/// When YFFullScreenMode is YFFullScreenModePortrait, while the player fullSceen this value is YES.
 @property (nonatomic, readonly) BOOL isFullScreen;
 
 /// when call the `stop` method, exit the fullScreen model, default is YES.
@@ -328,7 +328,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeDeviceOrientationObserver;
 
 /**
- Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModeLandscape.
+ Enter the fullScreen while the YFFullScreenMode is YFFullScreenModeLandscape.
 
  @param orientation is UIInterfaceOrientation.
  @param animated is animated.
@@ -336,7 +336,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)rotateToOrientation:(UIInterfaceOrientation)orientation animated:(BOOL)animated;
 
 /**
- Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModeLandscape.
+ Enter the fullScreen while the YFFullScreenMode is YFFullScreenModeLandscape.
 
  @param orientation is UIInterfaceOrientation.
  @param animated is animated.
@@ -345,7 +345,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)rotateToOrientation:(UIInterfaceOrientation)orientation animated:(BOOL)animated completion:(void(^ __nullable)(void))completion;
 
 /**
- Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModePortrait.
+ Enter the fullScreen while the YFFullScreenMode is YFFullScreenModePortrait.
 
  @param fullScreen is fullscreen.
  @param animated is animated.
@@ -354,7 +354,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)enterPortraitFullScreen:(BOOL)fullScreen animated:(BOOL)animated completion:(void(^ __nullable)(void))completion;
 
 /**
- Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModePortrait.
+ Enter the fullScreen while the YFFullScreenMode is YFFullScreenModePortrait.
 
  @param fullScreen is fullscreen.
  @param animated is animated.
@@ -362,7 +362,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)enterPortraitFullScreen:(BOOL)fullScreen animated:(BOOL)animated;
 
 /**
- FullScreen mode is determined by ZFFullScreenMode.
+ FullScreen mode is determined by YFFullScreenMode.
 
  @param fullScreen is fullscreen.
  @param animated is animated.
@@ -371,7 +371,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)enterFullScreen:(BOOL)fullScreen animated:(BOOL)animated completion:(void(^ __nullable)(void))completion;
 
 /**
- FullScreen mode is determined by ZFFullScreenMode.
+ FullScreen mode is determined by YFFullScreenMode.
 
  @param fullScreen is fullscreen.
  @param animated is animated.
@@ -380,7 +380,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFPlayerController (ZFPlayerViewGesture)
+@interface YFPlayerController (YFPlayerViewGesture)
 
 /// An instance of YFPlayerGestureControl.
 @property (nonatomic, readonly) YFPlayerGestureControl *gestureControl;
@@ -393,7 +393,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFPlayerController (ZFPlayerScrollView)
+@interface YFPlayerController (YFPlayerScrollView)
 
 /// The scrollView player should auto player, default is YES.
 @property (nonatomic) BOOL shouldAutoPlay;
@@ -536,7 +536,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFPlayerController (ZFPlayerDeprecated)
+@interface YFPlayerController (YFPlayerDeprecated)
 
 /**
  Add the playerView to cell.
@@ -577,7 +577,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop completionHandler:(void (^ __nullable)(void))completionHandler  __attribute__((deprecated("use `playTheIndexPath:scrollPosition:animated:completionHandler:` instead.")));
 
 /**
- Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModeLandscape.
+ Enter the fullScreen while the YFFullScreenMode is YFFullScreenModeLandscape.
 
  @param orientation UIInterfaceOrientation
  @param animated is animated.
@@ -586,7 +586,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)enterLandscapeFullScreen:(UIInterfaceOrientation)orientation animated:(BOOL)animated completion:(void(^ __nullable)(void))completion __attribute__((deprecated("use `rotateToOrientation:animated:completion:` instead.")));
 
 /**
- Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModeLandscape.
+ Enter the fullScreen while the YFFullScreenMode is YFFullScreenModeLandscape.
 
  @param orientation UIInterfaceOrientation
  @param animated is animated.

@@ -26,14 +26,14 @@
 #if !TARGET_OS_WATCH
 #import <SystemConfiguration/SystemConfiguration.h>
 
-typedef NS_ENUM(NSInteger, ZFReachabilityStatus) {
-    ZFReachabilityStatusUnknown          = -1,
-    ZFReachabilityStatusNotReachable     = 0,
-    ZFReachabilityStatusReachableViaWiFi = 1,
-    ZFReachabilityStatusReachableVia2G   = 2,
-    ZFReachabilityStatusReachableVia3G   = 3,
-    ZFReachabilityStatusReachableVia4G   = 4,
-    ZFReachabilityStatusReachableVia5G   = 5
+typedef NS_ENUM(NSInteger, YFReachabilityStatus) {
+    YFReachabilityStatusUnknown          = -1,
+    YFReachabilityStatusNotReachable     = 0,
+    YFReachabilityStatusReachableViaWiFi = 1,
+    YFReachabilityStatusReachableVia2G   = 2,
+    YFReachabilityStatusReachableVia3G   = 3,
+    YFReachabilityStatusReachableVia4G   = 4,
+    YFReachabilityStatusReachableVia5G   = 5
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The current network reachability status.
  */
-@property (readonly, nonatomic, assign) ZFReachabilityStatus networkReachabilityStatus;
+@property (readonly, nonatomic, assign) YFReachabilityStatus networkReachabilityStatus;
 
 /**
  Whether or not the network is currently reachable.
@@ -144,7 +144,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param block A block object to be executed when the network availability of the `baseURL` host changes.. This block has no return value and takes a single argument which represents the various reachability states from the device to the `baseURL`.
  */
-- (void)setReachabilityStatusChangeBlock:(nullable void (^)(ZFReachabilityStatus status))block;
+- (void)setReachabilityStatusChangeBlock:(nullable void (^)(YFReachabilityStatus status))block;
 
 @end
 
@@ -152,17 +152,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Notifications
 ///--------------------
 
-FOUNDATION_EXPORT NSString * const ZFReachabilityDidChangeNotification;
-FOUNDATION_EXPORT NSString * const ZFReachabilityNotificationStatusItem;
+FOUNDATION_EXPORT NSString * const YFReachabilityDidChangeNotification;
+FOUNDATION_EXPORT NSString * const YFReachabilityNotificationStatusItem;
 
 ///--------------------
 /// @name Functions
 ///--------------------
 
 /**
- Returns a localized string representation of an `ZFReachabilityStatus` value.
+ Returns a localized string representation of an `YFReachabilityStatus` value.
  */
-FOUNDATION_EXPORT NSString * ZFStringFromNetworkReachabilityStatus(ZFReachabilityStatus status);
+FOUNDATION_EXPORT NSString * YFStringFromNetworkReachabilityStatus(YFReachabilityStatus status);
 
 NS_ASSUME_NONNULL_END
 #endif

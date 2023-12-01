@@ -51,8 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL disableAnimations;
 
-/// The support Interface Orientation,default is ZFInterfaceOrientationMaskAllButUpsideDown
-@property (nonatomic, assign) ZFInterfaceOrientationMask supportInterfaceOrientation;
+/// The support Interface Orientation,default is YFInterfaceOrientationMaskAllButUpsideDown
+@property (nonatomic, assign) YFInterfaceOrientationMask supportInterfaceOrientation;
 
 /// The current orientation of the player.
 /// Default is UIInterfaceOrientationPortrait.
@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)isSuppprtInterfaceOrientation:(UIInterfaceOrientation)orientation;
 
-+ (ZFInterfaceOrientationMask)supportedInterfaceOrientationsForWindow:(nullable UIWindow *)window;
++ (YFInterfaceOrientationMask)supportedInterfaceOrientationsForWindow:(nullable UIWindow *)window;
 
 @end
 

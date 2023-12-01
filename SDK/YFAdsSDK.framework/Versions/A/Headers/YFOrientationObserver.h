@@ -28,51 +28,51 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// Full screen mode
-typedef NS_ENUM(NSUInteger, ZFFullScreenMode) {
-    ZFFullScreenModeAutomatic,  // Determine full screen mode automatically
-    ZFFullScreenModeLandscape,  // Landscape full screen mode
-    ZFFullScreenModePortrait    // Portrait full screen Model
+typedef NS_ENUM(NSUInteger, YFFullScreenMode) {
+    YFFullScreenModeAutomatic,  // Determine full screen mode automatically
+    YFFullScreenModeLandscape,  // Landscape full screen mode
+    YFFullScreenModePortrait    // Portrait full screen Model
 };
 
 /// Portrait full screen mode.
-typedef NS_ENUM(NSUInteger, ZFPortraitFullScreenMode) {
-    ZFPortraitFullScreenModeScaleToFill,    // Full fill
-    ZFPortraitFullScreenModeScaleAspectFit  // contents scaled to fit with fixed aspect. remainder is transparent
+typedef NS_ENUM(NSUInteger, YFPortraitFullScreenMode) {
+    YFPortraitFullScreenModeScaleToFill,    // Full fill
+    YFPortraitFullScreenModeScaleAspectFit  // contents scaled to fit with fixed aspect. remainder is transparent
 };
 
 /// Player view mode
-typedef NS_ENUM(NSUInteger, ZFRotateType) {
-    ZFRotateTypeNormal,         // Normal
-    ZFRotateTypeCell            // Cell
+typedef NS_ENUM(NSUInteger, YFRotateType) {
+    YFRotateTypeNormal,         // Normal
+    YFRotateTypeCell            // Cell
 };
 
 /**
  Rotation of support direction
  */
-typedef NS_OPTIONS(NSUInteger, ZFInterfaceOrientationMask) {
-    ZFInterfaceOrientationMaskUnknow = 0,
-    ZFInterfaceOrientationMaskPortrait = (1 << 0),
-    ZFInterfaceOrientationMaskLandscapeLeft = (1 << 1),
-    ZFInterfaceOrientationMaskLandscapeRight = (1 << 2),
-    ZFInterfaceOrientationMaskPortraitUpsideDown = (1 << 3),
-    ZFInterfaceOrientationMaskLandscape = (ZFInterfaceOrientationMaskLandscapeLeft | ZFInterfaceOrientationMaskLandscapeRight),
-    ZFInterfaceOrientationMaskAll = (ZFInterfaceOrientationMaskPortrait | ZFInterfaceOrientationMaskLandscape | ZFInterfaceOrientationMaskPortraitUpsideDown),
-    ZFInterfaceOrientationMaskAllButUpsideDown = (ZFInterfaceOrientationMaskPortrait | ZFInterfaceOrientationMaskLandscape),
+typedef NS_OPTIONS(NSUInteger, YFInterfaceOrientationMask) {
+    YFInterfaceOrientationMaskUnknow = 0,
+    YFInterfaceOrientationMaskPortrait = (1 << 0),
+    YFInterfaceOrientationMaskLandscapeLeft = (1 << 1),
+    YFInterfaceOrientationMaskLandscapeRight = (1 << 2),
+    YFInterfaceOrientationMaskPortraitUpsideDown = (1 << 3),
+    YFInterfaceOrientationMaskLandscape = (YFInterfaceOrientationMaskLandscapeLeft | YFInterfaceOrientationMaskLandscapeRight),
+    YFInterfaceOrientationMaskAll = (YFInterfaceOrientationMaskPortrait | YFInterfaceOrientationMaskLandscape | YFInterfaceOrientationMaskPortraitUpsideDown),
+    YFInterfaceOrientationMaskAllButUpsideDown = (YFInterfaceOrientationMaskPortrait | YFInterfaceOrientationMaskLandscape),
 };
 
 /// This enumeration lists some of the gesture types that the player has by default.
-typedef NS_OPTIONS(NSUInteger, ZFDisablePortraitGestureTypes) {
-    ZFDisablePortraitGestureTypesNone         = 0,
-    ZFDisablePortraitGestureTypesTap          = 1 << 0,
-    ZFDisablePortraitGestureTypesPan          = 1 << 1,
-    ZFDisablePortraitGestureTypesAll          = (ZFDisablePortraitGestureTypesTap | ZFDisablePortraitGestureTypesPan)
+typedef NS_OPTIONS(NSUInteger, YFDisablePortraitGestureTypes) {
+    YFDisablePortraitGestureTypesNone         = 0,
+    YFDisablePortraitGestureTypesTap          = 1 << 0,
+    YFDisablePortraitGestureTypesPan          = 1 << 1,
+    YFDisablePortraitGestureTypesAll          = (YFDisablePortraitGestureTypesTap | YFDisablePortraitGestureTypesPan)
 };
 
-@protocol ZFPortraitOrientationDelegate <NSObject>
+@protocol YFPortraitOrientationDelegate <NSObject>
 
-- (void)zf_orientationWillChange:(BOOL)isFullScreen;
+- (void)yf_orientationWillChange:(BOOL)isFullScreen;
 
-- (void)zf_orientationDidChanged:(BOOL)isFullScreen;
+- (void)yf_orientationDidChanged:(BOOL)isFullScreen;
 
 - (void)zf_interationState:(BOOL)isDragging;
 
@@ -97,9 +97,9 @@ typedef NS_OPTIONS(NSUInteger, ZFDisablePortraitGestureTypes) {
 @property (nonatomic, copy, nullable) void(^orientationDidChanged)(YFOrientationObserver *observer, BOOL isFullScreen);
 
 /// Full screen mode, the default landscape into full screen
-@property (nonatomic) ZFFullScreenMode fullScreenMode;
+@property (nonatomic) YFFullScreenMode fullScreenMode;
 
-@property (nonatomic, assign) ZFPortraitFullScreenMode portraitFullScreenMode;
+@property (nonatomic, assign) YFPortraitFullScreenMode portraitFullScreenMode;
 
 /// rotate duration, default is 0.30
 @property (nonatomic) NSTimeInterval duration;
@@ -121,8 +121,8 @@ typedef NS_OPTIONS(NSUInteger, ZFDisablePortraitGestureTypes) {
 
 @property (nonatomic, assign) CGSize presentationSize;
 
-/// default is ZFDisablePortraitGestureTypesAll.
-@property (nonatomic, assign) ZFDisablePortraitGestureTypes disablePortraitGestureTypes;
+/// default is YFDisablePortraitGestureTypesAll.
+@property (nonatomic, assign) YFDisablePortraitGestureTypes disablePortraitGestureTypes;
 
 /// The current orientation of the player.
 /// Default is UIInterfaceOrientationPortrait.
@@ -132,8 +132,8 @@ typedef NS_OPTIONS(NSUInteger, ZFDisablePortraitGestureTypes) {
 /// default is YES.
 @property (nonatomic, assign) BOOL allowOrientationRotation;
 
-/// The support Interface Orientation,default is ZFInterfaceOrientationMaskAllButUpsideDown
-@property (nonatomic, assign) ZFInterfaceOrientationMask supportInterfaceOrientation;
+/// The support Interface Orientation,default is YFInterfaceOrientationMaskAllButUpsideDown
+@property (nonatomic, assign) YFInterfaceOrientationMask supportInterfaceOrientation;
 
 /// Add the device orientation observer.
 - (void)addDeviceOrientationObserver;
@@ -141,22 +141,22 @@ typedef NS_OPTIONS(NSUInteger, ZFDisablePortraitGestureTypes) {
 /// Remove the device orientation observer.
 - (void)removeDeviceOrientationObserver;
 
-/// Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModeLandscape.
+/// Enter the fullScreen while the YFFullScreenMode is YFFullScreenModeLandscape.
 - (void)rotateToOrientation:(UIInterfaceOrientation)orientation animated:(BOOL)animated;
 
-/// Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModeLandscape.
+/// Enter the fullScreen while the YFFullScreenMode is YFFullScreenModeLandscape.
 - (void)rotateToOrientation:(UIInterfaceOrientation)orientation animated:(BOOL)animated completion:(void(^ __nullable)(void))completion;
 
-/// Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModePortrait.
+/// Enter the fullScreen while the YFFullScreenMode is YFFullScreenModePortrait.
 - (void)enterPortraitFullScreen:(BOOL)fullScreen animated:(BOOL)animated;
 
-/// Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModePortrait.
+/// Enter the fullScreen while the YFFullScreenMode is YFFullScreenModePortrait.
 - (void)enterPortraitFullScreen:(BOOL)fullScreen animated:(BOOL)animated completion:(void(^ __nullable)(void))completion;
 
-/// FullScreen mode is determined by ZFFullScreenMode.
+/// FullScreen mode is determined by YFFullScreenMode.
 - (void)enterFullScreen:(BOOL)fullScreen animated:(BOOL)animated;
 
-/// FullScreen mode is determined by ZFFullScreenMode.
+/// FullScreen mode is determined by YFFullScreenMode.
 - (void)enterFullScreen:(BOOL)fullScreen animated:(BOOL)animated completion:(void (^ _Nullable)(void))completion;
 
 @end

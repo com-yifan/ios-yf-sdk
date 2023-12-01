@@ -12,5 +12,6 @@
 #import "YFAdError.h"
 #import "YFAdLog.h"
 #import "UIApplication+YFAds.h"
+#import "YFAdConst.h"
 
 #endif /* YFPrivateKit_h */

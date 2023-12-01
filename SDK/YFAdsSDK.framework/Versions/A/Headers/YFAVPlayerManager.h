@@ -24,11 +24,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#if __has_include(<ZFPlayer/YFPlayerLogManager.h>)
-#import <ZFPlayer/YFPlayerLogManager.h>
-#else
 #import "YFPlayerLogManager.h"
-#endif
 #import "YFPlayerMediaPlayback.h"
 
 @interface YFAVPlayerManager : NSObject <YFPlayerMediaPlayback>

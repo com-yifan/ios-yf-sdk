@@ -24,7 +24,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const ZFDownloadNetworkSpeedNotificationKey;
+extern NSString *const YFDownLoadNetworkSpeedNotificationKey;
 extern NSString *const ZFUploadNetworkSpeedNotificationKey;
 extern NSString *const ZFNetworkSpeedNotificationKey;
 

@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 #import "YFPlayer.h"
 #import "YFAVPlayerManager.h"
-#import "YFIJKPlayerManager.h"
 #import "YFAVPlayerManager.h"
 #import "YFPlayerControlView.h"
 #import "YFPlayerControlView.h"

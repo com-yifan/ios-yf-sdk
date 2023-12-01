@@ -38,7 +38,7 @@
 
 @end
 
-@interface ZFSliderButton : UIButton
+@interface YFSliderButton : UIButton
 
 @end
 
@@ -47,7 +47,7 @@
 @property (nonatomic, weak) id<YFSliderViewDelegate> delegate;
 
 /** 滑块 */
-@property (nonatomic, strong, readonly) ZFSliderButton *sliderBtn;
+@property (nonatomic, strong, readonly) YFSliderButton *sliderBtn;
 
 /** 默认滑杆的颜色 */
 @property (nonatomic, strong) UIColor *maximumTrackTintColor;

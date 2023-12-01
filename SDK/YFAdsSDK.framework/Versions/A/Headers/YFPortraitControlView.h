@@ -24,11 +24,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YFSliderView.h"
-#if __has_include(<ZFPlayer/YFPlayerController.h>)
-#import <ZFPlayer/YFPlayerController.h>
-#else
 #import "YFPlayerController.h"
-#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -71,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL seekToPlay;
 
 /// 全屏模式
-@property (nonatomic, assign) ZFFullScreenMode fullScreenMode;
+@property (nonatomic, assign) YFFullScreenMode fullScreenMode;
 
 /// 重置控制层
 - (void)resetControlView;
@@ -92,7 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)shouldResponseGestureWithPoint:(CGPoint)point withGestureType:(ZFPlayerGestureType)type touch:(nonnull UITouch *)touch;
 
 /// 标题和全屏模式
-- (void)showTitle:(NSString *_Nullable)title fullScreenMode:(ZFFullScreenMode)fullScreenMode;
+- (void)showTitle:(NSString *_Nullable)title fullScreenMode:(YFFullScreenMode)fullScreenMode;
 
 /// 根据当前播放状态取反
 - (void)playOrPause;

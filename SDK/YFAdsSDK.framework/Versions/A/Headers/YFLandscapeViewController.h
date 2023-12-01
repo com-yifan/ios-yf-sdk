@@ -27,7 +27,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol ZFLandscapeViewControllerDelegate <NSObject>
+@protocol YFLandscapeViewControllerDelegate <NSObject>
 @optional
 - (BOOL)ls_shouldAutorotate;
 - (void)rotationFullscreenViewController:(YFLandscapeViewController *)viewController viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator;
@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFLandscapeViewController : UIViewController
 
-@property (nonatomic, weak, nullable) id<ZFLandscapeViewControllerDelegate> delegate;
+@property (nonatomic, weak, nullable) id<YFLandscapeViewControllerDelegate> delegate;
 
 @property (nonatomic, assign) BOOL disableAnimations;
 

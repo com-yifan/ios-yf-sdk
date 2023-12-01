@@ -135,7 +135,7 @@ Scroll to indexPath with position.
 
 @end
 
-@interface UIScrollView (ZFPlayerCannotCalled)
+@interface UIScrollView (YFPlayerCannotCalled)
 
 /// The block invoked When the player appearing.
 @property (nonatomic, copy, nullable) void(^zf_playerAppearingInScrollView)(NSIndexPath *indexPath, CGFloat playerApperaPercent);
@@ -216,7 +216,7 @@ Scroll to indexPath with position.
 
 @end
 
-@interface UIScrollView (ZFPlayerDeprecated)
+@interface UIScrollView (YFPlayerDeprecated)
 
 /// The block invoked When the player did stop scroll.
 @property (nonatomic, copy, nullable) void(^zf_scrollViewDidStopScrollCallback)(NSIndexPath *indexPath) __attribute__((deprecated("use `YFPlayerController.zf_scrollViewDidEndScrollingCallback` instead.")));

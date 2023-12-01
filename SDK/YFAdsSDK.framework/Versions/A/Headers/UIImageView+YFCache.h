@@ -24,10 +24,10 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^ZFDownLoadDataCallBack)(NSData *data, NSError *error);
-typedef void (^ZFDownloadProgressBlock)(unsigned long long total, unsigned long long current);
+typedef void (^YFDownLoadDataCallBack)(NSData *data, NSError *error);
+typedef void (^YFDownLoadProgressBlock)(unsigned long long total, unsigned long long current);
 
-@interface ZFImageDownloader : NSObject<NSURLSessionDownloadDelegate>
+@interface YFImageDownloader : NSObject<NSURLSessionDownloadDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, strong) NSURLSessionDownloadTask *task;
@@ -35,12 +35,12 @@ typedef void (^ZFDownloadProgressBlock)(unsigned long long total, unsigned long 
 @property (nonatomic, assign) unsigned long long totalLength;
 @property (nonatomic, assign) unsigned long long currentLength;
 
-@property (nonatomic, copy) ZFDownloadProgressBlock progressBlock;
-@property (nonatomic, copy) ZFDownLoadDataCallBack callbackOnFinished;
+@property (nonatomic, copy) YFDownLoadProgressBlock progressBlock;
+@property (nonatomic, copy) YFDownLoadDataCallBack callbackOnFinished;
 
 - (void)startDownloadImageWithUrl:(NSString *)url
-                         progress:(ZFDownloadProgressBlock)progress
-                         finished:(ZFDownLoadDataCallBack)finished;
+                         progress:(YFDownLoadProgressBlock)progress
+                         finished:(YFDownLoadDataCallBack)finished;
 
 @end
 
@@ -58,7 +58,7 @@ typedef void (^ZFImageBlock)(UIImage *image);
 /**
  *  Image downloader
  */
-@property (nonatomic, strong) ZFImageDownloader *imageDownloader;
+@property (nonatomic, strong) YFImageDownloader *imageDownloader;
 
 /**
  *	Specify the URL to download images fails, the number of retries, the default is 2

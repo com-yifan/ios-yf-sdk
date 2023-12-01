@@ -28,12 +28,12 @@
 
 @interface YFPersentInteractiveTransition : UIPercentDrivenInteractiveTransition
 
-@property (nonatomic, weak) id<ZFPortraitOrientationDelegate> delagate;
+@property (nonatomic, weak) id<YFPortraitOrientationDelegate> delagate;
 
 @property (nonatomic, assign) BOOL interation;
 
-/// default is ZFDisablePortraitGestureTypesNone.
-@property (nonatomic, assign) ZFDisablePortraitGestureTypes disablePortraitGestureTypes;
+/// default is YFDisablePortraitGestureTypesNone.
+@property (nonatomic, assign) YFDisablePortraitGestureTypes disablePortraitGestureTypes;
 
 @property (nonatomic, assign) BOOL fullScreenAnimation;
 

@@ -27,11 +27,7 @@
 #import "YFLandScapeControlView.h"
 #import "YFSpeedLoadingView.h"
 #import "YFSmallFloatControlView.h"
-#if __has_include(<ZFPlayer/YFPlayerMediaControl.h>)
-#import <ZFPlayer/YFPlayerMediaControl.h>
-#else
 #import "YFPlayerMediaControl.h"
-#endif
 
 @interface YFPlayerControlView : UIView <YFPlayerMediaControl>
 
@@ -116,7 +112,7 @@
 @property (nonatomic, assign) BOOL showCustomStatusBar;
 
 /// 全屏模式
-@property (nonatomic, assign) ZFFullScreenMode fullScreenMode;
+@property (nonatomic, assign) YFFullScreenMode fullScreenMode;
 
 /**
  设置标题、封面、全屏模式
@@ -125,7 +121,7 @@
  @param coverUrl 视频的封面，占位图默认是灰色的
  @param fullScreenMode 全屏模式
  */
-- (void)showTitle:(NSString *)title coverURLString:(NSString *)coverUrl fullScreenMode:(ZFFullScreenMode)fullScreenMode;
+- (void)showTitle:(NSString *)title coverURLString:(NSString *)coverUrl fullScreenMode:(YFFullScreenMode)fullScreenMode;
 
 /**
  设置标题、封面、默认占位图、全屏模式
@@ -135,7 +131,7 @@
  @param placeholder 指定封面的placeholder
  @param fullScreenMode 全屏模式
  */
-- (void)showTitle:(NSString *)title coverURLString:(NSString *)coverUrl placeholderImage:(UIImage *)placeholder fullScreenMode:(ZFFullScreenMode)fullScreenMode;
+- (void)showTitle:(NSString *)title coverURLString:(NSString *)coverUrl placeholderImage:(UIImage *)placeholder fullScreenMode:(YFFullScreenMode)fullScreenMode;
 
 /**
  设置标题、UIImage封面、全屏模式
@@ -144,7 +140,7 @@
  @param image 视频的封面UIImage
  @param fullScreenMode 全屏模式
  */
-- (void)showTitle:(NSString *)title coverImage:(UIImage *)image fullScreenMode:(ZFFullScreenMode)fullScreenMode;
+- (void)showTitle:(NSString *)title coverImage:(UIImage *)image fullScreenMode:(YFFullScreenMode)fullScreenMode;
 
 //- (void)showFullScreen
 
