@@ -25,8 +25,8 @@
 #import <Foundation/Foundation.h>
 
 extern NSString *const YFDownLoadNetworkSpeedNotificationKey;
-extern NSString *const ZFUploadNetworkSpeedNotificationKey;
-extern NSString *const ZFNetworkSpeedNotificationKey;
+extern NSString *const YFUploadNetworkSpeedNotificationKey;
+extern NSString *const YFNetworkSpeedNotificationKey;
 
 @interface YFNetworkSpeedMonitor : NSObject
 

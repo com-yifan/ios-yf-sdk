@@ -44,7 +44,7 @@ typedef void (^YFDownLoadProgressBlock)(unsigned long long total, unsigned long 
 
 @end
 
-typedef void (^ZFImageBlock)(UIImage *image);
+typedef void (^YFImageBlock)(UIImage *image);
 
 @interface UIImageView (YFCache)
 
@@ -53,7 +53,7 @@ typedef void (^ZFImageBlock)(UIImage *image);
  *
  *  The image object from network or from disk.
  */
-@property (nonatomic, copy) ZFImageBlock completion;
+@property (nonatomic, copy) YFImageBlock completion;
 
 /**
  *  Image downloader
