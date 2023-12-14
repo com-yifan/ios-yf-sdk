@@ -10,17 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-
-typedef NS_ENUM(NSInteger,YFAdLogLevel) {
-    YFAdLogLevel_None  = 0, // 不打印
-    YFAdLogLevel_Fatal,
-    YFAdLogLevel_Error,
-    YFAdLogLevel_Warning,
-    YFAdLogLevel_Info,
-    YFAdLogLevel_Debug,
-};
-
 extern NSString *const AdvanceSdkVersion;
 
 extern NSString *const SDK_TAG_GDT;
@@ -47,15 +36,8 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 + (instancetype)shareInstance;
 /// 设置扩展设备信息，如不了解该功能，请勿使用。 如@"[{\"device_id\":\"62271333038\"}]"
 @property (nonatomic, copy) NSDictionary *extraDeviceMap;
-
-/// 控制台log级别
-/// 0 不打印
-/// 1 打印fatal
-/// 2 fatal + error
-/// 3 fatal + error + warning
-/// 4 fatal + error + warning + info
-/// 5 全部打印
-@property (nonatomic, assign) YFAdLogLevel level;
+///控制台日志输出开关, 默认开启
+@property (nonatomic, assign) BOOL logEnable;
 /// 自定义IDFA，格式需与IDFA格式相同，xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 @property (nonatomic, copy) NSString * customIDFA;
 //  GPS 纬度(-90 ~ 90)
@@ -70,6 +52,11 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 @property (nonatomic, copy) NSString *fc_upload_url;
 
 @property (nonatomic, copy) NSString *yf_conf_url;
+
+@property (nonatomic, copy) NSString *yf_log_url;
+
+@property (nonatomic, assign, readonly) BOOL logSwitch;
+
 
 @end
 

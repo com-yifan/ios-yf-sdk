@@ -11,12 +11,13 @@
 //#define FC_CONF_URL @"http://114.55.33.104:8080/api/v1/ads/adsc"
 //#define FC_UPLOAD_URL @"http://114.55.33.104:8081/api/v1/ads/batchUpload"
 //#define YF_CONF_URL @"http://117.50.154.35/client/req_ad"
-//
+//#define YF_LOG_URL @"http://47.96.237.187:9090/ads/v1/upload/log?sign="
 //#else
 
 #define FC_CONF_URL @"http://api.yfanads.com/api/v1/ads/adsc"
 #define FC_UPLOAD_URL @"http://tracker.yfanads.com/api/v1/ads/batchUpload"
 #define YF_CONF_URL @"http://api.lzkqmx.com/client/req_ad"
+#define YF_LOG_URL @"http://logyfanads.com/ads/v1/upload/log?sign="
 
 //#endif
 
@@ -29,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)getAdsWithId:(NSString *)adID success:(void(^)(id))success fail:(void(^)(id))fail;
 /// 上报数据
 -(void)report:(NSArray *)events success:(void(^)(id))success fail:(void(^)(id))fail;
+
+- (void)uploadLogFile:(NSString *)filePath;
 
 @end
 

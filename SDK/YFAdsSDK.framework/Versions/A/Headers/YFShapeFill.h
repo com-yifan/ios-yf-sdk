@@ -17,8 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSString *keyname;
 @property (nonatomic, readonly) BOOL fillEnabled;
-@property (nonatomic, readonly) LOTKeyframeGroup *color;
-@property (nonatomic, readonly) LOTKeyframeGroup *opacity;
+@property (nonatomic, readonly) YFKeyframeGroup *color;
+@property (nonatomic, readonly) YFKeyframeGroup *opacity;
 @property (nonatomic, readonly) BOOL evenOddFillRule;
 
 @end

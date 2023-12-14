@@ -10,8 +10,10 @@
 
 #import "YFGradientView.h"
 #import "YFAdError.h"
-#import "YFAdLog.h"
 #import "UIApplication+YFAds.h"
 #import "YFAdConst.h"
+#import "YFAdLogManager.h"
+#import "YFAdxDataManager.h"
+#import "YFAdDataManager.h"
 
 #endif /* YFPrivateKit_h */

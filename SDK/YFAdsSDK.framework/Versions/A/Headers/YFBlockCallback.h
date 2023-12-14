@@ -21,7 +21,7 @@
  @param interpolatedColor The color interpolated at the current time between startColor and endColor. This represents the keypaths current color for the current time.
  @return CGColorRef the color to set the keypath node for the current frame
  */
-typedef CGColorRef _Nonnull (^LOTColorValueCallbackBlock)(CGFloat currentFrame,
+typedef CGColorRef _Nonnull (^YFColorValueCallbackBlock)(CGFloat currentFrame,
                                                           CGFloat startKeyFrame,
                                                           CGFloat endKeyFrame,
                                                           CGFloat interpolatedProgress,
@@ -40,7 +40,7 @@ typedef CGColorRef _Nonnull (^LOTColorValueCallbackBlock)(CGFloat currentFrame,
  @param interpolatedValue The Number interpolated at the current time between startValue and endValue. This represents the keypaths current Number for the current time.
  @return CGFloat the number to set the keypath node for the current frame
  */
-typedef CGFloat (^LOTNumberValueCallbackBlock)(CGFloat currentFrame,
+typedef CGFloat (^YFNumberValueCallbackBlock)(CGFloat currentFrame,
                                                CGFloat startKeyFrame,
                                                CGFloat endKeyFrame,
                                                CGFloat interpolatedProgress,
@@ -58,7 +58,7 @@ typedef CGFloat (^LOTNumberValueCallbackBlock)(CGFloat currentFrame,
  @param interpolatedPoint The Point interpolated at the current time between startPoint and endPoint. This represents the keypaths current Point for the current time.
  @return CGPoint the point to set the keypath node for the current frame.
  */
-typedef CGPoint (^LOTPointValueCallbackBlock)(CGFloat currentFrame,
+typedef CGPoint (^YFPointValueCallbackBlock)(CGFloat currentFrame,
                                               CGFloat startKeyFrame,
                                               CGFloat endKeyFrame,
                                               CGFloat interpolatedProgress,
@@ -77,7 +77,7 @@ typedef CGPoint (^LOTPointValueCallbackBlock)(CGFloat currentFrame,
  @param interpolatedSize The Size interpolated at the current time between startSize and endSize. This represents the keypaths current Size for the current time.
  @return CGSize the size to set the keypath node for the current frame.
  */
-typedef CGSize (^LOTSizeValueCallbackBlock)(CGFloat currentFrame,
+typedef CGSize (^YFSizeValueCallbackBlock)(CGFloat currentFrame,
                                             CGFloat startKeyFrame,
                                             CGFloat endKeyFrame,
                                             CGFloat interpolatedProgress,
@@ -93,68 +93,68 @@ typedef CGSize (^LOTSizeValueCallbackBlock)(CGFloat currentFrame,
  @param interpolatedProgress A value from 0-1 that represents the current progress between keyframes. It respects the keyframes current easing curves.
  @return UIBezierPath the path to set the keypath node for the current frame.
  */
-typedef CGPathRef  _Nonnull (^LOTPathValueCallbackBlock)(CGFloat currentFrame,
+typedef CGPathRef  _Nonnull (^YFPathValueCallbackBlock)(CGFloat currentFrame,
                                                          CGFloat startKeyFrame,
                                                          CGFloat endKeyFrame,
                                                          CGFloat interpolatedProgress);
 
 /*!
- @brief LOTColorValueCallback is wrapper around a LOTColorValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's color keypath at runtime.
+ @brief YFColorValueCallback is wrapper around a YFColorValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's color keypath at runtime.
  */
 
-@interface LOTColorBlockCallback : NSObject <LOTColorValueDelegate>
+@interface YFColorBlockCallback : NSObject <LOTColorValueDelegate>
 
-+ (instancetype _Nonnull)withBlock:(LOTColorValueCallbackBlock _Nonnull )block NS_SWIFT_NAME(init(block:));
++ (instancetype _Nonnull)withBlock:(YFColorValueCallbackBlock _Nonnull )block NS_SWIFT_NAME(init(block:));
 
-@property (nonatomic, copy, nonnull) LOTColorValueCallbackBlock callback;
+@property (nonatomic, copy, nonnull) YFColorValueCallbackBlock callback;
 
 @end
 
 /*!
- @brief LOTNumberValueCallback is wrapper around a LOTNumberValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's number keypath at runtime.
+ @brief YFNumberValueCallback is wrapper around a YFNumberValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's number keypath at runtime.
  */
 
-@interface LOTNumberBlockCallback : NSObject <LOTNumberValueDelegate>
+@interface YFNumberBlockCallback : NSObject <LOTNumberValueDelegate>
 
-+ (instancetype _Nonnull)withBlock:(LOTNumberValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
++ (instancetype _Nonnull)withBlock:(YFNumberValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
 
-@property (nonatomic, copy, nonnull) LOTNumberValueCallbackBlock callback;
+@property (nonatomic, copy, nonnull) YFNumberValueCallbackBlock callback;
 
 @end
 
 /*!
- @brief LOTPointValueCallback is wrapper around a LOTPointValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's point keypath at runtime.
+ @brief YFPointValueCallback is wrapper around a YFPointValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's point keypath at runtime.
  */
 
-@interface LOTPointBlockCallback : NSObject <LOTPointValueDelegate>
+@interface YFPointBlockCallback : NSObject <LOTPointValueDelegate>
 
-+ (instancetype _Nonnull)withBlock:(LOTPointValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
++ (instancetype _Nonnull)withBlock:(YFPointValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
 
-@property (nonatomic, copy, nonnull) LOTPointValueCallbackBlock callback;
+@property (nonatomic, copy, nonnull) YFPointValueCallbackBlock callback;
 
 @end
 
 /*!
- @brief LOTSizeValueCallback is wrapper around a LOTSizeValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's size keypath at runtime.
+ @brief YFSizeValueCallback is wrapper around a YFSizeValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's size keypath at runtime.
  */
 
-@interface LOTSizeBlockCallback : NSObject <LOTSizeValueDelegate>
+@interface YFSizeBlockCallback : NSObject <LOTSizeValueDelegate>
 
-+ (instancetype _Nonnull)withBlock:(LOTSizeValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
++ (instancetype _Nonnull)withBlock:(YFSizeValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
 
-@property (nonatomic, copy, nonnull) LOTSizeValueCallbackBlock callback;
+@property (nonatomic, copy, nonnull) YFSizeValueCallbackBlock callback;
 
 @end
 
 /*!
- @brief LOTPathValueCallback is wrapper around a LOTPathValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's path keypath at runtime.
+ @brief YFPathValueCallback is wrapper around a YFPathValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's path keypath at runtime.
  */
 
-@interface LOTPathBlockCallback : NSObject <LOTPathValueDelegate>
+@interface YFPathBlockCallback : NSObject <LOTPathValueDelegate>
 
-+ (instancetype _Nonnull)withBlock:(LOTPathValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
++ (instancetype _Nonnull)withBlock:(YFPathValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
 
-@property (nonatomic, copy, nonnull) LOTPathValueCallbackBlock callback;
+@property (nonatomic, copy, nonnull) YFPathValueCallbackBlock callback;
 
 @end
 

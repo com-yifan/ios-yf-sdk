@@ -21,7 +21,6 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_112    = 112,
     YFAdErrorCode_113    = 113,
     YFAdErrorCode_114    = 114,
-    YFAdErrorCode_115    = 115,
     YFAdErrorCode_116    = 116,
     
     YFAdErrorCode_10000  = 10000,
@@ -34,8 +33,8 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_10007  = 10007,
     YFAdErrorCode_10008  = 10008,
     YFAdErrorCode_10009  = 10009,
-    
     YFAdErrorCode_10010  = 10010,
+    YFAdErrorCode_10011  = 10011,
     
     YFAdErrorCode_13001  = 13001,
     YFAdErrorCode_13002  = 13002,
@@ -49,7 +48,6 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_15001  = 15001,
     YFAdErrorCode_15002  = 15002,
     
-   
     //穿山甲
     YFCSJErrorCode_11001 = 11001,
     YFCSJErrorCode_11002 = 11002,

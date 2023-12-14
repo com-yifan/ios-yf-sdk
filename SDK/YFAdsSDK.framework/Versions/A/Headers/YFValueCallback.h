@@ -11,11 +11,11 @@
 #import "YFValueDelegate.h"
 
 /*!
- @brief LOTColorValueCallback is a container for a CGColorRef. This container is a LOTColorValueDelegate that always returns the colorValue property to its animation delegate.
- @discussion LOTColorValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a color value of an animation property.
+ @brief YFColorValueCallback is a container for a CGColorRef. This container is a LOTColorValueDelegate that always returns the colorValue property to its animation delegate.
+ @discussion YFColorValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a color value of an animation property.
  */
 
-@interface LOTColorValueCallback : NSObject <LOTColorValueDelegate>
+@interface YFColorValueCallback : NSObject <LOTColorValueDelegate>
 
 + (instancetype _Nonnull)withCGColor:(CGColorRef _Nonnull)color NS_SWIFT_NAME(init(color:));
 
@@ -24,11 +24,11 @@
 @end
 
 /*!
- @brief LOTNumberValueCallback is a container for a CGFloat value. This container is a LOTNumberValueDelegate that always returns the numberValue property to its animation delegate.
- @discussion LOTNumberValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a number value of an animation property.
+ @brief YFNumberValueCallback is a container for a CGFloat value. This container is a LOTNumberValueDelegate that always returns the numberValue property to its animation delegate.
+ @discussion YFNumberValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a number value of an animation property.
  */
 
-@interface LOTNumberValueCallback : NSObject <LOTNumberValueDelegate>
+@interface YFNumberValueCallback : NSObject <LOTNumberValueDelegate>
 
 + (instancetype _Nonnull)withFloatValue:(CGFloat)numberValue NS_SWIFT_NAME(init(number:));
 
@@ -37,11 +37,11 @@
 @end
 
 /*!
- @brief LOTPointValueCallback is a container for a CGPoint value. This container is a LOTPointValueDelegate that always returns the pointValue property to its animation delegate.
- @discussion LOTPointValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a point value of an animation property.
+ @brief YFPointValueCallback is a container for a CGPoint value. This container is a LOTPointValueDelegate that always returns the pointValue property to its animation delegate.
+ @discussion YFPointValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a point value of an animation property.
  */
 
-@interface LOTPointValueCallback : NSObject <LOTPointValueDelegate>
+@interface YFPointValueCallback : NSObject <LOTPointValueDelegate>
 
 + (instancetype _Nonnull)withPointValue:(CGPoint)pointValue;
 
@@ -50,11 +50,11 @@
 @end
 
 /*!
- @brief LOTSizeValueCallback is a container for a CGSize value. This container is a LOTSizeValueDelegate that always returns the sizeValue property to its animation delegate.
- @discussion LOTSizeValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a size value of an animation property.
+ @brief YFSizeValueCallback is a container for a CGSize value. This container is a LOTSizeValueDelegate that always returns the sizeValue property to its animation delegate.
+ @discussion YFSizeValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a size value of an animation property.
  */
 
-@interface LOTSizeValueCallback : NSObject <LOTSizeValueDelegate>
+@interface YFSizeValueCallback : NSObject <LOTSizeValueDelegate>
 
 + (instancetype _Nonnull)withPointValue:(CGSize)sizeValue NS_SWIFT_NAME(init(size:));
 
@@ -63,11 +63,11 @@
 @end
 
 /*!
- @brief LOTPathValueCallback is a container for a CGPathRef value. This container is a LOTPathValueDelegate that always returns the pathValue property to its animation delegate.
- @discussion LOTPathValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a path value of an animation property.
+ @brief YFPathValueCallback is a container for a CGPathRef value. This container is a LOTPathValueDelegate that always returns the pathValue property to its animation delegate.
+ @discussion YFPathValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a path value of an animation property.
  */
 
-@interface LOTPathValueCallback : NSObject <LOTPathValueDelegate>
+@interface YFPathValueCallback : NSObject <LOTPathValueDelegate>
 
 + (instancetype _Nonnull)withCGPath:(CGPathRef _Nonnull)path NS_SWIFT_NAME(init(path:));
 

@@ -64,6 +64,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger showLimitDay;
 // 展示间隔(单位毫秒)。无该字段表示不限制
 @property (nonatomic, assign) NSInteger showInterval;
+// 日志开关 1表示开启日志;0或者不存在表示日志关闭状态
+@property (nonatomic, assign) NSInteger logSwitch;
 
 @end
 
@@ -141,6 +143,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger cbst;
 ///  1: 合规值 2: 中灵敏闽值 3:高灵敏闽值
 @property (nonatomic, assign) NSInteger istv;
+
+/// 1;单向跳转
+/// 2: 双向跳转
+@property (nonatomic, assign) NSInteger isd;
+
+//新增字段istvp 描述 0~1
+//1 = 100%
+@property (nonatomic, assign) float istvp;
+
 @end
 
 NS_ASSUME_NONNULL_END

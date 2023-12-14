@@ -156,10 +156,10 @@ typedef void (^LOTAnimationCompletionBlock)(BOOL animationFinished);
  @brief Sets a YFValueDelegate for each animation property returned from the YFKeypath search. YFKeypath matches views inside of YFAnimationView to their After Effects counterparts. The YFValueDelegate is called every frame as the animation plays to override animation values. A delegate can be any object that conforms to the YFValueDelegate protocol, or one of the prebuilt delegate classes found in LOTBlockCallback, LOTInterpolatorCallback, and LOTValueCallback.
 
  @discussion
- Example that sets an animated stroke to Red using a LOTColorValueCallback.
+ Example that sets an animated stroke to Red using a YFColorValueCallback.
  @code
  YFKeypath *keypath = [YFKeypath keypathWithKeys:@"Layer 1", @"Ellipse 1", @"Stroke 1", @"Color", nil];
- LOTColorValueCallback *colorCallback = [LOTColorBlockCallback withColor:[UIColor redColor]];
+ YFColorValueCallback *colorCallback = [YFColorBlockCallback withColor:[UIColor redColor]];
  [animationView setValueDelegate:colorCallback forKeypath:keypath];
  @endcode
 

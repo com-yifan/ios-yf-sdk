@@ -20,15 +20,15 @@ typedef enum : NSUInteger {
 - (instancetype)initWithJSON:(NSDictionary *)jsonDictionary;
 
 @property (nonatomic, readonly) NSString *keyname;
-@property (nonatomic, readonly) LOTKeyframeGroup *outerRadius;
-@property (nonatomic, readonly) LOTKeyframeGroup *outerRoundness;
+@property (nonatomic, readonly) YFKeyframeGroup *outerRadius;
+@property (nonatomic, readonly) YFKeyframeGroup *outerRoundness;
 
-@property (nonatomic, readonly) LOTKeyframeGroup *innerRadius;
-@property (nonatomic, readonly) LOTKeyframeGroup *innerRoundness;
+@property (nonatomic, readonly) YFKeyframeGroup *innerRadius;
+@property (nonatomic, readonly) YFKeyframeGroup *innerRoundness;
 
-@property (nonatomic, readonly) LOTKeyframeGroup *position;
-@property (nonatomic, readonly) LOTKeyframeGroup *numberOfPoints;
-@property (nonatomic, readonly) LOTKeyframeGroup *rotation;
+@property (nonatomic, readonly) YFKeyframeGroup *position;
+@property (nonatomic, readonly) YFKeyframeGroup *numberOfPoints;
+@property (nonatomic, readonly) YFKeyframeGroup *rotation;
 
 @property (nonatomic, readonly) LOTPolystarShape type;
 

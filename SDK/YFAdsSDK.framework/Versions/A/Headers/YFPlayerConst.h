@@ -27,7 +27,8 @@ typedef NS_ENUM(NSUInteger, YFPlayerPlaybackState) {
     YFPlayerPlayStatePlaying,
     YFPlayerPlayStatePaused,
     YFPlayerPlayStatePlayFailed,
-    YFPlayerPlayStatePlayStopped
+    YFPlayerPlayStatePlayStopped,
+    YFPlayerPlayStatePlayReady
 };
 
 typedef NS_OPTIONS(NSUInteger, YFPlayerLoadState) {

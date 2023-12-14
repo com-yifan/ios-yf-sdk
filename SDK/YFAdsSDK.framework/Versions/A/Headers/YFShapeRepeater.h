@@ -16,14 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithJSON:(NSDictionary *)jsonDictionary;
 
 @property (nonatomic, readonly) NSString *keyname;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *copies;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *offset;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *anchorPoint;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *scale;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *position;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *rotation;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *startOpacity;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *endOpacity;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *copies;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *offset;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *anchorPoint;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *scale;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *position;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *rotation;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *startOpacity;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *endOpacity;
 
 @end
 

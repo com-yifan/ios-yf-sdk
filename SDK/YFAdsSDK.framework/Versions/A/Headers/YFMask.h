@@ -23,7 +23,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, readonly) BOOL closed;
 @property (nonatomic, readonly) BOOL inverted;
 @property (nonatomic, readonly) LOTMaskMode maskMode;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *maskPath;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *opacity;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *expansion;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *maskPath;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *opacity;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *expansion;
 @end

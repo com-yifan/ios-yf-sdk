@@ -17,7 +17,4 @@
 /// 广告关闭的回调
 - (void)fcAdDidClose;
 
-/// 广告关闭的回调
-- (void)fcAdDidCloseWithView:(UIView *)view;
-
 @end

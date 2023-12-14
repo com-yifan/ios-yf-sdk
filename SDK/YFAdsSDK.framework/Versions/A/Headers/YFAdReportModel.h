@@ -171,6 +171,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 平台错误码
 @property (nonatomic, copy) NSString *cd;
 
+/// 1;单向跳转
+/// 2: 双向跳转
+@property (nonatomic, assign) NSInteger isd;
+
+//新增字段istvp 描述 0~100
+//1 = 100%
+@property (nonatomic, assign) float istvp;
 
 @end
 NS_ASSUME_NONNULL_END

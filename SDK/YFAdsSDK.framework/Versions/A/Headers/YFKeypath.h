@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * _Nonnull const kLOTKeypathEnd;
+extern NSString * _Nonnull const kYFKeypathEnd;
 
 /*!
  @brief YFKeypath is an object that describes a keypath search for nodes in the animation JSON. YFKeypath matches views inside of YFAnimationView to their After Effects counterparts.

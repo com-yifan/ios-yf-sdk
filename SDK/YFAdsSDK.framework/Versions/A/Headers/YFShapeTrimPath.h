@@ -14,8 +14,8 @@
 - (instancetype)initWithJSON:(NSDictionary *)jsonDictionary;
 
 @property (nonatomic, readonly) NSString *keyname;
-@property (nonatomic, readonly) LOTKeyframeGroup *start;
-@property (nonatomic, readonly) LOTKeyframeGroup *end;
-@property (nonatomic, readonly) LOTKeyframeGroup *offset;
+@property (nonatomic, readonly) YFKeyframeGroup *start;
+@property (nonatomic, readonly) YFKeyframeGroup *end;
+@property (nonatomic, readonly) YFKeyframeGroup *offset;
 
 @end

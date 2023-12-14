@@ -16,6 +16,6 @@
 @property (nonatomic, readonly) NSString *keyname;
 @property (nonatomic, readonly) BOOL closed;
 @property (nonatomic, readonly) NSNumber *index;
-@property (nonatomic, readonly) LOTKeyframeGroup *shapePath;
+@property (nonatomic, readonly) YFKeyframeGroup *shapePath;
 
 @end

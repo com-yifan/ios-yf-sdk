@@ -11,11 +11,11 @@
 #import "YFValueDelegate.h"
 
 /*!
- @brief LOTPointInterpolatorCallback is a container for a CGPointRef. This container is a LOTPointValueDelegate that will return the point interpolated at currentProgress between fromPoint and toPoint. Externally changing currentProgress will change the point of the animation.
- @discussion LOTPointInterpolatorCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypoint to set a point value of an animation property.
+ @brief YFPointInterpolatorCallback is a container for a CGPointRef. This container is a LOTPointValueDelegate that will return the point interpolated at currentProgress between fromPoint and toPoint. Externally changing currentProgress will change the point of the animation.
+ @discussion YFPointInterpolatorCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypoint to set a point value of an animation property.
  */
 
-@interface LOTPointInterpolatorCallback : NSObject <LOTPointValueDelegate>
+@interface YFPointInterpolatorCallback : NSObject <LOTPointValueDelegate>
 
 + (instancetype _Nonnull)withFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint NS_SWIFT_NAME(init(from:to:));
 
@@ -31,11 +31,11 @@
 @end
 
 /*!
- @brief LOTSizeInterpolatorCallback is a container for a CGSizeRef. This container is a LOTSizeValueDelegate that will return the size interpolated at currentProgress between fromSize and toSize. Externally changing currentProgress will change the size of the animation.
- @discussion LOTSizeInterpolatorCallback is used in conjunction with YFAnimationView setValueDelegate:forKeysize to set a size value of an animation property.
+ @brief YFSizeInterpolatorCallback is a container for a CGSizeRef. This container is a LOTSizeValueDelegate that will return the size interpolated at currentProgress between fromSize and toSize. Externally changing currentProgress will change the size of the animation.
+ @discussion YFSizeInterpolatorCallback is used in conjunction with YFAnimationView setValueDelegate:forKeysize to set a size value of an animation property.
  */
 
-@interface LOTSizeInterpolatorCallback : NSObject <LOTSizeValueDelegate>
+@interface YFSizeInterpolatorCallback : NSObject <LOTSizeValueDelegate>
 
 + (instancetype _Nonnull)withFromSize:(CGSize)fromSize toSize:(CGSize)toSize NS_SWIFT_NAME(init(from:to:));
 
@@ -51,11 +51,11 @@
 @end
 
 /*!
- @brief LOTFloatInterpolatorCallback is a container for a CGFloatRef. This container is a LOTFloatValueDelegate that will return the float interpolated at currentProgress between fromFloat and toFloat. Externally changing currentProgress will change the float of the animation.
- @discussion LOTFloatInterpolatorCallback is used in conjunction with YFAnimationView setValueDelegate:forKeyfloat to set a float value of an animation property.
+ @brief YFFloatInterpolatorCallback is a container for a CGFloatRef. This container is a LOTFloatValueDelegate that will return the float interpolated at currentProgress between fromFloat and toFloat. Externally changing currentProgress will change the float of the animation.
+ @discussion YFFloatInterpolatorCallback is used in conjunction with YFAnimationView setValueDelegate:forKeyfloat to set a float value of an animation property.
  */
 
-@interface LOTFloatInterpolatorCallback : NSObject <LOTNumberValueDelegate>
+@interface YFFloatInterpolatorCallback : NSObject <LOTNumberValueDelegate>
 
 + (instancetype _Nonnull)withFromFloat:(CGFloat)fromFloat toFloat:(CGFloat)toFloat NS_SWIFT_NAME(init(from:to:));
 

@@ -22,10 +22,10 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, readonly) NSString *keyname;
 @property (nonatomic, readonly) NSNumber *numberOfColors;
-@property (nonatomic, readonly) LOTKeyframeGroup *startPoint;
-@property (nonatomic, readonly) LOTKeyframeGroup *endPoint;
-@property (nonatomic, readonly) LOTKeyframeGroup *gradient;
-@property (nonatomic, readonly) LOTKeyframeGroup *opacity;
+@property (nonatomic, readonly) YFKeyframeGroup *startPoint;
+@property (nonatomic, readonly) YFKeyframeGroup *endPoint;
+@property (nonatomic, readonly) YFKeyframeGroup *gradient;
+@property (nonatomic, readonly) YFKeyframeGroup *opacity;
 @property (nonatomic, readonly) BOOL evenOddFillRule;
 @property (nonatomic, readonly) LOTGradientType type;
 

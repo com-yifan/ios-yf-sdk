@@ -13,6 +13,8 @@
 #import "YFMaterialMeta.h"
 #import "YFSmallFloatControlView.h"
 #import "YFPlayerMediaControl.h"
+#if __has_include(<JADYun/JADYun.h>)
+#import <JADYun/JADYun.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// prepare时候是否显示loading,默认 NO.
 @property (nonatomic, assign) BOOL prepareShowLoading;
 
+@property(nonatomic,strong) JADNativeAd *jdNativeAd;
+
 @property (nonatomic, strong) YFMaterialMeta *nativeAd;
 
 @property(nonatomic,copy)void (^toPlayClick)(void);
@@ -36,3 +40,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+#endif

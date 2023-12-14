@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param error 聚合SDK的错误
 /// @param description 每个渠道的错误详情, 部分情况下为nil  key的命名规则: 渠道名-index
 - (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description;
-
-- (void)fcAdFailedWithError:(NSError *)error contentView:(UIView *)view description:(NSDictionary *)description;
 /// 内部渠道开始加载时调用
 - (void)fcAdSupplierWillLoad:(id)adapter;
 /// 展示处理之后的广告

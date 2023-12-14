@@ -77,7 +77,7 @@ typedef NS_ENUM(NSUInteger, FLLogLevel) {
 
 #define FLLog(logLevel, format, ...) [YFAnimatedImage logStringFromBlock:^NSString *{ return [NSString stringWithFormat:(format), ## __VA_ARGS__]; } withLevel:(logLevel)]
 
-@interface FLWeakProxy : NSProxy
+@interface YFLWeakProxy : NSProxy
 
 + (instancetype)weakProxyForObject:(id)targetObject;
 

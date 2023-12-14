@@ -12,7 +12,7 @@
 #import "YFKeypath.h"
 #import "YFValueDelegate.h"
 
-extern NSInteger indentation_level;
+extern NSInteger yf_indentation_level;
 @interface YFAnimatorNode : NSObject
 
 /// Initializes the node with and optional input node and keyname.

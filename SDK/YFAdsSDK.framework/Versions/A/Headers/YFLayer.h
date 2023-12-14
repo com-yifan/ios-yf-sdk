@@ -58,16 +58,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, nullable) UIColor *solidColor;
 @property (nonatomic, readonly, nullable) YFAsset *imageAsset;
 
-@property (nonatomic, readonly) LOTKeyframeGroup *opacity;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *timeRemapping;
-@property (nonatomic, readonly) LOTKeyframeGroup *rotation;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *position;
+@property (nonatomic, readonly) YFKeyframeGroup *opacity;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *timeRemapping;
+@property (nonatomic, readonly) YFKeyframeGroup *rotation;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *position;
 
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *positionX;
-@property (nonatomic, readonly, nullable) LOTKeyframeGroup *positionY;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *positionX;
+@property (nonatomic, readonly, nullable) YFKeyframeGroup *positionY;
 
-@property (nonatomic, readonly) LOTKeyframeGroup *anchor;
-@property (nonatomic, readonly) LOTKeyframeGroup *scale;
+@property (nonatomic, readonly) YFKeyframeGroup *anchor;
+@property (nonatomic, readonly) YFKeyframeGroup *scale;
 
 @property (nonatomic, readonly) LOTMatteType matteType;
 
