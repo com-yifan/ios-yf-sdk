@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showAd;
 
+- (void)removeAd;
+
 - (void)deallocAdapter;
 
 - (void)cancelDelay;

@@ -64,14 +64,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString*)getDeviceModel;
 
-+(void)toSaveDownTimer:(NSString*)time key:(NSString *)key;
-+(NSString *)toGetDownTimerKey:(NSString*)key;
-+(void)toRemoveDownTimerKey:(NSString*)key;
-
-
++ (void)toSaveDownTimer:(NSString*)time key:(NSString *)key;
++ (NSString *)toGetDownTimerKey:(NSString*)key;
++ (void)toRemoveDownTimerKey:(NSString*)key;
 + (CGFloat)getWidthWithTitle:(NSString *)title font:(UIFont *)font;
++ (NSURL *)toSartVideoDownload:(NSString*)videoUrl;
 
-+(NSURL *)toSartVideoDownload:(NSString*)videoUrl;
++ (BOOL)isViewExistInWindow:(UIViewController *)viewController;
 
 @end
 

@@ -5,6 +5,13 @@
 #import "YFMaterialMeta.h"
 #import "YFAdReportModel.h"
 #import "YFPlayerAdControlView.h"
+#import "YFAVPlayerManager.h"
+#import "YFPlayerAdControlView.h"
+
+typedef NS_ENUM(NSInteger, YFBannerViewType) {
+    YFBannerViewTypeNormal,///普通banner
+    YFBannerViewTypeFeed ///信息流
+};
 
 @class YFBannerView;
 
@@ -58,7 +65,13 @@
 @property(nonatomic, copy,readonly) YFAdEventModel *eventModel;
 @property(nonatomic, assign,readonly) NSUInteger ecpm;
 @property(nonatomic, copy,readonly) NSArray *clickUrls;
-
+@property(nonatomic, assign) YFBannerViewType type;
+@property(nonatomic, strong) YFAVPlayerManager *playerManager;
+@property(nonatomic, strong) YFPlayerController *player;
+@property(nonatomic, assign) YFPlayerPlaybackState cuurentPlayState;
+@property(nonatomic, strong) YFPlayerAdControlView *controlView;
+///是否播放完成
+@property (nonatomic, assign) BOOL playFinished;
 /**
  *  广告是否有效，以下情况会返回NO，建议在展示广告之前判断，否则会影响计费或展示失败
  *  a.广告未拉取成功
@@ -66,6 +79,7 @@
  */
 @property(nonatomic, readonly) BOOL isAdValid;
 
+@property(nonatomic, copy) void(^closeAd)(void);
 
 /**
  *  构造方法
@@ -87,7 +101,6 @@
  *  获取高度
  */
 - (float)getViewHeight;
--(void)toReleaseVideo;
 -(void)toPlayVideo;
 -(void)showView:(UIView *)view;
 

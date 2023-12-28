@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YFKsAdInterstitialVideoView : YFAdBaseView
 
 @property (nonatomic, weak) id<YFKsAdInterstitialVideoViewDelegate> delegate;
--(instancetype)initWithFrame:(CGRect)frame model:(id)model;
+-(instancetype)initWithFrame:(CGRect)frame model:(id)model viewController:(UIViewController *)viewController;
 -(void)loadAdData:(KSNativeAd *)dataObject close: (void(^)(id))close;
 
 @end

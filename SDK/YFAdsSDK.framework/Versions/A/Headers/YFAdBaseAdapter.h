@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showAd;
 /// 加载并展现
 - (void)loadAndShowAd;
+/// 移除广告 (banner ，信息流可用)
+- (void)removeAd;
 /// 上报
 - (void)reportWithType:(FCAdSDKReportEventType)repoType supplier:(id)supplier error:(nullable NSError *)error;
 ///  搜集错误

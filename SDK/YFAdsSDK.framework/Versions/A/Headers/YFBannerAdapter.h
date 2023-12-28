@@ -6,14 +6,14 @@
 #import "YFAdBaseAdPosition.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "YFAdBannerDelegate.h"
+#import "YFAdNativeExpressDelegate.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFBannerAdapter : YFAdBaseAdPosition
 
-@property(nonatomic, weak) id <YFAdBannerDelegate> delegate;
+@property(nonatomic, weak) id <YFAdNativeExpressDelegate> delegate;
 
 @end
 

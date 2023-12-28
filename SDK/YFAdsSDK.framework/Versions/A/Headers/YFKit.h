@@ -7,7 +7,5 @@
 
 #import <Foundation/Foundation.h>
 #define YFDedicateddimissNotfication @"YFDedicateddimissNotfication"
-#define YFBannerDimissNotfication @"YFBannerDimissNotfication"
-
 #import "YFSplashView.h"
 
