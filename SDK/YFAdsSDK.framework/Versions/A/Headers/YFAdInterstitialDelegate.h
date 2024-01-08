@@ -3,8 +3,7 @@
 //
 
 
-#ifndef FCAdInterstitialProtocol_h
-#define FCAdInterstitialProtocol_h
+
 #import "YFAdBaseDelegate.h"
 @protocol YFAdInterstitialDelegate <YFAdBaseDelegate>
 @optional
@@ -13,4 +12,4 @@
 
 @end
 
-#endif
+

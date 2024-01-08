@@ -3,11 +3,11 @@
 //
 
 
-#ifndef FCAdNativeExpressProtocol_h
-#define FCAdNativeExpressProtocol_h
 #import "YFAdBaseDelegate.h"
+#import "YFAdMediaDelegate.h"
+
 @class YFAdNativeExpressView;
-@protocol YFAdNativeExpressDelegate <YFAdBaseDelegate>
+@protocol YFAdNativeExpressDelegate <YFAdBaseDelegate,YFAdMediaDelegate>
 @optional
 /// 广告数据拉取成功
 - (void)fcAdNativeExpressOnAdLoadSuccess:(nullable NSArray<YFAdNativeExpressView *> *)views;
@@ -28,5 +28,3 @@
 - (void)fcAdNativeExpressOnAdClosed:(nullable YFAdNativeExpressView *)adView;
 
 @end
-
-#endif

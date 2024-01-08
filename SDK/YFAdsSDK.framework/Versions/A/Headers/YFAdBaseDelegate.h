@@ -8,6 +8,9 @@
 @protocol YFAdBaseDelegate <YFAdCommonDelegate>
 
 @optional
+
+/// 获取自渲染数据
+- (void)fcAdGetMediaRenderDataSuccess:(NSArray *)mediaRenders;
 /// 广告曝光成功
 - (void)fcAdExposured;
 /// 广告点击回调
@@ -16,5 +19,7 @@
 - (void)fcAdUnifiedViewDidLoad;
 /// 广告关闭的回调
 - (void)fcAdDidClose;
+/// 广告关闭的回调  横幅使用
+- (void)fcAdDidCloseWithView:(UIView *)view;
 
 @end

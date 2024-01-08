@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_10009  = 10009,
     YFAdErrorCode_10010  = 10010,
     YFAdErrorCode_10011  = 10011,
-    
+
     YFAdErrorCode_13001  = 13001,
     YFAdErrorCode_13002  = 13002,
     YFAdErrorCode_13003  = 13003,

@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 移除广告 (banner ，信息流可用)
 - (void)removeAd;
 /// 上报
-- (void)reportWithType:(FCAdSDKReportEventType)repoType supplier:(id)supplier error:(nullable NSError *)error;
+- (void)reportWithType:(YFAdSDKReportEventType)repoType supplier:(id)supplier error:(nullable NSError *)error;
 ///  搜集错误
 - (void)collectErrorWithSupplier:(YFAdEventModel *)supplier error:(NSError *)error;
 /// 取消当前策略请求

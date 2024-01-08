@@ -31,26 +31,40 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)fcAd_modelDescription;
 
+- (id)getValueForKey:(NSString *)key;
+
 @end
 
-@interface NSString (FCAdModel)
+@interface NSString (YFAdModel)
 
 + (nullable NSDictionary *)fcAd_JsonStringToObject:(id)json;
 
 @end
 
-@interface NSArray (FCAdModel)
+@interface NSArray (YFAdModel)
 
 + (nullable NSArray *)fcAd_modelArrayWithClass:(Class)cls json:(id)json;
 
 @end
 
-@interface NSDictionary (FCAdModel)
+@interface NSDictionary (YFAdModel)
 
 + (nullable NSDictionary *)fcAd_modelDictionaryWithClass:(Class)cls json:(id)json;
 @end
 
-@protocol FCAdModel <NSObject>
+
+
+
+@interface NSMutableDictionary (YFAdModel)
+
+- (void)safeSetObject:(id)anObject forKey:(id<NSCopying>)aKey;
+- (void)safeRemoveObjectForKey:(id<NSCopying>)aKey;
+
+@end
+
+
+
+@protocol YFAdModel <NSObject>
 @optional
 
 + (nullable NSDictionary<NSString *, id> *)modelCustomPropertyMapper;

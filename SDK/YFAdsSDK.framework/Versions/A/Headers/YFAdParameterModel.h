@@ -27,8 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString *deviceBrand;
 /// 设备ID， 输入多个值时，需用英文逗号隔开； 支持IDFA、OAID、IMEI或其他自定义可标识该设备id
 @property (nonatomic, copy) NSString *deviceID;
-/// idfaFlag
-@property (nonatomic, assign, readonly) NSInteger idfaFlag;
+///// idfaFlag
+//@property (nonatomic, assign, readonly) NSInteger idfaFlag;
 
 /// 设备类型，仅支持IOS系统，可供选择包括：Iphone、ipad
 @property (nonatomic, copy) NSString *deviceType;
@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy,readonly) NSString *sdkVersion;
 /// 安卓或者IOS系统版本
 @property (nonatomic, copy,readonly) NSString *systemVersion;
-
+///  配置版本号
 @property (nonatomic, assign) NSInteger resourceVersion;
 /// idfa
 @property (nonatomic, copy) NSString *idfa;

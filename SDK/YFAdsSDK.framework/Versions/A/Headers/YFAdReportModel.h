@@ -17,29 +17,31 @@
 //7. 流量请求（APP向聚合SDK发送请求时，上报该事件）
 //8. 流量填充（当聚合SDK有填充时，完成比价后上报该事件。注意：需要填写选取填充的耗时，在比价之后show之前上报该事件）
 
-typedef NS_ENUM(NSUInteger, FCAdSDKReportEventType) {
+typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     
-    FCAdSDKReportEventTypeNone,
+    YFAdSDKReportEventTypeNone,
     /// 应用打开
-    FCAdSDKReportEventTypeOpen,
+    YFAdSDKReportEventTypeOpen,
     /// 聚合向广告网络发送请求
-    FCAdSDKReportEventTypeRequest,
+    YFAdSDKReportEventTypeRequest,
     /// 填充
-    FCAdSDKReportEventTypeFill,
+    YFAdSDKReportEventTypeFill,
     /// 展示
-    FCAdSDKReportEventTypeShow,
+    YFAdSDKReportEventTypeShow,
     /// 点击
-    FCAdSDKReportEventTypeClicked,
+    YFAdSDKReportEventTypeClicked,
     /// 流量请求
-    FCAdSDKReportEventTypeFlowRequest,
+    YFAdSDKReportEventTypeFlowRequest,
     /// 流量填充
-    FCAdSDKReportEventTypeFlowFill,
+    YFAdSDKReportEventTypeFlowFill,
     /// 资源就位
-    FCAdSDKReportEventTypeReady,
+    YFAdSDKReportEventTypeReady,
     /// 失败
-    FCAdSDKReportEventTypeFail,
+    YFAdSDKReportEventTypeFail,
     /// 自动点击
-    FCAdSDKReportEventTypeAuto,
+    YFAdSDKReportEventTypeAuto,
+    /// 发放激励
+    YFAdSDKReportEventTypeReward,
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -65,6 +67,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *sdkVer;
 /// idfa
 @property (nonatomic, copy) NSString * ia;
+/// 品牌
+@property (nonatomic, copy) NSString * db;
+
 
 @end
 
@@ -90,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *eID;
 //1-应用打开；2-请求(聚合向广告网络发送请求)；3-填充(聚合向广告网络发送请求)；4-展示(聚合向广告网络发送请求)；5-点击(聚合统计的广告)；6-流量请求(应用向聚合发送请求)；7-流量填充(应用向聚合发送请求)|
 /// 事件类型
-@property (nonatomic, assign)FCAdSDKReportEventType eType;
+@property (nonatomic, assign)YFAdSDKReportEventType eType;
 
 /// group ID
 @property (nonatomic, copy) NSString *gID;
@@ -124,8 +129,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * rID;
 /// 模版ID
 @property (nonatomic, assign) NSInteger renderID;
-
-
 /// 关闭按钮尺寸 
 /*
  1、最小
@@ -178,6 +181,13 @@ NS_ASSUME_NONNULL_BEGIN
 //新增字段istvp 描述 0~100
 //1 = 100%
 @property (nonatomic, assign) float istvp;
+
+/// 设备型号
+@property (nonatomic, assign) NSString * dm;
+
+/// 设备类型
+@property (nonatomic, assign) NSInteger dt;
+
 
 @end
 NS_ASSUME_NONNULL_END

@@ -11,6 +11,7 @@
 #define YF_CONF_URL @"http://api.lzkqmx.com/client/req_ad"
 #define YF_LOG_URL @"http://log.yfanads.com/ads/v1/upload/log?sign="
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdDataManager : NSObject

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 
 -(float)getViewHeight;
--(void)loadAdData:(JADNativeAd *)dataObject close: (void(^)(id))close;
+-(void)loadAdData:(JADNativeAd *)dataObject;
 
 @end
 
