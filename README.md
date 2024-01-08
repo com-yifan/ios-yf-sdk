@@ -1,33 +1,41 @@
 
-# 亿帆SDK对接⽂档: V5.3.0.21
+# 亿帆SDK对接⽂档: V5.3.1.0
 
 
 ## 1.开发⽂档修改记录
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
 |-------|:---------|----------|------------|
-| 5.3.0.21 |          |          | 2023.12.28 |
-
+| 5.3.1.0|   1. 新增媒体自渲染广告 </br> 2.更新穿⼭甲⾄5.8.0.9 </br>  3.更新优量汇⾄4.14.50</br>  4.更新百青藤⾄5.3311</br>  5.更新快手⾄3.3.57 </br> 6.更新京东⾄2.5.4 |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.01.06 |
+| 5.3.0.21 |    1、开屏⼴告样式优化</br>2、插屏⼴告样式优化     |     必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本           | 2023.12.28 |
+| 5.3.0.10 |    1、插屏⼴告样式优化 </br> 2、Banner⼴告样式优化； </br>3、填充率优化；</br>4、更新⼴点通⾄4.14.45 </br>5、更新穿⼭甲⾄5.6.0.7 </br>6、更新百度SDK⾄5.322 </br>7、更新京东版本⾄2.5.0      |  必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本              | 2023.11.30 |
+| 5.3.0.9 |  1、开屏⼴告样式优化</br>2、插屏⼴告样式优化    |     必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本           | 2023.10.23 |
+| 5.3.0.0 |  1、插屏样式优化 </br>2、更新⼴点通⾄4.14.31</br>3、更新穿⼭甲⾄5.4.0.5</br>4、更新快⼿SDK⾄3.3.47</br>4、更新百度SDK⾄5.301</br>5、更新京东版本⾄2.3.0     |      必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本          | 2023.09.16 |
+| 5.2.0.3 | 1、⼴告加载和打点优化 |   必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本             | 2023.08.25 |
+| 5.2.0.1 |1、优化Banner位⼴告，⼴告容器⾼度⾃适应；</br>2、更新穿⼭甲SDK⾄5.1.1.0</br> 3、更新⼴点通版本⾄4.14.20</br>4、更新快⼿版本⾄3.3.40</br>5、更新百度SDK⾄5.13</br>6、更新京东版本⾄2.2.4       |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本            | 2023.07.26|
+| 5.1.0.3 |    1.百度和快⼿⼴告优化</br> 2.SDK启动优化     |     必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本           | 2023.06.21 |
+| 5.0.0.0 |    1.修复穿⼭甲开屏打开类点击问题；</br> 2.升级穿⼭甲SDK  |      必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本          | 2023.05.15 |
 ## 2.支持的SDK平台及广告位
 
-| 平台 | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 |
-|-------|---|---|---|---|---|---|---|
-| 穿山甲   |5.2.0.5| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
-| 优量汇   |4.14.45| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
-| 百青藤   |5.324| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
-| 快手     |3.3.53| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 京东     |2.4.6| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 平台 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 |
+|-------|---|---|---|---|---|---|
+| 穿山甲   | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
+| 优量汇   | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
+| 百青藤   | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 
+| 快手     | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 京东     | ✅ | ❌| ✅ | ✅ | ✅ | ❌ |
+| 亿帆     | ✅ | ✅ | ✅ | ✅ |  ❌| ✅ |
+
 **注意:** 
 1.该版本是基于上述SDK平台版本进行开发的
 2.SDK⽀持的架构有：armv7 x86_64 arm64
-3.⽀持iOS版本为9.0及以上
+3.⽀持iOS版本为11.0及以上
 
 ## 3. 快速接入
 
 ### 3.1 开发环境准备
 - 开发工具：推荐使用Xcode 12及以上版本
-- 部署目标：iOS 9.0及以上版本
+- 部署目标：iOS 11.0及以上版本
 - 开发管理工具：[CocoaPods](https://cocoapods.org/)
-- 
 ### 3.2 引入SDK
 
 #### 方法一：
@@ -42,17 +50,18 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 
 
 ```
- pod 'YFAdsSDK', '5.3.0.0'
+ pod 'YFAdsSDK', '5.3.1.0'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.14.50'
 #穿⼭甲⼴告
- pod 'Ads-CN', '5.2.0.5'
+ pod 'Ads-CN', '5.8.0.9'
 #快⼿⼴告SDK
- pod 'KSAdSDK', '3.3.53', :inhibit_warnings => false
+ pod 'KSAdSDK', '3.3.57', :inhibit_warnings => false
 #百度⼴告SDK
- pod 'BaiduMobAdSDK', '5.33'
+ pod 'BaiduMobAdSDK', '5.3311'
 #京东⼴告SDK
- pod 'JADYun', '2.4.6' 
+ pod 'JADYun', '2.5.4' 
+
 ```
 
 #### <font color="red">注意事项：</font>
@@ -97,7 +106,6 @@ SKAdNetwork⽀持
 ```
 穿⼭甲：238da6jt44.skadnetwork，22mmun2rn5.skadnetwork，x2jnk7ly8j.skadnetwork
 ⼴点通：f7s53z58qe.skadnetwork
-爱奇艺：27a282f54n.skadnetwork
 ```
 
 ```
@@ -153,7 +161,7 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 ### 3.4 请求失败可能的原因
 
-1. 应⽤包名，appID, appKey, posID 必须匹配。（不能直接⽤demo中的appkey和posID在你的⼯程中请求⼴告）。
+1. 应⽤包名，appID, posID 必须匹配。（不能直接⽤demo中的posID在你的⼯程中请求⼴告）。
 2. 确保⽹络连接正常。（可⽤Wi-Fi和手机⽹络分别请求⼴告验证）。
 3. 同⼀天，同⼀设备，⼴告展示有次数限制。（可更换不同设备请求⼴告）。
 4. 测试设备不要限制⼴告跟踪（⼴告请求需要获取idfa）。
@@ -161,19 +169,10 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 ### 3.5 初始化SDK及全局配置
 
-
 ```
     [YFAdSDKManager setupSDKWithAppId:[YFEnvironmentManager getAPP_ID] config:^YFAdSDKSetting * (YFAdSDKSetting * c) {
-#ifdef DEBUG
-        // 打开日志开关，线上环境请关闭z
-        c.level = YFAdLogLevel_Info;
-
-#endif
-        c.level = YFAdLogLevel_Debug;
-
         c.customIDFA = idfa;
         return c;
-
     }];
 ```
 
@@ -182,9 +181,8 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 ⽬前⽀持多维度的扩展字段，可以设置⾃定义数据，后台可以根据维度做云控和数据统计
 
 ```
-    [YFAdSDKSetting shareInstance].customIDFA = @"";
-    [YFAdSDKSetting shareInstance].device_geo_lat = @"";
-    [YFAdSDKSetting shareInstance].device_geo_lon = @"";
+    [YFAdSDKSetting shareInstance].customIDFA = idfa;
+    [YFAdSDKSetting shareInstance].userId = @"test";
 
 ```
 
@@ -194,7 +192,6 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 ### 4.1 开屏⼴告
 
-*开屏⼴告⽬前不⽀持横屏，⽀持的⼴告源：穿⼭甲、⼴点通、快⼿、百度
  
 1.请求代码
  ```
@@ -457,7 +454,7 @@ fcAdFullScreenVideo.delegate=self;
 
  ```
 
-### 4.5 激励视频⼴告
+### 4.5 信息流⼴告
 
 1.请求代码
  ```
@@ -590,60 +587,143 @@ fcAdFullScreenVideo.delegate=self;
     }
 }
  ```
-### 4.6 错误码
-    ### 4.6 错误码
-       101 : @"请求失败",
-       102 : @"请求返回失败",
-       103 : @"请求网络状态码错误",
-       104 : @"请求返回内容解析错误",
-       105 : @"请求网络状态码错误",
-       110 : @"未设置打底渠道",
-       111 : @"CPT但本地无策略",
-       112 : @"有策略但未命中目标渠道",
-       113 : @"本地无策略",
-       114 : @"本地策略都执行失败",
-       115 : @"请求超出设定总时长",
-       116 : @"策略中未配置渠道",
-       
-       10000 : @"服务器异常",
-       10001 : @"跳转超时失败",
-       10002 : @"配置返回失败",
-       10003 : @"配置数据解析失败",
-       10004 : @"上报返回失败",
-       10005 : @"无广告返回，请联系管理员",
-       10007 : @"超出当前配置的每小时广告展示次数，请联系管理员",
-       10008 : @"超出当前配置的每天广告展示次数，请联系管理员",
-       10009 : @"超出当前配置的展示次数，请联系管理员",
-       10010 : @"广告单层超时",
-       
-       13001 : @"百度加载失败",
-       13002 : @"百度渲染失败",
-       13003 : @"百度缓存失败",
+ ### 4.6 媒体自渲染
 
-       //京东
-       19001 : @"京东加载失败",
-       19002 : @"京东渲染失败",
-   
-       //亿帆
-       15001 : @"亿帆加载失败",
-       15002 : @"亿帆渲染失败",
+1.请求代码
+ ```
+- (void)loadAndShowAd {
+    [super loadAndShowAd];
+    [self loadAdWithState:AdState_Normal];
+    self.adMediaRender = [[YFAdMediaRender alloc] initWithAdUnitID:@"d53d8fec49c544fd948f5eef5f805201" viewController:self];
+    self.adMediaRender.delegate = self;
+    _isAdLoaded = false;
+    [self.adMediaRender loadAndShowAd];
+    [self loadAdWithState:AdState_Loading];
+
+}
+ ```
+ 
+2.回调方法
+ ```
+- (void)deallocAd {
+    self.adMediaRender.delegate = nil;
+    self.adMediaRender = nil;
+    self.isLoaded = NO;
+    [self loadAdWithState:AdState_Normal];
+}
+
+
+//广告展示
+- (void)showRanderAd:(id)media {
+    [media muteEnable:YES];
+
+    DemoNativeSelfRenderView *selfRenderView = [[DemoNativeSelfRenderView alloc] initWithOffer:media];
+    NSMutableArray * clickableViews = [[NSMutableArray alloc] initWithCapacity:0];
+    if(selfRenderView.mediaView){
+        [clickableViews addObject:selfRenderView.mediaView];
+    }
+    
+    [clickableViews addObjectsFromArray:@[selfRenderView.ctaLabel,selfRenderView.titleLabel,selfRenderView.textLabel,selfRenderView.mainImageView,selfRenderView.iconImageView]];
+
+    [media registerContainer:selfRenderView withClickableViews:clickableViews];
+    DemoMediaRenderDetailViewController *showVc = [[DemoMediaRenderDetailViewController alloc] initWithAdView:selfRenderView offer:media];
+    [self.navigationController pushViewController:showVc animated:YES];
+    
+}
+
+
+
+/// 获取自渲染数据
+- (void)fcAdGetMediaRenderDataSuccess:(NSArray *)mediaRenders {
+    [self showRanderAd:mediaRenders.firstObject];
+    [JDStatusBarNotification showWithStatus:@"广告加载成功" dismissAfter:1.5];
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功", __func__]];
+}
+
+
+/// 广告加载失败
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description {
+    NSLog(@"广告展示失败 %s  error: %@ 详情:%@", __func__, error, description);
+    //通知主线程刷新
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告加载异常: \r\n%@", __func__,error.userInfo.description]];
+        [self showErrorWithDescription:description];
+    });
+    
+    [self loadAdWithState:AdState_LoadFailed];
+    [self deallocAd];
+
+}
+
+/**
+ This method is called when native ad  render  success
+ */
+- (void)mediaAdRenderSuccess:(YFAdMedia *)mediaAd {
+    NSLog(@"广告曝光回调 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光成功", __func__]];
+}
+/**
+ This method is called when native ad  render  fail
+ */
+- (void)mediaAdRenderFail:(YFAdMedia *)mediaAd {
+    NSLog(@"广告曝光回调 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光失败", __func__]];
+}
+/**
+ This method is called when native ad is clicked.
+ */
+- (void)mediaAdDidClick:(YFAdMedia *)mediaAd {
+    NSLog(@"广告点击 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告点击成功", __func__]];
+}
+/**
+ This method is called when native ad play finished.
+ */
+- (void)mediaAdVideoPlayFinished:(YFAdMedia *)mediaAd {
+    NSLog(@"广告视频播放完成 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告视频播放完成", __func__]];
+}
+
+ ```
+### 4.7 错误码
+10000 : @"服务器异常",</br>
+10001 : @"跳转超时失败",</br>
+10002 : @"配置返回失败",</br>
+10003 : @"配置数据解析失败",</br>
+10004 : @"上报返回失败",</br>
+10005 : @"无广告返回，请联系管理员",</br>
+10007 : @"超出当前配置的每小时广告展示次数，请联系管理员",</br>
+10008 : @"超出当前配置的每天广告展示次数，请联系管理员",</br>
+10009 : @"超出当前配置的展示次数，请联系管理员",</br>
+10010 : @"广告单层超时",</br>
        
-       //穿山甲
-       11001  : @"穿山甲请求广告数据失败",
-       11002  : @"穿山甲接收广告加载失败",
-       11003  : @"穿山甲广告物料加载失败",
-       11004  : @"穿山甲广告渲染失败",
-       11005  : @"穿山甲视频广告播放完成发生错误",
-       11006  : @"穿山甲广告展示失败",
-       11007  : @"穿山甲广告异步请求的服务器验证失败",
+13001 : @"百度加载失败",</br>
+13002 : @"百度渲染失败",</br>
+13003 : @"百度缓存失败",</br>
+
+
+19001 : @"京东加载失败",</br>
+19002 : @"京东渲染失败",</br>
+
+15001 : @"亿帆加载失败",</br>
+15002 : @"亿帆渲染失败",</br>
+       
+
+11001 : @"穿山甲请求广告数据失败",</br>
+11002 : @"穿山甲接收广告加载失败",</br>
+11003 : @"穿山甲广告物料加载失败",</br>
+11004 : @"穿山甲广告渲染失败",</br>
+11005 : @"穿山甲视频广告播放完成发生错误",</br>
+11006 : @"穿山甲广告展示失败",</br>
+11007 : @"穿山甲广告异步请求的服务器验证失败",</br>
       
-       //优量汇
-       41001 : @"优量汇请求广告数据失败",
-       41002 : @"优量汇接收广告加载失败",
-       41003 : @"优量汇广告物料加载失败",
-       41004 : @"优量汇广告渲染失败",
-       41005 : @"优量汇视频广告播放完成发生错误",
-       41006 : @"优量汇广告展示失败",
-       41007 : @"优量汇广告异步请求的服务器验证失败",
+
+41001 : @"优量汇请求广告数据失败",</br>
+41002 : @"优量汇接收广告加载失败",</br>
+41003 : @"优量汇广告物料加载失败",</br>
+41004 : @"优量汇广告渲染失败",</br>
+41005 : @"优量汇视频广告播放完成发生错误",</br>
+41006 : @"优量汇广告展示失败",</br>
+41007 : @"优量汇广告异步请求的服务器验证失败",</br>
 
 
