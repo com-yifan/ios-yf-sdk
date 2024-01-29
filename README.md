@@ -5,7 +5,7 @@
 ## 1.开发⽂档修改记录
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
 |-------|:---------|----------|------------|
-| 5.3.1.0|   1. 更新百青藤⾄5.332</br>  2.更新京东摇一摇组件</br> 3.新增广告类型贴片、draw </br> <font color="red">4.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.01.29 |
+| 5.3.2.0|   1. 更新百青藤⾄5.332</br>  2.更新京东摇一摇组件</br> 3.新增广告类型贴片、draw </br> <font color="red">4.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.01.29 |
 | 5.3.1.0|   1. 新增媒体自渲染广告 </br> 2.更新穿⼭甲⾄5.8.1.2 </br>  3.更新优量汇⾄4.14.62</br>  4.更新百青藤⾄5.332</br>  5.更新快手⾄3.3.57 </br> 6.更新京东⾄2.5.4 |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.01.06 |
 | 5.3.0.21 |    1、开屏⼴告样式优化</br>2、插屏⼴告样式优化     |     必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本           | 2023.12.28 |
 | 5.3.0.10 |    1、插屏⼴告样式优化 </br> 2、Banner⼴告样式优化； </br>3、填充率优化；</br>4、更新⼴点通⾄4.14.45 </br>5、更新穿⼭甲⾄5.6.0.7 </br>6、更新百度SDK⾄5.322 </br>7、更新京东版本⾄2.5.0      |  必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本              | 2023.11.30 |
@@ -200,7 +200,7 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 1.请求代码
  ```
 
-    FCAdSplash *splash = [[FCAdSplash alloc] initWithAdUnitID:@"0bbcfd82-779d-4ff8-9a38-781b31c5ab61"viewController:self];
+    YFAdSplash *splash = [[YFAdSplash alloc] initWithAdUnitID:@"0bbcfd82-779d-4ff8-9a38-781b31c5ab61"viewController:self];
     splash.delegate = self;
     splash.showLogoRequire = YES;
     splash.logoImage = [UIImage imageNamed:@"app_logo"];
@@ -218,7 +218,7 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 }
 
 /// 广告曝光成功
-- (void)fcAdExposured {
+- (void)fcAdExposured:(YFAdBaseAdapter *)model {
    
 }
 
@@ -230,12 +230,12 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 
 /// 广告点击
-- (void)fcAdClicked {
+- (void)fcAdClicked:(YFAdBaseAdapter *)model {
 
 }
 
 /// 广告关闭
-- (void)fcAdDidClose {
+- (void)fcAdDidClose:(YFAdBaseAdapter *)model {
     
 }
 
@@ -285,17 +285,17 @@ fcAdBanner.delegate = self;
 
 
 /// 广告曝光
-- (void)fcAdExposured {
+- (void)fcAdExposured:(YFAdBaseAdapter *)model {
  
 }
 
 /// 广告点击
-- (void)fcAdClicked {
+- (void)fcAdClicked:(YFAdBaseAdapter *)model {
 
 }
 
 /// 广告关闭回调
-- (void)fcAdDidClose {
+- (void)fcAdDidClose:(YFAdBaseAdapter *)model {
    
 }
 
@@ -310,7 +310,7 @@ fcAdBanner.delegate = self;
  ```
  - (void)loadAdAndShow {
   
-    FCAdInterstitial * fcAdInterstitial = [[FCAdInterstitial alloc] initWithAdUnitID:PID viewController:self];
+    YFAdInterstitial * fcAdInterstitial = [[YFAdInterstitial alloc] initWithAdUnitID:PID viewController:self];
     fcAdInterstitial.delegate = self;
     [fcAdInterstitial loadAndShowAd];
 }
@@ -331,17 +331,17 @@ fcAdBanner.delegate = self;
 
 
 /// 广告曝光
-- (void)fcAdExposured {
+- (void)fcAdExposured:(YFAdBaseAdapter *)model {
  
 }
 
 /// 广告点击
-- (void)fcAdClicked {
+- (void)fcAdClicked:(YFAdBaseAdapter *)model {
 
 }
 
 /// 广告关闭回调
-- (void)fcAdDidClose {
+- (void)fcAdDidClose:(YFAdBaseAdapter *)model {
    
 }
 
@@ -356,9 +356,9 @@ fcAdBanner.delegate = self;
  ```
  - (void)loadAdAndShow {
   
-FCAdFullScreenVideo * fcAdFullScreenVideo  = [[FCAdFullScreenVideo alloc] initWithAdUnitID:@"728b5f9b-9b97-404b-8897-1e7b3d719aaf" viewController:self];
-fcAdFullScreenVideo.delegate=self;
-[fcAdFullScreenVideo loadAndShowAd];
+     YFAdFullScreenVideo * fcAdFullScreenVideo  = [[YFAdFullScreenVideo alloc] initWithAdUnitID:@"728b5f9b-9b97-404b-8897-1e7b3d719aaf" viewController:self];
+     fcAdFullScreenVideo.delegate=self;
+     [fcAdFullScreenVideo loadAndShowAd];
 }
  ```
  
@@ -370,12 +370,12 @@ fcAdFullScreenVideo.delegate=self;
 }
 
 /// 广告曝光
-- (void)fcAdExposured {
+- (void)fcAdExposured:(YFAdBaseAdapter *)model {
  
 }
 
 /// 广告点击
-- (void)fcAdClicked {
+- (void)fcAdClicked:(YFAdBaseAdapter *)model {
   
 }
 
@@ -403,7 +403,7 @@ fcAdFullScreenVideo.delegate=self;
  ```
  - (void)loadAdAndShow {
   
-   FCAdRewardVideo * fcAdRewardVideo = [[FCAdRewardVideo alloc] initWithAdUnitID:PID viewController:self];
+   YFAdRewardVideo * fcAdRewardVideo = [[YFAdRewardVideo alloc] initWithAdUnitID:PID viewController:self];
     fcAdRewardVideo.delegate=self;
     [fcAdRewardVideo loadAndShowAd];
 }
@@ -428,12 +428,12 @@ fcAdFullScreenVideo.delegate=self;
 }
 
 /// 广告曝光
-- (void)fcAdExposured {
+- (void)fcAdExposured:(YFAdBaseAdapter *)model {
 
 }
 
 /// 广告点击
-- (void)fcAdClicked {
+- (void)fcAdClicked:(YFAdBaseAdapter *)model {
   
 }
 
@@ -447,7 +447,7 @@ fcAdFullScreenVideo.delegate=self;
 
 
 /// 广告关闭
-- (void)fcAdDidClose {
+- (void)fcAdDidClose:(YFAdBaseAdapter *)model {
 
 }
 
@@ -464,7 +464,7 @@ fcAdFullScreenVideo.delegate=self;
  ```
  - (void)loadAdAndShow {
   
-       FCAdNativeExpress * advanceFeed = [[FCAdNativeExpress alloc] initWithAdUnitID:PID adContainer:nil  viewController:self adSize:CGSizeMake(self.view.bounds.size.width, 0)];
+       YFAdNativeExpress * advanceFeed = [[YFAdNativeExpress alloc] initWithAdUnitID:PID adContainer:nil  viewController:self adSize:CGSizeMake(self.view.bounds.size.width, 0)];
     advanceFeed.delegate = self;
     [advanceFeed loadAndShowAd];
 }
@@ -689,7 +689,312 @@ fcAdFullScreenVideo.delegate=self;
 }
 
  ```
-### 4.7 错误码
+
+
+ ### 4.6 视频贴片
+
+1.请求代码
+ ```
+- (void)loadAndShowAd{
+    if (!_contentV) {
+        _contentV = [[UIView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.width * 400.0 /600.0)];
+        [self.view addSubview:self.contentV];
+    }
+    
+    
+    if (!self.adPatch) {
+        self.adPatch = [[YFAdPatch alloc] initWithAdUnitID:[YFEnvironmentManager getPATCH_ID] adContainer:_contentV viewController:self];
+        self.adPatch.delegate = self;
+        [self.adPatch loadAndShowAd];
+    }
+    
+}
+
+ ```
+ 
+2.回调方法
+ ```
+
+
+
+- (void)deallocAd {
+    [self.contentV removeFromSuperview];
+    self.contentV = nil;
+    if (self.adPatch) {
+        self.adPatch.delegate = nil;
+        self.adPatch = nil;
+    }
+}
+
+/// 广告数据加载成功
+- (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
+    
+}
+
+/// 广告加载失败
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+    
+   
+    [self deallocAd];
+}
+
+
+/// 广告曝光
+-(void)fcAdExposured:(id)adapter{
+    NSLog(@"贴片广告曝光回调 %s", __func__);
+}
+
+/// 广告点击
+- (void)fcAdClicked:(id)adapter{
+    NSLog(@"贴片广告点击 %s", __func__);
+}
+
+/// 广告关闭回调
+- (void)fcAdDidClose:(id)adapter{
+    NSLog(@"贴片广告关闭了 %s", __func__);
+    [self deallocAd];
+}
+
+-(void)dealloc {
+    NSLog(@"贴片释放 %s", __func__);
+    [self deallocAd];
+}
+
+
+ ```
+
+### 4.7 Draw 视频
+
+1.请求代码
+ ```
+- (void)loadAd {
+    [super loadAd];
+    [self deallocAd];
+    [self loadAdWithState:AdState_Normal];
+    
+    _isLoadAndShow = NO;
+    
+    for (NSInteger i =0 ; i <= 5; i++) {
+        [self.dataArr addObject:@"App NormalCell"];
+    }
+        
+    self.advanceDraw = [[YFAdDraw alloc] initWithAdUnitID:[YFEnvironmentManager getDRAW_ID] adContainer:nil viewController:self adSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width * 400.0 /600.0)];
+    self.advanceDraw.count = 1;
+    self.advanceDraw.delegate = self;
+    [self.advanceDraw loadAd];
+    [self loadAdWithState:AdState_Loading];
+
+}
+
+ ```
+ 
+2.回调方法
+ ```
+
+
+
+- (void)showAd {
+    if (!self.advanceDraw || !self.isLoaded || self.dataArr.count == 0 || self.adViews.count == 0) {
+        [JDStatusBarNotification showWithStatus:@"请先加载广告" dismissAfter:1.5];
+        return;
+    }
+    [self showNativeAd];
+}
+
+
+- (void)loadAndShowAd {
+    [super loadAd];
+    [self deallocAd];
+    [self loadAdWithState:AdState_Normal];
+    
+    _isLoadAndShow = YES;
+
+    for (NSInteger i =0 ; i <= 5; i++) {
+        [self.dataArr addObject:@"App NormalCell"];
+    }
+    
+    self.advanceDraw = [[YFAdDraw alloc] initWithAdUnitID:[YFEnvironmentManager getDRAW_ID] adContainer:nil viewController:self adSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    self.advanceDraw.delegate = self;
+    self.advanceDraw.count = 1;
+    [self.advanceDraw loadAndShowAd];
+    [self loadAdWithState:AdState_Loading];
+  
+}
+
+- (void)deallocAd {
+    if (self.tableView.hidden) {
+        return;
+    }
+    [self.dataArr removeAllObjects];
+    [self.adViews removeAllObjects];
+    self.advanceDraw.delegate = nil;
+    self.advanceDraw = nil;
+    self.isLoaded = NO;
+    [self.tableView reloadData];
+    [self loadAdWithState:AdState_Normal];
+    self.tableView.hidden = YES;
+    self.closeBtn.hidden = YES;
+}
+
+// Draw流广告比较特殊, 渲染逻辑需要自行处理
+- (void)showNativeAd {
+    
+    [self.adViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        YFAdDrawView *expressView = (YFAdDrawView *)obj;
+        NSUInteger index = arc4random() % (self.dataArr.count-3)+2;
+        [self.dataArr insertObject:expressView atIndex:index];
+    }];
+    self.tableView.hidden = NO;
+    self.closeBtn.hidden = NO;
+    [self.tableView reloadData];
+}
+
+
+
+// MARK: ======================= YFAdDrawDelegate =======================
+/// 广告数据拉取成功
+- (void)fcAdDrawOnAdLoadSuccess:(NSArray *)views {
+    NSLog(@"广告拉取成功 %s", __func__);
+    self.adViews = [views mutableCopy];
+    
+    if (_isLoadAndShow) {
+        [self showNativeAd];
+    }
+    
+
+
+}
+
+
+/// 广告曝光
+- (void)fcAdDrawOnAdShow:(YFAdDrawView *)adView {
+    NSLog(@"广告曝光 %s", __func__);
+}
+
+/// 广告点击
+- (void)fcAdDrawOnAdClicked:(YFAdDrawView *)adView {
+    NSLog(@"广告点击 %s", __func__);
+}
+
+/// 广告渲染成功
+/// 注意和广告数据拉取成功的区别  广告数据拉取成功, 但是渲染可能会失败
+/// 广告加载失败 是广点通 穿山甲 mercury 在拉取广告的时候就全部失败了
+/// 该回调的含义是: 比如: 广点通拉取广告成功了并返回了一组view  但是其中某个view的渲染失败了
+/// 该回调会触发多次
+- (void)fcAdDrawOnAdRenderSuccess:(YFAdDrawView *)adView {
+    NSLog(@"广告渲染成功 %s %@", __func__, adView);
+}
+
+/// 广告渲染失败
+/// 注意和广告加载失败的区别  广告数据拉取成功, 但是渲染可能会失败
+/// 广告加载失败 是广点通 穿山甲 mercury 在拉取广告的时候就全部失败了
+/// 该回调的含义是: 比如: 广点通拉取广告成功了并返回了一组view  但是其中某个view的渲染失败了
+/// 该回调会触发多次
+- (void)fcAdDrawOnAdRenderFail:(YFAdDrawView *)adView {
+    NSLog(@"广告渲染失败 %s %@", __func__, adView);
+    [_dataArr removeObject: adView];
+    [self.tableView reloadData];
+}
+
+/// 广告加载失败
+/// 该回调只会触发一次
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+    NSLog(@"广告展示失败 %s  error: %@ 详情:%@", __func__, error, description);
+    [self showErrorWithDescription:description];
+    [self deallocAd];
+
+}
+
+
+
+/// 广告被关闭
+- (void)fcAdDrawOnAdClosed:(YFAdDrawView *)adView {
+    //需要从tableview中删除
+    NSLog(@"广告关闭 %s", __func__);
+    [_dataArr removeObject: adView];
+    [self.tableView reloadData];
+}
+
+
+// MARK: ======================= UITableViewDelegate, UITableViewDataSource =======================
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return _expressAdViews.count*2;
+//    return 2;
+    return self.dataArr.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [DemoDrawNormalCell cellHeight];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger index = indexPath.row;
+    id model = self.dataArr[index];
+    if (![model isKindOfClass:[YFAdDrawView class]]) {
+        DemoDrawNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(DemoDrawNormalCell.class)];
+        if (!cell) {
+            cell = [[DemoDrawNormalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(DemoDrawNormalCell.class)];
+        }
+
+        [cell refreshUIAtIndex:index];
+        
+        return cell;
+    } else {
+        DemoDrawAdCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(DemoDrawAdCell.class)];
+        if (!cell) {
+            cell = [[DemoDrawAdCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(DemoDrawAdCell.class)];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        YFAdDrawView *drawAd = _dataArr[index];
+        [cell refreshWithDrawAd:drawAd];
+
+        return cell;
+    }
+}
+
+-(void)dealloc {
+    NSLog(@"Draw流释放 %s", __func__);
+}
+
+
+-(NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
+
+-(NSMutableArray *)adViews{
+    if (!_adViews) {
+        _adViews = [NSMutableArray array];
+    }
+    return _adViews;
+}
+
+- (UITableView *)tableView {
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.pagingEnabled = YES;
+        _tableView.showsVerticalScrollIndicator = NO;
+        _tableView.allowsSelection = NO;
+        _tableView.hidden = YES;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        if (@available(iOS 15, *)) {
+            _tableView.prefetchingEnabled = NO;
+        }
+    }
+    return _tableView;
+}
+
+
+ ```
+
+
+### 4.9 错误码
 10000 : @"服务器异常",</br>
 10001 : @"跳转超时失败",</br>
 10002 : @"配置返回失败",</br>
