@@ -70,6 +70,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 品牌
 @property (nonatomic, copy) NSString * db;
 
+/// 设备型号
+@property (nonatomic, assign) NSString * dm;
+
 
 @end
 

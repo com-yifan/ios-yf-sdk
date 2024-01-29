@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CsjNativeExpressAdapter : YFAdBaseAdPosition
+@interface YFCsjNativeExpressAdapter : YFAdBaseAdPosition
 @property (nonatomic, weak) id<YFAdNativeExpressDelegate> delegate;
 
 @end

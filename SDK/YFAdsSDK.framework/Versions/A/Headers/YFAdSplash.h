@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFAdSplash : YFAdBaseAdapter <NSCopying>
+@interface YFAdSplash : YFAdBaseAdapter
 
 /// 广告方法回调代理
 @property (nonatomic, weak) id<YFAdSplashDelegate> delegate;

@@ -21,6 +21,7 @@
 - (instancetype)initOtherplatformModel:(id)model;
 - (instancetype)initGdtplatformModel:(id)model;
 - (void)toStartMotion;
+- (void)toStopMotion;
 
 @property(nonatomic, copy) void (^toTapBarAnimatioShakeOrTwist)(YFMotionSensitivity motionSensitivity, YFMotionStyle motionStyle, YFMotionJump motionJump);
 

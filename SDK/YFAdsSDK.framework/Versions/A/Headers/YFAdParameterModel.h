@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 设备类型，仅支持IOS系统，可供选择包括：Iphone、ipad
 @property (nonatomic, copy) NSString *deviceType;
+/// 设备型号
+@property (nonatomic, copy) NSString *deviceModel;
 /// 1表示wifi,2表示2G，3表示3G，4表示4G，5表示5G
 @property (nonatomic, assign,readonly) NSInteger netType;
 /// 聚合SDK版本

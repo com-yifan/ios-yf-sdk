@@ -13,9 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdBaseAdPosition : NSObject
 /// 标记渠道
-@property (nonatomic, assign) NSInteger tag;// 标记并行渠道为了找到响应的adapter
-/// 无用删除
-@property (nonatomic, assign) BOOL fristShow;
+@property (nonatomic, assign) NSInteger tag;
 /// 广告价值
 @property (nonatomic, assign) double ecpm;
 /// 是否填充

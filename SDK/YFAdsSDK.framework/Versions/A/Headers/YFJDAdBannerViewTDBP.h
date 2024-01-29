@@ -12,10 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFJDAdBannerViewTDBP: YFJDBannerView
 
--(instancetype)initWithFrame:(CGRect)frame model:(id)model;
-
--(float)getViewHeight;
--(void)loadAdData:(JADNativeAd *)dataObject;
 
 @end
 

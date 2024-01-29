@@ -12,13 +12,11 @@
 /// 获取自渲染数据
 - (void)fcAdGetMediaRenderDataSuccess:(NSArray *)mediaRenders;
 /// 广告曝光成功
-- (void)fcAdExposured;
+- (void)fcAdExposured:(id)adapter;
 /// 广告点击回调
-- (void)fcAdClicked;
-/// 广告数据请求成功后调用
-- (void)fcAdUnifiedViewDidLoad;
+- (void)fcAdClicked:(id)adapter;
 /// 广告关闭的回调
-- (void)fcAdDidClose;
+- (void)fcAdDidClose:(id)adapter;
 /// 广告关闭的回调  横幅使用
 - (void)fcAdDidCloseWithView:(UIView *)view;
 

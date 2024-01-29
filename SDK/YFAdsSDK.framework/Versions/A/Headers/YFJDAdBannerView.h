@@ -11,15 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFJDAdBannerView : YFJDBannerView
-@property (nonatomic, strong) YFAdImageView *contentView;
-@property (nonatomic, strong) UIButton *closeBtn;
-@property (nonatomic, strong) UIView *subView;
-@property (nonatomic, strong) UILabel *title;
-@property (nonatomic, strong) UILabel *otherBtn;
--(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 
--(float)getViewHeight;
--(void)loadAdData:(JADNativeAd *)dataObject;
+
 
 @end
 
