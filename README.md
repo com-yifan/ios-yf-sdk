@@ -1,10 +1,11 @@
 
-# 亿帆SDK对接⽂档: V5.3.2.0
+# 亿帆SDK对接⽂档: V5.3.2.1
 
 
 ## 1.开发⽂档修改记录
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
 |-------|:---------|----------|------------|
+| 5.3.2.1|   1.修复已知问题</br> <font color="red">2.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.02.01 |
 | 5.3.2.0|   1. 更新百青藤⾄5.332</br>  2.更新京东摇一摇组件</br> 3.新增广告类型贴片、draw </br> <font color="red">4.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.01.29 |
 | 5.3.1.0|   1. 新增媒体自渲染广告 </br> 2.更新穿⼭甲⾄5.8.1.2 </br>  3.更新优量汇⾄4.14.62</br>  4.更新百青藤⾄5.332</br>  5.更新快手⾄3.3.57 </br> 6.更新京东⾄2.5.4 |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.01.06 |
 | 5.3.0.21 |    1、开屏⼴告样式优化</br>2、插屏⼴告样式优化     |     必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本           | 2023.12.28 |
@@ -860,9 +861,6 @@ fcAdBanner.delegate = self;
     if (_isLoadAndShow) {
         [self showNativeAd];
     }
-    
-
-
 }
 
 

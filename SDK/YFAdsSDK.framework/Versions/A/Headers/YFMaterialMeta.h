@@ -115,7 +115,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 应用评论数(大于 0)
 @property(nonatomic, assign) NSUInteger comments;
 // 广告曝光时必须触发上报
-@property(nonatomic, copy) NSArray *monitorUr;
+@property(nonatomic, copy) NSArray *monitorUrl;
 // 广告被点击时必须触发上报
 @property(nonatomic, copy) NSArray *clickUrl;
 // 竞价失败时，调用的通知 URL
