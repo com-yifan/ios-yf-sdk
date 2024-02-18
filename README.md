@@ -1,10 +1,11 @@
 
-# 亿帆SDK对接⽂档: V5.3.2.3
+# 亿帆SDK对接⽂档: V5.3.2.4
 
 
 ## 1.开发⽂档修改记录
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
-|-------|:---------|----------|------------|
+|--------|---------|----------|------------|
+| 5.3.2.4|   1.修复已知问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.02.18 |
 | 5.3.2.3|   1.修复已知问题</br> <font color="red">2.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.02.01 |
 | 5.3.2.0|   1. 更新百青藤⾄5.332</br>  2.更新京东摇一摇组件</br> 3.新增广告类型贴片、draw </br> <font color="red">4.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.01.29 |
 | 5.3.1.0|   1. 新增媒体自渲染广告 </br> 2.更新穿⼭甲⾄5.8.1.2 </br>  3.更新优量汇⾄4.14.62</br>  4.更新百青藤⾄5.332</br>  5.更新快手⾄3.3.57 </br> 6.更新京东⾄2.5.4 |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.01.06 |
@@ -52,7 +53,7 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 
 
 ```
- pod 'YFAdsSDK', '5.3.2.0'
+ pod 'YFAdsSDK', '5.3.2.4'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.14.62'
 #穿⼭甲⼴告
@@ -135,7 +136,7 @@ SKAdNetwork⽀持
   </array>
 ```
 
-3、获取App Tracking Transparency 权限，请更新您的 Info.plist，添加
+3.获取App Tracking Transparency 权限，请更新您的 Info.plist，添加
 NSUserTrackingUsageDescription 字段和⾃定义⽂案描述
 
 ```
@@ -143,7 +144,7 @@ NSUserTrackingUsageDescription 字段和⾃定义⽂案描述
 <string>该标识符将⽤于向您投放个性化⼴告</string>
 ```
 
-4、从 iOS 14 开始，在应⽤程序调⽤ App Tracking Transparency 向⽤户提跟踪授权请求之前，IDFA将不可⽤。 如果应⽤未提出此请求，应⽤获取到的 IDFA 将⾃动清零，可能会导致您的⼴告收⼊的降低
+4.从 iOS 14 开始，在应⽤程序调⽤ App Tracking Transparency 向⽤户提跟踪授权请求之前，IDFA将不可⽤。 如果应⽤未提出此请求，应⽤获取到的 IDFA 将⾃动清零，可能会导致您的⼴告收⼊的降低
 
 ```
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
@@ -158,6 +159,34 @@ tionStatus status) {
 }
 
 ```
+**<font color="red">5. 微信小程序⼴告⽀持：</font>** 
+
+集成微信OpenSDK，可有效提升流量的填充和CPM值
+集成步骤：
+在微信开发平台注册APPID和Universal Links
+集成微信open sdk
+提供APPID和Universal Links给运营进⾏绑定
+
+**<font color="red">6.LSApplicationQueriesSchemes⽩名单设置：</font>** 
+
+
+
+为了提升⼴告价值，需要在info.plist⾥⾯配置url⽩名单，确保配置在前50个以内。
+
+```
+taobao
+tbopen
+openjd
+openjx
+taobaolite
+meituan0000
+pddopen
+snssdk1128
+snssdk2329
+kwai
+ksnebula
+```
+
 
 ### 3.3 跳转须知
 
@@ -991,8 +1020,7 @@ fcAdBanner.delegate = self;
 
  ```
 
-
-### 4.9 错误码
+## 5、错误码
 10000 : @"服务器异常",</br>
 10001 : @"跳转超时失败",</br>
 10002 : @"配置返回失败",</br>
@@ -1033,4 +1061,12 @@ fcAdBanner.delegate = self;
 41006 : @"优量汇广告展示失败",</br>
 41007 : @"优量汇广告异步请求的服务器验证失败",</br>
 
+## 6、 收集的数据类型
 
+| 数据类型 | 收集情况 | 备注  |
+|--------|---------|----------|
+| 1.精确位置 Precise Location </br>2.粗略位置 Rough Location|1.精确位置-可选收集</br> 2.粗略位置-不收集|会获取地理位置信息⽤于⼴告投放与反作弊。应⽤被⽤户授予地理位置权限时，会获取地理位置信息，不会主动获取地理位置权限及地理位置信息。|
+|设备ID|可选收集|设备ID当应⽤被⽤户授予⼴告追踪权限时，将获取idfa⽤于⼴告归因与追踪。|
+|1.使⽤数据 UsageData </br> 2.产品交互ProductInteraction</br>3.⼴告数据Advertising Data</br>4.其他使⽤数据 OtherUsage Data|1.使⽤数据-不收集</br>2.产品交互-不收集</br>3.⼴告数据-收集</br>4.其他使⽤数据-不收集|将统计⼴告数据，以⽤于⼴告主统计投放结果。展示 、点击 、转化|
+|诊断Diagnostics</br>1.崩溃数据Crash Data</br>2.性能数据Performance Data</br>3.其他诊断数据 OtherDiagnostic Data|1.崩溃数据-收集</br>2.性能数据-收集其他</br>3.诊断数据-不收集|崩溃数据联盟将收集联盟SDK带来的崩溃信息，以此来优化代码缺陷。性能数据联盟将收集SDK运⾏过程中性能数据，以优化SDK的性能。|
+|1.其他数据 OtherData </br>2.其他数据类型Other Data Types</br>|收集|技术上我们还会收集⼀些设备信息（例如，设备型号、操作系统及版本、时区、⽹络类型等）。|

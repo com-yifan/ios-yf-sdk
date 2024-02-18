@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showInView:(UIView *)view;
 
--(void)loadAdData:(JADNativeAd *)dataObject close: (void(^)(id))close;
+-(void)loadAdData:(JADNativeAd *)dataObject;
 
 -(void)toSetJumpTitle:(int )countDown;
 

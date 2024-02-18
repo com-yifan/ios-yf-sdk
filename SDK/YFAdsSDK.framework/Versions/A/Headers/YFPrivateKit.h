@@ -15,5 +15,6 @@
 #import "YFAdLogManager.h"
 #import "YFAdxDataManager.h"
 #import "YFAdDataManager.h"
+#import "NSObject+YFAdModel.h"
 
 #endif /* YFPrivateKit_h */

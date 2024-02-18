@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)cancelDelay;
 
-- (void)bidding:(YFAdBaseAdPosition *)adapter isSucceed:(BOOL)succeed fristSuceess:(YFAdEventModel *)frist secondSuceess:(YFAdEventModel *)second;
+- (void)logWithTag:(NSString *)tag;
 
 @end
 

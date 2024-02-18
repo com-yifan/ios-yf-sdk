@@ -6,6 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#import "NSObject+YFAdModel.h"
 @class YFAdReportModel;
 @class YFAdEventModel;
 //1-应用打开；2-请求(聚合向广告网络发送请求)；3-填充(聚合向广告网络发送请求)；4-展示(聚合向广告网络发送请求)；5-点击(聚合统计的广告)；6-流量请求(应用向聚合发送请求)；7-流量填充(应用向聚合发送请求)|
