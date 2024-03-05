@@ -11,8 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 信息流view
 @property (nonatomic, strong) UIView *expressView;
 
-//// 渠道标识
-//@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, assign) NSUInteger tag;
+// 渠道标识
+ @property (nonatomic, assign) NSUInteger identifier;
 
 - (void)render;
 

@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#define YFDedicateddimissNotfication @"YFDedicateddimissNotfication"
+#define YFOtherControllerDismissNotification @"YFOtherControllerDismissNotification"
+#define YFOtherControllerShowNotification @"YFOtherControllerShowNotification"
 #import "YFSplashView.h"
 
