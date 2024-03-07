@@ -34,8 +34,8 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 + (NSString *)sdkVersion;
 
 + (instancetype)shareInstance;
-/// 设置扩展设备信息，如不了解该功能，请勿使用。 如@"[{\"device_id\":\"62271333038\"}]"
-@property (nonatomic, copy) NSDictionary *extraDeviceMap;
+/// 自定义参数
+@property (nonatomic, copy) NSDictionary *customDefine;
 ///控制台日志输出开关, 默认开启
 @property (nonatomic, assign) BOOL logEnable;
 /// 自定义IDFA，格式需与IDFA格式相同，xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -46,6 +46,8 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 @property(nonatomic, copy) NSString *device_geo_lon;
 /// 用户ID
 @property(nonatomic, copy) NSString *userId;
+
+@property (nonatomic, copy) NSString *fc_data_url;
 
 @property (nonatomic, copy) NSString *fc_conf_url;
 

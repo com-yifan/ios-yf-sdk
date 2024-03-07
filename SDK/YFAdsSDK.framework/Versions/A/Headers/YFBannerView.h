@@ -7,6 +7,7 @@
 #import "YFPlayerAdControlView.h"
 #import "YFAVPlayerManager.h"
 #import "YFPlayerAdControlView.h"
+#import "YFPlayerController.h"
 
 typedef NS_ENUM(NSInteger, YFBannerViewType) {
     YFBannerViewTypeNormal,///普通banner
@@ -102,7 +103,6 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
  */
 - (float)getViewHeight;
 -(void)toPlayVideo;
--(void)showView:(UIView *)view;
 
 @end
 
