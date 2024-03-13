@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告方法回调代理
 @property (nonatomic, weak) id<YFAdInterstitialDelegate> delegate;
 
+@property(nonatomic, weak) UIView *adContainer;
+
 - (instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;
 
 @end

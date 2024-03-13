@@ -64,5 +64,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+@protocol YFAdMediaDelegate <NSObject>
+
+@optional
+
+
+
+@end
 
 NS_ASSUME_NONNULL_END
