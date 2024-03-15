@@ -4,7 +4,6 @@
 
 
 #import "YFAdCommonDelegate.h"
-// 策略相关的代理
 @protocol YFAdBaseDelegate <YFAdCommonDelegate>
 
 @optional
@@ -17,7 +16,9 @@
 - (void)fcAdClicked:(id)adapter;
 /// 广告关闭的回调
 - (void)fcAdDidClose:(id)adapter;
-/// 广告关闭的回调  横幅使用
+/// 广告落地页关闭的回调
+- (void)fcAdDidDetailPageClose:(id)adapter;
+/// 广告关闭的回调  （横幅使用）
 - (void)fcAdDidCloseWithView:(UIView *)view;
 
 @end
