@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "YFAdsSDK"
-  s.version = "5.3.2.65"
+  s.version = "5.3.2.66"
   s.summary = "iOS YFAdsSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
   s.authors = {"yifan"=>"576661787@qq.com"}
