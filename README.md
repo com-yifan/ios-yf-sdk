@@ -1,11 +1,11 @@
 
-# 亿帆SDK对接⽂档: V5.3.2.63
+# 亿帆SDK对接⽂档: V5.3.2.65
 
 
 ## 1.开发⽂档修改记录
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
 |--------|---------|----------|------------|
-| 5.3.2.63|   1.修复百度展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.03.13 |
+| 5.3.2.65|   1.修复百度展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.03.15 |
 | 5.3.2.27|   1.修复穿山甲展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.03.05 |
 | 5.3.2.4|   1.修复已知问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.02.18 |
 | 5.3.2.3|   1.修复已知问题</br> <font color="red">2.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.02.01 |
@@ -55,7 +55,7 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 
 
 ```
- pod 'YFAdsSDK', '5.3.2.63'
+ pod 'YFAdsSDK', '5.3.2.65'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.14.62'
 #穿⼭甲⼴告
