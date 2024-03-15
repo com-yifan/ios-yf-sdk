@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告Logo
 @property(nonatomic, strong) UIImage *logoImage;
 
-/// 广告未加载出来时的占位图
+/// 广告占位图
 @property(nonatomic, strong) UIImage *backgroundImage;
 
 /// 总超时时间

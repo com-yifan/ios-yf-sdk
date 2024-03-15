@@ -6,6 +6,9 @@
 #import <Foundation/Foundation.h>
 #import "YFAdRewardVideoDelegate.h"
 #import "YFAdBaseAdPosition.h"
+
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class YFAdRewardVideo;
