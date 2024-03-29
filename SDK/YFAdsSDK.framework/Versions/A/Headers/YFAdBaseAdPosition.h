@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 头部竞价
 @property (nonatomic, assign) NSInteger headBidding;
 
+@property (nonatomic, assign) BOOL isLayerTimeout;
+
+
 - (instancetype)initWithSupplier:(id)supplier adspot:(id)adspot;
 
 - (void)setAdTimeout:(NSTimeInterval)interval block:(dispatch_block_t)block;
@@ -34,6 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)supplierStateLoad;
 
 - (void)loadAd;
+
+- (void)loadAdFail:(YFAdEventModel *)supplier error:(NSError *)error;
+
+- (void)loadAdSuccess:(YFAdEventModel *)supplier;
 
 - (void)showAd;
 

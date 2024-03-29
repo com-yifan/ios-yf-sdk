@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告占位图
 @property(nonatomic, strong) UIImage *backgroundImage;
 
-/// 总超时时间
+/// 总超时时间单位秒
 @property (nonatomic, assign) NSInteger timeout;
 
 

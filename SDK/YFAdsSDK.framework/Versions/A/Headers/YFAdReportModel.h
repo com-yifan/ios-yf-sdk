@@ -44,6 +44,8 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeAuto,
     /// 发放激励
     YFAdSDKReportEventTypeReward,
+    /// 自渲染SDK展示
+    YFAdSDKReportEventTypeCustomSDKShow = 100,
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -124,6 +126,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) double et;
 /// 激活时间
 @property (nonatomic, assign) double at;
+
+/// 进入后台开始时间
+@property (nonatomic, assign) double bst;
+/// 进入后台结束时间
+@property (nonatomic, assign) double bet;
+
 /// 超时时间
 @property (nonatomic, assign) NSInteger timeout;
 /// 标识
@@ -192,6 +200,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 设备类型
 @property (nonatomic, assign) NSInteger dt;
+
+/// 拓展字段
+@property (nonatomic, retain) NSDictionary *ex;
 
 
 @end

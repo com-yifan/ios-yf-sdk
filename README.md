@@ -1,10 +1,11 @@
 
-# 亿帆SDK对接⽂档: V5.3.2.80
+# 亿帆SDK对接⽂档: V5.3.3.1
 
 
 ## 1.开发⽂档修改记录
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
 |--------|---------|----------|------------|
+| 5.3.3.0|   1.修复穿山甲、优量汇展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.03.29 |
 | 5.3.2.80|   1.修复百度展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.03.15 |
 | 5.3.2.27|   1.修复穿山甲展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.03.05 |
 | 5.3.2.4|   1.修复已知问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2023.02.18 |
@@ -55,11 +56,11 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 
 
 ```
- pod 'YFAdsSDK', '5.3.2.80'
+ pod 'YFAdsSDK', '5.3.3.1'
 #优量汇⼴告
- pod 'GDTMobSDK', '4.14.62'
+ pod 'GDTMobSDK', '4.14.70'
 #穿⼭甲⼴告
- pod 'Ads-CN', '5.8.1.2'
+ pod 'Ads-Fusion-CN-Beta','6.0.1.3', :subspecs => ['BUAdSDK', 'CSJMediation']
 #快⼿⼴告SDK
  pod 'KSAdSDK', '3.3.57', :inhibit_warnings => false
 #百度⼴告SDK

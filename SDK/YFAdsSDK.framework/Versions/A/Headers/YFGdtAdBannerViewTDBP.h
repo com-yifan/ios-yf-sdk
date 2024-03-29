@@ -1,4 +1,6 @@
 
+#if __has_include( <GDTMobSDK/GDTUnifiedNativeAdView.h>)
+
 #import "YFAdInteractionType.h"
 #import "YFAdCustomModel.h"
 #import "YFAdReportModel.h"
@@ -18,3 +20,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
+#endif

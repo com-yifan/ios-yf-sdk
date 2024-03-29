@@ -64,6 +64,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString*)getDeviceModel;
 
++ (NSInteger)randomNumber;
+
 + (void)toSaveDownTimer:(NSString*)time key:(NSString *)key;
 + (NSString *)toGetDownTimerKey:(NSString*)key;
 + (void)toRemoveDownTimerKey:(NSString*)key;

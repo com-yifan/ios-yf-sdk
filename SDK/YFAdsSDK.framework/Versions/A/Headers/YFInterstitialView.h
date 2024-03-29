@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) UIViewController *viewController;
 
--(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 
 - (void)show;
 
