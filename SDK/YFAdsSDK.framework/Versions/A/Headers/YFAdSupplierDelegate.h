@@ -7,8 +7,8 @@
 #import "YFAdReportModel.h"
 
 @class YFAdResponseModel;
-@class FCAdWaterfall;
 @class YFAdReportModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol YFAdSupplierDelegate <NSObject>

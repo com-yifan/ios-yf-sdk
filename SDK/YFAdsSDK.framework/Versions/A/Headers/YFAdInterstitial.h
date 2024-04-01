@@ -3,15 +3,12 @@
 //
 
 #import "YFAdBaseAdapter.h"
-
-#import <UIKit/UIKit.h>
-
 #import "YFAdSDKSetting.h"
 #import "YFAdInterstitialDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFAdInterstitial : YFAdBaseAdapter <NSCopying>
+@interface YFAdInterstitial : YFAdBaseAdapter
 /// 广告方法回调代理
 @property (nonatomic, weak) id<YFAdInterstitialDelegate> delegate;
 
