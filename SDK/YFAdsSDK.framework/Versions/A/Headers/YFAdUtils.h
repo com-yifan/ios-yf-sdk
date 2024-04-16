@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)toRemoveDownTimerKey:(NSString*)key;
 + (CGFloat)getWidthWithTitle:(NSString *)title font:(UIFont *)font;
 + (NSURL *)toSartVideoDownload:(NSString*)videoUrl;
-
++ (BOOL)isNullToString:(id)string;
 + (BOOL)isViewExistInWindow:(UIViewController *)viewController;
 
 @end

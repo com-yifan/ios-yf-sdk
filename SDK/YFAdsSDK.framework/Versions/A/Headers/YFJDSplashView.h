@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, weak) UIViewController *rootViewController;
 @property(nonatomic, assign) NSUInteger ecpm;
 @property(nonatomic, strong) UIView *area;
+@property(nonatomic, strong) UIButton *jumpBtn;
+
 -(instancetype)initWithSplashMode:(id)model;
 
 - (void)showInView:(UIView *)view;

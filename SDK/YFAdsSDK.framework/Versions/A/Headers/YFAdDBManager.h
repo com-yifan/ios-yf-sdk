@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)deleteAllWithName:(NSString *)tableName;
 
-- (void)deleteWithName:(NSString *)tableName eid:(NSString *)eid;
+- (void)deleteWithName:(NSString *)tableName eid:(NSString *)eid complate:(void(^)(BOOL))complate;
 
 @end
 

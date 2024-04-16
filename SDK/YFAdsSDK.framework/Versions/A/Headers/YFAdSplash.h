@@ -17,18 +17,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 是否必须展示Logo 默认: NO 注意: 强制展示Logo可能会影响收益 !!!
 @property (nonatomic, assign) BOOL showLogoRequire;
-
 /// 广告Logo
 @property(nonatomic, strong) UIImage *logoImage;
-
 /// 广告占位图
 @property(nonatomic, strong) UIImage *backgroundImage;
-
 /// 总超时时间单位秒
 @property (nonatomic, assign) NSInteger timeout;
 
+-(void)setCurrentViewController:(UIViewController *)viewController;
 
-- (instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;
+-(instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;
 
 @end
 

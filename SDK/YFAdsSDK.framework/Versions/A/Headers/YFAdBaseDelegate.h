@@ -4,12 +4,17 @@
 
 
 #import "YFAdCommonDelegate.h"
+#import "YFAdMediaMetal.h"
+
 @protocol YFAdBaseDelegate <YFAdCommonDelegate>
 
 @optional
 
 /// 获取自渲染数据
 - (void)fcAdGetMediaRenderDataSuccess:(NSArray *)mediaRenders;
+/// 广告关闭Controller 的回调
+- (void)fcAdDidCloseOtherController:(id)adapter
+                            interactionType:(YFAdInteractionType)interactionType;
 /// 广告曝光成功
 - (void)fcAdExposured:(id)adapter;
 /// 广告点击回调

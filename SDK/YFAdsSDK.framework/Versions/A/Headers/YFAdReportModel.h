@@ -204,6 +204,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 拓展字段
 @property (nonatomic, retain) NSDictionary *ex;
 
+/// 额外信息
+@property (nonatomic, copy) NSString *msg;
+
 
 @end
 NS_ASSUME_NONNULL_END
