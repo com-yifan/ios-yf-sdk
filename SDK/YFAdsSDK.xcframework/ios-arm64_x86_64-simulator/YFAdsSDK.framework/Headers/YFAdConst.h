@@ -6,7 +6,7 @@
 #define FC_SCREEN_HEIGHT    [UIScreen mainScreen].bounds.size.height
 
 ///  弱对象
-#define weakify( x ) autoreleasepool{} __weak typeof(x) weak##x = x;
+#define yf_weakify( x ) autoreleasepool{} __weak typeof(x) weak##x = x;
 
 
 /// iPhoneX  iPhoneXS  iPhoneXS Max  iPhoneXR 机型判断
