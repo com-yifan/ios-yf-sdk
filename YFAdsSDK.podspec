@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "YFAdsSDK"
-  s.version = "5.3.3.8"
+  s.version = "6.0.0.1"
   s.summary = "iOS YFAdsSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
   s.authors = {"yifan"=>"576661787@qq.com"}
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   # s.user_target_xcconfig = { 'ENABLE_BITCODE' => 'NO'}
   s.resource     = 'SDK/YFAdsSDK.bundle'
   s.ios.deployment_target    = '11.0'
-  s.ios.vendored_framework   = 'SDK/YFAdsSDK.framework'
+  s.ios.vendored_framework   = 'SDK/YFAdsSDK.xcframework'
   s.xcconfig = {
       'VALID_ARCHS' =>  valid_archs.join(' '),
   }

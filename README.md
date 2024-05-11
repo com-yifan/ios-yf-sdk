@@ -1,36 +1,33 @@
 
-# 亿帆SDK对接⽂档: V5.3.3.8
+# 亿帆SDK对接⽂档: V6.0.0.1
 
 
 ## 1.开发⽂档修改记录
-| 版本号  | 修改内容 | 更新步骤 | 更新时间   |
-|--------|---------|----------|------------|
-| 5.3.3.8|   1.京东展示优化 </br> <font color="red">2.穿山甲、优量汇SDK更新</font> </br> | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.04.15|
-| 5.3.3.6|   1.修复穿山甲、优量汇展示问题</br> <font color="red">2.穿山甲、优量汇SDK更新</font> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.03.29 |
-| 5.3.2.80|   1.修复百度展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.03.15 |
-| 5.3.2.27|   1.修复穿山甲展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.03.05 |
-| 5.3.2.4|   1.修复已知问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.02.18 |
-| 5.3.2.3|   1.修复已知问题</br> <font color="red">2.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.02.01 |
-| 5.3.2.0|   1. 更新百青藤⾄5.332</br>  2.更新京东摇一摇组件</br> 3.新增广告类型贴片、draw </br> <font color="red">4.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.01.29 |
-| 5.3.1.0|   1. 新增媒体自渲染广告 </br> 2.更新穿⼭甲⾄5.8.1.2 </br>  3.更新优量汇⾄4.14.62</br>  4.更新百青藤⾄5.332</br>  5.更新快手⾄3.3.57 </br> 6.更新京东⾄2.5.4 |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.01.06 |
-| 5.3.0.21 |    1、开屏⼴告样式优化</br>2、插屏⼴告样式优化     |     必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本           | 2023.12.28 |
-| 5.3.0.10 |    1、插屏⼴告样式优化 </br> 2、Banner⼴告样式优化； </br>3、填充率优化；</br>4、更新⼴点通⾄4.14.45 </br>5、更新穿⼭甲⾄5.6.0.7 </br>6、更新百度SDK⾄5.322 </br>7、更新京东版本⾄2.5.0      |  必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本              | 2023.11.30 |
-| 5.3.0.9 |  1、开屏⼴告样式优化</br>2、插屏⼴告样式优化    |     必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本           | 2023.10.23 |
-| 5.3.0.0 |  1、插屏样式优化 </br>2、更新⼴点通⾄4.14.31</br>3、更新穿⼭甲⾄5.4.0.5</br>4、更新快⼿SDK⾄3.3.47</br>4、更新百度SDK⾄5.301</br>5、更新京东版本⾄2.3.0     |      必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本          | 2023.09.16 |
-| 5.2.0.3 | 1、⼴告加载和打点优化 |   必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本             | 2023.08.25 |
-| 5.2.0.1 |1、优化Banner位⼴告，⼴告容器⾼度⾃适应；</br>2、更新穿⼭甲SDK⾄5.1.1.0</br> 3、更新⼴点通版本⾄4.14.20</br>4、更新快⼿版本⾄3.3.40</br>5、更新百度SDK⾄5.13</br>6、更新京东版本⾄2.2.4       |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本            | 2023.07.26|
-| 5.1.0.3 |    1.百度和快⼿⼴告优化</br> 2.SDK启动优化     |     必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本           | 2023.06.21 |
-| 5.0.0.0 |    1.修复穿⼭甲开屏打开类点击问题；</br> 2.升级穿⼭甲SDK  |      必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本          | 2023.05.15 |
+|  版本号   |                                                                                 修改内容                                                                                 |                                         更新步骤                                          |   更新时间   |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.0.0.1  | <font color="red">1.穿山甲、优量汇、快手、百度、京东 618预算SDK更新</font> </br> 2.新增支持 GroMore 广告                                                                        | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.05.10 |
+| 5.3.3.8  | 1.京东展示优化 </br> <font color="red">2.穿山甲、优量汇SDK更新</font> </br>                                                                                                 | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.04.15 |
+| 5.3.3.6  | 1.修复穿山甲、优量汇展示问题</br> <font color="red">2.穿山甲、优量汇SDK更新</font>                                                                                             | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.03.29 |
+| 5.3.2.80 | 1.修复百度展示问题</br>                                                                                                                                                   | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.03.15 |
+| 5.3.2.27 | 1.修复穿山甲展示问题</br>                                                                                                                                                 | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.03.05 |
+| 5.3.2.4  | 1.修复已知问题</br>                                                                                                                                                       | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.02.18 |
+| 5.3.2.3  | 1.修复已知问题</br> <font color="red">2.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.02.01 |
+| 5.3.2.0  | 1. 更新百青藤⾄5.332</br>  2.更新京东摇一摇组件</br> 3.新增广告类型贴片、draw </br> <font color="red">4.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font> | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.01.29 |
+| 5.3.1.0  | 1. 新增媒体自渲染广告 </br> 2.更新穿⼭甲⾄5.8.1.2 </br>  3.更新优量汇⾄4.14.62</br>  4.更新百青藤⾄5.332</br>  5.更新快手⾄3.3.57 </br> 6.更新京东⾄2.5.4                           | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.01.06 |
+| 5.3.0.21 | 1、开屏⼴告样式优化</br>2、插屏⼴告样式优化                                                                                                                                  | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2023.12.28 |
+| 5.3.0.10 | 1、插屏⼴告样式优化 </br> 2、Banner⼴告样式优化； </br>3、填充率优化；</br>4、更新⼴点通⾄4.14.45 </br>5、更新穿⼭甲⾄5.6.0.7 </br>6、更新百度SDK⾄5.322 </br>7、更新京东版本⾄2.5.0     | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2023.11.30 |
+
 ## 2.支持的SDK平台及广告位
 
-| 平台 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 |draw | 贴片|
-|-------|---|---|---|---|---|---|---|---|
-|穿山甲| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |  
-|优量汇| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |  
-|百青藤| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |  
-|快手  | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |  
-|京东  | ✅ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |  
-|亿帆  | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ |  
+|   平台   | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 |
+| ------- | ---- | ------- | ---- | ---- | ----- | ------- | ---- | ---- |
+| 穿山甲   | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
+| 优量汇   | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  |
+| 百青藤   | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
+| 快手     | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
+| 京东     | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
+| 亿帆     | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
+| gromore | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
 
 **注意:** 
 1.该版本是基于上述SDK平台版本进行开发的
@@ -57,19 +54,19 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 
 
 ```
- pod 'YFAdsSDK', '5.3.3.8'
+ pod 'YFAdsSDK', '6.0.0.1'
 #优量汇⼴告
- pod 'GDTMobSDK', '4.14.70'
+ pod 'GDTMobSDK', '4.14.76'
 #穿⼭甲⼴告
- pod 'Ads-Fusion-CN-Beta','6.0.1.3', :subspecs => ['BUAdSDK', 'CSJMediation']
+ pod 'Ads-Fusion-CN-Beta','6.1.1.0', :subspecs => ['BUAdSDK', 'CSJMediation']
 #快⼿⼴告SDK
- pod 'KSAdSDK', '3.3.57', :inhibit_warnings => false
+ pod 'KSAdSDK', '3.3.64.4', :inhibit_warnings => false
 #百度⼴告SDK
- pod 'BaiduMobAdSDK', '5.332'
+ pod 'BaiduMobAdSDK', '5.351'
 #京东⼴告SDK
- pod 'JADYun', '2.5.4' 
+ pod 'JADYun', '2.5.12' 
 #京东摇一摇组件(可选)
- pod 'JADYunMotion', '2.5.4' 
+ pod 'JADYunMotion', '2.5.12' 
 
 
 ```
