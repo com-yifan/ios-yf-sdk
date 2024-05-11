@@ -4,18 +4,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
-
-#if __has_include(<FLAnimatedImage/FLAnimatedImage.h>)
-    #import <FLAnimatedImage/FLAnimatedImage.h>
-#else
-    #import "YFAnimatedImage.h"
-#endif
-
-#if __has_include(<FLAnimatedImage/FLAnimatedImageView.h>)
-    #import <FLAnimatedImage/YFAnimatedImageView.h>
-#else
-    #import "YFAnimatedImageView.h"
-#endif
+#import "YFAnimatedImage.h"
+#import "YFAnimatedImageView.h"
 
 
 #pragma mark - image
