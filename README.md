@@ -1,11 +1,11 @@
 
-# 亿帆SDK对接⽂档: V6.0.0.14
+# 亿帆SDK对接⽂档: V6.0.0.18
 
 
 ## 1.开发⽂档修改记录
 |  版本号   |                                                                                 修改内容                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.0.14 | <font color="red">1.穿山甲、优量汇、快手、百度、京东 618预算SDK更新</font> </br> 2.新增支持 GroMore 广告                                                                        | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.05.10 |
+| 6.0.0.18 | <font color="red">1.穿山甲、优量汇、快手、百度、京东 618预算SDK更新</font> </br> 2.新增支持 GroMore 广告                                                                        | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.05.10 |
 | 5.3.3.8  | 1.京东展示优化 </br> <font color="red">2.穿山甲、优量汇SDK更新</font> </br>                                                                                                 | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.04.15 |
 | 5.3.3.6  | 1.修复穿山甲、优量汇展示问题</br> <font color="red">2.穿山甲、优量汇SDK更新</font>                                                                                             | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.03.29 |
 | 5.3.2.80 | 1.修复百度展示问题</br>                                                                                                                                                   | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.03.15 |
@@ -54,13 +54,13 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 
 
 ```
- pod 'YFAdsSDK', '6.0.0.14'
+ pod 'YFAdsSDK', '6.0.0.18'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.14.76'
 #穿⼭甲⼴告
  pod 'Ads-Fusion-CN-Beta','6.1.1.0', :subspecs => ['BUAdSDK', 'CSJMediation']
 #快⼿⼴告SDK
- pod 'KSAdSDK', '3.3.64.4', :inhibit_warnings => false
+ pod 'KSAdSDK', '3.3.65', :inhibit_warnings => false
 #百度⼴告SDK
  pod 'BaiduMobAdSDK', '5.351'
 #京东⼴告SDK
