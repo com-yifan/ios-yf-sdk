@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFMaterialMeta : NSObject
 
+@property(nonatomic, copy) NSString *msg;
+@property(nonatomic, copy) NSString *rid;
+@property(nonatomic, assign) NSInteger code;
 
 @property(nonatomic, copy) NSString *eKey;
 

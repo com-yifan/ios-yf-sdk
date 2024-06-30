@@ -70,6 +70,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * ip;
 
 @property (nonatomic, assign) NSInteger bannerCarouselInterval;
+// mixMode 1 串行 2 并行
+@property (nonatomic, assign) NSInteger mixMode;
+
+
 
 
 @end
@@ -113,6 +117,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否头部竞价
 @property (nonatomic, assign) NSInteger headBidding;
 @property (nonatomic, copy) NSString *potID;
+@property (nonatomic, copy) NSString *appKey;
+@property (nonatomic, copy) NSString *wxAppID;
+@property (nonatomic, copy) NSString *wxUniLink;
 @property (nonatomic, copy) NSString *tpid;
 //1: 模板渲染 2: 自染-亿帆 / 联盟自渲染  3: 自染-开发者
 @property (nonatomic, assign) NSInteger renderID;
@@ -148,6 +155,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger cbst;
 ///  1: 合规值 2: 中灵敏闽值 3:高灵敏闽值
 @property (nonatomic, assign) NSInteger istv;
+
+// 倒计时结束自动关闭 1：是 0：否
+@property (nonatomic, assign) NSInteger oac;
+//  插屏自渲染倒计时时间 5-30秒
+@property (nonatomic, assign) NSInteger oat;
+// 是否展示点击按钮
+@property (nonatomic, assign) NSInteger sb;
 
 /// 1;单向跳转
 /// 2: 双向跳转

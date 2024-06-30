@@ -8,6 +8,7 @@
 #import "YFAdReportModel.h"
 #import "YFAdUtils.h"
 #import "YFPrivateKit.h"
+#import "YFAdBaseAdapter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 标记渠道
 @property (nonatomic, assign) NSInteger tag;
 /// 广告价值
-@property (nonatomic, assign) double ecpm;
+@property (nonatomic, assign) NSInteger ecpm;
+/// 底价
+@property (nonatomic, assign) NSInteger floorPrice;
 /// 是否填充
 @property (nonatomic, assign) BOOL fill;
 /// 填充层级
@@ -38,9 +41,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadAd;
 
-- (void)loadAdFail:(YFAdEventModel *)supplier error:(NSError *)error;
 
-- (void)loadAdSuccess:(YFAdEventModel *)supplier;
+
+- (void)loadAdSuccess:(YFAdEventModel *)supplier adapter:(YFAdBaseAdapter *)adapter ecpm:(NSInteger)ecpm;
+
+- (void)loadAdFail:(YFAdEventModel *)supplier adapter:(YFAdBaseAdapter *)adapter error:(NSError *)error;
 
 - (void)showAd;
 

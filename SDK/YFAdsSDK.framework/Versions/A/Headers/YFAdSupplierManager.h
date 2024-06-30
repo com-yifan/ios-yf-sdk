@@ -35,6 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)manager;
 /// 流量请求时间
 @property (nonatomic, assign) double frt;
+
+@property (nonatomic, copy) NSString * rID;
+
 /// 初始数据
 - (void)loadDataWithDic:(NSDictionary *)jsonDic;
 

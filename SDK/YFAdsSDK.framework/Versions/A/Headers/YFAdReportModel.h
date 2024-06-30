@@ -21,31 +21,86 @@
 
 typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     
-    YFAdSDKReportEventTypeNone,
+    YFAdSDKReportEventTypeNone = 0,
     /// 应用打开
-    YFAdSDKReportEventTypeOpen,
+    YFAdSDKReportEventTypeOpen = 1,
     /// 聚合向广告网络发送请求
-    YFAdSDKReportEventTypeRequest,
+    YFAdSDKReportEventTypeRequest = 2,
     /// 填充
-    YFAdSDKReportEventTypeFill,
+    YFAdSDKReportEventTypeFill = 3,
     /// 展示
-    YFAdSDKReportEventTypeShow,
+    YFAdSDKReportEventTypeShow = 4,
     /// 点击
-    YFAdSDKReportEventTypeClicked,
+    YFAdSDKReportEventTypeClicked = 5,
     /// 流量请求
-    YFAdSDKReportEventTypeFlowRequest,
+    YFAdSDKReportEventTypeFlowRequest = 6,
     /// 流量填充
-    YFAdSDKReportEventTypeFlowFill,
+    YFAdSDKReportEventTypeFlowFill = 7,
     /// 资源就位
-    YFAdSDKReportEventTypeReady,
+    YFAdSDKReportEventTypeReady = 8,
     /// 失败
-    YFAdSDKReportEventTypeFail,
+    YFAdSDKReportEventTypeFail = 9,
     /// 自动点击
-    YFAdSDKReportEventTypeAuto,
+    YFAdSDKReportEventTypeAuto = 10,
     /// 发放激励
-    YFAdSDKReportEventTypeReward,
+    YFAdSDKReportEventTypeReward = 11,
+    /// ECPM过滤成功
+    YFAdSDKReportEventTypeECPMFilterSuccess = 12,
+    /// ECPM过滤失败
+    YFAdSDKReportEventTypeECPMFilterFail = 13,
+    /// crash
+    YFAdSDKReportEventTypeCrashUpload = 14,
     /// 自渲染SDK展示
     YFAdSDKReportEventTypeCustomSDKShow = 100,
+    
+    
+    /// app 配置同步
+    YFAdSDKReportEventTypeAppRquestStart = 10001,
+    YFAdSDKReportEventTypeAppRquestSuccess = 10002,
+    YFAdSDKReportEventTypeAppRquestFail = 10003,
+    
+    /// adn sdk  初始化
+    YFAdSDKReportEventTypeAdnInitStart = 10101,
+    YFAdSDKReportEventTypeAdnInitSuccess = 10102,
+    YFAdSDKReportEventTypeAdnInitFail = 10103,
+    
+    /// ads  配置同步
+    YFAdSDKReportEventTypeAdsRquestStart = 10201,
+    YFAdSDKReportEventTypeAdsRquestSuccess = 10202,
+    YFAdSDKReportEventTypeAdsRquestFail = 10203,
+    /// 使用配置缓存
+    YFAdSDKReportEventTypeAdsUseConfCache = 10204,
+    
+    
+    /// 开始获取广告缓存
+    YFAdSDKReportEventTypeAdsReadConfCache = 10301,
+    /// 获取广告缓存成功
+    YFAdSDKReportEventTypeAdsReadConfCacheSuccess = 10302,
+    /// 广告缓存为空
+    YFAdSDKReportEventTypeAdsReadConfCacheFail = 10303,
+    /// 广告缓存未启用
+    YFAdSDKReportEventTypeAdsNoUseConfCache = 10304,
+    
+    /// 开始缓存ecpm截断
+    YFAdSDKReportEventTypeCacheCutOffStart = 10401,
+    /// 获取广告缓存成功
+    YFAdSDKReportEventTypeCacheCutOffEnd = 10402,
+    
+    
+    /// adn sdk  初始化
+    YFAdSDKReportEventTypeAdnRevealInitStart = 10501,
+    YFAdSDKReportEventTypeAdnRevealInitSuccess = 10502,
+    YFAdSDKReportEventTypeAdnRevealInitFail = 10503,
+    /// bidding竞胜结果(ecpm)
+    YFAdSDKReportEventTypeBiddingSuccess = 10601,
+    YFAdSDKReportEventTypeBiddingFail = 10602,
+
+    /// 缓存
+    YFAdSDKReportEventTypeCacheStart = 10801,
+    YFAdSDKReportEventTypeCacheSuccess = 10802,
+    YFAdSDKReportEventTypeCacheFail = 10803,
+
+
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -73,9 +128,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * ia;
 /// 品牌
 @property (nonatomic, copy) NSString * db;
-
 /// 设备型号
 @property (nonatomic, assign) NSString * dm;
+/// 拓展字段
+@property (nonatomic, retain) NSDictionary *ex;
 
 
 @end
@@ -88,6 +144,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *adnAdID;
 /// 广告商appID
 @property (nonatomic, copy) NSString *adnAppID;
+/// 广告商appID
+@property (nonatomic, copy) NSString *adnAppKey;
 /// 广告商枚举ID
 @property (nonatomic, assign) NSInteger adnID;
 /// 广告类型
@@ -103,7 +161,8 @@ NS_ASSUME_NONNULL_BEGIN
 //1-应用打开；2-请求(聚合向广告网络发送请求)；3-填充(聚合向广告网络发送请求)；4-展示(聚合向广告网络发送请求)；5-点击(聚合统计的广告)；6-流量请求(应用向聚合发送请求)；7-流量填充(应用向聚合发送请求)|
 /// 事件类型
 @property (nonatomic, assign)YFAdSDKReportEventType eType;
-
+///
+@property (nonatomic, copy) NSString * abID;
 /// group ID
 @property (nonatomic, copy) NSString *gID;
 /// 是否bidding
@@ -201,17 +260,25 @@ NS_ASSUME_NONNULL_BEGIN
 /// 设备类型
 @property (nonatomic, assign) NSInteger dt;
 
-/// 拓展字段
-@property (nonatomic, retain) NSDictionary *ex;
-
 /// 额外信息
 @property (nonatomic, copy) NSString *msg;
 
 
 @property (nonatomic, assign) NSInteger bannerCarouselInterval;
+// 倒计时结束自动关闭 1：是 0：否
+@property (nonatomic, assign) NSInteger oac;
+//  插屏自渲染倒计时时间 5-30秒
+@property (nonatomic, assign) NSInteger oat;
 
+// 展示点击按钮 1：展示 0：不展示
+@property (nonatomic, assign) NSInteger sb;
 
+/// open sdk appid
+@property (nonatomic, copy) NSString *wxAppID;
 
+@property (nonatomic, copy) NSString *universalLink;
+
+@property (nonatomic, assign) BOOL isValid;
 
 
 @end

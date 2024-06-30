@@ -8,7 +8,7 @@
 @protocol YFAdInterstitialDelegate <YFAdBaseDelegate>
 @optional
 
-#pragma 请移步FCAdBaseDelegate 和 FCAdCommonDelegate
+#pragma 请移步YFAdBaseDelegate 和 YFAdCommonDelegate
 
 @end
 

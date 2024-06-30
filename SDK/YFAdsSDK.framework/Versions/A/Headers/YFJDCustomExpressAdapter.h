@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFJDCustomExpressAdapter : YFAdBaseAdPosition
 @property (nonatomic, weak) id<YFAdNativeExpressDelegate> delegate;
+@property (nonatomic, assign) float left;
 
 @end
 

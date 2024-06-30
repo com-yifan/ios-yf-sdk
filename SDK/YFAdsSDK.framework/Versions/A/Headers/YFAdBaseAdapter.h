@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) BOOL fill;
 
 @property(nonatomic, assign) NSUInteger ecpm;
+/// 激励视频是否下载完成
+@property (nonatomic, assign) BOOL isReady;
+
+
 
 @property (nonatomic, strong) YFAdSupplierManager *mgr;
 /// 控制器(在一次广告周期中 不可更改, 不然会引起未知错误)
@@ -36,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)collectErrorWithSupplier:(YFAdEventModel *)supplier error:(NSError *)error;
 /// 取消当前策略请求
 - (void)deallocAdapter;
+/// 设置根控制器
+- (void)setRootController:(UIViewController *)rootController;
+
 
 @end
 

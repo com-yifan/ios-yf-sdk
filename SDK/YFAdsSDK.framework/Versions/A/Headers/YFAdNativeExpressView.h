@@ -12,10 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView *expressView;
 // 亿帆模版
 @property (nonatomic, assign) BOOL isYFView;
-
+// 唯一标识
 @property (nonatomic, assign) NSUInteger tag;
 // 渠道标识
- @property (nonatomic, assign) NSUInteger identifier;
+@property (nonatomic, assign) NSUInteger identifier;
+
+-(void)setRootController:(UIViewController *)rootController;
 
 - (void)render;
 

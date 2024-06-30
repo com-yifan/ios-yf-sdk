@@ -24,7 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 仅支持快手（百度，优量汇，自适应屏幕方向。穿山甲联系运营配置）
 @property (nonatomic, assign) YFAdsShowDirection  adsShowDirection;
 
-- (instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;        
+
+- (instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;  
+
 @end
 
 NS_ASSUME_NONNULL_END

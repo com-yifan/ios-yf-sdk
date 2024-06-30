@@ -54,7 +54,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 设置关闭按钮
 + (CGSize)getCloseSizeByType:(NSInteger)type;
-
+// 设置倒计时关闭
++ (CGSize)getCountCloseSizeByType:(NSInteger)type;
 // 设置跳过倒计时按钮
 + (CGSize)getJumpSizeByType:(YFSplashState)type;
 

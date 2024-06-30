@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// unix时间戳
 @property (nonatomic, assign) NSInteger activationTime;
+
+@property (nonatomic, copy) NSString *rID;
 /// 广告位ID，聚合的广告位ID
 @property (nonatomic, copy) NSString *adID;
 /// 应用ID

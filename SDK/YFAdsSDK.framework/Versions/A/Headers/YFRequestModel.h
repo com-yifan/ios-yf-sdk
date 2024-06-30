@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic, assign) NSUInteger gender;
 
+@property(nonatomic, assign) NSUInteger bidfloor;
 // 位数字出生年
 @property(nonatomic, copy) NSString *yob;
 
