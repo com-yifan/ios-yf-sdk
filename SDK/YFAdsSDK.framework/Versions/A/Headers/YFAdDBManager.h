@@ -28,7 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 清除缓存
 - (void)clearCache;
-
 /// 创建表
 - (void)createTable:(NSString *)tableName;
 /// 添加上报信息

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shareInstance;
 
 /// 获取ADX广告位数据
-- (void)getAdxWithId:(NSString *)adID ecpm:(NSUInteger)ecpm success:(void (^)(id))success fail:(void (^)(id))fail;
+- (void)getAdxWithId:(NSString *)adID ecpm:(NSUInteger)ecpm rID:(NSString *)rID success:(void (^)(id))success fail:(void (^)(id))fail;
 
 ///上报事件，非点击事件touchModel传nil
 - (void)reportEventWithUrl:(NSString *)reportUrl touchModel:(nullable YFTouchLocModel *)touchModel;

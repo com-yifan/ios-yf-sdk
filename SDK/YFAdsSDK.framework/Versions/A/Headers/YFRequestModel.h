@@ -10,6 +10,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFRequestModel : NSObject
+
+
+//流量源 ID (由 SSP 平台生成) 必传
+@property(nonatomic, copy) NSString *rID;
 //公共信息
 //流量源 ID (由 SSP 平台生成) 必传
 @property(nonatomic, copy) NSString *app_id;
@@ -171,11 +175,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //Y 厂商应用商店版本号（vovi、小米、华为、oppo 等厂商应用商店）
 //@property(nonatomic,copy)NSString *device_appstore_ver;
-//系统启动标识，原始传输
+// 系统启动标识，原始传输
 @property(nonatomic, copy) NSString *device_boot_mark;
 // 系统更新标识，原始传输
 @property(nonatomic, copy) NSString *device_update_mark;
-
 // 系统更新时间(iOS 14 以上系统)
 @property(nonatomic, copy) NSString *device_sys_update;
 // 系统初始化时间(iOS 14 以上系统)

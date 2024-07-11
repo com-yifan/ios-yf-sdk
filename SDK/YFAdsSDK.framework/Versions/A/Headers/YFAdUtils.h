@@ -90,6 +90,18 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSURL *)toSartVideoDownload:(NSString*)videoUrl;
 + (BOOL)isNullToString:(id)string;
 + (BOOL)isViewExistInWindow:(UIViewController *)viewController;
+// 系统启动时间
++ (NSString *)bootTimeInSec;
+// 系统更新时间
++ (NSString *)getSysUpdate;
+// 获取设备初始化时间
++ (NSString *)getSystemInitTime;
+// boot 时间
++(NSString *)getBootTime;
+// 系统更新标识
++(NSString *)getUpdateMark;
+
+
 
 @end
 
