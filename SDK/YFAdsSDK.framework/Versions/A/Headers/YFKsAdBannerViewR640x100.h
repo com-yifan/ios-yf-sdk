@@ -7,16 +7,19 @@
 #import "YFAdCustomModel.h"
 #import "YFAdBaseView.h"
 #import "YFAdView.h"
+#import "YFAdsDetailButton.h"
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface YFKsAdBannerView600x100 : YFAdBaseView
+@interface YFKsAdBannerViewR640x100 : YFAdBaseView
 
 @property (nonatomic, strong) YFAdImageView *contentView;
 @property (nonatomic, strong) UIButton *closeBtn;
 @property (nonatomic, strong) UIView *subView;
 @property (nonatomic, strong) UILabel *title;
-@property (nonatomic, strong) UILabel *otherBtn;
+@property (nonatomic, strong) YFAdsDetailButton *otherBtn;
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(float)getViewHeight;

@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) id adData;
 - (void)registerContainer:(UIView *)containerView;
 - (void)unregisterView;
+- (void)setRootViewController:(UIViewController *)rootVC;
+
 @end
 
 NS_ASSUME_NONNULL_END

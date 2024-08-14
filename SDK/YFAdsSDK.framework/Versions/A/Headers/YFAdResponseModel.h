@@ -171,6 +171,22 @@ NS_ASSUME_NONNULL_BEGIN
 //1 = 100%
 @property (nonatomic, assign) float istvp;
 
+/// 动画效果
+//animationEffect
+//0:无动画
+//1:上下浮动*3
+@property (nonatomic, assign) NSInteger ae;
+
+//ecbc
+//closeBtnDelayEnable
+//启用倒计时关闭 0:否 1:是
+@property (nonatomic, assign) NSInteger ecbc;
+
+// 关闭按钮延迟生效 ms
+@property (nonatomic, assign) NSInteger cbde;
+
+@property (nonatomic, assign) NSInteger cbm;
+
 @end
 
 NS_ASSUME_NONNULL_END

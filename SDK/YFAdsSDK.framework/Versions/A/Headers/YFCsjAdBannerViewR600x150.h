@@ -7,7 +7,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFCsjAdBannerView600x100 : UIView
+@interface YFCsjAdBannerViewR600x150 : UIView
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 

@@ -1,10 +1,11 @@
 
-# 亿帆SDK对接⽂档: V6.0.1.8
+# 亿帆SDK对接⽂档: V6.0.2.0
 
 ## 1.开发⽂档修改记录
 
 | 版本号  | 修改内容 | 更新步骤 | 更新时间   |
 |--------|---------|----------|------------|
+|6.0.2.0| <font color="red"> 1.广告样式优化</br>2.修复部分已知问题| 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.8.14|
 |6.0.1.8| <font color="red"> 1.获取广告数据失败方法替换- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description DEPRECATED_MSG_ATTRIBUTE(" 此方法将被替换为:- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description");</br>2.修复部分已知问题| 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.7.10|
 |6.0.1.6| <font color="red">1.更新穿山甲、优量汇、快手、百度、京东 广告SDK </br> 2.支持淘宝Tanx广告</br></font>3. 优化聚合SDK性能，提升执行效率</br>4.新增640x100、600x410尺寸 banner 、信息流样式 </br>5. YFAdNativeExpressView 增加 -(void)setRootController:(UIViewController *)rootController 方法</br>6.修复部分已知问题| 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.7.1|
 |6.0.0.0|    <font color="red">1.穿山甲、优量汇、快手、百度、京东 618预算SDK更新</font> </br> 2.支持 gromore SDK | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.05.10|
@@ -59,13 +60,13 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 使⽤VPN
 
 ```
- pod 'YFAdsSDK', '6.0.1.8'
+ pod 'YFAdsSDK', '6.0.2.0'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.14.81'
 #穿⼭甲⼴告
- pod 'Ads-Fusion-CN-Beta','6.1.3.4', :subspecs => ['BUAdSDK', 'CSJMediation']
+ pod 'Ads-CN-Beta','6.3.0.4', :subspecs => ['BUAdSDK', 'CSJMediation']
 #快⼿⼴告SDK
- pod 'KSAdSDK', '3.3.66', :inhibit_warnings => false
+ pod 'KSAdSDK', '3.3.66.3', :inhibit_warnings => false
 #百度⼴告SDK
  pod 'BaiduMobAdSDK', '5.352'
 #京东⼴告SDK
@@ -73,9 +74,10 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 #京东摇一摇组件(可选)
  pod 'JADYunMotion', '2.6.2' 
 # tanx 
- pod 'YFTanxSDK','3.5.2.4'
+  pod 'TanxSDK','3.5.4'
 # 微信OpenSDK
  pod 'WechatOpenSDK-XCFramework'
+
 ```
 
 #### <font color="red">注意事项：</font>

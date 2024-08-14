@@ -16,8 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSUInteger tag;
 // 渠道标识
 @property (nonatomic, assign) NSUInteger identifier;
+// 是否有效
+@property (nonatomic, assign) BOOL isValid;
 
--(void)setRootController:(UIViewController *)rootController;
+- (void)setRootController:(UIViewController *)rootController;
 
 - (void)render;
 

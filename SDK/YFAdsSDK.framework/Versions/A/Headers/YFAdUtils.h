@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "YFSplashEnum.h"
 #import "YFMaterialMeta.h"
+#import "YFAdReportModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -56,6 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGSize)getCloseSizeByType:(NSInteger)type;
 // 设置倒计时关闭
 + (CGSize)getCountCloseSizeByType:(NSInteger)type;
+
++ (CGSize)getNewCountCloseSizeByType:(NSInteger)type;
 // 设置跳过倒计时按钮
 + (CGSize)getJumpSizeByType:(YFSplashState)type;
 
@@ -66,6 +69,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 设置插屏大小
 + (CGSize)getInsertSizeByType:(NSInteger)type;
+
++ (CGSize)getNewInsertSizeByType:(NSInteger)type;
+
++ (CGSize)getIconSizeByType:(NSInteger)type;
+
++ (CGSize)getNewCloseSizeByType:(NSInteger)type;
 
 + (float)getScaleByType:(NSInteger)type;
 
@@ -100,8 +109,13 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)getBootTime;
 // 系统更新标识
 +(NSString *)getUpdateMark;
+// 缩放比
++(float)scale;
+/// 时间是否过期
++(BOOL)isTimeValid:(YFAdEventModel *)event;
 
-
+/// 创建视图抖动效果
++(void)shakeAnimationForView:(UIView *)view;
 
 @end
 

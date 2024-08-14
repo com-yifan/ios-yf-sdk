@@ -16,10 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) BOOL fill;
 
 @property(nonatomic, assign) NSUInteger ecpm;
+///  广告是否有效
+@property (nonatomic, assign) BOOL isValid;
 /// 激励视频是否下载完成
 @property (nonatomic, assign) BOOL isReady;
 /// 自定义唯一标识
 @property (nonatomic, assign) NSInteger tag;
+///  联盟 ID
+@property (nonatomic, assign) NSInteger adnID;
 
 @property (nonatomic, strong) YFAdSupplierManager *mgr;
 /// 控制器(在一次广告周期中 不可更改, 不然会引起未知错误)
@@ -42,6 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)deallocAdapter;
 /// 设置根控制器
 - (void)setRootController:(UIViewController *)rootController;
+/// 重新设置delegate
+- (void)setNewDelegate:(id)delegate;
 
 
 @end

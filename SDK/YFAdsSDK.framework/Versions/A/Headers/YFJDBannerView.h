@@ -35,7 +35,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model viewController:(UIViewController *)viewController;
 
--(void)loadAdData:(JADNativeAd *)dataObject;
+-(void)loadAdData:(JADNativeAd *)dataObject close: (void(^)(id))close;
 
 @end
 #endif

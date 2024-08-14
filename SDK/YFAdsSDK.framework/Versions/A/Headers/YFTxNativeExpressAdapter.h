@@ -10,11 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-
-
 @interface YFTxNativeExpressAdapter : YFAdBaseAdPosition
 @property (nonatomic, weak) id<YFAdNativeExpressDelegate> delegate;
-
 
 @end
 

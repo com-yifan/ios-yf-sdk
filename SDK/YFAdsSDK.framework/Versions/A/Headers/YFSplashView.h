@@ -9,7 +9,7 @@
 
 #import "YFAdBaseView.h"
 #import "YFAdView.h"
-#import "YFAdMarkView.h"
+#import "YFAdMarkImageView.h"
 #import "YFAnimationView.h"
 #import "YFAdInteractionType.h"
 #import "YFSplashEnum.h"

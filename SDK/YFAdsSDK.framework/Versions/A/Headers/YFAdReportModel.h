@@ -50,6 +50,11 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeECPMFilterFail = 13,
     /// crash
     YFAdSDKReportEventTypeCrashUpload = 14,
+    
+    /// 模版关闭按钮广告
+    YFAdSDKReportEventTypeCloseBTNAd = 15,
+    /// 关闭广告
+    YFAdSDKReportEventTypeCloseAd = 16,
     /// 自渲染SDK展示
     YFAdSDKReportEventTypeCustomSDKShow = 100,
     
@@ -221,6 +226,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 模板尺寸
 @property (nonatomic, assign) NSInteger ts;
 /// 关闭按钮位置 1左上角 2右上角
+// 1: 左上角
+//2: 右上角
+//3: 底部
+//4: 素材左上角
+//5: 素材右上角
+
 @property (nonatomic, assign) NSInteger cbp;
 /// 关闭按钮出现时间
 @property (nonatomic, assign) NSInteger cbst;
@@ -267,19 +278,32 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger bannerCarouselInterval;
 // 倒计时结束自动关闭 1：是 0：否
 @property (nonatomic, assign) NSInteger oac;
-//  插屏自渲染倒计时时间 5-30秒
+// 插屏自渲染倒计时时间 5-30秒
 @property (nonatomic, assign) NSInteger oat;
 
 // 展示点击按钮 1：展示 0：不展示
 @property (nonatomic, assign) NSInteger sb;
 
-/// open sdk appid
+// open sdk appid
 @property (nonatomic, copy) NSString *wxAppID;
 
 @property (nonatomic, copy) NSString *universalLink;
 
 @property (nonatomic, assign) BOOL isValid;
-
+// 展示开始时间
+@property (nonatomic, assign) double cst;
+// 展示结束时间
+@property (nonatomic, assign) double cet;
+// 动画效果:[ae](0:无动画; 1:上下浮动*3;)
+@property (nonatomic, assign) NSInteger ae;
+// 启用倒计时关闭  0:否 1:是
+@property (nonatomic, assign) NSInteger ecbc;
+// 关闭按钮延迟生效 ms
+@property (nonatomic, assign) NSInteger cbde;
+// 亿帆关闭按钮[新增]:cbm(0不使用，1倒计时关闭，2手动关闭)
+@property (nonatomic, assign) NSInteger cbm;
+// 缓存
+@property (nonatomic, assign) NSInteger cacheTimeout;
 
 @end
 NS_ASSUME_NONNULL_END

@@ -25,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,retain)NSMutableArray * express;
 /// 全屏视频缓存
 @property(nonatomic,retain)NSMutableArray * fullvideo;
+/// drawvideo
+@property(nonatomic,retain)NSMutableArray * drawvideo;
+
+
 
 /// 清除缓存
 - (void)clearCache;

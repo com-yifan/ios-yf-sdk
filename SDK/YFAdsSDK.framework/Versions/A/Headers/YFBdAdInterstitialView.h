@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 #import "YFAdInteractionType.h"
 #import "YFAdView.h"
-#import "YFAdMarkView.h"
+#import "YFAdMarkImageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) YFAdImageView *contentView;
 @property (nonatomic, strong) YFAdImageView *adImage;
 @property (nonatomic, strong) YFAdImageView *bdImage;
-@property (nonatomic, strong) YFAdMarkView *adLogo;
+@property (nonatomic, strong) YFAdMarkImageView *adLogo;
 
 @property (nonatomic, strong) UIButton *closeBtn;
 @property (nonatomic, strong) UIView *subView;

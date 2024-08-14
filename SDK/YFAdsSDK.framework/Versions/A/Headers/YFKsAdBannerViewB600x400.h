@@ -1,20 +1,21 @@
 
 #import <UIKit/UIKit.h>
 
-#if __has_include( <GDTMobSDK/GDTUnifiedNativeAdView.h>)
-
+#if __has_include(<KSAdSDK/KSAdSDK.h>)
+#import <KSAdSDK/KSAdSDK.h>
 #import "YFAdInteractionType.h"
 #import "YFAdCustomModel.h"
+#import "YFAdBaseView.h"
 #import "YFAdView.h"
-@class YFGdtAdMediaView;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFGdtAdBannerView600x100 : UIView
-@property (nonatomic, strong) YFGdtAdMediaView *adInterView;
+@interface YFKsAdBannerViewB600x400 : YFAdBaseView
+
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(float)getViewHeight;
--(void)loadAdData:(id)dataObject close: (void(^)(id))close;
+-(void)loadAdData:(KSNativeAd *)dataObject close: (void(^)(id))close;
 
 @end
+
 NS_ASSUME_NONNULL_END
 #endif

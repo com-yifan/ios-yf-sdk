@@ -41,8 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadAd;
 
-
-
 - (void)loadAdSuccess:(YFAdEventModel *)supplier adapter:(YFAdBaseAdapter *)adapter ecpm:(NSInteger)ecpm;
 
 - (void)loadAdFail:(YFAdEventModel *)supplier adapter:(YFAdBaseAdapter *)adapter error:(NSError *)error;
@@ -56,6 +54,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cancelDelay;
 
 - (void)logWithTag:(NSString *)tag;
+
+- (BOOL)isValid;
 
 @end
 

@@ -7,9 +7,11 @@
 #import "YFAdInteractionType.h"
 #import "YFAdView.h"
 #import "YFJDBannerView.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFJDAdBannerView600x100 : YFJDBannerView
+@interface YFJDAdBannerViewB600x400 : YFJDBannerView
+
 
 
 @end
