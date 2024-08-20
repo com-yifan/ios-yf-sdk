@@ -1,49 +1,49 @@
-
-# 亿帆SDK对接⽂档: V6.0.2.0
+# 亿帆SDK对接⽂档: V6.0.2.1
 
 ## 1.开发⽂档修改记录
 
-| 版本号  | 修改内容 | 更新步骤 | 更新时间   |
-|--------|---------|----------|------------|
-|6.0.2.0| <font color="red"> 1.广告样式优化</br>2.修复部分已知问题| 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.8.14|
-|6.0.1.8| <font color="red"> 1.获取广告数据失败方法替换- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description DEPRECATED_MSG_ATTRIBUTE(" 此方法将被替换为:- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description");</br>2.修复部分已知问题| 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.7.10|
-|6.0.1.6| <font color="red">1.更新穿山甲、优量汇、快手、百度、京东 广告SDK </br> 2.支持淘宝Tanx广告</br></font>3. 优化聚合SDK性能，提升执行效率</br>4.新增640x100、600x410尺寸 banner 、信息流样式 </br>5. YFAdNativeExpressView 增加 -(void)setRootController:(UIViewController *)rootController 方法</br>6.修复部分已知问题| 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.7.1|
-|6.0.0.0|    <font color="red">1.穿山甲、优量汇、快手、百度、京东 618预算SDK更新</font> </br> 2.支持 gromore SDK | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.05.10|
-| 5.3.3.8|   1.京东展示优化 </br> <font color="red">2.穿山甲、优量汇SDK更新</font> </br> | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本| 2024.04.15|
-| 5.3.3.6|   1.修复穿山甲、优量汇展示问题</br> <font color="red">2.穿山甲、优量汇SDK更新</font> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.03.29 |
-| 5.3.2.80|   1.修复百度展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.03.15 |
-| 5.3.2.27|   1.修复穿山甲展示问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.03.05 |
-| 5.3.2.4|   1.修复已知问题</br> |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.02.18 |
-| 5.3.2.3|   1.修复已知问题</br> <font color="red">2.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.02.01 |
-| 5.3.2.0|   1. 更新百青藤⾄5.332</br>  2.更新京东摇一摇组件</br> 3.新增广告类型贴片、draw </br> <font color="red">4.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>  |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.01.29 |
-| 5.3.1.0|   1. 新增媒体自渲染广告 </br> 2.更新穿⼭甲⾄5.8.1.2 </br>  3.更新优量汇⾄4.14.62</br>  4.更新百青藤⾄5.332</br>  5.更新快手⾄3.3.57 </br> 6.更新京东⾄2.5.4 |    必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本      | 2024.01.06 |
-| 5.3.0.21 |    1、开屏⼴告样式优化</br>2、插屏⼴告样式优化     |     必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本           | 2023.12.28 |
-| 5.3.0.10 |    1、插屏⼴告样式优化 </br> 2、Banner⼴告样式优化； </br>3、填充率优化；</br>4、更新⼴点通⾄4.14.45 </br>5、更新穿⼭甲⾄5.6.0.7 </br>6、更新百度SDK⾄5.322 </br>7、更新京东版本⾄2.5.0      |  必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本              | 2023.11.30 |
+|  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.0.2.1  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.20  |
+| 6.0.2.0  | 1.广告样式优化</br>2.修复部分已知问题                                                                                                                                                                                                                                                                        | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.14  |
+| 6.0.1.8  | <font color="red"> 1.获取广告数据失败方法替换- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description DEPRECATED_MSG_ATTRIBUTE(" 此方法将被替换为:- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description");</br>2.修复部分已知问题 | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.7.10  |
+| 6.0.1.6  | <font color="red">1.更新穿山甲、优量汇、快手、百度、京东 广告SDK </br> 2.支持淘宝Tanx广告</br></font>3. 优化聚合SDK性能，提升执行效率</br>4.新增640x100、600x410尺寸 banner 、信息流样式 </br>5. YFAdNativeExpressView 增加 -(void)setRootController:(UIViewController *)rootController 方法</br>6.修复部分已知问题          | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.7.1   |
+| 6.0.0.0  | <font color="red">1.穿山甲、优量汇、快手、百度、京东 618预算SDK更新</font> </br> 2.支持 gromore SDK                                                                                                                                                                                                            | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.05.10 |
+| 5.3.3.8  | 1.京东展示优化 </br> <font color="red">2.穿山甲、优量汇SDK更新</font> </br>                                                                                                                                                                                                                                  | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.04.15 |
+| 5.3.3.6  | 1.修复穿山甲、优量汇展示问题</br> <font color="red">2.穿山甲、优量汇SDK更新</font>                                                                                                                                                                                                                             | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.03.29 |
+| 5.3.2.80 | 1.修复百度展示问题</br>                                                                                                                                                                                                                                                                                    | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.03.15 |
+| 5.3.2.27 | 1.修复穿山甲展示问题</br>                                                                                                                                                                                                                                                                                  | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.03.05 |
+| 5.3.2.4  | 1.修复已知问题</br>                                                                                                                                                                                                                                                                                       | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.02.18 |
+| 5.3.2.3  | 1.修复已知问题</br> <font color="red">2.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>                                                                                                                                                                                            | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.02.01 |
+| 5.3.2.0  | 1. 更新百青藤⾄5.332</br>  2.更新京东摇一摇组件</br> 3.新增广告类型贴片、draw </br> <font color="red">4.开屏、激励视频 、横幅、插屏、信息流、全屏视频 、draw 、贴片 回调修改</br></font>                                                                                                                                  | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.01.29 |
+| 5.3.1.0  | 1. 新增媒体自渲染广告 </br> 2.更新穿⼭甲⾄5.8.1.2 </br>  3.更新优量汇⾄4.14.62</br>  4.更新百青藤⾄5.332</br>  5.更新快手⾄3.3.57 </br> 6.更新京东⾄2.5.4                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.01.06 |
+| 5.3.0.21 | 1、开屏⼴告样式优化</br>2、插屏⼴告样式优化                                                                                                                                                                                                                                                                   | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2023.12.28 |
+| 5.3.0.10 | 1、插屏⼴告样式优化 </br> 2、Banner⼴告样式优化； </br>3、填充率优化；</br>4、更新⼴点通⾄4.14.45 </br>5、更新穿⼭甲⾄5.6.0.7 </br>6、更新百度SDK⾄5.322 </br>7、更新京东版本⾄2.5.0                                                                                                                                     | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2023.11.30 |
 
 ## 2.支持的SDK平台及广告位
 
-| 平台 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 |draw | 贴片|
-|-------|---|---|---|---|---|---|---|---|
-|穿山甲| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |  
-|优量汇| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |  
-|百青藤| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |  
-|快手  | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |  
-|京东  | ✅ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |  
-|亿帆  | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |  
-|gromore| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |  
-|淘宝 | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |  
+|   平台   | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 |
+| -------- | ---- | ------- | ---- | ---- | ----- | ------- | ---- | ---- |
+| 穿山甲    | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
+| 优量汇    | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  |
+| 百青藤    | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
+| 快手     | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
+| 京东     | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
+| 亿帆     | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
+| gromore  | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
+| 淘宝Tanx | ✅  | ✅      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发的
-2.SDK⽀持的架构有：armv7 x86_64 arm64
-3.⽀持iOS版本为11.0及以上
+2.SDK⽀持的架构有： x86_64 arm64
+3.⽀持iOS版本为12.0及以上
 
 ## 3. 快速接入
 
 ### 3.1 开发环境准备
 
-- 开发工具：推荐使用Xcode 12及以上版本
-- 部署目标：iOS 11.0及以上版本
+- 开发工具：推荐使用Xcode 14及以上版本
+- 部署目标：iOS 12.0及以上版本
 - 开发管理工具：[CocoaPods](https://cocoapods.org/)
 
 ### 3.2 引入SDK
@@ -60,7 +60,7 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 使⽤VPN
 
 ```
- pod 'YFAdsSDK', '6.0.2.0'
+ pod 'YFAdsSDK', '6.0.2.1'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.14.81'
 #穿⼭甲⼴告
@@ -74,7 +74,7 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 #京东摇一摇组件(可选)
  pod 'JADYunMotion', '2.6.2' 
 # tanx 
-  pod 'TanxSDK','3.5.4'
+ pod 'TanxSDK','3.5.7'
 # 微信OpenSDK
  pod 'WechatOpenSDK-XCFramework'
 
@@ -95,7 +95,7 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 
 **3.头⽂件冲突：**
 
-如果遇到头⽂件冲突的问题，可能是，other linker flags的设置问题。删除TARGETS->Linking->Other Linker Flags⾥⾯的-all_load
+如果遇到头⽂件冲突的问题，可能是，other linker flags的设置问题。删除TARGETS->Linking->Other Linker Flags⾥⾯的-ObjC
 
 **4.Bitcode：**
 
@@ -117,13 +117,13 @@ Privacy - Location Usage Description
 由于iOS14.5系统策略更新，我们需要在App中添加SKAdNetwork标识和ATT权限，以避免⼴告收益降
 低。
 
-1.升级穿⼭甲 iOS SDK 3.4.2.3 及以上版本，升级⼴点通4.12.3及以上版本，提供了iOS14与
+1.升级穿⼭甲 iOS SDK 3.4.2.3 及以上版本，升级优量汇4.12.3及以上版本，提供了iOS14与
 SKAdNetwork⽀持
 2.将SKAdNetwork ID 添加到 info.plist 中，以保证 SKAdNetwork 的正确运⾏，以下内容复制到您的info.plist中，
 
 ```
 穿⼭甲：238da6jt44.skadnetwork，22mmun2rn5.skadnetwork，x2jnk7ly8j.skadnetwork
-⼴点通：f7s53z58qe.skadnetwork
+优量汇：f7s53z58qe.skadnetwork
 ```
 
 ```
@@ -305,7 +305,7 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 UIView *contentV = [[UIView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.width * 400.0 /600.0)];
  [self.view addSubview:contentV];
  
-FCAdBanner * fcAdBanner = [[FCAdBanner alloc] initWithAdUnitID:pID adContainer:contentV viewController:self];
+YFAdBanner * fcAdBanner = [[YFAdBanner alloc] initWithAdUnitID:pID adContainer:contentV viewController:self];
 fcAdBanner.delegate = self;
 [fcAdBanner loadAndShowAd];
 }
@@ -517,6 +517,8 @@ fcAdBanner.delegate = self;
     [advanceFeed loadAndShowAd];
 }
  ```
+ 
+ *接⼊建议：调⽤loadAds接⼝的时候，size的⾼度height传0；⼴告加载成功的时候，判断返回的⼴告View⾼度，如果是0还需要等待渲染成功再展示，如果⾼度⼤于0，可直接展示。
 
 2.回调方法
 
@@ -1086,10 +1088,10 @@ fcAdBanner.delegate = self;
 
 ## 6、 收集的数据类型
 
-| 数据类型 | 收集情况 | 备注  |
-|--------|---------|----------|
-| 1.精确位置 Precise Location </br>2.粗略位置 Rough Location|1.精确位置-可选收集</br> 2.粗略位置-不收集|会获取地理位置信息⽤于⼴告投放与反作弊。应⽤被⽤户授予地理位置权限时，会获取地理位置信息，不会主动获取地理位置权限及地理位置信息。|
-|设备ID|可选收集|设备ID当应⽤被⽤户授予⼴告追踪权限时，将获取idfa⽤于⼴告归因与追踪。|
-|1.使⽤数据 UsageData </br> 2.产品交互ProductInteraction</br>3.⼴告数据Advertising Data</br>4.其他使⽤数据 OtherUsage Data|1.使⽤数据-不收集</br>2.产品交互-不收集</br>3.⼴告数据-收集</br>4.其他使⽤数据-不收集|将统计⼴告数据，以⽤于⼴告主统计投放结果。展示 、点击 、转化|
-|诊断Diagnostics</br>1.崩溃数据Crash Data</br>2.性能数据Performance Data</br>3.其他诊断数据 OtherDiagnostic Data|1.崩溃数据-收集</br>2.性能数据-收集其他</br>3.诊断数据-不收集|崩溃数据联盟将收集联盟SDK带来的崩溃信息，以此来优化代码缺陷。性能数据联盟将收集SDK运⾏过程中性能数据，以优化SDK的性能。|
-|1.其他数据 OtherData </br>2.其他数据类型Other Data Types</br>|收集|技术上我们还会收集⼀些设备信息（例如，设备型号、操作系统及版本、时区、⽹络类型等）。|
+|                                                       数据类型                                                        |                                   收集情况                                    |                                                      备注                                                      |
+| ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 1.精确位置 Precise Location </br>2.粗略位置 Rough Location                                                             | 1.精确位置-可选收集</br> 2.粗略位置-不收集                                        | 会获取地理位置信息⽤于⼴告投放与反作弊。应⽤被⽤户授予地理位置权限时，会获取地理位置信息，不会主动获取地理位置权限及地理位置信息。 |
+| 设备ID                                                                                                               | 可选收集                                                                      | 设备ID当应⽤被⽤户授予⼴告追踪权限时，将获取idfa⽤于⼴告归因与追踪。                                                    |
+| 1.使⽤数据 UsageData </br> 2.产品交互ProductInteraction</br>3.⼴告数据Advertising Data</br>4.其他使⽤数据 OtherUsage Data | 1.使⽤数据-不收集</br>2.产品交互-不收集</br>3.⼴告数据-收集</br>4.其他使⽤数据-不收集 | 将统计⼴告数据，以⽤于⼴告主统计投放结果。展示 、点击 、转化                                                           |
+| 诊断Diagnostics</br>1.崩溃数据Crash Data</br>2.性能数据Performance Data</br>3.其他诊断数据 OtherDiagnostic Data           | 1.崩溃数据-收集</br>2.性能数据-收集其他</br>3.诊断数据-不收集                       | 崩溃数据联盟将收集联盟SDK带来的崩溃信息，以此来优化代码缺陷。性能数据联盟将收集SDK运⾏过程中性能数据，以优化SDK的性能。         |
+| 1.其他数据 OtherData </br>2.其他数据类型Other Data Types</br>                                                           | 收集                                                                         | 技术上我们还会收集⼀些设备信息（例如，设备型号、操作系统及版本、时区、⽹络类型等）。                                        |

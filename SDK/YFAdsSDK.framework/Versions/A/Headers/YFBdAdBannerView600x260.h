@@ -8,6 +8,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)show;
 - (void)pauseVideo;
 - (void)playVideo;
+- (void)trackImpression;
+
 @end
 
 NS_ASSUME_NONNULL_END
