@@ -1,10 +1,10 @@
-# 亿帆SDK对接⽂档: V6.0.2.1
+# 亿帆SDK对接⽂档: V6.0.2.2
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.2.1  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.20  |
+| 6.0.2.2  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.20  |
 | 6.0.2.0  | 1.广告样式优化</br>2.修复部分已知问题                                                                                                                                                                                                                                                                        | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.14  |
 | 6.0.1.8  | <font color="red"> 1.获取广告数据失败方法替换- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description DEPRECATED_MSG_ATTRIBUTE(" 此方法将被替换为:- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description");</br>2.修复部分已知问题 | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.7.10  |
 | 6.0.1.6  | <font color="red">1.更新穿山甲、优量汇、快手、百度、京东 广告SDK </br> 2.支持淘宝Tanx广告</br></font>3. 优化聚合SDK性能，提升执行效率</br>4.新增640x100、600x410尺寸 banner 、信息流样式 </br>5. YFAdNativeExpressView 增加 -(void)setRootController:(UIViewController *)rootController 方法</br>6.修复部分已知问题          | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.7.1   |
@@ -60,7 +60,7 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 使⽤VPN
 
 ```
- pod 'YFAdsSDK', '6.0.2.1'
+ pod 'YFAdsSDK', '6.0.2.2'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.14.81'
 #穿⼭甲⼴告
