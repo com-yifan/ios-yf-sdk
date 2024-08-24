@@ -116,6 +116,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 创建视图抖动效果
 +(void)shakeAnimationForView:(UIView *)view;
+///  UA
++(NSString *)getUserAgent;
 
 @end
 
