@@ -57,6 +57,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)isValid;
 
+- (void)removeCustomRenderAd;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

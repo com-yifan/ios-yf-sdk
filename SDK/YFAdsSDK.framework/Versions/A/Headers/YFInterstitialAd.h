@@ -59,12 +59,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign)NSUInteger ecpm;
 
+@property (nonatomic, assign) BOOL autoClick;
+
 
 - (instancetype)initWithPosId:(NSString *)posId eventModel:(YFAdEventModel *)eventModel;
 
 - (void)loadAdData;
 
-@property (nonatomic, assign) BOOL autoClick;
+- (void)removeAd;
 
 - (void)showFromViewController:(UIViewController *)viewController;
 

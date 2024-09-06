@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAndShowAd;
 /// 移除广告 (banner ，信息流可用)
 - (void)removeAd;
+
+/// 移除广告 (自渲染插屏)
+- (void)removeCustomRenderAd;
 /// 上报
 - (void)reportWithType:(YFAdSDKReportEventType)repoType supplier:(id)supplier error:(nullable NSError *)error;
 ///  搜集错误
