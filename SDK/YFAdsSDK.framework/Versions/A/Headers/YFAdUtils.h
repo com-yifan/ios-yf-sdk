@@ -121,6 +121,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)setUserAgent;
 
++ (NSString *)yfEncodeURIComponent:(NSString *)urlStr;
+
 @end
 
 NS_ASSUME_NONNULL_END
