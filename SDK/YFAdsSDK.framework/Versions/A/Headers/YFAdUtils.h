@@ -20,6 +20,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getNetworkType;
 /// 获取当前网络状态
 - (NSInteger)getAdxNetworkType;
+
++(UIWindow *)getCurrentWindow;
+
+/// 获取当前控制器
++(UIViewController *)getCurrentVC;
+
+/// 获取当前窗口根控制器
++(UIViewController *)getCurrentRootVC;
+
+/// 获取KeyWindow根控制器
++(UIViewController *)getKeyRootVC;
+
++(UIWindow *)getKeyWindow;
 /// 获取当前时间戳
 + (double)getCurrentDate;
 /// 获取IDFA 或者 UUID

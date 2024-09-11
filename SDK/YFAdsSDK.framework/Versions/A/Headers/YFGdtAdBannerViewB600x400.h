@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(float)getViewHeight;
 -(void)loadAdData:(id)dataObject close: (void(^)(id))close;
+- (void)resetVC:(UIViewController*)VC;
 
 @end
 
