@@ -4,7 +4,7 @@
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.2.10  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.9.11 |
+| 6.0.2.11  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.9.11 |
 | 6.0.2.2  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.20  |
 | 6.0.2.0  | 1.广告样式优化</br>2.修复部分已知问题                                                                                                                                                                                                                                                                        | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.14  |
 | 6.0.1.8  | <font color="red"> 1.获取广告数据失败方法替换- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description DEPRECATED_MSG_ATTRIBUTE(" 此方法将被替换为:- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description");</br>2.修复部分已知问题 | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.7.10  |
@@ -65,7 +65,7 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 #优量汇⼴告
  pod 'GDTMobSDK', '4.14.81'
 #穿⼭甲⼴告
- pod 'Ads-CN','6.3.0.4', :subspecs => ['BUAdSDK', 'CSJMediation']
+ pod 'Ads-CN','6.3.1.8', :subspecs => ['BUAdSDK', 'CSJMediation']
 #快⼿⼴告SDK
  pod 'KSAdSDK', '3.3.66.3', :inhibit_warnings => false
 #百度⼴告SDK
@@ -520,6 +520,7 @@ fcAdBanner.delegate = self;
   
        YFAdNativeExpress * advanceFeed = [[YFAdNativeExpress alloc] initWithAdUnitID:PID adContainer:nil  viewController:self adSize:CGSizeMake(self.view.bounds.size.width, 0)];
     advanceFeed.delegate = self;
+    advanceFeed.count = 1;
     [advanceFeed loadAndShowAd];
 }
  ```

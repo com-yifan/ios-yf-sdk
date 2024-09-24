@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 开始倒计时
 - (void)startCountdown:(YFAdEventModel *)event;
+- (void)close;
 @end
 
 NS_ASSUME_NONNULL_END
