@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol YFAdProtocol <NSObject>
 
 @optional
-@property (nonatomic, strong) NSObject *this_is_an_update_mark;
 // 单位:分，只有视频资源下载成功后，这个才可能有值
 @property(nonatomic, readonly) NSInteger ecpm;
 /// 媒体用来获取部分信息的字典

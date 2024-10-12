@@ -6,16 +6,17 @@
 //
 
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 #import "YFPlayerAdControlView.h"
 #import "YFAVPlayerManager.h"
 #import "YFPlayerAdControlView.h"
 #import "YFAdReportModel.h"
 #import "YFAdView.h"
+#import "YFAdsCloseButton.h"
 
 #if __has_include(<JADYun/JADYun.h>)
 #import <JADYun/JADYun.h>
-@interface YFJDBannerView : UIView
+@interface YFJDBannerView : YFAdBaseCustomView
 
 @property (nonatomic, strong) YFAdImageView *contentView;
 @property(nonatomic, strong) YFAVPlayerManager *playerManager;

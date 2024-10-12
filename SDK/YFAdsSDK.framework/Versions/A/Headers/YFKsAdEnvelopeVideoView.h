@@ -1,5 +1,5 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 
 
 #if __has_include(<KSAdSDK/KSAdSDK.h>)
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFKsAdEnvelopeVideoView : YFAdBaseView
+@interface YFKsAdEnvelopeVideoView : YFAdBaseCustomView
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model viewController:(UIViewController *)viewController;
 -(void)loadAdData:(KSNativeAd *)dataObject close: (void(^)(id))close;

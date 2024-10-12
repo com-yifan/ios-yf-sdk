@@ -1,9 +1,9 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 #import "YFAdBaseView.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFTxAdBannerView600x410 : YFAdBaseView
+@interface YFTxAdBannerView600x410 : YFAdBaseCustomView
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model nativeAd:(id)nativeAd;
 -(float)getViewHeight;

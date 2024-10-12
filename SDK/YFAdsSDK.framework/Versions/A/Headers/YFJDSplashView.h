@@ -6,17 +6,18 @@
 //
 
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 #if __has_include(<JADYun/JADYun.h>)
 #import <JADYun/JADYun.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFJDSplashView : UIView
+@interface YFJDSplashView : YFAdBaseCustomView
 
 @property(nonatomic, weak) UIViewController *rootViewController;
 @property(nonatomic, assign) NSUInteger ecpm;
 @property(nonatomic, strong) UIView *area;
 @property(nonatomic, strong) UIButton *jumpBtn;
+@property(nonatomic, assign) BOOL isvalid;
 
 -(instancetype)initWithSplashMode:(id)model;
 

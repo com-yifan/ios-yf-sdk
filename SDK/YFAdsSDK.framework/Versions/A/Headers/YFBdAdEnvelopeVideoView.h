@@ -1,8 +1,8 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFBdAdEnvelopeVideoView : UIView
+@interface YFBdAdEnvelopeVideoView : YFAdBaseCustomView
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(void)loadAdData:(id)object close:(void(^)(id))close;
 -(void)show;

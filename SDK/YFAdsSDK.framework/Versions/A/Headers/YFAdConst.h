@@ -8,6 +8,7 @@
 ///  弱对象
 #define yf_weakify( x ) autoreleasepool{} __weak typeof(x) weak##x = x;
 
+#define yf_strongify( x ) autoreleasepool{} __strong typeof(x) x = weak##x;
 
 /// iPhoneX  iPhoneXS  iPhoneXS Max  iPhoneXR 机型判断
 #define YF_IsiPhoneX \

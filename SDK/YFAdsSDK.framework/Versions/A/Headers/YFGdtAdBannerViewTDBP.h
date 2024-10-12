@@ -1,3 +1,4 @@
+#import "YFAdBaseCustomView.h"
 
 #if __has_include( <GDTMobSDK/GDTUnifiedNativeAdView.h>)
 
@@ -9,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface YFGdtAdBannerViewTDBP : UIView
+@interface YFGdtAdBannerViewTDBP : YFAdBaseCustomView
 
 @property (nonatomic, strong) YFGdtAdMediaView *adInterView;
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;

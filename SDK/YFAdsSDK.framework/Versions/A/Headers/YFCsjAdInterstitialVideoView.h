@@ -1,5 +1,5 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 #if __has_include(<BUAdSDK/BUAdSDK.h>)
 #import <BUAdSDK/BUAdSDK.h>
 #import "YFAdInteractionType.h"
@@ -7,7 +7,7 @@
 #import "YFCsjCustomExpressAdapter.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFCsjAdInterstitialVideoView : UIView
+@interface YFCsjAdInterstitialVideoView : YFAdBaseCustomView
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(void)loadAdData:(BUNativeAd *)dataObject close: (void(^)(id))close;
 -(void)show;

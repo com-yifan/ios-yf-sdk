@@ -17,10 +17,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 是否必须展示Logo 默认: NO 注意: 强制展示Logo可能会影响收益 !!!
 @property (nonatomic, assign) BOOL showLogoRequire;
+/// 广告Logo视图
+@property(nonatomic, strong) UIView *bottomView;
+/// 开屏占位视图
+@property(nonatomic, strong) UIView *backgroundView;
+
 /// 广告Logo
-@property(nonatomic, strong) UIImage *logoImage;
+@property(nonatomic, strong) UIImage *logoImage DEPRECATED_MSG_ATTRIBUTE("此方法即将下线，请使用@property(nonatomic, strong) UIView *bottomView;替换");
 /// 广告占位图
-@property(nonatomic, strong) UIImage *backgroundImage;
+@property(nonatomic, strong) UIImage *backgroundImage DEPRECATED_MSG_ATTRIBUTE("此方法即将下线，请使用@property(nonatomic, strong) UIView *backgroundView;替换");
 /// 总超时时间单位秒
 @property (nonatomic, assign) NSInteger timeout;
 

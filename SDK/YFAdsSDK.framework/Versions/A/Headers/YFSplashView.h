@@ -116,6 +116,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign, readonly) YFAdMaterialType materialType;
 @property(nonatomic, assign) BOOL isvalid;
 @property(nonatomic, assign) NSUInteger ecpm;
+@property(nonatomic, strong) YFMaterialMeta *materialModel;
 
 - (id)initWithPosId:(NSString *)posId model:(id)model;
 
@@ -129,7 +130,7 @@ NS_ASSUME_NONNULL_BEGIN
 //-(void)show ;
 - (void)showInView:(UIView *)view;
 
-
+-(void)closeAction;
 
 @end
 

@@ -23,8 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *appVersion;
 /// 渠道，支持输入多个枚举值，需用英文逗号隔开。
 @property (nonatomic, copy) NSString *channel;
-/// json格式，支持格式：支持大小写字母、数字、下划线、连词符，不支持中文；base64编
+/// json格式，支持格式：支持大小写字母、数字、下划线、连词符，不支持中文；base64编。参与流量分组和报表分析
 @property (nonatomic, retain) NSDictionary *customDefine;
+/// json格式，支持格式：支持大小写字母、数字、下划线、连词符，不支持中文；base64编。不参与流量分组和报表分析
+@property (nonatomic, retain) NSDictionary *userDefine;
 /// 设备品牌，可选项：HUAWEI,OPPO,VIVO,XIAOMI,APPLE,SAMSUNG等24个品牌手机。可多选，多选使用逗号分隔
 @property (nonatomic, copy) NSString *deviceBrand;
 /// 设备ID， 输入多个值时，需用英文逗号隔开； 支持IDFA、OAID、IMEI或其他自定义可标识该设备id

@@ -126,10 +126,16 @@ NS_ASSUME_NONNULL_BEGIN
 +(float)scale;
 /// 时间是否过期
 +(BOOL)isTimeValid:(YFAdEventModel *)event;
-
 /// 创建视图抖动效果
 +(void)shakeAnimationForView:(UIView *)view;
+
+/// 是否配置了开启京东检测
+@property (nonatomic) BOOL jdTrackOpen;
 ///  UA
+/// 是否需要过滤京东广告
++(BOOL)needFilterJdAd;
+///
++(void)addGeneralPasteboard:(YFMaterialMeta*)materialMeta;
 + (NSString *)getUserAgent;
 
 + (void)setUserAgent;

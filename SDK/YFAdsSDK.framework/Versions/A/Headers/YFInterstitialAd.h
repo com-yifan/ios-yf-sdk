@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@class YFInterstitialAd,YFAdEventModel;
+@class YFInterstitialAd,YFAdEventModel,YFMaterialMeta;
 
 @protocol YFInterstitialAdDelegate <NSObject>
 @optional
@@ -58,6 +58,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL videoSoundEnabled;
 
 @property(nonatomic,assign)NSUInteger ecpm;
+
+@property(nonatomic, strong) YFMaterialMeta *materialModel;
 
 @property (nonatomic, assign) BOOL autoClick;
 

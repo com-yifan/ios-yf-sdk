@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isYFView;
 // 唯一标识
 @property (nonatomic, assign) NSUInteger tag;
-// 渠道标识
+// 渠道标识 1 穿山甲；2 优量汇；3 百度 4快手  5 亿帆 9 京东  adx 12 14 Tanx
 @property (nonatomic, assign) NSUInteger identifier;
 // 是否有效
 @property (nonatomic, assign) BOOL isValid;

@@ -1,5 +1,5 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 #if __has_include(<BUAdSDK/BUAdSDK.h>)
 #import <BUAdSDK/BUAdSDK.h>
 #import "YFAdInteractionType.h"
@@ -7,7 +7,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFCsjAdBannerViewTDBP: UIView
+@interface YFCsjAdBannerViewTDBP: YFAdBaseCustomView
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 

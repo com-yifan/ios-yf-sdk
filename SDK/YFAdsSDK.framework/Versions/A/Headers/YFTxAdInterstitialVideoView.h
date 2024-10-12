@@ -1,5 +1,5 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 
 
 #import "YFAdInteractionType.h"
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFTxAdInterstitialVideoView : YFAdBaseView
+@interface YFTxAdInterstitialVideoView : YFAdBaseCustomView
 
 @property (nonatomic, weak) id<YFTxAdInterstitialVideoViewDelegate> delegate;
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model nativeAd:(id)nativeAd viewController:(UIViewController *)viewController;

@@ -175,6 +175,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 视频广告（退出全屏时上报）
 @property(nonatomic, copy) NSArray *video_exit_full;
 
+@property(nonatomic, copy) NSArray *wurl;
+
 @end
 
 NS_ASSUME_NONNULL_END

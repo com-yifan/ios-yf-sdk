@@ -1,10 +1,10 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 #if __has_include(<BaiduMobAdSDK/BaiduMobAdNativeAdView.h>)
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFBdAdBannerViewB600x400 : UIView
+@interface YFBdAdBannerViewB600x400 : YFAdBaseCustomView
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(void)loadAdData:(id)object close:(void(^)(id))close;
 -(void)show;

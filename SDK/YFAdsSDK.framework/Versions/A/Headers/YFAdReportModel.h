@@ -55,9 +55,12 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeCloseBTNAd = 15,
     /// 关闭广告
     YFAdSDKReportEventTypeCloseAd = 16,
+    /// 有填充但是ECPM过低被过滤
+    YFAdSDKReportEventTypeLowECPMFill = 33,
     /// 自渲染SDK展示
     YFAdSDKReportEventTypeCustomSDKShow = 100,
-    
+    /// 亿帆监测的展示，以自渲染广告在手机屏幕中展示100%面积为准，同一个广告重复展示的情况只上报第一次展示
+    YFAdSDKReportEventTypeExposure = 101,
     
     /// app 配置同步
     YFAdSDKReportEventTypeAppRquestStart = 10001,
@@ -137,8 +140,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSString * dm;
 /// 拓展字段
 @property (nonatomic, retain) NSDictionary *ex;
-
-
+/// 拓展字段2
+@property (nonatomic, retain) NSDictionary *ex2;
 @end
 
 @interface YFAdEventModel : NSObject<NSCopying>
@@ -151,7 +154,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *adnAppID;
 /// 广告商appID
 @property (nonatomic, copy) NSString *adnAppKey;
-/// 广告商枚举ID
+/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度 4快手  5 亿帆 9 京东  adx 12 14 Tanx
 @property (nonatomic, assign) NSInteger adnID;
 /// 广告类型
 /// 1 开屏广告;2 信息流广告;3 插屏广告;4 banner横幅广告;5 draw视频信息流广告;6 全屏视频广告;7 激励视频广告
@@ -204,7 +207,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * tpid;
 /// 请求ID
 @property (nonatomic, copy) NSString * rID;
-/// 模版ID
+/// 模版ID  2自渲染banner、3信息流
 @property (nonatomic, assign) NSInteger renderID;
 /// 关闭按钮尺寸 
 /*
@@ -225,13 +228,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger jc;
 /// 模板尺寸
 @property (nonatomic, assign) NSInteger ts;
-/// 关闭按钮位置 1左上角 2右上角
-// 1: 左上角
+/// 关闭按钮位置。根据布局需求实现其中几种，剩余的默认即可
+//1: 左上角
 //2: 右上角
 //3: 底部
 //4: 素材左上角
 //5: 素材右上角
-
+//6: 左下角
+//7: 右下角
 @property (nonatomic, assign) NSInteger cbp;
 /// 关闭按钮出现时间
 @property (nonatomic, assign) NSInteger cbst;
@@ -246,8 +250,9 @@ NS_ASSUME_NONNULL_BEGIN
  4: 扭一扭
  5: 点击+扭一扭
  6: 滑动跳转
- 7:点击跳转(无手指)
+ 7: 点击跳转(无手指)
  8：点击+滑动
+ 9：点击(有手指)
  */
 @property (nonatomic, assign) NSInteger is;
 /// 是否 自动跳转 0关闭 1是开启
@@ -304,6 +309,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger cbm;
 // 缓存
 @property (nonatomic, assign) NSInteger cacheTimeout;
+/// 
+@property (nonatomic, strong) NSArray<NSString *> *wURL;
 
 @end
 NS_ASSUME_NONNULL_END

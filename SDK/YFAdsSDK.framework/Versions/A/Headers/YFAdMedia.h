@@ -60,6 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (id)initWithObject:(id)object adNative:(id)adNative ksView:(UIView *)view adapter:(YFAdBaseAdapter *)adapter;
 
+- (id)initWithObject:(id)object adNative:(id)adNative adxView:(UIView *)view adapter:(YFAdBaseAdapter *)adapter;
 @end
 
 

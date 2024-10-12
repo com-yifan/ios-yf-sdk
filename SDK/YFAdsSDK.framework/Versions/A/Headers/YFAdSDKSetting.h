@@ -36,8 +36,11 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 + (instancetype)shareInstance;
 /// 自定义参数
 @property (nonatomic, copy) NSDictionary *customDefine;
+/// 自定义流量分组，填写真实的uid，保证与所开发app后端的用户id对应。具体联系商务
+@property (nonatomic, copy) NSDictionary *userDefine;
 ///控制台日志输出开关, 默认开启
 @property (nonatomic, assign) BOOL logEnable;
+
 /// 自定义IDFA，格式需与IDFA格式相同，xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 @property (nonatomic, copy) NSString * customIDFA;
 /// 是否开启定位 默认开启

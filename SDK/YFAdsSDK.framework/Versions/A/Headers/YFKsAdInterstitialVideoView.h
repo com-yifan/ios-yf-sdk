@@ -1,5 +1,5 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 
 
 #if __has_include(<KSAdSDK/KSAdSDK.h>)
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFKsAdInterstitialVideoView : YFAdBaseView
+@interface YFKsAdInterstitialVideoView : YFAdBaseCustomView
 
 @property (nonatomic, weak) id<YFKsAdInterstitialVideoViewDelegate> delegate;
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model viewController:(UIViewController *)viewController;

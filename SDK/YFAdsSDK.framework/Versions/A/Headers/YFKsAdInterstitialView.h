@@ -1,5 +1,5 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 
 
 #if __has_include(<KSAdSDK/KSAdSDK.h>)
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class YFKsAdInterstitialView;
 
 
-@interface YFKsAdInterstitialView : YFAdBaseView
+@interface YFKsAdInterstitialView : YFAdBaseCustomView
 
 @property (nonatomic, strong) YFAdImageView *contentView;
 @property (nonatomic, strong) UIButton *closeBtn;

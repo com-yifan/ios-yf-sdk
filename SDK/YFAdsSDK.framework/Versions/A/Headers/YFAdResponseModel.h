@@ -105,7 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface FCAdNetwork : NSObject
-/// networkId:1 穿山甲；2 优量汇；3 百度 4快手
+// networkId:1 穿山甲；2 优量汇；3 百度 4快手  5 亿帆 9 京东  adx 12 14 Tanx
 @property (nonatomic, copy) NSString *networkID;
 /// json字符串，字段不固定，包含ADN SDK所需配置，json字符串， head_bidding标识是否为bidding
 @property (nonatomic, strong) FCAdParam *param;

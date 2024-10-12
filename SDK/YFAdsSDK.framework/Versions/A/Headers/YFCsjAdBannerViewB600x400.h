@@ -1,16 +1,17 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 #if __has_include(<BUAdSDK/BUAdSDK.h>)
 #import <BUAdSDK/BUAdSDK.h>
 #import "YFAdInteractionType.h"
 #import "YFAdView.h"
 #import "YFAdsDetailButton.h"
+#import "YFAdsCloseButton.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFCsjAdBannerViewB600x400 : UIView
+@interface YFCsjAdBannerViewB600x400 : YFAdBaseCustomView
 @property (nonatomic, strong) YFAdImageView *contentView;
-@property (nonatomic, strong) UIButton *closeBtn;
+@property (nonatomic, strong) YFAdsCloseButton *closeBtn;
 @property (nonatomic, strong) UIView *subView;
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) YFAdsDetailButton *otherBtn;

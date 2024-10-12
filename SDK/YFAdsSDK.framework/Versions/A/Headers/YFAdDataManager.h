@@ -12,7 +12,6 @@
 #define YF_LOG_URL @"http://log.yfanads.com/ads/v1/upload/log?sign="
 #define YF_DATA_URL @"http://api.yfanads.com/api/v1/ads/app"
 
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdDataManager : NSObject

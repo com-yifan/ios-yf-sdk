@@ -1,5 +1,5 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 #import "YFAdInteractionType.h"
 #import "YFAdView.h"
 #import "YFAdMarkImageView.h"
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFBdAdInterstitialView : UIView
+@interface YFBdAdInterstitialView : YFAdBaseCustomView
 @property (nonatomic, strong) BdAdInterView *adInterView;
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(void)loadAdData:(id)object;

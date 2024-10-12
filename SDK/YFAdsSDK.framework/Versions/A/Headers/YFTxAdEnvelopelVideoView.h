@@ -1,5 +1,5 @@
 
-#import <UIKit/UIKit.h>
+#import "YFAdBaseCustomView.h"
 
 
 #import "YFAdInteractionType.h"
@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface YFTxAdEnvelopelVideoView : YFAdBaseView
+@interface YFTxAdEnvelopelVideoView : YFAdBaseCustomView
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model nativeAd:(id)nativeAd viewController:(UIViewController *)viewController;
 -(void)loadAdData:(id)dataObject close: (void(^)(id))close;

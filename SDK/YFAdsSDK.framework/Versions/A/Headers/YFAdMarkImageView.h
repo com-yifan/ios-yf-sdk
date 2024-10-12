@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAdLogoType:(NSInteger)type;
 - (void)loadAdLogo:(NSString *)logo;
 - (void)loadAdLogoImage:(UIImage *)logoImage;
+@property (nonatomic, copy) void (^longTapClick)(void);
 
 @end
 
