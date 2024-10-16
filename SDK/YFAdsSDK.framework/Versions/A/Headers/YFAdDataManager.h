@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 上报数据
 -(void)report:(NSArray *)events success:(void(^)(id))success fail:(void(^)(id))fail;
 
--(void)uploadLogFile:(NSString *)filePath;
+-(void)uploadLogFile:(NSString *)filePath completionHandler:(void (^)(void))completionHandler;
 
 @end
 
