@@ -1,10 +1,12 @@
-# 亿帆SDK对接⽂档: V6.0.2.10
+# 亿帆SDK对接⽂档: V6.0.3.2
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.2.11  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.9.11 |
+| 6.0.3.2  | 1.修复部分已知问题题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.10.16 |
+| 6.0.3.0  |  1.升级联盟双十一版本SDK </br> 2.广告样式优化  </br>3.媒体自渲染能力优化 </br>4.支持开屏底部bottomView自定义能力与背景视图backgroundView自定义能力  </br>5.DEMO新增模拟场景 </br>6.修复已知问题与性能优化                                                                                                                      | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.10.13 |
+| 6.0.2.12  | 1.Tanx3.6.0适配 </br>2.修复部分已知问题题                                                                                                                                                                                                                                                                    | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.9.29 |
 | 6.0.2.2  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.20  |
 | 6.0.2.0  | 1.广告样式优化</br>2.修复部分已知问题                                                                                                                                                                                                                                                                        | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.14  |
 | 6.0.1.8  | <font color="red"> 1.获取广告数据失败方法替换- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description DEPRECATED_MSG_ATTRIBUTE(" 此方法将被替换为:- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description");</br>2.修复部分已知问题 | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.7.10  |
@@ -49,11 +51,19 @@
 
 ### 3.2 引入SDK
 
-#### 方法一
-
+#### 方法一：手动部署
+**1,导入依赖库**
 右键点击⼯程，选择Add File to…，选择解压SDK包后得到的YFAdsSDK.framework，点击Add。或者
 将⽂件拖⼊XCode⼯程⽬录结构中，在弹出的界⾯中勾选“Copy items into destination group's
 folder(if needed)”，并确保Add To Targets勾选相应的target。同时将YFAdsSDK.framework ⽬录⾥⾯的YFAdsSDK.bundle⽂件导⼊Xcode。
+
+**2,添加-ObjC**
+
+在Target->Build Settings -> Other Linker Flags中添加-ObjC, 字母o和c大写。
+
+**3，关闭Bitcode**
+
+前往项目的Build Setting中的Enable Bitcode设置为NO
 
 #### <font color="red">方法二（推荐）：</font>
 
@@ -61,21 +71,21 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 使⽤VPN
 
 ```
- pod 'YFAdsSDK', '6.0.2.10'
+ pod 'YFAdsSDK', '6.0.3.2'
 #优量汇⼴告
- pod 'GDTMobSDK', '4.14.81'
+ pod 'GDTMobSDK', '4.15.10'
 #穿⼭甲⼴告
- pod 'Ads-CN','6.3.1.8', :subspecs => ['BUAdSDK', 'CSJMediation']
+ pod 'Ads-CN','6.4.1.0', :subspecs => ['BUAdSDK', 'CSJMediation']
 #快⼿⼴告SDK
- pod 'KSAdSDK', '3.3.66.3', :inhibit_warnings => false
+ pod 'KSAdSDK', '3.3.69', :inhibit_warnings => false
 #百度⼴告SDK
- pod 'BaiduMobAdSDK', '5.352'
+ pod 'BaiduMobAdSDK', '5.371'
 #京东⼴告SDK
- pod 'JADYun', '2.6.2' 
+ pod 'JADYun', '2.6.4' 
 #京东摇一摇组件(可选)
- pod 'JADYunMotion', '2.6.2' 
+ pod 'JADYunMotion', '2.6.4' 
 # tanx 
- pod 'TanxSDK','3.5.7'
+ pod 'TanxSDK','3.6.1'
 # 微信OpenSDK
  pod 'WechatOpenSDK-XCFramework'
 
@@ -94,15 +104,9 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 3.移除AppDelegate⾥⾯的UIScene代理
 4.最后在info.plist⽂件中移除Application Scene Manifest
 
-**3.头⽂件冲突：**
 
-如果遇到头⽂件冲突的问题，可能是，other linker flags的设置问题。删除TARGETS->Linking->Other Linker Flags⾥⾯的-ObjC
 
-**4.Bitcode：**
-
-由于第三⽅库的原因，我们需要在Xcode中关闭Bitcode。设置TARGETS->Build Settings->Enable Bitcode为NO
-
-**5.位置权限：**
+**3.位置权限：**
 
 如果应⽤开启了位置权限，SDK可以获取应⽤位置信息⽤以精准推送⼴告，需要在应⽤的 info.plist 添加相应权限提示信息，避免AppStore 审核被拒：
 
@@ -113,7 +117,7 @@ Privacy - Location Always Usage Description
 Privacy - Location Usage Description
 ```
 
-**<font color="red">6.iOS14适配（重要）：</font>**
+**<font color="red">4.iOS14适配（重要）：</font>**
 
 由于iOS14.5系统策略更新，我们需要在App中添加SKAdNetwork标识和ATT权限，以避免⼴告收益降
 低。
@@ -124,7 +128,7 @@ SKAdNetwork⽀持
 
 ```
 穿⼭甲：238da6jt44.skadnetwork，22mmun2rn5.skadnetwork，x2jnk7ly8j.skadnetwork
-⼴点通：f7s53z58qe.skadnetwork
+优量汇：f7s53z58qe.skadnetwork
 快手：r3y5dwb26t.skadnetwork
 ```
 
@@ -191,17 +195,25 @@ tionStatus status) {
 为了提升⼴告价值，需要在info.plist⾥⾯配置url⽩名单，确保配置在前50个以内。
 
 ```
-taobao
-tbopen
-openjd
-openjx
-taobaolite
-meituan0000
-pddopen
-snssdk1128
-snssdk2329
-kwai
-ksnebula
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>tel</string>
+        <string>taobao</string>
+        <string>tbopen</string>
+        <string>imeituan</string>
+        <string>pinduoduo</string>
+        <string>openapp.jdmobile</string>
+        <string>openjd</string>
+        <string>openjx</string>
+        <string>taobaolite</string>
+        <string>meituan0000</string>
+        <string>pddopen</string>
+        <string>snssdk1128</string>
+        <string>snssdk2329</string>
+        <string>kwai</string>
+        <string>ksnebula</string>
+        <string>taptap</string>
+    </array>
 ```
 
 ### 3.3 跳转须知
@@ -220,10 +232,7 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 ### 3.5 初始化SDK及全局配置
 
 ```
-    [YFAdSDKManager setupSDKWithAppId:[YFEnvironmentManager getAPP_ID] config:^YFAdSDKSetting * (YFAdSDKSetting * c) {
-        c.customIDFA = idfa;
-        return c;
-    }];
+    [YFAdSDKManager setupSDKWithAppId:[YFEnvironmentManager getAPP_ID]];
 ```
 
 ### 3.6 扩展字段参数
@@ -231,6 +240,21 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 ⽬前⽀持多维度的扩展字段，可以设置⾃定义数据，后台可以根据维度做云控和数据统计
 
 ```
+    NSMutableDictionary * customDefine = [[NSMutableDictionary alloc] initWithCapacity:0];
+//    [customDefine setValue:@"c1" forKey:@"c1"];
+//    [customDefine setValue:@"c2" forKey:@"c2"];
+//    [customDefine setValue:@"c3" forKey:@"c3"];
+//    [customDefine setValue:@"c4" forKey:@"c4"];
+//    [customDefine setValue:@"5" forKey:@"c5"];
+//    [customDefine setValue:@"6" forKey:@"c6"];
+    [YFAdSDKSetting shareInstance].customDefine = customDefine;
+    
+///  自定义用户标签
+    NSMutableDictionary * userDefine = [[NSMutableDictionary alloc] initWithCapacity:0];
+//    这里需要替换成真实的用户ID
+    [userDefine setValue:@"yf_demo_user_id" forKey:@"UserID"];
+    [YFAdSDKSetting shareInstance].userDefine = userDefine;
+
     [YFAdSDKSetting shareInstance].customIDFA = idfa;
     [YFAdSDKSetting shareInstance].userId = @"test";
 
@@ -247,9 +271,24 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
     YFAdSplash *splash = [[YFAdSplash alloc] initWithAdUnitID:@"0bbcfd82-779d-4ff8-9a38-781b31c5ab61"viewController:self];
     splash.delegate = self;
     splash.showLogoRequire = YES;
-    splash.logoImage = [UIImage imageNamed:@"app_logo"];
-    splash.backgroundImage = [UIImage imageNamed:@"LaunchImage_img"];
     splash.timeout = 5;
+
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, self.slider.value)];
+    imageView.image = [UIImage imageNamed:@"app_logo"];
+    imageView.contentMode = UIViewContentModeScaleToFill;
+    
+    //自定义开屏底部logo
+    UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
+    bottomLabel.text = @"这是开屏底部视图，不要超过屏幕高度的20%";
+    bottomLabel.textAlignment = NSTextAlignmentCenter;
+    [imageView addSubview:bottomLabel];
+    splash.bottomView = imageView;
+    
+    //开屏背景，sdk提供一个开屏背景接口，传入视图由sdk管理。也可不传此背景图，自行管理背景。
+    UIImageView *backgroundV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH)];
+    backgroundV.image = [UIImage imageNamed:@"splashBg"];
+    splash.backgroundView = backgroundV;
+
     [splash loadAndShowAd];
 
  ```
@@ -297,9 +336,8 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
  ```
 
 开屏⼴告闪屏问题
- 1、⾸⻚闪现之后在弹出⼴告。这种现象对⽤户体验不友好。我们的⽅案是backgroundImage需要保持
-和App启动⻚⼀致，这样在加载开屏⼴告的时候，会覆盖在⾸⻚上⾯，⽤户感觉不到是在加载App还是
-加载⼴告过程。
+ 1、⾸⻚闪现之后在弹出⼴告。这种现象对⽤户体验不友好。我们的⽅案是backgroundView需要保持和App启动⻚⼀致，这样在加载开屏⼴告的时候，会覆盖在⾸⻚上⾯，⽤户感觉不到是在加载App还是加载⼴告过程。
+    但是相对SDK管理，更推荐自行管理开屏背景视图。
 
 ### 4.2 横幅⼴告
 
