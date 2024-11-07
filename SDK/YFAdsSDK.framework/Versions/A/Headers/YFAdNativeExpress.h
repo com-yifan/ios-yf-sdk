@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<YFAdNativeExpressDelegate> delegate;
 /// 广告尺寸
 @property (nonatomic, assign) CGSize adSize;
-/// 广告是否失效
-//@property (nonatomic, assign) BOOL isValid;
 
 @property (nonatomic, assign) float paddingLeftRight;
 

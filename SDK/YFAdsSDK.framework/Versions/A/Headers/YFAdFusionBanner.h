@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YFAdFusionBanner : YFAdBaseAdapter
 
 @property (nonatomic, weak) id<YFAdFusionBannerDelegate> delegate;
-/// 期望的广告宽度；必传
+/// 期望的广告宽度[必传]
 @property (nonatomic, assign) CGFloat adWidth;
 /// banner自动刷新时间，单位: 秒；仅融合banner中横幅类型支持，信息流无效
 @property(nonatomic, assign) int refreshInterval;

@@ -43,10 +43,14 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) YFAdFusionBannerAdType adType;
 /// 广告视图
 @property (nonatomic, strong) UIView *adView;
+/// 请使用 isValid 校验有效性，该属性无法判断
+@property (nonatomic, assign) BOOL valid;
 /// 是否渲染成功（素材加载完成，图片可以显示或视频可以播放）
 @property (nonatomic, assign) BOOL isReady;
 /// 渲染广告；调用该方法后开始渲染广告，成功回调 fcAdFusionBannerOnAdRenderSuccess: 渲染失败回调 fcAdFusionBannerOnAdRenderFail
 - (void)render;
+/// 广告是否有效(广告无效时不建议再次展示，建议请求新的广告)
+- (BOOL)isValid;
 
 @end
 
