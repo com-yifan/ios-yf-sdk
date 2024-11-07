@@ -12,7 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (ViewVisiable)
 - (BOOL)isViewVisible;
 - (BOOL)isSubViewVisible;
-@property(nonatomic,copy)void (^toPlayClick)(void);
+
+/// 是否100%在屏幕中
+- (BOOL)inScreenFull;
+
+/// 是否有一部分在屏幕中
+- (BOOL)inScreenPart;
+
 @end
 
 NS_ASSUME_NONNULL_END

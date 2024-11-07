@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAd;
 /// 展示广告
 - (void)showAd;
+
+-(void)recordLimitCount;
 /// 加载并展现
 - (void)loadAndShowAd;
 /// 移除广告 (banner ，信息流可用)

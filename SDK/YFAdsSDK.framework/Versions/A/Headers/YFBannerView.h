@@ -32,6 +32,12 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 
 
 /**
+ *
+ * 广告渲染成功
+ */
+- (void)yfBannerNativeExpressOnAdRenderSuccess:(YFBannerView *)bannerView;
+
+/**
  *  
  * 广告渲染失败
  */
@@ -61,11 +67,12 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 
 @property(nonatomic, weak) id <YFBannerViewDelegate> delegate;
 
-@property(nonatomic, copy,readonly) YFMaterialMeta *materialMetaModel;
+@property(nonatomic, readonly) YFMaterialMeta *materialMetaModel;
 @property(nonatomic, copy,readonly) NSString *posId;
 @property(nonatomic, copy,readonly) YFAdEventModel *eventModel;
 @property(nonatomic, assign,readonly) NSUInteger ecpm;
 @property(nonatomic, copy,readonly) NSArray *clickUrls;
+@property(nonatomic, strong) YFTouchLocModel *touchModel;
 @property(nonatomic, assign) YFBannerViewType type;
 @property(nonatomic, strong) YFAVPlayerManager *playerManager;
 @property(nonatomic, strong) YFPlayerController *player;
@@ -78,8 +85,9 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
  *  a.广告未拉取成功
  *  b.广告过期
  */
-@property(nonatomic, readonly) BOOL isAdValid;
-
+@property(nonatomic, readonly) BOOL isValid;
+/// 广告素材是否加载完成；视频是否准备好播放/图片加载完成
+@property (nonatomic, assign) BOOL isReady;
 @property(nonatomic, copy) void(^closeAd)(void);
 
 /**
@@ -103,6 +111,7 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
  */
 - (float)getViewHeight;
 -(void)toPlayVideo;
+-(void)turnClickBtn;
 
 @end
 

@@ -12,11 +12,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFAdsDetailButton : UIButton
+@interface YFAdsDetailButton : UIView
 
 @property(nonatomic, strong) YFAnimationView *lotAnimation;
 @property(nonatomic, copy) NSString * text;
 
+@property (nonatomic, strong) UILabel *titleLabel;
 - (instancetype)initWithModel:(YFAdEventModel *)event;
 
 

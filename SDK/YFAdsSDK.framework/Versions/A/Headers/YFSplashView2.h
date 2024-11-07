@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign, readonly) YFAdInteractionType interactionType;
 /// ad material type, avaliable after ksad_splashAdContentDidLoad:
 @property(nonatomic, assign, readonly) YFAdMaterialType materialType;
-@property(nonatomic, assign) BOOL isvalid;
+@property(nonatomic, readonly) BOOL isValid;
 @property(nonatomic, assign) NSUInteger ecpm;
 
 - (id)initWithPosId:(NSString *)posId model:(id)model;

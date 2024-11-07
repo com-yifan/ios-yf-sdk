@@ -15,11 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView *subView;
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) YFAdsDetailButton *otherBtn;
--(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 
--(float)getViewHeight;
--(void)loadAdData:(BUNativeAd *)dataObject close: (void(^)(id))close;
-
+- (instancetype)initWithFrame:(CGRect)frame model:(id)model;
+- (float)getViewHeight;
+- (void)loadAdData:(BUNativeAd *)dataObject close: (void(^)(id))close;
+/// 点击视频
+@property(nonatomic,copy) void (^clickVideoBlk)(void);
 @end
 
 NS_ASSUME_NONNULL_END

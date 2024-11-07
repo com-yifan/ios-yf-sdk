@@ -52,14 +52,19 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 /// 用户ID
 @property(nonatomic, copy) NSString *userId;
 
+/// api.yfanads.com/api/v1/ads/app
 @property (nonatomic, copy) NSString *fc_data_url;
 
+/// api.yfanads.com/api/v2/ads/adsc
 @property (nonatomic, copy) NSString *fc_conf_url;
 
+/// tracker.yfanads.com/api/v2/ads/batchUpload
 @property (nonatomic, copy) NSString *fc_upload_url;
 
+/// adx-data.yfanads.com/v1/r
 @property (nonatomic, copy) NSString *yf_conf_url;
 
+/// log.yfanads.com/ads/v1/upload/log?sign=
 @property (nonatomic, copy) NSString *yf_log_url;
 
 @property (nonatomic, assign, readonly) BOOL logSwitch;

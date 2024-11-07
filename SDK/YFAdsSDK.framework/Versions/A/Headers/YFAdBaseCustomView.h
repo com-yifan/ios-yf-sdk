@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdBaseCustomView : UIView
 @property(nonatomic,copy) void (^exposureBlk)(void);
+@property (nonatomic, copy) void(^renderCompletion)(BOOL, NSError * _Nullable);
 -(void)destroyTrackTimer;
 @end
 

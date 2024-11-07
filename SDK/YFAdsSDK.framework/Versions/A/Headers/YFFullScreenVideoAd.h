@@ -71,6 +71,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL autoClick;
 
+@property(nonatomic, readonly) BOOL isValid;
+
 -(instancetype)initWithPosId:(NSString *)posId eventModel:(YFAdEventModel *)eventModel;
 @end
 

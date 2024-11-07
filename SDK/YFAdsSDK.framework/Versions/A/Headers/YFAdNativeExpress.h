@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告尺寸
 @property (nonatomic, assign) CGSize adSize;
 /// 广告是否失效
-@property (nonatomic, assign) BOOL isValid;
+//@property (nonatomic, assign) BOOL isValid;
 
 @property (nonatomic, assign) float paddingLeftRight;
 
@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param pID 广告位
 /// @param viewController  viewController
 /// @param size 尺寸
-- (instancetype)initWithAdUnitID:(NSString *)pID adContainer:(UIView *)adContainer viewController:(UIViewController *)viewController adSize:(CGSize)size;
+- (instancetype)initWithAdUnitID:(NSString *)pID adContainer:(nullable UIView *)adContainer viewController:(UIViewController *)viewController adSize:(CGSize)size;
 
 
 

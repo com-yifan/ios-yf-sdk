@@ -18,7 +18,6 @@ typedef NS_ENUM(NSInteger, YFAdShowDirection) {
 @interface YFVideoAd : NSObject
 
 
-@property(nonatomic, readonly) BOOL isValid;
 @property(nonatomic, assign) BOOL shouldMuted;
 @property(nonatomic, assign) YFAdShowDirection showDirection;  //显示方向
 @property(nonatomic, weak) UIViewController *rootViewController;
@@ -40,10 +39,6 @@ typedef NS_ENUM(NSInteger, YFAdShowDirection) {
  - (void)rewardedVideoAdDidPlayFinish:(KSRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error使用此方法
  */
 - (void)closeVideoAdWhenPlayError;
-
-// 是否是同一个有效广告
-- (BOOL)isSameValidVideoAd:(nullable YFVideoAd *)ad;
-
 
 @end
 

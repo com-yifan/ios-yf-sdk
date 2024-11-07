@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(void)loadAdData:(BUNativeAd *)dataObject close: (void(^)(id))close;
 -(void)show;
+/// 点击视频
+@property(nonatomic,copy) void (^clickVideoBlk)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

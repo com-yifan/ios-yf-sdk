@@ -4,13 +4,8 @@
 
 #import <Foundation/Foundation.h>
 
-
-
-#define FC_CONF_URL @"http://api.yfanads.com/api/v2/ads/adsc"
-#define FC_UPLOAD_URL @"http://tracker.yfanads.com/api/v2/ads/batchUpload"
 #define YF_CONF_URL @"http://adx-data.yfanads.com/v1/r"
 #define YF_LOG_URL @"http://log.yfanads.com/ads/v1/upload/log?sign="
-#define YF_DATA_URL @"http://api.yfanads.com/api/v1/ads/app"
 
 NS_ASSUME_NONNULL_BEGIN
 

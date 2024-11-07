@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeRequest = 2,
     /// 填充
     YFAdSDKReportEventTypeFill = 3,
-    /// 展示
+    /// 联盟曝光展示
     YFAdSDKReportEventTypeShow = 4,
     /// 点击
     YFAdSDKReportEventTypeClicked = 5,
@@ -57,7 +57,7 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeCloseAd = 16,
     /// 有填充但是ECPM过低被过滤
     YFAdSDKReportEventTypeLowECPMFill = 33,
-    /// 自渲染SDK展示
+    /// 自渲染SDK展示 亿帆统计
     YFAdSDKReportEventTypeCustomSDKShow = 100,
     /// 亿帆监测的展示，以自渲染广告在手机屏幕中展示100%面积为准，同一个广告重复展示的情况只上报第一次展示
     YFAdSDKReportEventTypeExposure = 101,
@@ -141,7 +141,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 拓展字段
 @property (nonatomic, retain) NSDictionary *ex;
 /// 拓展字段2
-@property (nonatomic, retain) NSDictionary *ex2;
+@property (nonatomic, retain) NSDictionary *ud;
 @end
 
 @interface YFAdEventModel : NSObject<NSCopying>
@@ -279,6 +279,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 额外信息
 @property (nonatomic, copy) NSString *msg;
 
+/// 融合Banner广告源比例尺寸，值：宽*高
+@property (nonatomic, copy) NSString *ss;
 
 @property (nonatomic, assign) NSInteger bannerCarouselInterval;
 // 倒计时结束自动关闭 1：是 0：否
@@ -311,6 +313,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger cacheTimeout;
 /// 
 @property (nonatomic, strong) NSArray<NSString *> *wURL;
-
+///是否已经记录过本地请求限制，主要用于过滤信息流等存在多次曝光的广告
+@property (nonatomic) BOOL reqLimitRecorded;
 @end
 NS_ASSUME_NONNULL_END

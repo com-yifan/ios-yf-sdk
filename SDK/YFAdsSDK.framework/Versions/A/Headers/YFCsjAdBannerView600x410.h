@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(float)getViewHeight;
 -(void)loadAdData:(BUNativeAd *)dataObject close: (void(^)(id))close;
+/// 点击视频
+@property(nonatomic,copy) void (^clickVideoBlk)(void);
 
 @end
 

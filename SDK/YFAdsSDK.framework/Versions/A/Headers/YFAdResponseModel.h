@@ -162,6 +162,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger oat;
 // 是否展示点击按钮
 @property (nonatomic, assign) NSInteger sb;
+/// 融合banner容器尺寸，值：宽*高
+@property (nonatomic, copy) NSString *ss;
 
 /// 1;单向跳转
 /// 2: 双向跳转

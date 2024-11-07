@@ -142,6 +142,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)yfEncodeURIComponent:(NSString *)urlStr;
 
+
+/// 获取当前日期
++ (NSString *)getCurrentDay;
+
+///. 获取当前小时
++ (NSString *)getCurrentHour;
 @end
 
 NS_ASSUME_NONNULL_END
