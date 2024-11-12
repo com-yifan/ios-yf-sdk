@@ -1,12 +1,13 @@
-# 亿帆SDK对接⽂档: V6.0.3.2
+# 亿帆SDK对接⽂档: V6.0.3.3
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.3.2  | 1.修复部分已知问题题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.10.16 |
-| 6.0.3.0  |  1.升级联盟双十一版本SDK </br> 2.广告样式优化  </br>3.媒体自渲染能力优化 </br>4.支持开屏底部bottomView自定义能力与背景视图backgroundView自定义能力  </br>5.DEMO新增模拟场景 </br>6.修复已知问题与性能优化                                                                                                                      | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.10.13 |
-| 6.0.2.12  | 1.Tanx3.6.0适配 </br>2.修复部分已知问题题                                                                                                                                                                                                                                                                    | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.9.29 |
+| 6.0.3.3  | 1.新增融合Banner广告类型 <br><font color="red">2.新增穿山甲直播拉流广告能力，需在pod中增加BUAdLive-Lib模块：pod 'Ads-CN','6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib'] </font> <br>3.广告样式优化 <br>4.修复部分已知问题<br>5.优化广告有效性校验，使用isValid判断广告有效性,支持开屏、插屏、banner、融合banner、信息流、激励视频、全屏视频、贴片。<font color="red">注意信息流和融合banner需使用对应广告视图的isValid，不要使用广告加载器的isValid。</font>                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.07 |
+| 6.0.3.2  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.10.16 |
+| 6.0.3.0  |  1.升级联盟双十一版本SDK </br> 2.广告样式优化  </br>3.媒体自渲染能力优化 </br>4.支持开屏底部bottomView自定义能力与背景视图backgroundView自定义能力  </br>5.DEMO新增模拟场景 </br>6.修复已知问题与性能优化                                                                                                                    | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本; | 2024.10.13 |
+| 6.0.2.12  | 1.Tanx3.6.0适配 </br>2.修复部分已知问题题                                                                                                                                                                                                                                                                  | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.9.29 |
 | 6.0.2.2  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.20  |
 | 6.0.2.0  | 1.广告样式优化</br>2.修复部分已知问题                                                                                                                                                                                                                                                                        | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.8.14  |
 | 6.0.1.8  | <font color="red"> 1.获取广告数据失败方法替换- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description DEPRECATED_MSG_ATTRIBUTE(" 此方法将被替换为:- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description");</br>2.修复部分已知问题 | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2024.7.10  |
@@ -45,39 +46,37 @@
 
 ### 3.1 开发环境准备
 
-- 开发工具：推荐使用Xcode 14及以上版本
+- 开发工具：推荐使用Xcode 14及以上版本（23年4月起，Xcode 14以下编译的包不再支持上架app store）
 - 部署目标：iOS 12.0及以上版本
 - 开发管理工具：[CocoaPods](https://cocoapods.org/)
 
 ### 3.2 引入SDK
 
 #### 方法一：手动部署
-**1,导入依赖库**
+**1.导入依赖库**
 右键点击⼯程，选择Add File to…，选择解压SDK包后得到的YFAdsSDK.framework，点击Add。或者
-将⽂件拖⼊XCode⼯程⽬录结构中，在弹出的界⾯中勾选“Copy items into destination group's
-folder(if needed)”，并确保Add To Targets勾选相应的target。同时将YFAdsSDK.framework ⽬录⾥⾯的YFAdsSDK.bundle⽂件导⼊Xcode。
+将⽂件拖⼊XCode⼯程⽬录结构中，在弹出的界⾯中勾选“Copy items into destination group's folder(if needed)”，并确保Add To Targets勾选相应的target。同时将YFAdsSDK.framework ⽬录⾥⾯的YFAdsSDK.bundle⽂件导⼊Xcode。
 
-**2,添加-ObjC**
+**2.添加-ObjC**
 
 在Target->Build Settings -> Other Linker Flags中添加-ObjC, 字母o和c大写。
 
-**3，关闭Bitcode**
+**3.关闭Bitcode**
 
 前往项目的Build Setting中的Enable Bitcode设置为NO
 
 #### <font color="red">方法二（推荐）：</font>
-
-通过Cocoapods导⼊三⽅⼴告SDK，以及第三⽅依赖（如遇到拉不下来，可能是github访问问题，可以
-使⽤VPN
+**1.pod导入**
+通过Cocoapods导⼊三⽅⼴告SDK，以及第三⽅依赖（如遇到拉不下来，可能是github访问问题，可以使⽤VPN）
 
 ```
- pod 'YFAdsSDK', '6.0.3.2'
+ pod 'YFAdsSDK', '6.0.3.3'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.15.10'
 #穿⼭甲⼴告
- pod 'Ads-CN','6.4.1.0', :subspecs => ['BUAdSDK', 'CSJMediation']
+ pod 'Ads-CN','6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 #快⼿⼴告SDK
- pod 'KSAdSDK', '3.3.69', :inhibit_warnings => false
+ pod 'KSAdSDK', '3.3.69.3', :inhibit_warnings => false
 #百度⼴告SDK
  pod 'BaiduMobAdSDK', '5.371'
 #京东⼴告SDK
@@ -85,12 +84,35 @@ folder(if needed)”，并确保Add To Targets勾选相应的target。同时将Y
 #京东摇一摇组件(可选)
  pod 'JADYunMotion', '2.6.4' 
 # tanx 
- pod 'TanxSDK','3.6.1'
+ pod 'TanxSDK','3.6.2'
 # 微信OpenSDK
  pod 'WechatOpenSDK-XCFramework'
 
 ```
-
+**2.穿山甲iOS直播拉流接入注意事项**
+***2.1 背景***
+穿山甲直播拉流类预算有利于提升广告收益和广告价值。
+***2.2 获取 TeamID***
+接入穿山甲直播拉流广告需将TeamID提供到亿帆广告的运营同学，主要用于抖音校验媒体安全性。
+TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/account)，点击[会员资格详细信息](https://developer.apple.com/account#MembershipDetailsCard)，即可看到TeamID。
+***2.3 接入说明***
+1. 如宿主app不包含FFmpeg（TTSDK、ijkplayer等，或自行编译的FFmpeg），只需要增加BUAdLive-Lib的subspec即可。【推荐】
+```
+    pod 'Ads-CN','6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+```
+2. 如宿主app包含FFmpeg
+```
+    pod 'Ads-CN', '6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'TTSDKFramework', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
+    # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
+    # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
+```
+3. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
+```
+    pod 'Ads-CN', '6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'TTSDK', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
+    #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
+```
 #### <font color="red">注意事项：</font>
 
 **1.HTTP权限设置：**
@@ -119,12 +141,10 @@ Privacy - Location Usage Description
 
 **<font color="red">4.iOS14适配（重要）：</font>**
 
-由于iOS14.5系统策略更新，我们需要在App中添加SKAdNetwork标识和ATT权限，以避免⼴告收益降
-低。
+由于iOS14.5系统策略更新，我们需要在App中添加SKAdNetwork标识和ATT权限，以避免⼴告收益降低。
 
-1.升级穿⼭甲 iOS SDK 3.4.2.3 及以上版本，升级优量汇4.12.3及以上版本，提供了iOS14与
-SKAdNetwork⽀持
-2.将SKAdNetwork ID 添加到 info.plist 中，以保证 SKAdNetwork 的正确运⾏，以下内容复制到您的info.plist中，
+1.升级穿⼭甲 iOS SDK 3.4.2.3 及以上版本，升级优量汇4.12.3及以上版本，提供了iOS14与SKAdNetwork⽀持
+2.将SKAdNetwork ID 添加到 info.plist 中，以保证 SKAdNetwork 的正确运⾏，以下内容复制到您的info.plist中
 
 ```
 穿⼭甲：238da6jt44.skadnetwork，22mmun2rn5.skadnetwork，x2jnk7ly8j.skadnetwork
@@ -158,8 +178,7 @@ SKAdNetwork⽀持
   </array>
 ```
 
-3.获取App Tracking Transparency 权限，请更新您的 Info.plist，添加
-NSUserTrackingUsageDescription 字段和⾃定义⽂案描述
+3.获取App Tracking Transparency 权限，请更新您的 Info.plist，添加NSUserTrackingUsageDescription 字段和⾃定义⽂案描述
 
 ```
 <key>NSUserTrackingUsageDescription</key>
@@ -184,8 +203,9 @@ tionStatus status) {
 
 **<font color="red">5. 微信小程序⼴告⽀持：</font>**
 
+***5.1背景***
 集成微信OpenSDK，可有效提升流量的填充和CPM值
-集成步骤：
+***5.2集成步骤***
 在微信开发平台注册APPID和Universal Links
 集成微信open sdk
 提供APPID和Universal Links给运营进⾏绑定
@@ -562,7 +582,7 @@ fcAdBanner.delegate = self;
     [advanceFeed loadAndShowAd];
 }
  ```
- 
+
  *接⼊建议：调⽤loadAds接⼝的时候，size的⾼度height传0；⼴告加载成功的时候，判断返回的⼴告View⾼度，如果是0还需要等待渲染成功再展示，如果⾼度⼤于0，可直接展示。
 
 2.回调方法
@@ -1091,6 +1111,117 @@ fcAdBanner.delegate = self;
 
 
  ```
+
+### 4.8 融合Banner
+
+1.请求代码
+
+```
+// 初始化广告加载器
+self.adBanner = [[YFAdFusionBanner alloc] initWithAdUnitID:[YFEnvironmentManager getFusionBanner_ID] viewController:self];
+// 设置融合banner代理对象
+self.adBanner.delegate = self;
+// 设置融合banner加载数量（建议1条，最多3条）
+self.adBanner.adCount = _isListMode ?  2 : 1;
+// 设置融合banner返回广告尺寸宽度，高度按广告实际比例返回
+self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 2);
+// 加载广告
+[self.adBanner loadAndShowAd];
+```
+
+2.回调方法
+
+```
+/// 广告数据拉取成功
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdLoadSuccess:(NSArray<YFAdFusionBannerView *> * _Nullable)views {
+    if (views.count > 0) {
+        self.isLoaded = YES;
+        if(self.isOnlyLoad) {}
+        [JDStatusBarNotification showWithStatus:@"广告加载成功" dismissAfter:1.5];
+        [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功", __func__]];
+        /// 调用渲染方法
+        for (YFAdFusionBannerView *bannerView in views) {
+            [bannerView render];
+        }
+    } else {
+        NSLog(@"广告展示失败 %s  返回广告为空", __func__);
+        //通知主线程刷新
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告加载异常: \r\n广告返回为空", __func__]];
+        });
+    }
+    
+}
+
+/// 广告加载失败
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter  description:(NSDictionary *)description{
+    NSLog(@"广告展示失败 %s  error: %@ 详情:%@", __func__, error, description);
+    //通知主线程刷新
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告加载异常: \r\n%@", __func__,error.userInfo.description]];
+        [self showErrorWithDescription:description];
+    });
+}
+
+/// 广告曝光
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdShow:(YFAdFusionBannerView * _Nullable)adView {
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光成功", __func__]];
+}
+
+/// 广告点击
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdClicked:(YFAdFusionBannerView * _Nullable)adView {
+    NSLog(@"广告点击 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告点击", __func__]];
+}
+
+/// 广告渲染成功
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdRenderSuccess:(YFAdFusionBannerView * _Nullable)adView {
+    ///  渲染成功后 依据广告大小重设容器；其他需求可同理实现
+    if (_isListMode) {
+        if (self.dataArrays.count > 5) {
+            if (![self.dataArrays[0] isKindOfClass:[YFAdFusionBannerView class]]) {
+                [self.dataArrays insertObject:adView atIndex:0];
+            } else if (![self.dataArrays[2] isKindOfClass:[YFAdFusionBannerView class]]) {
+                [self.dataArrays insertObject:adView atIndex:2];
+            } else if (![self.dataArrays[4] isKindOfClass:[YFAdFusionBannerView class]]) {
+                [self.dataArrays insertObject:adView atIndex:4];
+            } else {
+                [self.dataArrays addObject:adView];
+            }
+        }
+        [self.tableView reloadData];
+    } else {
+        [self.contentV addSubview:adView];
+        self.contentV.frame = CGRectMake(self.slider.value * 60, 10,adView.bounds.size.width, self.container.bounds.size.height);
+        self.contentV.contentSize = CGSizeMake(adView.bounds.size.width, adView.bounds.size.height);
+        adView.frame = CGRectMake(0, 0, adView.bounds.size.width, adView.bounds.size.height);
+        [self.container addSubview:self.contentV];
+    }
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染成功", __func__]];
+}
+
+/// 广告渲染失败
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdRenderFail:(YFAdFusionBannerView * _Nullable)adView {
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染失败", __func__]];
+}
+
+/// 广告被关闭
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdClosed:(YFAdFusionBannerView * _Nullable)adView {
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭了", __func__]];
+    if (_isListMode) {
+        [self.dataArrays removeObject:adView];
+        [self.tableView reloadData];
+    } else {
+        /// 广告关闭移除广告视图
+        [adView removeFromSuperview];
+        [self.container removeFromSuperview];
+    }
+    /// 可在此处理 fusionBanner 与其关联的广告视图，当全部广告关闭时，可释放fusionBanner加载器
+    /// ...............
+}
+```
+
+
 
 ## 5、错误码
 
