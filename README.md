@@ -1,10 +1,11 @@
-# 亿帆SDK对接⽂档: V6.0.3.3
+# 亿帆SDK对接⽂档: V6.0.3.4
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.3.3  | 1.新增融合Banner广告类型 <br><font color="red">2.新增穿山甲直播拉流广告能力，需在pod中增加BUAdLive-Lib模块：pod 'Ads-CN','6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib'] </font> <br>3.广告样式优化 <br>4.修复部分已知问题<br>5.优化广告有效性校验，使用isValid判断广告有效性,支持开屏、插屏、banner、融合banner、信息流、激励视频、全屏视频、贴片。<font color="red">注意信息流和融合banner需使用对应广告视图的isValid，不要使用广告加载器的isValid。</font>                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.07 |
+| 6.0.3.4  | 1. 修复已知问题与性能优化                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.23 |
+| 6.0.3.3 | 1.新增融合Banner广告类型 <br><font color="red">2.新增穿山甲直播拉流广告能力，需在pod中增加BUAdLive-Lib模块：pod 'Ads-CN','6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib'] </font> <br>3.广告样式优化 <br>4.修复部分已知问题<br>5.优化广告有效性校验，使用isValid判断广告有效性,支持开屏、插屏、banner、融合banner、信息流、激励视频、全屏视频、贴片。<font color="red">注意信息流和融合banner需使用对应广告视图的isValid，不要使用广告加载器的isValid。</font>                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.07 |
 | 6.0.3.2  | 1.修复部分已知问题                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.10.16 |
 | 6.0.3.0  |  1.升级联盟双十一版本SDK </br> 2.广告样式优化  </br>3.媒体自渲染能力优化 </br>4.支持开屏底部bottomView自定义能力与背景视图backgroundView自定义能力  </br>5.DEMO新增模拟场景 </br>6.修复已知问题与性能优化                                                                                                                    | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本; | 2024.10.13 |
 | 6.0.2.12  | 1.Tanx3.6.0适配 </br>2.修复部分已知问题题                                                                                                                                                                                                                                                                  | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.9.29 |
@@ -70,7 +71,7 @@
 通过Cocoapods导⼊三⽅⼴告SDK，以及第三⽅依赖（如遇到拉不下来，可能是github访问问题，可以使⽤VPN）
 
 ```
- pod 'YFAdsSDK', '6.0.3.3'
+ pod 'YFAdsSDK', '6.0.3.4'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.15.10'
 #穿⼭甲⼴告
