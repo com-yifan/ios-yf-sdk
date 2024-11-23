@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) YFAdImageView *adLogo;
 
 - (void)loadAdLogoType:(NSInteger)type;
+- (void)loadAdxCircleLogo;
 - (void)loadAdLogo:(NSString *)logo;
 - (void)loadAdLogoImage:(UIImage *)logoImage;
 @property (nonatomic, copy) void (^longTapClick)(void);

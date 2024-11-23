@@ -281,11 +281,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 融合Banner广告源比例尺寸，值：宽*高
 @property (nonatomic, copy) NSString *ss;
+/// 1 hidden
+@property (nonatomic, assign) BOOL haal;
 
 @property (nonatomic, assign) NSInteger bannerCarouselInterval;
 // 倒计时结束自动关闭 1：是 0：否
 @property (nonatomic, assign) NSInteger oac;
-// 插屏自渲染倒计时时间 5-30秒
+// 倒计时时间 插屏自渲染 5-30秒，开屏 3-5秒
 @property (nonatomic, assign) NSInteger oat;
 
 // 展示点击按钮 1：展示 0：不展示

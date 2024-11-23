@@ -15,6 +15,7 @@
 @class FCAdNetwork;
 @class FCAdParam;
 @class FCAdParamConf;
+@class FCAdConfigureModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -48,6 +49,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)   NSString *adID;
 
 @property (nonatomic, strong) FCAdLoadModel *loadModel;
+/// 流量分组配置
+@property (nonatomic, strong) FCAdConfigureModel *config;
 /// 名称
 @property (nonatomic, copy) NSString *name;
 /// 请求超时时间(毫秒)
@@ -87,6 +90,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FCAdSection : NSObject
 @property (nonatomic, copy) NSString *sectionID;
+@end
+
+@interface FCAdConfigureModel : NSObject
+/// 竞价回传
+@property (nonatomic, assign) NSInteger biddingReport;
+
 @end
 
 @interface FCAdWaterfall : NSObject
@@ -164,6 +173,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger sb;
 /// 融合banner容器尺寸，值：宽*高
 @property (nonatomic, copy) NSString *ss;
+/// 联盟logo
+@property (nonatomic, assign) BOOL haal;
 
 /// 1;单向跳转
 /// 2: 双向跳转

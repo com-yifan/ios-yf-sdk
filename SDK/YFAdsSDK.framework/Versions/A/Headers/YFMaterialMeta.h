@@ -139,6 +139,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSArray *dn_inst_succ;
 // 下载类广告（安装完成并打开应用时上报）
 @property(nonatomic, copy) NSArray *dn_active;
+// deep link 检测已安装
+@property (nonatomic, copy) NSArray *dp_installed;
+// deep link 未安装列表
+@property (nonatomic, copy) NSArray *dp_uninstalled;
 // deep_link 字段非空时，直接唤起类（尝试唤起时上报）
 @property(nonatomic, copy) NSArray *dp_start;
 // deep_link 字段非空时，直接唤起类（唤起成功时上报）
@@ -174,7 +178,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSArray *video_full;
 // 视频广告（退出全屏时上报）
 @property(nonatomic, copy) NSArray *video_exit_full;
-
+/// 竞胜通知
 @property(nonatomic, copy) NSArray *wurl;
 
 @end

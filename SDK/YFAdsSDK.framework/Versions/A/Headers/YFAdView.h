@@ -4,12 +4,12 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
-#import "YFAnimatedImage.h"
-#import "YFAnimatedImageView.h"
+//#import "YFAnimatedImage.h"
+//#import "YFAnimatedImageView.h"
 
 
 #pragma mark - image
-@interface YFAdImageView : YFAnimatedImageView
+@interface YFAdImageView : UIImageView
 
 @property (nonatomic, copy) void(^click)(CGPoint point);
 

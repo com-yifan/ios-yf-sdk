@@ -50,7 +50,7 @@ if([path hasSuffix:@".mp4"])  result =  YES;\
 //}
 UIKIT_EXTERN NSString *const XHCacheImageUrlStringKey;
 UIKIT_EXTERN NSString *const XHCacheVideoUrlStringKey;
-/** 视频播放失败通知 */
+///** 视频播放失败通知 */
 UIKIT_EXTERN NSString *const JQLaunchAdVideoPlayFailedNotification;
 
 

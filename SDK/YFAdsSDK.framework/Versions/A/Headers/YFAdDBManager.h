@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 创建表
 - (void)createTable:(NSString *)tableName;
 /// 添加上报信息
-- (void)addReportWithModel:(YFAdEventModel *)model;
+- (void)addReportWithModel:(YFAdEventModel *)orgModel;
 
 - (NSMutableArray *)searchAllResultWithName:(NSString *)tableName;
 

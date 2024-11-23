@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 ///上报事件，非点击事件touchModel传nil
 - (void)reportEventWithUrl:(NSString *)reportUrl touchModel:(nullable YFTouchLocModel *)touchModel;
 
-///上传log日志文件
-- (void)uploadLogFile:(NSString *)filePath;
+/////上传log日志文件
+//- (void)uploadLogFile:(NSString *)filePath;
 
 @end
 
