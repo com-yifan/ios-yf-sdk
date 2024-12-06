@@ -1,0 +1,47 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:iOS)
+platform :iOS do
+  lane :ad_dev do
+    # add actions here: https://docs.fastlane.tools/actions
+    gym(
+          clean: true,
+          output_directory: './fastlane/build',#输出路径
+          output_name:"YFAdsSDK.ipa",
+          scheme: 'YFAdsSDK',#iOS Target scheme
+          configuration: 'Release',#/配置开发模式还是发布模式：Debug or Release
+
+          # sdk:"iOS 12.0",
+           archive_path:"./fastlane/Archive",
+          include_symbols:true,
+          export_options: {
+            method: 'ad-hoc',#测试包
+// 有这些导出的类型，需要有相应的证书配对才能导出成功ipa。
+// app-store, ad-hoc, package, enterprise, development, developer-id
+             provisioningProfiles: {
+               "com.cfb.PushCar" => "distribution" #测试打包描述文件
+            },
+          }
+    )
+
+    # 使用jenkins 插件上传。fastlane只打包
+    # pgyer(api_key: "dac7cd002ca213b5e36aca3e4e311249")
+
+    #current_time = Time.now.in_time_zone("Asia/Shanghai")
+    #pgyer(api_key: "", update_description: "update by fastlane #{current_time}")
+
+    end
+end

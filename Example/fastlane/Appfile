@@ -1,0 +1,13 @@
+# app_identifier("") # The bundle identifier of your app
+# apple_id("[[APPLE_ID]]") # Your Apple Developer Portal username
+
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
+
+#bundle id
+app_identifier("com.cfb.PushCar")
+#苹果账号
+apple_id("daimeng188@163.com")
+#teamid 在苹果后台查看
+team_id("STMP42R89R")

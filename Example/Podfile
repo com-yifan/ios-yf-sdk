@@ -1,0 +1,68 @@
+use_frameworks!
+
+platform :ios, '11.0'
+source 'https://github.com/CocoaPods/Specs.git'
+target 'YFAdsDemo_Example' do
+
+  #默认导入
+  pod 'YFAdsSDK_Beta', :path => '../'
+  
+  #按模块拆分导入
+#  pod 'YFAdsSDK_Beta/YFAdsSDK_Beta', :path => '../'
+#  pod 'YFAdsSDK_Beta/YFAdsBDAdapter', :path => '../'
+#  pod 'YFAdsSDK_Beta/YFAdsGDTAdapter', :path => '../'
+#  pod 'YFAdsSDK_Beta/YFAdsJDAdapter', :path => '../'
+#  pod 'YFAdsSDK_Beta/YFAdsTXAdapter', :path => '../'
+#  pod 'YFAdsSDK_Beta/YFAdsCSJAdapter', :path => '../'
+#  pod 'YFAdsSDK_Beta/YFAdsGROAdapter', :path => '../'
+#  pod 'YFAdsSDK_Beta/YFAdsKSAdapter', :path => '../'
+
+#  pod 'YFAdsSDK' ,'6.0.3.3'
+ 
+  pod 'AFNetworking'
+  pod 'Bugly'
+  pod 'SDWebImage','5.18.0'
+  pod 'Masonry'
+  pod "STDebugConsole"
+  pod 'JPFPSStatus'
+  pod 'BUAdTestMeasurement', '5.9.1.6'
+#  pod 'MOBFoundation'
+  
+  pod 'JADYun', '2.6.4'
+  pod 'JADYunMotion', '2.6.4'  #京东摇一摇组件
+  pod 'BaiduMobAdSDK','5.371'
+  # 使用gromore聚合功能 CSJMediation必须引入
+  pod 'Ads-CN','6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
+#  pod 'Ads-CN','5.9.1.1'
+  pod 'GDTMobSDK' ,'4.15.10'
+  pod 'KSAdSDK','3.3.69.3'
+#  快手测试工具
+  pod 'KSUAdDebugTool', :path=>'./YFAdsDemo/KSDebugTool'
+  pod 'TanxSDK','3.6.2'
+  pod 'WechatOpenSDK'
+
+  pod 'YYKit'
+  pod 'FLAnimatedImage'
+  pod 'MJRefresh'
+
+  pod 'KMCGeigerCounter'
+#  pod 'AMLeaksFinder', :configurations => ['Debug']
+
+  
+#  pod 'DoraemonKit/Core', '~> 3.0.4', :configurations => ['Debug'] #必选
+#  pod 'DoraemonKit/WithGPS', '~> 3.0.4', :configurations => ['Debug'] #可选
+#  pod 'DoraemonKit/WithLoad', '~> 3.0.4', :configurations => ['Debug'] #可选
+#  pod 'DoraemonKit/WithLogger', '~> 3.0.4', :configurations => ['Debug'] #可选
+#  pod 'DoraemonKit/WithDatabase', '~> 3.0.4', :configurations => ['Debug'] #可选
+   
+  # target 'YFAdsSDK_Tests' do
+  #   inherit! :search_paths
+  # end
+
+  post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
+  
+end
