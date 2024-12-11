@@ -73,7 +73,7 @@
 通过Cocoapods导⼊三⽅⼴告SDK，以及第三⽅依赖（如遇到拉不下来，可能是github访问问题，可以使⽤VPN）
 
 ```
- pod 'YFAdsSDK', '6.0.3.5'
+ pod 'YFAdsSDK', '6.0.3.6'
 #优量汇⼴告
  pod 'GDTMobSDK', '4.15.10'
 #穿⼭甲⼴告
