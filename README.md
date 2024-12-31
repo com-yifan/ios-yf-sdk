@@ -250,22 +250,41 @@ tionStatus status) {
 ```
     <key>LSApplicationQueriesSchemes</key>
     <array>
-        <string>tel</string>
-        <string>taobao</string>
-        <string>tbopen</string>
-        <string>imeituan</string>
-        <string>pinduoduo</string>
-        <string>openapp.jdmobile</string>
-        <string>openjd</string>
-        <string>openjx</string>
-        <string>taobaolite</string>
-        <string>meituan0000</string>
-        <string>pddopen</string>
-        <string>snssdk1128</string>
-        <string>snssdk2329</string>
-        <string>kwai</string>
-        <string>ksnebula</string>
-        <string>taptap</string>
+<!--	以下为必选配置-->
+		<string>tel</string>
+		<string>alipays</string>
+		<string>taptap</string>
+		<string>tbopen</string>
+		<string>taobaolite</string>
+		<string>duapp</string>
+		<string>qiyi-iphone</string>
+		<string>baiduboxlite</string>
+		<string>diditaxi</string>
+		<string>snssdk2329</string>
+		<string>douyutv</string>
+		<string>eleme</string>
+		<string>openApp.jdMobile</string>
+		<string>openjdjrapp</string>
+		<string>kwai</string>
+		<string>ksnebula</string>
+		<string>iMeituan</string>
+		<string>pinduoduo</string>
+		<string>tmallopen</string>
+		<string>sinaweibo</string>
+		<string>VSSpecialSwitch</string>
+		<string>fleamarket</string>
+		<string>youku</string>
+		<string>zhihu</string>
+		<string>ucbrowser</string>
+		<string>douyuapp</string>
+<!--	以下为推荐配置-->
+		<string>autohome</string>
+		<string>taobaolive</string>
+		<string>dangdang</string>
+		<string>quark</string>
+		<string>sky20170605</string>
+		<string>yymobile</string>
+		<string>meituanwaimai</string>
     </array>
 ```
 
