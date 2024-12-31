@@ -1,9 +1,11 @@
-# 亿帆SDK对接⽂档: V6.0.3.5
+# 亿帆SDK对接⽂档: V6.0.4.0
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.0.4.0 | 1.联盟SDK升级<br/>2.广告场景优化<br/>3.广告样式优化<br/>4.屏幕适配方案优化<br/>5.Demo结构优化<br/>6.模块化，现已支持拆分引入<br/ >7.新增是否允许更改声道接口<br/>8.修复已知BUG | 必选：</br> 支持联盟适配器按需导入，参照Podfile集成； | 2024.12.31 |
+| 6.0.3.6  | 1. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.12.10 |
 | 6.0.3.5  | 1. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.27 |
 | 6.0.3.4  | 1. 修复已知问题与性能优化                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.23 |
 | 6.0.3.3 | 1.新增融合Banner广告类型 <br><font color="red">2.新增穿山甲直播拉流广告能力，需在pod中增加BUAdLive-Lib模块：pod 'Ads-CN','6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib'] </font> <br>3.广告样式优化 <br>4.修复部分已知问题<br>5.优化广告有效性校验，使用isValid判断广告有效性,支持开屏、插屏、banner、融合banner、信息流、激励视频、全屏视频、贴片。<font color="red">注意信息流和融合banner需使用对应广告视图的isValid，不要使用广告加载器的isValid。</font>                                                                                                                                                                                                                                                                                         | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.07 |
@@ -26,23 +28,23 @@
 | 5.3.0.21 | 1、开屏⼴告样式优化</br>2、插屏⼴告样式优化                                                                                                                                                                                                                                                                   | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2023.12.28 |
 | 5.3.0.10 | 1、插屏⼴告样式优化 </br> 2、Banner⼴告样式优化； </br>3、填充率优化；</br>4、更新⼴点通⾄4.14.45 </br>5、更新穿⼭甲⾄5.6.0.7 </br>6、更新百度SDK⾄5.322 </br>7、更新京东版本⾄2.5.0                                                                                                                                     | 必选：</br> 替换YFAdsSDK.framework；</br> 替换YFAdsSDK.bundle；</br> Podfile更新⼴告源SDK版本 | 2023.11.30 |
 
-## 2.支持的SDK平台及广告位
+## 2.支持的联盟平台版本及广告类型
 
-|   平台   | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 |
-| -------- | ---- | ------- | ---- | ---- | ----- | ------- | ---- | ---- |
-| 穿山甲    | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
-| 优量汇    | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  |
-| 百青藤    | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
-| 快手     | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
-| 京东     | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
-| 亿帆     | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
-| gromore  | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
-| 淘宝Tanx | ✅  | ✅      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
+|   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 |
+| :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: |
+| 穿山甲    | 6.5.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
+| 优量汇    | 4.15.10 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  |
+| 百青藤    | 5.371 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
+| 快手     | 3.3.72 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
+| 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
+| 亿帆     | 6.0.4.0 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
+| gromore  | 6.5.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
+| 淘宝Tanx | 3.6.2 | ✅  | ✅      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
 
 **注意:**
-1.该版本是基于上述SDK平台版本进行开发的
-2.SDK⽀持的架构有： x86_64 arm64
-3.⽀持iOS版本为12.0及以上
+1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
+2.SDK⽀持的架构有： x86_64 arm64；
+3.原则上⽀持iOS12.0及及以上版本。如需支持较低版本，可通过拆分引入方式。
 
 ## 3. 快速接入
 
@@ -56,10 +58,10 @@
 
 #### 方法一：手动部署
 **1.导入依赖库**
-右键点击⼯程，选择Add File to…，选择解压SDK包后得到的YFAdsSDK.framework，点击Add。或者
-将⽂件拖⼊XCode⼯程⽬录结构中，在弹出的界⾯中勾选“Copy items into destination group's folder(if needed)”，并确保Add To Targets勾选相应的target。同时将YFAdsSDK.framework ⽬录⾥⾯的YFAdsSDK.bundle⽂件导⼊Xcode。
+右键点击⼯程，选择Add File to…，选择解压SDK包后得到的YFAdsSDK.xcframework(主SDK必须)，YFAdsCSJAdapter.xcframework(穿山甲)，YFAdsGDTAdapter.xcframework(优量汇)，YFAdsBDAdapter.xcframework(百青藤)，YFAdsKSAdapter.xcframework(快手)，YFAdsJDAdapter.xcframework(京东)，YFAdsTXAdapter.xcframework(Tanx)，YFAdsGROAdapter.xcframework(Gromore),点击Add。或者
+将⽂件拖⼊Xcode⼯程⽬录结构中，在弹出的界⾯中勾选“Copy items into destination group's folder(if needed)”，并确保Add To Targets勾选相应的target。同时将YFAdsSDK.framework ⽬录⾥⾯的YFAdsSDK.bundle⽂件导⼊Xcode。如不知需要导入的平台，请联系运营同学。
 
-**2.添加-ObjC**
+*2.添加-ObjC**
 
 在Target->Build Settings -> Other Linker Flags中添加-ObjC, 字母o和c大写。
 
@@ -68,28 +70,56 @@
 前往项目的Build Setting中的Enable Bitcode设置为NO
 
 #### <font color="red">方法二（推荐）：</font>
-**1.pod导入**
-通过Cocoapods导⼊三⽅⼴告SDK，以及第三⽅依赖（如遇到拉不下来，可能是github访问问题，可以使⽤VPN）
+**1.Cocoapods导入**
+通过Cocoapods导⼊三⽅⼴告SDK，以及第三⽅依赖（如遇到拉不下来，可能是github访问问题，可以使⽤VPN），如不清楚需要接入的联盟平台，请咨询运营同学
+***1.1***
+```
+# 亿帆SDK【必须】
+pod 'YFAdsSDK', '6.0.4.0'
+#  百度【必须】
+pod 'BaiduMobAdSDK','5.371'
+# 优量汇【必须】
+pod 'GDTMobSDK' ,'4.15.10'
+# 京东【必须】
+pod 'JADYun', '2.6.8'
+pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
+#  Tanx【必须】
+pod 'TanxSDK','3.6.2'
+#  穿山甲【必须】
+pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
+#  快手【必须】
+pod 'KSAdSDK','3.3.72'
+# 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
+pod 'WechatOpenSDK-XCFramework'
+```
+***1.2 拆分模块方式引入***
 
 ```
- pod 'YFAdsSDK', '6.0.3.5'
-#优量汇⼴告
- pod 'GDTMobSDK', '4.15.10'
-#穿⼭甲⼴告
- pod 'Ads-CN','6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
-#快⼿⼴告SDK
- pod 'KSAdSDK', '3.3.69.3', :inhibit_warnings => false
-#百度⼴告SDK
- pod 'BaiduMobAdSDK', '5.371'
-#京东⼴告SDK
- pod 'JADYun', '2.6.4' 
-#京东摇一摇组件(可选)
- pod 'JADYunMotion', '2.6.4' 
-# tanx 
- pod 'TanxSDK','3.6.2'
-# 微信OpenSDK
- pod 'WechatOpenSDK-XCFramework'
-
+# 亿帆SDK【必须】
+pod 'YFAdsSDK/YFAdsSDK', '6.0.4.0'
+#  百度【可选】
+pod 'YFAdsSDK/YFAdsBDAdapter'
+pod 'BaiduMobAdSDK','5.371'
+# 优量汇【可选】
+pod 'YFAdsSDK/YFAdsGDTAdapter'
+pod 'GDTMobSDK' ,'4.15.10'
+# 京东【可选】
+pod 'YFAdsSDK/YFAdsJDAdapter'
+pod 'JADYun', '2.6.8'
+pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
+#  Tanx【可选】
+pod 'YFAdsSDK/YFAdsTXAdapter'
+pod 'TanxSDK','3.6.2'
+#  穿山甲【可选】
+pod 'YFAdsSDK/YFAdsCSJAdapter'
+pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
+#  Gromore【可选】 
+pod 'YFAdsSDK/YFAdsGROAdapter'
+#  快手【可选】
+pod 'YFAdsSDK/YFAdsKSAdapter'
+pod 'KSAdSDK','3.3.72'
+# 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
+pod 'WechatOpenSDK-XCFramework'
 ```
 **2.穿山甲iOS直播拉流接入注意事项**
 ***2.1 背景***
@@ -98,20 +128,21 @@
 接入穿山甲直播拉流广告需将TeamID提供到亿帆广告的运营同学，主要用于抖音校验媒体安全性。
 TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/account)，点击[会员资格详细信息](https://developer.apple.com/account#MembershipDetailsCard)，即可看到TeamID。
 ***2.3 接入说明***
+
 1. 如宿主app不包含FFmpeg（TTSDK、ijkplayer等，或自行编译的FFmpeg），只需要增加BUAdLive-Lib的subspec即可。【推荐】
 ```
-    pod 'Ads-CN','6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+    pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 ```
 2. 如宿主app包含FFmpeg
 ```
-    pod 'Ads-CN', '6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'Ads-CN', '6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDKFramework', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
     # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
 3. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
 ```
-    pod 'Ads-CN', '6.4.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'Ads-CN', '6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDK', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
@@ -254,7 +285,7 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 ### 3.5 初始化SDK及全局配置
 
 ```
-    [YFAdSDKManager setupSDKWithAppId:[YFEnvironmentManager getAPP_ID]];
+    [YFAdSDKManager setupSDKWithAppId:@"APPID"];
 ```
 
 ### 3.6 扩展字段参数
@@ -280,44 +311,56 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
     [YFAdSDKSetting shareInstance].customIDFA = idfa;
     [YFAdSDKSetting shareInstance].userId = @"test";
 
+    // 是否允许SDK进行声道控制，默认允许
+    [YFAdSDKSetting shareInstance].allowAudioSetting = YES;
 ```
 
 ## 4. ⼴告渲染
 
 ### 4.1 开屏⼴告
 
+具体示例参照Demo项目中DemoSplashViewController.m或者AppDelegate.m
+
 1.请求代码
 
- ```
+ ```objective-c
+// 在加载广告对象中设置强引用
+@property(strong, nonatomic) YFAdSplash *splash;
+// 开屏广告背景图 6.0.4.0起不再提供内部接口，开屏背景图由开发者自行管理
+@property (nonatomic, strong) UIImageView *splashBackgroundView;
 
-    YFAdSplash *splash = [[YFAdSplash alloc] initWithAdUnitID:@"0bbcfd82-779d-4ff8-9a38-781b31c5ab61"viewController:self];
-    splash.delegate = self;
-    splash.showLogoRequire = YES;
-    splash.timeout = 5;
-
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, self.slider.value)];
-    imageView.image = [UIImage imageNamed:@"app_logo"];
-    imageView.contentMode = UIViewContentModeScaleToFill;
-    
-    //自定义开屏底部logo
-    UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
-    bottomLabel.text = @"这是开屏底部视图，不要超过屏幕高度的20%";
-    bottomLabel.textAlignment = NSTextAlignmentCenter;
-    [imageView addSubview:bottomLabel];
-    splash.bottomView = imageView;
-    
-    //开屏背景，sdk提供一个开屏背景接口，传入视图由sdk管理。也可不传此背景图，自行管理背景。
-    UIImageView *backgroundV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH)];
-    backgroundV.image = [UIImage imageNamed:@"splashBg"];
-    splash.backgroundView = backgroundV;
-
-    [splash loadAndShowAd];
+/// 获取当前最上层控制器
+UIViewController *rootVC = self.window.rootViewController;
+// 初始化自定义的广告背景图
+if (!_splashBackgroundView)
+	_splashBackgroundView = [UIImageView new];
+_splashBackgroundView.image = [UIImage imageNamed:@"splashBg"];
+// 自定义的背景图添加至主控制器 广告关闭或者失败时进行移除
+[rootVC.view addSubview:_splashBackgroundView];
+_splashBackgroundView.frame = UIScreen.mainScreen.bounds;
+// 注意： 初始化传入当前可见最上层控制器，避免无法弹出落地页，广告位id见广告配置表
+self.splash = [[YFAdSplash alloc] initWithAdUnitID:[YFEnvironmentManager getColdSPLASH_ID] viewController:rootVC];
+self.splash.delegate = self;
+/// 设置开屏底部视图（可选）不要超过屏幕高度的20%
+UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
+imageView.image = [UIImage imageNamed:@"app_logo"];
+UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
+// bottomLabel.text = @"这是开屏底部视图，不要超过屏幕高度的20%";
+bottomLabel.textAlignment = NSTextAlignmentCenter;
+[imageView addSubview:bottomLabel];
+self.splash.bottomView = imageView;
+// 超时时间
+self.splash.timeout = 5;
+// 是否展示底部logo视图
+self.splash.showLogoRequire = YES;
+// 加载广告
+[self.splash loadAd];
 
  ```
 
 2.回调方法
 
- ```
+ ```objective-c
 /// 广告数据加载成功
 - (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
 
@@ -333,7 +376,6 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 
 }
-
 
 /// 广告点击
 - (void)fcAdClicked:(YFAdBaseAdapter *)model {
@@ -357,29 +399,33 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
  ```
 
-开屏⼴告闪屏问题
- 1、⾸⻚闪现之后在弹出⼴告。这种现象对⽤户体验不友好。我们的⽅案是backgroundView需要保持和App启动⻚⼀致，这样在加载开屏⼴告的时候，会覆盖在⾸⻚上⾯，⽤户感觉不到是在加载App还是加载⼴告过程。
-    但是相对SDK管理，更推荐自行管理开屏背景视图。
+**开屏⼴告闪屏问题：**
+**⾸⻚闪现之后在弹出⼴告。这种现象对⽤户体验不友好。推荐使用自定义开屏背景图来添加到首页上，具体实现可参照Demo中DemoSplashViewController开屏广告示例。**
 
 ### 4.2 横幅⼴告
 
+具体示例参照Demo项目中DemoBannerViewController.m
+
 1.请求代码
 
- ```
- - (void)loadAdAndShow {
-  
-UIView *contentV = [[UIView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.width * 400.0 /600.0)];
- [self.view addSubview:contentV];
- 
-YFAdBanner * fcAdBanner = [[YFAdBanner alloc] initWithAdUnitID:pID adContainer:contentV viewController:self];
-fcAdBanner.delegate = self;
-[fcAdBanner loadAndShowAd];
+ ```objective-c
+// 请求对象中设置强引用
+@property(nonatomic, strong) YFAdBanner * fcAdBanner;
+
+- (void)loadAdAndShow {
+  // 期望的广告尺寸
+	UIView *contentV = [[UIView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 		self.view.bounds.size.width * 400.0 /600.0)];
+ 	[self.view addSubview:contentV];
+ // viewController建议传入最上层可见控制器，以免造成无法推出落地页影响转化和收益
+	_fcAdBanner = [[YFAdBanner alloc] initWithAdUnitID:pID adContainer:contentV viewController:self];
+	_fcAdBanner.delegate = self;
+	[_fcAdBanner loadAndShowAd];
 }
  ```
 
 2.回调方法
 
- ```
+ ```objective-c
 /// 广告数据加载成功
 - (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
 
@@ -405,28 +451,30 @@ fcAdBanner.delegate = self;
 - (void)fcAdDidClose:(YFAdBaseAdapter *)model {
    
 }
-
-
-
 
  ```
 
 ### 4.3 插屏⼴告
 
+具体示例参照Demo项目中DemoInterstitialViewController.m
+
 1.请求代码
 
- ```
+ ```objective-c
+ // 请求类中设置强引用
+ @property(nonatomic, strong) YFAdInterstitial * fcAdInterstitial;
+ 
  - (void)loadAdAndShow {
-  
-    YFAdInterstitial * fcAdInterstitial = [[YFAdInterstitial alloc] initWithAdUnitID:PID viewController:self];
-    fcAdInterstitial.delegate = self;
-    [fcAdInterstitial loadAndShowAd];
+   // viewController建议传入最上层可见控制器，以免造成无法推出落地页影响转化和收益
+    _fcAdInterstitial = [[YFAdInterstitial alloc] initWithAdUnitID:@"广告位id" viewController:self];
+    _fcAdInterstitial.delegate = self;
+    [_fcAdInterstitial loadAndShowAd];
 }
  ```
 
 2.回调方法
 
- ```
+ ```objective-c
 /// 广告数据加载成功
 - (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
 
@@ -436,8 +484,6 @@ fcAdBanner.delegate = self;
 - (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
 
 }
-
-
 
 /// 广告曝光
 - (void)fcAdExposured:(YFAdBaseAdapter *)model {
@@ -454,27 +500,29 @@ fcAdBanner.delegate = self;
    
 }
 
-
-
-
  ```
 
 ### 4.4 全屏视频⼴告
 
+具体示例参照Demo项目中DemoFullScreenVideoController.m
+
 1.请求代码
 
- ```
+ ```objective-c
+  // 请求类中设置强引用
+ @property(nonatomic, strong) YFAdFullScreenVideo * fcAdFullScreenVideo;
+ 
  - (void)loadAdAndShow {
-  
-     YFAdFullScreenVideo * fcAdFullScreenVideo  = [[YFAdFullScreenVideo alloc] initWithAdUnitID:@"728b5f9b-9b97-404b-8897-1e7b3d719aaf" viewController:self];
-     fcAdFullScreenVideo.delegate=self;
-     [fcAdFullScreenVideo loadAndShowAd];
+   // viewController建议传入最上层可见控制器，以免造成无法推出广告和落地页影响转化和收益
+     _fcAdFullScreenVideo  = [[YFAdFullScreenVideo alloc] initWithAdUnitID:@"广告位id" viewController:self];
+     _fcAdFullScreenVideo.delegate = self;
+     [_fcAdFullScreenVideo loadAndShowAd];
 }
  ```
 
 2.回调方法
 
- ```
+ ```objective-c
 /// 广告数据加载成功
 - (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
 
@@ -510,20 +558,25 @@ fcAdBanner.delegate = self;
 
 ### 4.4 激励视频⼴告
 
+具体示例参照Demo项目中DemoRewardVideoViewController.m
+
 1.请求代码
 
- ```
+ ```objective-c
+  // 请求类中设置强引用
+ @property(nonatomic, strong) YFAdRewardVideo * fcAdRewardVideo; 
+ 
  - (void)loadAdAndShow {
-  
-   YFAdRewardVideo * fcAdRewardVideo = [[YFAdRewardVideo alloc] initWithAdUnitID:PID viewController:self];
-    fcAdRewardVideo.delegate=self;
-    [fcAdRewardVideo loadAndShowAd];
+   // viewController建议传入最上层可见控制器，以免造成无法推出广告和落地页影响转化和收益
+   _fcAdRewardVideo = [[YFAdRewardVideo alloc] initWithAdUnitID:@"广告位id" viewController:self];
+   _fcAdRewardVideo.delegate=self;
+   [_fcAdRewardVideo loadAndShowAd];
 }
  ```
 
 2.回调方法
 
- ```
+ ```objective-c
 /// 广告数据加载成功
 - (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
 
@@ -553,11 +606,7 @@ fcAdBanner.delegate = self;
 /// 广告加载失败
 - (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
 
-
-
 }
-
-
 
 /// 广告关闭
 - (void)fcAdDidClose:(YFAdBaseAdapter *)model {
@@ -573,23 +622,28 @@ fcAdBanner.delegate = self;
 
 ### 4.5 信息流⼴告
 
+具体示例参照Demo项目中DemoListFeedExpressViewController.m
+
 1.请求代码
 
- ```
+ ```objective-c
+  // 请求类中设置强引用
+ @property(nonatomic, strong) YFAdNativeExpress * advanceFeed; 
+ 
  - (void)loadAdAndShow {
-  
-       YFAdNativeExpress * advanceFeed = [[YFAdNativeExpress alloc] initWithAdUnitID:PID adContainer:nil  viewController:self adSize:CGSizeMake(self.view.bounds.size.width, 0)];
-    advanceFeed.delegate = self;
-    advanceFeed.count = 1;
-    [advanceFeed loadAndShowAd];
+   // viewController建议传入最上层可见控制器，以免造成无法推出广告和落地页影响转化和收益
+    _advanceFeed = [[YFAdNativeExpress alloc] initWithAdUnitID:@"广告位id" adContainer:nil  viewController:self adSize:CGSizeMake(self.view.bounds.size.width, 0)];
+   	_advanceFeed.delegate = self;
+   	_advanceFeed.count = 1;
+   	[_advanceFeed loadAndShowAd];
 }
  ```
 
- *接⼊建议：调⽤loadAds接⼝的时候，size的⾼度height传0；⼴告加载成功的时候，判断返回的⼴告View⾼度，如果是0还需要等待渲染成功再展示，如果⾼度⼤于0，可直接展示。
+ **接⼊建议：调⽤loadAds接⼝的时候，size的⾼度height传0；⼴告加载成功的时候，判断返回的⼴告View⾼度，如果是0还需要等待渲染成功再展示，如果⾼度⼤于0，可直接展示。**
 
 2.回调方法
 
- ```
+ ```objective-c
 // 信息流广告比较特殊, 渲染逻辑需要自行处理
 - (void)showNativeAd {
     for (NSInteger i = 0; i < self.arrViewsM.count; i++) {
@@ -598,22 +652,16 @@ fcAdBanner.delegate = self;
         [_dataArrM insertObject:self.arrViewsM[i] atIndex:1];
     }
     [self.tableView reloadData];
-
 }
 
 /// 广告数据拉取成功
 - (void)fcAdNativeExpressOnAdLoadSuccess:(NSArray<FCAdNativeExpressView *> *)views {
     NSLog(@"广告拉取成功 %s", __func__);
     self.arrViewsM = [views mutableCopy];
-    
     if (_isLoadAndShow) {
         [self showNativeAd];
     }
-    
-
-
 }
-
 
 /// 广告曝光
 - (void)fcAdNativeExpressOnAdShow:(FCAdNativeExpressView *)adView {
@@ -662,13 +710,9 @@ fcAdBanner.delegate = self;
     [self.tableView reloadData];
 }
 
-
-
 // MARK: ======================= UITableViewDelegate, UITableViewDataSource =======================
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return _expressAdViews.count*2;
-//    return 2;
     return _dataArrM.count;
 }
 
@@ -701,10 +745,6 @@ fcAdBanner.delegate = self;
         view.tag = 1000;
         [cell.contentView addSubview:view];
         cell.accessibilityIdentifier = @"nativeTemp_ad";
-//        [view mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.equalTo(@0);
-//        }];
-
         return cell;
     }
 }
@@ -712,32 +752,29 @@ fcAdBanner.delegate = self;
 
 ### 4.6 媒体自渲染
 
+具体示例参照Demo项目中DemoMediaRenderViewController.m
+
 1.请求代码
 
- ```
+ ```objective-c
+  // 请求类中设置强引用
+ @property(nonatomic, strong) YFAdMediaRender * adMediaRender; 
+
 - (void)loadAndShowAd {
     [super loadAndShowAd];
     [self loadAdWithState:AdState_Normal];
-    self.adMediaRender = [[YFAdMediaRender alloc] initWithAdUnitID:@"d53d8fec49c544fd948f5eef5f805201" viewController:self];
+  	// viewController建议传入最上层可见控制器，以免造成无法推出广告落地页影响转化和收益
+    self.adMediaRender = [[YFAdMediaRender alloc] initWithAdUnitID:@"广告位id" viewController:self];
     self.adMediaRender.delegate = self;
     _isAdLoaded = false;
     [self.adMediaRender loadAndShowAd];
     [self loadAdWithState:AdState_Loading];
-
 }
  ```
 
 2.回调方法
 
- ```
-- (void)deallocAd {
-    self.adMediaRender.delegate = nil;
-    self.adMediaRender = nil;
-    self.isLoaded = NO;
-    [self loadAdWithState:AdState_Normal];
-}
-
-
+ ```objective-c
 //广告展示
 - (void)showRanderAd:(id)media {
     [media muteEnable:YES];
@@ -757,14 +794,12 @@ fcAdBanner.delegate = self;
 }
 
 
-
 /// 获取自渲染数据
 - (void)fcAdGetMediaRenderDataSuccess:(NSArray *)mediaRenders {
     [self showRanderAd:mediaRenders.firstObject];
     [JDStatusBarNotification showWithStatus:@"广告加载成功" dismissAfter:1.5];
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功", __func__]];
 }
-
 
 /// 广告加载失败
 - (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description {
@@ -780,30 +815,21 @@ fcAdBanner.delegate = self;
 
 }
 
-/**
- This method is called when native ad  render  success
- */
 - (void)mediaAdRenderSuccess:(YFAdMedia *)mediaAd {
     NSLog(@"广告曝光回调 %s", __func__);
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光成功", __func__]];
 }
-/**
- This method is called when native ad  render  fail
- */
+
 - (void)mediaAdRenderFail:(YFAdMedia *)mediaAd {
     NSLog(@"广告曝光回调 %s", __func__);
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光失败", __func__]];
 }
-/**
- This method is called when native ad is clicked.
- */
+
 - (void)mediaAdDidClick:(YFAdMedia *)mediaAd {
     NSLog(@"广告点击 %s", __func__);
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告点击成功", __func__]];
 }
-/**
- This method is called when native ad play finished.
- */
+
 - (void)mediaAdVideoPlayFinished:(YFAdMedia *)mediaAd {
     NSLog(@"广告视频播放完成 %s", __func__);
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告视频播放完成", __func__]];
@@ -813,41 +839,31 @@ fcAdBanner.delegate = self;
 
 ### 4.6 视频贴片
 
+具体示例参照Demo项目中DemoPatchViewController.m
+
 1.请求代码
 
- ```
+ ```objective-c
+// 请求类中设置强引用
+@property(nonatomic, strong) YFAdPatch * adPatch; 
+
 - (void)loadAndShowAd{
     if (!_contentV) {
         _contentV = [[UIView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.width * 400.0 /600.0)];
         [self.view addSubview:self.contentV];
     }
-    
-    
     if (!self.adPatch) {
-        self.adPatch = [[YFAdPatch alloc] initWithAdUnitID:[YFEnvironmentManager getPATCH_ID] adContainer:_contentV viewController:self];
+      // viewController建议传入最上层可见控制器，以免造成无法推出广告落地页影响转化和收益
+        self.adPatch = [[YFAdPatch alloc] initWithAdUnitID:@"广告位id" adContainer:_contentV viewController:self];
         self.adPatch.delegate = self;
         [self.adPatch loadAndShowAd];
     }
-    
 }
-
  ```
 
 2.回调方法
 
- ```
-
-
-
-- (void)deallocAd {
-    [self.contentV removeFromSuperview];
-    self.contentV = nil;
-    if (self.adPatch) {
-        self.adPatch.delegate = nil;
-        self.adPatch = nil;
-    }
-}
-
+ ```objective-c
 /// 广告数据加载成功
 - (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
     
@@ -855,8 +871,6 @@ fcAdBanner.delegate = self;
 
 /// 广告加载失败
 - (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
-    
-   
     [self deallocAd];
 }
 
@@ -876,20 +890,18 @@ fcAdBanner.delegate = self;
     NSLog(@"贴片广告关闭了 %s", __func__);
     [self deallocAd];
 }
-
--(void)dealloc {
-    NSLog(@"贴片释放 %s", __func__);
-    [self deallocAd];
-}
-
-
  ```
 
 ### 4.7 Draw 视频
 
+具体示例参照Demo项目中DemoDrawViewController.m
+
 1.请求代码
 
- ```
+ ```objective-c
+// 请求类中设置强引用
+@property(nonatomic, strong) YFAdDraw * advanceDraw; 
+
 - (void)loadAd {
     [super loadAd];
     [self deallocAd];
@@ -900,7 +912,7 @@ fcAdBanner.delegate = self;
     for (NSInteger i =0 ; i <= 5; i++) {
         [self.dataArr addObject:@"App NormalCell"];
     }
-        
+    // viewController建议传入最上层可见控制器，以免造成无法推出广告落地页影响转化和收益
     self.advanceDraw = [[YFAdDraw alloc] initWithAdUnitID:[YFEnvironmentManager getDRAW_ID] adContainer:nil viewController:self adSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width * 400.0 /600.0)];
     self.advanceDraw.count = 1;
     self.advanceDraw.delegate = self;
@@ -913,10 +925,7 @@ fcAdBanner.delegate = self;
 
 2.回调方法
 
- ```
-
-
-
+ ```objective-c
 - (void)showAd {
     if (!self.advanceDraw || !self.isLoaded || self.dataArr.count == 0 || self.adViews.count == 0) {
         [JDStatusBarNotification showWithStatus:@"请先加载广告" dismissAfter:1.5];
@@ -924,7 +933,6 @@ fcAdBanner.delegate = self;
     }
     [self showNativeAd];
 }
-
 
 - (void)loadAndShowAd {
     [super loadAd];
@@ -973,8 +981,6 @@ fcAdBanner.delegate = self;
     [self.tableView reloadData];
 }
 
-
-
 // MARK: ======================= YFAdDrawDelegate =======================
 /// 广告数据拉取成功
 - (void)fcAdDrawOnAdLoadSuccess:(NSArray *)views {
@@ -985,7 +991,6 @@ fcAdBanner.delegate = self;
         [self showNativeAd];
     }
 }
-
 
 /// 广告曝光
 - (void)fcAdDrawOnAdShow:(YFAdDrawView *)adView {
@@ -1027,7 +1032,6 @@ fcAdBanner.delegate = self;
 }
 
 
-
 /// 广告被关闭
 - (void)fcAdDrawOnAdClosed:(YFAdDrawView *)adView {
     //需要从tableview中删除
@@ -1035,7 +1039,6 @@ fcAdBanner.delegate = self;
     [_dataArr removeObject: adView];
     [self.tableView reloadData];
 }
-
 
 // MARK: ======================= UITableViewDelegate, UITableViewDataSource =======================
 
@@ -1048,7 +1051,6 @@ fcAdBanner.delegate = self;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [DemoDrawNormalCell cellHeight];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger index = indexPath.row;
@@ -1111,16 +1113,21 @@ fcAdBanner.delegate = self;
     return _tableView;
 }
 
-
  ```
 
 ### 4.8 融合Banner
 
+具体示例参照Demo项目中DemoFusionBannerViewController.m
+
 1.请求代码
 
-```
-// 初始化广告加载器
-self.adBanner = [[YFAdFusionBanner alloc] initWithAdUnitID:[YFEnvironmentManager getFusionBanner_ID] viewController:self];
+```objective-c
+// 请求类中设置强引用
+@property(nonatomic, strong) YFAdFusionBanner * adBanner; 
+
+// 初始化广告加载器 
+// viewController建议传入最上层可见控制器，以免造成无法推出广告和落地页影响转化和收益
+self.adBanner = [[YFAdFusionBanner alloc] initWithAdUnitID:@"广告位id" viewController:self];
 // 设置融合banner代理对象
 self.adBanner.delegate = self;
 // 设置融合banner加载数量（建议1条，最多3条）
@@ -1133,7 +1140,7 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
 
 2.回调方法
 
-```
+```objective-c
 /// 广告数据拉取成功
 - (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdLoadSuccess:(NSArray<YFAdFusionBannerView *> * _Nullable)views {
     if (views.count > 0) {
