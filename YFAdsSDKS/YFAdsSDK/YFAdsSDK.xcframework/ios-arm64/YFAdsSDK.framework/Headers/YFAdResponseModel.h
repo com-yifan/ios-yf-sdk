@@ -94,7 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FCAdConfigureModel : NSObject
 /// 竞价回传
-@property (nonatomic, assign) NSInteger biddingReport;
+@property (nonatomic, copy) NSString *biddingReportAdn;
 
 @end
 
@@ -140,6 +140,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface FCAdParamConf : NSObject
+/// 模版跳过按钮样式1：联盟默认按钮 2：亿帆胶囊按钮
+@property (nonatomic, assign) NSInteger sbs;
 /// 关闭按钮尺寸
 @property (nonatomic, assign) NSInteger cbs;
 /// 点击热区
@@ -162,8 +164,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ac;
 /// 关闭按钮出现时间
 @property (nonatomic, assign) NSInteger cbst;
-///  1: 合规值 2: 中灵敏闽值 3:高灵敏闽值
-@property (nonatomic, assign) NSInteger istv;
 
 // 倒计时结束自动关闭 1：是 0：否
 @property (nonatomic, assign) NSInteger oac;

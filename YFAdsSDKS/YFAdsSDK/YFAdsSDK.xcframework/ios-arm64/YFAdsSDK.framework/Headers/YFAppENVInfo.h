@@ -36,6 +36,9 @@ FOUNDATION_EXPORT NSString * const YF_Scheme_Zhifubao;
 /// - Parameter scheme: app的urlscheme，可以使用YF_Scheme也可传入自定义字符串
 + (YF_AppStatus)getAppStatus:(nonnull YF_Scheme)scheme;
 + (void)logNeededAppStatus;
++ (NSArray *)getInstalledAppListArray;
++ (YF_AppStatus)getAppStatusByBundleName:(nonnull NSString *)bundleName;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -13,12 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) YFAdImageView *adLogo;
 
+@property (nonatomic, copy) void (^longTapClick)(void);
+
 - (void)loadAdLogoType:(NSInteger)type;
 - (void)loadAdxCircleLogo;
 - (void)loadAdLogo:(NSString *)logo;
 - (void)loadAdLogoImage:(UIImage *)logoImage;
-// TODO: from mk --- 很多没有加长按溯源，可能需要加一下
-@property (nonatomic, copy) void (^longTapClick)(void);
+- (void)closeFeedback;
 
 @end
 

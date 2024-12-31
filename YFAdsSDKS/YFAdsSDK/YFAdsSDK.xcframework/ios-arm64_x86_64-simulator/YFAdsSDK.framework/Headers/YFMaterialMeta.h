@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, copy) NSString *msg;
 @property(nonatomic, copy) NSString *rid;
+@property(nonatomic, copy) NSString *ua;
 @property(nonatomic, assign) NSInteger code;
 
 @property(nonatomic, copy) NSString *eKey;

@@ -110,6 +110,9 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
  *  获取高度
  */
 - (float)getViewHeight;
+/// 获取元素缩放比例
+- (float)scaleWith600_150;
+- (float)scaleWith600_400;
 -(void)toPlayVideo;
 -(void)turnClickBtn;
 

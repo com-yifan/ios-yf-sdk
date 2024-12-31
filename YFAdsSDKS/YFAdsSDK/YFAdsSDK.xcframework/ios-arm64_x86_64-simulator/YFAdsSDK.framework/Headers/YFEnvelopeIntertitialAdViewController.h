@@ -58,7 +58,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告位信息
 @property (nonatomic, strong) YFAdEventModel *eventModel;
 /// 点击视频 部分联盟点击视频额外回调
-@property(nonatomic, copy) void (^clickVideoBlk)(void);
+@property(nonatomic, copy) void (^clickVideoBlk)(void);\
+/// 关闭视频落地页
+@property(nonatomic, copy) void (^closeVideoDetailBlk)(void);
 /// 点击关闭
 @property(nonatomic, copy) void (^closeClick)(id);
 /// 渲染成功（视频/图片加载完成）
@@ -67,6 +69,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) void (^exposureBlk)(void);
 /// 初始化
 - (instancetype)initWithFrame:(CGRect)frame model:(id)model;
+/// 假性关闭-为了处理弹出落地页
+- (void)fakeClose;
+/// 打开落地页
+- (void)openDetailController;
+/// 关闭落地页后
+- (void)closeOtherController;
 /// 添加进入后台监听
 - (void)addNotification;
 /// 构建视图
@@ -89,6 +97,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)portraitLayout;
 /// 横屏布局
 - (void)landandscapeLayout;
+/// 长按溯源
+- (void)collectionAdInfo;
+/// 重设动画，仅百度
+- (void)resetAnimationToClick;
 @end
 
 NS_ASSUME_NONNULL_END

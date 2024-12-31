@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告Logo视图
 @property(nonatomic, strong) UIView *bottomView;
 /// 开屏占位视图
-@property(nonatomic, strong) UIView *backgroundView;
+@property(nonatomic, strong) UIView *backgroundView DEPRECATED_MSG_ATTRIBUTE("此属性将废弃SDK不再管理开屏背景图，请参照DemoSplashViewController中bgImageView实现");
 
 /// 广告Logo
 @property(nonatomic, strong) UIImage *logoImage DEPRECATED_MSG_ATTRIBUTE("此方法即将下线，请使用@property(nonatomic, strong) UIView *bottomView;替换");

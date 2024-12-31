@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)viewWillTransitionAfterAnimation;
 /// 屏幕旋转
 - (void)orientationDidChanged;
+/// 更新window尺寸布局
+- (void)updateLayoutWith:(CGSize)size;
 @end
 
 NS_ASSUME_NONNULL_END

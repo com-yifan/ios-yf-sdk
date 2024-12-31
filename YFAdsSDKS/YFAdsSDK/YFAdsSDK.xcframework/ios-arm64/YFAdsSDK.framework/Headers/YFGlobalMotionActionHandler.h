@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreMotion/CoreMotion.h>
 
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, YFGlobalMotionViewStatus){
@@ -17,7 +18,7 @@ typedef NS_ENUM(NSInteger, YFGlobalMotionViewStatus){
 @protocol YFGlobalMotionActionHandler <NSObject>
 
 /// 处理摇一摇事件响应
--(void)yf_globalMotionActionHandler;
+-(void)yf_globalMotionActionHandler:(CMAccelerometerData *_Nullable) accelermotion;
 
 -(YFGlobalMotionViewStatus)getViewStatus;
 @end

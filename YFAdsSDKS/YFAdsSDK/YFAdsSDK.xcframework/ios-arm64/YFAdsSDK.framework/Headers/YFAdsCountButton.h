@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdsCountButton : UIButton
 
-@property (nonatomic, strong) UIView * cover;
+@property (nonatomic, strong) UIView *cover;
 
 // 设置倒计时时长
 @property (nonatomic, assign) NSInteger countdownDuration;
@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 开始倒计时
 - (void)startCountdown:(YFAdEventModel *)event;
+/// 暂停倒计时，进入落地页和后台暂停倒计时
+- (void)pause;
+- (void)resume;
 - (void)close;
 - (void)cancel;
 @end

@@ -156,6 +156,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *adnAppKey;
 /// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 12 adx;  14 Tanx;
 @property (nonatomic, assign) NSInteger adnID;
+/// 广告商名称
+@property (nonatomic, copy) NSString *adnName;
 /// 广告类型
 /// 1 开屏广告;2 信息流广告;3 插屏广告;4 banner横幅广告;5 draw视频信息流广告;6 全屏视频广告;7 激励视频广告
 @property (nonatomic, assign) NSInteger aType;
@@ -209,7 +211,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * rID;
 /// 模版ID  2自渲染banner、3信息流
 @property (nonatomic, assign) NSInteger renderID;
-/// 关闭按钮尺寸 
+
+
+
+/// skipBtnStyle 跳过按钮样式
+/*
+1：联盟默认按钮
+2：亿帆胶囊按钮
+ */
+@property (nonatomic, assign) NSInteger sbs;
+
+/// 关闭按钮尺寸
 /*
  1、最小
  2、小
@@ -236,6 +248,8 @@ NS_ASSUME_NONNULL_BEGIN
 //5: 素材右上角
 //6: 左下角
 //7: 右下角
+//8：中上
+//9：中下
 @property (nonatomic, assign) NSInteger cbp;
 /// 关闭按钮出现时间
 @property (nonatomic, assign) NSInteger cbst;
@@ -255,10 +269,11 @@ NS_ASSUME_NONNULL_BEGIN
  9：点击(有手指)
  */
 @property (nonatomic, assign) NSInteger is;
+
+///  重设交互为点击
+@property (nonatomic) BOOL resetIsToClick;
 /// 是否 自动跳转 0关闭 1是开启
 @property (nonatomic, assign) NSInteger ac;
-/// 1: 合规值 2: 中灵敏闽值 3:高灵敏闽值
-@property (nonatomic, assign) NSInteger istv;
 /// 平台错误码
 @property (nonatomic, copy) NSString *cd;
 
@@ -315,6 +330,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger cacheTimeout;
 /// 
 @property (nonatomic, strong) NSArray<NSString *> *wURL;
+/// 同一次请求使用相同ua
+@property(nonatomic, copy) NSString *ua;
 ///是否已经记录过本地请求限制，主要用于过滤信息流等存在多次曝光的广告
 @property (nonatomic) BOOL reqLimitRecorded;
 @end

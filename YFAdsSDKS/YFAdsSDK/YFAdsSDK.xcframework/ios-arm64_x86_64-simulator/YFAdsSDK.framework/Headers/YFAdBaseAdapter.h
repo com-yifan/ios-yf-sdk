@@ -8,6 +8,7 @@
 #import <YFAdsSDK/YFAdSupplierManager.h>
 NS_ASSUME_NONNULL_BEGIN
 
+/// 适配器基类
 @interface YFAdBaseAdapter : NSObject
 
 /// 各渠道错误的详细原因

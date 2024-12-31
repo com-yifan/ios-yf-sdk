@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (YFAdModel)
 
-+ (nullable NSDictionary *)fcAd_JsonStringToObject:(id)json;
++ (nullable NSDictionary *)fcAd_JsonStringToObject:(NSString *)json;
 
 @end
 

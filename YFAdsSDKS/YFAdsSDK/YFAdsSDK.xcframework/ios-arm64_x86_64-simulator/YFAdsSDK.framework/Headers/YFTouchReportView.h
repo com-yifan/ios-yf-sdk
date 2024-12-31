@@ -107,6 +107,12 @@ typedef NS_ENUM(NSInteger, YFInteractionType){
 ///手指离开y坐标
 @property(nonatomic, assign) NSInteger up_y;
 
+///广告x坐标  相对屏幕
+@property(nonatomic, assign) NSInteger ad_window_x;
+
+///广告y坐标 相对屏幕
+@property(nonatomic, assign) NSInteger ad_window_y;
+
 ///手指按下x坐标(相对屏幕)
 @property(nonatomic, assign) NSInteger down_window_x;
 
@@ -144,6 +150,8 @@ typedef NS_ENUM(NSInteger, YFInteractionType){
 
 @property(nonatomic, copy) NSString * req_id;
 
+@property(nonatomic, copy) NSString *ua;
+
 @property(nonatomic, copy) NSString * eKey;
 
 -(instancetype)initWithModel:(YFMaterialMeta *)model;
@@ -152,7 +160,7 @@ typedef NS_ENUM(NSInteger, YFInteractionType){
 
 @interface YFTouchReportView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame jumpType:(NSInteger)type;
+- (instancetype)initWithFrame:(CGRect)frame jumpType:(NSInteger)type model:(nullable YFMaterialMeta *)model;
 
 ///可点击控件数组(子控件)，只有点击在这些控件上才会上报
 @property(nonatomic, strong) NSMutableArray<UIView *> *_Nonnull clickableViews;

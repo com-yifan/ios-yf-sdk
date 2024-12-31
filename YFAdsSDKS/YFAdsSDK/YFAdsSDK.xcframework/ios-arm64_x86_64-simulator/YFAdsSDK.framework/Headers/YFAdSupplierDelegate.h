@@ -8,7 +8,7 @@
 
 @class YFAdResponseModel;
 @class YFAdReportModel;
-
+@class YFAdBaseAdPosition;
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol YFAdSupplierDelegate <NSObject>
@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param supplier 被加载的渠道
 /// @param error 异常信息
 - (void)fcAdBaseAdapterLoadSuppluer:(nullable YFAdEventModel *)supplier error:(nullable NSError *)error;
+/// 竞价回调 YFAdEventModel
+- (void)fcAdBaseAdapterBidding:(YFAdBaseAdPosition *)adapter isSucceed:(BOOL)succeed fristSuceess:(YFAdBaseAdPosition *)frist secondSuceess:(YFAdBaseAdPosition *)second adns:(NSArray *)adns;
 
 @end
 

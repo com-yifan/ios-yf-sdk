@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const AdvanceSdkVersion;
 
+//经过测试的联盟SDK版本号，带在日志里打印
+extern NSString *const Adapted_Version_GDT;
+extern NSString *const Adapted_Version_CSJ;
+extern NSString *const Adapted_Version_KS;
+extern NSString *const Adapted_Version_BD;
+extern NSString *const Adapted_Version_JD;
+extern NSString *const Adapted_Version_TX;
+
 extern NSString *const SDK_TAG_GDT;
 extern NSString *const SDK_TAG_CSJ;
 extern NSString *const SDK_TAG_KS;
@@ -30,6 +38,7 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 
 
 @interface YFAdSDKSetting : NSObject
+// MARK: - SDK主要参数
 /// SDK版本
 + (NSString *)sdkVersion;
 
@@ -41,6 +50,9 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 ///控制台日志输出开关, 默认开启
 @property (nonatomic, assign) BOOL logEnable;
 
+/// 是否允许SDK内部对AVAudioSession的category进行设置，默认允许。SDK内部默认使用AVAudioSessionCategoryAmbient。
+@property(nonatomic, assign) BOOL allowAudioSetting;
+
 /// 自定义IDFA，格式需与IDFA格式相同，xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 @property (nonatomic, copy) NSString * customIDFA;
 /// 是否开启定位 默认开启
@@ -51,6 +63,11 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 @property(nonatomic, copy) NSString *device_geo_lon;
 /// 用户ID
 @property(nonatomic, copy) NSString *userId;
+
+
+
+
+// MARK: - 其它参数
 
 /// api.yfanads.com/api/v1/ads/app
 @property (nonatomic, copy) NSString *fc_data_url;
@@ -71,6 +88,8 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 
 @property(nonatomic, assign) NSTimeInterval updateLoctionTime;
 
+/// 设置是否允许SDK限制个性化推荐。true限制个性化推荐(关闭个性化推荐)，false不限制(开启个性化推荐)。默认为false开启个性化推荐
+@property (nonatomic, assign) BOOL limitPersonal;
 @end
 
 NS_ASSUME_NONNULL_END

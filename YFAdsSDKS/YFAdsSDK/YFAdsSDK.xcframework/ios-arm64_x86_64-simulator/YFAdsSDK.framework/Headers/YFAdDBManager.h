@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSMutableArray *)searchAllResultWithName:(NSString *)tableName;
 
+- (NSMutableArray *)searchResultWithName:(NSString *)tableName limit:(NSInteger)limit;
+
 - (void)deleteAllWithName:(NSString *)tableName;
 
 - (void)deleteWithName:(NSString *)tableName eid:(NSString *)eid complate:(void(^)(BOOL))complate;

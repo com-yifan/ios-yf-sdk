@@ -1,4 +1,7 @@
 
+#import <Foundation/Foundation.h>
+#import <CommonCrypto/CommonCryptor.h>
+#import <CommonCrypto/CommonDigest.h>
 NS_ASSUME_NONNULL_BEGIN
  
 @interface YFAdAESEncrypt : NSObject
@@ -8,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSData *)AES256EncryptWithData:(NSData *)content Key:(NSString *)key;
 
 + (NSData *)AES256Decrypt:(NSString *)content Key:(NSString *)key;
++ (NSData *)AES256gzipDecrypt:(NSString *)content Key:(NSString *)key;
 
 + (NSData *)AES256DecryptWithData:(NSData *)content Key:(NSString *)key;
 
@@ -21,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)encryptAES128:(NSString *)content Key:(NSString *)key;
 
++ (NSData *)CCCryptWithOptration:(CCOperation)operation Data:(NSData *)data Key:(NSString *)key;
 
 @end
  

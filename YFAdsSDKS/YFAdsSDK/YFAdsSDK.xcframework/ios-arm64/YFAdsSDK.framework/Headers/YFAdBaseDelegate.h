@@ -6,6 +6,7 @@
 #import <YFAdsSDK/YFAdCommonDelegate.h>
 #import <YFAdsSDK/YFAdMediaMetal.h>
 
+@class YFAdBaseAdPosition;
 @protocol YFAdBaseDelegate <YFAdCommonDelegate>
 
 @optional

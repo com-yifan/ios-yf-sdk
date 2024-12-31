@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// prepare时候是否显示loading,默认 NO.
 @property (nonatomic, assign) BOOL prepareShowLoading;
 
+/// 不压缩背景图，默认为压缩
+@property (nonatomic, assign) BOOL unCompressBGImage;
+
 @property (nonatomic, strong) YFMaterialMeta *nativeAd;
 
 @property(nonatomic,copy)void (^toPlayClick)(void);

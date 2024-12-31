@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @class  YFAdResponseModel;
 @class  FCAdWaterfall;
+@class YFAdBaseAdPosition;
 @protocol FCAdSupplierManagerDelegate <NSObject>
 
 /// 加载策略Model成功
@@ -22,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)fcAdSupplierManagerLoadSortTag:(NSString *)tag;
 /// 展示广告
 - (void)fcAdSupplierManagerShow:(id)adapter;
+/// 竞价回调 YFAdEventModel
+- (void)fcAdSupplierBidding:(YFAdBaseAdPosition *)adapter isSucceed:(BOOL)succeed fristSuceess:(YFAdBaseAdPosition *)frist secondSuceess:(YFAdBaseAdPosition *)second adns:(NSArray *)adns;
 
 @end
 

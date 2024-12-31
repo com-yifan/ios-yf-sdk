@@ -9,9 +9,10 @@
 #import <YFAdsSDK/YFAdUtils.h>
 #import <YFAdsSDK/YFPrivateKit.h>
 #import <YFAdsSDK/YFAdBaseAdapter.h>
+#import <YFAdsSDK/YFBiddingAdInfo.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/// 广告位基类
 @interface YFAdBaseAdPosition : NSObject
 /// 标记渠道
 @property (nonatomic, assign) NSInteger tag;
@@ -31,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger headBidding;
 
 @property (nonatomic, assign) BOOL isLayerTimeout;
+/// 是否底价过滤(返回填充但是底价过滤了)
+@property (nonatomic, assign) BOOL isFloorPriceFilter;
 
 
 - (instancetype)initWithSupplier:(id)supplier adspot:(id)adspot;
@@ -58,6 +61,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isValid;
 
 - (void)removeCustomRenderAd;
+/// 自渲染竞价广告信息
+- (nullable YFBiddingAdInfo *)biddingAdInfo;
+/// 竞价成功
+- (void)biddingWinWitnSecondWinner:(YFAdBaseAdPosition *)secondWinner;
+/// 竞价失败
+- (void)biddingFailWithWinner:(YFAdBaseAdPosition *)winner withSecondWinner:(YFAdBaseAdPosition *)secondWinner;
 
 
 @end

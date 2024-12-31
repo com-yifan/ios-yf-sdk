@@ -11,13 +11,22 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFRouter : NSObject
+typedef NS_ENUM(NSInteger, YFRouterResult){
+    
+    YFRouterResultFail = 0,
+    
+    YFRouterResultTypeDeepLink = 1,
+    
+    YFRouterResultTypeAppstore = 2,
 
+    YFRouterResultTypeDurl = 3,
+};
 ///  是否是 手动点击 manual YES 手动点击事件  NO 自动点击事件
 + (instancetype)shareInstance;
 //  是否是 手动点击 manual YES 手动点击事件  NO 自动点击事件
--(void)addRouterWith:(YFMaterialMeta *)model event:(YFAdEventModel *)event manual:(BOOL)manual complete:(void (^)(BOOL))success;
+-(void)addRouterWith:(YFMaterialMeta *)model event:(YFAdEventModel *)event manual:(BOOL)manual complete:(void (^)(YFRouterResult))success;
 
--(void)addRouterWith:(YFMaterialMeta *)model complete:(void (^)(BOOL))success;
+-(void)addRouterWith:(YFMaterialMeta *)model complete:(void (^)(YFRouterResult))success;
 
 @end
 

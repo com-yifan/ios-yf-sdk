@@ -4,7 +4,6 @@
 //
 //  Created by 麻明康 on 2024/9/16.
 //
-#warning 这个类写完放到core模块内
 
 #import <UIKit/UIKit.h>
 #import <YFAdsSDK/YFAdView.h>
@@ -16,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImageView *yf_sp_envelope_letter;
 @property(nonatomic, strong) YFAdImageView *brandLogoView;
 @property (nonatomic, strong) UILabel *brandDescLab;
+@property (nonatomic, weak) UILabel *adDescLab;
 -(void)letterAddSubView:(UIView *)View;
 @end
 

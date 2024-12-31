@@ -68,7 +68,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdClassInfo.h>
 #import <YFAdsSDK/YFAdCommonDelegate.h>
 #import <YFAdsSDK/YFAdConst.h>
-#import <YFAdsSDK/YFAdCrashManager.h>
 #import <YFAdsSDK/YFAdCustomModel.h>
 #import <YFAdsSDK/YFAdDBManager.h>
 #import <YFAdsSDK/YFAdDataManager.h>
@@ -322,5 +321,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdBaseViewController.h>
 #import <YFAdsSDK/YFEnvelopeIntertitialAdViewController.h>
 #import <YFAdsSDK/YFAdEnvelopeIntertitialAdViewController.h>
-
+#import <YFAdsSDK/YFForgroundTimer.h>
+#import <YFAdsSDK/YFAdsIntertitialAdDelayTimer.h>
 

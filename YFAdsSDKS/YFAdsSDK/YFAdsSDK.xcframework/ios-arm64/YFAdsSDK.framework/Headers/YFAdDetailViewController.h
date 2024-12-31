@@ -6,13 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <YFAdsSDK/YFAdBaseViewController.h>
+#import <YFAdsSDK/YFRouter.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFAdDetailViewController : UIViewController
+@interface YFAdDetailViewController : YFAdBaseViewController
 
 @property(nonatomic,copy)NSString *url;
-@property(nonatomic,copy) void (^complete)(BOOL success);
+@property(nonatomic,copy) void (^complete)(YFRouterResult success);
 @property(nonatomic,assign) BOOL present;
 
 @end

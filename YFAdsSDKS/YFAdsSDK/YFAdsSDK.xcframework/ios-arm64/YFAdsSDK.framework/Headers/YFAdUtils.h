@@ -66,6 +66,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)setConfDataWith:(NSString *)key data:(NSString *)jsonData;
 + (BOOL)enableAdxCb;
+/// 事件上报条数
++ (NSInteger)eventReportNum;
 // 设置关闭按钮
 + (CGSize)getCloseSizeByType:(NSInteger)type;
 // 设置倒计时关闭
@@ -134,8 +136,11 @@ NS_ASSUME_NONNULL_BEGIN
 ///  UA
 /// 是否需要过滤京东广告
 + (BOOL)needFilterJdAd;
-///
-+ (void)addGeneralPasteboard:(YFMaterialMeta*)materialMeta;
+/// 长按溯源
++ (void)addGeneralPasteboard:(id)materialMeta;
+/// 长按溯源,支持传入多个model
++(void)addModelArrayGeneralPasteboard:(NSArray *)metaArray;
+
 + (NSString *)getUserAgent;
 
 + (void)setUserAgent;
@@ -147,6 +152,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///. 获取当前小时
 + (NSString *)getCurrentHour;
+/// 是否iPad
++ (BOOL)isiPad;
+/// 设备是否全屏
++ (BOOL)isDeviceFullScreen;
 @end
 
 NS_ASSUME_NONNULL_END

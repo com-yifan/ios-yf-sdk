@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 加载广告
 -(void)loadAdData:(BaiduMobAdNativeAdObject *)dataObject close:(void(^)(id))close;
-
+- (void)toAddShakeOrSlideView;
+- (void)deallocSlideView;
 @end
 
 NS_ASSUME_NONNULL_END
