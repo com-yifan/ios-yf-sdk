@@ -3,32 +3,24 @@ use_frameworks!
 platform :ios, '12.0'
 source 'https://github.com/CocoaPods/Specs.git'
 target 'YFAdsSDK_Example' do
- # 可选直接引入cocoapods版本
- # pod 'YFAdsSDK', '6.0.3.6'
- #  直接导入本地SDK
-   pod 'YFAdsSDK', :path => '../'
- #  pod 'YFAdsSDK/CSJ', :path => '../'
- #  pod 'YFAdsSDK/GRO', :path => '../'
- #  pod 'YFAdsSDK/GDT', :path => '../'
- #  pod 'YFAdsSDK/KS', :path => '../'
- #  pod 'YFAdsSDK/BD', :path => '../'
- #  pod 'YFAdsSDK/YF', :path => '../'
- #  pod 'YFAdsSDK/JD', :path => '../'
- #  pod 'YFAdsSDK/TX', :path => '../'
-  pod 'JADYun', '2.6.8' # 京东
-  pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
-  pod 'BaiduMobAdSDK','5.371' #百度
- # 穿山甲 使用gromore聚合功能 CSJMediation必须引入
-  pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
- #  优量汇
+  
+  # 亿帆SDK【必须】
+  pod 'YFAdsSDK', '6.0.4.0'
+  #  百度【必须】
+  pod 'BaiduMobAdSDK','5.371'
+  # 优量汇【必须】
   pod 'GDTMobSDK' ,'4.15.10'
- #  快手
+  # 京东【必须】
+  pod 'JADYun', '2.6.8'
+  pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
+  #  Tanx【必须】
+  pod 'TanxSDK','3.6.2'
+  #  穿山甲【必须】
+  pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
+  #  快手【必须】
   pod 'KSAdSDK','3.3.72'
- #  Tanx
-  pod 'TanxSDK', '3.6.2'
- #  微信小程序广告支持
-  pod 'WechatOpenSDK'
- 
+  # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
+  pod 'WechatOpenSDK-XCFramework'
  
  # Demo依赖库
   pod 'AFNetworking'
