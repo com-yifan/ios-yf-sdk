@@ -4,9 +4,9 @@ platform :ios, '12.0'
 source 'https://github.com/CocoaPods/Specs.git'
 target 'YFAdsSDK_Example' do
  # 可选直接引入cocoapods版本
-  pod 'YFAdsSDK', '6.0.3.6'
+ # pod 'YFAdsSDK', '6.0.3.6'
  #  直接导入本地SDK
- #  pod 'YFAdsSDK', :path => '../'
+   pod 'YFAdsSDK', :path => '../'
  #  pod 'YFAdsSDK/CSJ', :path => '../'
  #  pod 'YFAdsSDK/GRO', :path => '../'
  #  pod 'YFAdsSDK/GDT', :path => '../'

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'YFAdsSDK_Beta'
-    s.version          = '6.0.3.5'
+    s.version          = '6.0.4.0'
     s.summary          = 'iOS YFAdsSDK'
     s.description      = <<-DESC
     欢迎大家使用YFAdsSDK
@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
     s.author           = { 'yifan' => '576661787@qq.com' }
     s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "#{s.version}" }
 
-    s.ios.deployment_target = '10.0'
-    s.platform     = :ios, "10.0"
+    s.ios.deployment_target = '11.0'
+    s.platform     = :ios, "11.0"
 
     s.frameworks = 'UIKit', 'Foundation', 'StoreKit', 'MobileCoreServices', 'WebKit', 'MediaPlayer', 'CoreMedia', 'CoreLocation', 'AVFoundation', 'CoreTelephony', 'SystemConfiguration', 'AdSupport', 'CoreMotion', 'Accelerate', 'QuartzCore', 'Security', 'ImageIO', 'CFNetwork', 'CoreGraphics', 'SafariServices'
 

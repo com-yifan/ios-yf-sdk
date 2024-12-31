@@ -8,10 +8,7 @@
 
 #import "AppDelegate.h"
 #import "YFEnvironmentManager.h"
-//#import <YFAdsSDK/YFAdsSDK.h>
-#import "YFAdsSDK/YFAdSDKManager.h"
-#import "YFAdsSDK/YFAdSDKSetting.h"
-#import "YFAdsSDK/YFAdSplash.h"
+#import <YFAdsSDK/YFAdsSDK.h>
 #import <AppTrackingTransparency/ATTrackingManager.h>
 #import "DemoHomeViewController.h"
 #include <mach/task.h>
@@ -79,6 +76,9 @@
     [YFAdSDKSetting shareInstance].userId = @"test";
     // 控制台日志输入开关，可通过过滤"YFAds"查看日志
     [YFAdSDKSetting shareInstance].logEnable = YES;
+//    // 是否允许SDK进行声道控制，默认允许
+//    [YFAdSDKSetting shareInstance].allowAudioSetting = YES;
+    
     // Demo环境配置参数媒体开发者无需使用
     [YFAdSDKSetting shareInstance].fc_conf_url = [YFEnvironmentManager getFC_CONF_URL];
     [YFAdSDKSetting shareInstance].fc_upload_url = [YFEnvironmentManager getFC_UPLOAD_URL];
@@ -185,11 +185,8 @@
 -(void)splashEnd {
     if(!self.isEnd) {
         self.isEnd = YES;
-        [self.coldSplashAd.bottomView removeFromSuperview];
         self.coldSplashAd = nil;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_splashBackgroundView removeFromSuperview];
-        });
+        [self->_splashBackgroundView removeFromSuperview];
     }
 }
 
@@ -220,14 +217,13 @@
 /// 广告点击
 - (void)fcAdClicked:(YFAdBaseAdapter *)model {
     NSLog(@"开屏-亿帆-广告点击");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self->_splashBackgroundView removeFromSuperview];
-    });
+    /// 部分联盟需要使用当前控制器的navigate，避免背景视图覆盖落地页，需要在点击的时候移除背景视图
+    [self->_splashBackgroundView removeFromSuperview];
 }
 
 -(void)fcAdDidCloseOtherController:(id)adapter interactionType:(YFAdInteractionType)interactionType {
     NSLog(@"开屏-亿帆-广告关闭-fcAdDidCloseOtherController");
-    [self splashEnd];
+//    [self splashEnd];
 }
 
 /// 广告关闭
@@ -239,13 +235,13 @@
 /// 广告倒计时结束
 - (void)fcAdSplashOnAdCountdownToZero {
     NSLog(@"开屏-亿帆-广告倒计时结束");
-    [self splashEnd];
+//    [self splashEnd];
 }
 
 /// 点击了跳过
 - (void)fcAdSplashOnAdSkipClicked {
     NSLog(@"开屏-亿帆-点击了跳过");
-    [self splashEnd];
+//    [self splashEnd];
 }
 
 @end

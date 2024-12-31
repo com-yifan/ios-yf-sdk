@@ -874,7 +874,7 @@
 				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/TXAdConfigure.txt",
 				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/uninterested_night@3x.png",
 				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/uninterested_write@3x.png",
-				"${PODS_ROOT}/YFAdsSDK/SDK/YFAdsSDK.bundle",
+				"${PODS_ROOT}/../../YFAdsSDKS/YFAdsSDK/YFAdsSDKResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -897,7 +897,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TXAdConfigure.txt",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/uninterested_night@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/uninterested_write@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YFAdsSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YFAdsSDKResource.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
