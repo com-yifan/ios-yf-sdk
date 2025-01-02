@@ -41,11 +41,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary);
 
-typedef NS_ENUM(int, FMDBCheckpointMode) {
-    FMDBCheckpointModePassive  = 0, // SQLITE_CHECKPOINT_PASSIVE,
-    FMDBCheckpointModeFull     = 1, // SQLITE_CHECKPOINT_FULL,
-    FMDBCheckpointModeRestart  = 2, // SQLITE_CHECKPOINT_RESTART,
-    FMDBCheckpointModeTruncate = 3  // SQLITE_CHECKPOINT_TRUNCATE
+typedef NS_ENUM(int, YFDBCheckpointMode) {
+    YFDBCheckpointModePassive  = 0, // SQLITE_CHECKPOINT_PASSIVE,
+    YFDBCheckpointModeFull     = 1, // SQLITE_CHECKPOINT_FULL,
+    YFDBCheckpointModeRestart  = 2, // SQLITE_CHECKPOINT_RESTART,
+    YFDBCheckpointModeTruncate = 3  // SQLITE_CHECKPOINT_TRUNCATE
 };
 
 /** A SQLite ([http://sqlite.org/](http://sqlite.org/)) Objective-C wrapper.
@@ -1041,7 +1041,7 @@ typedef NS_ENUM(int, FMDBCheckpointMode) {
  @param error The NSError corresponding to the error, if any.
  @return YES on success, otherwise NO.
  */
-- (BOOL)checkpoint:(FMDBCheckpointMode)checkpointMode error:(NSError * _Nullable *)error;
+- (BOOL)checkpoint:(YFDBCheckpointMode)checkpointMode error:(NSError * _Nullable *)error;
 
 /** Performs a WAL checkpoint
  
@@ -1050,7 +1050,7 @@ typedef NS_ENUM(int, FMDBCheckpointMode) {
  @param error The NSError corresponding to the error, if any.
  @return YES on success, otherwise NO.
  */
-- (BOOL)checkpoint:(FMDBCheckpointMode)checkpointMode name:(NSString * _Nullable)name error:(NSError * _Nullable *)error;
+- (BOOL)checkpoint:(YFDBCheckpointMode)checkpointMode name:(NSString * _Nullable)name error:(NSError * _Nullable *)error;
 
 /** Performs a WAL checkpoint
  
@@ -1061,7 +1061,7 @@ typedef NS_ENUM(int, FMDBCheckpointMode) {
  @param checkpointCount If not NULL, then this is set to the total number of checkpointed frames in the log file (including any that were already checkpointed before the function was called) or to -1 if the checkpoint could not run due to an error or because the database is not in WAL mode.
  @return YES on success, otherwise NO.
  */
-- (BOOL)checkpoint:(FMDBCheckpointMode)checkpointMode name:(NSString * _Nullable)name logFrameCount:(int * _Nullable)logFrameCount checkpointCount:(int * _Nullable)checkpointCount error:(NSError * _Nullable *)error;
+- (BOOL)checkpoint:(YFDBCheckpointMode)checkpointMode name:(NSString * _Nullable)name logFrameCount:(int * _Nullable)logFrameCount checkpointCount:(int * _Nullable)checkpointCount error:(NSError * _Nullable *)error;
 
 ///----------------------------
 /// @name SQLite library status
@@ -1100,12 +1100,12 @@ typedef NS_ENUM(int, FMDBCheckpointMode) {
  For example:
  
     [db makeFunctionNamed:@"RemoveDiacritics" arguments:1 block:^(void *context, int argc, void **argv) {
-        SqliteValueType type = [self.db valueType:argv[0]];
-        if (type == SqliteValueTypeNull) {
+        YFSqliteValueType type = [self.db valueType:argv[0]];
+        if (type == YFSqliteValueTypeNull) {
             [self.db resultNullInContext:context];
              return;
         }
-        if (type != SqliteValueTypeText) {
+        if (type != YFSqliteValueTypeText) {
             [self.db resultError:@"Expected text" context:context];
             return;
         }
@@ -1130,15 +1130,15 @@ typedef NS_ENUM(int, FMDBCheckpointMode) {
 
 - (void)makeFunctionNamed:(NSString *)name maximumArguments:(int)count withBlock:(void (^)(void *context, int argc, void * _Nonnull * _Nonnull argv))block __deprecated_msg("Use makeFunctionNamed:arguments:block:");
 
-typedef NS_ENUM(int, SqliteValueType) {
-    SqliteValueTypeInteger = 1,
-    SqliteValueTypeFloat   = 2,
-    SqliteValueTypeText    = 3,
-    SqliteValueTypeBlob    = 4,
-    SqliteValueTypeNull    = 5
+typedef NS_ENUM(int, YFSqliteValueType) {
+    YFSqliteValueTypeInteger = 1,
+    YFSqliteValueTypeFloat   = 2,
+    YFSqliteValueTypeText    = 3,
+    YFSqliteValueTypeBlob    = 4,
+    YFSqliteValueTypeNull    = 5
 };
 
-- (SqliteValueType)valueType:(void *)argv;
+- (YFSqliteValueType)valueType:(void *)argv;
 
 /**
  Get integer value of parameter in custom function.

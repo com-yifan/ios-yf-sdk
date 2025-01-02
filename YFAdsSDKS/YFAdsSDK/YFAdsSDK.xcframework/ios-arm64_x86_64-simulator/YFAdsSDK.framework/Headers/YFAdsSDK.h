@@ -166,11 +166,13 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFContextFilterLogFormatter+Deprecated.h>
 #import <YFAdsSDK/YFContextFilterLogFormatter.h>
 
+//FMDB
 #import <YFAdsSDK/YFDB.h>
 #import <YFAdsSDK/YFDatabase.h>
 #import <YFAdsSDK/YFDatabaseAdditions.h>
 #import <YFAdsSDK/YFDatabasePool.h>
 #import <YFAdsSDK/YFDatabaseQueue.h>
+
 #import <YFAdsSDK/YFDispatchQueueLogFormatter.h>
 #import <YFAdsSDK/YFDomainManager.h>
 #import <YFAdsSDK/YFDomainManagerApi.h>

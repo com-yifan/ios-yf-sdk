@@ -260,7 +260,7 @@ ytTO myTable VALUES (?)", [NSNumber numberWithInt:1]];
  @param error The NSError corresponding to the error, if any.
  @return YES on success, otherwise NO.
  */
-- (BOOL)checkpoint:(FMDBCheckpointMode)checkpointMode error:(NSError * _Nullable *)error;
+- (BOOL)checkpoint:(YFDBCheckpointMode)checkpointMode error:(NSError * _Nullable *)error;
 
 /** Performs a WAL checkpoint
  
@@ -269,7 +269,7 @@ ytTO myTable VALUES (?)", [NSNumber numberWithInt:1]];
  @param error The NSError corresponding to the error, if any.
  @return YES on success, otherwise NO.
  */
-- (BOOL)checkpoint:(FMDBCheckpointMode)checkpointMode name:(NSString * _Nullable)name error:(NSError * _Nullable *)error;
+- (BOOL)checkpoint:(YFDBCheckpointMode)checkpointMode name:(NSString * _Nullable)name error:(NSError * _Nullable *)error;
 
 /** Performs a WAL checkpoint
  
@@ -280,7 +280,7 @@ ytTO myTable VALUES (?)", [NSNumber numberWithInt:1]];
  @param checkpointCount If not NULL, then this is set to the total number of checkpointed frames in the log file (including any that were already checkpointed before the function was called) or to -1 if the checkpoint could not run due to an error or because the database is not in WAL mode.
  @return YES on success, otherwise NO.
  */
-- (BOOL)checkpoint:(FMDBCheckpointMode)checkpointMode name:(NSString * _Nullable)name logFrameCount:(int * _Nullable)logFrameCount checkpointCount:(int * _Nullable)checkpointCount error:(NSError * _Nullable *)error;
+- (BOOL)checkpoint:(YFDBCheckpointMode)checkpointMode name:(NSString * _Nullable)name logFrameCount:(int * _Nullable)logFrameCount checkpointCount:(int * _Nullable)checkpointCount error:(NSError * _Nullable *)error;
 
 @end
 
