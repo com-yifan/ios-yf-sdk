@@ -22,17 +22,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSNumber *keyframeTime;
 @property (nonatomic, readonly) BOOL isHold;
-@property (nonatomic, readonly) CGPoint inTangent;
-@property (nonatomic, readonly) CGPoint outTangent;
-@property (nonatomic, readonly) CGPoint spatialInTangent;
-@property (nonatomic, readonly) CGPoint spatialOutTangent;
+@property (nonatomic, readonly) CGPoint yf_inTangent;
+@property (nonatomic, readonly) CGPoint yf_outTangent;
+@property (nonatomic, readonly) CGPoint yf_spatialInTangent;
+@property (nonatomic, readonly) CGPoint yf_spatialOutTangent;
 
-@property (nonatomic, readonly) CGFloat floatValue;
-@property (nonatomic, readonly) CGPoint pointValue;
-@property (nonatomic, readonly) CGSize sizeValue;
-@property (nonatomic, readonly) UIColor *colorValue;
+@property (nonatomic, readonly) CGFloat yf_floatValue;
+@property (nonatomic, readonly) CGPoint yf_pointValue;
+@property (nonatomic, readonly) CGSize yf_sizeValue;
+@property (nonatomic, readonly) UIColor *yf_colorValue;
 @property (nonatomic, readonly, nullable) YFBezierData *pathData;
-@property (nonatomic, readonly) NSArray *arrayValue;
+@property (nonatomic, readonly) NSArray *yf_arrayValue;
 
 @end
 
