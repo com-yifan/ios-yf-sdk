@@ -14,7 +14,7 @@ target 'YFAdsSDK_Example' do
   pod 'JADYun', '2.6.8'
   pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
   #  Tanx【必须】
-  pod 'TanxSDK','3.6.2'
+  pod 'TanxSDK','3.6.6'
   #  穿山甲【必须】
   pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
   #  快手【必须】

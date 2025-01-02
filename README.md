@@ -39,7 +39,7 @@
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
 | 亿帆     | 6.0.4.0 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
 | gromore  | 6.5.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
-| 淘宝Tanx | 3.6.2 | ✅  | ✅      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
+| 淘宝Tanx | 3.6.6 | ✅  | ✅      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
@@ -84,7 +84,7 @@ pod 'GDTMobSDK' ,'4.15.10'
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 #  Tanx【必须】
-pod 'TanxSDK','3.6.2'
+pod 'TanxSDK','3.6.6'
 #  穿山甲【必须】
 pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
 #  快手【必须】
@@ -109,7 +109,7 @@ pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 #  Tanx【可选】
 pod 'YFAdsSDK/YFAdsTXAdapter'
-pod 'TanxSDK','3.6.2'
+pod 'TanxSDK','3.6.6'
 #  穿山甲【可选】
 pod 'YFAdsSDK/YFAdsCSJAdapter'
 pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
