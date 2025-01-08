@@ -11,7 +11,7 @@
 
 @class YF_SDWebImagePrefetcher;
 
-@protocol SDWebImagePrefetcherDelegate <NSObject>
+@protocol YF_SDWebImagePrefetcherDelegate <NSObject>
 
 @optional
 
@@ -63,7 +63,7 @@ typedef void(^SDWebImagePrefetcherCompletionBlock)(NSUInteger noOfFinishedUrls, 
  */
 @property (nonatomic, assign) dispatch_queue_t prefetcherQueue;
 
-@property (weak, nonatomic) id <SDWebImagePrefetcherDelegate> delegate;
+@property (weak, nonatomic) id <YF_SDWebImagePrefetcherDelegate> delegate;
 
 /**
  * Return the global image prefetcher instance.
