@@ -1,5 +1,5 @@
 /*
- * This file is part of the SDWebImage package.
+ * This file is part of the YF_SDWebImage package.
  * (c) Olivier Poitrey <rs@dailymotion.com>
  * (c) Jamie Pinkham
  *
@@ -10,11 +10,11 @@
 #import <TargetConditionals.h>
 
 #ifdef __OBJC_GC__
-#error SDWebImage does not support Objective-C Garbage Collection
+#error YF_SDWebImage does not support Objective-C Garbage Collection
 #endif
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED != 20000 && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0
-#error SDWebImage doesn't support Deployment Target version < 5.0
+#error YF_SDWebImage doesn't support Deployment Target version < 5.0
 #endif
 
 #if !TARGET_OS_IPHONE
@@ -53,7 +53,7 @@
 
 extern UIImage *YF_SDScaledImageForKey(NSString *key, UIImage *image);
 
-typedef void(^SDWebImageNoParamsBlock)();
+typedef void(^YF_SDWebImageNoParamsBlock)();
 
 extern NSString *const YF_SDWebImageErrorDomain;
 
