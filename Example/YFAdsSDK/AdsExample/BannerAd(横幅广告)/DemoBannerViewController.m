@@ -50,7 +50,7 @@
     
     float width = self.view.bounds.size.width;
     _container = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height / 2.0 ,self.view.frame.size.width,self.view.frame.size.height/ 2.0)];
-    _container.backgroundColor = UIColor.systemBlueColor;
+    _container.backgroundColor = UIColor.whiteColor;
 }
 
 - (void)sliderEndChangeValue:(id)va {

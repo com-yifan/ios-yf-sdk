@@ -88,7 +88,7 @@
 - (UIView *)container {
     if (!_container) {
         _container = [[UIView alloc] init];
-        _container.backgroundColor = UIColor.systemBlueColor;
+        _container.backgroundColor = UIColor.whiteColor;
     }
     return _container;
 }

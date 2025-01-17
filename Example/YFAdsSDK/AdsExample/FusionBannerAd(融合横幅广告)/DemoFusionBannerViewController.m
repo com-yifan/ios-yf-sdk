@@ -96,7 +96,7 @@
 - (UIView *)container {
     if (!_container) {
         _container = [[UIView alloc] initWithFrame:CGRectMake(0, 460 ,self.view.frame.size.width,self.view.frame.size.height - 460.0)];
-        _container.backgroundColor = UIColor.systemBlueColor;
+        _container.backgroundColor = UIColor.whiteColor;
     }
     return _container;
 }

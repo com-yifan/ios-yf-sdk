@@ -133,7 +133,7 @@
         _coButton.backgroundColor = kRGB(158, 158, 158);
         _coButton.layer.masksToBounds = YES;
         _coButton.layer.cornerRadius = 5;
-        [_coButton setTitle:[NSString stringWithFormat:@"点击复制ID：%@", [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString] forState:UIControlStateNormal];
+        [_coButton setTitle:[NSString stringWithFormat:@"点击复制IDFA：%@", [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString] forState:UIControlStateNormal];
         _coButton.titleLabel.font = [UIFont systemFontOfSize:12];
         _coButton.titleLabel.numberOfLines = 2;
         [_coButton addTarget:self action:@selector(clickCopy) forControlEvents:UIControlEventTouchUpInside];
