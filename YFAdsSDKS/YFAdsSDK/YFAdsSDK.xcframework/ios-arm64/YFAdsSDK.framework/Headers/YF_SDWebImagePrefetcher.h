@@ -1,5 +1,5 @@
 /*
- * This file is part of the SDWebImage package.
+ * This file is part of the YF_SDWebImage package.
  * (c) Olivier Poitrey <rs@dailymotion.com>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -11,7 +11,7 @@
 
 @class YF_SDWebImagePrefetcher;
 
-@protocol SDWebImagePrefetcherDelegate <NSObject>
+@protocol YF_SDWebImagePrefetcherDelegate <NSObject>
 
 @optional
 
@@ -35,8 +35,8 @@
 
 @end
 
-typedef void(^SDWebImagePrefetcherProgressBlock)(NSUInteger noOfFinishedUrls, NSUInteger noOfTotalUrls);
-typedef void(^SDWebImagePrefetcherCompletionBlock)(NSUInteger noOfFinishedUrls, NSUInteger noOfSkippedUrls);
+typedef void(^YF_SDWebImagePrefetcherProgressBlock)(NSUInteger noOfFinishedUrls, NSUInteger noOfTotalUrls);
+typedef void(^YF_SDWebImagePrefetcherCompletionBlock)(NSUInteger noOfFinishedUrls, NSUInteger noOfSkippedUrls);
 
 /**
  * Prefetch some URLs in the cache for future use. Images are downloaded in low priority.
@@ -54,16 +54,16 @@ typedef void(^SDWebImagePrefetcherCompletionBlock)(NSUInteger noOfFinishedUrls, 
 @property (nonatomic, assign) NSUInteger maxConcurrentDownloads;
 
 /**
- * SDWebImageOptions for prefetcher. Defaults to SDWebImageLowPriority.
+ * YF_SDWebImageOptions for prefetcher. Defaults to YF_SDWebImageLowPriority.
  */
-@property (nonatomic, assign) SDWebImageOptions options;
+@property (nonatomic, assign) YF_SDWebImageOptions options;
 
 /**
  * Queue options for Prefetcher. Defaults to Main Queue.
  */
 @property (nonatomic, assign) dispatch_queue_t prefetcherQueue;
 
-@property (weak, nonatomic) id <SDWebImagePrefetcherDelegate> delegate;
+@property (weak, nonatomic) id <YF_SDWebImagePrefetcherDelegate> delegate;
 
 /**
  * Return the global image prefetcher instance.
@@ -97,7 +97,7 @@ typedef void(^SDWebImagePrefetcherCompletionBlock)(NSUInteger noOfFinishedUrls, 
  *                        first param is the number of completed (successful or not) requests,
  *                        second parameter is the number of skipped requests
  */
-- (void)prefetchURLs:(NSArray *)urls progress:(SDWebImagePrefetcherProgressBlock)progressBlock completed:(SDWebImagePrefetcherCompletionBlock)completionBlock;
+- (void)prefetchURLs:(NSArray *)urls progress:(YF_SDWebImagePrefetcherProgressBlock)progressBlock completed:(YF_SDWebImagePrefetcherCompletionBlock)completionBlock;
 
 /**
  * Remove and cancel queued list

@@ -1,5 +1,5 @@
 /*
- * This file is part of the SDWebImage package.
+ * This file is part of the YF_SDWebImage package.
  * (c) Olivier Poitrey <rs@dailymotion.com>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -10,13 +10,13 @@
 #import <YFAdsSDK/YF_SDWebImageManager.h>
 
 /**
- * Integrates SDWebImage async downloading and caching of remote images with UIImageView.
+ * Integrates YF_SDWebImage async downloading and caching of remote images with UIImageView.
  *
  * Usage with a UITableViewCell sub-class:
  *
  * @code
 
-#import <SDWebImage/UIImageView+YF_WebCache.h>
+#import <YF_SDWebImage/UIImageView+YF_WebCache.h>
 
 ...
 
@@ -79,9 +79,9 @@
  *
  * @param url         The url for the image.
  * @param placeholder The image to be set initially, until the image request finishes.
- * @param options     The options to use when downloading the image. @see SDWebImageOptions for the possible values.
+ * @param options     The options to use when downloading the image. @see YF_SDWebImageOptions for the possible values.
  */
-- (void)xh_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options;
+- (void)xh_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(YF_SDWebImageOptions)options;
 
 /**
  * Set the imageView `image` with an `url`.
@@ -95,7 +95,7 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)xh_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)xh_setImageWithURL:(NSURL *)url completed:(YF_SDWebImageCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder.
@@ -110,7 +110,7 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)xh_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)xh_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(YF_SDWebImageCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder and custom options.
@@ -119,14 +119,14 @@
  *
  * @param url            The url for the image.
  * @param placeholder    The image to be set initially, until the image request finishes.
- * @param options        The options to use when downloading the image. @see SDWebImageOptions for the possible values.
+ * @param options        The options to use when downloading the image. @see YF_SDWebImageOptions for the possible values.
  * @param completedBlock A block called when operation has been completed. This block has no return value
  *                       and takes the requested UIImage as first parameter. In case of error the image parameter
  *                       is nil and the second parameter may contain an NSError. The third parameter is a Boolean
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)xh_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)xh_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(YF_SDWebImageOptions)options completed:(YF_SDWebImageCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder and custom options.
@@ -135,7 +135,7 @@
  *
  * @param url            The url for the image.
  * @param placeholder    The image to be set initially, until the image request finishes.
- * @param options        The options to use when downloading the image. @see SDWebImageOptions for the possible values.
+ * @param options        The options to use when downloading the image. @see YF_SDWebImageOptions for the possible values.
  * @param progressBlock  A block called while image is downloading
  * @param completedBlock A block called when operation has been completed. This block has no return value
  *                       and takes the requested UIImage as first parameter. In case of error the image parameter
@@ -143,7 +143,7 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)xh_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)xh_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(YF_SDWebImageOptions)options progress:(YF_SDWebImageDownloaderProgressBlock)progressBlock completed:(YF_SDWebImageCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url` and optionally a placeholder image.
@@ -152,7 +152,7 @@
  *
  * @param url            The url for the image.
  * @param placeholder    The image to be set initially, until the image request finishes.
- * @param options        The options to use when downloading the image. @see SDWebImageOptions for the possible values.
+ * @param options        The options to use when downloading the image. @see YF_SDWebImageOptions for the possible values.
  * @param progressBlock  A block called while image is downloading
  * @param completedBlock A block called when operation has been completed. This block has no return value
  *                       and takes the requested UIImage as first parameter. In case of error the image parameter
@@ -160,7 +160,7 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)yf_setImageWithPreviousCachedImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)yf_setImageWithPreviousCachedImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(YF_SDWebImageOptions)options progress:(YF_SDWebImageDownloaderProgressBlock)progressBlock completed:(YF_SDWebImageCompletionBlock)completedBlock;
 
 /**
  * Download an array of images and starts them in an animation loop
@@ -197,14 +197,14 @@
 //
 //- (void)setImageWithURL:(NSURL *)url __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:`");
 //- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:placeholderImage:`");
-//- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:placeholderImage:options`");
+//- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(YF_SDWebImageOptions)options __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:placeholderImage:options`");
 //
-//- (void)setImageWithURL:(NSURL *)url completed:(SDWebImageCompletedBlock)completedBlock __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:completed:`");
-//- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletedBlock)completedBlock __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:placeholderImage:completed:`");
-//- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDWebImageCompletedBlock)completedBlock __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:placeholderImage:options:completed:`");
-//- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletedBlock)completedBlock __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:placeholderImage:options:progress:completed:`");
+//- (void)setImageWithURL:(NSURL *)url completed:(YF_SDWebImageCompletedBlock)completedBlock __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:completed:`");
+//- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(YF_SDWebImageCompletedBlock)completedBlock __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:placeholderImage:completed:`");
+//- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(YF_SDWebImageOptions)options completed:(YF_SDWebImageCompletedBlock)completedBlock __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:placeholderImage:options:completed:`");
+//- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(YF_SDWebImageOptions)options progress:(YF_SDWebImageDownloaderProgressBlock)progressBlock completed:(YF_SDWebImageCompletedBlock)completedBlock __deprecated_msg("Method deprecated. Use `xh_setImageWithURL:placeholderImage:options:progress:completed:`");
 //
-//- (void)yf_setImageWithPreviousCachedImageWithURL:(NSURL *)url andPlaceholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock __deprecated_msg("Method deprecated. Use `yf_setImageWithPreviousCachedImageWithURL:placeholderImage:options:progress:completed:`");
+//- (void)yf_setImageWithPreviousCachedImageWithURL:(NSURL *)url andPlaceholderImage:(UIImage *)placeholder options:(YF_SDWebImageOptions)options progress:(YF_SDWebImageDownloaderProgressBlock)progressBlock completed:(YF_SDWebImageCompletionBlock)completedBlock __deprecated_msg("Method deprecated. Use `yf_setImageWithPreviousCachedImageWithURL:placeholderImage:options:progress:completed:`");
 //
 //- (void)setAnimationImagesWithURLs:(NSArray *)arrayOfURLs __deprecated_msg("Use `yf_setAnimationImagesWithURLs:`");
 //

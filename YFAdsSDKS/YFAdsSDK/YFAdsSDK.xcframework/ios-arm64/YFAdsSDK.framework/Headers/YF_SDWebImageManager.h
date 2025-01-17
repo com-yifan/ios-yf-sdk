@@ -1,5 +1,5 @@
 /*
- * This file is part of the SDWebImage package.
+ * This file is part of the YF_SDWebImage package.
  * (c) Olivier Poitrey <rs@dailymotion.com>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -11,90 +11,90 @@
 #import <YFAdsSDK/YF_SDWebImageDownloader.h>
 #import <YFAdsSDK/YF_SDImageCache.h>
 
-typedef NS_OPTIONS(NSUInteger, SDWebImageOptions) {
+typedef NS_OPTIONS(NSUInteger, YF_SDWebImageOptions) {
     /**
      * By default, when a URL fail to be downloaded, the URL is blacklisted so the library won't keep trying.
      * This flag disable this blacklisting.
      */
-    SDWebImageRetryFailed = 1 << 0,
+    YF_SDWebImageRetryFailed = 1 << 0,
 
     /**
      * By default, image downloads are started during UI interactions, this flags disable this feature,
      * leading to delayed download on UIScrollView deceleration for instance.
      */
-    SDWebImageLowPriority = 1 << 1,
+    YF_SDWebImageLowPriority = 1 << 1,
 
     /**
      * This flag disables on-disk caching
      */
-    SDWebImageCacheMemoryOnly = 1 << 2,
+    YF_SDWebImageCacheMemoryOnly = 1 << 2,
 
     /**
      * This flag enables progressive download, the image is displayed progressively during download as a browser would do.
      * By default, the image is only displayed once completely downloaded.
      */
-    SDWebImageProgressiveDownload = 1 << 3,
+    YF_SDWebImageProgressiveDownload = 1 << 3,
 
     /**
      * Even if the image is cached, respect the HTTP response cache control, and refresh the image from remote location if needed.
-     * The disk caching will be handled by NSURLCache instead of SDWebImage leading to slight performance degradation.
+     * The disk caching will be handled by NSURLCache instead of YF_SDWebImage leading to slight performance degradation.
      * This option helps deal with images changing behind the same request URL, e.g. Facebook graph api profile pics.
      * If a cached image is refreshed, the completion block is called once with the cached image and again with the final image.
      *
      * Use this flag only if you can't make your URLs static with embedded cache busting parameter.
      */
-    SDWebImageRefreshCached = 1 << 4,
+    YF_SDWebImageRefreshCached = 1 << 4,
 
     /**
      * In iOS 4+, continue the download of the image if the app goes to background. This is achieved by asking the system for
      * extra time in background to let the request finish. If the background task expires the operation will be cancelled.
      */
-    SDWebImageContinueInBackground = 1 << 5,
+    YF_SDWebImageContinueInBackground = 1 << 5,
 
     /**
      * Handles cookies stored in NSHTTPCookieStore by setting
      * NSMutableURLRequest.HTTPShouldHandleCookies = YES;
      */
-    SDWebImageHandleCookies = 1 << 6,
+    YF_SDWebImageHandleCookies = 1 << 6,
 
     /**
      * Enable to allow untrusted SSL certificates.
      * Useful for testing purposes. Use with caution in production.
      */
-    SDWebImageAllowInvalidSSLCertificates = 1 << 7,
+    YF_SDWebImageAllowInvalidSSLCertificates = 1 << 7,
 
     /**
      * By default, images are loaded in the order in which they were queued. This flag moves them to
      * the front of the queue.
      */
-    SDWebImageHighPriority = 1 << 8,
+    YF_SDWebImageHighPriority = 1 << 8,
     
     /**
      * By default, placeholder images are loaded while the image is loading. This flag will delay the loading
      * of the placeholder image until after the image has finished loading.
      */
-    SDWebImageDelayPlaceholder = 1 << 9,
+    YF_SDWebImageDelayPlaceholder = 1 << 9,
 
     /**
      * We usually don't call transformDownloadedImage delegate method on animated images,
      * as most transformation code would mangle it.
      * Use this flag to transform them anyway.
      */
-    SDWebImageTransformAnimatedImage = 1 << 10,
+    YF_SDWebImageTransformAnimatedImage = 1 << 10,
     
     /**
      * By default, image is added to the imageView after download. But in some cases, we want to
      * have the hand before setting the image (apply a filter or add it with cross-fade animation for instance)
      * Use this flag if you want to manually set the image in the completion when success
      */
-    SDWebImageAvoidAutoSetImage = 1 << 11
+    YF_SDWebImageAvoidAutoSetImage = 1 << 11
 };
 
-typedef void(^SDWebImageCompletionBlock)(UIImage *image, NSError *error, YF_SDImageCacheType cacheType, NSURL *imageURL);
+typedef void(^YF_SDWebImageCompletionBlock)(UIImage *image, NSError *error, YF_SDImageCacheType cacheType, NSURL *imageURL);
 
-typedef void(^SDWebImageCompletionWithFinishedBlock)(UIImage *image, NSError *error, YF_SDImageCacheType cacheType, BOOL finished, NSURL *imageURL);
+typedef void(^YF_SDWebImageCompletionWithFinishedBlock)(UIImage *image, NSError *error, YF_SDImageCacheType cacheType, BOOL finished, NSURL *imageURL);
 
-typedef NSString *(^SDWebImageCacheKeyFilterBlock)(NSURL *url);
+typedef NSString *(^YF_SDWebImageCacheKeyFilterBlock)(NSURL *url);
 
 
 @class YF_SDWebImageManager;
@@ -172,7 +172,7 @@ YF_SDWebImageManager *manager = [YF_SDWebImageManager sharedManager];
 
  * @endcode
  */
-@property (nonatomic, copy) SDWebImageCacheKeyFilterBlock cacheKeyFilter;
+@property (nonatomic, copy) YF_SDWebImageCacheKeyFilterBlock cacheKeyFilter;
 
 /**
  * Returns global YF_SDWebImageManager instance.
@@ -210,9 +210,9 @@ YF_SDWebImageManager *manager = [YF_SDWebImageManager sharedManager];
  * @return Returns an NSObject conforming to YF_SDWebImageOperation. Should be an instance of YF_SDWebImageDownloaderOperation
  */
 - (id <YF_SDWebImageOperation>)downloadImageWithURL:(NSURL *)url
-                                         options:(SDWebImageOptions)options
-                                        progress:(SDWebImageDownloaderProgressBlock)progressBlock
-                                       completed:(SDWebImageCompletionWithFinishedBlock)completedBlock;
+                                         options:(YF_SDWebImageOptions)options
+                                        progress:(YF_SDWebImageDownloaderProgressBlock)progressBlock
+                                       completed:(YF_SDWebImageCompletionWithFinishedBlock)completedBlock;
 
 /**
  * Saves image to cache for given URL
@@ -261,7 +261,7 @@ YF_SDWebImageManager *manager = [YF_SDWebImageManager sharedManager];
  *  @note the completion block is always executed on the main queue
  */
 - (void)cachedImageExistsForURL:(NSURL *)url
-                     completion:(SDWebImageCheckCacheCompletionBlock)completionBlock;
+                     completion:(YF_SDWebImageCheckCacheCompletionBlock)completionBlock;
 
 /**
  *  Async check if image has already been cached on disk only
@@ -272,7 +272,7 @@ YF_SDWebImageManager *manager = [YF_SDWebImageManager sharedManager];
  *  @note the completion block is always executed on the main queue
  */
 - (void)diskImageExistsForURL:(NSURL *)url
-                   completion:(SDWebImageCheckCacheCompletionBlock)completionBlock;
+                   completion:(YF_SDWebImageCheckCacheCompletionBlock)completionBlock;
 
 
 /**
@@ -285,8 +285,8 @@ YF_SDWebImageManager *manager = [YF_SDWebImageManager sharedManager];
 
 #pragma mark - Deprecated
 
-typedef void(^SDWebImageCompletedBlock)(UIImage *image, NSError *error, YF_SDImageCacheType cacheType) __deprecated_msg("Block type deprecated. Use `SDWebImageCompletionBlock`");
-typedef void(^SDWebImageCompletedWithFinishedBlock)(UIImage *image, NSError *error, YF_SDImageCacheType cacheType, BOOL finished) __deprecated_msg("Block type deprecated. Use `SDWebImageCompletionWithFinishedBlock`");
+typedef void(^YF_SDWebImageCompletedBlock)(UIImage *image, NSError *error, YF_SDImageCacheType cacheType) __deprecated_msg("Block type deprecated. Use `YF_SDWebImageCompletionBlock`");
+typedef void(^YF_SDWebImageCompletedWithFinishedBlock)(UIImage *image, NSError *error, YF_SDImageCacheType cacheType, BOOL finished) __deprecated_msg("Block type deprecated. Use `YF_SDWebImageCompletionWithFinishedBlock`");
 
 
 @interface YF_SDWebImageManager (Deprecated)
@@ -297,8 +297,8 @@ typedef void(^SDWebImageCompletedWithFinishedBlock)(UIImage *image, NSError *err
  *  @deprecated This method has been deprecated. Use `downloadImageWithURL:options:progress:completed:`
  */
 - (id <YF_SDWebImageOperation>)downloadWithURL:(NSURL *)url
-                                    options:(SDWebImageOptions)options
-                                   progress:(SDWebImageDownloaderProgressBlock)progressBlock
-                                  completed:(SDWebImageCompletedWithFinishedBlock)completedBlock __deprecated_msg("Method deprecated. Use `downloadImageWithURL:options:progress:completed:`");
+                                    options:(YF_SDWebImageOptions)options
+                                   progress:(YF_SDWebImageDownloaderProgressBlock)progressBlock
+                                  completed:(YF_SDWebImageCompletedWithFinishedBlock)completedBlock __deprecated_msg("Method deprecated. Use `downloadImageWithURL:options:progress:completed:`");
 
 @end

@@ -1,5 +1,5 @@
 /*
- * This file is part of the SDWebImage package.
+ * This file is part of the YF_SDWebImage package.
  * (c) Olivier Poitrey <rs@dailymotion.com>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -44,9 +44,9 @@ extern NSString *const YF_SDWebImageDownloadFinishNotification;
 @property (nonatomic, strong) NSURLCredential *credential;
 
 /**
- * The SDWebImageDownloaderOptions for the receiver.
+ * The YF_SDWebImageDownloaderOptions for the receiver.
  */
-@property (assign, nonatomic, readonly) SDWebImageDownloaderOptions options;
+@property (assign, nonatomic, readonly) YF_SDWebImageDownloaderOptions options;
 
 /**
  * The expected size of data.
@@ -76,10 +76,10 @@ extern NSString *const YF_SDWebImageDownloadFinishNotification;
  */
 - (id)initWithRequest:(NSURLRequest *)request
             inSession:(NSURLSession *)session
-              options:(SDWebImageDownloaderOptions)options
-             progress:(SDWebImageDownloaderProgressBlock)progressBlock
-            completed:(SDWebImageDownloaderCompletedBlock)completedBlock
-            cancelled:(SDWebImageNoParamsBlock)cancelBlock;
+              options:(YF_SDWebImageDownloaderOptions)options
+             progress:(YF_SDWebImageDownloaderProgressBlock)progressBlock
+            completed:(YF_SDWebImageDownloaderCompletedBlock)completedBlock
+            cancelled:(YF_SDWebImageNoParamsBlock)cancelBlock;
 
 /**
  *  Initializes a `YF_SDWebImageDownloaderOperation` object
@@ -97,10 +97,10 @@ extern NSString *const YF_SDWebImageDownloadFinishNotification;
  *  @return the initialized instance. The operation will run in a separate session created for this operation
  */
 - (id)initWithRequest:(NSURLRequest *)request
-              options:(SDWebImageDownloaderOptions)options
-             progress:(SDWebImageDownloaderProgressBlock)progressBlock
-            completed:(SDWebImageDownloaderCompletedBlock)completedBlock
-            cancelled:(SDWebImageNoParamsBlock)cancelBlock
+              options:(YF_SDWebImageDownloaderOptions)options
+             progress:(YF_SDWebImageDownloaderProgressBlock)progressBlock
+            completed:(YF_SDWebImageDownloaderCompletedBlock)completedBlock
+            cancelled:(YF_SDWebImageNoParamsBlock)cancelBlock
 __deprecated_msg("Method deprecated. Use `initWithRequest:inSession:options:progress:completed:cancelled`");
 
 @end
