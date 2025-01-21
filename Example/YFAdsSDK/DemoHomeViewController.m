@@ -179,10 +179,9 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
     self.dataSource = @[
         @{
             @"image":@"home_list_icon",
-            @"title":@"激励视频广告",
-            @"class":@"DemoRewardVideoViewController",
-            @"des":@"Users can engage with a video ad in exchange for in-app rewards.",
-          
+            @"title":@"开屏广告",
+            @"class":@"DemoSplashViewController",
+            @"des":@"Displayed immediately after the application is launched.",
         },
         @{
             @"image":@"home_list_icon",
@@ -193,27 +192,28 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
         },
         @{
             @"image":@"home_list_icon",
-            @"title":@"开屏广告",
-            @"class":@"DemoSplashViewController",
-            @"des":@"Displayed immediately after the application is launched.",
-        },
-        @{
-            @"image":@"home_list_icon",
-            @"title":@"横幅广告",
-            @"class":@"DemoBannerViewController",
-            @"des":@"Flexible formats which could appear at the top, middle or bottom of your app.",
-        },
-        @{
-            @"image":@"home_list_icon",
             @"title":@"融合Banner广告",
             @"class":@"DemoFusionBannerViewController",
             @"des":@"Flexible formats which could appear at the top, middle or bottom of your app.",
         },
         @{
             @"image":@"home_list_icon",
-            @"title":@"媒体自渲染广告",
-            @"class":@"DemoMediaRenderViewController",
-            @"des":@"Include Native,Vertical Draw Video and Pre-roll Ads.Most compatible with your native app code for video ads and graphic ads.",
+            @"title":@"信息流广告",
+            @"class":@"DemoListFeedExpressViewController",
+            @"des":@"stream advertising",
+        },
+        @{
+            @"image":@"home_list_icon",
+            @"title":@"Banner广告",
+            @"class":@"DemoBannerViewController",
+            @"des":@"Flexible formats which could appear at the top, middle or bottom of your app.",
+        },
+        @{
+            @"image":@"home_list_icon",
+            @"title":@"激励视频广告",
+            @"class":@"DemoRewardVideoViewController",
+            @"des":@"Users can engage with a video ad in exchange for in-app rewards.",
+          
         },
         @{
             @"image":@"home_list_icon",
@@ -229,15 +229,15 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
         },
         @{
             @"image":@"home_list_icon",
-            @"title":@"贴片广告",
-            @"class":@"DemoPatchViewController",
-            @"des":@"pre-movie adverts ",
+            @"title":@"媒体自渲染广告",
+            @"class":@"DemoMediaRenderViewController",
+            @"des":@"Include Native,Vertical Draw Video and Pre-roll Ads.Most compatible with your native app code for video ads and graphic ads.",
         },
         @{
             @"image":@"home_list_icon",
-            @"title":@"信息流广告",
-            @"class":@"DemoListFeedExpressViewController",
-            @"des":@"stream advertising",
+            @"title":@"贴片广告",
+            @"class":@"DemoPatchViewController",
+            @"des":@"pre-movie adverts ",
         },
         @{
             @"image":@"home_list_icon",
@@ -250,12 +250,7 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
             @"title":@"场景广告示例",
             @"class":@"DemoListSceneSimulateVC",
             @"des":@"scene simulate",
-        },
-        @{
-            @"image":@"home_list_icon",
-            @"title":@"测试crash",
         }
-        
     ];
 }
 
@@ -281,16 +276,6 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
     [navView addSubview:title];
   
     self.navigationItem.titleView = navView;
-    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithTitle:[YFEnvironmentManager getENV_NAME] style:UIBarButtonItemStylePlain target:self action:@selector(setupEnv:)];
-    self.navigationItem.leftBarButtonItem = leftBar;
-    
-}
-
-- (void)setupEnv:(id)sender {
-    [[YFEnvironmentManager shareManager] showPopWithVC:self complete:^(NSString *title) {
-        UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(setupEnv:)];
-        self.navigationItem.leftBarButtonItem = leftBar;
-    }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -325,11 +310,6 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
         UIViewController *con = [class new];
         [self.navigationController pushViewController:con animated:YES];
         
-    }
-    
-    if(indexPath.row == self.dataSource.count - 1){
-        NSArray * array = @[@"1"];
-        [array objectAtIndex:3];
     }
 }
 

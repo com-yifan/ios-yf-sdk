@@ -72,6 +72,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UIView *bannerContainer;
 // 融合Banner
 @property (nonatomic, strong) YFAdFusionBanner *fusionBannerAd;
+@property (nonatomic, strong) YFAdFusionBannerView *fusionBannerView;
 @property (nonatomic, strong) UIView *fusionBannerContainer;
 // 媒体自渲染
 @property (nonatomic, strong) YFAdMediaRender *mediaRenderAd;
@@ -87,7 +88,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UIView *patchContainer;
 // 信息流广告
 @property (nonatomic, strong) YFAdNativeExpress *expressAd;
-@property (nonatomic, strong) NSMutableArray *expressAdViews;
+@property (nonatomic, strong) NSMutableArray<YFAdNativeExpressView *> *expressAdViews;
 // 预加载是否成功
 @property (nonatomic) bool isAdLoaded;
 // 开屏广告背景视图
@@ -147,28 +148,28 @@ typedef enum : NSUInteger {
 - (void)setupData {
     self.dataSource = @[
         @{
-            @"title":@"加载激励视频广告",
-            @"selector":@"preloadRewardVideoAd"
+            @"title":@"加载开屏广告",
+            @"selector":@"preloadSplashAd"
         },
         @{
             @"title":@"加载插屏广告",
             @"selector":@"preloadIntertitalAd"
         },
         @{
-            @"title":@"加载开屏广告",
-            @"selector":@"preloadSplashAd"
+            @"title":@"加载融合Banner广告",
+            @"selector":@"preloadFusionBannerAd"
+        },
+        @{
+            @"title":@"加载信息流广告",
+            @"selector":@"preloadNativeExpressAd"
         },
         @{
             @"title":@"加载横幅广告",
             @"selector":@"preloadBannerAd"
         },
         @{
-            @"title":@"加载融合Banner广告",
-            @"selector":@"preloadFusionBannerAd"
-        },
-        @{
-            @"title":@"加载媒体自渲染广告",
-            @"selector":@"preloadMediaRenderAd"
+            @"title":@"加载激励视频广告",
+            @"selector":@"preloadRewardVideoAd"
         },
         @{
             @"title":@"加载全屏视频广告",
@@ -179,12 +180,12 @@ typedef enum : NSUInteger {
             @"selector":@"preloadDrawAd"
         },
         @{
-            @"title":@"加载贴片广告",
-            @"selector":@"preloadPatchAd"
+            @"title":@"加载媒体自渲染广告",
+            @"selector":@"preloadMediaRenderAd"
         },
         @{
-            @"title":@"加载信息流广告",
-            @"selector":@"preloadNativeExpressAd"
+            @"title":@"加载贴片广告",
+            @"selector":@"preloadPatchAd"
         }
     ];
 }
@@ -306,7 +307,7 @@ typedef enum : NSUInteger {
 - (void)preloadMediaRenderAd {
     [JDStatusBarNotification showWithStatus:@"开始预加载媒体自渲染广告" dismissAfter:1.5];
     // 初始化媒体自渲染广告 广告位ID需替换为运营同学提供id
-    _mediaRenderAd = [[YFAdMediaRender alloc] initWithAdUnitID:@"d53d8fec49c544fd948f5eef5f805201" viewController:self];
+    _mediaRenderAd = [[YFAdMediaRender alloc] initWithAdUnitID:[YFEnvironmentManager getMEDIA_ID] viewController:self];
     // 设置代理对象
     _mediaRenderAd.delegate = self;
     // 注意！！！设置根控制器一定是负责即将展示的最上层可见控制器，否则无法模态推出广告落地页，影响转化
@@ -407,6 +408,10 @@ typedef enum : NSUInteger {
             }
             case YFPreloadAdTypeBanner: {
                 // 横幅广告
+                if (!self.bannerAd.isValid) {
+                    [JDStatusBarNotification showWithStatus:@"广告无效请重新请求" dismissAfter:1.0];
+                    return;
+                }
                 DemoBannerChangeViewController *pvc = [[DemoBannerChangeViewController alloc] init];
                 pvc.adapter = self.bannerAd;
                 pvc.adView = self.bannerContainer;
@@ -415,6 +420,10 @@ typedef enum : NSUInteger {
             }
             case YFPreloadAdTypeFusionBanner: {
                 //融合Banner
+                if (!self.fusionBannerView.isValid) {
+                    [JDStatusBarNotification showWithStatus:@"广告无效请重新请求" dismissAfter:1.0];
+                    return;
+                }
                 DemoBannerChangeViewController *pvc = [[DemoBannerChangeViewController alloc] init];
                 pvc.adapter = self.fusionBannerAd;
                 pvc.adView = self.fusionBannerContainer;
@@ -423,7 +432,12 @@ typedef enum : NSUInteger {
             }
             case YFPreloadAdTypeMediaRender: {
                 // 媒体自渲染
+                if (!self.mediaRenderAd.isValid) {
+                    [JDStatusBarNotification showWithStatus:@"广告无效请重新请求" dismissAfter:1.0];
+                    return;
+                }
                 DemoNativeSelfRenderView *selfRenderView = [[DemoNativeSelfRenderView alloc] initWithOffer:self.mediaAdData];
+                //融合Banner
                 NSMutableArray * clickableViews = [[NSMutableArray alloc] initWithCapacity:0];
                 if(selfRenderView.mediaView){
                     [clickableViews addObject:selfRenderView.mediaView];
@@ -438,6 +452,10 @@ typedef enum : NSUInteger {
             }
             case YFPreloadAdTypeFullScreen: {
                 // 全屏视频广告
+                if (!self.fullScreenAd.isValid) {
+                    [JDStatusBarNotification showWithStatus:@"广告无效请重新请求" dismissAfter:1.0];
+                    return;
+                }
                 DemoPresentViewController *pvc = [[DemoPresentViewController alloc] init];
                 pvc.adapter = self.fullScreenAd;
                 [self.navigationController pushViewController:pvc animated:YES];
@@ -445,6 +463,10 @@ typedef enum : NSUInteger {
             }
             case YFPreloadAdTypeDraw: {
                 // draw视频流广告
+                if (!self.drawAd.isValid) {
+                    [JDStatusBarNotification showWithStatus:@"广告无效请重新请求" dismissAfter:1.0];
+                    return;
+                }
                 DemoDrawChangeViewController * pvc = [[DemoDrawChangeViewController alloc] init];
                 pvc.adapter = self.drawAd;
                 pvc.adViews = [self.drawAdViews copy];
@@ -452,6 +474,10 @@ typedef enum : NSUInteger {
             }
             case YFPreloadAdTypePatch: {
                 // 贴片广告
+                if (!self.patchAd.isValid) {
+                    [JDStatusBarNotification showWithStatus:@"广告无效请重新请求" dismissAfter:1.0];
+                    return;
+                }
                 DemoBannerChangeViewController *pvc = [[DemoBannerChangeViewController alloc] init];
                 pvc.adapter = self.patchAd;
                 pvc.adView = self.patchContainer;
@@ -460,6 +486,10 @@ typedef enum : NSUInteger {
             }
             case YFPreloadAdTypeNative: {
                 // 信息流广告
+                if (!self.expressAdViews.firstObject.isValid) {
+                    [JDStatusBarNotification showWithStatus:@"广告无效请重新请求" dismissAfter:1.0];
+                    return;
+                }
                 DemoListFeedExpressChangeViewController * pvc = [[DemoListFeedExpressChangeViewController alloc] init];
                 pvc.adRequestArray = [NSMutableArray arrayWithArray:@[self.expressAd]];
                 pvc.arrViewsM = [self.expressAdViews copy];
@@ -588,6 +618,7 @@ typedef enum : NSUInteger {
     [JDStatusBarNotification showWithStatus:@"融合Banner广告渲染成功" dismissAfter:1.0];
     [self showProcessWithText:@"融合Banner广告渲染成功"];
     [self.fusionBannerContainer addSubview:adView];
+    self.fusionBannerView = adView;
     self.fusionBannerContainer.frame = CGRectMake(0, self.view.frame.size.height / 2.0,adView.bounds.size.width, self.fusionBannerContainer.bounds.size.height);
 }
 

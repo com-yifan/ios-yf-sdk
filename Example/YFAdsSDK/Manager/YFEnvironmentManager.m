@@ -173,6 +173,10 @@ static YFEnvironmentManager *environmentManager;
     return EnvironmentDic[@"YF_INSERT_ID"];
 }
 
++ (NSString *)getMEDIA_ID {
+    return EnvironmentDic[@"YF_MEDIA_ID"];
+}
+
 + (NSString *)getNATIVE_ID{
     return EnvironmentDic[@"YF_NATIVE_ID"];
 }
