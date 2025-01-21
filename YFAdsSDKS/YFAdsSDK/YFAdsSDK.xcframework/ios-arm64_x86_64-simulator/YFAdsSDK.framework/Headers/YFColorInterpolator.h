@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGColorRef)colorForFrame:(NSNumber *)frame;
 
-@property (nonatomic, weak, nullable) id<LOTColorValueDelegate> delegate;
+@property (nonatomic, weak, nullable) id<YFColorValueDelegate> delegate;
 
 @end
 

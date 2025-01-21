@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGPoint)pointValueForFrame:(NSNumber *)frame;
 
-@property (nonatomic, weak, nullable) id<LOTPointValueDelegate> delegate;
+@property (nonatomic, weak, nullable) id<YFPointValueDelegate> delegate;
 
 @end
 

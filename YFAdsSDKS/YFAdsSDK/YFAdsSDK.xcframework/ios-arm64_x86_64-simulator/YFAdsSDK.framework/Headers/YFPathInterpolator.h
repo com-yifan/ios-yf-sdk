@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (YFBezierPath *)pathForFrame:(NSNumber *)frame cacheLengths:(BOOL)cacheLengths;
 
-@property (nonatomic, weak, nullable) id<LOTPathValueDelegate> delegate;
+@property (nonatomic, weak, nullable) id<YFPathValueDelegate> delegate;
 
 @end
 

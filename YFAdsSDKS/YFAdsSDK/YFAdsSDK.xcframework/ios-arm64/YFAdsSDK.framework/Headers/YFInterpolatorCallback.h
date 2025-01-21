@@ -15,7 +15,7 @@
  @discussion YFPointInterpolatorCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypoint to set a point value of an animation property.
  */
 
-@interface YFPointInterpolatorCallback : NSObject <LOTPointValueDelegate>
+@interface YFPointInterpolatorCallback : NSObject <YFPointValueDelegate>
 
 + (instancetype _Nonnull)withFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint NS_SWIFT_NAME(init(from:to:));
 
@@ -35,7 +35,7 @@
  @discussion YFSizeInterpolatorCallback is used in conjunction with YFAnimationView setValueDelegate:forKeysize to set a size value of an animation property.
  */
 
-@interface YFSizeInterpolatorCallback : NSObject <LOTSizeValueDelegate>
+@interface YFSizeInterpolatorCallback : NSObject <YFSizeValueDelegate>
 
 + (instancetype _Nonnull)withFromSize:(CGSize)fromSize toSize:(CGSize)toSize NS_SWIFT_NAME(init(from:to:));
 
@@ -55,7 +55,7 @@
  @discussion YFFloatInterpolatorCallback is used in conjunction with YFAnimationView setValueDelegate:forKeyfloat to set a float value of an animation property.
  */
 
-@interface YFFloatInterpolatorCallback : NSObject <LOTNumberValueDelegate>
+@interface YFFloatInterpolatorCallback : NSObject <YFNumberValueDelegate>
 
 + (instancetype _Nonnull)withFromFloat:(CGFloat)fromFloat toFloat:(CGFloat)toFloat NS_SWIFT_NAME(init(from:to:));
 

@@ -15,7 +15,7 @@
  @discussion YFColorValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a color value of an animation property.
  */
 
-@interface YFColorValueCallback : NSObject <LOTColorValueDelegate>
+@interface YFColorValueCallback : NSObject <YFColorValueDelegate>
 
 + (instancetype _Nonnull)withCGColor:(CGColorRef _Nonnull)color NS_SWIFT_NAME(init(color:));
 
@@ -28,7 +28,7 @@
  @discussion YFNumberValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a number value of an animation property.
  */
 
-@interface YFNumberValueCallback : NSObject <LOTNumberValueDelegate>
+@interface YFNumberValueCallback : NSObject <YFNumberValueDelegate>
 
 + (instancetype _Nonnull)withFloatValue:(CGFloat)numberValue NS_SWIFT_NAME(init(number:));
 
@@ -41,7 +41,7 @@
  @discussion YFPointValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a point value of an animation property.
  */
 
-@interface YFPointValueCallback : NSObject <LOTPointValueDelegate>
+@interface YFPointValueCallback : NSObject <YFPointValueDelegate>
 
 + (instancetype _Nonnull)withPointValue:(CGPoint)pointValue;
 
@@ -54,7 +54,7 @@
  @discussion YFSizeValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a size value of an animation property.
  */
 
-@interface YFSizeValueCallback : NSObject <LOTSizeValueDelegate>
+@interface YFSizeValueCallback : NSObject <YFSizeValueDelegate>
 
 + (instancetype _Nonnull)withPointValue:(CGSize)sizeValue NS_SWIFT_NAME(init(size:));
 
@@ -67,7 +67,7 @@
  @discussion YFPathValueCallback is used in conjunction with YFAnimationView setValueDelegate:forKeypath to set a path value of an animation property.
  */
 
-@interface YFPathValueCallback : NSObject <LOTPathValueDelegate>
+@interface YFPathValueCallback : NSObject <YFPathValueDelegate>
 
 + (instancetype _Nonnull)withCGPath:(CGPathRef _Nonnull)path NS_SWIFT_NAME(init(path:));
 

@@ -102,7 +102,7 @@ typedef CGPathRef  _Nonnull (^YFPathValueCallbackBlock)(CGFloat currentFrame,
  @brief YFColorValueCallback is wrapper around a YFColorValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's color keypath at runtime.
  */
 
-@interface YFColorBlockCallback : NSObject <LOTColorValueDelegate>
+@interface YFColorBlockCallback : NSObject <YFColorValueDelegate>
 
 + (instancetype _Nonnull)withBlock:(YFColorValueCallbackBlock _Nonnull )block NS_SWIFT_NAME(init(block:));
 
@@ -114,7 +114,7 @@ typedef CGPathRef  _Nonnull (^YFPathValueCallbackBlock)(CGFloat currentFrame,
  @brief YFNumberValueCallback is wrapper around a YFNumberValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's number keypath at runtime.
  */
 
-@interface YFNumberBlockCallback : NSObject <LOTNumberValueDelegate>
+@interface YFNumberBlockCallback : NSObject <YFNumberValueDelegate>
 
 + (instancetype _Nonnull)withBlock:(YFNumberValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
 
@@ -126,7 +126,7 @@ typedef CGPathRef  _Nonnull (^YFPathValueCallbackBlock)(CGFloat currentFrame,
  @brief YFPointValueCallback is wrapper around a YFPointValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's point keypath at runtime.
  */
 
-@interface YFPointBlockCallback : NSObject <LOTPointValueDelegate>
+@interface YFPointBlockCallback : NSObject <YFPointValueDelegate>
 
 + (instancetype _Nonnull)withBlock:(YFPointValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
 
@@ -138,7 +138,7 @@ typedef CGPathRef  _Nonnull (^YFPathValueCallbackBlock)(CGFloat currentFrame,
  @brief YFSizeValueCallback is wrapper around a YFSizeValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's size keypath at runtime.
  */
 
-@interface YFSizeBlockCallback : NSObject <LOTSizeValueDelegate>
+@interface YFSizeBlockCallback : NSObject <YFSizeValueDelegate>
 
 + (instancetype _Nonnull)withBlock:(YFSizeValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
 
@@ -150,7 +150,7 @@ typedef CGPathRef  _Nonnull (^YFPathValueCallbackBlock)(CGFloat currentFrame,
  @brief YFPathValueCallback is wrapper around a YFPathValueCallbackBlock. This block can be used in conjunction with YFAnimationView setValueDelegate:forKeypath to dynamically change an animation's path keypath at runtime.
  */
 
-@interface YFPathBlockCallback : NSObject <LOTPathValueDelegate>
+@interface YFPathBlockCallback : NSObject <YFPathValueDelegate>
 
 + (instancetype _Nonnull)withBlock:(YFPathValueCallbackBlock _Nonnull)block NS_SWIFT_NAME(init(block:));
 

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGFloat)floatValueForFrame:(NSNumber *)frame;
 
-@property (nonatomic, weak, nullable) id<LOTNumberValueDelegate> delegate;
+@property (nonatomic, weak, nullable) id<YFNumberValueDelegate> delegate;
 
 @end
 

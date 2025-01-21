@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGSize)sizeValueForFrame:(NSNumber *)frame;
 
-@property (nonatomic, weak, nullable) id<LOTSizeValueDelegate> delegate;
+@property (nonatomic, weak, nullable) id<YFSizeValueDelegate> delegate;
 
 @end
 

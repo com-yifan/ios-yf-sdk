@@ -21,7 +21,7 @@
 
 @end
 
-@protocol LOTColorValueDelegate <YFValueDelegate>
+@protocol YFColorValueDelegate <YFValueDelegate>
 @required
 /*!
  @brief LOTColorValueDelegate is called at runtime to override the color value of a property in a LOTAnimation. The property is defined by at YFKeypath. The delegate is set via setValueDelegate:forKeypath on YFAnimationView.
@@ -47,7 +47,7 @@
 
 @end
 
-@protocol LOTNumberValueDelegate <YFValueDelegate>
+@protocol YFNumberValueDelegate <YFValueDelegate>
 @required
 /*!
  @brief LOTNumberValueDelegate is called at runtime to override the number value of a property in a LOTAnimation. The property is defined by at YFKeypath. The delegate is set via setValueDelegate:forKeypath on YFAnimationView.
@@ -72,7 +72,7 @@
 
 @end
 
-@protocol LOTPointValueDelegate <YFValueDelegate>
+@protocol YFPointValueDelegate <YFValueDelegate>
 @required
 /*!
  @brief LOTPointValueDelegate is called at runtime to override the point value of a property in a LOTAnimation. The property is defined by at YFKeypath. The delegate is set via setValueDelegate:forKeypath on YFAnimationView.
@@ -97,7 +97,7 @@
 
 @end
 
-@protocol LOTSizeValueDelegate <YFValueDelegate>
+@protocol YFSizeValueDelegate <YFValueDelegate>
 @required
 /*!
  @brief LOTSizeValueDelegate is called at runtime to override the size value of a property in a LOTAnimation. The property is defined by at YFKeypath. The delegate is set via setValueDelegate:forKeypath on YFAnimationView.
@@ -123,7 +123,7 @@
 
 @end
 
-@protocol LOTPathValueDelegate <YFValueDelegate>
+@protocol YFPathValueDelegate <YFValueDelegate>
 @required
 /*!
  @brief LOTPathValueDelegate is called at runtime to override the path value of a property in a LOTAnimation. The property is defined by at YFKeypath. The delegate is set via setValueDelegate:forKeypath on YFAnimationView.
