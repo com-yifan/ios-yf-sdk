@@ -160,6 +160,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger pkb;
 /// 互动样式
 @property (nonatomic, assign) NSInteger is;
+/// 仅摇一次 0： 否 ，1： 是
+@property (nonatomic, assign) NSInteger tc;
 /// 自动点击
 @property (nonatomic, assign) NSInteger ac;
 /// 关闭按钮出现时间

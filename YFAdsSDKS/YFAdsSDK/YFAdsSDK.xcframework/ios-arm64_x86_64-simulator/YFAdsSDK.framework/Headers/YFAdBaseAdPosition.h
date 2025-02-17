@@ -50,6 +50,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showAd;
 
+- (void)showAdFromViewController:(UIViewController *)viewController;
+
 - (void)removeAd;
 
 - (void)deallocAdapter;
@@ -68,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 竞价失败
 - (void)biddingFailWithWinner:(YFAdBaseAdPosition *)winner withSecondWinner:(YFAdBaseAdPosition *)secondWinner;
 
-
+- (void)resetVC:(UIViewController*)VC;
 @end
 
 NS_ASSUME_NONNULL_END

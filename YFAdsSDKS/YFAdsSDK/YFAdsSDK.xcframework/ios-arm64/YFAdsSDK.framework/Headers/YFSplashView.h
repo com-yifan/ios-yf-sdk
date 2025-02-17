@@ -10,7 +10,7 @@
 #import <YFAdsSDK/YFAdBaseView.h>
 #import <YFAdsSDK/YFAdView.h>
 #import <YFAdsSDK/YFAdMarkImageView.h>
-#import <YFAdsSDK/YFAnimationView.h>
+#import <YFAdsSubstrate/YFAnimationView.h>
 #import <YFAdsSDK/YFAdInteractionType.h>
 #import <YFAdsSDK/YFSplashEnum.h>
 #import <YFAdsSDK/YFAdInteractionType.h>
@@ -19,7 +19,6 @@
 #import <YFAdsSDK/YFMotionManager.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
 #import <YFAdsSDK/YFAdReportModel.h>
-#import <YFAdsSDK/YFPlayerView.h>
 #import <YFAdsSDK/YFTapBarAnimationView.h>
 #import <YFAdsSDK/YFAdError.h>
 

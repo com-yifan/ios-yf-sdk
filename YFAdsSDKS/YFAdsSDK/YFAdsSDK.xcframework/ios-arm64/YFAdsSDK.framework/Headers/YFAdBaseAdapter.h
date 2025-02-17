@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAd;
 /// 展示广告
 - (void)showAd;
+/// 从当前控制器中展示广告(仅插屏适用)
+- (void)showAdFromViewController:(UIViewController *)viewController;
 
 -(void)recordLimitCount;
 /// 加载并展现

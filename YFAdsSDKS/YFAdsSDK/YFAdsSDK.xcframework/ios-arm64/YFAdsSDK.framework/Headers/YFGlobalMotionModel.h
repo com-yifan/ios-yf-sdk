@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) UIView <YFGlobalMotionActionHandler>*view;
 @property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, weak) UIStackView *stackView;
+
 @property (nonatomic, strong) NSMutableArray *observedArray;
 @property (nonatomic, weak) YFAdEventModel *eventModel;
 @property (nonatomic) BOOL triggered;

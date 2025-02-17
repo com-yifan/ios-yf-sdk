@@ -7,15 +7,16 @@
 #import <UIKit/UIKit.h>
 
 #import <YFAdsSDK/YFAdSDKSetting.h>
-#import <YFAdsSDK/YFAdInterstitialDelegate.h>
+#import <YFAdsSDK/YFAdMediaDelegate.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdMediaRender : YFAdBaseAdapter
 /// 广告方法回调代理
-@property (nonatomic, weak) id<YFAdInterstitialDelegate> delegate;
+@property (nonatomic, weak) id<YFAdMediaDelegate> delegate;
 
 - (instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;
+- (instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController videoViewFrame:(CGRect)videoFrame;
 
 @end
 

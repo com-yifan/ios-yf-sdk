@@ -51,14 +51,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<ADXNativeAdDelegate>delegate;
 //广告是否已合法加载
 @property (nonatomic, readonly) BOOL isValid;
-////是否开启声音
-//@property (nonatomic, assign) BOOL videoMute;
 
 @property(nonatomic,assign)NSUInteger ecpm;
 
 @property(nonatomic, strong) YFMaterialMeta *materialModel;
-
-//@property(nonatomic, strong) YFInterstitialView *adView;
 
 - (instancetype)initWithPosId:(NSString *)posId eventModel:(YFAdEventModel *)eventModel;
 

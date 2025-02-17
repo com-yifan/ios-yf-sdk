@@ -18,7 +18,7 @@ extern NSString *const Adapted_Version_CSJ;
 extern NSString *const Adapted_Version_KS;
 extern NSString *const Adapted_Version_BD;
 extern NSString *const Adapted_Version_JD;
-extern NSString *const Adapted_Version_TX;
+//extern NSString *const Adapted_Version_TX;
 
 extern NSString *const SDK_TAG_GDT;
 extern NSString *const SDK_TAG_CSJ;
@@ -47,8 +47,8 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 @property (nonatomic, copy) NSDictionary *customDefine;
 /// 自定义流量分组，填写真实的uid，保证与所开发app后端的用户id对应。具体联系商务
 @property (nonatomic, copy) NSDictionary *userDefine;
-///控制台日志输出开关, 默认开启
-@property (nonatomic, assign) BOOL logEnable;
+/////控制台日志输出开关, 默认开启 ---> 此接口已弃用，日志打印请联系运营后台打开日志输出
+//@property (nonatomic, assign) BOOL logEnable;
 
 /// 是否允许SDK内部对AVAudioSession的category进行设置，默认允许。SDK内部默认使用AVAudioSessionCategoryAmbient。
 @property(nonatomic, assign) BOOL allowAudioSetting;
@@ -90,6 +90,9 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 
 /// 设置是否允许SDK限制个性化推荐。true限制个性化推荐(关闭个性化推荐)，false不限制(开启个性化推荐)。默认为false开启个性化推荐
 @property (nonatomic, assign) BOOL limitPersonal;
+
+@property (nonatomic, assign) BOOL crashRecord;
+
 @end
 
 NS_ASSUME_NONNULL_END

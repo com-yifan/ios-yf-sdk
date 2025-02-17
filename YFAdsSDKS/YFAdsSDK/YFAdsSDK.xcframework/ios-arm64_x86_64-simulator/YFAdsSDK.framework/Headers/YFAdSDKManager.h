@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 设备环境相较于初始化SDK时发生变化后调用，一般不需要调用
 + (void)syncDeviceInfo;
+
++ (void)uploadCrashCount;
 @end
 
 NS_ASSUME_NONNULL_END

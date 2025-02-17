@@ -4,10 +4,7 @@
 #import <YFAdsSDK/YFAdError.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
 #import <YFAdsSDK/YFAdReportModel.h>
-#import <YFAdsSDK/YFPlayerAdControlView.h>
-#import <YFAdsSDK/YFAVPlayerManager.h>
-#import <YFAdsSDK/YFPlayerAdControlView.h>
-#import <YFAdsSDK/YFPlayerController.h>
+#import <YFAdsSDK/YFVideoView.h>
 
 typedef NS_ENUM(NSInteger, YFBannerViewType) {
     YFBannerViewTypeNormal,///普通banner
@@ -74,10 +71,8 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 @property(nonatomic, copy,readonly) NSArray *clickUrls;
 @property(nonatomic, strong) YFTouchLocModel *touchModel;
 @property(nonatomic, assign) YFBannerViewType type;
-@property(nonatomic, strong) YFAVPlayerManager *playerManager;
-@property(nonatomic, strong) YFPlayerController *player;
-@property(nonatomic, assign) YFPlayerPlaybackState cuurentPlayState;
-@property(nonatomic, strong) YFPlayerAdControlView *controlView;
+@property(nonatomic, assign) YFPlayerState cuurentPlayState;
+@property (nonatomic, strong) YFVideoView *videoView;
 ///是否播放完成
 @property (nonatomic, assign) BOOL playFinished;
 /**
@@ -113,9 +108,13 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 /// 获取元素缩放比例
 - (float)scaleWith600_150;
 - (float)scaleWith600_400;
--(void)toPlayVideo;
--(void)turnClickBtn;
+- (void)toPlayVideo;
+- (void)turnClickBtn;
+/// 重设控制器
+- (void)resetVC:(UIViewController*)VC;
 
+/// 渲染广告
+- (void)loadAdData:(YFMaterialMeta *)materialMeta;
 @end
 
 

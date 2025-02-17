@@ -212,6 +212,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 模版ID  2自渲染banner、3信息流
 @property (nonatomic, assign) NSInteger renderID;
 
+@property (nonatomic, copy) NSString *sdkVer;
 
 
 /// skipBtnStyle 跳过按钮样式
@@ -269,6 +270,9 @@ NS_ASSUME_NONNULL_BEGIN
  9：点击(有手指)
  */
 @property (nonatomic, assign) NSInteger is;
+
+/// 仅摇一次 0： 否 ，1： 是
+@property (nonatomic, assign) NSInteger tc;
 
 ///  重设交互为点击
 @property (nonatomic) BOOL resetIsToClick;

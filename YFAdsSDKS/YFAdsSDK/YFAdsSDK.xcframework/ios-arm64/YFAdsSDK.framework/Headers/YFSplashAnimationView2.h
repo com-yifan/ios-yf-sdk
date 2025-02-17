@@ -9,7 +9,7 @@
 #import <YFAdsSDK/YFAdBaseView.h>
 #import <YFAdsSDK/YFSplashEnum.h>
 #import <YFAdsSDK/YFMotionManager.h>
-#import <YFAdsSDK/YFAnimationView.h>
+#import <YFAdsSubstrate/YFAnimationView.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFSplashAnimationView2 : YFAdBaseView

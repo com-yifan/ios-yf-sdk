@@ -74,8 +74,6 @@
     [YFAdSDKSetting shareInstance].userDefine = userDefine;
     // 自定义用户id，非特殊需求建议传入真实用户ID
     [YFAdSDKSetting shareInstance].userId = @"test";
-    // 控制台日志输入开关，可通过过滤"YFAds"查看日志
-    [YFAdSDKSetting shareInstance].logEnable = YES;
 //    // 是否允许SDK进行声道控制，默认允许
 //    [YFAdSDKSetting shareInstance].allowAudioSetting = YES;
     

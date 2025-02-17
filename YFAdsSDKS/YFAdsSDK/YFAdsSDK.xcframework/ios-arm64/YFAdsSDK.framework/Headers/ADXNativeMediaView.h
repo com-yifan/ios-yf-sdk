@@ -56,10 +56,24 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)nativeVideoAdDidReadyForDisplay:(ADXNativeMediaView *)videoView;
 
+/**
+ 视频播放进度单位
+ 
+ @param videoView self
+ @param progress 当前播放时间，单位毫秒
+ */
+- (void)nativeVideoAd:(ADXNativeMediaView* )videoView playProgress:(CGFloat)progress;
+
 @end
 
 
 @interface ADXNativeMediaView : UIView
+//是否开启声音
+@property (nonatomic, assign) BOOL videoMute;
+///是否播放完成
+@property (nonatomic, assign) BOOL playFinished;
+// 代理
+@property (nonatomic, weak) id<ADXNativeMediaViewDelegate> delegate;
 /**
  初始化方法
 
@@ -70,11 +84,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFrame:(CGRect)frame andObject:(YFMaterialMeta *)object;
 
 - (void)refreshData:(ADXNativeAd *)nativeAd;
-///是否播放完成
-@property (nonatomic, assign) BOOL playFinished;
-//是否开启声音
-@property (nonatomic, assign) BOOL videoMute;
-@property (nonatomic, weak) id<ADXNativeMediaViewDelegate> delegate;
+// 暂停
+- (void)pauseVideo;
+// 恢复播放
+- (void)resumeVideo;
+/// 开始播放
+- (void)startPlay;
+/// 毫秒
+- (CGFloat)currentPlayTime;
 
 @end
 

@@ -804,6 +804,8 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/STDebugConsole/STDebugConsole.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GDTMobSDK/GDTMobSDK.framework/GDTMobSDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GDTMobSDK/Tquic.framework/Tquic",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/KSAdSDK/KSAdSDK.framework/KSAdSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -819,6 +821,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STDebugConsole.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDTMobSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tquic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSAdSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -860,22 +864,7 @@
 				"${PODS_ROOT}/BUTTSDK/TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib",
 				"${PODS_ROOT}/BaiduMobAdSDK/baidumobadsdk.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/JADYun/JADYun.bundle",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/back_left.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/feed_close@2x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/feed_close@3x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/feed_web_loading.gif",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/loding@2x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/pause@2x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/poor_content_night@3x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/poor_content_write@3x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/reward_gudie.gif",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/shake_mobile@3x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/splash_jump@2x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/splash_jump@3x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/TXAdConfigure.txt",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/uninterested_night@3x.png",
-				"${PODS_ROOT}/TanxSDK/TanxSDK/TanxSDK.library/TanxSDK.framework/TanxID.bundle/uninterested_write@3x.png",
-				"${PODS_ROOT}/YFAdsSDK/YFAdsSDKS/YFAdsSDK/YFAdsSDKResource.bundle",
+				"${PODS_ROOT}/../../YFAdsSDKS/YFAdsSDK/YFAdsSDKResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -884,21 +873,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ttplayer.metallib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/baidumobadsdk.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JADYun.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/back_left.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/feed_close@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/feed_close@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/feed_web_loading.gif",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/loding@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pause@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/poor_content_night@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/poor_content_write@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/reward_gudie.gif",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/shake_mobile@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/splash_jump@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/splash_jump@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TXAdConfigure.txt",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/uninterested_night@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/uninterested_write@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YFAdsSDKResource.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

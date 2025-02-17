@@ -9,6 +9,7 @@
 #import "DemoMediaRenderViewController.h"
 #import <YFAdsSDK/YFAdMediaRender.h>
 #import <YFAdsSDK/YFAdMedia.h>
+#import <YFAdsSDK/YFAdInterstitialDelegate.h>
 
 #import "YFDataJsonManager.h"
 #import "YFEnvironmentManager.h"

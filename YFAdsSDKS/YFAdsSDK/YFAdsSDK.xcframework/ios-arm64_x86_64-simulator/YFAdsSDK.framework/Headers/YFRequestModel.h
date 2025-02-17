@@ -54,6 +54,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 禁止投放的广告主 ID(多个用英文逗号”,” 分隔，例如” deny_ader_ids =123,456” 注：此 ID 为 SSP 平台 ID)
 @property(nonatomic, copy) NSString *deny_ader_ids;
 
+// SDK版本号
+@property (nonatomic, assign) NSString *sdkVer;
+
 /*
  扩展 字段， json 字符 串（必须 且只做一 次urlencode）
  Json 结构如：{"features": [{"value": ["1"], "key": "hap"},{"value": ["xxx"], "key":
@@ -191,7 +194,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *device_wifi_mac;
 // 已安装应用包名，多个用英文逗号分隔，为避免特 殊 字 符 影 响 ， 建 议 请 求 前 对 值 做 一 下urlencode
 @property(nonatomic, copy) NSString *installed_app;
-
+// 是否支持小程序；0：不支持；1：支持
+@property (nonatomic, assign) int support_wx;
 // Android 设备是否 ROOT。1--是, 0--否/ 未知(默认)
 //@property(nonatomic,assign)NSUInteger device_isroot;
 

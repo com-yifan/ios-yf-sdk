@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import <YFAdsSDK/YFAdReportModel.h>
-#import <YFAdsSDK/YFAnimationView.h>
+#import <YFAdsSubstrate/YFAnimationView.h>
 
 
 NS_ASSUME_NONNULL_BEGIN

@@ -10,10 +10,9 @@
 #import <YFAdsSDK/UIApplication+YFAds.h>
 #import <YFAdsSDK/YFAdUtils.h>
 #import <YFAdsSDK/YFAdConst.h>
-#import <YFAdsSDK/UIImageView+YF_WebCache.h>
+#import <YFAdsSubstrate/UIImageView+YF_WebCache.h>
 #import <YFAdsSDK/YFAdMarkImageView.h>
 #import <YFAdsSDK/UIImage+YFImageEffects.h>
-#import <YFAdsSDK/YFtie.h>
 #import <YFAdsSDK/YFAdReportModel.h>
 #import <YFAdsSDK/YFAdsAnimationView.h>
 #import <YFAdsSDK/YFPrivateKit.h>

@@ -10,6 +10,7 @@
 #import <YFAdsSDK/YFAdImage.h>
 #import <YFAdsSDK/YFAdBaseAdapter.h>
 #import <YFAdsSDK/YFAdNative.h>
+#import <YFAdsSDK/YFAdMediaProtocol.h>
 
 @class YFAdMediaMetal;
 
@@ -18,49 +19,38 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol YFAdMediaDelegate;
 
 @interface YFAdMedia : NSObject
-
+/// 源数据
 @property (nonatomic, strong, readonly) YFAdNative *data;
-
+/// 承载视频播放器视图，如果是视频类广告则必须添加容器内
 @property (nonatomic, strong) UIView *mediaView;
 
-/**
- The delegate for receiving state change messages.
- The delegate is not limited to viewcontroller.
- The delegate can be set to any object which conforming to <YFAdMediaDelegate>.
- */
 @property (nonatomic, weak, readwrite, nullable) id<YFAdMediaDelegate> delegate;
-
-/**
- required.
- Root view controller for handling ad actions.
- Action method includes 'pushViewController' and 'presentViewController'.
- */
+/// 广告控制器需传入最上层可展示控制器
 @property (nonatomic, weak, readwrite) UIViewController *rootViewController;
-
-/**
- Register clickable views in native ads view.
- Interaction types can be configured on TikTok Audience Network.
- Interaction types include view video ad details page, make a call, send email, download the app, open the webpage using a browser,open the webpage within the app, etc.
- @param containerView : required.
- container view of the native ad.
- @param clickableViews : optional.
- Array of views that are clickable.
- */
+/// 注册可点击
 - (void)registerContainer:(UIView *)containerView withClickableViews:(NSArray<UIView *> *_Nullable)clickableViews;
-
-/**
- Unregister ad view from the native ad.
- */
+/// 取消注册
 - (void)unregisterView;
 
-/// set mute  YES no sound
+/// 开始检测广告展示状态，视频类素材在展示时必须调用该方法
+- (void)trackVideoViewImpression;
+/// 更新视频播放器尺寸
+- (void)updateVideoViewFrame:(CGRect)frame;
+/// 视频静音
 - (void)muteEnable:(BOOL)enable;
+/// 现在视频播放时长
+- (CGFloat)currentPlayTime;
+/// 暂停视频
+- (void)pauseVideo;
+/// 恢复播放
+- (void)resumeVideo;
 
-- (id)initWithObject:(id)object adNative:(id)adNative adapter:(YFAdBaseAdapter *)adapter;
+- (id)initWithObject:(id)object adNative:(id)adNative adapter:(YFAdBaseAdPosition<YFAdMediaProtocol> * _Nonnull)adapter;
 
-- (id)initWithObject:(id)object adNative:(id)adNative ksView:(UIView *)view adapter:(YFAdBaseAdapter *)adapter;
+- (id)initWithObject:(id)object adNative:(id)adNative ksView:(UIView *)view adapter:(YFAdBaseAdPosition<YFAdMediaProtocol> * _Nonnull)adapter;
 
-- (id)initWithObject:(id)object adNative:(id)adNative adxView:(UIView *)view adapter:(YFAdBaseAdapter *)adapter;
+- (id)initWithObject:(id)object adNative:(id)adNative adxView:(UIView *)view adapter:(YFAdBaseAdPosition<YFAdMediaProtocol> * _Nonnull)adapter;
+
 @end
 
 

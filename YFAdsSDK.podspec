@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'YFAdsSDK'
-    s.version          = '6.0.4.1'
+    s.version          = '6.0.4.3'
     s.summary          = 'iOS YFAdsSDK'
     s.description      = <<-DESC
     欢迎大家使用YFAdsSDK
@@ -22,9 +22,15 @@ Pod::Spec.new do |s|
     # Removing pod_target_xcconfig for testing first
     # s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64', 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386,arm64' }
 
-    s.default_subspecs = 'YFAdsBDAdapter', 'YFAdsGDTAdapter', 'YFAdsJDAdapter', 'YFAdsKSAdapter', 'YFAdsTXAdapter', 'YFAdsCSJAdapter', 'YFAdsGROAdapter'
+    s.default_subspecs = 'YFAdsBDAdapter', 'YFAdsGDTAdapter', 'YFAdsJDAdapter', 'YFAdsKSAdapter', 'YFAdsCSJAdapter', 'YFAdsGROAdapter'
+
+    s.subspec 'YFAdsSubstrate' do |ss|
+        ss.vendored_frameworks = 'YFAdsSDKS/YFAdsSubstrate/*.xcframework'
+        ss.preserve_paths = 'YFAdsSDKS/YFAdsSubstrate/*.xcframework'
+    end
 
     s.subspec 'YFAdsSDK' do |ss|
+        ss.dependency 'YFAdsSDK/YFAdsSubstrate'
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsSDK/*.xcframework'
         ss.preserve_paths = 'YFAdsSDKS/YFAdsSDK/*.xcframework'
         ss.resources = 'YFAdsSDKS/YFAdsSDK/*.bundle'
@@ -47,11 +53,6 @@ Pod::Spec.new do |s|
 
     s.subspec 'YFAdsKSAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsKSAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
-    end
-
-    s.subspec 'YFAdsTXAdapter' do |ss|
-        ss.vendored_frameworks = 'YFAdsSDKS/YFAdsTXAdapter/*.xcframework'
         ss.dependency 'YFAdsSDK/YFAdsSDK'
     end
 

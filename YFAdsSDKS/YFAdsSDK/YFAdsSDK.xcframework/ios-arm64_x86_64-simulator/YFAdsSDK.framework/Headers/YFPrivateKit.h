@@ -14,7 +14,7 @@
 #import <YFAdsSDK/YFAdConst.h>
 #import <YFAdsSDK/YFAdLogManager.h>
 #import <YFAdsSDK/YFAdxDataManager.h>
-#import <YFAdsSDK/YFAdDataManager.h>
+//#import <YFAdsSDK/YFAdDataManager.h>
 #import <YFAdsSDK/NSObject+YFAdModel.h>
 
 #endif /* YFPrivateKit_h */

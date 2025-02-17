@@ -1,0 +1,15 @@
+//
+//  YFJDPrefixHeader.pch
+//  YFAdsJDAdapter
+//
+//  Created by 麻明康 on 2025/1/22.
+//
+
+#ifndef YFJDPrefixHeader_pch
+#define YFJDPrefixHeader_pch
+#import <YFAdsSDK/YFAdapterDataModel.h>
+#import "YFAdapterDataModelConverterJD.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* YFJDPrefixHeader_pch */

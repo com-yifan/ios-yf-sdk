@@ -168,6 +168,8 @@ typedef NS_ENUM(NSInteger, YFInteractionType){
 ///点击事件上报回调
 @property(nonatomic, copy) void (^reportClickEvent)(YFTouchLocModel *model);
 
+/// 上报点击
+- (void)reportEventWithPoint:(CGPoint)location pointInWindow:(CGPoint)locationInWindow;
 
 @end
 

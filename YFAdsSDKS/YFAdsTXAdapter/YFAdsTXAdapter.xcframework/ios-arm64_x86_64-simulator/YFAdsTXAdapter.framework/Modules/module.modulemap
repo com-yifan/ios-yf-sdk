@@ -1,6 +1,0 @@
-framework module YFAdsTXAdapter {
-  umbrella header "YFAdsTXAdapter.h"
-  export *
-
-  module * { export * }
-}

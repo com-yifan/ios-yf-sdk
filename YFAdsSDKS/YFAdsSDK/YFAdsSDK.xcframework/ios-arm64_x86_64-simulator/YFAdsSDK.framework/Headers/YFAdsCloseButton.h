@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import <YFAdsSDK/YFAdReportModel.h>
-#import <YFAdsSDK/UIImageView+YF_WebCache.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

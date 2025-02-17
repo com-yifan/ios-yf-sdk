@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YFAdEmptyAdapter : YFAdBaseAdPosition
 
 @property (nonatomic, weak) id<FCAdEmptyAdapterDelegate> delegate;
-
+- (instancetype)initWithSupplier:(YFAdEventModel *)supplier adspot:(id)adspot videoFrame:(CGRect)videoFrame;
 @end
 
 NS_ASSUME_NONNULL_END

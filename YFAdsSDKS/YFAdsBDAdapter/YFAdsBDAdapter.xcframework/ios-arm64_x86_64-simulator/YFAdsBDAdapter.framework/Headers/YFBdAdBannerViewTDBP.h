@@ -1,14 +1,8 @@
 
-#import <YFAdsSDK/YFAdBaseCustomView.h>
+#import <YFAdsBDAdapter/YFBdAdBaseBannerView.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFBdAdBannerViewTDBP: YFAdBaseCustomView
--(instancetype)initWithFrame:(CGRect)frame model:(id)model;
--(void)loadAdData:(id)object close:(void(^)(id))close;
--(void)show;
-- (void)pauseVideo;
-- (void)playVideo;
-- (void)trackImpression;
+@interface YFBdAdBannerViewTDBP: YFBdAdBaseBannerView
 
 @end
 NS_ASSUME_NONNULL_END

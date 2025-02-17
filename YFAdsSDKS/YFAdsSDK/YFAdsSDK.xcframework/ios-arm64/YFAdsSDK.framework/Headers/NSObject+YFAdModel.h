@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable NSString *)fcAd_modelToJSONString;
 
+// 格式化的json字符串,仅本地打印使用,勿用做与其它端交互
+- (nullable NSString *)fcAd_modelToFormattedJSONString;
+
 - (nullable id)fcAd_modelCopy;
 
 - (void)fcAd_modelEncodeWithCoder:(NSCoder *)aCoder;

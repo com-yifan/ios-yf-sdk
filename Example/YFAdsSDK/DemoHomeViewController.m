@@ -8,7 +8,6 @@
 
 #import <YFAdsSDK/YFAdInterstitial.h>
 #import <YFAdsSDK/YFAdSplash.h>
-#import <YFAdsSDK/YFAdSDKLocation.h>
 #import <SDWebImage/SDWebImage.h>
 
 #import "YFDataJsonManager.h"

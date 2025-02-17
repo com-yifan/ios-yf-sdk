@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/YFJDAdInterstitialVideoView.h</key>
 		<data>
-		CWHnrHEmutVhJEPIm2ozJszpyQs=
+		luHmKbyFIu+dws2SYb9gTJmuAks=
 		</data>
 		<key>Headers/YFJDBannerAdapter.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/YFJDBannerView.h</key>
 		<data>
-		gyVduD+Qtxg7AP71JKSdgCh6h9c=
+		pCiF+A0urDy4R5hlYCHV/3b9i+s=
 		</data>
 		<key>Headers/YFJDCustomExpressAdapter.h</key>
 		<data>
@@ -106,11 +106,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DwrZ+KYACs14NYnRIRFz3wbX8JE=
+		kZoj6fWYrYwNmKZFFXDLdkVrG8Y=
+		</data>
+		<key>JADYun.bundle/Info.plist</key>
+		<data>
+		SqhivRvHWlYwGl6pKu87y19+f2g=
+		</data>
+		<key>JADYun.bundle/JADYun.bundle/Info.plist</key>
+		<data>
+		lUv/+lypp6WPdsZWZGWTqwgnLYo=
+		</data>
+		<key>JADYun.bundle/JADYun.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		v8md+F1FHCbMMJ6E/DwgTKFeiG4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		fC++3HVOjotMrgHmUrZGGVJ0YBU=
+		</data>
+		<key>PrivateHeaders/YFJDPrefixHeader.pch</key>
+		<data>
+		6aC7l7dRAo0H+uax6g0o/zZEUcE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -262,11 +278,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CWHnrHEmutVhJEPIm2ozJszpyQs=
+			luHmKbyFIu+dws2SYb9gTJmuAks=
 			</data>
 			<key>hash2</key>
 			<data>
-			eahnxhKDwnW9kcTrTKW4n/R9ChwJ5Lc2P9wnNsHmiPU=
+			2Ml7/vX+0V9pc9UUqeFTYIT5yBiCDblZLabF0VlCrrs=
 			</data>
 		</dict>
 		<key>Headers/YFJDBannerAdapter.h</key>
@@ -284,11 +300,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gyVduD+Qtxg7AP71JKSdgCh6h9c=
+			pCiF+A0urDy4R5hlYCHV/3b9i+s=
 			</data>
 			<key>hash2</key>
 			<data>
-			ky2647NtjEImQHFXg/vmdo4AnFMPTtW2adUXmjwJZQI=
+			NPa3narFnkjEdoPVMtNnUXdGrr3g02wu1w4IT30tskU=
 			</data>
 		</dict>
 		<key>Headers/YFJDCustomExpressAdapter.h</key>
@@ -390,6 +406,39 @@
 			lENGVzEwZOWpgEJGd5oS26bgj/d5975TnUuvR0i6brU=
 			</data>
 		</dict>
+		<key>JADYun.bundle/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			SqhivRvHWlYwGl6pKu87y19+f2g=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ppe3TfHc9Lvhffa0Ya8/DsIRkine0i+DL6jCOBzBomE=
+			</data>
+		</dict>
+		<key>JADYun.bundle/JADYun.bundle/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lUv/+lypp6WPdsZWZGWTqwgnLYo=
+			</data>
+			<key>hash2</key>
+			<data>
+			cLYZqZqiBMLrHEtveU5IyrN8OokwHOmIPIIsskyhY+k=
+			</data>
+		</dict>
+		<key>JADYun.bundle/JADYun.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			v8md+F1FHCbMMJ6E/DwgTKFeiG4=
+			</data>
+			<key>hash2</key>
+			<data>
+			pixpNLo+HMG31t+6H3hHw09ZMgcl1iIFiGhgo753wNw=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
@@ -399,6 +448,17 @@
 			<key>hash2</key>
 			<data>
 			f/8Vk5U2O2J7vr57oBnaAHicrfRpw5eYhgHF0MtZXKU=
+			</data>
+		</dict>
+		<key>PrivateHeaders/YFJDPrefixHeader.pch</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6aC7l7dRAo0H+uax6g0o/zZEUcE=
+			</data>
+			<key>hash2</key>
+			<data>
+			hLqQa3I0/FctNg+YJ0ih0YN0JE/aYhRfjtP+zANrZEo=
 			</data>
 		</dict>
 	</dict>

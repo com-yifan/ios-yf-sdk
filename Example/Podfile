@@ -5,18 +5,16 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'YFAdsSDK_Example' do
   
   # 亿帆SDK【必须】
-  pod 'YFAdsSDK', '6.0.4.1'
+  pod 'YFAdsSDK', :path => '../'
   #  百度【必须】
-  pod 'BaiduMobAdSDK','5.371'
+  pod 'BaiduMobAdSDK','5.373'
   # 优量汇【必须】
-  pod 'GDTMobSDK' ,'4.15.10'
+  pod 'GDTMobSDK' ,'4.15.22'
   # 京东【必须】
   pod 'JADYun', '2.6.8'
   pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
-  #  Tanx【必须】
-  pod 'TanxSDK','3.6.6'
   #  穿山甲【必须】
-  pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
+  pod 'Ads-CN','6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
   #  快手【必须】
   pod 'KSAdSDK','3.3.72'
   # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成

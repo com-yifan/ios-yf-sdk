@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <YFAdsSDK/YFCocoaLumberjack.h>
+#import <YFAdsSubstrate/YFCocoaLumberjack.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

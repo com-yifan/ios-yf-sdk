@@ -14,6 +14,7 @@ FOUNDATION_EXPORT double YFAdsBDAdapterVersionNumber;
 FOUNDATION_EXPORT const unsigned char YFAdsBDAdapterVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <YFAdsBDAdapter/PublicHeader.h>
+#import <YFAdsBDAdapter/YFBdAdBaseBannerView.h>
 #import <YFAdsBDAdapter/YFBdAdBannerView.h>
 #import <YFAdsBDAdapter/YFBdAdBannerView600x150.h>
 #import <YFAdsBDAdapter/YFBdAdBannerView600x260.h>
