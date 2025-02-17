@@ -1,10 +1,11 @@
-# 亿帆SDK对接⽂档: V6.0.4.0
+# 亿帆SDK对接⽂档: V6.0.4.3
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.4.0 | 1.联盟SDK升级<br/>2.广告场景优化<br/>3.广告样式优化<br/>4.屏幕适配方案优化<br/>5.Demo结构优化<br/>6.模块化，现已支持拆分引入<br/ >7.新增是否允许更改声道接口<br/>8.修复已知BUG | 必选：</br> 支持联盟适配器按需导入，参照Podfile集成； | 2024.12.31 |
+| 6.0.4.3 | 1.升级联盟SDK<br />2.移除Tanx SDK<br />3.优化按需集成联盟SDK的能力<br />4.优化媒体自渲染能力<br />5.性能优化<br />6.修复已知问题 | 必选：参照Podfile集成或手动导入集成；<br />移除Tanx : <font color="red">Cocoapods集成：Podfile中移除pod 'Tanx'和pod 'YFAdsSDK/YFAdsTXAdapter'；手动集成：移除TanxSDK.library和YFAdsTXAdapter.xcframework</font> | 2025.2.17 |
+| 6.0.4.1 | 1.联盟SDK升级<br/>2.广告场景优化<br/>3.广告样式优化<br/>4.屏幕适配方案优化<br/>5.Demo结构优化<br/>6.模块化，现已支持拆分引入<br/ >7.新增是否允许更改声道接口<br/>8.修复已知BUG | 必选：</br> 支持联盟适配器按需导入，参照Podfile集成； | 2024.12.31 |
 | 6.0.3.6  | 1. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.12.10 |
 | 6.0.3.5  | 1. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.27 |
 | 6.0.3.4  | 1. 修复已知问题与性能优化                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.23 |
@@ -30,20 +31,19 @@
 
 ## 2.支持的联盟平台版本及广告类型
 
-|   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 |
-| :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: |
-| 穿山甲    | 6.5.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
-| 优量汇    | 4.15.10 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  |
-| 百青藤    | 5.371 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
-| 快手     | 3.3.72 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  |
-| 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
-| 亿帆     | 6.0.4.0 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
-| gromore  | 6.5.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  |
-| 淘宝Tanx | 3.6.6 | ✅  | ✅      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  |
+|   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner |
+| :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: |
+| 穿山甲    | 6.6.1.3 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 优量汇    | 4.15.22 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ |
+| 百青藤    | 5.373 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
+| 快手     | 3.3.72 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ |
+| 亿帆     | 6.0.4.3 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
+| gromore  | 6.6.1.3 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ❌ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
-2.SDK⽀持的架构有： x86_64 arm64；
+2.SDK⽀持的架构有： x86_64 arm64（**由于联盟支持架构变更，亿帆联盟适配器支持架构也对应删除了arm64架构。故可能不支持模拟器运行，请使用真机测试**）；
 3.原则上⽀持iOS12.0及及以上版本。如需支持较低版本，可通过拆分引入方式。
 
 ## 3. 快速接入
@@ -61,7 +61,7 @@
 右键点击⼯程，选择Add File to…，选择解压SDK包后得到的YFAdsSDK.xcframework(主SDK必须)，YFAdsCSJAdapter.xcframework(穿山甲)，YFAdsGDTAdapter.xcframework(优量汇)，YFAdsBDAdapter.xcframework(百青藤)，YFAdsKSAdapter.xcframework(快手)，YFAdsJDAdapter.xcframework(京东)，YFAdsTXAdapter.xcframework(Tanx)，YFAdsGROAdapter.xcframework(Gromore),点击Add。或者
 将⽂件拖⼊Xcode⼯程⽬录结构中，在弹出的界⾯中勾选“Copy items into destination group's folder(if needed)”，并确保Add To Targets勾选相应的target。同时将YFAdsSDK.framework ⽬录⾥⾯的YFAdsSDK.bundle⽂件导⼊Xcode。如不知需要导入的平台，请联系运营同学。
 
-*2.添加-ObjC**
+**2.添加-ObjC**
 
 在Target->Build Settings -> Other Linker Flags中添加-ObjC, 字母o和c大写。
 
@@ -69,24 +69,81 @@
 
 前往项目的Build Setting中的Enable Bitcode设置为NO
 
+**4.添加系统依赖库**
+
+前往项目的General中Frameworks,Libraries,and Embedded Content添加以下依赖库
+
+```
+// 公共依赖系统库【必须添加】
+AdSupport.framework
+AppTrackingTransparency.framework
+AudioToolbox.framework
+AVFoundation.framework
+CoreGraphics.framework
+CoreImage.framework
+CoreLocation.framework
+CoreMedia.framework
+CoreMotion.framework
+JavaScriptCore.framework
+UIKit.framework
+WebKit.framework
+StoreKit.framework
+Accelerate.framework
+CoreTelephony.framework
+SystemConfiguration.framework
+Security.framework
+MediaPlayer.framework
+MapKit.framework
+libc++.tbd
+libz.tbd
+libresolv.9.tbd
+libsqlite3.tbd
+libc++abi.tbd
+SafariServices.framework
+ImageIO.framework
+MobileCoreServices.framework
+// 穿山甲依赖系统库
+CoreML.framework （6.3.0.0及以上版本新增）
+CoreText.framework
+QuartzCore.framework
+DeviceCheck.framework依赖（4.8.0.3及以上版本新增）
+libbz2.tbd
+libiconv.tbd
+libxml2.tbd
+libc++abi.tbd
+// 优量汇依赖系统库
+libxml2.tbd
+// 百度依赖系统库
+MessageUI.framework
+// 快手依赖系统库
+MessageUI.framework
+CoreData
+QuickLook
+AddressBook
+c++
+// 京东依赖系统库
+Photos.framework
+AssetsLibrary.framework
+```
+
+
+
 #### <font color="red">方法二（推荐）：</font>
 **1.Cocoapods导入**
 通过Cocoapods导⼊三⽅⼴告SDK，以及第三⽅依赖（如遇到拉不下来，可能是github访问问题，可以使⽤VPN），如不清楚需要接入的联盟平台，请咨询运营同学
 ***1.1***
 ```
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.4.0'
+pod 'YFAdsSDK', '6.0.4.3'
 #  百度【必须】
-pod 'BaiduMobAdSDK','5.371'
+pod 'BaiduMobAdSDK','5.373'
 # 优量汇【必须】
-pod 'GDTMobSDK' ,'4.15.10'
+pod 'GDTMobSDK' ,'4.15.22'
 # 京东【必须】
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
-#  Tanx【必须】
-pod 'TanxSDK','3.6.6'
 #  穿山甲【必须】
-pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
+pod 'Ads-CN','6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
 #  快手【必须】
 pod 'KSAdSDK','3.3.72'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
@@ -96,23 +153,20 @@ pod 'WechatOpenSDK-XCFramework'
 
 ```
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.4.0'
+pod 'YFAdsSDK/YFAdsSDK', '6.0.4.3'
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
-pod 'BaiduMobAdSDK','5.371'
+pod 'BaiduMobAdSDK','5.373'
 # 优量汇【可选】
 pod 'YFAdsSDK/YFAdsGDTAdapter'
-pod 'GDTMobSDK' ,'4.15.10'
+pod 'GDTMobSDK' ,'4.15.22'
 # 京东【可选】
 pod 'YFAdsSDK/YFAdsJDAdapter'
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
-#  Tanx【可选】
-pod 'YFAdsSDK/YFAdsTXAdapter'
-pod 'TanxSDK','3.6.6'
 #  穿山甲【可选】
 pod 'YFAdsSDK/YFAdsCSJAdapter'
-pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
+pod 'Ads-CN','6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
 #  Gromore【可选】 
 pod 'YFAdsSDK/YFAdsGROAdapter'
 #  快手【可选】
@@ -131,18 +185,18 @@ TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/a
 
 1. 如宿主app不包含FFmpeg（TTSDK、ijkplayer等，或自行编译的FFmpeg），只需要增加BUAdLive-Lib的subspec即可。【推荐】
 ```
-    pod 'Ads-CN','6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+    pod 'Ads-CN','6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 ```
 2. 如宿主app包含FFmpeg
 ```
-    pod 'Ads-CN', '6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'Ads-CN', '6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDKFramework', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
     # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
 3. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
 ```
-    pod 'Ads-CN', '6.5.0.9', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'Ads-CN', '6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDK', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
@@ -158,8 +212,6 @@ TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/a
 2.在AppDelegate.h添加@property (strong, nonatomic) UIWindow * window;属性
 3.移除AppDelegate⾥⾯的UIScene代理
 4.最后在info.plist⽂件中移除Application Scene Manifest
-
-
 
 **3.位置权限：**
 
@@ -1273,6 +1325,10 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
 
 15001 : @"亿帆加载失败",</br>
 15002 : @"亿帆渲染失败",</br>
+15003 : @"亿帆无广告填充",</br>
+15004 : @"亿帆视频播放器初始化失败",
+15005 : @"亿帆视频播放器资源出现未知错误",
+15006 : @"亿帆视频播放器资源播放失败",
 
 11001 : @"穿山甲请求广告数据失败",</br>
 11002 : @"穿山甲接收广告加载失败",</br>
