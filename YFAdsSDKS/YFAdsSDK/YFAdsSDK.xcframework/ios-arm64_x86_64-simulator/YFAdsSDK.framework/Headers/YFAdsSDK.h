@@ -18,9 +18,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/ADXNativeAdsManager.h>
 #import <YFAdsSDK/ADXNativeMediaView.h>
 #import <YFAdsSDK/NSArray+Addition.h>
-#import <YFAdsSDK/NSData+YFAdd.h>
-#import <YFAdsSDK/NSNumber+YFAdd.h>
-#import <YFAdsSDK/NSString+YFAdd.h>
 #import <YFAdsSDK/NSString+YFUrlEncode.h>
 #import <YFAdsSDK/UIButton+YFEdge.h>
 #import <YFAdsSDK/UIImage+YFImageEffects.h>
