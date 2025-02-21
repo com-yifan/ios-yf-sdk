@@ -35,8 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIWindow *)getKeyWindow;
 /// 获取当前时间戳
 + (double)getCurrentDate;
-/// 获取IDFA 或者 UUID
-+ (NSString *)getIDFAORUUID;
 /// IDFA
 + (NSString *)getIDFA;
 /// DeviceID
