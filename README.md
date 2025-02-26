@@ -151,6 +151,7 @@ pod 'KSAdSDK','3.3.72'
 pod 'WechatOpenSDK-XCFramework'
 ```
 ***1.2 拆分模块方式引入***
+ <font color="red">注意，除了联盟SDK，还需要引入对应的亿帆适配器 pod 'YFAdsSDK/YFAds【XXX】Adapter'，如下代码中所示</font>
 
 ```
 # 亿帆SDK【必须】
