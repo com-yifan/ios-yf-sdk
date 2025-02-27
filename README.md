@@ -314,6 +314,7 @@ tionStatus status) {
 		<string>qiyi-iphone</string>
 		<string>baiduboxlite</string>
 		<string>diditaxi</string>
+        <string>snssdk1128</string>
 		<string>snssdk2329</string>
 		<string>douyutv</string>
 		<string>eleme</string>
