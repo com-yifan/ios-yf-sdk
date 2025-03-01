@@ -186,11 +186,11 @@ pod 'WechatOpenSDK-XCFramework'
 TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/account)，点击[会员资格详细信息](https://developer.apple.com/account#MembershipDetailsCard)，即可看到TeamID。
 ***2.3 接入说明***
 
-1. 如宿主app不包含FFmpeg（TTSDK、ijkplayer等，或自行编译的FFmpeg），只需要增加BUAdLive-Lib的subspec即可。【推荐】
+1. 如宿主app不包含FFmpeg（TTSDK、ijkplayer等，或自行编译的FFmpeg）或未对接快手内容SDK，只需要增加BUAdLive-Lib的subspec即可。【推荐】
 ```
     pod 'Ads-CN','6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 ```
-2. 如宿主app包含FFmpeg
+2. 如宿主app包含FFmpeg或集成快手内容SDK
 ```
     pod 'Ads-CN', '6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDKFramework', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
