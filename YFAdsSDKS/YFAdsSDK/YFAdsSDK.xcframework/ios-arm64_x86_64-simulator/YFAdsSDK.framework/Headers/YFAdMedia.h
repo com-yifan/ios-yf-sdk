@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 源数据
 @property (nonatomic, strong, readonly) YFAdNative *data;
 /// 承载视频播放器视图，如果是视频类广告则必须添加容器内
-@property (nonatomic, strong) UIView *mediaView;
+@property (nonatomic, strong, nullable) UIView *mediaView;
 
 @property (nonatomic, weak, readwrite, nullable) id<YFAdMediaDelegate> delegate;
 /// 广告控制器需传入最上层可展示控制器
