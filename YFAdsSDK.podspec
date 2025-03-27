@@ -19,9 +19,14 @@ Pod::Spec.new do |s|
 
     s.libraries = 'resolv.9', 'c++', 'z', 'sqlite3', 'bz2', 'xml2', 'c++abi', 'sqlite3.0'
 
-    # Removing pod_target_xcconfig for testing first
-    # s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64', 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386,arm64' }
-
+    s.pod_target_xcconfig = {
+        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
+        'DEFINES_MODULE' => 'YES'
+      }
+    s.user_target_xcconfig = {
+        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
+        'DEFINES_MODULE' => 'YES'
+      }
     s.default_subspecs = 'YFAdsBDAdapter', 'YFAdsGDTAdapter', 'YFAdsJDAdapter', 'YFAdsKSAdapter', 'YFAdsCSJAdapter', 'YFAdsGROAdapter'
 
     s.subspec 'YFAdsSubstrate' do |ss|
