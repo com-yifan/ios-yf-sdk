@@ -169,6 +169,7 @@ pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 #  穿山甲【可选】
 pod 'YFAdsSDK/YFAdsCSJAdapter'
+#  ⚠️注意：穿山甲默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
 pod 'Ads-CN','6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
 #  Gromore【可选】 
 pod 'YFAdsSDK/YFAdsGROAdapter'
@@ -186,18 +187,16 @@ pod 'WechatOpenSDK-XCFramework'
 TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/account)，点击[会员资格详细信息](https://developer.apple.com/account#MembershipDetailsCard)，即可看到TeamID。
 ***2.3 接入说明***
 
-1. 如宿主app不包含FFmpeg（TTSDK、ijkplayer等，或自行编译的FFmpeg）或未对接快手内容SDK，只需要增加BUAdLive-Lib的subspec即可。【推荐】
-```
-    pod 'Ads-CN','6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
-```
-2. 如宿主app包含FFmpeg或集成快手内容SDK
+1. 穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成
 ```
     pod 'Ads-CN', '6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDKFramework', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
     # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
-3. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
+        已知包含ffmpeg的三方库：快手内容包（非pod快手库）、ijkplayer、GPUImage2、KxMovie、MobileFFmpeg、FFmpeg-iOS
+
+2. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
 ```
     pod 'Ads-CN', '6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDK', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
