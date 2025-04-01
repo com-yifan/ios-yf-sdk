@@ -15,7 +15,11 @@ target 'YFAdsSDK_Example' do
   pod 'JADYun', '2.6.8'
   pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
   #  穿山甲【必须】
-  pod 'Ads-CN','6.6.1.3', :subspecs => ['BUAdSDK', 'CSJMediation','BUAdLive-Lib']
+  pod 'Ads-CN','6.7.1.6', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+  # Gromore-Adn适配器
+  pod 'GMBaiduAdapter', '5.370.2'
+  pod 'GMGdtAdapter', '4.15.10.2'
+  pod 'GMKsAdapter', '3.3.71.1'
   #  快手【必须】
   pod 'KSAdSDK','3.3.72'
   # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成

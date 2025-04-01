@@ -4,7 +4,7 @@
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.5.0 | 1. Gromore-Adn支持|  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：Podfile中移除pod 'Ads-CN'，替换为 </br>pod 'Ads-Fusion-CN-Beta','6.7.0.8', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']</br>pod 'CSJMBaiduAdapter', '5.370.2'</br>pod 'CSJMGdtAdapter', '4.15.10.2'</br>pod 'CSJMKsAdapter', '3.3.71.1'；</br> </br>手动集成：使用Ads-Fusion-CN-Beta内对应库更新替换BUAdLive.xcframework、CSJMediation.xcframework、BUAdSDK.xcframework、CSJAdSDK.bundle</font></br>必选：</br> 替换YFAdsSDK.xcframework | 2025.04.05 |
+| 6.0.5.0 | 1. Gromore-Adn支持|  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：新增Gromore-Adn适配器支持，podfile中增加以下内容（注意版本号）</br># Gromore-Adn适配器</br>pod 'GMBaiduAdapter', '5.370.2'</br>pod 'GMGdtAdapter', '4.15.10.2'</br>pod 'GMKsAdapter', '3.3.71.1'</br> </br>手动集成：将GMBaiduAdapter、GMGdtAdapter、GMKsAdapter三个适配器拖进项目里</font></br>必选：</br> 替换YFAdsSDK.xcframework | 2025.04.05 |
 | 6.0.4.6 | 1. 修复已知问题 | 必选：</br> 替换YFAdsSDK.xcframework | 2025.03.01 |
 | 6.0.4.5 | 1.性能优化 <br />2. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.xcframework；</br> 替换YFAdsKSAdapter.xcframework | 2025.02.21 |
 | 6.0.4.3 | 1.升级联盟SDK<br />2.移除Tanx SDK<br />3.优化按需集成联盟SDK的能力<br />4.优化媒体自渲染能力<br />5.性能优化<br />6.修复已知问题 | 必选：参照Podfile集成或手动导入集成；<br />移除Tanx : <font color="red">Cocoapods集成：Podfile中移除pod 'Tanx'和pod 'YFAdsSDK/YFAdsTXAdapter'；手动集成：移除TanxSDK.library和YFAdsTXAdapter.xcframework</font> | 2025.02.17 |
@@ -145,11 +145,14 @@ pod 'GDTMobSDK' ,'4.15.22'
 # 京东【必须】
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
-#  穿山甲与Gromore【必须】
-pod 'Ads-Fusion-CN-Beta','6.7.0.8', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
-pod 'CSJMBaiduAdapter', '5.370.2'
-pod 'CSJMGdtAdapter', '4.15.10.2'
-pod 'CSJMKsAdapter', '3.3.71.1'
+# 穿山甲与Gromore【必须】 ⚠️注意：穿山甲6.6.1.0版本之后 默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
+# 使用 Gromore 聚合功能 CSJMediation 必须引入
+pod 'Ads-CN','6.7.1.6', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+# Gromore-Adn适配器
+pod 'GMBaiduAdapter', '5.370.2'
+pod 'GMGdtAdapter', '4.15.10.2'
+pod 'GMKsAdapter', '3.3.71.1'
+
 
 #  快手【必须】
 pod 'KSAdSDK','3.3.72'
@@ -176,16 +179,16 @@ pod 'YFAdsSDK/YFAdsJDAdapter'
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 
-#  穿山甲【可选】
+#  穿山甲与Gromore【可选】
 pod 'YFAdsSDK/YFAdsCSJAdapter'
-#  ⚠️注意：穿山甲默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
-pod 'Ads-Fusion-CN-Beta','6.7.0.8', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+# ⚠️注意：穿山甲6.6.1.0版本之后 默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
+# 使用 Gromore 聚合功能 CSJMediation 必须引入
+pod 'Ads-CN','6.7.1.6', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+# Gromore-Adn适配器
+pod 'GMBaiduAdapter', '5.370.2'
+pod 'GMGdtAdapter', '4.15.10.2'
+pod 'GMKsAdapter', '3.3.71.1'
 
-#  Gromore【可选】 
-pod 'YFAdsSDK/YFAdsGROAdapter'
-pod 'CSJMBaiduAdapter', '5.370.2'
-pod 'CSJMGdtAdapter', '4.15.10.2'
-pod 'CSJMKsAdapter', '3.3.71.1'
 
 #  快手【可选】
 pod 'YFAdsSDK/YFAdsKSAdapter'
@@ -204,8 +207,8 @@ TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/a
 
 1. 穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成
 ```
-    pod 'Ads-Fusion-CN-Beta', '6.7.0.8', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
-    pod 'TTSDKFramework', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
+    pod 'Ads-CN','6.7.1.6', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+    pod 'TTSDKFramework', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
     # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
@@ -213,8 +216,8 @@ TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/a
 
 2. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
 ```
-    pod 'Ads-Fusion-CN-Beta', '6.7.0.8', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
-    pod 'TTSDK', '1.44.2.7-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
+    pod 'Ads-CN','6.7.1.6', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+    pod 'TTSDK', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
 #### <font color="red">注意事项：</font>
