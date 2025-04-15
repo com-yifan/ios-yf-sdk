@@ -36,7 +36,7 @@
     [self deallocAd];
     [self loadAdWithState:AdState_Normal];
     // 初始化加载器 viewController传入当前最上层可见控制器，否则无法模态推出广告落地页影响转化和收益
-    self.adMediaRender = [[YFAdMediaRender alloc] initWithAdUnitID:@"cb76dd74f3c848488d4138b7b0a74cc5" viewController:self];
+    self.adMediaRender = [[YFAdMediaRender alloc] initWithAdUnitID:[YFEnvironmentManager getMEDIA_ID] viewController:self];
     self.adMediaRender.delegate = self;
     _isAdLoaded = YES;
     [self.adMediaRender loadAndShowAd];
