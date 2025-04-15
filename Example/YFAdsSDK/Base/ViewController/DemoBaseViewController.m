@@ -52,6 +52,22 @@
     self.textV.frame = CGRectMake(0, 340, self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(self.labNotify.frame) - 20);
 }
 
+- (void)generateEarlyReturn{
+    if ([DemoAdConfig sharedInstance].earlyRetrunTime == 0) {
+        return;
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([DemoAdConfig sharedInstance].earlyRetrunTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self childVCTakeResultImmediately];
+    });
+}
+
+/// 到子类中实现
+- (void)childVCTakeResultImmediately{
+    NSString *remind = [NSString stringWithFormat:@"子类中未实现%@方法",NSStringFromSelector(_cmd)];
+//    NSAssert(NO, remind);
+    NSLog(@"YFAdsDemo: %@",remind);
+}
+
 -(void)changeVC {
     
     

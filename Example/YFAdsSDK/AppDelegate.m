@@ -13,7 +13,7 @@
 #import "DemoHomeViewController.h"
 #include <mach/task.h>
 #include <mach/mach.h>
-#import <YFAdsSDK/YFAdAESEncrypt.h>
+//#import <YFAdsSDK/YFAdAESEncrypt.h>
 #import <FLAnimatedImage/FLAnimatedImageView.h>
 #import "JDStatusBarNotification.h"
 #import "DemoAdConfig.h"
@@ -29,6 +29,12 @@
 @property(nonatomic, assign) BOOL isEnd;
 /// 开屏广告背景图【可选，建议使用自定义背景图】
 @property (nonatomic, strong) UIImageView *splashBackgroundView;
+// 开屏承载window
+@property (nonatomic, strong) UIWindow *splashWindow;
+@property (nonatomic, strong) UIWindow *keyWindow;
+
+@property (nonatomic, assign) BOOL isSplashLoaded;
+
 
 @end
 

@@ -904,7 +904,7 @@
 				"${PODS_ROOT}/BUTTSDK/TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib",
 				"${PODS_ROOT}/BaiduMobAdSDK/baidumobadsdk.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/JADYun/JADYun.bundle",
-				"${PODS_ROOT}/YFAdsSDK/YFAdsSDKS/YFAdsSDK/YFAdsSDKResource.bundle",
+				"${PODS_ROOT}/../../YFAdsSDKS/YFAdsSDK/YFAdsSDKResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
