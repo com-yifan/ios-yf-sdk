@@ -1,0 +1,6 @@
+framework module YFAdsGROAdapter {
+  umbrella header "YFAdsGROAdapter.h"
+  export *
+
+  module * { export * }
+}
