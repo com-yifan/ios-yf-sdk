@@ -4,7 +4,7 @@
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.5.0 | 1. Gromore-Adn支持|  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：新增Gromore-Adn适配器支持，podfile中增加以下内容（注意版本号）</br># Gromore-Adn适配器</br>pod 'GMBaiduAdapter', '5.370.2'</br>pod 'GMGdtAdapter', '4.15.10.2'</br>pod 'GMKsAdapter', '3.3.71.1'</br> </br>手动集成：将GMBaiduAdapter、GMGdtAdapter、GMKsAdapter三个适配器拖进项目里</font></br>必选：</br> 替换YFAdsSDK.xcframework | 2025.04.05 |
+| 6.0.5.0 | 1. 更新升级联盟SDK<br/>2. 新增广告场景超时前主动调用展示的接口，减少因超时丢失广告展示机会，建议开屏场景使用，详见DemoSplashViewController<br/>3. 优化穿山甲直播拉流预算的接入方案，详见[穿山甲iOS直播拉流接入注意事项](#csj-live-streaming)<br/>4. 优化Gromore适配方案，详见Cocoapods集成方式<br />5. 广告样式优化<br/><font color="red">6.【通知】信息流、Banner类接口后续不再维护，统一使用“融合Banner”接口进行对接，建议涉及信息流、Banner场景的媒体联系亿帆运营同学提供最新的“融合Banner”广告位ID进行对接</font> |  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：新增Gromore-Adn适配器支持，podfile中增加以下内容（注意版本号）</br># Gromore-Adn适配器</br>pod 'GMBaiduAdapter', '5.370.2'</br>pod 'GMGdtAdapter', '4.15.10.2'</br>pod 'GMKsAdapter', '3.3.71.1'</br> </br>手动集成：将GMBaiduAdapter、GMGdtAdapter、GMKsAdapter三个适配器拖进项目里</font></br>必选：</br> 替换YFAdsSDK.xcframework | 2025.04.15 |
 | 6.0.4.6 | 1. 修复已知问题 | 必选：</br> 替换YFAdsSDK.xcframework | 2025.03.01 |
 | 6.0.4.5 | 1.性能优化 <br />2. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.xcframework；</br> 替换YFAdsKSAdapter.xcframework | 2025.02.21 |
 | 6.0.4.3 | 1.升级联盟SDK<br />2.移除Tanx SDK<br />3.优化按需集成联盟SDK的能力<br />4.优化媒体自渲染能力<br />5.性能优化<br />6.修复已知问题 | 必选：参照Podfile集成或手动导入集成；<br />移除Tanx : <font color="red">Cocoapods集成：Podfile中移除pod 'Tanx'和pod 'YFAdsSDK/YFAdsTXAdapter'；手动集成：移除TanxSDK.library和YFAdsTXAdapter.xcframework</font> | 2025.02.17 |
@@ -36,13 +36,13 @@
 
 |   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner |
 | :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: |
-| 穿山甲    | 6.7.0.8 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
-| 优量汇    | 4.15.22 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ |
-| 百青藤    | 5.373 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| 快手     | 3.3.72 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 穿山甲    | 6.7.1.7 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 优量汇    | 4.15.30 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ |
+| 百青藤    | 5.39 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
+| 快手     | 3.3.75 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ |
 | 亿帆     | 6.0.5.0 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| gromore  | 6.7.0.8 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ❌ |
+| gromore  | 6.7.1.7 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
@@ -139,23 +139,20 @@ AssetsLibrary.framework
 # 亿帆SDK【必须】
 pod 'YFAdsSDK', '6.0.5.0'
 #  百度【必须】
-pod 'BaiduMobAdSDK','5.373'
+pod 'BaiduMobAdSDK','5.39'
 # 优量汇【必须】
-pod 'GDTMobSDK' ,'4.15.22'
+pod 'GDTMobSDK' ,'4.15.30'
 # 京东【必须】
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
-# 穿山甲与Gromore【必须】 ⚠️注意：穿山甲6.6.1.0版本之后 默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
-# 使用 Gromore 聚合功能 CSJMediation 必须引入
-pod 'Ads-CN','6.7.1.6', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+# 穿山甲【必须】⚠️注意：穿山甲6.6.1.0版本之后默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
+pod 'Ads-CN','6.7.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 # Gromore-Adn适配器
 pod 'GMBaiduAdapter', '5.370.2'
 pod 'GMGdtAdapter', '4.15.10.2'
 pod 'GMKsAdapter', '3.3.71.1'
-
-
-#  快手【必须】
-pod 'KSAdSDK','3.3.72'
+# 快手【必须】
+pod 'KSAdSDK','3.3.75'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
 ```
@@ -168,35 +165,34 @@ pod 'YFAdsSDK/YFAdsSDK', '6.0.5.0'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
-pod 'BaiduMobAdSDK','5.373'
+pod 'BaiduMobAdSDK','5.39'
 
 # 优量汇【可选】
 pod 'YFAdsSDK/YFAdsGDTAdapter'
-pod 'GDTMobSDK' ,'4.15.22'
+pod 'GDTMobSDK' ,'4.15.30'
 
 # 京东【可选】
 pod 'YFAdsSDK/YFAdsJDAdapter'
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 
-#  穿山甲与Gromore【可选】
+# 穿山甲【可选】
 pod 'YFAdsSDK/YFAdsCSJAdapter'
-# ⚠️注意：穿山甲6.6.1.0版本之后 默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
-# 使用 Gromore 聚合功能 CSJMediation 必须引入
-pod 'Ads-CN','6.7.1.6', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+# ⚠️注意：穿山甲6.6.1.0版本之后默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
+pod 'Ads-CN','6.7.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 # Gromore-Adn适配器
 pod 'GMBaiduAdapter', '5.370.2'
 pod 'GMGdtAdapter', '4.15.10.2'
 pod 'GMKsAdapter', '3.3.71.1'
 
-
 #  快手【可选】
 pod 'YFAdsSDK/YFAdsKSAdapter'
-pod 'KSAdSDK','3.3.72'
+pod 'KSAdSDK','3.3.75'
 
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
 ```
+<a name="csj-live-streaming"></a>
 **2.穿山甲iOS直播拉流接入注意事项**
 ***2.1 背景***
 穿山甲直播拉流类预算有利于提升广告收益和广告价值。
@@ -205,9 +201,9 @@ pod 'WechatOpenSDK-XCFramework'
 TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/account)，点击[会员资格详细信息](https://developer.apple.com/account#MembershipDetailsCard)，即可看到TeamID。
 ***2.3 接入说明***
 
-1. 穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成
+1. <font color="red">穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成</font>
 ```
-    pod 'Ads-CN','6.7.1.6', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+    pod 'Ads-CN','6.7.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
     pod 'TTSDKFramework', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
     # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
@@ -216,7 +212,7 @@ TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/a
 
 2. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
 ```
-    pod 'Ads-CN','6.7.1.6', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+    pod 'Ads-CN','6.7.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
     pod 'TTSDK', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
@@ -493,7 +489,9 @@ self.splash.showLogoRequire = YES;
 **开屏⼴告闪屏问题：**
 **⾸⻚闪现之后在弹出⼴告。这种现象对⽤户体验不友好。推荐使用自定义开屏背景图来添加到首页上，具体实现可参照Demo中DemoSplashViewController开屏广告示例。**
 
-### 4.2 横幅⼴告
+### 4.2 横幅⼴告(停止维护，请使用融合Banner)
+
+ <font color="red">横幅广告后续停止维护，历史广告位可继续使用，如有新增的信息流/banner场景，请联系亿帆运营同学提供【融合Banner】类型的广告位ID，并请使用对应的【融合Banner】类进行技术对接</font>
 
 具体示例参照Demo项目中DemoBannerViewController.m
 
@@ -711,7 +709,9 @@ self.splash.showLogoRequire = YES;
 
  ```
 
-### 4.5 信息流⼴告
+### 4.5 信息流⼴告(停止维护，请使用融合Banner)
+
+ <font color="red">信息流广告后续停止维护，历史广告位可继续使用，如有新增的信息流/banner场景，请联系亿帆运营同学提供【融合Banner】类型的广告位ID，并请使用对应的【融合Banner】类进行技术对接</font>
 
 具体示例参照Demo项目中DemoListFeedExpressViewController.m
 
