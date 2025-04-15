@@ -49,7 +49,7 @@ typedef enum : NSUInteger {
 
 - (NSString *)getSianKeyWithDic:(NSDictionary *)dic;
 
-
+- (void)generateEarlyReturn;
 
 @end
 

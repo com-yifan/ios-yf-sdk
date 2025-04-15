@@ -25,6 +25,9 @@
 @property (nonatomic, strong) UIActivityIndicatorView *hotSplashProgressView;
 // 开屏广告背景视图
 @property(strong,nonatomic)  UIImageView  *bgImageView;
+/// 广告是否结束
+@property(nonatomic, assign) BOOL isEnd;
+@property (nonatomic, assign) BOOL isSplashLoaded;
 @end
 
 @implementation DemoSplashViewController
@@ -75,6 +78,23 @@
     self.marginLabel.text = [NSString stringWithFormat:@"底部视图高度：%d%%", (int)self.slider.value];
 }
 
+/// 部分联盟不回调关闭，建议加一个倒计时兜底，防止进入不了首页
+- (void)countDown {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.isSplashLoaded) return;
+        [self splashEnd];
+    });
+}
+
+/// 广告结束
+-(void)splashEnd {
+    if(!self.isEnd) {
+        self.isEnd = YES;
+        self.FCAdSplash = nil;
+        [self.bgImageView removeFromSuperview];
+    }
+}
+
 - (void)loadAndShowAd {
     [self loadAndShowSplashAd];
 }
@@ -102,12 +122,13 @@
     // 加载广告提示
     [self.hotSplashProgressView startAnimating];
     [self loadAdWithState:AdState_Loading];
-    
+    [self countDown];
     [super generateEarlyReturn];
 }
 
 // 使用完及时释放掉，跟随控制器释放，广告关闭后仍可能会触发摇一摇
 - (void)deallocAd {
+    self.isSplashLoaded = NO;
     self.FCAdSplash = nil;
     [self.hotSplashProgressView stopAnimating];
     self.hotSplashProgressView = nil;
@@ -131,6 +152,8 @@
     [_bgImageView addSubview:self.hotSplashProgressView];
     // 加载开屏广告
     [self.FCAdSplash loadAndShowAd];
+    // 兜底倒计时
+    [self countDown];
     [self loadAdWithState:AdState_Loading];
     
     [super generateEarlyReturn];
@@ -168,6 +191,7 @@
 - (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
     AlertIfNotMainThread
     self.isLoaded = YES;
+    self.isSplashLoaded = YES;
     [JDStatusBarNotification showWithStatus:@"广告加载成功" dismissAfter:1.5];
     NSLog(@"=========%@",self.FCAdSplash.isValid?@"有效":@"无效");
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功", __func__]];

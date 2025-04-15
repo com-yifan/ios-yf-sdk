@@ -12,6 +12,7 @@
 #import <Masonry/Masonry.h>
 #import <UIKit/UIKit.h>
 #import "UIAlertController+Blocks.h"
+#import "DemoAdConfig.h"
 
 static inline BOOL IsIPhoneXSeries(void) {
     if (@available(iOS 11.0, *)) {
