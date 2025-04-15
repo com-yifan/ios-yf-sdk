@@ -16,7 +16,8 @@
 #import <YFAdsSDK/YFAdAESEncrypt.h>
 #import <FLAnimatedImage/FLAnimatedImageView.h>
 #import "JDStatusBarNotification.h"
-
+#import "DemoAdConfig.h"
+#import "WXApi.h"
 // 同意隐私协议key
 #define PrivacyKey @"IsAgreePrivacy"
 
@@ -53,6 +54,16 @@
     [self loadColdSplash];
 
     return YES;
+}
+
+/// 通用链接回调方法
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> * __nullable restorableObjects))restorationHandler {
+    // 通用链
+    if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+        NSURL *url = userActivity.webpageURL;
+        NSLog(@"通用链接 ：%@", url);
+    }
+    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
 }
 
 /// 初始化广告SDK
@@ -144,6 +155,13 @@
     if (![[NSUserDefaults standardUserDefaults] boolForKey:PrivacyKey]) return;
     /// 获取当前最上层控制器
     UIViewController *rootVC = self.window.rootViewController;
+    // 使用新建window承载
+    if ([DemoAdConfig sharedInstance].useSplashWindow) {
+        self.splashWindow = [self getSplashWindow];
+        rootVC = self.splashWindow.rootViewController;
+        // 暂存原始keywindow
+        self.keyWindow = _window;
+    }
     /// 初始化自定义的广告背景图
     if (!_splashBackgroundView)
         _splashBackgroundView = [UIImageView new];
@@ -170,11 +188,16 @@
     [self.coldSplashAd loadAd];
     /// 兜底倒计时
     [self countDown];
+    // 加载时 切换keywindow
+    if ([DemoAdConfig sharedInstance].useSplashWindow) {
+        [self.splashWindow makeKeyAndVisible];
+    }
 }
 
 /// 部分联盟不回调关闭，建议加一个倒计时兜底，防止进入不了首页
--(void)countDown {
+- (void)countDown {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.isSplashLoaded) return;
         [self splashEnd];
     });
 }
@@ -185,17 +208,32 @@
         self.isEnd = YES;
         self.coldSplashAd = nil;
         [self->_splashBackgroundView removeFromSuperview];
+        if ([DemoAdConfig sharedInstance].useSplashWindow) {
+            [self.keyWindow makeKeyAndVisible];
+        }
     }
+}
+
+/// 新创建承载开屏的window
+- (UIWindow *)getSplashWindow {
+    UIWindow *window = [UIWindow new];
+    window.frame = [UIScreen mainScreen].bounds;
+    window.backgroundColor = [UIColor whiteColor];
+    UIViewController *viewController = [UIViewController new];
+    viewController.view.backgroundColor = [UIColor whiteColor];
+    window.rootViewController = viewController;
+    return window;
 }
 
 #pragma mark - YFAdSplashDelegate
 /// 广告数据加载成功
 - (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
     NSLog(@"开屏-亿帆-广告数据加载成功");
+    self.isSplashLoaded = YES;
     if(!self.isEnd) {
         /// 展示广告时移除自定义背景图
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.splashBackgroundView removeFromSuperview];
+//            [self.splashBackgroundView removeFromSuperview];
         });
         [model showAd];
     }
@@ -242,5 +280,41 @@
 //    [self splashEnd];
 }
 
+#pragma mark =============== 微信SDK回调 ===============
+
+/*! @brief 收到一个来自微信的请求，第三方应用程序处理完后调用sendResp向微信发送结果
+ *
+ * 收到一个来自微信的请求，异步处理完成后必须调用sendResp发送处理结果给微信。
+ * 可能收到的请求有GetMessageFromWXReq、ShowMessageFromWXReq等。
+ * @param req 具体请求内容，是自动释放的
+ */
+- (void)onReq:(BaseReq*)req{
+    
+}
+
+
+
+/*! @brief 发送一个sendReq后，收到微信的回应
+ *
+ * 收到一个来自微信的处理结果。调用一次sendReq后会收到onResp。
+ * 可能收到的处理结果有SendMessageToWXResp、SendAuthResp等。
+ * @param resp具体的回应内容，是自动释放的
+ */
+- (void)onResp:(BaseResp*)resp{
+    
+}
+
+/* ! @brief 用于在iOS16以及以上系统上，控制OpenSDK是否读取剪切板中微信传递的数据以及读取的时机
+ * 在iOS16以及以上系统，在SDK需要读取剪切板中微信写入的数据时，会回调该方法。没有实现默认会直接读取微信通过剪切板传递过来的数据
+ * 注意：
+ *      1. 只在iOS16以及以上的系统版本上回调;
+ *      2. 不实现时，OpenSDK会直接调用读取剪切板接口，读取微信传递过来的数据;
+ *      3. 若实现该方法：开发者需要通过调用completion(), 支持异步，通知SDK允许读取剪切板中微信传递的数据,
+ *                    不调用completion()则代表不授权OpenSDK读取剪切板，会导致收不到onReq:, onResp:回调，无法后续业务流程。请谨慎使用
+ *      4. 不要长时间持有completion不释放，可能会导致内存泄漏。
+ */
+- (void)onNeedGrantReadPasteBoardPermissionWithURL:(nonnull NSURL *)openURL completion:(nonnull WXGrantReadPasteBoardPermissionCompletion)completion{
+    
+}
 @end
 

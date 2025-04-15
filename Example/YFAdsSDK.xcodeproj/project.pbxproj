@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03929B082DAE501E0050D93D /* DemoEarlyRetrunCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03929AFF2DAE501E0050D93D /* DemoEarlyRetrunCell.xib */; };
+		03929B092DAE501E0050D93D /* DemoCommonSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03929B012DAE501E0050D93D /* DemoCommonSwitchCell.m */; };
+		03929B0A2DAE501E0050D93D /* DemoEarlyRetrunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03929AFE2DAE501E0050D93D /* DemoEarlyRetrunCell.m */; };
+		03929B0B2DAE501E0050D93D /* DemoAdConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 03929B062DAE501E0050D93D /* DemoAdConfig.m */; };
+		03929B0C2DAE501E0050D93D /* DemoAdConfigVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 03929B042DAE501E0050D93D /* DemoAdConfigVC.m */; };
 		039CF8952D222E20000FA9E2 /* JDStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF8822D222E1F000FA9E2 /* JDStatusBarNotification.m */; };
 		039CF8962D222E20000FA9E2 /* DemoSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF8102D222E1F000FA9E2 /* DemoSplashViewController.m */; };
 		039CF8982D222E20000FA9E2 /* ViewBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF81E2D222E1F000FA9E2 /* ViewBuilder.m */; };
@@ -93,6 +98,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03929AFD2DAE501E0050D93D /* DemoEarlyRetrunCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoEarlyRetrunCell.h; sourceTree = "<group>"; };
+		03929AFE2DAE501E0050D93D /* DemoEarlyRetrunCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEarlyRetrunCell.m; sourceTree = "<group>"; };
+		03929AFF2DAE501E0050D93D /* DemoEarlyRetrunCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoEarlyRetrunCell.xib; sourceTree = "<group>"; };
+		03929B002DAE501E0050D93D /* DemoCommonSwitchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCommonSwitchCell.h; sourceTree = "<group>"; };
+		03929B012DAE501E0050D93D /* DemoCommonSwitchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCommonSwitchCell.m; sourceTree = "<group>"; };
+		03929B032DAE501E0050D93D /* DemoAdConfigVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAdConfigVC.h; sourceTree = "<group>"; };
+		03929B042DAE501E0050D93D /* DemoAdConfigVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAdConfigVC.m; sourceTree = "<group>"; };
+		03929B052DAE501E0050D93D /* DemoAdConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAdConfig.h; sourceTree = "<group>"; };
+		03929B062DAE501E0050D93D /* DemoAdConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAdConfig.m; sourceTree = "<group>"; };
 		039CF7D92D222E1F000FA9E2 /* DemoBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoBannerViewController.h; sourceTree = "<group>"; };
 		039CF7DA2D222E1F000FA9E2 /* DemoBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoBannerViewController.m; sourceTree = "<group>"; };
 		039CF7DC2D222E1F000FA9E2 /* DemoDrawAdCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoDrawAdCell.h; sourceTree = "<group>"; };
@@ -255,6 +269,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03929B022DAE501E0050D93D /* ConfigCells */ = {
+			isa = PBXGroup;
+			children = (
+				03929AFD2DAE501E0050D93D /* DemoEarlyRetrunCell.h */,
+				03929AFE2DAE501E0050D93D /* DemoEarlyRetrunCell.m */,
+				03929AFF2DAE501E0050D93D /* DemoEarlyRetrunCell.xib */,
+				03929B002DAE501E0050D93D /* DemoCommonSwitchCell.h */,
+				03929B012DAE501E0050D93D /* DemoCommonSwitchCell.m */,
+			);
+			path = ConfigCells;
+			sourceTree = "<group>";
+		};
+		03929B072DAE501E0050D93D /* AdConfig(参数配置) */ = {
+			isa = PBXGroup;
+			children = (
+				03929B022DAE501E0050D93D /* ConfigCells */,
+				03929B032DAE501E0050D93D /* DemoAdConfigVC.h */,
+				03929B042DAE501E0050D93D /* DemoAdConfigVC.m */,
+				03929B052DAE501E0050D93D /* DemoAdConfig.h */,
+				03929B062DAE501E0050D93D /* DemoAdConfig.m */,
+			);
+			path = "AdConfig(参数配置)";
+			sourceTree = "<group>";
+		};
 		039CF7DB2D222E1F000FA9E2 /* BannerAd(横幅广告) */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +432,7 @@
 		039CF8122D222E1F000FA9E2 /* AdsExample */ = {
 			isa = PBXGroup;
 			children = (
+				03929B072DAE501E0050D93D /* AdConfig(参数配置) */,
 				039CF7DB2D222E1F000FA9E2 /* BannerAd(横幅广告) */,
 				039CF7E22D222E1F000FA9E2 /* DrawAd(视频流广告) */,
 				039CF7E52D222E1F000FA9E2 /* FullScreenVideoAd(全屏视频广告) */,
@@ -742,6 +781,7 @@
 				039CF8D42D222E20000FA9E2 /* environment.json in Resources */,
 				039CF8D62D222E20000FA9E2 /* NativeExpressData.json in Resources */,
 				039CF8D82D222E20000FA9E2 /* cell01.json in Resources */,
+				03929B082DAE501E0050D93D /* DemoEarlyRetrunCell.xib in Resources */,
 				039CF8D92D222E20000FA9E2 /* Ulysses-Group.plist in Resources */,
 				039CF8DB2D222E20000FA9E2 /* adx-splash.json in Resources */,
 				039CF8DC2D222E20000FA9E2 /* RewardVideoData.json in Resources */,
@@ -894,6 +934,10 @@
 				039CF89B2D222E20000FA9E2 /* DemoNativeSelfRenderView.m in Sources */,
 				039CF89C2D222E20000FA9E2 /* CellBuilder.m in Sources */,
 				039CF8A02D222E20000FA9E2 /* DemoInterstitialViewController.m in Sources */,
+				03929B092DAE501E0050D93D /* DemoCommonSwitchCell.m in Sources */,
+				03929B0A2DAE501E0050D93D /* DemoEarlyRetrunCell.m in Sources */,
+				03929B0B2DAE501E0050D93D /* DemoAdConfig.m in Sources */,
+				03929B0C2DAE501E0050D93D /* DemoAdConfigVC.m in Sources */,
 				039CF8A12D222E20000FA9E2 /* NSArray+Log.m in Sources */,
 				039CF8A22D222E20000FA9E2 /* DemoBannerViewController.m in Sources */,
 				039CF8A32D222E20000FA9E2 /* JDStatusBarLayoutMarginHelper.m in Sources */,

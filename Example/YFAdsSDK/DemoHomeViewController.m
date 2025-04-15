@@ -249,7 +249,13 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
             @"title":@"场景广告示例",
             @"class":@"DemoListSceneSimulateVC",
             @"des":@"scene simulate",
-        }
+        },
+        @{
+            @"image":@"home_list_icon",
+            @"title":@"Demo广告配置",
+            @"class":@"DemoAdConfigVC",
+            @"des":@"scene simulate"
+        },
     ];
 }
 

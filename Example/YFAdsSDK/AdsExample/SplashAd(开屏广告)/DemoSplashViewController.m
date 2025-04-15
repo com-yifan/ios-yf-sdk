@@ -65,7 +65,10 @@
     remindLab.text = @"底部视图高度不要超过屏幕高度的20%哦～";
     remindLab.textColor = [UIColor colorWithRed:144/255.0 green:147/255.0 blue:153/255.0 alpha:1.0];
     [self.view addSubview:remindLab];
+}
 
+- (void)childVCTakeResultImmediately{
+    [self.FCAdSplash takeResultImmediately];
 }
 
 - (void)sliderEndChangeValue:(id)va {
@@ -99,6 +102,8 @@
     // 加载广告提示
     [self.hotSplashProgressView startAnimating];
     [self loadAdWithState:AdState_Loading];
+    
+    [super generateEarlyReturn];
 }
 
 // 使用完及时释放掉，跟随控制器释放，广告关闭后仍可能会触发摇一摇
@@ -127,25 +132,30 @@
     // 加载开屏广告
     [self.FCAdSplash loadAndShowAd];
     [self loadAdWithState:AdState_Loading];
+    
+    [super generateEarlyReturn];
 }
 
 - (YFAdSplash *)returnAdInstance {
     // 初始化广告加载器 viewController需传入最上层可见控制器，否则无法模态推出广告落地页影响转化
     YFAdSplash *splash = [[YFAdSplash alloc] initWithAdUnitID:[YFEnvironmentManager getHotSPLASH_ID] viewController:self];
     splash.delegate = self;
-    splash.showLogoRequire = YES;
-    // 设置底部视图 不要超过屏幕高度20%
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, roundf(self.slider.value*kScreenH/100))];
-    imageView.image = [UIImage imageNamed:@"app_logo"];
-    imageView.backgroundColor = [UIColor whiteColor];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    
-    // bottomView超出25%后，会限制为25%，子视图则会被截断。
-    UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, roundf(10*kScreenH/100))];
-//    bottomLabel.text = @"这是bottomView的子视图";
-    bottomLabel.textAlignment = NSTextAlignmentCenter;
-    [imageView addSubview:bottomLabel];
-    splash.bottomView = imageView;
+    if (self.slider.value>0) {
+        
+        splash.showLogoRequire = YES;
+        // 设置底部视图 不要超过屏幕高度20%
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, roundf(self.slider.value*kScreenH/100))];
+        imageView.image = [UIImage imageNamed:@"app_logo"];
+        imageView.backgroundColor = [UIColor whiteColor];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        // bottomView超出25%后，会限制为25%，子视图则会被截断。
+        UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, roundf(10*kScreenH/100))];
+        //    bottomLabel.text = @"这是bottomView的子视图";
+        bottomLabel.textAlignment = NSTextAlignmentCenter;
+        [imageView addSubview:bottomLabel];
+        splash.bottomView = imageView;
+    }
     splash.timeout = 5;
     [self showProcessWithText:@""];
 
@@ -185,8 +195,11 @@
 /// 广告点击
 - (void)fcAdClicked:(id)adapter  {
     AlertIfNotMainThread
+    /// 部分联盟需要使用当前控制器的navigate，避免背景视图覆盖落地页，需要在点击的时候移除背景视图
+    [_bgImageView removeFromSuperview];
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告点击", __func__]];
     NSLog(@"广告点击 %s", __func__);
+    
 }
 
 /// 广告关闭
