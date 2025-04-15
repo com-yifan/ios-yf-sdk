@@ -134,10 +134,6 @@ NS_ASSUME_NONNULL_BEGIN
 ///  UA
 /// 是否需要过滤京东广告
 + (BOOL)needFilterJdAd;
-/// 长按溯源
-+ (void)addGeneralPasteboard:(id)materialMeta;
-/// 长按溯源,支持传入多个model
-+(void)addModelArrayGeneralPasteboard:(NSArray *)metaArray;
 
 + (NSString *)getUserAgent;
 
@@ -145,15 +141,30 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)yfEncodeURIComponent:(NSString *)urlStr;
 
-/// 获取当前日期
+/// 获取当前时间：精度 天
 + (NSString *)getCurrentDay;
 
-///. 获取当前小时
+///. 获取当前时间：精度 小时
 + (NSString *)getCurrentHour;
+
+/// 获取当前时间：精度 秒
++ (NSString *)getCurrentTime;
 /// 是否iPad
 + (BOOL)isiPad;
 /// 设备是否全屏
 + (BOOL)isDeviceFullScreen;
+
+/// 当前时间增加minuteOffset分钟
+/// @param minuteOffset  增加的分钟数，为负数则为减少
++(NSString *)getCurrentTimeMinuteOffset:(NSInteger)minuteOffset;
+
+/// 判断当前时间是否大于禁止请求的时间
+/// - `NSOrderedAscending`: A小于B
+/// - `NSOrderedSame`: A 等于 B
+/// - `NSOrderedDescending`: A 大于 B
+/// @param timeA 时间A
+/// @param timeB 时间B
++(NSComparisonResult)compareTimeA:(NSString*)timeA withTimeB:(NSString*)timeB;
 @end
 
 NS_ASSUME_NONNULL_END

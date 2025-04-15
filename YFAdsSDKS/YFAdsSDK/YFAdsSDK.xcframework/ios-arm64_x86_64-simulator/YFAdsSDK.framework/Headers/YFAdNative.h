@@ -20,7 +20,6 @@ typedef NS_ENUM (NSInteger, YFAdNativeInteractionType) {
 };
 
 typedef NS_ENUM(NSInteger, YFAdSourceType) {
-#warning 需要确认百度==1，CSJ == 2 ......
     YFAdSourceTypeBD  = 1,
     YFAdSourceTypeCSJ = 2,
     YFAdSourceTypeGDT = 3,
@@ -28,7 +27,6 @@ typedef NS_ENUM(NSInteger, YFAdSourceType) {
     YFAdSourceTypeKS  = 5,
     YFAdSourceTypeYF  = 6,
     YFAdSourceTypeTX  = 7
-//    YFAdSourceTypeADX = 2,
 
 };
 
@@ -78,7 +76,7 @@ typedef NS_ENUM(NSInteger, YFAdSourceType) {
 @property(nonatomic, readonly) CGFloat mainImageHeight;
 
 /// mediaView
-@property(nonatomic, readonly) UIView *mediaView;
+@property(nonatomic, readonly, nullable) UIView *mediaView;
 
 /// image url list
 @property(nonatomic, readonly) NSArray<NSString *> *imageList;

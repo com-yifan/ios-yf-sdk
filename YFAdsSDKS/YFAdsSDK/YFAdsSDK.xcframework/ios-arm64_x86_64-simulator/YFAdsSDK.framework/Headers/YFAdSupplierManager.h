@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)fcAdSupplierLoadSuppluer:(FCAdWaterfall *)model error:(nullable NSError *)error;
 /// 被选中的选择的sort标志
 - (void)fcAdSupplierManagerLoadSortTag:(NSString *)tag;
+/// 流量填充，竞价流程完成
+- (void)fcAdSupplierManagerFill:(id)adapter;
 /// 展示广告
 - (void)fcAdSupplierManagerShow:(id)adapter;
 /// 竞价回调 YFAdEventModel
@@ -50,6 +52,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 加载下个渠道
 - (void)loadNextSupplierIfHas;
 
+/// 调用展示当前已填充广告的最优层，无需等待亿帆SDK执行完成整体逻辑
+- (void)takeResultImmediately;
 @end
 
 NS_ASSUME_NONNULL_END

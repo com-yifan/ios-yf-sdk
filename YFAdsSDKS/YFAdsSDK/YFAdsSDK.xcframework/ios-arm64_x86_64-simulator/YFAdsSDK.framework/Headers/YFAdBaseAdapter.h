@@ -33,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithAdUnitID:(NSString *)pID;
 /// 加载广告
 - (void)loadAd;
+/// 流量填充
+- (void)loadAdSucceed;
 /// 展示广告
 - (void)showAd;
 /// 从当前控制器中展示广告(仅插屏适用)
@@ -43,7 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAndShowAd;
 /// 移除广告 (banner ，信息流可用)
 - (void)removeAd;
-
+/// 调用展示当前已填充广告的最优层，无需等待亿帆SDK执行完成整体逻辑
+- (void)takeResultImmediately;
 /// 移除广告 (自渲染插屏)
 - (void)removeCustomRenderAd;
 /// 上报

@@ -35,6 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat totalDuration;
 
 /**
+ 是否缓存成功
+ */
+@property (nonatomic, assign) BOOL isCached;
+
+/**
  播放
  */
 - (void)play;
@@ -95,6 +100,15 @@ NS_ASSUME_NONNULL_BEGIN
  @prama videoUrlString 播放地址
  */
 - (instancetype)initWithFrame:(CGRect)frame defaultPlayMute:(BOOL)defaultPlayMute videoUrlString:(NSString *)videoUrlString coverUrl:(NSString *)coverUrl endCardUlrString:(nullable NSString *)endCardUrlString delegate:(id<YFVideoViewPlayerDelegate>)videoDelegate;
+
+/**
+ 推荐初始化方法
+ @prama frame 视图大小
+ @prama defaultPlayMute 默认播放静音YES/非静音NO
+ @prama videoUrlString 播放地址
+ @prama autoPlay 自动播放
+ */
+- (instancetype)initWithFrame:(CGRect)frame defaultPlayMute:(BOOL)defaultPlayMute videoUrlString:(NSString *)videoUrlString coverUrl:(NSString *)coverUrl endCardUlrString:(nullable NSString *)endCardUrlString delegate:(id<YFVideoViewPlayerDelegate>)videoDelegate autoPlay:(BOOL)autoPlay;
 
 
 @end

@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param supplier 被加载的渠道
 /// @param error 异常信息
 - (void)fcAdBaseAdapterLoadSuppluer:(nullable YFAdEventModel *)supplier error:(nullable NSError *)error;
+/// 广告请求完成上报流量填充
+- (void)fcAdBaseAdapterFill:(YFAdBaseAdPosition *)adapter;
 /// 竞价回调 YFAdEventModel
 - (void)fcAdBaseAdapterBidding:(YFAdBaseAdPosition *)adapter isSucceed:(BOOL)succeed fristSuceess:(YFAdBaseAdPosition *)frist secondSuceess:(YFAdBaseAdPosition *)second adns:(NSArray *)adns;
 

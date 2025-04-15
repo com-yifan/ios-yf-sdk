@@ -8,6 +8,6 @@
 #import <Foundation/Foundation.h>
 #define YFOtherControllerDismissNotification @"YFOtherControllerDismissNotification"
 #define YFOtherControllerShowNotification @"YFOtherControllerShowNotification"
-#import <YFAdsSDK/YFSplashView.h>
+//#import "YFSplashView.h"
 #import <YFAdsSDK/YFKitImpressionTimer.h>
 #import <YFAdsSDK/NSArray+Addition.h>

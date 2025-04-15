@@ -26,7 +26,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/UIView+ViewVisiable.h>
 #import <YFAdsSDK/UIView+YFAutoLayout.h>
 #import <YFAdsSDK/YFAd.h>
-#import <YFAdsSDK/YFAdAESEncrypt.h>
 #import <YFAdsSDK/YFAdBanner.h>
 #import <YFAdsSDK/YFAdBannerDelegate.h>
 #import <YFAdsSDK/YFAdBannerView600x100.h>
@@ -89,7 +88,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdSDKSetting.h>
 #import <YFAdsSDK/YFAdSplash.h>
 #import <YFAdsSDK/YFAdSplashAdExtraDataModel.h>
-#import <YFAdsSDK/YFAdSplashDelegate.h>
 #import <YFAdsSDK/YFAdSupplierDelegate.h>
 #import <YFAdsSDK/YFAdSupplierManager.h>
 #import <YFAdsSDK/YFAdUtils.h>
@@ -141,11 +139,11 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFSerialQueue.h>
 #import <YFAdsSDK/YFSplashAdapter.h>
 #import <YFAdsSDK/YFSplashAnimationView2.h>
+#import <YFAdsSDK/YFSplashAnimationView3.h>
 #import <YFAdsSDK/YFSplashButton.h>
 #import <YFAdsSDK/YFSplashEnum.h>
 #import <YFAdsSDK/YFSplashEnvelopeView.h>
-#import <YFAdsSDK/YFSplashView.h>
-#import <YFAdsSDK/YFSplashView2.h>
+
 #import <YFAdsSDK/YFTapBarAnimationView.h>
 #import <YFAdsSDK/YFTouchReportView.h>
 #import <YFAdsSDK/YFVideoAd.h>
@@ -165,6 +163,13 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdapterDataModel.h>
 #import <YFAdsSDK/NSString+Size.h>
 
+/// >= 6.0.5.0 +++
+#import <YFAdsSDK/YFSourceDataTool.h>
+#import <YFAdsSDK/YFDeviceInfo.h>
+#import <YFAdsSDK/YFAdInterstitialViewProtocol.h>
+#import <YFAdsSDK/YFAdAdapterInitializeContext.h>
+#import <YFAdsSDK/YFAdAdapterInitializeProtocol.h>
+#import <YFAdsSDK/YFAdAdapterInitializeClassLoader.h>
 
 //#import <YFAdsSDK/YFGradientView.h>
 //#import <YFAdsSDK/NSObject+YFAdModel.h>

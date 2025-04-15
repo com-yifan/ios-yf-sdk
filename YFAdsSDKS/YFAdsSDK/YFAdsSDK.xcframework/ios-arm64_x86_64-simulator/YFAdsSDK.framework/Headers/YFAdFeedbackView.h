@@ -10,6 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdFeedbackView : UIView
 -(void)show;
+@property (nonatomic, copy) void (^contentTapClick)(void);
 @end
 
 NS_ASSUME_NONNULL_END

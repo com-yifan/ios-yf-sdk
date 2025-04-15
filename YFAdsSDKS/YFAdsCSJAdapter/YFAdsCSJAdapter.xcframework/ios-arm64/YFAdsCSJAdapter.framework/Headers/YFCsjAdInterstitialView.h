@@ -7,6 +7,7 @@
 #import <YFAdsCSJAdapter/YFCsjCustomExpressAdapter.h>
 NS_ASSUME_NONNULL_BEGIN
 
+///插屏1.0
 @interface YFCsjAdInterstitialView : YFAdBaseCustomView
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;

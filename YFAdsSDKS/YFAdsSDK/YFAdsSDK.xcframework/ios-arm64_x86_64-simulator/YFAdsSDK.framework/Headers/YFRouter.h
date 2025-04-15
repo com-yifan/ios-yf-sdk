@@ -20,6 +20,10 @@ typedef NS_ENUM(NSInteger, YFRouterResult){
     YFRouterResultTypeAppstore = 2,
 
     YFRouterResultTypeDurl = 3,
+    // 详情
+    YFRouterResultTypeDetail = 4,
+    // 微信小程序
+    YFRouterResultTypeWXMiniParam = 5
 };
 ///  是否是 手动点击 manual YES 手动点击事件  NO 自动点击事件
 + (instancetype)shareInstance;

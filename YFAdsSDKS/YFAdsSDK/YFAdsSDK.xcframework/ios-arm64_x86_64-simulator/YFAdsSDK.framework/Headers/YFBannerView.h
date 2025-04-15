@@ -108,6 +108,8 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 /// 获取元素缩放比例
 - (float)scaleWith600_150;
 - (float)scaleWith600_400;
+- (float)scaleWith640_100;
+- (float)scaleWith600_260;
 - (void)toPlayVideo;
 - (void)turnClickBtn;
 /// 重设控制器

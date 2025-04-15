@@ -8,9 +8,6 @@
 #import <UIKit/UIKit.h>
 #import <YFAdsSDK/YFAdNativeExpressDelegate.h>
 
-
-
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFJDNativeExpressAdapter : YFAdBaseAdPosition

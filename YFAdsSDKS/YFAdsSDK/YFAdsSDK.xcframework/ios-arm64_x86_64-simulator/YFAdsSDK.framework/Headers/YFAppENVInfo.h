@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, YF_AppStatus){
 
 
 typedef NSString *YF_Scheme NS_STRING_ENUM;
-FOUNDATION_EXPORT NSString * const YF_Scheme_JD;
+//FOUNDATION_EXPORT NSString * const YF_Scheme_JD;
 FOUNDATION_EXPORT NSString * const YF_Scheme_Taptap;
 FOUNDATION_EXPORT NSString * const YF_Scheme_Taobao;
 FOUNDATION_EXPORT NSString * const YF_Scheme_Cydia;

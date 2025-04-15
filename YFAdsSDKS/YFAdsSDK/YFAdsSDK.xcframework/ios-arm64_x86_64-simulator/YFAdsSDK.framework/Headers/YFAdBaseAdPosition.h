@@ -48,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadAdFail:(YFAdEventModel *)supplier adapter:(YFAdBaseAdapter *)adapter error:(NSError *)error;
 
+/// 流量填充
+- (void)loadAllAdSucceed;
+
 - (void)showAd;
 
 - (void)showAdFromViewController:(UIViewController *)viewController;

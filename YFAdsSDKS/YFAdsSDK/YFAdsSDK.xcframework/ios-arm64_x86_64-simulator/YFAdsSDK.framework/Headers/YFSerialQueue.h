@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/// 使用异步串行线程，对广告卡顿情况优化不到0.001s，增加代码线程处理风险，不建议使用。
 @interface YFSerialQueue : NSObject
 #define dispatch_yf_serial_async_safe(block)\
     if ([[YFSerialQueue sharedInstance] isCurrentQueueSerialQueue]) {\

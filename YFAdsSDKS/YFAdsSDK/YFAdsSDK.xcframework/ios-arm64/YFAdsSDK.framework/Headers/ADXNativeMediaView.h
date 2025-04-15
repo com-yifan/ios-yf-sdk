@@ -93,6 +93,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 毫秒
 - (CGFloat)currentPlayTime;
 
+/// 跟踪曝光
+- (void)trackImpression;
+
 @end
 
 NS_ASSUME_NONNULL_END

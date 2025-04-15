@@ -13,7 +13,7 @@
 #import <YFAdsSDK/UIApplication+YFAds.h>
 #import <YFAdsSDK/YFAdConst.h>
 #import <YFAdsSDK/YFAdLogManager.h>
-#import <YFAdsSDK/YFAdxDataManager.h>
+//#import <YFAdsSDK/YFAdxDataManager.h>
 //#import <YFAdsSDK/YFAdDataManager.h>
 #import <YFAdsSDK/NSObject+YFAdModel.h>
 

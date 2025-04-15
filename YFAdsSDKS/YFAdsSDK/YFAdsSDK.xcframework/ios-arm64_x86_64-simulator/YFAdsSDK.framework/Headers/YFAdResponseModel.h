@@ -156,6 +156,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ts;
 /// 关闭按钮位置
 @property (nonatomic, assign) NSInteger cbp;
+/// 按钮样式
+// 1：常规样式
+// 2：通底大面积样式
+@property (nonatomic, assign) NSInteger bs;
 /// 物理键返回(安卓)
 @property (nonatomic, assign) NSInteger pkb;
 /// 互动样式
@@ -177,6 +181,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *ss;
 /// 联盟logo
 @property (nonatomic, assign) BOOL haal;
+/// 快手滑动跳转
+@property (nonatomic, assign) BOOL sj;
 
 /// 1;单向跳转
 /// 2: 双向跳转

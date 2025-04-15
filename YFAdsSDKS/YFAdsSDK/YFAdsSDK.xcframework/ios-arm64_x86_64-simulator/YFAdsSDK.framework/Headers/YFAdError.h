@@ -37,6 +37,7 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_10010  = 10010,
     YFAdErrorCode_10011  = 10011,
     YFAdErrorCode_10012  = 10012,
+    YFAdErrorCode_10013  = 10013,
 
     //快手
     YFAdErrorCode_12001  = 12001,
@@ -47,6 +48,7 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_13001  = 13001,
     YFAdErrorCode_13002  = 13002,
     YFAdErrorCode_13003  = 13003,
+    YFAdErrorCode_13004  = 13004,
     
     //京东
     YFAdErrorCode_19001  = 19001,
@@ -77,7 +79,8 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_16005 = 16005,
     YFAdErrorCode_16006 = 16006,
     YFAdErrorCode_16007 = 16007,
-    
+    YFAdErrorCode_16008 = 16008,
+
     //优量汇
     YFAdErrorCode_14001 = 14001,
     YFAdErrorCode_14002 = 14002,

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Bayescom. All rights reserved.
 //  2024.11.11
 
-// tag 6.0.4.6(build:01)
+// tag 6.0.4.5(build:01)
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -27,6 +27,7 @@ extern NSString *const SDK_TAG_KS;
 extern NSString *const SDK_TAG_BAIDU;
 extern NSString *const SDK_TAG_YF;
 extern NSString *const SDK_TAG_JD;
+extern NSString *const SDK_TAG_GROMORE;
 
 extern NSString *const YFAdSDKTypeAdName;
 extern NSString *const YFAdSDKTypeAdNameSplash;
@@ -79,8 +80,14 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 /// tracker.yfanads.com/api/v2/ads/batchUpload
 @property (nonatomic, copy) NSString *fc_upload_url;
 
+/// tracker.yfanads.com/api/v1/ads/trace
+@property (nonatomic, copy) NSString *fc_trace_url;
+
 /// adx-data.yfanads.com/v1/r
 @property (nonatomic, copy) NSString *yf_conf_url;
+
+/// adx-data.yfanads.com/v1/r
+@property (nonatomic, copy) NSString *yf_caid_url;
 
 /// log.yfanads.com/ads/v1/upload/log?sign=
 @property (nonatomic, copy) NSString *yf_log_url;

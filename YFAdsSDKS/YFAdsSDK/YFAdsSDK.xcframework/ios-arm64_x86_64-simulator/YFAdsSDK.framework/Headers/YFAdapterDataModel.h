@@ -122,6 +122,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger videoWidth;
 
 @property (nonatomic, strong) NSDictionary *ext;
+
+
+#pragma mark =============== 聚合 ===============
+/**
+ * 聚合联盟中的ADN名
+ */
+@property (copy, nonatomic) NSString *subAdnName;
 @end
 
 NS_ASSUME_NONNULL_END

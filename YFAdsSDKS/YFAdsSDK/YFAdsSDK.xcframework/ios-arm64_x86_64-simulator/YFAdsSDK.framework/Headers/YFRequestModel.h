@@ -21,12 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *pid;
 //标识是否移动流量:( 1:移动流量，0:pc)默认=1  必传
 @property(nonatomic, assign) NSUInteger is_mobile;
-/*
- 0:只支持 http 协议
- 1:只支持 https 协议
- 2:http、https 协议都支持（不传默认此值）
- */
-@property(nonatomic, assign) NSUInteger secure;
+///*
+// 0:只支持 http 协议
+// 1:只支持 https 协议
+// 2:http、https 协议都支持（不传默认此值）
+// */
+//@property(nonatomic, assign) NSUInteger secure;
 /*
  性别:(-1:未知、01:男、10:女)
  */
@@ -80,6 +80,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *app_package;
 
 @property(nonatomic, copy) NSString *device_model;
+@property(nonatomic, copy) NSString *device_machine;
+
 //苹果应用市场的应用 ID
 @property(nonatomic, copy) NSString *appstore_id;
 
@@ -157,7 +159,7 @@ NS_ASSUME_NONNULL_BEGIN
  46001：中国联通，
  46003：中国电信
  */
-@property(nonatomic, copy) NSString *device_imsi;
+@property(nonatomic, copy) NSString *device_carrier;
 
 //Y 网络类型:(-1:未知，1:WIFI，2:4G，3:3G，4:2G, 6：5G）
 @property(nonatomic, assign) NSUInteger device_network;
@@ -188,6 +190,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *device_sys_init;
 // 手机系统编译时间（毫秒时间戳）
 @property(nonatomic, copy) NSString *device_syscmp_time;
+// 系统启动时间（毫秒时间戳）
+@property(nonatomic, copy) NSString *device_boot_time;
 // 无级网 SSID 名称
 @property(nonatomic, copy) NSString *device_ssid;
 // WIFI 路由器 MAC 地址
@@ -199,6 +203,25 @@ NS_ASSUME_NONNULL_BEGIN
 // Android 设备是否 ROOT。1--是, 0--否/ 未知(默认)
 //@property(nonatomic,assign)NSUInteger device_isroot;
 
+/// 磁盘可用空间，单位：字节
+@property(nonatomic, copy) NSNumber *device_disk_available;
+
+/// 磁盘总空间，单位：字节， 如“250685575168” (iOS 请求必须填)
+@property(nonatomic, copy) NSNumber *device_disk_total;
+
+/// 系统可用内存空间，单位：字节。每次调用都会重新获取
+@property(nonatomic, copy) NSNumber *device_mem_available;
+
+/// 系统总内存空间，单位：字节， 如“17179869184” ( iOS 请求必须填)
+@property(nonatomic, copy) NSNumber *device_mem_total;
+
+/// 设备名称的 MD5 值，取小写 16 进制的结果，长度为 32 个字节，示例："e910dddb2748c36b47fcde5dd720eec1"  (iOS 请求必须填)
+@property(nonatomic, copy) NSString *device_name;
+
+/// CPU 数⽬，示例: "4"(iOS 请求必须填)
+@property(nonatomic, copy) NSNumber *device_cpu_num;
+
+@property(nonatomic, copy) NSNumber *device_screenSize;
 
 @end
 

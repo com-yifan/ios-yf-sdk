@@ -19,10 +19,17 @@ typedef NS_ENUM(NSInteger, YFSplashLocation) {
     YFSplashLocation_Left,//左边
 };
 
-typedef NS_ENUM(NSInteger, YFMotionManageRoute) {
-    YFMotionManager_Gravimeter,// 重力计
-    YFMotionManager_Gyroscope,// 陀螺仪
-    YFMotionManager_Accelerometer,// 加速度计
+//typedef NS_ENUM(NSInteger, YFMotionManageRoute) {
+//    YFMotionManager_Gravimeter,// 重力计
+//    YFMotionManager_Gyroscope,// 陀螺仪
+//    YFMotionManager_Accelerometer,// 加速度计
+//};
+
+typedef NS_OPTIONS(NSUInteger, YFMotionManageRoute) {
+    YFMotionManager_none           = 0,
+    YFMotionManager_Gravimeter     = 1 << 0,    // 重力计
+    YFMotionManager_Gyroscope      = 1 << 1,    // 陀螺仪
+    YFMotionManager_Accelerometer  = 1 << 2,    // 加速度计
 };
 
 typedef NS_ENUM(NSInteger, YFMotionSensitivity) {

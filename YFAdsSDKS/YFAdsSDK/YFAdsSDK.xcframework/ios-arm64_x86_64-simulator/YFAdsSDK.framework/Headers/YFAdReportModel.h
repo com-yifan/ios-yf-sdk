@@ -55,13 +55,30 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeCloseBTNAd = 15,
     /// 关闭广告
     YFAdSDKReportEventTypeCloseAd = 16,
+    /// 媒体调用展示当前已填充广告的最优层接口，无需等待亿帆SDK执行完成整体逻辑
+    YFAdSDKReportEventTypeForceReturn = 17,
+    /// 媒体调用展示当前已填充广告的最优层接口，请求失败
+    YFAdSDKReportEventTypeForceReturnFail = 19,
     /// 有填充但是ECPM过低被过滤
     YFAdSDKReportEventTypeLowECPMFill = 33,
+    /// 填充失败
+    YFAdSDKReportEventTypeFillFail = 109,
     /// 自渲染SDK展示 亿帆统计
     YFAdSDKReportEventTypeCustomSDKShow = 100,
     /// 亿帆监测的展示，以自渲染广告在手机屏幕中展示100%面积为准，同一个广告重复展示的情况只上报第一次展示
     YFAdSDKReportEventTypeExposure = 101,
-    
+    /// 实时初始化
+    YFAdSDKReportEventTypeRealTimeInit = 112,
+    /// 实时流量请求
+    YFAdSDKReportEventTypeRealTimeAdRequest = 116,
+    /// 实时流量填充
+    YFAdSDKReportEventTypeRealTimeAdFill = 117,
+    /// 实时展示
+    YFAdSDKReportEventTypeRealTimeAdShow = 114,
+    /// 实时点击
+    YFAdSDKReportEventTypeRealTimeAdClick = 115,
+    /// 实时填充上报
+    YFAdSDKReportEventTypeRealTimeAdFillFail = 119,
     /// app 配置同步
     YFAdSDKReportEventTypeAppRquestStart = 10001,
     YFAdSDKReportEventTypeAppRquestSuccess = 10002,
@@ -111,6 +128,19 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
 
 };
 
+/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 11 gromore 12 adx;  14 Tanx;
+typedef NS_ENUM(NSUInteger, YFAdnType) {
+    YFAdnTypeUnknow,
+    YFAdnTypeCSJ       = 1,
+    YFAdnTypeGDT       = 2,
+    YFAdnTypeBD        = 3,
+    YFAdnTypeKS        = 4,
+//    YFAdnTypeYF        = 5,
+    YFAdnTypeJD        = 9,
+    YFAdnTypeGM        = 11,
+    YFAdnTypeADX       = 12,
+    YFAdnTypeTX        = 14,
+};
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdReportModel : NSObject
@@ -154,8 +184,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *adnAppID;
 /// 广告商appID
 @property (nonatomic, copy) NSString *adnAppKey;
-/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 12 adx;  14 Tanx;
-@property (nonatomic, assign) NSInteger adnID;
+/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 11 gromore 12 adx;  14 Tanx;
+@property (nonatomic, assign) YFAdnType adnID;
 /// 广告商名称
 @property (nonatomic, copy) NSString *adnName;
 /// 广告类型
@@ -252,6 +282,9 @@ NS_ASSUME_NONNULL_BEGIN
 //8：中上
 //9：中下
 @property (nonatomic, assign) NSInteger cbp;
+
+/// 按钮样式  1：常规样式  2：通底大面积样式
+@property (nonatomic, assign) NSInteger bs;
 /// 关闭按钮出现时间
 @property (nonatomic, assign) NSInteger cbst;
 /// 物理键返回(安卓)
@@ -296,12 +329,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger dt;
 
 /// 额外信息
-@property (nonatomic, copy) NSString *msg;
+@property (nonatomic, nullable ,copy) NSString *msg;
 
 /// 融合Banner广告源比例尺寸，值：宽*高
 @property (nonatomic, copy) NSString *ss;
 /// 1 hidden
 @property (nonatomic, assign) BOOL haal;
+/// 快手滑动跳转
+@property (nonatomic, assign) BOOL sj;
 
 @property (nonatomic, assign) NSInteger bannerCarouselInterval;
 // 倒计时结束自动关闭 1：是 0：否

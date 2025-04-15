@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 创意类型（1:图片、2:视频、3:音频、4:纯文字、11:图标广告）当 值 为 4 时 ，srcUrls 可能 会不存在或为空
 @property(nonatomic, assign) NSUInteger creative_type;
 
-// 广告交互类型(0:网页跳转、1:下载) 默认值:0
+// 广告交互类型(0:网页跳转、1:下载、2:小程序) 默认值:0
 @property(nonatomic, assign) NSUInteger target_type;
 
 // 激励视频广告可点击范围：1：按钮可点击2：全屏可点击
