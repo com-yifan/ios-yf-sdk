@@ -1,6 +1,0 @@
-framework module YFAdsCSJAdapter {
-  umbrella header "YFAdsCSJAdapter.h"
-  export *
-
-  module * { export * }
-}

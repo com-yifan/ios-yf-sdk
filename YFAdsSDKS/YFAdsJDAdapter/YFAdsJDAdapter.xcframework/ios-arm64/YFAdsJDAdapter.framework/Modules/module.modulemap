@@ -1,6 +1,0 @@
-framework module YFAdsJDAdapter {
-  umbrella header "YFAdsJDAdapter.h"
-  export *
-
-  module * { export * }
-}

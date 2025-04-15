@@ -904,7 +904,6 @@
 				"${PODS_ROOT}/BUTTSDK/TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib",
 				"${PODS_ROOT}/BaiduMobAdSDK/baidumobadsdk.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/JADYun/JADYun.bundle",
-				"${PODS_ROOT}/../../YFAdsSDKS/YFAdsSDK/YFAdsSDKResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -913,7 +912,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ttplayer.metallib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/baidumobadsdk.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JADYun.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YFAdsSDKResource.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -1,6 +1,0 @@
-framework module YFAdsSDK {
-  umbrella header "YFAdsSDK.h"
-  export *
-
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-framework module YFAdsSubstrate {
-  umbrella header "YFAdsSubstrate.h"
-  export *
-
-  module * { export * }
-}
