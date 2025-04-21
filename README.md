@@ -178,6 +178,8 @@ pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 
 # 穿山甲【可选】
 pod 'YFAdsSDK/YFAdsCSJAdapter'
+# Gromore【可选】
+pod 'YFAdsSDK/YFAdsGROAdapter'
 # ⚠️注意：穿山甲6.6.1.0版本之后默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
 pod 'Ads-CN','6.7.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 # Gromore-Adn适配器
