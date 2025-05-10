@@ -65,7 +65,7 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeFillFail = 109,
     /// 自渲染SDK展示 亿帆统计
     YFAdSDKReportEventTypeCustomSDKShow = 100,
-    /// 亿帆监测的展示，以自渲染广告在手机屏幕中展示100%面积为准，同一个广告重复展示的情况只上报第一次展示
+    /// 亿帆监测的展示，以自渲染广告在手机屏幕中展示50%面积为准，同一个广告重复展示的情况只上报第一次展示
     YFAdSDKReportEventTypeExposure = 101,
     /// 实时初始化
     YFAdSDKReportEventTypeRealTimeInit = 112,

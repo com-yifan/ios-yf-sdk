@@ -3,7 +3,7 @@
 //  YFAdsGDTAdapter
 //
 //  Created by 麻明康 on 2024/12/5.
-//  6.0.5.0-build 01
+//
 
 #import <Foundation/Foundation.h>
 

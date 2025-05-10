@@ -1,14 +1,15 @@
-# 亿帆SDK对接⽂档: V6.0.5.0
+ # 亿帆SDK对接⽂档: V6.0.5.1
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.5.0 | 1. 更新升级联盟SDK<br/>2. 新增广告场景超时前主动调用展示的接口，减少因超时丢失广告展示机会，建议开屏场景使用，详见DemoSplashViewController<br/>3. 优化穿山甲直播拉流预算的接入方案，详见[穿山甲iOS直播拉流接入注意事项](#csj-live-streaming)<br/>4. 优化Gromore适配方案，详见Cocoapods集成方式<br />5. 广告样式优化<br/><font color="red">6.【通知】信息流、Banner类接口后续不再维护，统一使用“融合Banner”接口进行对接，建议涉及信息流、Banner场景的媒体联系亿帆运营同学提供最新的“融合Banner”广告位ID进行对接</font> |  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：新增Gromore-Adn适配器支持，podfile中增加以下内容（注意版本号）</br># Gromore-Adn适配器</br>pod 'GMBaiduAdapter', '5.370.2'</br>pod 'GMGdtAdapter', '4.15.10.2'</br>pod 'GMKsAdapter', '3.3.71.1'</br> </br>手动集成：将GMBaiduAdapter、GMGdtAdapter、GMKsAdapter三个适配器拖进项目里</font></br>必选：</br> 替换YFAdsSDK.xcframework | 2025.04.15 |
+| 6.0.5.1 | 1. 更新联盟SDK至618电商大促版本</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">注意：穿山甲不再兼容6.8.0.0以下的版本 </font></br> 2. 优化媒体自渲染接入方法，支持使用loadAd加载媒体自渲染广告<br />3. 修复已知问题。 | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.05.10 |
+| 6.0.5.0 | 1. 更新升级联盟SDK<br /> 2. 新增广告场景超时前主动调用展示的接口，减少因超时丢失广告展示机会，建议开屏场景使用，详见DemoSplashViewController<br /> 3. 优化穿山甲直播拉流预算的接入方案，详见[穿山甲iOS直播拉流接入注意事项](#csj-live-streaming)<br /> 4. 优化Gromore适配方案，详见Cocoapods集成方式<br />5. 广告样式优化<br /> <font color="red">6.【通知】信息流、Banner类接口后续不再维护，统一使用“融合Banner”接口进行对接，建议涉及信息流、Banner场景的媒体联系亿帆运营同学提供最新的“融合Banner”广告位ID进行对接</font> |  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：新增Gromore-Adn适配器支持，podfile中增加以下内容（注意版本号）</br># Gromore-Adn适配器</br>pod 'GMBaiduAdapter', '5.370.2'</br>pod 'GMGdtAdapter', '4.15.10.2'</br>pod 'GMKsAdapter', '3.3.71.1'</br> </br>手动集成：将GMBaiduAdapter、GMGdtAdapter、GMKsAdapter三个适配器拖进项目里</font></br>必选：</br> 替换主SDK及各适配器的xcframework | 2025.04.15 |
 | 6.0.4.6 | 1. 修复已知问题 | 必选：</br> 替换YFAdsSDK.xcframework | 2025.03.01 |
 | 6.0.4.5 | 1.性能优化 <br />2. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.xcframework；</br> 替换YFAdsKSAdapter.xcframework | 2025.02.21 |
 | 6.0.4.3 | 1.升级联盟SDK<br />2.移除Tanx SDK<br />3.优化按需集成联盟SDK的能力<br />4.优化媒体自渲染能力<br />5.性能优化<br />6.修复已知问题 | 必选：参照Podfile集成或手动导入集成；<br />移除Tanx : <font color="red">Cocoapods集成：Podfile中移除pod 'Tanx'和pod 'YFAdsSDK/YFAdsTXAdapter'；手动集成：移除TanxSDK.library和YFAdsTXAdapter.xcframework</font> | 2025.02.17 |
-| 6.0.4.1 | 1.联盟SDK升级<br/>2.广告场景优化<br/>3.广告样式优化<br/>4.屏幕适配方案优化<br/>5.Demo结构优化<br/>6.模块化，现已支持拆分引入<br/ >7.新增是否允许更改声道接口<br/>8.修复已知BUG | 必选：</br> 支持联盟适配器按需导入，参照Podfile集成； | 2024.12.31 |
+| 6.0.4.1 | 1.联盟SDK升级<br />2.广告场景优化<br />3.广告样式优化<br />4.屏幕适配方案优化<br />5.Demo结构优化<br />6.模块化，现已支持拆分引入<br />7.新增是否允许更改声道接口<br />8.修复已知BUG | 必选：</br> 支持联盟适配器按需导入，参照Podfile集成； | 2024.12.31 |
 | 6.0.3.6  | 1. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.12.10 |
 | 6.0.3.5  | 1. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.27 |
 | 6.0.3.4  | 1. 修复已知问题与性能优化                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.framework；</br> Podfile更新⼴告源SDK版本 | 2024.11.23 |
@@ -36,13 +37,13 @@
 
 |   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner |
 | :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: |
-| 穿山甲    | 6.7.1.7 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
-| 优量汇    | 4.15.30 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ |
-| 百青藤    | 5.39 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| 快手     | 3.3.75 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 穿山甲    | 6.8.0.7 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 优量汇    | 4.15.40 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ |
+| 百青藤    | 5.391 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
+| 快手     | 3.3.76.5 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ |
-| 亿帆     | 6.0.5.0 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| gromore  | 6.7.1.7 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ |
+| 亿帆     | 6.0.5.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
+| gromore  | 6.8.0.7 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
@@ -76,7 +77,7 @@
 
 前往项目的General中Frameworks,Libraries,and Embedded Content添加以下依赖库
 
-```
+``` Text
 // 公共依赖系统库【必须添加】
 AdSupport.framework
 AppTrackingTransparency.framework
@@ -135,41 +136,41 @@ AssetsLibrary.framework
 **1.Cocoapods导入**
 通过Cocoapods导⼊三⽅⼴告SDK，以及第三⽅依赖（如遇到拉不下来，可能是github访问问题，可以使⽤VPN），如不清楚需要接入的联盟平台，请咨询运营同学
 ***1.1***
-```
+``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.5.0'
+pod 'YFAdsSDK', '6.0.5.1'
 #  百度【必须】
-pod 'BaiduMobAdSDK','5.39'
+pod 'BaiduMobAdSDK','5.391'
 # 优量汇【必须】
-pod 'GDTMobSDK' ,'4.15.30'
+pod 'GDTMobSDK' ,'4.15.40'
 # 京东【必须】
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 # 穿山甲【必须】⚠️注意：穿山甲6.6.1.0版本之后默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
-pod 'Ads-CN','6.7.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 # Gromore-Adn适配器
-pod 'GMBaiduAdapter', '5.370.2'
-pod 'GMGdtAdapter', '4.15.10.2'
-pod 'GMKsAdapter', '3.3.71.1'
+pod 'GMBaiduAdapter', '5.38.0'
+pod 'GMGdtAdapter', '4.15.30.0'
+pod 'GMKsAdapter', '3.3.75.1'
 # 快手【必须】
-pod 'KSAdSDK','3.3.75'
+pod 'KSAdSDK','3.3.76.5'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
 ```
 ***1.2 拆分模块方式引入***
  <font color="red">注意，除了联盟SDK，还需要引入对应的亿帆适配器 pod 'YFAdsSDK/YFAds【XXX】Adapter'，如下代码中所示</font>
 
-```
+``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.5.0'
+pod 'YFAdsSDK/YFAdsSDK', '6.0.5.1'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
-pod 'BaiduMobAdSDK','5.39'
+pod 'BaiduMobAdSDK','5.391'
 
 # 优量汇【可选】
 pod 'YFAdsSDK/YFAdsGDTAdapter'
-pod 'GDTMobSDK' ,'4.15.30'
+pod 'GDTMobSDK' ,'4.15.40'
 
 # 京东【可选】
 pod 'YFAdsSDK/YFAdsJDAdapter'
@@ -181,15 +182,15 @@ pod 'YFAdsSDK/YFAdsCSJAdapter'
 # Gromore【可选】
 pod 'YFAdsSDK/YFAdsGROAdapter'
 # ⚠️注意：穿山甲6.6.1.0版本之后默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
-pod 'Ads-CN','6.7.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 # Gromore-Adn适配器
-pod 'GMBaiduAdapter', '5.370.2'
-pod 'GMGdtAdapter', '4.15.10.2'
-pod 'GMKsAdapter', '3.3.71.1'
+pod 'GMBaiduAdapter', '5.38.0'
+pod 'GMGdtAdapter', '4.15.30.0'
+pod 'GMKsAdapter', '3.3.75.1'
 
 #  快手【可选】
 pod 'YFAdsSDK/YFAdsKSAdapter'
-pod 'KSAdSDK','3.3.75'
+pod 'KSAdSDK','3.3.76.5'
 
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
@@ -204,8 +205,8 @@ TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/a
 ***2.3 接入说明***
 
 1. <font color="red">穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成</font>
-```
-    pod 'Ads-CN','6.7.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+``` Ruby
+    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
     pod 'TTSDKFramework', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
     # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
@@ -213,8 +214,8 @@ TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/a
         已知包含ffmpeg的三方库：快手内容包（非pod快手库）、ijkplayer、GPUImage2、KxMovie、MobileFFmpeg、FFmpeg-iOS
 
 2. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
-```
-    pod 'Ads-CN','6.7.1.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+``` Ruby
+    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
     pod 'TTSDK', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
@@ -235,7 +236,7 @@ TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/a
 
 如果应⽤开启了位置权限，SDK可以获取应⽤位置信息⽤以精准推送⼴告，需要在应⽤的 info.plist 添加相应权限提示信息，避免AppStore 审核被拒：
 
-```
+``` Text
 Privacy - Location When In Use Usage Description
 Privacy - Location Always and When In Use Usage Description
 Privacy - Location Always Usage Description
@@ -249,13 +250,13 @@ Privacy - Location Usage Description
 1.升级穿⼭甲 iOS SDK 3.4.2.3 及以上版本，升级优量汇4.12.3及以上版本，提供了iOS14与SKAdNetwork⽀持
 2.将SKAdNetwork ID 添加到 info.plist 中，以保证 SKAdNetwork 的正确运⾏，以下内容复制到您的info.plist中
 
-```
+``` Text
 穿⼭甲：238da6jt44.skadnetwork，22mmun2rn5.skadnetwork，x2jnk7ly8j.skadnetwork
 优量汇：f7s53z58qe.skadnetwork
 快手：r3y5dwb26t.skadnetwork
 ```
 
-```
+``` XML
 <key>SKAdNetworkItems</key>
   <array>
     <dict>
@@ -290,7 +291,7 @@ Privacy - Location Usage Description
 
 4.从 iOS 14 开始，在应⽤程序调⽤ App Tracking Transparency 向⽤户提跟踪授权请求之前，IDFA将不可⽤。 如果应⽤未提出此请求，应⽤获取到的 IDFA 将⾃动清零，可能会导致您的⼴告收⼊的降低
 
-```
+``` Objective-C
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
 #import <AdSupport/AdSupport.h>
 - (void)requestIDFA {
@@ -309,15 +310,21 @@ tionStatus status) {
 ***5.1背景***
 集成微信OpenSDK，可有效提升流量的填充和CPM值
 ***5.2集成步骤***
-在微信开发平台注册APPID和Universal Links
+在微信开放平台注册APPID和Universal Links
 集成微信open sdk
 提供APPID和Universal Links给运营进⾏绑定
+***5.3向微信注册***
+&nbsp;&nbsp;&nbsp;<font color="red">注意：6.0.5.1之后需要媒体自行注册微信opensdk</font>
+``` Object-C
+    [WXApi registerApp:@"<#微信开放平台APPID#>" universalLink:@"<#universalLink#>"];
+```
+
 
 **<font color="red">6.LSApplicationQueriesSchemes⽩名单设置：</font>**
 
 为了提升⼴告价值，需要在info.plist⾥⾯配置url⽩名单，确保配置在前50个以内。
 
-```
+``` XML
     <key>LSApplicationQueriesSchemes</key>
     <array>
 <!--	以下为必选配置-->
@@ -373,7 +380,7 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 ### 3.5 初始化SDK及全局配置
 
-```
+``` Objective-C
     [YFAdSDKManager setupSDKWithAppId:@"APPID"];
 ```
 
@@ -381,7 +388,7 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 
 ⽬前⽀持多维度的扩展字段，可以设置⾃定义数据，后台可以根据维度做云控和数据统计
 
-```
+``` Objective-C
     NSMutableDictionary * customDefine = [[NSMutableDictionary alloc] initWithCapacity:0];
 //    [customDefine setValue:@"c1" forKey:@"c1"];
 //    [customDefine setValue:@"c2" forKey:@"c2"];
@@ -1368,12 +1375,8 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
 41006 : @"优量汇广告展示失败",</br>
 41007 : @"优量汇广告异步请求的服务器验证失败",</br>
 
-## 6、 收集的数据类型
-
-|                                                       数据类型                                                        |                                   收集情况                                    |                                                      备注                                                      |
-| ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| 1.精确位置 Precise Location </br>2.粗略位置 Rough Location                                                             | 1.精确位置-可选收集</br> 2.粗略位置-不收集                                        | 会获取地理位置信息⽤于⼴告投放与反作弊。应⽤被⽤户授予地理位置权限时，会获取地理位置信息，不会主动获取地理位置权限及地理位置信息。 |
-| 设备ID                                                                                                               | 可选收集                                                                      | 设备ID当应⽤被⽤户授予⼴告追踪权限时，将获取idfa⽤于⼴告归因与追踪。                                                    |
-| 1.使⽤数据 UsageData </br> 2.产品交互ProductInteraction</br>3.⼴告数据Advertising Data</br>4.其他使⽤数据 OtherUsage Data | 1.使⽤数据-不收集</br>2.产品交互-不收集</br>3.⼴告数据-收集</br>4.其他使⽤数据-不收集 | 将统计⼴告数据，以⽤于⼴告主统计投放结果。展示 、点击 、转化                                                           |
-| 诊断Diagnostics</br>1.崩溃数据Crash Data</br>2.性能数据Performance Data</br>3.其他诊断数据 OtherDiagnostic Data           | 1.崩溃数据-收集</br>2.性能数据-收集其他</br>3.诊断数据-不收集                       | 崩溃数据联盟将收集联盟SDK带来的崩溃信息，以此来优化代码缺陷。性能数据联盟将收集SDK运⾏过程中性能数据，以优化SDK的性能。         |
-| 1.其他数据 OtherData </br>2.其他数据类型Other Data Types</br>                                                           | 收集                                                                         | 技术上我们还会收集⼀些设备信息（例如，设备型号、操作系统及版本、时区、⽹络类型等）。                                        |
+## 6、 隐私协议与合规指南
+根据国家监管要求，请您确保，您开发或运营的APP已配备符合监管要求的《隐私政策》文本，并明确告知终端用户，您的APP集成了亿帆SDK服务。请在《隐私政策》中补充说明本SDK收集和使用个人信息的目的、方式和范围，同时标明本SDK的开发运营者名称及其隐私政策链接。
+此外，您应在APP登录注册页面及首次运行时，通过弹窗、文本链接或附件等简洁、醒目且易于访问的方式，以清晰易懂的语言向用户展示《隐私政策》，确保用户在充分知情的情况下，自愿、明确地作出同意。
+亿帆隐私政策：https://www.yfanads.cn/privacy.html
+亿帆隐私合规指南：https://www.yfanads.cn/guideline.html

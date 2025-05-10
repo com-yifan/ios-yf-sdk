@@ -83,6 +83,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 设置插屏大小
 + (CGSize)getInsertSizeByType:(NSInteger)type;
 
+/// 插屏2.0尺寸取整
++ (CGSize)getInsertRoundSizeByType:(NSInteger)type;
+
 + (CGSize)getNewInsertSizeByType:(NSInteger)type;
 
 + (CGSize)getIconSizeByType:(NSInteger)type;
