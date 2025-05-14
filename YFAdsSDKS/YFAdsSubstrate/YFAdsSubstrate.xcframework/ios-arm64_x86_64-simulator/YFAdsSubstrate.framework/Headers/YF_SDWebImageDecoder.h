@@ -13,6 +13,6 @@
 
 @interface UIImage (YF_ForceDecode)
 
-+ (UIImage *)decodedImageWithImage:(UIImage *)image;
++ (UIImage *)yf_decodedImageWithImage:(UIImage *)image;
 
 @end
