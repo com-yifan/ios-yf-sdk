@@ -1,9 +1,10 @@
- # 亿帆SDK对接⽂档: V6.0.5.1
+ # 亿帆SDK对接⽂档: V6.0.5.2
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.0.5.2 | 1. 修复已知问题。 | 必选：</br> 替换主SDK | 2025.05.23 |
 | 6.0.5.1 | 1. 更新联盟SDK至618电商大促版本</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">注意：穿山甲不再兼容6.8.0.0以下的版本 </font></br> 2. 优化媒体自渲染接入方法，支持使用loadAd加载媒体自渲染广告<br />3. 修复已知问题。 | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.05.10 |
 | 6.0.5.0 | 1. 更新升级联盟SDK<br /> 2. 新增广告场景超时前主动调用展示的接口，减少因超时丢失广告展示机会，建议开屏场景使用，详见DemoSplashViewController<br /> 3. 优化穿山甲直播拉流预算的接入方案，详见[穿山甲iOS直播拉流接入注意事项](#csj-live-streaming)<br /> 4. 优化Gromore适配方案，详见Cocoapods集成方式<br />5. 广告样式优化<br /> <font color="red">6.【通知】信息流、Banner类接口后续不再维护，统一使用“融合Banner”接口进行对接，建议涉及信息流、Banner场景的媒体联系亿帆运营同学提供最新的“融合Banner”广告位ID进行对接</font> |  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：新增Gromore-Adn适配器支持，podfile中增加以下内容（注意版本号）</br># Gromore-Adn适配器</br>pod 'GMBaiduAdapter', '5.370.2'</br>pod 'GMGdtAdapter', '4.15.10.2'</br>pod 'GMKsAdapter', '3.3.71.1'</br> </br>手动集成：将GMBaiduAdapter、GMGdtAdapter、GMKsAdapter三个适配器拖进项目里</font></br>必选：</br> 替换主SDK及各适配器的xcframework | 2025.04.15 |
 | 6.0.4.6 | 1. 修复已知问题 | 必选：</br> 替换YFAdsSDK.xcframework | 2025.03.01 |
@@ -42,7 +43,7 @@
 | 百青藤    | 5.391 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
 | 快手     | 3.3.76.5 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ |
-| 亿帆     | 6.0.5.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
+| 亿帆     | 6.0.5.2 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
 | gromore  | 6.8.0.7 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ |
 
 **注意:**
@@ -138,7 +139,7 @@ AssetsLibrary.framework
 ***1.1***
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.5.1'
+pod 'YFAdsSDK', '6.0.5.2'
 #  百度【必须】
 pod 'BaiduMobAdSDK','5.391'
 # 优量汇【必须】
@@ -162,7 +163,7 @@ pod 'WechatOpenSDK-XCFramework'
 
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.5.1'
+pod 'YFAdsSDK/YFAdsSDK', '6.0.5.2'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
@@ -199,11 +200,14 @@ pod 'WechatOpenSDK-XCFramework'
 **2.穿山甲iOS直播拉流接入注意事项**
 ***2.1 背景***
 穿山甲直播拉流类预算有利于提升广告收益和广告价值。
-***2.2 接入说明***
+***2.2 获取 TeamID***
+接入穿山甲直播拉流广告需将TeamID提供到亿帆广告的运营同学，主要用于抖音校验媒体安全性。
+TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/account)，点击[会员资格详细信息](https://developer.apple.com/account#MembershipDetailsCard)，即可看到TeamID。
+***2.3 接入说明***
 
 1. <font color="red">穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成</font>
 ``` Ruby
-    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
     pod 'TTSDKFramework', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
     # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
@@ -212,7 +216,7 @@ pod 'WechatOpenSDK-XCFramework'
 
 2. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
 ``` Ruby
-    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
     pod 'TTSDK', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```

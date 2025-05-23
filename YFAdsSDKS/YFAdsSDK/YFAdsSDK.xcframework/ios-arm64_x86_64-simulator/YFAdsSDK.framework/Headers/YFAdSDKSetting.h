@@ -6,7 +6,7 @@
 //  Copyright © 2019 Bayescom. All rights reserved.
 //  2024.11.11
 
-// tag 6.0.5.1(build:01)
+// tag 6.0.5.2(build:01)
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
