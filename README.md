@@ -200,14 +200,12 @@ pod 'WechatOpenSDK-XCFramework'
 **2.穿山甲iOS直播拉流接入注意事项**
 ***2.1 背景***
 穿山甲直播拉流类预算有利于提升广告收益和广告价值。
-***2.2 获取 TeamID***
-接入穿山甲直播拉流广告需将TeamID提供到亿帆广告的运营同学，主要用于抖音校验媒体安全性。
-TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/account)，点击[会员资格详细信息](https://developer.apple.com/account#MembershipDetailsCard)，即可看到TeamID。
-***2.3 接入说明***
+
+***2.2 接入说明***
 
 1. <font color="red">穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成</font>
 ``` Ruby
-    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDKFramework', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
     # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
@@ -216,7 +214,7 @@ TeamID获取方法：进入[苹果开发者平台](https://developer.apple.com/a
 
 2. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
 ``` Ruby
-    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDK', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
