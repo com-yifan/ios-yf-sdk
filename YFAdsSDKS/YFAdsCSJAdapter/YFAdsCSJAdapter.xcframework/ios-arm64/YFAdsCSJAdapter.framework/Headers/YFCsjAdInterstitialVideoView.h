@@ -14,7 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)show;
 /// 点击视频
 @property(nonatomic,copy) void (^clickVideoBlk)(void);
+/// 关闭视频落地页
+@property(nonatomic, copy) void (^closeVideoDetailBlk)(void);
 
+- (void)openDetailController;
+- (void)closeOtherController;
+- (void)fakeClose;
 @end
 
 NS_ASSUME_NONNULL_END
