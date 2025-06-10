@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告位信息
 @property (nonatomic, strong) YFAdEventModel *eventModel;
 /// 点击视频 部分联盟点击视频额外回调
-@property(nonatomic, copy) void (^clickVideoBlk)(void);\
+@property(nonatomic, copy) void (^clickVideoBlk)(void);
 /// 关闭视频落地页
 @property(nonatomic, copy) void (^closeVideoDetailBlk)(void);
 /// 点击关闭
