@@ -467,7 +467,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
 
 
 }
@@ -529,7 +529,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
 
 }
 
@@ -578,7 +578,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
 
 }
 
@@ -635,7 +635,7 @@ self.splash.showLogoRequire = YES;
   
 }
 
-- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
    
 }
 
@@ -701,7 +701,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
 
 }
 
@@ -795,7 +795,7 @@ self.splash.showLogoRequire = YES;
 
 /// 广告加载失败
 /// 该回调只会触发一次
-- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
  
     [self deallocAd];
 
@@ -901,7 +901,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description {
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description {
     NSLog(@"广告展示失败 %s  error: %@ 详情:%@", __func__, error, description);
     //通知主线程刷新
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -969,7 +969,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
     [self deallocAd];
 }
 
@@ -1123,7 +1123,7 @@ self.splash.showLogoRequire = YES;
 
 /// 广告加载失败
 /// 该回调只会触发一次
-- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
     NSLog(@"广告展示失败 %s  error: %@ 详情:%@", __func__, error, description);
     [self showErrorWithDescription:description];
     [self deallocAd];
