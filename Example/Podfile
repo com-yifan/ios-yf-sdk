@@ -6,22 +6,22 @@ target 'YFAdsSDK_Example' do
   
   # 亿帆SDK【必须】
 #pod 'YFAdsSDK', :path => '../'
-  pod 'YFAdsSDK', '6.0.5.3'
+  pod 'YFAdsSDK', '6.0.5.4'
   #  百度【必须】
-  pod 'BaiduMobAdSDK','5.391'
+  pod 'BaiduMobAdSDK','5.394'
   # 优量汇【必须】
-  pod 'GDTMobSDK' ,'4.15.40'
+  pod 'GDTMobSDK' ,'4.15.41'
   # 京东【必须】
   pod 'JADYun', '2.6.8'
   pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
   #  穿山甲【必须】
-  pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+  pod 'Ads-CN','6.9.1.2', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
   # Gromore-Adn适配器
-  pod 'GMBaiduAdapter', '5.38.0'
-  pod 'GMGdtAdapter', '4.15.30.0'
-  pod 'GMKsAdapter', '3.3.75.1'
+  pod 'GMBaiduAdapter', '5.39.0'
+  pod 'GMGdtAdapter', '4.15.40.1'
+  pod 'GMKsAdapter', '3.3.76.1'
   #  快手【必须】
-  pod 'KSAdSDK','3.3.76.5'
+  pod 'KSAdSDK','4.6.30.1'
   # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
   pod 'WechatOpenSDK-XCFramework'
  
