@@ -3,7 +3,7 @@
 //  YFAdsCSJAdapter
 //
 //  Created by 麻明康 on 2024/12/5.
-// build 2025.06.05 18:00
+//
 
 #import <Foundation/Foundation.h>
 
