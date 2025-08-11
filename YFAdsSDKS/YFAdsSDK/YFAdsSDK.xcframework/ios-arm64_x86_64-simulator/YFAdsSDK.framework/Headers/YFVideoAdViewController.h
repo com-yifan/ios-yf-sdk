@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  This method is called when video ad slot has been shown.
  */
-- (void)yfVideoAdDidVisible:(YFVideoAdViewController *)videoAdVC;
+- (void)yfVideoAdDidVisible:(YFVideoAdViewController *)videoAdVC error:(nullable NSError *)error;
 
 /**
  This method is called when video ad is closed.
@@ -69,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) YFVideoAdViewControllerType videoType;
 
 @property (nonatomic, assign) BOOL autoClick;
+
+@property (nonatomic) BOOL hasExposed;
 
 @end
 

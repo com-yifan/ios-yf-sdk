@@ -38,6 +38,8 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_10011  = 10011,
     YFAdErrorCode_10012  = 10012,
     YFAdErrorCode_10013  = 10013,
+    YFAdErrorCode_10014  = 10014,
+    YFAdErrorCode_10015  = 10015,
 
     //快手
     YFAdErrorCode_12001  = 12001,
@@ -61,7 +63,8 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_15004  = 15004,
     YFAdErrorCode_15005  = 15005,
     YFAdErrorCode_15006  = 15006,
-    
+    YFAdErrorCode_15007  = 15007,
+
     //穿山甲
     YFAdErrorCode_11001 = 11001,
     YFAdErrorCode_11002 = 11002,
@@ -80,6 +83,8 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_16006 = 16006,
     YFAdErrorCode_16007 = 16007,
     YFAdErrorCode_16008 = 16008,
+    YFAdErrorCode_16009 = 16009,
+
 
     //优量汇
     YFAdErrorCode_14001 = 14001,

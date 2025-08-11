@@ -49,9 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 单层广告数据
 - (void)loadCrossParallelSupplier:(id)model;
 
-/// 加载下个渠道
-- (void)loadNextSupplierIfHas;
-
 /// 调用展示当前已填充广告的最优层，无需等待亿帆SDK执行完成整体逻辑
 - (void)takeResultImmediately;
 @end

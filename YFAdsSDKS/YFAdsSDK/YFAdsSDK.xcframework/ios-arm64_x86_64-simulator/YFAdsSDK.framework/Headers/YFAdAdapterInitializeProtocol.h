@@ -18,6 +18,8 @@
 + (NSString * _Nonnull)platformSDKVersion;
 /// 联盟平台
 + (NSString * _Nonnull)platform;
+/// 适配器版本号
++ (NSString * _Nonnull)adapterVersion;
 /// 初始化SDK
 + (void)initializeSDKWithContext:(YFAdAdapterInitializeContext * _Nonnull)context completion:(void (^_Nullable)(BOOL success, NSError * _Nullable error))completion;
 

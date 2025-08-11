@@ -31,7 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 头部竞价
 @property (nonatomic, assign) NSInteger headBidding;
 
-@property (nonatomic, assign) BOOL isLayerTimeout;
+/// 是否已经超时请求
+@property (nonatomic, assign) BOOL isRequestTimeout;
 /// 是否底价过滤(返回填充但是底价过滤了)
 @property (nonatomic, assign) BOOL isFloorPriceFilter;
 

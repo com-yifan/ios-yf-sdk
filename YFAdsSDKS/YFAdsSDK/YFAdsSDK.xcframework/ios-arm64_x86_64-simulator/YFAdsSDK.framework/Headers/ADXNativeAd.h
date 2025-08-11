@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * NativeAd ad did visible
  */
-- (void)adxNativeAdDidVisible:(ADXNativeAd *)nativeAd;
+- (void)adxNativeAdDidVisible:(ADXNativeAd *)nativeAd error:(nullable NSError *)error;
 /**
  * NativeAd ad did click
  */

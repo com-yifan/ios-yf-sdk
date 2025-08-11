@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  This method is called when video ad slot has been shown.
  */
-- (void)yfRewardedVideoAdDidVisible:(YFRewardedVideoAd *)rewardedVideoAd;
+- (void)yfRewardedVideoAdDidVisible:(YFRewardedVideoAd *)rewardedVideoAd error:(nullable NSError *)error;
 
 /**
  This method is called when video ad is closed.

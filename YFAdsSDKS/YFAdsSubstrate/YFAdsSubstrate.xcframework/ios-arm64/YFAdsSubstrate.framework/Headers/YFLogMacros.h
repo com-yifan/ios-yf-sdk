@@ -91,7 +91,19 @@
 #define YFLogError(frmt, ...)   LOG_MAYBE(NO,                LOG_LEVEL_DEF, YFLogFlagError,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
 #define YFLogWarn(frmt, ...)    LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, YFLogFlagWarning, 0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
 #define YFLogInfo(frmt, ...)    LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, YFLogFlagInfo,    0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
+
+//#ifdef DEBUG
 #define YFLogDebug(frmt, ...)   LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, YFLogFlagDebug,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
+//#else
+//#define YFLogDebug(...)
+//#endif
+
+//#ifdef DEBUG
+//#define YFLogDebugOnly(frmt, ...)   LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, YFLogFlagDebug,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
+//#else
+//#define YFLogDebugOnly(...)
+//#endif
+
 #define YFLogVerbose(frmt, ...) LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, YFLogFlagVerbose, 0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
 
 #define YFLogErrorToYFLog(YFLog, frmt, ...)   LOG_MAYBE_TO_YFLog(YFLog, NO,                LOG_LEVEL_DEF, YFLogFlagError,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)

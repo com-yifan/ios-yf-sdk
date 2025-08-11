@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <YFAdsSubstrate/YF_SDWebImageCompat.h>
 
-@interface UIImage (YFForceDecode)
+@interface UIImage (YF_ForceDecode)
 
 + (UIImage *)yf_decodedImageWithImage:(UIImage *)image;
 

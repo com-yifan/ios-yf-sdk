@@ -4,7 +4,7 @@
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.6.0 | 1.竞价逻辑优化，提升广告加载效率和广告价值；<br />2.修复已知问题; <br />3.直播拉流接入方式更新<br />&emsp;&emsp;&emsp;pod 'Ads-CN', '7.0.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']<br />&emsp;&emsp;&emsp;不再需要针对原本是否包含ffmpeg单独处理| 必选：</br> 替换全部SDK | 2025.08.08 |
+| 6.0.6.0 | 1.竞价逻辑优化，提升广告加载效率和广告价值；<br />2. 开屏、激励视频、全屏视频广告样式优化 <br />3. 媒体自渲染能力优化 <br />4. 平板设备适配优化 <br />5.直播拉流接入方式更新<br />&emsp;&emsp;&emsp;pod 'Ads-CN', '7.0.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']<br />&emsp;&emsp;&emsp;不再需要针对原本是否包含ffmpeg单独处理 <br />&emsp;&emsp;&emsp;<font color="red">注意：旧版本有 按照 [方法二（推荐）-2.2](#csj-live-streaming-readme) 方式集成 的，需要去掉 TTSDKFramework</font>  <br />6.修复已知问题;| 必选：</br> 替换全部SDK | 2025.08.11 |
 | 6.0.5.4 | 1. 升级适配穿山甲、优量汇、快手、百度合规整改版本SDK；<br />2.修复已知问题 | 必选：</br> 替换全部SDK | 2025.07.18 |
 | 6.0.5.3 | 1.修复已知问题。 | 必选：</br> 替换主SDK | 2025.06.10 |
 | 6.0.5.2 | 1. 修复已知问题。 | 必选：</br> 替换主SDK | 2025.05.23 |
@@ -206,10 +206,11 @@ pod 'WechatOpenSDK-XCFramework'
 <font color="red">pod 'Ads-CN', '7.0.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 已按照动态库方式集成直播拉流，不再需要单独处理，原本有按照已包含FFmpeg库方式集成的，需要辛苦去掉一下 TTSDKFramework</font>
 
-<del>
+<a name="csj-live-streaming-readme"></a>
 
-***2.2 接入说明***
-1. <font color="red">穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成</font>
+***2.2 ~~接入说明~~***
+
+1. ~~<font color="red">穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成</font>~~
 ``` Ruby
     pod 'Ads-CN','6.9.1.2', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDKFramework', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
@@ -218,14 +219,13 @@ pod 'WechatOpenSDK-XCFramework'
 ```
         已知包含ffmpeg的三方库：快手内容包（非pod快手库）、ijkplayer、GPUImage2、KxMovie、MobileFFmpeg、FFmpeg-iOS
 
-2. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
+2. ~~如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级~~
 ``` Ruby
     pod 'Ads-CN','6.9.1.2', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDK', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
 
-</del>
 
 #### <font color="red">注意事项：</font>
 
@@ -335,41 +335,41 @@ tionStatus status) {
 ``` XML
     <key>LSApplicationQueriesSchemes</key>
     <array>
-<!--	以下为必选配置-->
-		<string>alipays</string>
-		<string>taptap</string>
-		<string>tbopen</string>
-		<string>taobaolite</string>
-		<string>duapp</string>
-		<string>qiyi-iphone</string>
-		<string>baiduboxlite</string>
-		<string>diditaxi</string>
+<!--    以下为必选配置-->
+        <string>alipays</string>
+        <string>taptap</string>
+        <string>tbopen</string>
+        <string>taobaolite</string>
+        <string>duapp</string>
+        <string>qiyi-iphone</string>
+        <string>baiduboxlite</string>
+        <string>diditaxi</string>
         <string>snssdk1128</string>
-		<string>snssdk2329</string>
-		<string>douyutv</string>
-		<string>eleme</string>
-		<string>openApp.jdMobile</string>
-		<string>openjdjrapp</string>
-		<string>kwai</string>
-		<string>ksnebula</string>
-		<string>iMeituan</string>
-		<string>pinduoduo</string>
-		<string>tmallopen</string>
-		<string>sinaweibo</string>
-		<string>VSSpecialSwitch</string>
-		<string>fleamarket</string>
-		<string>youku</string>
-		<string>zhihu</string>
-		<string>ucbrowser</string>
-		<string>douyuapp</string>
-<!--	以下为推荐配置-->
-		<string>autohome</string>
-		<string>taobaolive</string>
-		<string>dangdang</string>
-		<string>quark</string>
-		<string>sky20170605</string>
-		<string>yymobile</string>
-		<string>meituanwaimai</string>
+        <string>snssdk2329</string>
+        <string>douyutv</string>
+        <string>eleme</string>
+        <string>openApp.jdMobile</string>
+        <string>openjdjrapp</string>
+        <string>kwai</string>
+        <string>ksnebula</string>
+        <string>iMeituan</string>
+        <string>pinduoduo</string>
+        <string>tmallopen</string>
+        <string>sinaweibo</string>
+        <string>VSSpecialSwitch</string>
+        <string>fleamarket</string>
+        <string>youku</string>
+        <string>zhihu</string>
+        <string>ucbrowser</string>
+        <string>douyuapp</string>
+<!--    以下为推荐配置-->
+        <string>autohome</string>
+        <string>taobaolive</string>
+        <string>dangdang</string>
+        <string>quark</string>
+        <string>sky20170605</string>
+        <string>yymobile</string>
+        <string>meituanwaimai</string>
     </array>
 ```
 
@@ -437,7 +437,7 @@ SDK⾥所有的跳转均采⽤present的⽅式，请确保传⼊的rootViewContr
 UIViewController *rootVC = self.window.rootViewController;
 // 初始化自定义的广告背景图
 if (!_splashBackgroundView)
-	_splashBackgroundView = [UIImageView new];
+    _splashBackgroundView = [UIImageView new];
 _splashBackgroundView.image = [UIImage imageNamed:@"splashBg"];
 // 自定义的背景图添加至主控制器 广告关闭或者失败时进行移除
 [rootVC.view addSubview:_splashBackgroundView];
@@ -520,12 +520,12 @@ self.splash.showLogoRequire = YES;
 
 - (void)loadAdAndShow {
   // 期望的广告尺寸
-	UIView *contentV = [[UIView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 		self.view.bounds.size.width * 400.0 /600.0)];
- 	[self.view addSubview:contentV];
+    UIView *contentV = [[UIView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width,         self.view.bounds.size.width * 400.0 /600.0)];
+     [self.view addSubview:contentV];
  // viewController建议传入最上层可见控制器，以免造成无法推出落地页影响转化和收益
-	_fcAdBanner = [[YFAdBanner alloc] initWithAdUnitID:pID adContainer:contentV viewController:self];
-	_fcAdBanner.delegate = self;
-	[_fcAdBanner loadAndShowAd];
+    _fcAdBanner = [[YFAdBanner alloc] initWithAdUnitID:pID adContainer:contentV viewController:self];
+    _fcAdBanner.delegate = self;
+    [_fcAdBanner loadAndShowAd];
 }
  ```
 
@@ -741,9 +741,9 @@ self.splash.showLogoRequire = YES;
  - (void)loadAdAndShow {
    // viewController建议传入最上层可见控制器，以免造成无法推出广告和落地页影响转化和收益
     _advanceFeed = [[YFAdNativeExpress alloc] initWithAdUnitID:@"广告位id" adContainer:nil  viewController:self adSize:CGSizeMake(self.view.bounds.size.width, 0)];
-   	_advanceFeed.delegate = self;
-   	_advanceFeed.count = 1;
-   	[_advanceFeed loadAndShowAd];
+       _advanceFeed.delegate = self;
+       _advanceFeed.count = 1;
+       [_advanceFeed loadAndShowAd];
 }
  ```
 
@@ -871,7 +871,7 @@ self.splash.showLogoRequire = YES;
 - (void)loadAndShowAd {
     [super loadAndShowAd];
     [self loadAdWithState:AdState_Normal];
-  	// viewController建议传入最上层可见控制器，以免造成无法推出广告落地页影响转化和收益
+      // viewController建议传入最上层可见控制器，以免造成无法推出广告落地页影响转化和收益
     self.adMediaRender = [[YFAdMediaRender alloc] initWithAdUnitID:@"广告位id" viewController:self];
     self.adMediaRender.delegate = self;
     _isAdLoaded = false;
@@ -1352,6 +1352,8 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
 10008 : @"超出当前配置的每天广告展示次数，请联系管理员",</br>
 10009 : @"超出当前配置的展示次数，请联系管理员",</br>
 10010 : @"广告单层超时",</br>
+10013 : @"广告配置为空，请确认是否已初始化SDK",</br>
+10015 : @"联盟初始化失败",</br>
 
 13001 : @"百度加载失败",</br>
 13002 : @"百度渲染失败",</br>
@@ -1375,6 +1377,16 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
 11006 : @"穿山甲广告展示失败",</br>
 11007 : @"穿山甲广告异步请求的服务器验证失败",</br>
 
+16001 : @"Gromore请求广告数据失败",</br>
+16002 : @"Gromore接收广告加载失败",</br>
+16003 : @"Gromore广告物料加载失败",</br>
+16004 : @"Gromore广告渲染失败",</br>
+16005 : @"Gromore视频广告播放完成发生错误",</br>
+16006 : @"Gromore广告展示失败",</br>
+16007 : @"Gromore广告异步请求的服务器验证失败",</br>
+16008 : @"Gromore广告聚合内部配置错误",</br>
+16009 : @"Gromore配置错误,渲染方式不匹配",</br>
+        
 41001 : @"优量汇请求广告数据失败",</br>
 41002 : @"优量汇接收广告加载失败",</br>
 41003 : @"优量汇广告物料加载失败",</br>

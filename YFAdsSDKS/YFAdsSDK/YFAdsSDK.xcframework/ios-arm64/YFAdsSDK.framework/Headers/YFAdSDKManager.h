@@ -19,9 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 初始化(新)
 + (void)setupSDKWithAppId:(NSString *)appId;
 
-/// 初始化
-+ (void)setupSDKWithAppId:(NSString *)appId config:(YFAdSDKSetting*(^)(YFAdSDKSetting *))config DEPRECATED_MSG_ATTRIBUTE(" 此方法将被替换为:+setupSDKWithAppId");;
-
 /// 应用ID
 + (NSString *)appID;
 

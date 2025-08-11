@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initModel:(id)model;
 - (instancetype)initOtherplatformModel:(id)model;
 - (instancetype)initGdtplatformModel:(id)model;
+- (void)changeShakeToTap;
 - (void)toStartMotion;
 - (void)toStopMotion;
 

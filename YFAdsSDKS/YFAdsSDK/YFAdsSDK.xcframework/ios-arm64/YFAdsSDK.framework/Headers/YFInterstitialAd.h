@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * interstitial ad did visible
  */
-- (void)yfInterstitialAdDidVisible:(YFInterstitialAd *)interstitialAd;
+- (void)yfInterstitialAdDidVisible:(YFInterstitialAd *)interstitialAd error:(nullable NSError *)error;
 /**
  * interstitial ad did click
  */

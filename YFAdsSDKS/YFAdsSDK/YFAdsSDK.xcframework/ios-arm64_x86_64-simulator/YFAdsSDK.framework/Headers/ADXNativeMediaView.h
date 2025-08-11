@@ -83,6 +83,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithFrame:(CGRect)frame andObject:(YFMaterialMeta *)object;
 
+- (instancetype)initWithSupplier:(YFAdEventModel*)eventModel;
+
 - (void)refreshData:(ADXNativeAd *)nativeAd;
 // 暂停
 - (void)pauseVideo;

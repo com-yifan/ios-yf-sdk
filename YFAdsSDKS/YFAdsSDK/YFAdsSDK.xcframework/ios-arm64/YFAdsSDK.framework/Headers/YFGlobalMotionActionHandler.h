@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, YFGlobalMotionViewStatus){
 /// 处理摇一摇事件响应
 -(void)yf_globalMotionActionHandler:(CMAccelerometerData *_Nullable) accelermotion;
 
+/// 处理扭一扭事件响应
+-(void)yf_globalTwistActionHandler:(CMDeviceMotion *_Nullable) motion;
+
 -(YFGlobalMotionViewStatus)getViewStatus;
 @end
 

@@ -18,7 +18,7 @@
 /**
  * interstitial ad did visible
  */
-- (void)yfInterstitialAdViewDidVisible;
+- (void)yfInterstitialAdViewDidVisibleWithError:(nullable NSError *)error;
 
 /**
  * interstitial ad did click

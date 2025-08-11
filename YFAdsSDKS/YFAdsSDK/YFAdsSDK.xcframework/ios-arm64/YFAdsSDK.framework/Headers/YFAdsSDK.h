@@ -171,6 +171,7 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdAdapterInitializeProtocol.h>
 #import <YFAdsSDK/YFAdAdapterInitializeClassLoader.h>
 #import <YFAdsSDK/YFAdDBManager.h>
+#import <YFAdsSDK/YFAdBaseSplashView.h>
 
 //#import <YFAdsSDK/YFGradientView.h>
 //#import <YFAdsSDK/NSObject+YFAdModel.h>

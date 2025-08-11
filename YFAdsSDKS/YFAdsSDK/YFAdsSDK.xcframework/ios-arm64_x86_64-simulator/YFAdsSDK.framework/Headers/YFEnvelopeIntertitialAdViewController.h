@@ -56,6 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSTimeInterval showInterval;
 /// 广告位信息
 @property (nonatomic, strong) YFAdEventModel *eventModel;
+/// 是否已曝光
+@property (nonatomic) BOOL hasExposed;
 /// 点击视频 部分联盟点击视频额外回调
 @property(nonatomic, copy) void (^clickVideoBlk)(void);
 /// 关闭视频落地页

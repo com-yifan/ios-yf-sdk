@@ -207,6 +207,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger cbde;
 
 @property (nonatomic, assign) NSInteger cbm;
+/// ADX激励视频5s点击样式
+@property (nonatomic, assign) NSInteger cte;
 
 @end
 

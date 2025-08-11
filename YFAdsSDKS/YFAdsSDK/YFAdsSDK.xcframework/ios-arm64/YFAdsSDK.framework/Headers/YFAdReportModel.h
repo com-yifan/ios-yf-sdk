@@ -89,6 +89,9 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeAdnInitSuccess = 10102,
     YFAdSDKReportEventTypeAdnInitFail = 10103,
     
+    /// 媒体调用load接口
+    YFAdSDKReportEventTypeAdsLoadStart = 10601,
+    
     /// ads  配置同步
     YFAdSDKReportEventTypeAdsRquestStart = 10201,
     YFAdSDKReportEventTypeAdsRquestSuccess = 10202,
@@ -116,9 +119,6 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeAdnRevealInitStart = 10501,
     YFAdSDKReportEventTypeAdnRevealInitSuccess = 10502,
     YFAdSDKReportEventTypeAdnRevealInitFail = 10503,
-    /// bidding竞胜结果(ecpm)
-    YFAdSDKReportEventTypeBiddingSuccess = 10601,
-    YFAdSDKReportEventTypeBiddingFail = 10602,
 
     /// 缓存
     YFAdSDKReportEventTypeCacheStart = 10801,
@@ -311,7 +311,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL resetIsToClick;
 /// 是否 自动跳转 0关闭 1是开启
 @property (nonatomic, assign) NSInteger ac;
-/// 平台错误码
+/// 平台错误码。上报一次事件后，会被置空，下次需要重新设置
 @property (nonatomic, copy) NSString *cd;
 
 /// 1;单向跳转
@@ -328,7 +328,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 设备类型
 @property (nonatomic, assign) NSInteger dt;
 
-/// 额外信息
+/// 额外信息。上报一次事件后，会被置空，下次需要重新设置
 @property (nonatomic, nullable ,copy) NSString *msg;
 
 /// 融合Banner广告源比例尺寸，值：宽*高
@@ -367,7 +367,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger cbm;
 // 缓存
 @property (nonatomic, assign) NSInteger cacheTimeout;
-/// 
+/// 激励视频点击5s样式是否开启 0关闭 1开启
+@property (nonatomic, assign) NSInteger cte;
+///
 @property (nonatomic, strong) NSArray<NSString *> *wURL;
 /// 同一次请求使用相同ua
 @property(nonatomic, copy) NSString *ua;

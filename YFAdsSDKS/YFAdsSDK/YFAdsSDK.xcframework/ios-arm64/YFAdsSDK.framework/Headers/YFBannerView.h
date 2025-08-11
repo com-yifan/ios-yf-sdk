@@ -5,6 +5,8 @@
 #import <YFAdsSDK/YFMaterialMeta.h>
 #import <YFAdsSDK/YFAdReportModel.h>
 #import <YFAdsSDK/YFVideoView.h>
+#import <YFAdsSDK/YFInvoker.h>
+NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, YFBannerViewType) {
     YFBannerViewTypeNormal,///普通banner
@@ -42,7 +44,7 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 /**
  *  曝光回调
  */
-- (void)yfBannerViewWillExpose:(YFBannerView *)bannerView;
+- (void)yfBannerViewWillExpose:(YFBannerView *)bannerView error:(nullable NSError *)error;
 
 /**
  *  点击回调
@@ -73,6 +75,8 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 @property(nonatomic, assign) YFBannerViewType type;
 @property(nonatomic, assign) YFPlayerState cuurentPlayState;
 @property (nonatomic, strong) YFVideoView *videoView;
+@property (nonatomic) BOOL hasExposed;
+
 ///是否播放完成
 @property (nonatomic, assign) BOOL playFinished;
 /**
@@ -120,3 +124,4 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 @end
 
 
+NS_ASSUME_NONNULL_END
