@@ -13,12 +13,7 @@
         "YF_NATIVE_ID":"68ddaa4f38804b75b92c65a354616236",
         "YF_DRAW_ID":"0bca3ac6d68c4edb9200e883a00e3da9",
         "YF_PATCH_ID":"acfd803e278b449fbd599e37bfed7d1d",
-        "YF_MEDIA_ID":"cb76dd74f3c848488d4138b7b0a74cc5",
-        "FC_CONF_URL":"http://api.yfanads.com/api/v2/ads/adsc",
-        "FC_UPLOAD_URL":"http://tracker.yfanads.com/api/v2/ads/batchUpload",
-        "YF_CONF_URL":"http://adx-data.yfanads.com/v1/r",
-        "YF_LOG_URL":"http://log.yfanads.com/ads/v1/upload/log?sign=",
-        "YF_DATA_URL":"http://api.yfanads.com/api/v1/ads/app"
+        "YF_MEDIA_ID":"b35944926a1842d185df9c56947c7333"
     }
 ]
 
