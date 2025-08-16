@@ -1,9 +1,12 @@
- # 亿帆SDK对接⽂档: V6.0.5.2
+ # 亿帆SDK对接⽂档: V6.0.5.5
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.0.5.5 | 1. 去除caid特供版本 | 必选：</br> 替换主SDK | 2025.08.16 |
+| 6.0.5.4 | 1. 升级适配穿山甲、优量汇、快手、百度合规整改版本SDK；<br />2.修复已知问题 | 必选：</br> 替换全部SDK | 2025.07.18 |
+| 6.0.5.3 | 1.修复已知问题。 | 必选：</br> 替换主SDK | 2025.06.10 |
 | 6.0.5.2 | 1. 修复已知问题。 | 必选：</br> 替换主SDK | 2025.05.23 |
 | 6.0.5.1 | 1. 更新联盟SDK至618电商大促版本</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">注意：穿山甲不再兼容6.8.0.0以下的版本 </font></br> 2. 优化媒体自渲染接入方法，支持使用loadAd加载媒体自渲染广告<br />3. 修复已知问题。 | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.05.10 |
 | 6.0.5.0 | 1. 更新升级联盟SDK<br /> 2. 新增广告场景超时前主动调用展示的接口，减少因超时丢失广告展示机会，建议开屏场景使用，详见DemoSplashViewController<br /> 3. 优化穿山甲直播拉流预算的接入方案，详见[穿山甲iOS直播拉流接入注意事项](#csj-live-streaming)<br /> 4. 优化Gromore适配方案，详见Cocoapods集成方式<br />5. 广告样式优化<br /> <font color="red">6.【通知】信息流、Banner类接口后续不再维护，统一使用“融合Banner”接口进行对接，建议涉及信息流、Banner场景的媒体联系亿帆运营同学提供最新的“融合Banner”广告位ID进行对接</font> |  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：新增Gromore-Adn适配器支持，podfile中增加以下内容（注意版本号）</br># Gromore-Adn适配器</br>pod 'GMBaiduAdapter', '5.370.2'</br>pod 'GMGdtAdapter', '4.15.10.2'</br>pod 'GMKsAdapter', '3.3.71.1'</br> </br>手动集成：将GMBaiduAdapter、GMGdtAdapter、GMKsAdapter三个适配器拖进项目里</font></br>必选：</br> 替换主SDK及各适配器的xcframework | 2025.04.15 |
@@ -38,13 +41,13 @@
 
 |   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner |
 | :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: |
-| 穿山甲    | 6.8.0.7 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
-| 优量汇    | 4.15.40 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ |
-| 百青藤    | 5.391 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| 快手     | 3.3.76.5 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 穿山甲    | 6.9.1.2 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 优量汇    | 4.15.41 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ |
+| 百青藤    | 5.394 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
+| 快手     | 4.6.30.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ |
-| 亿帆     | 6.0.5.2 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| gromore  | 6.8.0.7 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ |
+| 亿帆     | 6.0.5.5 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
+| gromore  | 6.9.1.2 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
@@ -139,22 +142,22 @@ AssetsLibrary.framework
 ***1.1***
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.5.2'
+pod 'YFAdsSDK', '6.0.5.5'
 #  百度【必须】
-pod 'BaiduMobAdSDK','5.391'
+pod 'BaiduMobAdSDK','5.394'
 # 优量汇【必须】
-pod 'GDTMobSDK' ,'4.15.40'
+pod 'GDTMobSDK' ,'4.15.41'
 # 京东【必须】
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 # 穿山甲【必须】⚠️注意：穿山甲6.6.1.0版本之后默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
-pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+pod 'Ads-CN','6.9.1.2', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 # Gromore-Adn适配器
-pod 'GMBaiduAdapter', '5.38.0'
-pod 'GMGdtAdapter', '4.15.30.0'
-pod 'GMKsAdapter', '3.3.75.1'
+pod 'GMBaiduAdapter', '5.39.0'
+pod 'GMGdtAdapter', '4.15.40.1'
+pod 'GMKsAdapter', '3.3.76.1'
 # 快手【必须】
-pod 'KSAdSDK','3.3.76.5'
+pod 'KSAdSDK','4.6.30.1'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
 ```
@@ -163,15 +166,15 @@ pod 'WechatOpenSDK-XCFramework'
 
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.5.2'
+pod 'YFAdsSDK/YFAdsSDK', '6.0.5.5'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
-pod 'BaiduMobAdSDK','5.391'
+pod 'BaiduMobAdSDK','5.394'
 
 # 优量汇【可选】
 pod 'YFAdsSDK/YFAdsGDTAdapter'
-pod 'GDTMobSDK' ,'4.15.40'
+pod 'GDTMobSDK' ,'4.15.41'
 
 # 京东【可选】
 pod 'YFAdsSDK/YFAdsJDAdapter'
@@ -183,15 +186,15 @@ pod 'YFAdsSDK/YFAdsCSJAdapter'
 # Gromore【可选】
 pod 'YFAdsSDK/YFAdsGROAdapter'
 # ⚠️注意：穿山甲6.6.1.0版本之后默认包含FFmpeg库，请确保app和其他三方库内不包含FFmpeg。如果原本包含，请按照2.3-1方式集成
-pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+pod 'Ads-CN','6.9.1.2', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
 # Gromore-Adn适配器
-pod 'GMBaiduAdapter', '5.38.0'
-pod 'GMGdtAdapter', '4.15.30.0'
-pod 'GMKsAdapter', '3.3.75.1'
+pod 'GMBaiduAdapter', '5.39.0'
+pod 'GMGdtAdapter', '4.15.40.0'
+pod 'GMKsAdapter', '3.3.76.1'
 
 #  快手【可选】
 pod 'YFAdsSDK/YFAdsKSAdapter'
-pod 'KSAdSDK','3.3.76.5'
+pod 'KSAdSDK','4.6.30.1'
 
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
@@ -205,7 +208,7 @@ pod 'WechatOpenSDK-XCFramework'
 
 1. <font color="red">穿山甲6.6.10版本之后默认包含FFmpeg库，如宿主app或其他三方库原本已经包含FFmpeg库，按照如下集成</font>
 ``` Ruby
-    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'Ads-CN','6.9.1.2', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDKFramework', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     # 此版本不再依赖OneKit，可以删除，如有其他组件依赖OneKit可保留
     # pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
@@ -214,7 +217,7 @@ pod 'WechatOpenSDK-XCFramework'
 
 2. 如宿主app在穿山甲SDK 6.4.1.0版本前已经接入了直播拉流，需要移除OneKit，更新版本号完成升级
 ``` Ruby
-    pod 'Ads-CN','6.8.0.7', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
+    pod 'Ads-CN','6.9.1.2', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive']
     pod 'TTSDK', '1.45.1.8-premium', :subspecs => ['LivePull-Lite'], :source => 'https://github.com/volcengine/volcengine-specs'
     #pod 'OneKit', '1.4.2', :subspecs => ['BaseKit', 'Reachability', 'ByteDanceKit/Foundation'], :source => 'https://github.com/volcengine/volcengine-specs'
 ```
@@ -467,7 +470,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
 
 
 }
@@ -529,7 +532,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
 
 }
 
@@ -578,7 +581,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
 
 }
 
@@ -635,7 +638,7 @@ self.splash.showLogoRequire = YES;
   
 }
 
-- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
    
 }
 
@@ -701,7 +704,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
 
 }
 
@@ -795,7 +798,7 @@ self.splash.showLogoRequire = YES;
 
 /// 广告加载失败
 /// 该回调只会触发一次
-- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
  
     [self deallocAd];
 
@@ -901,7 +904,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description {
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description {
     NSLog(@"广告展示失败 %s  error: %@ 详情:%@", __func__, error, description);
     //通知主线程刷新
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -969,7 +972,7 @@ self.splash.showLogoRequire = YES;
 }
 
 /// 广告加载失败
-- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
     [self deallocAd];
 }
 
@@ -1123,7 +1126,7 @@ self.splash.showLogoRequire = YES;
 
 /// 广告加载失败
 /// 该回调只会触发一次
-- (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description{
+- (void)fcAdFailedWithError:(NSError *)error description:(NSDictionary *)description{
     NSLog(@"广告展示失败 %s  error: %@ 详情:%@", __func__, error, description);
     [self showErrorWithDescription:description];
     [self deallocAd];
