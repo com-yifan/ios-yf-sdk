@@ -86,9 +86,6 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 /// adx-data.yfanads.com/v1/r
 @property (nonatomic, copy) NSString *yf_conf_url;
 
-/// adx-data.yfanads.com/v1/r
-@property (nonatomic, copy) NSString *yf_caid_url;
-
 /// log.yfanads.com/ads/v1/upload/log?sign=
 @property (nonatomic, copy) NSString *yf_log_url;
 
