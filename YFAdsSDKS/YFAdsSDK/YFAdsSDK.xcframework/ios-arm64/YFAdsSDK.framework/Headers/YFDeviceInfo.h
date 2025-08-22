@@ -59,8 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 苹果设备型号，如iPhone 15 Pro Max，iPad Pro 11-inch (M4)
 @property(nonatomic, strong) NSString *apple_model;
 
-/// caid 数组 可能为空
-@property (nonatomic, strong, nullable) NSArray <NSDictionary *>*caidInfo;
+@property (nonatomic, strong, nullable) NSArray <NSDictionary *>*cInfo;
 
 
 /// 设备启动时间

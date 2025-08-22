@@ -1,29 +1,28 @@
 use_frameworks!
 
-platform :ios, '12.0'
+platform :ios, '13.0'
 source 'https://github.com/CocoaPods/Specs.git'
 target 'YFAdsSDK_Example' do
   
   # 亿帆SDK【必须】
 #pod 'YFAdsSDK', :path => '../'
-  pod 'YFAdsSDK', '6.0.5.4'
+  pod 'YFAdsSDK', '6.0.6.1'
   #  百度【必须】
-  pod 'BaiduMobAdSDK','5.394'
+  pod 'BaiduMobAdSDK','5.400'
   # 优量汇【必须】
-  pod 'GDTMobSDK' ,'4.15.41'
+  pod 'GDTMobSDK' ,'4.15.50'
   # 京东【必须】
   pod 'JADYun', '2.6.8'
   pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
-  #  穿山甲【必须】
-  pod 'Ads-CN','6.9.1.2', :subspecs => ['BUAdSDK', 'CSJMediation', 'BUAdLive-Lib']
+  #  穿山甲【必须】注意：穿山甲70xx版本运行环境配置发生变更，支持系统iOS 13.0及以上版本，请Xcode修改项目支持最低13.0，如需支持13.0以下请联系技术同学获取支持的穿山甲版本
+  pod 'Ads-CN', '7.0.1.3', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
   # Gromore-Adn适配器
   pod 'GMBaiduAdapter', '5.39.0'
-  pod 'GMGdtAdapter', '4.15.40.1'
-  pod 'GMKsAdapter', '3.3.76.1'
-  #  快手【必须】
-  pod 'KSAdSDK','4.6.30.1'
-  # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
-  pod 'WechatOpenSDK-XCFramework'
+  pod 'GMGdtAdapter', '4.15.40.2'
+  pod 'GMKsAdapter', '3.3.76.2'
+  # 快手【必须】
+  pod 'KSAdSDK','4.7.20.1'
+  pod 'WechatOpenSDK'
  
  # Demo依赖库
   pod 'AFNetworking'

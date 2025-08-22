@@ -1152,7 +1152,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YFAdsSDK/PrefixHeader.pch";
 				INFOPLIST_FILE = "YFAdsSDK/YFAdsSDK-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "亿帆广告";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1191,7 +1191,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YFAdsSDK/PrefixHeader.pch";
 				INFOPLIST_FILE = "YFAdsSDK/YFAdsSDK-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "亿帆广告";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

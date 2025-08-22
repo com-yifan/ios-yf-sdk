@@ -87,7 +87,7 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 @property (nonatomic, copy) NSString *yf_conf_url;
 
 /// adx-data.yfanads.com/v1/r
-@property (nonatomic, copy) NSString *yf_caid_url;
+@property (nonatomic, copy) NSString *yf_info_url;
 
 /// log.yfanads.com/ads/v1/upload/log?sign=
 @property (nonatomic, copy) NSString *yf_log_url;
@@ -100,6 +100,8 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 @property (nonatomic, assign) BOOL limitPersonal;
 
 @property (nonatomic, assign) BOOL crashRecord;
+
+@property (nonatomic, assign) BOOL shakeAdEnable;
 
 @end
 

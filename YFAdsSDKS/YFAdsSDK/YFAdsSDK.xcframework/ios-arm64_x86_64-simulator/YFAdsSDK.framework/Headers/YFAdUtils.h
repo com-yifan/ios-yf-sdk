@@ -64,6 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)setConfDataWith:(NSString *)key data:(NSString *)jsonData;
 + (BOOL)enableAdxCb;
++ (BOOL)enableAdnCb:(YFAdnType)adn;
 /// 事件上报条数
 + (NSInteger)eventReportNum;
 // 设置关闭按钮
