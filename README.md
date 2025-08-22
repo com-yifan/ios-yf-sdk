@@ -1,9 +1,10 @@
-# 亿帆SDK对接⽂档: V6.0.6.0
+ # 亿帆SDK对接⽂档: V6.0.6.1
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.0.6.1 | 1. 升级联盟SDK<br/>2. 修复已知问题<br /><font color="red">注意：穿山甲70xx版本运行环境配置发生变更，支持系统iOS 13.0及以上版本，请Xcode修改项目支持最低13.0，如需支持13.0以下请联系技术同学获取支持的穿山甲版本</font> | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.08.22 |
 | 6.0.6.0 | 1. 竞价逻辑优化，提升广告加载效率和广告价值 <br />2. 开屏、激励视频、全屏视频广告样式优化 <br />3. 媒体自渲染能力优化 <br />4. 平板设备适配优化 <br />5. 直播拉流接入方式更新<br />&emsp;&emsp;&emsp;pod 'Ads-CN', '7.0.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']<br />&emsp;&emsp;&emsp;不再需要针对原本是否包含ffmpeg单独处理 <br />&emsp;&emsp;&emsp;<font color="red">注意：旧版本有 按照 [方法二（推荐）-2.2](#csj-live-streaming-readme) 方式集成 的，需要去掉 TTSDKFramework</font>  <br />6. 修复已知问题| 必选：</br> 替换全部SDK | 2025.08.11 |
 | 6.0.5.4 | 1. 升级适配穿山甲、优量汇、快手、百度合规整改版本SDK；<br />2. 修复已知问题 | 必选：</br> 替换全部SDK | 2025.07.18 |
 | 6.0.5.3 | 1. 修复已知问题 | 必选：</br> 替换主SDK | 2025.06.10 |
@@ -41,25 +42,25 @@
 
 |   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner |
 | :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: |
-| 穿山甲    | 7.0.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 穿山甲    | 7.0.1.3 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
 | 优量汇    | 4.15.50 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ |
 | 百青藤    | 5.400 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| 快手     | 4.6.30.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
+| 快手     | 4.7.20.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ |
-| 亿帆     | 6.0.6.0 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| gromore  | 7.0.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ |
+| 亿帆     | 6.0.6.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
+| gromore  | 7.0.1.3 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
 2.SDK⽀持的架构有： x86_64 arm64（**由于联盟支持架构变更，亿帆联盟适配器支持架构也对应删除了arm64架构。故可能不支持模拟器运行，请使用真机测试**）；
-3.原则上⽀持iOS12.0及及以上版本。如需支持较低版本，可通过拆分引入方式。
+3.原则上⽀持iOS13.0及及以上版本。如需支持较低版本，可通过拆分引入方式。
 
 ## 3. 快速接入
 
 ### 3.1 开发环境准备
 
 - 开发工具：推荐使用Xcode 14及以上版本（23年4月起，Xcode 14以下编译的包不再支持上架app store）
-- 部署目标：iOS 12.0及以上版本
+- 部署目标：iOS 13.0及以上版本。<font color="red">注意：穿山甲70xx版本运行环境配置发生变更，支持系统iOS 13.0及以上版本，请于Xcode修改项目支持最低13.0，如需支持13.0以下请联系技术同学获取支持的穿山甲版本</font> ）
 - 开发管理工具：[CocoaPods](https://cocoapods.org/)
 
 ### 3.2 引入SDK
@@ -142,7 +143,7 @@ AssetsLibrary.framework
 ***1.1***
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.6.0'
+pod 'YFAdsSDK', '6.0.6.1'
 #  百度【必须】
 pod 'BaiduMobAdSDK','5.400'
 # 优量汇【必须】
@@ -151,13 +152,13 @@ pod 'GDTMobSDK' ,'4.15.50'
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.0.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.0.1.3', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
 pod 'GMBaiduAdapter', '5.39.0'
 pod 'GMGdtAdapter', '4.15.40.2'
 pod 'GMKsAdapter', '3.3.76.2'
 # 快手【必须】
-pod 'KSAdSDK','4.6.30.1'
+pod 'KSAdSDK','4.7.20.1'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
 ```
@@ -166,7 +167,7 @@ pod 'WechatOpenSDK-XCFramework'
 
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.6.0'
+pod 'YFAdsSDK/YFAdsSDK', '6.0.6.1'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
@@ -186,7 +187,7 @@ pod 'YFAdsSDK/YFAdsCSJAdapter'
 # Gromore【可选】
 pod 'YFAdsSDK/YFAdsGROAdapter'
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.0.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.0.1.3', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
 pod 'GMBaiduAdapter', '5.39.0'
 pod 'GMGdtAdapter', '4.15.40.2'
@@ -194,7 +195,7 @@ pod 'GMKsAdapter', '3.3.76.2'
 
 #  快手【可选】
 pod 'YFAdsSDK/YFAdsKSAdapter'
-pod 'KSAdSDK','4.6.30.1'
+pod 'KSAdSDK','4.7.20.1'
 
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
@@ -203,7 +204,7 @@ pod 'WechatOpenSDK-XCFramework'
 **2.穿山甲iOS直播拉流接入注意事项**
 ***2.1 背景***
 穿山甲直播拉流类预算有利于提升广告收益和广告价值。
-<font color="red">pod 'Ads-CN', '7.0.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+<font color="red">pod 'Ads-CN', '7.0.1.3', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 已按照动态库方式集成直播拉流，不再需要单独处理，原本有按照已包含FFmpeg库方式集成的，需要辛苦去掉一下 TTSDKFramework</font>
 
 <a name="csj-live-streaming-readme"></a>
