@@ -23,8 +23,6 @@
 
 @property (nonatomic, strong) UIButton *voiceChange;
 
-@property (nonatomic, strong) UIButton *voiceProgress;
-
 @property (nonatomic, strong) UIButton *voicePause;
 
 @property (nonatomic, strong) UIButton *voicePlay;
@@ -43,6 +41,8 @@
     if(self = [super init]) {
         _adOffer = offer;
         _adView = adView;
+        //  进入默认播放状态
+        _isPlaying = YES;
     }
     return self;
     
@@ -63,40 +63,37 @@
 - (void)setupUI
 {
     [self.view addSubview:self.voiceChange];
-    [self.view addSubview:self.voiceProgress];
     [self.view addSubview:self.voicePause];
     [self.view addSubview:self.voicePlay];
     [self.view addSubview:self.adView];
     
-    [self.voicePlay mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo((kScreenW - kScaleW(26) * 4) / 3);
-        make.height.mas_equalTo((kScreenW - kScaleW(26) * 4) / 6);
-        make.left.equalTo(self.view.mas_left).offset(kScaleW(26));
-        make.bottom.equalTo(self.view.mas_bottom).offset(-kScaleW(26));
-    }];
+//    [self.voicePlay mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.mas_equalTo((kScreenW - kScaleW(26) * 4) / 3);
+//        make.height.mas_equalTo((kScreenW - kScaleW(26) * 4) / 6);
+//        make.left.equalTo(self.view.mas_left).offset(kScaleW(26));
+//        make.bottom.equalTo(self.view.mas_bottom).offset(-kScaleW(26));
+//    }];
     
     [self.voiceChange mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo((kScreenW - kScaleW(26) * 4) / 3);
         make.height.mas_equalTo((kScreenW - kScaleW(26) * 4) / 6);
         make.left.equalTo(self.view.mas_left).offset(kScaleW(26));
-        make.bottom.equalTo(self.voicePlay.mas_top).offset(-kScaleW(26));
+        make.bottom.equalTo(self.view.mas_bottom).offset(-kScaleW(52));
     }];
     
-    [self.voiceProgress mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.voicePause mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo((kScreenW - kScaleW(26) * 4) / 3);
         make.height.mas_equalTo((kScreenW - kScaleW(26) * 4) / 6);
         make.left.equalTo(self.voiceChange.mas_right).offset(kScaleW(26));
         make.bottom.equalTo(self.voiceChange.mas_bottom);
     }];
     
-    [self.voicePause mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.voicePlay mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo((kScreenW - kScaleW(26) * 4) / 3);
         make.height.mas_equalTo((kScreenW - kScaleW(26) * 4) / 6);
-        make.left.equalTo(self.voiceProgress.mas_right).offset(kScaleW(26));
+        make.left.equalTo(self.voicePause.mas_right).offset(kScaleW(26));
         make.bottom.equalTo(self.voiceChange.mas_bottom);
     }];
-    
-    
     
     [self.adView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(@400);
@@ -122,7 +119,7 @@
 - (void)clickPause
 {
     if (self.isPlaying) {
-//        [self.adView videoPause];
+        [self.adOffer pauseVideo];
         self.isPlaying = NO;
     }
 }
@@ -130,7 +127,7 @@
 - (void)clickPlay
 {
     if (!self.isPlaying) {
-//        [self.adView videoPlay];
+        [self.adOffer resumeVideo];
         self.isPlaying = YES;
     }
 }
@@ -148,30 +145,11 @@
         [_voiceChange setBackgroundImage:[self imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
         _voiceChange.layer.masksToBounds = YES;
         _voiceChange.layer.cornerRadius = 5;
-        [_voiceChange setTitle:@"Voice Change" forState:UIControlStateNormal];
+        [_voiceChange setTitle:@"视频静音" forState:UIControlStateNormal];
         _voiceChange.titleLabel.font = [UIFont systemFontOfSize:14];
         [_voiceChange addTarget:self action:@selector(clickChange) forControlEvents:UIControlEventTouchUpInside];
     }
     return _voiceChange;
-}
-
-- (UIButton *)voiceProgress
-{
-    if (!_voiceProgress) {
-        _voiceProgress = [[UIButton alloc] init];
-        _voiceProgress.layer.borderColor = kRGB(73, 109, 255).CGColor;
-        _voiceProgress.layer.borderWidth = kScaleW(3);
-        [_voiceProgress setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-        [_voiceProgress setTitleColor:kRGB(73, 109, 255) forState:UIControlStateNormal];
-        [_voiceProgress setBackgroundImage:[self imageWithColor:kRGB(73, 109, 255)] forState:UIControlStateHighlighted];
-        [_voiceProgress setBackgroundImage:[self imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
-        _voiceProgress.layer.masksToBounds = YES;
-        _voiceProgress.layer.cornerRadius = 5;
-        [_voiceProgress setTitle:@"Voice Progress" forState:UIControlStateNormal];
-        _voiceProgress.titleLabel.font = [UIFont systemFontOfSize:14];
-        [_voiceProgress addTarget:self action:@selector(clickProgress) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _voiceProgress;
 }
 
 - (UIButton *)voicePause
@@ -186,7 +164,7 @@
         [_voicePause setBackgroundImage:[self imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
         _voicePause.layer.masksToBounds = YES;
         _voicePause.layer.cornerRadius = 5;
-        [_voicePause setTitle:@"Voice Pause" forState:UIControlStateNormal];
+        [_voicePause setTitle:@"视频暂停" forState:UIControlStateNormal];
         _voicePause.titleLabel.font = [UIFont systemFontOfSize:14];
         [_voicePause addTarget:self action:@selector(clickPause) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -205,7 +183,7 @@
         [_voicePlay setBackgroundImage:[self imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
         _voicePlay.layer.masksToBounds = YES;
         _voicePlay.layer.cornerRadius = 5;
-        [_voicePlay setTitle:@"Voice Play" forState:UIControlStateNormal];
+        [_voicePlay setTitle:@"视频播放" forState:UIControlStateNormal];
         _voicePlay.titleLabel.font = [UIFont systemFontOfSize:14];
         [_voicePlay addTarget:self action:@selector(clickPlay) forControlEvents:UIControlEventTouchUpInside];
     }

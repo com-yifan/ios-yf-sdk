@@ -271,10 +271,8 @@
             make.right.equalTo(self);
             make.top.equalTo(self.iconImageView.mas_bottom).offset(25);
             make.bottom.equalTo(self);
-
         }];
     }
-   
 }
 
 /// 显示负反馈视图

@@ -897,6 +897,7 @@ self.splash.showLogoRequire = YES;
     [clickableViews addObjectsFromArray:@[selfRenderView.ctaLabel,selfRenderView.titleLabel,selfRenderView.textLabel,selfRenderView.mainImageView,selfRenderView.iconImageView]];
 
     [media registerContainer:selfRenderView withClickableViews:clickableViews];
+    [(YFAdMedia *)media trackVideoViewImpression];
     DemoMediaRenderDetailViewController *showVc = [[DemoMediaRenderDetailViewController alloc] initWithAdView:selfRenderView offer:media];
     [self.navigationController pushViewController:showVc animated:YES];
     

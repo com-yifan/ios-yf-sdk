@@ -3,7 +3,7 @@
 //  YFAdsBDAdapter
 //
 //  Created by 麻明康 on 2024/12/5.
-//
+//  tag.2025.08.28
 
 #import <Foundation/Foundation.h>
 
