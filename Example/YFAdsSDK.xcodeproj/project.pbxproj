@@ -20,7 +20,6 @@
 		039CF89C2D222E20000FA9E2 /* CellBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF8192D222E1F000FA9E2 /* CellBuilder.m */; };
 		039CF8A02D222E20000FA9E2 /* DemoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF7EA2D222E1F000FA9E2 /* DemoInterstitialViewController.m */; };
 		039CF8A12D222E20000FA9E2 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF88B2D222E1F000FA9E2 /* NSArray+Log.m */; };
-		039CF8A22D222E20000FA9E2 /* DemoBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF7DA2D222E1F000FA9E2 /* DemoBannerViewController.m */; };
 		039CF8A32D222E20000FA9E2 /* JDStatusBarLayoutMarginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF8802D222E1F000FA9E2 /* JDStatusBarLayoutMarginHelper.m */; };
 		039CF8A42D222E20000FA9E2 /* DemoMediaRenderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF7F02D222E1F000FA9E2 /* DemoMediaRenderDetailViewController.m */; };
 		039CF8A52D222E20000FA9E2 /* ExamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF81B2D222E1F000FA9E2 /* ExamTableViewCell.m */; };
@@ -42,7 +41,6 @@
 		039CF8BB2D222E20000FA9E2 /* DemoRewardVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF80A2D222E1F000FA9E2 /* DemoRewardVideoViewController.m */; };
 		039CF8BC2D222E20000FA9E2 /* DemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF82A2D222E1F000FA9E2 /* DemoBaseViewController.m */; };
 		039CF8BD2D222E20000FA9E2 /* DemoPreloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF8032D222E1F000FA9E2 /* DemoPreloadTableViewCell.m */; };
-		039CF8BF2D222E20000FA9E2 /* DemoListFeedExpressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF7F72D222E1F000FA9E2 /* DemoListFeedExpressViewController.m */; };
 		039CF8C02D222E20000FA9E2 /* JDStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF8842D222E1F000FA9E2 /* JDStatusBarStyle.m */; };
 		039CF8C22D222E20000FA9E2 /* DemoBannerChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF7FD2D222E1F000FA9E2 /* DemoBannerChangeViewController.m */; };
 		039CF8C32D222E20000FA9E2 /* UIAlertController+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CF82E2D222E1F000FA9E2 /* UIAlertController+Blocks.m */; };
@@ -107,8 +105,6 @@
 		03929B042DAE501E0050D93D /* DemoAdConfigVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAdConfigVC.m; sourceTree = "<group>"; };
 		03929B052DAE501E0050D93D /* DemoAdConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAdConfig.h; sourceTree = "<group>"; };
 		03929B062DAE501E0050D93D /* DemoAdConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAdConfig.m; sourceTree = "<group>"; };
-		039CF7D92D222E1F000FA9E2 /* DemoBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoBannerViewController.h; sourceTree = "<group>"; };
-		039CF7DA2D222E1F000FA9E2 /* DemoBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoBannerViewController.m; sourceTree = "<group>"; };
 		039CF7DC2D222E1F000FA9E2 /* DemoDrawAdCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoDrawAdCell.h; sourceTree = "<group>"; };
 		039CF7DD2D222E1F000FA9E2 /* DemoDrawAdCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoDrawAdCell.m; sourceTree = "<group>"; };
 		039CF7DE2D222E1F000FA9E2 /* DemoDrawNormalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoDrawNormalCell.h; sourceTree = "<group>"; };
@@ -129,8 +125,6 @@
 		039CF7F22D222E1F000FA9E2 /* DemoMediaRenderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoMediaRenderViewController.m; sourceTree = "<group>"; };
 		039CF7F32D222E1F000FA9E2 /* DemoNativeSelfRenderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoNativeSelfRenderView.h; sourceTree = "<group>"; };
 		039CF7F42D222E1F000FA9E2 /* DemoNativeSelfRenderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoNativeSelfRenderView.m; sourceTree = "<group>"; };
-		039CF7F62D222E1F000FA9E2 /* DemoListFeedExpressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoListFeedExpressViewController.h; sourceTree = "<group>"; };
-		039CF7F72D222E1F000FA9E2 /* DemoListFeedExpressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoListFeedExpressViewController.m; sourceTree = "<group>"; };
 		039CF7F92D222E1F000FA9E2 /* DemoPatchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoPatchViewController.h; sourceTree = "<group>"; };
 		039CF7FA2D222E1F000FA9E2 /* DemoPatchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoPatchViewController.m; sourceTree = "<group>"; };
 		039CF7FC2D222E1F000FA9E2 /* DemoBannerChangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoBannerChangeViewController.h; sourceTree = "<group>"; };
@@ -293,15 +287,6 @@
 			path = "AdConfig(参数配置)";
 			sourceTree = "<group>";
 		};
-		039CF7DB2D222E1F000FA9E2 /* BannerAd(横幅广告) */ = {
-			isa = PBXGroup;
-			children = (
-				039CF7D92D222E1F000FA9E2 /* DemoBannerViewController.h */,
-				039CF7DA2D222E1F000FA9E2 /* DemoBannerViewController.m */,
-			);
-			path = "BannerAd(横幅广告)";
-			sourceTree = "<group>";
-		};
 		039CF7E22D222E1F000FA9E2 /* DrawAd(视频流广告) */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,15 +350,6 @@
 			path = "MediaRender(媒体自渲染广告)";
 			sourceTree = "<group>";
 		};
-		039CF7F82D222E1F000FA9E2 /* NativeExpressAd(信息流广告) */ = {
-			isa = PBXGroup;
-			children = (
-				039CF7F62D222E1F000FA9E2 /* DemoListFeedExpressViewController.h */,
-				039CF7F72D222E1F000FA9E2 /* DemoListFeedExpressViewController.m */,
-			);
-			path = "NativeExpressAd(信息流广告)";
-			sourceTree = "<group>";
-		};
 		039CF7FB2D222E1F000FA9E2 /* PatchAd(贴片广告) */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,13 +409,11 @@
 			isa = PBXGroup;
 			children = (
 				03929B072DAE501E0050D93D /* AdConfig(参数配置) */,
-				039CF7DB2D222E1F000FA9E2 /* BannerAd(横幅广告) */,
 				039CF7E22D222E1F000FA9E2 /* DrawAd(视频流广告) */,
 				039CF7E52D222E1F000FA9E2 /* FullScreenVideoAd(全屏视频广告) */,
 				039CF7E82D222E1F000FA9E2 /* FusionBannerAd(融合横幅广告) */,
 				039CF7EB2D222E1F000FA9E2 /* InterstitialAd(插屏广告) */,
 				039CF7F52D222E1F000FA9E2 /* MediaRender(媒体自渲染广告) */,
-				039CF7F82D222E1F000FA9E2 /* NativeExpressAd(信息流广告) */,
 				039CF7FB2D222E1F000FA9E2 /* PatchAd(贴片广告) */,
 				039CF8082D222E1F000FA9E2 /* PreloadAd(预加载场景) */,
 				039CF80B2D222E1F000FA9E2 /* RewardVideoAd(激励视频) */,
@@ -834,9 +808,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YFAdsSDK_Example/Pods-YFAdsSDK_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${PODS_ROOT}/BUTTSDK/TTSDK/boringssl/ttboringssl.framework",
-				"${PODS_ROOT}/BUTTSDK/TTSDK/boringssl/ttcrypto.framework",
-				"${PODS_ROOT}/BUTTSDK/TTSDK/TTFFmpeg/LiveLite/TTFFmpeg.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/JPFPSStatus/JPFPSStatus.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -844,6 +815,17 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/STDebugConsole/STDebugConsole.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/Core/TTSDKCore.framework/TTSDKCore",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/LiveBase/TTSDKLiveBase.framework/TTSDKLiveBase",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/LivePlayer/Lite/TTSDKLivePlayerLite.framework/TTSDKLivePlayerLite",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/PlayerCore/LiveLite/TTSDKPlayerCoreLiveLite.framework/TTSDKPlayerCoreLiveLite",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/Reachability/TTSDKReachability.framework/TTSDKReachability",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/SSL/ttboringssl.framework/ttboringssl",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/SSL/ttcrypto.framework/ttcrypto",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/Strategy/Lite/TTSDKStrategyLite.framework/TTSDKStrategyLite",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/TTFFmpeg/LiveLite/TTFFmpeg.framework/TTFFmpeg",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/TTFFmpeg/LiveLite/TTSDKTTFFmpegLiveLite.framework/TTSDKTTFFmpegLiveLite",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/Tools/TTSDKTools.framework/TTSDKTools",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GDTMobSDK/GDTMobSDK.framework/GDTMobSDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GDTMobSDK/Tquic.framework/Tquic",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/KSAdSDK/KSAdSDK.framework/KSAdSDK",
@@ -851,9 +833,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ttboringssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ttcrypto.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTFFmpeg.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JPFPSStatus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
@@ -861,6 +840,17 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STDebugConsole.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKLiveBase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKLivePlayerLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKPlayerCoreLiveLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKReachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ttboringssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ttcrypto.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKStrategyLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTFFmpeg.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKTTFFmpegLiveLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKTools.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDTMobSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tquic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSAdSDK.framework",
@@ -900,8 +890,8 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YFAdsSDK_Example/Pods-YFAdsSDK_Example-resources.sh",
 				"${PODS_ROOT}/Ads-CN/SDK/CSJAdSDK.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/BUTTSDK/VeLive.bundle",
-				"${PODS_ROOT}/BUTTSDK/TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib",
+				"${PODS_ROOT}/BUTTSDKFramework/TTSDKFramework/TTSDKLiveBase/Resources/VeLive.bundle",
+				"${PODS_ROOT}/BUTTSDKFramework/TTSDKFramework/TTSDKPlayerCoreLiveLite/Resources/ttplayer.metallib",
 				"${PODS_ROOT}/BaiduMobAdSDK/baidumobadsdk.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/JADYun/JADYun.bundle",
 				"${PODS_ROOT}/YFAdsSDK/YFAdsSDKS/YFAdsSDK/YFAdsSDKResource.bundle",
@@ -939,7 +929,6 @@
 				03929B0B2DAE501E0050D93D /* DemoAdConfig.m in Sources */,
 				03929B0C2DAE501E0050D93D /* DemoAdConfigVC.m in Sources */,
 				039CF8A12D222E20000FA9E2 /* NSArray+Log.m in Sources */,
-				039CF8A22D222E20000FA9E2 /* DemoBannerViewController.m in Sources */,
 				039CF8A32D222E20000FA9E2 /* JDStatusBarLayoutMarginHelper.m in Sources */,
 				039CF8A42D222E20000FA9E2 /* DemoMediaRenderDetailViewController.m in Sources */,
 				039CF8A52D222E20000FA9E2 /* ExamTableViewCell.m in Sources */,
@@ -961,7 +950,6 @@
 				039CF8BB2D222E20000FA9E2 /* DemoRewardVideoViewController.m in Sources */,
 				039CF8BC2D222E20000FA9E2 /* DemoBaseViewController.m in Sources */,
 				039CF8BD2D222E20000FA9E2 /* DemoPreloadTableViewCell.m in Sources */,
-				039CF8BF2D222E20000FA9E2 /* DemoListFeedExpressViewController.m in Sources */,
 				039CF8C02D222E20000FA9E2 /* JDStatusBarStyle.m in Sources */,
 				039CF8C22D222E20000FA9E2 /* DemoBannerChangeViewController.m in Sources */,
 				039CF8C32D222E20000FA9E2 /* UIAlertController+Blocks.m in Sources */,

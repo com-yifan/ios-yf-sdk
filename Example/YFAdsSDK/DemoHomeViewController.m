@@ -197,18 +197,6 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
         },
         @{
             @"image":@"home_list_icon",
-            @"title":@"信息流广告",
-            @"class":@"DemoListFeedExpressViewController",
-            @"des":@"stream advertising",
-        },
-        @{
-            @"image":@"home_list_icon",
-            @"title":@"Banner广告",
-            @"class":@"DemoBannerViewController",
-            @"des":@"Flexible formats which could appear at the top, middle or bottom of your app.",
-        },
-        @{
-            @"image":@"home_list_icon",
             @"title":@"激励视频广告",
             @"class":@"DemoRewardVideoViewController",
             @"des":@"Users can engage with a video ad in exchange for in-app rewards.",
