@@ -93,7 +93,10 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     
     // Tanx
     YFAdErrorCode_17001 = 17001,
-    YFAdErrorCode_17002 = 17002
+    YFAdErrorCode_17002 = 17002,
+    
+    // AY
+    YFAdErrorCode_18001 = 18001,
     
 };
 

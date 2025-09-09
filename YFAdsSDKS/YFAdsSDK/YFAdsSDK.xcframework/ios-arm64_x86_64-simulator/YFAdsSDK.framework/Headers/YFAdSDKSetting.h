@@ -19,6 +19,7 @@ extern NSString *const Adapted_Version_CSJ;
 extern NSString *const Adapted_Version_KS;
 extern NSString *const Adapted_Version_BD;
 extern NSString *const Adapted_Version_JD;
+extern NSString *const Adapted_Version_AY;
 //extern NSString *const Adapted_Version_TX;
 
 extern NSString *const SDK_TAG_GDT;
@@ -28,6 +29,7 @@ extern NSString *const SDK_TAG_BAIDU;
 extern NSString *const SDK_TAG_YF;
 extern NSString *const SDK_TAG_JD;
 extern NSString *const SDK_TAG_GROMORE;
+extern NSString *const SDK_TAG_AY;
 
 extern NSString *const YFAdSDKTypeAdName;
 extern NSString *const YFAdSDKTypeAdNameSplash;

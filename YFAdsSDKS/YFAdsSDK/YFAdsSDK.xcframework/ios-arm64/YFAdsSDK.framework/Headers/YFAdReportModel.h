@@ -128,7 +128,7 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
 
 };
 
-/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 11 gromore 12 adx;  14 Tanx;
+/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 11 gromore 12 adx;  14 Tanx; 15 AY
 typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeUnknow,
     YFAdnTypeCSJ       = 1,
@@ -140,6 +140,7 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeGM        = 11,
     YFAdnTypeADX       = 12,
     YFAdnTypeTX        = 14,
+    YFAdnTypeAY        = 15,
 };
 NS_ASSUME_NONNULL_BEGIN
 
