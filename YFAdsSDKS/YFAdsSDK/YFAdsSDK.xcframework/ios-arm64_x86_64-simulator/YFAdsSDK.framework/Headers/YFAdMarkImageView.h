@@ -17,9 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadAdLogoType:(NSInteger)type;
 - (void)loadAdxCircleLogo;
+- (void)loadAdxRectLogo;
 - (void)loadAdLogo:(NSString *)logo;
 - (void)loadAdLogoImage:(UIImage *)logoImage;
 - (void)closeFeedback;
+- (void)loadAdBlackLogoType:(NSInteger)type withSource:(BOOL)source;
 
 @end
 

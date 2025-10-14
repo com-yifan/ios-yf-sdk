@@ -10,7 +10,7 @@
 #import <YFAdsSDK/YFPrivateKit.h>
 #import <YFAdsSDK/YFAdBaseAdapter.h>
 #import <YFAdsSDK/YFBiddingAdInfo.h>
-
+#import <YFAdsSDK/YFInterstitialCarouselViewController.h>
 NS_ASSUME_NONNULL_BEGIN
 /// 广告位基类
 @interface YFAdBaseAdPosition : NSObject
@@ -37,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isFloorPriceFilter;
 
 
+@property (nonatomic, weak) YFInterstitialCarouselViewController *carouselViewController;
+
 - (instancetype)initWithSupplier:(id)supplier adspot:(id)adspot;
 
 - (void)setAdTimeout:(NSTimeInterval)interval block:(dispatch_block_t)block;
@@ -53,6 +55,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAllAdSucceed;
 
 - (void)showAd;
+
+- (YFAdnType)adnType;
+
+- (void)closeTopPushAd;
 
 - (void)showAdFromViewController:(UIViewController *)viewController;
 

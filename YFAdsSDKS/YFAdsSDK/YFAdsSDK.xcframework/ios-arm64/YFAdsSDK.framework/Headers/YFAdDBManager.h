@@ -31,7 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,retain)NSMutableArray * patchAds;
 /// 融合banner
 @property(nonatomic,retain)NSMutableArray * fusionBanner;
-
+/// 顶推广告
+@property(nonatomic,retain)NSMutableArray * topPush;
 
 /// 清除缓存
 - (void)clearCache;

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *url;
 @property(nonatomic,copy) void (^complete)(YFRouterResult success);
 @property(nonatomic,assign) BOOL present;
+@property (nonatomic, assign) BOOL callOpen;
 
 @end
 

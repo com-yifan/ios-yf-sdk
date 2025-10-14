@@ -36,21 +36,24 @@ NS_ASSUME_NONNULL_BEGIN
 /// 数据加载回调
 @property(nonatomic, weak) id <FCAdSupplierManagerDelegate> delegate;
 
-/// 数据管理对象
 + (instancetype)manager;
 /// 流量请求时间
 @property (nonatomic, assign) double frt;
 
 @property (nonatomic, copy) NSString * rID;
 
-/// 初始数据
 - (void)loadDataWithDic:(NSDictionary *)jsonDic;
 
-/// 单层广告数据
 - (void)loadCrossParallelSupplier:(id)model;
 
 /// 调用展示当前已填充广告的最优层，无需等待亿帆SDK执行完成整体逻辑
 - (void)takeResultImmediately;
+
+- (YFAdBaseAdPosition *)getCurrentMaxIntV3Cache;
+
+- (void)showNextInterstitalCaurseAd:(YFAdBaseAdPosition *)position;
+
+- (void)handleNewCaurseAdDidShow:(YFAdBaseAdPosition *)position;
 @end
 
 NS_ASSUME_NONNULL_END

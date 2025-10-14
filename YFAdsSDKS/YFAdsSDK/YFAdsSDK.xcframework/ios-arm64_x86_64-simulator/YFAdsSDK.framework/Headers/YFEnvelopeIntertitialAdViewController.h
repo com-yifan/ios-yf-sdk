@@ -19,10 +19,14 @@
 #import <YFAdsSDK/YFAdsCountButton.h>
 #import <YFAdsSDK/YFAdsCloseButton.h>
 #import <YFAdsSDK/YFAdBaseCustomView.h>
+#import <YFAdsSDK/YFInterstitialCarouselViewController.h>
+#import <YFAdsSDK/YFAdTopPush.h>
 
 NS_ASSUME_NONNULL_BEGIN
 /// 插屏承载控制器
 @interface YFEnvelopeIntertitialAdViewController : YFAdBaseViewController
+/// 轮播容器
+@property (nonatomic, weak) YFInterstitialCarouselViewController *carouselViewController;
 /// 广告底图
 @property (nonatomic, strong) YFAdBaseCustomView *backgroundView;
 /// 广告内容视图
@@ -56,6 +60,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSTimeInterval showInterval;
 /// 广告位信息
 @property (nonatomic, strong) YFAdEventModel *eventModel;
+/// 关联
+@property (nonatomic, weak) YFAdInterstitial *adSpot;
 /// 是否已曝光
 @property (nonatomic) BOOL hasExposed;
 /// 点击视频 部分联盟点击视频额外回调
@@ -102,6 +108,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)collectionAdInfo;
 /// 重设动画，仅百度
 - (void)resetAnimationToClick;
+
+/// 轮播结束处理
+- (void)beforeCarouseNext;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -43,6 +43,21 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)adxNativeAdDidClose:(ADXNativeAd *)nativeAd;
 
+/**
+ * NativeAd ad detail page did close
+ */
+- (void)adxNativeLandingPageDidClose:(ADXNativeAd *)nativeAd;
+
+/**
+ * NativeAd ad will enter background because open application
+ */
+- (void)adxNativeWillOpenOtherApp:(ADXNativeAd *)nativeAd;
+
+/**
+ * NativeAd ad will open landingpage 
+ */
+- (void)adxNativeWillOpenDetailPage:(ADXNativeAd *)nativeAd;
+
 
 @end
 
