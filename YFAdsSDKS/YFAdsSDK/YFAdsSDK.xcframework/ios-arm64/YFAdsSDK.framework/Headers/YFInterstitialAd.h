@@ -10,7 +10,7 @@
 
 #import <YFAdsSDK/YFAd.h>
 #import <YFAdsSDK/YFAdInteractionType.h>
-
+#import <YFAdsSDK/YFInterstitialCarouselViewController.h>
 NS_ASSUME_NONNULL_BEGIN
 
 
@@ -63,6 +63,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL autoClick;
 
+@property (nonatomic, weak) YFAdInterstitial *adSpot;
+
+@property (nonatomic, weak) YFInterstitialCarouselViewController *carouselViewController;
 
 - (instancetype)initWithPosId:(NSString *)posId eventModel:(YFAdEventModel *)eventModel;
 

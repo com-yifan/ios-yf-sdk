@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 期望返回的广告条数（可能存在失败的情况，所以实际返回小于等于该值，默认1条，最多3条）
 @property (nonatomic, assign) int adCount;
 
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithAdUnitID:(NSString *)pID NS_UNAVAILABLE;
+
 /// 初始化广告加载器
 /// - Parameters:
 ///   - pID: 广告位id

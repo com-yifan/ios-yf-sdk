@@ -8,7 +8,7 @@
 #import <YFAdsSDK/YFAdNativeExpressDelegate.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+__attribute__((deprecated("YFAdNativeExpress已不再维护，请使用YFAdFusionBanner替换")))  // 6.0.5.0版本 废弃
 @interface YFAdNativeExpress : YFAdBaseAdapter
 /// 广告方法回调代理
 @property (nonatomic, weak) id<YFAdNativeExpressDelegate> delegate;

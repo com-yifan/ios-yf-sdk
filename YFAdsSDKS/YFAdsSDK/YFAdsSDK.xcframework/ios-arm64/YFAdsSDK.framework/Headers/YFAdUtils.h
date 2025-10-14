@@ -26,6 +26,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取当前控制器
 + (UIViewController *)getCurrentVC;
 
+/// 6.0.7.0获取当前控制器方法。
++ (UIViewController *)getCurrentVC_New;
+
+/// 6.0.7.0获取当前带控制器的window方法。
++ (UIWindow *)getCurrentWindowWithRootVC_New;
+
 /// 获取当前窗口根控制器
 + (UIViewController *)getCurrentRootVC;
 
@@ -33,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIViewController *)getKeyRootVC;
 
 + (UIWindow *)getKeyWindow;
+
++ (UIViewController *)getCurrentVCFrom:(UIViewController *)vc;
 /// 获取当前时间戳
 + (double)getCurrentDate;
 /// IDFA

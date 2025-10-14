@@ -59,6 +59,8 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeForceReturn = 17,
     /// 媒体调用展示当前已填充广告的最优层接口，请求失败
     YFAdSDKReportEventTypeForceReturnFail = 19,
+    /// 插屏轮播
+    YFAdSDKReportEventTypeInterstitalCarousel = 20,
     /// 有填充但是ECPM过低被过滤
     YFAdSDKReportEventTypeLowECPMFill = 33,
     /// 填充失败
@@ -193,7 +195,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 1 开屏广告;2 信息流广告;3 插屏广告;4 banner横幅广告;5 draw视频信息流广告;6 全屏视频广告;7 激励视频广告
 @property (nonatomic, assign) NSInteger aType;
 /// 广告位类型
-/// 1 开屏广告;2 信息流广告;3 插屏广告;4 banner横幅广告;5 draw视频信息流广告;6 全屏视频广告;7 激励视频广告
+/// 1 开屏广告;2 信息流广告;3 插屏广告;4 banner横幅广告;5 draw视频信息流广告;6 全屏视频广告;7 激励视频广告 10顶推广告
 @property (nonatomic, assign) NSInteger pt;
 /// 底价
 @property (nonatomic, assign) NSInteger ecpm;
@@ -338,6 +340,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL haal;
 /// 快手滑动跳转
 @property (nonatomic, assign) BOOL sj;
+// 落地页兜底唤起
+@property (nonatomic, assign) BOOL lpaa;
+/// 文案替换开关
+@property (nonatomic, assign) BOOL rcs;
+@property (nonatomic, copy) NSString *rt;
+@property (nonatomic, copy) NSString *rc;
 
 @property (nonatomic, assign) NSInteger bannerCarouselInterval;
 // 倒计时结束自动关闭 1：是 0：否

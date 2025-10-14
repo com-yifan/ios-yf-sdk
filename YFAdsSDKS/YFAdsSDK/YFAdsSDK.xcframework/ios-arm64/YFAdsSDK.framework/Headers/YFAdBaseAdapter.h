@@ -17,7 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) BOOL fill;
 
 @property(nonatomic, assign) NSUInteger ecpm;
-///  广告是否有效
+/**
+ * 广告是否有效
+ *
+ * @note 百度在加载完成的回调中不会立马生效。
+ *       非预加载场景建议不要加入此判断。
+ */
 @property (nonatomic, assign) BOOL isValid;
 /// 激励视频是否下载完成
 @property (nonatomic, assign) BOOL isReady;
@@ -35,10 +40,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAd;
 /// 流量填充
 - (void)loadAdSucceed;
+/// 顶推广告联盟类型
+- (YFAdnType)adnType;
+- (void)closeTopPushAd;
 /// 展示广告
 - (void)showAd;
 /// 从当前控制器中展示广告(仅插屏适用)
-- (void)showAdFromViewController:(UIViewController *)viewController;
+- (void)showAdFromViewController:(nullable UIViewController *)viewController;
 
 -(void)recordLimitCount;
 /// 加载并展现

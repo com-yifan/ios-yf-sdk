@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-   
-@interface YFAdBanner : YFAdBaseAdapter 
+__attribute__((deprecated("YFAdBanner已不再维护，请使用YFAdFusionBanner替换")))  // 6.0.5.0版本 废弃
+@interface YFAdBanner : YFAdBaseAdapter
 /// 广告方法回调代理
 @property (nonatomic, weak) id<YFAdBannerDelegate> delegate;
 

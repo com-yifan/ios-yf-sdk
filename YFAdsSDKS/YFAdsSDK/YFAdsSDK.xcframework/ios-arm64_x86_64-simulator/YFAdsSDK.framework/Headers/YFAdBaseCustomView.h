@@ -6,12 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import <YFAdsSDK/YFAdInterstitial+TopPush.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFAdBaseCustomView : UIView
+@interface YFAdBaseCustomView : UIView // <YFAssociationTopPushDelegate>
+//@property (nonatomic, weak) YFAdInterstitial *adSpot;
 @property(nonatomic,copy) void (^exposureBlk)(void);
 @property (nonatomic, copy) void(^renderCompletion)(BOOL, NSError * _Nullable);
+//- (void)showAssciatonTopPush;
 /// 销毁定时器
 - (void)destroyTrackTimer;
 /// 广告视图高度

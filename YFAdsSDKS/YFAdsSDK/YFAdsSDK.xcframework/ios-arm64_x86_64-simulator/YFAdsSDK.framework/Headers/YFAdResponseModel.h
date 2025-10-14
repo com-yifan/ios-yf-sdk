@@ -67,6 +67,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger showLimitDay;
 // 展示间隔(单位毫秒)。无该字段表示不限制
 @property (nonatomic, assign) NSInteger showInterval;
+
+// 亿帆自渲染广告增加竞价前的关键词过滤能力 以“,”分割 关键词1,关键词2 606需求新增 先搁置，服务端未启用，SDK未实现
+@property (nonatomic, strong) NSString *keyFbd;
+
 // 日志开关 1表示开启日志;0或者不存在表示日志关闭状态
 @property (nonatomic, assign) NSInteger logSwitch;
 // 出口IP
@@ -95,7 +99,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FCAdConfigureModel : NSObject
 /// 竞价回传
 @property (nonatomic, copy) NSString *biddingReportAdn;
+// 插屏轮播间隔 单位：毫秒
+@property (nonatomic, assign) NSInteger ici;
 
+// 插屏轮播次数
+@property (nonatomic, assign) NSInteger icc;
 @end
 
 @interface FCAdWaterfall : NSObject
@@ -183,6 +191,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL haal;
 /// 快手滑动跳转
 @property (nonatomic, assign) BOOL sj;
+// 落地页兜底唤起
+@property (nonatomic, assign) BOOL lpaa;
+// 文案替换
+@property (nonatomic, assign) BOOL rcs;
+@property (nonatomic, copy) NSString *rt;
+@property (nonatomic, copy) NSString *rc;
 
 /// 1;单向跳转
 /// 2: 双向跳转

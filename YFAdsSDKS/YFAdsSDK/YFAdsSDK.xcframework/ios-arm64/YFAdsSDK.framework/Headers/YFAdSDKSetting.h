@@ -47,9 +47,9 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 + (NSString *)sdkVersion;
 
 + (instancetype)shareInstance;
-/// 自定义参数
+/// 用户扩展字段，主用于分组管理。举例： {“c1”: 1,"c2":"yifan","c3":"male","c4": 3.15,"c5": "xxxxx"}
 @property (nonatomic, copy) NSDictionary *customDefine;
-/// 自定义流量分组，填写真实的uid，保证与所开发app后端的用户id对应。具体联系商务
+/// 用户自定义参数，主用于uid定位排查问题。举例：{“UserID”: "xxxxxxx"}
 @property (nonatomic, copy) NSDictionary *userDefine;
 /////控制台日志输出开关, 默认开启 ---> 此接口已弃用，日志打印请联系运营后台打开日志输出
 //@property (nonatomic, assign) BOOL logEnable;
@@ -65,8 +65,8 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 @property(nonatomic, copy) NSString *device_geo_lat;
 /// GPS 经度(-180 ~ 180)
 @property(nonatomic, copy) NSString *device_geo_lon;
-/// 用户ID
-@property(nonatomic, copy) NSString *userId;
+/// ⚠️ 已废弃，请使用 userDefine 替代
+@property(nonatomic, copy) NSString *userId __deprecated_msg("请使用 userDefine 替代");
 
 
 

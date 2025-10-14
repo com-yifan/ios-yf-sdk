@@ -9,6 +9,9 @@
 #define YFOtherControllerDismissNotification @"YFOtherControllerDismissNotification"
 #define YFOtherControllerDidDismissNotification @"YFOtherControllerDidDismissNotification"
 #define YFOtherControllerShowNotification @"YFOtherControllerShowNotification"
+#define YFAssociationTopPushOnAdClickNotification @"YFAssociationTopPushOnAdClick"
+#define YFAssociationTopPushOnAdDetailPageCloseNotification @"YFAssociationTopPushOnAdDetailPageClose"
+
 //#import "YFSplashView.h"
 #import <YFAdsSDK/YFKitImpressionTimer.h>
 #import <YFAdsSDK/NSArray+Addition.h>

@@ -172,6 +172,16 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdAdapterInitializeClassLoader.h>
 #import <YFAdsSDK/YFAdDBManager.h>
 #import <YFAdsSDK/YFAdBaseSplashView.h>
+#import <YFAdsSDK/YFAdTopPush.h>
+#import <YFAdsSDK/YFAdTopPushView.h>
+#import <YFAdsSDK/YFAdTopPushProtocol.h>
+#import <YFAdsSDK/YFAdTopPushAdInfoProtocol.h>
+#import <YFAdsSDK/YFAdTopPushViewController.h>
+
+#import <YFAdsSDK/YFInterstitialCarouselViewController.h>
+#import <YFAdsSDK/YFInterstitialCarouselNavigationController.h>
+#import <YFAdsSDK/YFAdInterstitial+TopPush.h>
+#import <YFAdsSDK/YFAdBaseAdapter+interstitial.h>
 
 //#import <YFAdsSDK/YFGradientView.h>
 //#import <YFAdsSDK/NSObject+YFAdModel.h>

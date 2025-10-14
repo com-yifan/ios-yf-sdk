@@ -1,10 +1,11 @@
- # 亿帆SDK对接⽂档: V6.0.6.3
+ # 亿帆SDK对接⽂档: V6.0.7.0
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
-| 6.0.6.3 | 1. 修复已知问题 | 必选：</br> 替换主SDK | 2025.09.09 |
+| 6.0.7.0 | 1. 升级联盟双十一版本SDK<br/>2. 新增顶推广告样式<br/>3. 插屏新增轮播效果<br/>4. 优化广告转化链路，提升广告价值<br/>5. 修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.10.14 |
+| 6.0.6.2 | 1. 修复已知问题 | 必选：</br> 替换主SDK | 2025.09.09 |
 | 6.0.6.1 | 1. 升级联盟SDK<br/>2. 修复已知问题<br />3.优化媒体自渲染曝光检测<br /><font color="red">注意：穿山甲70xx版本运行环境配置发生变更，支持系统iOS 13.0及以上版本，请Xcode修改项目支持最低13.0，如需支持13.0以下请联系技术同学获取支持的穿山甲版本 <br /> 注意：媒体自渲染需要在registerContainer方法之后调用调用trackVideoViewImpression方法</font> | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.08.22 |
 | 6.0.6.0 | 1. 竞价逻辑优化，提升广告加载效率和广告价值 <br />2. 开屏、激励视频、全屏视频广告样式优化 <br />3. 媒体自渲染能力优化 <br />4. 平板设备适配优化 <br />5. 直播拉流接入方式更新<br />&emsp;&emsp;&emsp;pod 'Ads-CN', '7.0.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']<br />&emsp;&emsp;&emsp;不再需要针对原本是否包含ffmpeg单独处理 <br />&emsp;&emsp;&emsp;<font color="red">注意：旧版本有 按照 [方法二（推荐）-2.2](#csj-live-streaming-readme) 方式集成 的，需要去掉 TTSDKFramework</font>  <br />6. 修复已知问题| 必选：</br> 替换全部SDK | 2025.08.11 |
 | 6.0.5.4 | 1. 升级适配穿山甲、优量汇、快手、百度合规整改版本SDK；<br />2. 修复已知问题 | 必选：</br> 替换全部SDK | 2025.07.18 |
@@ -41,15 +42,15 @@
 
 ## 2.支持的联盟平台版本及广告类型
 
-|   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner |
-| :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: |
-| 穿山甲    | 7.0.1.3 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
-| 优量汇    | 4.15.50 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ |
-| 百青藤    | 5.400 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| 快手     | 4.7.20.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ |
-| 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ |
-| 亿帆     | 6.0.6.3 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ |
-| gromore  | 7.0.1.3 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ |
+|   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner | 顶推 |
+| :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: | -------- |
+| 穿山甲    | 7.1.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ |
+| 优量汇    | 4.15.60 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ | ✅ |
+| 百青藤    | 10.02 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ |
+| 快手     | 4.9.20.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ |
+| 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ | ✅ |
+| 亿帆     | 6.0.7.0 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ |
+| gromore  | 7.1.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ | ✅ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
@@ -144,22 +145,22 @@ AssetsLibrary.framework
 ***1.1***
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.6.3'
+pod 'YFAdsSDK', '6.0.7.0'
 #  百度【必须】
-pod 'BaiduMobAdSDK','5.400'
+pod 'BaiduMobAdSDK','10.02'
 # 优量汇【必须】
-pod 'GDTMobSDK' ,'4.15.50'
+pod 'GDTMobSDK' ,'4.15.60'
 # 京东【必须】
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.0.1.3', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.1.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
-pod 'GMBaiduAdapter', '5.39.0'
-pod 'GMGdtAdapter', '4.15.40.2'
-pod 'GMKsAdapter', '3.3.76.2'
+pod 'GMBaiduAdapter', '5.394.0'
+pod 'GMGdtAdapter', '4.15.41.2'
+pod 'GMKsAdapter', '4.6.30.1.2'
 # 快手【必须】
-pod 'KSAdSDK','4.7.20.1'
+pod 'KSAdSDK','4.9.20.1'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
 ```
@@ -168,15 +169,15 @@ pod 'WechatOpenSDK-XCFramework'
 
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.6.3'
+pod 'YFAdsSDK/YFAdsSDK', '6.0.7.0'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
-pod 'BaiduMobAdSDK','5.400'
+pod 'BaiduMobAdSDK','10.02'
 
 # 优量汇【可选】
 pod 'YFAdsSDK/YFAdsGDTAdapter'
-pod 'GDTMobSDK' ,'4.15.50'
+pod 'GDTMobSDK' ,'4.15.60'
 
 # 京东【可选】
 pod 'YFAdsSDK/YFAdsJDAdapter'
@@ -188,15 +189,15 @@ pod 'YFAdsSDK/YFAdsCSJAdapter'
 # Gromore【可选】
 pod 'YFAdsSDK/YFAdsGROAdapter'
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.0.1.3', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.1.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
-pod 'GMBaiduAdapter', '5.39.0'
-pod 'GMGdtAdapter', '4.15.40.2'
-pod 'GMKsAdapter', '3.3.76.2'
+pod 'GMBaiduAdapter', '5.394.0'
+pod 'GMGdtAdapter', '4.15.41.2'
+pod 'GMKsAdapter', '4.6.30.1.2'
 
 #  快手【可选】
 pod 'YFAdsSDK/YFAdsKSAdapter'
-pod 'KSAdSDK','4.7.20.1'
+pod 'KSAdSDK','4.9.20.1'
 
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
@@ -205,7 +206,7 @@ pod 'WechatOpenSDK-XCFramework'
 **2.穿山甲iOS直播拉流接入注意事项**
 ***2.1 背景***
 穿山甲直播拉流类预算有利于提升广告收益和广告价值。
-<font color="red">pod 'Ads-CN', '7.0.1.3', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+<font color="red">pod 'Ads-CN', '7.1.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 已按照动态库方式集成直播拉流，不再需要单独处理，原本有按照已包含FFmpeg库方式集成的，需要辛苦去掉一下 TTSDKFramework</font>
 
 <a name="csj-live-streaming-readme"></a>
@@ -1341,7 +1342,81 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
 }
 ```
 
+### 4.9 顶推广告
 
+具体示例参照Demo项目中DemoTopPushViewController.m
+
+1.请求代码
+
+```objective-c
+// 请求类中设置强引用
+@property (nonatomic, strong) YFAdTopPush *topPush;
+
+// 初始化广告加载器 
+// 广告初始化 viewController需传入最上层可见控制器，否则无法模态推出广告落地页及广告，影响展示和转化
+self.topPush = [[YFAdTopPush alloc] initWithAdUnitID:[YFEnvironmentManager getTopPush_ID] withViewController:self];
+// 设置代理
+self.topPush.delegate = self;
+// 加载并展示广告
+[self.topPush loadAndShowAd];
+```
+
+2.回调方法
+
+```objective-c
+/// 顶推广告加载成功
+- (void)fcAdTopPushOnAdLoadSuccess:(YFAdTopPush *)topPush {
+    self.isLoaded = YES;
+    [JDStatusBarNotification showWithStatus:@"广告加载成功" dismissAfter:1.5];
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功 请求ID：%@", __func__,topPush.mgr.rID]];
+}
+
+/// 顶推广告加载失败
+- (void)fcAdTopPushOnAdLoadFail:(YFAdTopPush *)topPush withError:(NSError *)error {
+    //通知主线程刷新
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告加载异常: \r\n%@", __func__,error.userInfo.description]];
+        [self showErrorWithDescription:error.userInfo.description];
+    });
+    [self loadAdWithState:AdState_LoadFailed];
+    [self deallocAd];
+}
+
+/// 顶推广告曝光
+- (void)fcAdTopPushOnAdShow:(YFAdTopPush *)topPush {
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光成功", __func__]];
+}
+
+/// 顶推广告渲染成功，建议在此回调后展示
+- (void)fcAdTopPushOnAdRenderSuccess:(YFAdTopPush *)topPush {
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染成功 %@", __func__,topPush.isValid?@"✅有效":@"❌失效"]];
+}
+
+/// 顶推广告渲染失败
+- (void)fcAdTopPushOnAdRenderFail:(YFAdTopPush *)topPush {
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染失败", __func__]];
+}
+
+/// 顶推广告关闭
+- (void)fcAdTopPushOnAdClose:(YFAdTopPush *)topPush {
+    NSLog(@"广告关闭了 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭了", __func__]];
+    [self deallocAd];
+}
+
+/// 顶推广告点击
+- (void)fcAdTopPushOnAdClick:(YFAdTopPush *)topPush {
+    NSLog(@"广告点击了 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告点击了", __func__]];
+}
+
+/// 顶推广告关闭落地页
+- (void)fcAdTopPushOnAdDetailPageClose:(YFAdTopPush *)topPush {
+    NSLog(@"广告点击了 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭落地页", __func__]];
+}
+
+```
 
 ## 5、错误码
 
