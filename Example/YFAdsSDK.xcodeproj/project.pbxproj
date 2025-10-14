@@ -65,6 +65,7 @@
 		039CF8DE2D222E20000FA9E2 /* FullScreenVideoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 039CF86A2D222E1F000FA9E2 /* FullScreenVideoData.json */; };
 		039CF8DF2D222E20000FA9E2 /* SplashData.json in Resources */ = {isa = PBXBuildFile; fileRef = 039CF86E2D222E1F000FA9E2 /* SplashData.json */; };
 		039CF8E02D222E20000FA9E2 /* InterstitialData.json in Resources */ = {isa = PBXBuildFile; fileRef = 039CF86B2D222E1F000FA9E2 /* InterstitialData.json */; };
+		03A3E3832E9E21460037D2F6 /* DemoTopPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A3E3812E9E21460037D2F6 /* DemoTopPushViewController.m */; };
 		4EB7B110273BA92D00D50E7B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB7B10F273BA92D00D50E7B /* AdSupport.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -201,6 +202,8 @@
 		039CF88F2D222E1F000FA9E2 /* DemoUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUtils.m; sourceTree = "<group>"; };
 		039CF8902D222E1F000FA9E2 /* NSTimeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSTimeUtils.h; sourceTree = "<group>"; };
 		039CF8912D222E1F000FA9E2 /* NSTimeUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSTimeUtils.m; sourceTree = "<group>"; };
+		03A3E3802E9E21460037D2F6 /* DemoTopPushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTopPushViewController.h; sourceTree = "<group>"; };
+		03A3E3812E9E21460037D2F6 /* DemoTopPushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTopPushViewController.m; sourceTree = "<group>"; };
 		145849F14F3C5444A6FFC93D /* YFAdsSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YFAdsSDK.podspec; path = ../YFAdsSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		31FE7BD324482CFE00CB2062 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4E0A49D326954A37007B19AD /* KSAdSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KSAdSDK.xcframework; path = Pods/KSAdSDK/KSAdSDK.xcframework; sourceTree = "<group>"; };
@@ -408,6 +411,7 @@
 		039CF8122D222E1F000FA9E2 /* AdsExample */ = {
 			isa = PBXGroup;
 			children = (
+				03A3E3822E9E21460037D2F6 /* TopPush(顶推广告) */,
 				03929B072DAE501E0050D93D /* AdConfig(参数配置) */,
 				039CF7E22D222E1F000FA9E2 /* DrawAd(视频流广告) */,
 				039CF7E52D222E1F000FA9E2 /* FullScreenVideoAd(全屏视频广告) */,
@@ -549,6 +553,15 @@
 				039CF8912D222E1F000FA9E2 /* NSTimeUtils.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		03A3E3822E9E21460037D2F6 /* TopPush(顶推广告) */ = {
+			isa = PBXGroup;
+			children = (
+				03A3E3802E9E21460037D2F6 /* DemoTopPushViewController.h */,
+				03A3E3812E9E21460037D2F6 /* DemoTopPushViewController.m */,
+			);
+			path = "TopPush(顶推广告)";
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -935,6 +948,7 @@
 				039CF8A62D222E20000FA9E2 /* DemoDrawAdCell.m in Sources */,
 				039CF8A72D222E20000FA9E2 /* DemoFeedbackView.m in Sources */,
 				039CF8A82D222E20000FA9E2 /* DemoFullScreenVideoController.m in Sources */,
+				03A3E3832E9E21460037D2F6 /* DemoTopPushViewController.m in Sources */,
 				039CF8A92D222E20000FA9E2 /* UIButton+FunctionExpansion.m in Sources */,
 				039CF8AA2D222E20000FA9E2 /* DemoFusionBannerViewController.m in Sources */,
 				039CF8AC2D222E20000FA9E2 /* DemoPreloadViewController.m in Sources */,
