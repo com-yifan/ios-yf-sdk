@@ -72,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showFromViewController:(UIViewController *)viewController;
 
 - (void)loadAdData;
-
+- (void)handleExposured;
 /**
  Register clickable views in native ads view.
  Interaction types can be configured on TikTok Audience Network.
