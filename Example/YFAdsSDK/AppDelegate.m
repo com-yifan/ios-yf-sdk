@@ -14,7 +14,7 @@
 #include <mach/task.h>
 #include <mach/mach.h>
 //#import <YFAdsSDK/YFAdAESEncrypt.h>
-#import <FLAnimatedImage/FLAnimatedImageView.h>
+//#import <FLAnimatedImage/FLAnimatedImageView.h>
 #import "JDStatusBarNotification.h"
 #import "DemoAdConfig.h"
 #import "WXApi.h"

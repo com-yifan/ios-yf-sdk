@@ -197,6 +197,10 @@ static YFEnvironmentManager *environmentManager;
     return EnvironmentDic[@"FC_UPLOAD_URL"];
 }
 
++ (NSString *)getTopPush_ID {
+    return EnvironmentDic[@"YF_TOPPUSH_ID"];
+}
+
 + (NSString *)getYF_CONF_URL{
     return EnvironmentDic[@"YF_CONF_URL"];
 }

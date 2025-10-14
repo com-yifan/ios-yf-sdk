@@ -55,5 +55,5 @@
 
 + (NSString *)getYF_DATA_URL;
 
-
++ (NSString *)getTopPush_ID;
 @end

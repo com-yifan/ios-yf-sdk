@@ -8,7 +8,7 @@ target 'YFAdsSDK_Example' do
 #pod 'YFAdsSDK', :path => '../'
   pod 'YFAdsSDK', '6.0.7.0'
   #  百度【必须】
-  #pod 'BaiduMobAdSDK','10.02'
+  pod 'BaiduMobAdSDK','10.02'
   # 优量汇【必须】
   pod 'GDTMobSDK' ,'4.15.60'
   # 京东【必须】
