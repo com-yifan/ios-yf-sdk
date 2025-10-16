@@ -3,7 +3,7 @@
 //  YFAdsSDK
 //
 //  Created by 麻明康 on 2024/11/26.
-//  build 02
+//
 
 #import <Foundation/Foundation.h>
 
