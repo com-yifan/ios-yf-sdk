@@ -112,8 +112,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *device_adid;
 //阿里巴巴匿名设备标识，需集成阿里 SDK 获取
 @property(nonatomic, copy) NSString *device_ali_aaid;
-
-@property(nonatomic, copy) NSString *device_caid;
+// 中广协
+@property(nonatomic, copy) NSString *device_dbid;
 //Y（IOS 无 IDFA 时建议填写，安卓无需填写）拼多多广告 ID
 @property(nonatomic, copy) NSString *device_paid;
 
