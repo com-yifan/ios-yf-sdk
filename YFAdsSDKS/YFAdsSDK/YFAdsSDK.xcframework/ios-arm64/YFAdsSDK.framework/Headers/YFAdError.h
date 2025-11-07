@@ -98,6 +98,11 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     // AY
     YFAdErrorCode_18001 = 18001,
     
+    // XU
+    YFAdErrorCode_21001 = 21001,
+
+    // GE
+    YFAdErrorCode_22001 = 22001,
 };
 
 @interface YFAdError : NSObject
