@@ -30,15 +30,15 @@
 ///   - error: 错误
 - (void)fcAdMallOnAdLoadFail:(YFAdMall * _Nonnull)mall withError:(NSError * _Nullable)error;
 
-/// 商城曝光
+/// 商城页曝光【该曝光回调是指用户真实进入商城落地页的曝光，而非iCON或红包封面展示】
 /// - Parameter Mall: 加载器实例
 - (void)fcAdMallOnAdShow:(YFAdMall * _Nonnull)mall;
 
-/// 商城点击
+/// 商城页点击
 /// - Parameter Mall: 加载器实例
 - (void)fcAdMallOnAdClick:(YFAdMall * _Nonnull)mall;
 
-/// 商城关闭
+/// 商城页关闭
 /// - Parameter Mall: 加载器实例
 - (void)fcAdMallOnAdClose:(YFAdMall * _Nonnull)mall;
 

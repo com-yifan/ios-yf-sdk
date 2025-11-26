@@ -58,17 +58,15 @@
 }
 
 - (void)loadAndShowAd {
-    [self showSelectedType:^{
-        [super loadAndShowAd];
-        [self loadAdWithState:AdState_Normal];
-        _isLoadAndShow = YES;
+    [super loadAndShowAd];
+    [self loadAdWithState:AdState_Normal];
+    _isLoadAndShow = YES;
 
-        // 广告初始化 viewController需传入最上层可见控制器，否则无法模态推出广告落地页及广告，影响展示和转化
-        self.mall = [[YFAdMall alloc] initWithAdUnitID:[YFEnvironmentManager getMall_ID]];
-        self.mall.delegate = self;
-        _isAdLoaded = false;
-        [self.mall loadAndShowAd];
-    }];
+    // 广告初始化 viewController需传入最上层可见控制器，否则无法模态推出广告落地页及广告，影响展示和转化
+    self.mall = [[YFAdMall alloc] initWithAdUnitID:[YFEnvironmentManager getMall_ID]];
+    self.mall.delegate = self;
+    _isAdLoaded = false;
+    [self.mall loadAndShowAd];
 }
 
 
@@ -80,35 +78,6 @@
 
 - (void)dealloc {
     NSLog(@"商城释放 %s",__func__);
-}
-
-- (void)showSelectedType:(dispatch_block_t)completion {
-    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"选择类型" message:@"红包样式类型" preferredStyle:(UIAlertControllerStyleAlert)];
-    UIAlertAction *newAction = [UIAlertAction actionWithTitle:@"新人红包" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"YFTestMallType"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        completion();
-    }];
-    UIAlertAction *bigAction = [UIAlertAction actionWithTitle:@"大促红包" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [[NSUserDefaults standardUserDefaults] setValue:@"2" forKey:@"YFTestMallType"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        completion();
-    }];
-    UIAlertAction *signlAction = [UIAlertAction actionWithTitle:@"单品红包" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [[NSUserDefaults standardUserDefaults] setValue:@"3" forKey:@"YFTestMallType"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        completion();
-    }];
-    UIAlertAction *unknowAction = [UIAlertAction actionWithTitle:@"重置" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [[NSUserDefaults standardUserDefaults] setValue:@"4" forKey:@"YFTestMallType"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        completion();
-    }];
-    [alertVc addAction:newAction];
-    [alertVc addAction:bigAction];
-    [alertVc addAction:signlAction];
-    [alertVc addAction:unknowAction];
-    [self presentViewController:alertVc animated:YES completion:nil];
 }
 
 #pragma mark - YFAdMallDelegate
@@ -136,10 +105,6 @@
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光成功", __func__]];
 }
 
-/// 商城广告渲染失败
-- (void)fcAdMallOnAdRenderFail:(YFAdMall *)mall {
-    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染失败", __func__]];
-}
 
 /// 商城广告关闭
 - (void)fcAdMallOnAdClose:(YFAdMall *)mall {
@@ -154,11 +119,6 @@
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告点击了", __func__]];
 }
 
-/// 商城广告关闭落地页
-- (void)fcAdMallOnAdDetailPageClose:(YFAdMall *)mall {
-    NSLog(@"广告点击了 %s", __func__);
-    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭落地页", __func__]];
-}
 
 
 @end

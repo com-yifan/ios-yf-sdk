@@ -1440,14 +1440,14 @@ self.mall.delegate = self;
 2.回调方法
 
 ```objective-c
-/// 商城广告加载成功
+/// 商城页广告加载成功
 - (void)fcAdMallOnAdLoadSuccess:(YFAdMall *)mall {
     self.isLoaded = YES;
     [JDStatusBarNotification showWithStatus:@"广告加载成功" dismissAfter:1.5];
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功 请求ID：%@", __func__,mall.mgr.rID]];
 }
 
-/// 商城广告加载失败
+/// 商城页广告加载失败
 - (void)fcAdMallOnAdLoadFail:(YFAdMall *)mall withError:(NSError *)error {
     //通知主线程刷新
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -1458,35 +1458,23 @@ self.mall.delegate = self;
     [self deallocAd];
 }
 
-/// 商城广告曝光
+/// 商城页广告曝光【该曝光回调是指用户真实进入商城落地页的曝光，而非iCON或红包封面展示】
 - (void)fcAdMallOnAdShow:(YFAdMall *)mall {
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光成功", __func__]];
 }
 
-/// 商城广告渲染失败
-- (void)fcAdMallOnAdRenderFail:(YFAdMall *)mall {
-    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染失败", __func__]];
-}
-
-/// 商城广告关闭
-- (void)fcAdMallOnAdClose:(YFAdMall *)mall {
-    NSLog(@"广告关闭了 %s", __func__);
-    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭了", __func__]];
-    [self deallocAd];
-}
-
-/// 商城广告点击
+/// 商城页广告点击【该点击回调是指用户真实进入商城落地页点击后回调，而非iCON或红包封面的点击】
 - (void)fcAdMallOnAdClick:(YFAdMall *)mall {
     NSLog(@"广告点击了 %s", __func__);
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告点击了", __func__]];
 }
 
-/// 商城广告关闭落地页
-- (void)fcAdMallOnAdDetailPageClose:(YFAdMall *)mall {
-    NSLog(@"广告点击了 %s", __func__);
-    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭落地页", __func__]];
+/// 商城页广告关闭
+- (void)fcAdMallOnAdClose:(YFAdMall *)mall {
+    NSLog(@"广告关闭了 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭了", __func__]];
+    [self deallocAd];
 }
-
 ```
 
 ## 5、错误码
