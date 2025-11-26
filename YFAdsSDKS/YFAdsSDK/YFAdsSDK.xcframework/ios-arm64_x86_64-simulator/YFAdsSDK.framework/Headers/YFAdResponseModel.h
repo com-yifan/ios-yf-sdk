@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YFAdsSDK/YFAdReportModel.h>
 @class FCAdRequest;
 @class FCAdAb;
 @class FCAdControl;
@@ -198,6 +199,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *rt;
 @property (nonatomic, copy) NSString *rc;
 
+/// 商城页悬浮icon配置
+/// 自定义文案
+@property (nonatomic, copy) NSString *cc;
+/// 自定义文案展示时长
+@property (nonatomic, assign) NSInteger ccst;
+/// 悬浮icon初始位置
+@property (nonatomic, assign) YFMallIconAdPostion ip;
 /// 1;单向跳转
 /// 2: 双向跳转
 @property (nonatomic, assign) NSInteger isd;

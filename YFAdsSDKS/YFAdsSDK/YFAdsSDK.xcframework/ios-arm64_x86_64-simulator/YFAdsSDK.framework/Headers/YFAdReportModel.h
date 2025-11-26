@@ -147,6 +147,15 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeGE        = 17,
 
 };
+
+/// 穿山甲悬浮红包位置
+typedef NS_ENUM(NSUInteger, YFMallIconAdPostion) {
+    YFMallIconAdPostionTopLeft       = 1,
+    YFMallIconAdPostionBottomLeft    = 2,
+    YFMallIconAdPostionTopRight      = 3,
+    YFMallIconAdPostionBottomRight   = 4,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdReportModel : NSObject
@@ -387,5 +396,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *ua;
 ///是否已经记录过本地请求限制，主要用于过滤信息流等存在多次曝光的广告
 @property (nonatomic) BOOL reqLimitRecorded;
+
+/// 穿山甲商城页配置
+/// 自定义文案
+@property (nonatomic, copy) NSString *cc;
+/// 自定义文案展示时长
+@property (nonatomic, assign) NSInteger ccst;
+/// 悬浮icon初始位置
+@property (nonatomic, assign) YFMallIconAdPostion ip;
+
 @end
 NS_ASSUME_NONNULL_END

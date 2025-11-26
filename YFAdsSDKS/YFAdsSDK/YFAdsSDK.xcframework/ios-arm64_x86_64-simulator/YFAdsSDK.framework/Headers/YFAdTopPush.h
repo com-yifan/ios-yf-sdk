@@ -28,9 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - viewController: 打开落地页的控制器
 - (instancetype)initWithAdUnitID:(NSString *)pID withViewController:(UIViewController *)viewController;
 
+/// 加载广告
+- (void)loadAd;
+/// 展示广告
+- (void)showAd;
+/// 加载并展示广告
+- (void)loadAndShowAd;
 /// 主动关闭顶推广告
 - (void)close;
-
 /// 不适用，请直接使用- (void)close;
 - (void)closeTopPushAd NS_UNAVAILABLE;
 @end

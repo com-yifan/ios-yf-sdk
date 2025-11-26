@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 加载并展示
 - (void)fcAdBaseAdapterLoadAndShow;
 
+/// 发起流量请求
+- (void)startRequest;
 /// 返回下一个渠道的参数
 /// @param supplier 被加载的渠道
 /// @param error 异常信息

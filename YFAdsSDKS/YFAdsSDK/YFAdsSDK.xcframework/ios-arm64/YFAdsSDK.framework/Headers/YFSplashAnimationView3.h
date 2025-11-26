@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)toStartMotion;
 - (void)toStopMotion;
+-(void)reloadUI:(id)model;
 
 @end
 

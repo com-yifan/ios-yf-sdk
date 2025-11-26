@@ -198,6 +198,13 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
         },
         @{
             @"image":@"home_list_icon",
+            @"title":@"商城广告",
+            @"class":@"DemoMallViewController",
+            @"des":@"",
+        
+        },
+        @{
+            @"image":@"home_list_icon",
             @"title":@"融合Banner广告",
             @"class":@"DemoFusionBannerViewController",
             @"des":@"Flexible formats which could appear at the top, middle or bottom of your app.",

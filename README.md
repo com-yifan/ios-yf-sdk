@@ -1,9 +1,10 @@
- # 亿帆SDK对接⽂档: V6.0.7.3
+ # 亿帆SDK对接⽂档: V6.0.8.0
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.0.8.0 | 1. 升级联盟SDK<br/>2. 新增商城页广告<br/>3. 优化部分广告样式交互<br/>4. 优化广告转化链路，提升广告价值<br/>5. 修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.11.26 |
 | 6.0.7.3 | 1. 修复已知问题 | 必选：</br> 替换主SDK及京东适配器 | 2025.10.31 |
 | 6.0.7.2 | 1. 修复已知问题 | 必选：</br> 替换主SDK | 2025.10.22 |
 | 6.0.7.1 | 1. 升级联盟双十一版本SDK<br/>2. 新增顶推广告样式<br/>3. 插屏新增轮播效果<br/>4. 优化广告转化链路，提升广告价值<br/>5. 修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework </br>pod方式参考[1.CocoaPods导入](#cocoapods-import) | 2025.10.14 |
@@ -44,15 +45,15 @@
 
 ## 2.支持的联盟平台版本及广告类型
 
-|   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner | 顶推 |
-| :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: | -------- |
-| 穿山甲    | 7.1.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ |
-| 优量汇    | 4.15.60 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ | ✅ |
-| 百青藤    | 10.02 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ |
-| 快手     | 4.9.20.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ |
-| 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ | ✅ |
-| 亿帆     | 6.0.7.3 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ |
-| gromore  | 7.1.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ | ✅ |
+|   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner | 顶推 | 商城页 |
+| :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: | -------- | -------- |
+| 穿山甲    | 7.2.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ✅ |
+| 优量汇    | 4.15.65 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ | ✅ | ❌ |
+| 百青藤    | 10.022 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
+| 快手     | 4.10.30.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ❌ |
+| 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ | ✅ | ❌ |
+| 亿帆     | 6.0.8.0 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
+| gromore  | 7.2.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ | ✅ | ❌ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
@@ -147,22 +148,22 @@ AssetsLibrary.framework
 ***1.1***
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.7.3'
+pod 'YFAdsSDK', '6.0.8.0'
 #  百度【必须】
-pod 'BaiduMobAdSDK','10.02'
+pod 'BaiduMobAdSDK','10.022'
 # 优量汇【必须】
-pod 'GDTMobSDK' ,'4.15.60'
+pod 'GDTMobSDK' ,'4.15.65'
 # 京东【必须】
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.1.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.2.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
-pod 'GMBaiduAdapter', '5.394.0'
-pod 'GMGdtAdapter', '4.15.41.2'
-pod 'GMKsAdapter', '4.6.30.1.2'
+pod 'GMBaiduAdapter', '10.02.1'
+pod 'GMGdtAdapter', '4.15.60.0'
+pod 'GMKsAdapter', '4.9.20.1.2'
 # 快手【必须】
-pod 'KSAdSDK','4.9.20.1'
+pod 'KSAdSDK','4.10.30.1'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
 ```
@@ -171,15 +172,15 @@ pod 'WechatOpenSDK-XCFramework'
 
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.7.3'
+pod 'YFAdsSDK/YFAdsSDK', '6.0.8.0'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
-pod 'BaiduMobAdSDK','10.02'
+pod 'BaiduMobAdSDK','10.022'
 
 # 优量汇【可选】
 pod 'YFAdsSDK/YFAdsGDTAdapter'
-pod 'GDTMobSDK' ,'4.15.60'
+pod 'GDTMobSDK' ,'4.15.65'
 
 # 京东【可选】
 pod 'YFAdsSDK/YFAdsJDAdapter'
@@ -193,13 +194,13 @@ pod 'YFAdsSDK/YFAdsGROAdapter'
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
 pod 'Ads-CN', '7.1.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
-pod 'GMBaiduAdapter', '5.394.0'
-pod 'GMGdtAdapter', '4.15.41.2'
-pod 'GMKsAdapter', '4.6.30.1.2'
+pod 'GMBaiduAdapter', '10.02.1'
+pod 'GMGdtAdapter', '4.15.60.0'
+pod 'GMKsAdapter', '4.9.20.1.2'
 
 #  快手【可选】
 pod 'YFAdsSDK/YFAdsKSAdapter'
-pod 'KSAdSDK','4.9.20.1'
+pod 'KSAdSDK','4.10.30.1'
 
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
@@ -1414,6 +1415,74 @@ self.topPush.delegate = self;
 
 /// 顶推广告关闭落地页
 - (void)fcAdTopPushOnAdDetailPageClose:(YFAdTopPush *)topPush {
+    NSLog(@"广告点击了 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭落地页", __func__]];
+}
+
+```
+
+### 4.10 商城页广告
+
+具体示例参照Demo项目中DemoMallViewController.m
+
+1.请求代码
+
+```objective-c
+// 请求类中设置强引用
+@property (nonatomic, strong) YFAdMall *mall;
+
+// 初始化广告加载器 
+self.mall = [[YFAdMall alloc] initWithAdUnitID:[YFEnvironmentManager getMall_ID]];
+self.mall.delegate = self;
+[self.mall loadAndShowAd];
+```
+
+2.回调方法
+
+```objective-c
+/// 商城广告加载成功
+- (void)fcAdMallOnAdLoadSuccess:(YFAdMall *)mall {
+    self.isLoaded = YES;
+    [JDStatusBarNotification showWithStatus:@"广告加载成功" dismissAfter:1.5];
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功 请求ID：%@", __func__,mall.mgr.rID]];
+}
+
+/// 商城广告加载失败
+- (void)fcAdMallOnAdLoadFail:(YFAdMall *)mall withError:(NSError *)error {
+    //通知主线程刷新
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告加载异常: \r\n%@", __func__,error.userInfo.description]];
+        [self showErrorWithDescription:error.userInfo.description];
+    });
+    [self loadAdWithState:AdState_LoadFailed];
+    [self deallocAd];
+}
+
+/// 商城广告曝光
+- (void)fcAdMallOnAdShow:(YFAdMall *)mall {
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光成功", __func__]];
+}
+
+/// 商城广告渲染失败
+- (void)fcAdMallOnAdRenderFail:(YFAdMall *)mall {
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染失败", __func__]];
+}
+
+/// 商城广告关闭
+- (void)fcAdMallOnAdClose:(YFAdMall *)mall {
+    NSLog(@"广告关闭了 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭了", __func__]];
+    [self deallocAd];
+}
+
+/// 商城广告点击
+- (void)fcAdMallOnAdClick:(YFAdMall *)mall {
+    NSLog(@"广告点击了 %s", __func__);
+    [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告点击了", __func__]];
+}
+
+/// 商城广告关闭落地页
+- (void)fcAdMallOnAdDetailPageClose:(YFAdMall *)mall {
     NSLog(@"广告点击了 %s", __func__);
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭落地页", __func__]];
 }

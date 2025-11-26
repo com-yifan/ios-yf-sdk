@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)getAdxNetworkType;
 
 + (UIWindow *)getCurrentWindow;
++ (UIWindow *)getCurrentWindow_New;
 
 /// 获取当前控制器
 + (UIViewController *)getCurrentVC;
@@ -37,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 获取KeyWindow根控制器
 + (UIViewController *)getKeyRootVC;
+
+/// 根据传入的控制器获取当前最合适用于展示广告的控制器（插屏）。可能直接返回，也可能获取当前控制器。
++ (UIViewController *)getAvaliableShowAdVCFromVC:(UIViewController *)viewController;
 
 + (UIWindow *)getKeyWindow;
 

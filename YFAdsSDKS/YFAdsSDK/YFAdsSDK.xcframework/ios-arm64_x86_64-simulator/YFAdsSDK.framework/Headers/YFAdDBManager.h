@@ -14,25 +14,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shareInstance;
 /// 开屏缓存
-@property(nonatomic,retain)NSMutableArray * launchs;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * launchs;
 /// banner缓存
-@property(nonatomic,retain)NSMutableArray * banners;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * banners;
 /// 插屏缓存
-@property(nonatomic,retain)NSMutableArray * interstitials;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * interstitials;
 /// 激励视频缓存
-@property(nonatomic,retain)NSMutableArray * rewardvideo;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * rewardvideo;
 /// 信息流缓存
-@property(nonatomic,retain)NSMutableArray * express;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * express;
 /// 全屏视频缓存
-@property(nonatomic,retain)NSMutableArray * fullvideo;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * fullvideo;
 /// drawvideo
-@property(nonatomic,retain)NSMutableArray * drawvideo;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * drawvideo;
 /// 贴片广告
-@property(nonatomic,retain)NSMutableArray * patchAds;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * patchAds;
 /// 融合banner
-@property(nonatomic,retain)NSMutableArray * fusionBanner;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * fusionBanner;
 /// 顶推广告
-@property(nonatomic,retain)NSMutableArray * topPush;
+@property(nonatomic,strong)NSMutableDictionary <NSString *,NSMutableArray *> * topPush;
 
 /// 清除缓存
 - (void)clearCache;

@@ -118,7 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *device_paid;
 
 //苹果设备唯一标识号; 安卓系统不必填写
-@property(nonatomic, copy) NSString *device_openudid;
+@property(nonatomic, copy) NSString *device_openueid;
 
 //os idfv for iOS(>=iOS6) 安卓系统不必填写
 @property(nonatomic, copy) NSString *device_idfv;

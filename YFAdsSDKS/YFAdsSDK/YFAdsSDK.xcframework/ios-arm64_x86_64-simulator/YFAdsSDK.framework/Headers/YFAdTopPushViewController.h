@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)topPushViewRenderSuccess;
 - (void)topPushViewDidShow;
 - (void)topPushViewControllerChanged:(UIViewController *)viewController;
-
+- (void)topPushViewDidExpourse;
 @end
 
 @interface YFAdTopPushViewController : UIViewController

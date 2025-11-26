@@ -110,6 +110,8 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 
 @property (nonatomic, assign) BOOL shakeAdEnable;
 
+/// 额外控制参数，一般不需要使用
+@property (nonatomic, copy) NSDictionary *extraParam;
 @end
 
 NS_ASSUME_NONNULL_END

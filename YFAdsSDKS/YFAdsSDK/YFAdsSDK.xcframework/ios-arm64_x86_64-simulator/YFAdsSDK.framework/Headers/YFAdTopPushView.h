@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)topPushViewRenderFail;
 - (void)topPushViewClose:(BOOL)userAction;
 - (void)topPushViewDidShow;
+- (void)topPushViewDidExpourse;
 - (void)topPushViewControllerChanged:(UIViewController *)viewController;
 
 @end

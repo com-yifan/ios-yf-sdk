@@ -183,6 +183,11 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdInterstitial+TopPush.h>
 #import <YFAdsSDK/YFAdBaseAdapter+interstitial.h>
 
+// 商城
+#import <YFAdsSDK/YFAdMall.h>
+#import <YFAdsSDK/YFAdMallDelegate.h>
+#import <YFAdsSDK/YFSplashWithMallManager.h>
+
 //#import <YFAdsSDK/YFGradientView.h>
 //#import <YFAdsSDK/NSObject+YFAdModel.h>
 //#import <YFAdsSDK/UIApplication+YFAds.h>

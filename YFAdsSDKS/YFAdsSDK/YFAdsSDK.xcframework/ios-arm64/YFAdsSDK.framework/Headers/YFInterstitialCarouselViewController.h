@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface YFInterstitialCarouselViewController : YFAdBaseViewController
+// 当前轮播位置，默认0，广告展示出来后（未轮播显示第二个）即为1
+@property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) NSInteger icc;
 @property (nonatomic, assign) NSInteger ici;
 @property (nonatomic, weak) id<YFInterstitialCarouselDelegate> delegate;
