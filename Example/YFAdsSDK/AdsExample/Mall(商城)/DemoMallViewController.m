@@ -12,7 +12,6 @@
 #import "YFEnvironmentManager.h"
 #import "DemoPresentViewController.h"
 #import "UIAlertController+Blocks.h"
-#import "DemoIntertitialAdManager.h"
 
 @interface DemoMallViewController ()<YFAdMallDelegate>
 

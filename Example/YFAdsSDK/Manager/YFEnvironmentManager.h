@@ -45,6 +45,8 @@
 
 + (NSString *)getMEDIA_ID;
 
++ (NSString *)getMall_ID;
+
 + (NSString *)getFC_CONF_URL;
 
 + (NSString *)getFC_UPLOAD_URL;

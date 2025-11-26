@@ -177,6 +177,10 @@ static YFEnvironmentManager *environmentManager;
     return EnvironmentDic[@"YF_MEDIA_ID"];
 }
 
++ (NSString *)getMall_ID {
+    return EnvironmentDic[@"YF_MALL_ID"];
+}
+
 + (NSString *)getNATIVE_ID{
     return EnvironmentDic[@"YF_NATIVE_ID"];
 }
