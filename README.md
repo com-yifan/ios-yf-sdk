@@ -1,9 +1,10 @@
- # 亿帆SDK对接⽂档: V6.0.8.0.01
+ # 亿帆SDK对接⽂档: V6.0.8.1
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.0.8.1 | 1. 升级联盟SDK<br/>2. 修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.12.17 |
 | 6.0.8.0.01 | 1.修复已知问题 | 必选：</br> 替换主SDK | 2025.12.10 |
 | 6.0.8.0 | 1. 升级联盟SDK<br/>2. 新增商城页广告<br/>3. 优化部分广告样式交互<br/>4. 优化广告转化链路，提升广告价值<br/>5. 修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.11.26 |
 | 6.0.7.3 | 1. 修复已知问题 | 必选：</br> 替换主SDK及京东适配器 | 2025.10.31 |
@@ -48,13 +49,13 @@
 
 |   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner | 顶推 | 商城页 |
 | :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: | -------- | -------- |
-| 穿山甲    | 7.2.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ✅ |
+| 穿山甲    | 7.2.1.5 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ✅ |
 | 优量汇    | 4.15.65 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ | ✅ | ❌ |
 | 百青藤    | 10.022 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
-| 快手     | 4.10.30.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ❌ |
+| 快手     | 4.11.30.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ❌ |
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ | ✅ | ❌ |
-| 亿帆     | 6.0.8.0.01 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
-| gromore  | 7.2.0.9 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ | ✅ | ❌ |
+| 亿帆     |  6.0.8.1  | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
+| gromore  | 7.2.1.5 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ | ✅ | ❌ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
@@ -149,7 +150,7 @@ AssetsLibrary.framework
 ***1.1***
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.8.0.01'
+pod 'YFAdsSDK', '6.0.8.1'
 #  百度【必须】
 pod 'BaiduMobAdSDK','10.022'
 # 优量汇【必须】
@@ -158,13 +159,13 @@ pod 'GDTMobSDK' ,'4.15.65'
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.2.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.2.1.5', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
 pod 'GMBaiduAdapter', '10.02.1'
 pod 'GMGdtAdapter', '4.15.60.0'
 pod 'GMKsAdapter', '4.9.20.1.2'
 # 快手【必须】
-pod 'KSAdSDK','4.10.30.1'
+pod 'KSAdSDK','4.11.30.1'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
 ```
@@ -173,7 +174,7 @@ pod 'WechatOpenSDK-XCFramework'
 
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.8.0.01'
+pod 'YFAdsSDK/YFAdsSDK', '6.0.8.1'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
@@ -193,7 +194,7 @@ pod 'YFAdsSDK/YFAdsCSJAdapter'
 # Gromore【可选】
 pod 'YFAdsSDK/YFAdsGROAdapter'
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.1.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.2.1.5', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
 pod 'GMBaiduAdapter', '10.02.1'
 pod 'GMGdtAdapter', '4.15.60.0'
@@ -201,7 +202,7 @@ pod 'GMKsAdapter', '4.9.20.1.2'
 
 #  快手【可选】
 pod 'YFAdsSDK/YFAdsKSAdapter'
-pod 'KSAdSDK','4.10.30.1'
+pod 'KSAdSDK','4.11.30.1'
 
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
