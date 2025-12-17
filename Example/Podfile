@@ -6,7 +6,7 @@ target 'YFAdsSDK_Example' do
   
   # 亿帆SDK【必须】
 #pod 'YFAdsSDK', :path => '../'
-  pod 'YFAdsSDK', '6.0.8.0.01'
+  pod 'YFAdsSDK', '6.0.8.1'
   #  百度【必须】
   pod 'BaiduMobAdSDK','10.022'
   # 优量汇【必须】
@@ -15,13 +15,13 @@ target 'YFAdsSDK_Example' do
   pod 'JADYun', '2.6.8'
   pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
   #  穿山甲【必须】注意：穿山甲70xx版本运行环境配置发生变更，支持系统iOS 13.0及以上版本，请Xcode修改项目支持最低13.0，如需支持13.0以下请联系技术同学获取支持的穿山甲版本
-  pod 'Ads-CN', '7.2.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+  pod 'Ads-CN', '7.2.1.5', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
   # Gromore-Adn适配器
   pod 'GMBaiduAdapter', '10.02.1'
   pod 'GMGdtAdapter', '4.15.60.0'
   pod 'GMKsAdapter', '4.9.20.1.2'
   # 快手【必须】
-  pod 'KSAdSDK','4.10.30.1'
+  pod 'KSAdSDK','4.11.30.1'
   pod 'WechatOpenSDK'
  
  # Demo依赖库
