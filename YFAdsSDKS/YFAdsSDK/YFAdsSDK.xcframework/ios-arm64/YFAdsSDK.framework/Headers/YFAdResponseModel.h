@@ -136,6 +136,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger headBidding;
 @property (nonatomic, copy) NSString *potID;
 @property (nonatomic, copy) NSString *appKey;
+@property (nonatomic, copy) NSString *appSecret;
 @property (nonatomic, copy) NSString *wxAppID;
 @property (nonatomic, copy) NSString *wxUniLink;
 @property (nonatomic, copy) NSString *tpid;

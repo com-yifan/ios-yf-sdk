@@ -145,6 +145,8 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeAY        = 15,
     YFAdnTypeXU        = 16,
     YFAdnTypeGE        = 17,
+    YFAdnTypeIN        = 19,
+    YFAdnTypeJC        = 20
 
 };
 
@@ -199,6 +201,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *adnAppID;
 /// 广告商appID
 @property (nonatomic, copy) NSString *adnAppKey;
+
+@property (nonatomic, copy) NSString *appSecret;
+
 /// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 11 gromore 12 adx;  14 Tanx;
 @property (nonatomic, assign) YFAdnType adnID;
 /// 广告商名称

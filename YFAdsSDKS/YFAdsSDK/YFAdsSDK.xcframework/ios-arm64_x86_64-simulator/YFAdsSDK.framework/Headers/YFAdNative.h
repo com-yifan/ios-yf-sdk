@@ -20,14 +20,19 @@ typedef NS_ENUM (NSInteger, YFAdNativeInteractionType) {
 };
 
 typedef NS_ENUM(NSInteger, YFAdSourceType) {
-    YFAdSourceTypeBD  = 1,
-    YFAdSourceTypeCSJ = 2,
-    YFAdSourceTypeGDT = 3,
-    YFAdSourceTypeJD  = 4,
-    YFAdSourceTypeKS  = 5,
-    YFAdSourceTypeYF  = 6,
-    YFAdSourceTypeTX  = 7
-
+    YFAdSourceTypeCSJ       = 1,
+    YFAdSourceTypeGDT       = 2,
+    YFAdSourceTypeBD        = 3,
+    YFAdSourceTypeKS        = 4,
+    YFAdSourceTypeJD        = 9,
+    YFAdSourceTypeGM        = 11,
+    YFAdSourceTypeADX       = 12,
+    YFAdSourceTypeTX        = 14,
+    YFAdSourceTypeAY        = 15,
+    YFAdSourceTypeXU        = 16,
+    YFAdSourceTypeGE        = 17,
+    YFAdSourceTypeIN        = 19,
+    YFAdSourceTypeJC        = 20
 };
 
 
