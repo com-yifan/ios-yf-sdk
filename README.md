@@ -1,9 +1,10 @@
- # 亿帆SDK对接⽂档: V6.0.8.2
+ # 亿帆SDK对接⽂档: V6.0.9.0
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.0.9.0 | 1. 升级联盟SDK<br/>2. 优化部分广告样式交互<br/>3. 优化广告转化链路，提升广告价值<br/>4. 激励视频服务端回调能力完善<br/>5. **融合Banner接口调整，增加开发者自渲染类型，详见4.9融合Banner**<br/>6. 修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework；融合banner开发者自渲染类型适配； | 2026.3.11 |
 | 6.0.8.2 | 1.修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework | 2026.1.22 |
 | 6.0.8.1 | 1. 升级联盟SDK<br/>2. 修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.12.17 |
 | 6.0.8.0.01 | 1.修复已知问题 | 必选：</br> 替换主SDK | 2025.12.10 |
@@ -50,13 +51,13 @@
 
 |   平台   | 版本 | 开屏 | 激励视频 | 横幅 | 插屏 | 信息流 | 全屏视频 | draw | 贴片 | 融合Banner | 顶推 | 商城页 |
 | :------: | :--: | :-----: | :--: | :--: | :---: | :-----: | :--: | :--: | :--: | :------: | -------- | -------- |
-| 穿山甲    | 7.2.1.5 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ✅ |
-| 优量汇    | 4.15.65 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ | ✅ | ❌ |
-| 百青藤    | 10.022 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
-| 快手     | 4.11.30.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ❌ |
+| 穿山甲    | 7.4.0.4 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ✅ |
+| 优量汇    | 4.15.75 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ✅  | ✅ | ✅ | ❌ |
+| 百青藤    | 10.032 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
+| 快手     | 5.1.20.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ❌ |
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ | ✅ | ❌ |
-| 亿帆     |  6.0.8.1  | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
-| gromore  | 7.2.1.5 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ | ✅ | ❌ |
+| 亿帆     |  6.0.9.0  | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
+| gromore  | 7.4.0.4 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ | ✅ | ❌ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
@@ -151,22 +152,22 @@ AssetsLibrary.framework
 ***1.1***
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.8.2'
+pod 'YFAdsSDK', '6.0.9.0'
 #  百度【必须】
-pod 'BaiduMobAdSDK','10.022'
+pod 'BaiduMobAdSDK','10.032'
 # 优量汇【必须】
-pod 'GDTMobSDK' ,'4.15.65'
+pod 'GDTMobSDK' ,'4.15.75'
 # 京东【必须】
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.2.1.5', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.4.0.4', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
 pod 'GMBaiduAdapter', '10.02.1'
-pod 'GMGdtAdapter', '4.15.60.0'
-pod 'GMKsAdapter', '4.9.20.1.2'
+pod 'GMGdtAdapter', '4.15.65.0'
+pod 'GMKsAdapter', '4.11.20.1.0'
 # 快手【必须】
-pod 'KSAdSDK','4.11.30.1'
+pod 'KSAdSDK','5.1.20.1'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
 ```
@@ -175,15 +176,15 @@ pod 'WechatOpenSDK-XCFramework'
 
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.8.2'
+pod 'YFAdsSDK/YFAdsSDK', '6.0.9.0'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
-pod 'BaiduMobAdSDK','10.022'
+pod 'BaiduMobAdSDK','10.032'
 
 # 优量汇【可选】
 pod 'YFAdsSDK/YFAdsGDTAdapter'
-pod 'GDTMobSDK' ,'4.15.65'
+pod 'GDTMobSDK' ,'4.15.75'
 
 # 京东【可选】
 pod 'YFAdsSDK/YFAdsJDAdapter'
@@ -195,15 +196,15 @@ pod 'YFAdsSDK/YFAdsCSJAdapter'
 # Gromore【可选】
 pod 'YFAdsSDK/YFAdsGROAdapter'
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.2.1.5', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.4.0.4', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
 pod 'GMBaiduAdapter', '10.02.1'
-pod 'GMGdtAdapter', '4.15.60.0'
-pod 'GMKsAdapter', '4.9.20.1.2'
+pod 'GMGdtAdapter', '4.15.65.0'
+pod 'GMKsAdapter', '4.11.20.1.0'
 
 #  快手【可选】
 pod 'YFAdsSDK/YFAdsKSAdapter'
-pod 'KSAdSDK','4.11.30.1'
+pod 'KSAdSDK','5.1.20.1'
 
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
 pod 'WechatOpenSDK-XCFramework'
@@ -343,43 +344,71 @@ tionStatus status) {
 
 ``` XML
     <key>LSApplicationQueriesSchemes</key>
-    <array>
-<!--    以下为必选配置-->
-        <string>alipays</string>
-        <string>taptap</string>
-        <string>tbopen</string>
-        <string>taobaolite</string>
-        <string>duapp</string>
-        <string>qiyi-iphone</string>
-        <string>baiduboxlite</string>
-        <string>diditaxi</string>
-        <string>snssdk1128</string>
-        <string>snssdk2329</string>
-        <string>douyutv</string>
-        <string>eleme</string>
-        <string>openApp.jdMobile</string>
-        <string>openjdjrapp</string>
-        <string>kwai</string>
-        <string>ksnebula</string>
-        <string>iMeituan</string>
-        <string>pinduoduo</string>
-        <string>tmallopen</string>
-        <string>sinaweibo</string>
-        <string>VSSpecialSwitch</string>
-        <string>fleamarket</string>
-        <string>youku</string>
-        <string>zhihu</string>
-        <string>ucbrowser</string>
-        <string>douyuapp</string>
-<!--    以下为推荐配置-->
-        <string>autohome</string>
-        <string>taobaolive</string>
-        <string>dangdang</string>
-        <string>quark</string>
-        <string>sky20170605</string>
-        <string>yymobile</string>
-        <string>meituanwaimai</string>
-    </array>
+<array>
+	<string>tbopen</string>
+	<string>alipays</string>
+	<string>imeituan</string>
+	<string>eleme</string>
+	<string>baiduboxapp</string>
+	<string>openapp.jdmobile</string>
+	<string>taptap</string>
+	<string>ctrip</string>
+	<string>meituanwaimai</string>
+	<string>kwai</string>
+	<string>http</string>
+	<string>vipshop</string>
+	<string>ksnebula</string>
+	<string>snssdk1128</string>
+	<string>iting</string>
+	<string>pddopen</string>
+	<string>wireless1688</string>
+	<string>qklink</string>
+	<string>hunyuan</string>
+	<string>baiduboxlite</string>
+	<string>iqiyi</string>
+	<string>tmall</string>
+	<string>taobaoliveshare</string>
+	<string>tuhu</string>
+	<string>sa756c9bff</string>
+	<string>youku</string>
+	<string>kugou</string>
+	<string>freereader</string>
+	<string>openanjuke</string>
+	<string>dewuapp</string>
+	<string>jdmobile</string>
+	<string>yykiwi</string>
+	<string>pinduoduo</string>
+	<string>dianping</string>
+	<string>onetravel</string>
+	<string>fleamarket</string>
+	<string>orpheus</string>
+	<string>cainiao</string>
+	<string>tongyi</string>
+	<string>com.sogou.sogouinput</string>
+	<string>uclink</string>
+	<string>taobaolite</string>
+	<string>duapp</string>
+	<string>qiyi-iphone</string>
+	<string>diditaxi</string>
+	<string>snssdk2329</string>
+	<string>douyutv</string>
+	<string>openApp.jdMobile</string>
+	<string>openjdjrapp</string>
+	<string>iMeituan</string>
+	<string>tmallopen</string>
+	<string>sinaweibo</string>
+	<string>VSSpecialSwitch</string>
+	<string>zhihu</string>
+	<string>ucbrowser</string>
+	<string>douyuapp</string>
+	<!-- 推荐 -->
+	<string>autohome</string>
+	<string>taobaolive</string>
+	<string>dangdang</string>
+	<string>quark</string>
+	<string>sky20170605</string>
+	<string>yymobile</string>
+</array>
 ```
 
 ### 3.3 跳转须知
@@ -955,7 +984,7 @@ self.splash.showLogoRequire = YES;
 
  ```
 
-### 4.6 视频贴片
+### 4.7 视频贴片
 
 具体示例参照Demo项目中DemoPatchViewController.m
 
@@ -1010,7 +1039,7 @@ self.splash.showLogoRequire = YES;
 }
  ```
 
-### 4.7 Draw 视频
+### 4.8 Draw 视频
 
 具体示例参照Demo项目中DemoDrawViewController.m
 
@@ -1233,13 +1262,45 @@ self.splash.showLogoRequire = YES;
 
  ```
 
-### 4.8 融合Banner
+### 4.9 融合Banner
 
 具体示例参照Demo项目中DemoFusionBannerViewController.m
 
 1.请求代码
 
 ```objective-c
+/// 融合Banner返回的广告类型
+typedef enum : NSUInteger {
+    // 横幅
+    YFAdFusionBannerAdType_Banner,
+    // 亿帆模板信息流
+    YFAdFusionBannerAdType_CustomNative,
+    // 联盟模板信息流
+    YFAdFusionBannerAdType_Express,
+    // 开发者自渲染 v6090新增类型
+    YFAdFusionBannerAdType_SelfRender
+} YFAdFusionBannerAdType;
+
+@interface YFAdFusionBannerView : UIView
+/// 所属联盟平台
+@property (nonatomic, assign) YFAdFusionBannerPlatform platform;
+/// 融合banner返回的广告类型
+@property (nonatomic, assign) YFAdFusionBannerAdType adType;
+/// 广告视图 adType == YFAdFusionBannerAdType_SelfRender时为空
+@property (nonatomic, strong, nullable) UIView *adView;
+/// 开发者自渲染素材数据，adType  != YFAdFusionBannerAdType_SelfRender为空
+@property (nonatomic, strong, nullable) YFAdMedia *mediaData;
+/// 请使用 isValid 校验有效性，该属性无法判断
+@property (nonatomic, assign) BOOL valid;
+/// 是否渲染成功（素材加载完成，图片可以显示或视频可以播放）
+@property (nonatomic, assign) BOOL isReady;
+/// 渲染广告；调用该方法后开始渲染广告，成功回调 fcAdFusionBannerOnAdRenderSuccess: 渲染失败回调 fcAdFusionBannerOnAdRenderFail
+- (void)render;
+/// 广告是否有效(广告无效时不建议再次展示，建议请求新的广告)
+- (BOOL)isValid;
+@end
+
+/// 广告接入
 // 请求类中设置强引用
 @property(nonatomic, strong) YFAdFusionBanner * adBanner; 
 
@@ -1259,14 +1320,48 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
 2.回调方法
 
 ```objective-c
+#pragma mark - 开发者自渲染视图
+- (DemoNativeSelfRenderView *)creatMeidaRenderViewWithMedia:(YFAdMedia *)media {
+    DemoNativeSelfRenderView *selfRenderView = [[DemoNativeSelfRenderView alloc] initWithOffer:media];
+    selfRenderView.frame = CGRectMake(0, 0, kScreenW, 400.0);
+    NSMutableArray * clickableViews = [[NSMutableArray alloc] initWithCapacity:0];
+    if(selfRenderView.mediaView){
+        [clickableViews addObject:selfRenderView.mediaView];
+    }
+    
+    [clickableViews addObjectsFromArray:@[selfRenderView.ctaLabel,selfRenderView.titleLabel,selfRenderView.textLabel,selfRenderView.mainImageView,selfRenderView.iconImageView]];
+
+    [media registerContainer:selfRenderView withClickableViews:clickableViews];
+    [(YFAdMedia *)media trackVideoViewImpression];
+    __weak typeof(selfRenderView) weakSelfRenderView = selfRenderView;
+    __weak typeof(self) weakSelf = self;
+    selfRenderView.closeAction = ^{
+        // 开发者自行处理关闭事件
+        [weakSelf.dataArrays removeObject:weakSelfRenderView];
+        [weakSelf.tableView reloadData];
+        [weakSelf.contentV removeFromSuperview];
+        if (!_isListMode) {
+            [self deallocAd];
+        } else {
+            // 移除加载器强引用
+            YFAdFusionBanner *fusionBanner = [weakSelf.fusionBannerMap objectForKey:weakSelfRenderView];
+            [weakSelf.fusionBannerArrays removeObject:fusionBanner];
+        }
+    };
+    return selfRenderView;
+}
+
+#pragma mark - YFAdFusionBannerDelegate 广告相关回调
+
 /// 广告数据拉取成功
 - (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdLoadSuccess:(NSArray<YFAdFusionBannerView *> * _Nullable)views {
+    AlertIfNotMainThread
     if (views.count > 0) {
         self.isLoaded = YES;
         if(self.isOnlyLoad) {}
         [JDStatusBarNotification showWithStatus:@"广告加载成功" dismissAfter:1.5];
-        [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功", __func__]];
-        /// 调用渲染方法
+        [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功 %@ 请求ID：%@", __func__,self.adBanner.isValid?@"有效":@"❗️失效",self.adBanner.mgr.rID]];
+        /// 调用渲染方法，不调用无渲染相关回调
         for (YFAdFusionBannerView *bannerView in views) {
             [bannerView render];
         }
@@ -1275,6 +1370,9 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
         //通知主线程刷新
         dispatch_async(dispatch_get_main_queue(), ^{
             [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告加载异常: \r\n广告返回为空", __func__]];
+            self.view.userInteractionEnabled = YES;
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer endRefreshing];
         });
     }
     
@@ -1282,46 +1380,53 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
 
 /// 广告加载失败
 - (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter  description:(NSDictionary *)description{
+    AlertIfNotMainThread
     NSLog(@"广告展示失败 %s  error: %@ 详情:%@", __func__, error, description);
     //通知主线程刷新
     dispatch_async(dispatch_get_main_queue(), ^{
         [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告加载异常: \r\n%@", __func__,error.userInfo.description]];
         [self showErrorWithDescription:description];
+        self.view.userInteractionEnabled = YES;
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     });
+    // 移除加载器强引用
+    [self.fusionBannerArrays removeObject:adapter];
 }
 
 /// 广告曝光
 - (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdShow:(YFAdFusionBannerView * _Nullable)adView {
+    AlertIfNotMainThread
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告曝光成功", __func__]];
 }
 
 /// 广告点击
 - (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdClicked:(YFAdFusionBannerView * _Nullable)adView {
+    AlertIfNotMainThread
     NSLog(@"广告点击 %s", __func__);
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告点击", __func__]];
 }
 
 /// 广告渲染成功
 - (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdRenderSuccess:(YFAdFusionBannerView * _Nullable)adView {
+    AlertIfNotMainThread
     ///  渲染成功后 依据广告大小重设容器；其他需求可同理实现
     if (_isListMode) {
-        if (self.dataArrays.count > 5) {
-            if (![self.dataArrays[0] isKindOfClass:[YFAdFusionBannerView class]]) {
-                [self.dataArrays insertObject:adView atIndex:0];
-            } else if (![self.dataArrays[2] isKindOfClass:[YFAdFusionBannerView class]]) {
-                [self.dataArrays insertObject:adView atIndex:2];
-            } else if (![self.dataArrays[4] isKindOfClass:[YFAdFusionBannerView class]]) {
-                [self.dataArrays insertObject:adView atIndex:4];
-            } else {
-                [self.dataArrays addObject:adView];
-            }
-        }
-        [self.tableView reloadData];
+        [self insertAdToDataSource:adView withFusionBanner:fusionBanner];
     } else {
-        [self.contentV addSubview:adView];
-        self.contentV.frame = CGRectMake(self.slider.value * 60, 10,adView.bounds.size.width, self.container.bounds.size.height);
-        self.contentV.contentSize = CGSizeMake(adView.bounds.size.width, adView.bounds.size.height);
-        adView.frame = CGRectMake(0, 0, adView.bounds.size.width, adView.bounds.size.height);
+        if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+            // 开发者自渲染 根据adView.mediaData构建广告视图
+            UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+            [self.contentV addSubview:selfRenderView];
+            self.contentV.frame = CGRectMake(self.container.bounds.size.width/2 - selfRenderView.bounds.size.width/2, 0,selfRenderView.bounds.size.width, self.container.bounds.size.height);
+            self.contentV.contentSize = CGSizeMake(selfRenderView.bounds.size.width, selfRenderView.bounds.size.height);
+            selfRenderView.frame = CGRectMake(0, 0, selfRenderView.bounds.size.width, selfRenderView.bounds.size.height);
+        } else {
+            [self.contentV addSubview:adView];
+            self.contentV.frame = CGRectMake(self.container.bounds.size.width/2 - adView.bounds.size.width/2, 10,adView.bounds.size.width, self.container.bounds.size.height);
+            self.contentV.contentSize = CGSizeMake(adView.bounds.size.width, adView.bounds.size.height);
+            adView.frame = CGRectMake(0, 0, adView.bounds.size.width, adView.bounds.size.height);
+        }
         [self.container addSubview:self.contentV];
     }
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染成功", __func__]];
@@ -1329,26 +1434,45 @@ self.adBanner.adWidth = self.view.bounds.size.width - (self.slider.value * 60 * 
 
 /// 广告渲染失败
 - (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdRenderFail:(YFAdFusionBannerView * _Nullable)adView {
+    AlertIfNotMainThread
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染失败", __func__]];
+    [self showErrorWithDescription:fusionBanner.errorDescriptions];
+
+    self.view.userInteractionEnabled = YES;
+    
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    // 移除加载器强引用
+    [self.fusionBannerArrays removeObject:fusionBanner];
+    if (self.fusionBannerArrays.count == 0) {
+        [self deallocAd];
+    }
 }
 
 /// 广告被关闭
 - (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdClosed:(YFAdFusionBannerView * _Nullable)adView {
+    AlertIfNotMainThread
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭了", __func__]];
     if (_isListMode) {
-        [self.dataArrays removeObject:adView];
-        [self.tableView reloadData];
+        [adView removeFromSuperview];
+        NSInteger index = [self.dataArrays indexOfObject:adView];
+        [self.dataArrays removeObject: adView];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
     } else {
         /// 广告关闭移除广告视图
         [adView removeFromSuperview];
         [self.container removeFromSuperview];
+        if (!_isListMode) {
+            [self deallocAd];
+        }
     }
     /// 可在此处理 fusionBanner 与其关联的广告视图，当全部广告关闭时，可释放fusionBanner加载器
-    /// ...............
+    // 移除加载器强引用
+    [self.fusionBannerArrays removeObject:fusionBanner];
 }
 ```
 
-### 4.9 顶推广告
+### 4.10 顶推广告
 
 具体示例参照Demo项目中DemoTopPushViewController.m
 
@@ -1424,7 +1548,7 @@ self.topPush.delegate = self;
 
 ```
 
-### 4.10 商城页广告
+### 4.11 商城页广告
 
 具体示例参照Demo项目中DemoMallViewController.m
 
