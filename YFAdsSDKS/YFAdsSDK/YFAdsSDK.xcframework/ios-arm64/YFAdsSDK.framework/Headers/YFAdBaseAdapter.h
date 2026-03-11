@@ -72,6 +72,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 暂时隐藏和显示红包浮窗
 - (void)hideFloatIcon;
 - (void)showFloatIcon;
+/// 插屏状态
+- (void)intertitialDidShowWithModel:(YFAdEventModel *)model;
+- (void)intertitialDidCloseWithModel:(YFAdEventModel *)model;
 
 @end
 

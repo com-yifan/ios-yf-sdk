@@ -48,4 +48,36 @@
 ///   - adView: 广告视图
 - (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdClosed:(YFAdFusionBannerView * _Nullable)adView;
 
+/// 开发者自渲染广告类型视频相关回调
+/// 自渲染广告视频缓存失败
+/// - Parameters:
+///   - fusionBanner: 广告加载器
+///   - adView: 广告素材所属广告视图
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onVideoCacheFail:(YFAdFusionBannerView * _Nullable)adView;
+
+/// 自渲染广告视频暂停
+/// - Parameters:
+///   - fusionBanner: 广告加载器
+///   - adView: 广告素材所属广告视图
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onVideoPause:(YFAdFusionBannerView * _Nullable)adView;
+
+/// 自渲染广告视频开始播放
+/// - Parameters:
+///   - fusionBanner: 广告加载器
+///   - adView: 广告素材所属广告视图
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onVideoStartPlay:(YFAdFusionBannerView * _Nullable)adView;
+
+/// 自渲染广告播放完成
+/// - Parameters:
+///   - fusionBanner: 广告加载器
+///   - adView: 广告素材所属广告视图
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onVideoPlayFinish:(YFAdFusionBannerView * _Nullable)adView;
+
+/// 自渲染广告播放进度，单位:s，因时间单位问题，可能会出现当前时间单位内重复回调问题
+/// - Parameters:
+///   - fusionBanner: 广告加载器
+///   - adView: 广告素材所属广告视图
+- (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner adView:(YFAdFusionBannerView * _Nullable)adView onVideoPlayProgress:(int)progress;
+
+
 @end

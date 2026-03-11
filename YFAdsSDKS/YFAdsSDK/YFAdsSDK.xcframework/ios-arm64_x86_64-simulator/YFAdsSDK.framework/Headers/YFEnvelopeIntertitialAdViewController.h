@@ -21,6 +21,7 @@
 #import <YFAdsSDK/YFAdBaseCustomView.h>
 #import <YFAdsSDK/YFInterstitialCarouselViewController.h>
 #import <YFAdsSDK/YFAdTopPush.h>
+#import <YFAdsSDK/YFAdInterstitial.h>
 
 NS_ASSUME_NONNULL_BEGIN
 /// 插屏承载控制器

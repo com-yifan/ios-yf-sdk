@@ -15,6 +15,7 @@
 #import "BYExamCellModel.h"
 #import "YFDataJsonManager.h"
 #import <MJRefresh/MJRefresh.h>
+#import "DemoNativeSelfRenderView.h"
 
 @interface DemoFusionBannerViewController ()<YFAdFusionBannerDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -25,7 +26,7 @@
 /// 数据源
 @property (nonatomic, strong) NSMutableArray *dataArrays;
 /// 广告加载器
-@property (nonatomic, strong) NSMutableArray *fusionBannerArrays;
+@property (nonatomic, strong) NSMutableArray <YFAdFusionBanner *>*fusionBannerArrays;
 
 @property (nonatomic, strong) UISlider * slider;
 @property (nonatomic, strong) UILabel * marginLabel;
@@ -34,13 +35,15 @@
 @property (nonatomic, assign) BOOL isListMode;
 @property (nonatomic, strong) UIButton *listBtn;
 @property (nonatomic, strong) UIButton *viewBtn;
+/// 加载器映射处理
+@property (nonatomic, strong) NSMapTable<UIView *,YFAdFusionBanner *> *fusionBannerMap;
 
 @end
 
 @implementation DemoFusionBannerViewController
 
 #pragma mark - lazy load
-- (NSMutableArray *)fusionBannerArrays{
+- (NSMutableArray <YFAdFusionBanner *>*)fusionBannerArrays{
     if (!_fusionBannerArrays) {
         _fusionBannerArrays = [NSMutableArray array];
     }
@@ -53,6 +56,14 @@
     }
     return _dataArrays;
 }
+
+- (NSMapTable<UIView *,YFAdFusionBanner *> *)fusionBannerMap {
+    if (!_fusionBannerMap) {
+        _fusionBannerMap = [NSMapTable weakToWeakObjectsMapTable];
+    }
+    return _fusionBannerMap;
+}
+
 - (UIButton *)listBtn {
     if (!_listBtn) {
         _listBtn = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -104,7 +115,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 460 ,self.view.frame.size.width,self.view.frame.size.height - 460.0) style:UITableViewStylePlain];
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"splitnativeexpresscell"];
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"nativeselfrendercell"];
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"nativeexpresscell"];
         [_tableView registerClass:[ExamTableViewCell class] forCellReuseIdentifier:@"ExamTableViewCell"];
         _tableView.delegate = self;
@@ -121,7 +132,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    self.title = @"融合横幅";
+    self.title = @"融合Banner";
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithTitle:@"显示日志" style:UIBarButtonItemStylePlain target:self action:@selector(showLogView)];
     self.navigationItem.rightBarButtonItem = rightBar;
     
@@ -207,7 +218,12 @@
 }
 
 - (void)showAd {
+    if (!self.isListMode&&![self.adBanner isValid]) {
+        [JDStatusBarNotification showWithStatus:@"请先加载广告" dismissAfter:1.5];
+        return;
+    }
     if (!self.isLoaded) return;
+    
     if (_isListMode) {
         [self.view addSubview:self.tableView];
     } else {
@@ -261,6 +277,7 @@
     self.dataArrays = [NSMutableArray arrayWithArray:[CellBuilder dataFromJsonFile:@"cell01"]];
     // 释放广告加载器
     self.fusionBannerArrays = [NSMutableArray new];
+    [self.fusionBannerMap removeAllObjects];
     self.adBanner = nil;
     [self.tableView reloadData];
     [self.tableView removeFromSuperview];
@@ -268,6 +285,40 @@
     self.container = nil;
     self.contentV = nil;
 }
+
+#pragma mark - 开发者自渲染视图
+
+- (DemoNativeSelfRenderView *)creatMeidaRenderViewWithMedia:(YFAdMedia *)media {
+    DemoNativeSelfRenderView *selfRenderView = [[DemoNativeSelfRenderView alloc] initWithOffer:media];
+    selfRenderView.frame = CGRectMake(0, 0, kScreenW, 400.0);
+    NSMutableArray * clickableViews = [[NSMutableArray alloc] initWithCapacity:0];
+    if(selfRenderView.mediaView){
+        [clickableViews addObject:selfRenderView.mediaView];
+    }
+    
+    [clickableViews addObjectsFromArray:@[selfRenderView.ctaLabel,selfRenderView.titleLabel,selfRenderView.textLabel,selfRenderView.mainImageView,selfRenderView.iconImageView]];
+
+    [media registerContainer:selfRenderView withClickableViews:clickableViews];
+    [(YFAdMedia *)media trackVideoViewImpression];
+    __weak typeof(selfRenderView) weakSelfRenderView = selfRenderView;
+    __weak typeof(self) weakSelf = self;
+    selfRenderView.closeAction = ^{
+        // 开发者自行处理关闭事件
+        [weakSelf.dataArrays removeObject:weakSelfRenderView];
+        [weakSelf.tableView reloadData];
+        [weakSelf.contentV removeFromSuperview];
+        if (!_isListMode) {
+            [self deallocAd];
+        } else {
+            // 移除加载器强引用
+            YFAdFusionBanner *fusionBanner = [weakSelf.fusionBannerMap objectForKey:weakSelfRenderView];
+            [weakSelf.fusionBannerArrays removeObject:fusionBanner];
+        }
+    };
+    return selfRenderView;
+}
+
+
 
 #pragma mark  - UITableViewDataSource & UITableViewDelegate
 
@@ -278,9 +329,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([_dataArrays[indexPath.row] isKindOfClass:[BYExamCellModelElement class]]) {
         return ((BYExamCellModelElement *)_dataArrays[indexPath.row]).cellh;
-    } else {
+    } else if ([_dataArrays[indexPath.row] isKindOfClass:[YFAdFusionBannerView class]]) {
         CGFloat height = ((YFAdFusionBannerView *)_dataArrays[indexPath.row]).bounds.size.height;
         return height;
+    } else {
+        // 开发者自渲染高度
+        return 400.0;
     }
 }
 
@@ -291,19 +345,27 @@
         ((ExamTableViewCell *)cell).item = _dataArrays[indexPath.row];
         return cell;
     } else {
-        cell = [self.tableView dequeueReusableCellWithIdentifier:@"nativeexpresscell" forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-        UIView *subView = (UIView *)[cell.contentView viewWithTag:1000];
-        if ([subView superview]) {
-            [subView removeFromSuperview];
-        }
+        
         UIView *view = _dataArrays[indexPath.row];
-
-        view.tag = 1000;
-        [cell.contentView addSubview:view];
-        view.frame = CGRectMake(cell.contentView.bounds.size.width/2 - view.bounds.size.width/2, 0, view.bounds.size.width, view.bounds.size.height);
-        cell.accessibilityIdentifier = @"nativeTemp_ad";
+        if ([view isKindOfClass:[YFAdFusionBannerView class]]) {
+            cell = [self.tableView dequeueReusableCellWithIdentifier:@"nativeexpresscell" forIndexPath:indexPath];
+            UIView *subView = (UIView *)[cell.contentView viewWithTag:1000];
+            if ([subView superview]) {
+                [subView removeFromSuperview];
+            }
+            view.tag = 1000;
+            [cell.contentView addSubview:view];
+            view.frame = CGRectMake(cell.contentView.bounds.size.width/2 - view.bounds.size.width/2, 0, view.bounds.size.width, view.bounds.size.height);
+            cell.accessibilityIdentifier = @"nativeTemp_ad";
+        } else {
+            cell = [self.tableView dequeueReusableCellWithIdentifier:@"nativeselfrendercell" forIndexPath:indexPath];
+            // 开发者自渲染
+            view.tag = 2000;
+            [cell.contentView addSubview:view];
+            view.frame = CGRectMake(cell.contentView.bounds.size.width/2 - view.bounds.size.width/2, 0, view.bounds.size.width, view.bounds.size.height);
+            cell.accessibilityIdentifier = @"nativeTemp_ad_selfrender";
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
@@ -317,7 +379,7 @@
         self.isLoaded = YES;
         if(self.isOnlyLoad) {}
         [JDStatusBarNotification showWithStatus:@"广告加载成功" dismissAfter:1.5];
-        [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功", __func__]];
+        [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告数据拉取成功 %@ 请求ID：%@", __func__,self.adBanner.isValid?@"有效":@"❗️失效",self.adBanner.mgr.rID]];
         /// 调用渲染方法，不调用无渲染相关回调
         for (YFAdFusionBannerView *bannerView in views) {
             [bannerView render];
@@ -347,6 +409,8 @@
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
     });
+    // 移除加载器强引用
+    [self.fusionBannerArrays removeObject:adapter];
 }
 
 /// 广告曝光
@@ -367,18 +431,31 @@
     AlertIfNotMainThread
     ///  渲染成功后 依据广告大小重设容器；其他需求可同理实现
     if (_isListMode) {
-        [self insertAdToDataSource:adView];
+        [self insertAdToDataSource:adView withFusionBanner:fusionBanner];
     } else {
-        [self.contentV addSubview:adView];
-        self.contentV.frame = CGRectMake(self.slider.value * 60, 10,adView.bounds.size.width, self.container.bounds.size.height);
-        self.contentV.contentSize = CGSizeMake(adView.bounds.size.width, adView.bounds.size.height);
-        adView.frame = CGRectMake(0, 0, adView.bounds.size.width, adView.bounds.size.height);
+        if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+            // 开发者自渲染
+            UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+            [self.contentV addSubview:selfRenderView];
+            self.contentV.frame = CGRectMake(self.container.bounds.size.width/2 - selfRenderView.bounds.size.width/2, 0,selfRenderView.bounds.size.width, self.container.bounds.size.height);
+            self.contentV.contentSize = CGSizeMake(selfRenderView.bounds.size.width, selfRenderView.bounds.size.height);
+            selfRenderView.frame = CGRectMake(0, 0, selfRenderView.bounds.size.width, selfRenderView.bounds.size.height);
+        } else {
+            [self.contentV addSubview:adView];
+            self.contentV.frame = CGRectMake(self.container.bounds.size.width/2 - adView.bounds.size.width/2, 10,adView.bounds.size.width, self.container.bounds.size.height);
+            self.contentV.contentSize = CGSizeMake(adView.bounds.size.width, adView.bounds.size.height);
+            adView.frame = CGRectMake(0, 0, adView.bounds.size.width, adView.bounds.size.height);
+        }
+        
+#ifdef DEBUG
+        self.contentV.backgroundColor = [UIColor blueColor];
+#endif
         [self.container addSubview:self.contentV];
     }
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染成功", __func__]];
 }
 
--(void)insertAdToDataSource:(YFAdFusionBannerView * _Nullable)adView{
+-(void)insertAdToDataSource:(YFAdFusionBannerView * _Nullable)adView withFusionBanner:(YFAdFusionBanner *)fusionBanner{
     if (self.tableView.mj_footer.state == MJRefreshStateRefreshing) {
         NSInteger startCount = self.dataArrays.count;
 
@@ -386,13 +463,46 @@
 
         if (self.dataArrays.count > startCount+5) {
             if (![self.dataArrays[0] isKindOfClass:[YFAdFusionBannerView class]]) {
-                [self.dataArrays insertObject:adView atIndex:startCount+0];
+                if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+                    // 开发者自渲染视图
+                    UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+                    [self.fusionBannerMap setObject:fusionBanner forKey:selfRenderView];
+                    [self.dataArrays insertObject:selfRenderView atIndex:startCount+0];
+                } else {
+                    [self.fusionBannerMap setObject:fusionBanner forKey:adView];
+                    [self.dataArrays insertObject:adView atIndex:startCount+0];
+                }
             } else if (![self.dataArrays[2] isKindOfClass:[YFAdFusionBannerView class]]) {
-                [self.dataArrays insertObject:adView atIndex:startCount+2];
+                if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+                    // 开发者自渲染视图
+                    // 开发者自渲染视图
+                    UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+                    [self.fusionBannerMap setObject:fusionBanner forKey:selfRenderView];
+                    [self.dataArrays insertObject:selfRenderView atIndex:startCount+2];
+                } else {
+                    [self.fusionBannerMap setObject:fusionBanner forKey:adView];
+                    [self.dataArrays insertObject:adView atIndex:startCount+2];
+                }
             } else if (![self.dataArrays[4] isKindOfClass:[YFAdFusionBannerView class]]) {
-                [self.dataArrays insertObject:adView atIndex:startCount+4];
+                if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+                    // 开发者自渲染视图
+                    UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+                    [self.fusionBannerMap setObject:fusionBanner forKey:selfRenderView];
+                    [self.dataArrays insertObject:selfRenderView atIndex:startCount+4];
+                } else {
+                    [self.fusionBannerMap setObject:fusionBanner forKey:adView];
+                    [self.dataArrays insertObject:adView atIndex:startCount+4];
+                }
             } else {
-                [self.dataArrays addObject:adView];
+                if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+                    // 开发者自渲染视图
+                    UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+                    [self.fusionBannerMap setObject:fusionBanner forKey:selfRenderView];
+                    [self.dataArrays addObject:selfRenderView];
+                } else {
+                    [self.fusionBannerMap setObject:fusionBanner forKey:adView];
+                    [self.dataArrays addObject:adView];
+                }
             }
         }
         [self.tableView.mj_footer endRefreshing];
@@ -401,13 +511,46 @@
 
         if (self.dataArrays.count > 5) {
             if (![self.dataArrays[0] isKindOfClass:[YFAdFusionBannerView class]]) {
-                [self.dataArrays insertObject:adView atIndex:0];
+                if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+                    // 开发者自渲染视图
+                    // 开发者自渲染视图
+                    UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+                    [self.fusionBannerMap setObject:fusionBanner forKey:selfRenderView];
+                    [self.dataArrays insertObject:selfRenderView atIndex:0];
+                } else {
+                    [self.fusionBannerMap setObject:fusionBanner forKey:adView];
+                    [self.dataArrays insertObject:adView atIndex:0];
+                }
             } else if (![self.dataArrays[2] isKindOfClass:[YFAdFusionBannerView class]]) {
-                [self.dataArrays insertObject:adView atIndex:2];
+                if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+                    // 开发者自渲染视图
+                    UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+                    [self.fusionBannerMap setObject:fusionBanner forKey:selfRenderView];
+                    [self.dataArrays insertObject:selfRenderView atIndex:2];
+                } else {
+                    [self.fusionBannerMap setObject:fusionBanner forKey:adView];
+                    [self.dataArrays insertObject:adView atIndex:2];
+                }
             } else if (![self.dataArrays[4] isKindOfClass:[YFAdFusionBannerView class]]) {
-                [self.dataArrays insertObject:adView atIndex:4];
+                if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+                    // 开发者自渲染视图
+                    UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+                    [self.fusionBannerMap setObject:fusionBanner forKey:selfRenderView];
+                    [self.dataArrays insertObject:selfRenderView atIndex:4];
+                } else {
+                    [self.fusionBannerMap setObject:fusionBanner forKey:adView];
+                    [self.dataArrays insertObject:adView atIndex:4];
+                }
             } else {
-                [self.dataArrays addObject:adView];
+                if (adView.adType == YFAdFusionBannerAdType_SelfRender) {
+                    // 开发者自渲染视图
+                    UIView *selfRenderView = [self creatMeidaRenderViewWithMedia:adView.mediaData];
+                    [self.fusionBannerMap setObject:fusionBanner forKey:selfRenderView];
+                    [self.dataArrays addObject:selfRenderView];
+                } else {
+                    [self.fusionBannerMap setObject:fusionBanner forKey:adView];
+                    [self.dataArrays addObject:adView];
+                }
             }
         }
         [self.tableView.mj_header endRefreshing];
@@ -420,9 +563,17 @@
 - (void)fcAdFusionBanner:(YFAdFusionBanner * _Nonnull)fusionBanner onAdRenderFail:(YFAdFusionBannerView * _Nullable)adView {
     AlertIfNotMainThread
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告渲染失败", __func__]];
+    [self showErrorWithDescription:fusionBanner.errorDescriptions];
+
     self.view.userInteractionEnabled = YES;
+    
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
+    // 移除加载器强引用
+    [self.fusionBannerArrays removeObject:fusionBanner];
+    if (self.fusionBannerArrays.count == 0) {
+        [self deallocAd];
+    }
 }
 
 /// 广告被关闭
@@ -430,6 +581,7 @@
     AlertIfNotMainThread
     [self showProcessWithText:[NSString stringWithFormat:@"%s\r\n 广告关闭了", __func__]];
     if (_isListMode) {
+        [adView removeFromSuperview];
         NSInteger index = [self.dataArrays indexOfObject:adView];
         [self.dataArrays removeObject: adView];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
@@ -437,9 +589,15 @@
         /// 广告关闭移除广告视图
         [adView removeFromSuperview];
         [self.container removeFromSuperview];
+        if (!_isListMode) {
+            [self deallocAd];
+        }
     }
     /// 可在此处理 fusionBanner 与其关联的广告视图，当全部广告关闭时，可释放fusionBanner加载器
     /// ...............
+    // 移除加载器强引用
+    [self.fusionBannerArrays removeObject:fusionBanner];
+    
 }
 
 #pragma mark - private method
@@ -483,6 +641,4 @@
     _isListMode = NO;
     [JDStatusBarNotification showWithStatus:@"已切换为固定视图场景" dismissAfter:1.5];
 }
-
-
 @end

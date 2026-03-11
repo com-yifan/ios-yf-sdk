@@ -9,6 +9,7 @@
 @class YFAdResponseModel;
 @class YFAdReportModel;
 @class YFAdBaseAdPosition;
+@class YFAdEventModel;
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol YFAdSupplierDelegate <NSObject>
@@ -25,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)fcAdBaseAdapterLoadAndShow;
 
 /// 发起流量请求
-- (void)startRequest;
+- (void)startRequestWithEventModel:(YFAdEventModel *)model;
 /// 返回下一个渠道的参数
 /// @param supplier 被加载的渠道
 /// @param error 异常信息

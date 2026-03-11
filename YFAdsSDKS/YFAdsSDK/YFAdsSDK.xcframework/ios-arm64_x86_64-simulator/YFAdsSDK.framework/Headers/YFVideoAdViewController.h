@@ -8,6 +8,8 @@
 #import <UIKit/UIKit.h>
 #import <YFAdsSDK/YFAdReportModel.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
+#import <YFAdsSDK/YFAdReportWorker.h>
+#import <YFAdsSDK/YFRewardedVideoModel.h>
 
 typedef NS_ENUM(NSInteger, YFVideoAdViewControllerType) {
     ///全屏视频
@@ -62,9 +64,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, weak) id<YFVideoAdViewControllerDelegate> delegate;
 
+@property (nonatomic, strong) YFRewardedVideoModel *rewardVideoModel;
+
 @property (nonatomic, strong) YFAdEventModel *eventModel;
 
-@property (nonatomic, strong) YFMaterialMeta *materialModel;
+@property (nonatomic, strong) YFAdReportWorker *reportWorker;
+
+@property (nonatomic, strong) YFMaterialMeta_new *materialModel;
 
 @property (nonatomic, assign) YFVideoAdViewControllerType videoType;
 

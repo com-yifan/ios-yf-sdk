@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class YFRewardedVideoModel, YFRewardedVideoAd,YFMaterialMeta;
+@class YFRewardedVideoModel, YFRewardedVideoAd,YFMaterialMeta_new;
 
 @protocol YFRewardedVideoAdDelegate <NSObject>
 
@@ -73,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFRewardedVideoAd : YFVideoAd
 
-@property(nonatomic, strong) YFMaterialMeta *materialModel;
+@property(nonatomic, strong) YFMaterialMeta_new *materialModel;
 
 @property(nonatomic, strong) YFRewardedVideoModel *rewardedVideoModel;
 

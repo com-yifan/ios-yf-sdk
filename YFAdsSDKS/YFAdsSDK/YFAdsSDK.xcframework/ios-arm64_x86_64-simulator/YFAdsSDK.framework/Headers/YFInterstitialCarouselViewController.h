@@ -6,9 +6,10 @@
 //
 
 #import <YFAdsSDK/YFAdBaseViewController.h>
-#import <YFAdsSDK/YFAdInterstitial+TopPush.h>
+#import <YFAdsSDK/YFAdInterstitial.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@class YFAdBaseAdPosition;
 @protocol YFInterstitialCarouselDelegate <NSObject>
 
 @required

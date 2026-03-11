@@ -51,6 +51,7 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_13002  = 13002,
     YFAdErrorCode_13003  = 13003,
     YFAdErrorCode_13004  = 13004,
+    YFAdErrorCode_13005  = 13005,
     
     //京东
     YFAdErrorCode_19001  = 19001,
@@ -64,6 +65,7 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_15005  = 15005,
     YFAdErrorCode_15006  = 15006,
     YFAdErrorCode_15007  = 15007,
+    YFAdErrorCode_15008  = 15008,
 
     //穿山甲
     YFAdErrorCode_11001 = 11001,

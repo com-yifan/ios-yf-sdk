@@ -19,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<YFAdRewardVideoDelegate> delegate;
 /// 用户ID
 @property (nonatomic, copy) NSString *userId;
+/// 奖励数量
+@property (nonatomic, assign) NSInteger rewardCount;
+/// 奖励名称
+@property (nonatomic, copy) NSString *rewardName;
 /// 拓展字段 json字符串
 @property (nonatomic, copy) NSString *extra;
 /// 仅支持快手（百度，优量汇，自适应屏幕方向。穿山甲联系运营配置）

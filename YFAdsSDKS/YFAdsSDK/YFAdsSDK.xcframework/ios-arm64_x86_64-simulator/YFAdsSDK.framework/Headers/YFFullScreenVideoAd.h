@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class YFFullScreenVideoAd;
-@class YFMaterialMeta;
+@class YFMaterialMeta_new;
 
 @protocol YFFullScreenVideoAdDelegate <NSObject>
 @optional
@@ -65,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, nullable) id<YFFullScreenVideoAdDelegate> delegate;
 
-@property(nonatomic, strong) YFMaterialMeta *materialModel;
+@property(nonatomic, strong) YFMaterialMeta_new *materialModel;
 
 @property(nonatomic,assign)NSUInteger ecpm;
 

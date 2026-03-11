@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 融合Banner广告（混出信息流&banner广告）
+/// 融合Banner广告（混出信息流&banner广告&自渲染广告）
 @interface YFAdFusionBanner : YFAdBaseAdapter
 
 @property (nonatomic, weak) id<YFAdFusionBannerDelegate> delegate;
@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) int refreshInterval;
 /// 期望返回的广告条数（可能存在失败的情况，所以实际返回小于等于该值，默认1条，最多3条）
 @property (nonatomic, assign) int adCount;
+/// 开发者自渲染期望返回的mediaView的尺寸
+@property (nonatomic, assign) CGRect videoViewFrame;
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithAdUnitID:(NSString *)pID NS_UNAVAILABLE;
@@ -31,6 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithAdUnitID:(NSString *)pID
                   viewController:(nonnull UIViewController *)viewController;
 
+- (void)loadAd NS_UNAVAILABLE;
+- (void)showAd NS_UNAVAILABLE;
+/// 加载广告
+- (void)loadAndShowAd;
 @end
 
 NS_ASSUME_NONNULL_END

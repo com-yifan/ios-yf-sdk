@@ -21,7 +21,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/NSString+YFUrlEncode.h>
 #import <YFAdsSDK/UIButton+YFEdge.h>
 #import <YFAdsSDK/UIImage+YFImageEffects.h>
-#import <YFAdsSDK/UILabel+YFEdge.h>
 #import <YFAdsSDK/UITapGestureRecognizer+YFBlock.h>
 #import <YFAdsSDK/UIView+ViewVisiable.h>
 #import <YFAdsSDK/UIView+YFAutoLayout.h>
@@ -180,13 +179,19 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 
 #import <YFAdsSDK/YFInterstitialCarouselViewController.h>
 #import <YFAdsSDK/YFInterstitialCarouselNavigationController.h>
-#import <YFAdsSDK/YFAdInterstitial+TopPush.h>
 #import <YFAdsSDK/YFAdBaseAdapter+interstitial.h>
+#import <YFAdsSDK/YFBaseAdProtocol.h>
+#import <YFAdsSDK/YFAdReportWorker.h>
 
 // 商城
 #import <YFAdsSDK/YFAdMall.h>
 #import <YFAdsSDK/YFAdMallDelegate.h>
 #import <YFAdsSDK/YFSplashWithMallManager.h>
+// 关联顶推
+#import <YFAdsSDK/YFIntertitialWithTopPushManager.h>
+// 激励服务端验证
+#import <YFAdsSDK/YFRewardedVideoModel.h>
+#import <YFAdsSDK/YFAdRSAEncrypt.h>
 
 //#import <YFAdsSDK/YFGradientView.h>
 //#import <YFAdsSDK/NSObject+YFAdModel.h>

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, weak) UIView *adContainer;
 
+- (instancetype)initWithAdUnitID:(NSString *)pID NS_UNAVAILABLE;
 - (instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;
 
 @end

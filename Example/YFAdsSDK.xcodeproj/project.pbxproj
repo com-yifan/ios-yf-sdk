@@ -67,6 +67,8 @@
 		039CF8E02D222E20000FA9E2 /* InterstitialData.json in Resources */ = {isa = PBXBuildFile; fileRef = 039CF86B2D222E1F000FA9E2 /* InterstitialData.json */; };
 		03A3E3832E9E21460037D2F6 /* DemoTopPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A3E3812E9E21460037D2F6 /* DemoTopPushViewController.m */; };
 		03AE83CB2ED6FD9A00C11D99 /* DemoMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AE83C92ED6FD9A00C11D99 /* DemoMallViewController.m */; };
+		4BCB47B35FE5680A1A9AB984 /* libPods-YFAdsSDK_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBA6154DB6BA3A29D4A84DE /* libPods-YFAdsSDK_Example.a */; };
+		4D436299B8CD342D1D7B806A /* libPods-YFAdsSDK_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 105BF9BB961D79EEC9B5AE49 /* libPods-YFAdsSDK_Tests.a */; };
 		4EB7B110273BA92D00D50E7B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB7B10F273BA92D00D50E7B /* AdSupport.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -81,9 +83,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		A16497C4E91CBA1B02FF0372 /* Pods_YFAdsSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2B94DEEED7BA9360603846 /* Pods_YFAdsSDK_Example.framework */; };
 		B2F6B4492BD7A6FB0034982E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F6B4482BD7A6FB0034982E /* CoreLocation.framework */; };
-		FA9D5E9011F39D88FA9AB78A /* Pods_YFAdsSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6057C61DE5B53224426060 /* Pods_YFAdsSDK_Tests.framework */; };
 		FB1799EF2AB44D9B00D3DB07 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB1799EE2AB44D9B00D3DB07 /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
@@ -207,6 +207,7 @@
 		03A3E3812E9E21460037D2F6 /* DemoTopPushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTopPushViewController.m; sourceTree = "<group>"; };
 		03AE83C82ED6FD9A00C11D99 /* DemoMallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoMallViewController.h; sourceTree = "<group>"; };
 		03AE83C92ED6FD9A00C11D99 /* DemoMallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoMallViewController.m; sourceTree = "<group>"; };
+		105BF9BB961D79EEC9B5AE49 /* libPods-YFAdsSDK_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YFAdsSDK_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		145849F14F3C5444A6FFC93D /* YFAdsSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YFAdsSDK.podspec; path = ../YFAdsSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		28D4C41E3D1A9F37631BCA84 /* Pods-YFAdsSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YFAdsSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-YFAdsSDK_Example/Pods-YFAdsSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		31FE7BD324482CFE00CB2062 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -228,14 +229,13 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6F6057C61DE5B53224426060 /* Pods_YFAdsSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YFAdsSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8FBA6154DB6BA3A29D4A84DE /* libPods-YFAdsSDK_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YFAdsSDK_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB84BBE015804E3EFA387C61 /* Pods-YFAdsSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YFAdsSDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-YFAdsSDK_Tests/Pods-YFAdsSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B29D66932C21947700829C9C /* YFAdsSDK_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YFAdsSDK_Example.entitlements; sourceTree = "<group>"; };
 		B2F6B4482BD7A6FB0034982E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D7C23D85529ADEA8B770F925 /* Pods-YFAdsSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YFAdsSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-YFAdsSDK_Example/Pods-YFAdsSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DC2B94DEEED7BA9360603846 /* Pods_YFAdsSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YFAdsSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B804D9A1812796B3A043CC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		FB1799EE2AB44D9B00D3DB07 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -251,7 +251,7 @@
 				4EB7B110273BA92D00D50E7B /* AdSupport.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				A16497C4E91CBA1B02FF0372 /* Pods_YFAdsSDK_Example.framework in Frameworks */,
+				4BCB47B35FE5680A1A9AB984 /* libPods-YFAdsSDK_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +262,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				FA9D5E9011F39D88FA9AB78A /* Pods_YFAdsSDK_Tests.framework in Frameworks */,
+				4D436299B8CD342D1D7B806A /* libPods-YFAdsSDK_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,8 +610,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				DC2B94DEEED7BA9360603846 /* Pods_YFAdsSDK_Example.framework */,
-				6F6057C61DE5B53224426060 /* Pods_YFAdsSDK_Tests.framework */,
+				8FBA6154DB6BA3A29D4A84DE /* libPods-YFAdsSDK_Example.a */,
+				105BF9BB961D79EEC9B5AE49 /* libPods-YFAdsSDK_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -816,6 +816,8 @@
 				"${PODS_ROOT}/BUTTSDKFramework/TTSDKFramework/TTSDKPlayerCoreLiveLite/Resources/ttplayer.metallib",
 				"${PODS_ROOT}/BaiduMobAdSDK/baidumobadsdk.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/JADYun/JADYun.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/STDebugConsole/STDebugConsole.bundle",
 				"${PODS_ROOT}/YFAdsSDK/YFAdsSDKS/YFAdsSDK/YFAdsSDKResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -825,6 +827,8 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ttplayer.metallib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/baidumobadsdk.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JADYun.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/STDebugConsole.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YFAdsSDKResource.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -839,13 +843,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YFAdsSDK_Example/Pods-YFAdsSDK_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/JPFPSStatus/JPFPSStatus.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/STDebugConsole/STDebugConsole.framework",
-				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/Core/TTSDKCore.framework/TTSDKCore",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/LiveBase/TTSDKLiveBase.framework/TTSDKLiveBase",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/LivePlayer/Lite/TTSDKLivePlayerLite.framework/TTSDKLivePlayerLite",
@@ -863,13 +860,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JPFPSStatus.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STDebugConsole.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKLiveBase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKLivePlayerLite.framework",
@@ -1166,7 +1156,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YFAdsSDK/PrefixHeader.pch";
 				INFOPLIST_FILE = "YFAdsSDK/YFAdsSDK-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "亿帆广告";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1205,7 +1195,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YFAdsSDK/PrefixHeader.pch";
 				INFOPLIST_FILE = "YFAdsSDK/YFAdsSDK-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "亿帆广告";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

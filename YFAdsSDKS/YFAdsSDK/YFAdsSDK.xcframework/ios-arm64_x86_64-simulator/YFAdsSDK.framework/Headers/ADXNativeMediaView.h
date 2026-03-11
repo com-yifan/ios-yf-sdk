@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
 #import <YFAdsSDK/ADXNativeAd.h>
+#import <YFAdsSDK/YFAdReportWorker.h>
 NS_ASSUME_NONNULL_BEGIN
 @class ADXNativeMediaView;
 @protocol ADXNativeMediaViewDelegate <NSObject>
@@ -74,6 +75,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL playFinished;
 // 代理
 @property (nonatomic, weak) id<ADXNativeMediaViewDelegate> delegate;
+
+@property (nonatomic, strong) YFAdReportWorker *reportWorker;
+
 /**
  初始化方法
 
@@ -81,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param object YFMaterialMeta
  @return ADXNativeMediaView
  */
-- (instancetype)initWithFrame:(CGRect)frame andObject:(YFMaterialMeta *)object;
+- (instancetype)initWithFrame:(CGRect)frame andObject:(YFMaterialMeta_new *)object;
 
 - (instancetype)initWithSupplier:(YFAdEventModel*)eventModel;
 

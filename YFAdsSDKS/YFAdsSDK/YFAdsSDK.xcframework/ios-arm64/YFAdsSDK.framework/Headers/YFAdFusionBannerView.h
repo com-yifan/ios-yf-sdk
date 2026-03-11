@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <YFAdsSDK/YFAdMedia.h>
 
 NS_ASSUME_NONNULL_BEGIN
 /// 融合banner返回广告所属平台
@@ -38,10 +39,12 @@ typedef enum : NSUInteger {
 typedef enum : NSUInteger {
     // 横幅
     YFAdFusionBannerAdType_Banner,
-    // 自渲染信息流
+    // SDK模板信息流
     YFAdFusionBannerAdType_CustomNative,
     // 模板信息流
-    YFAdFusionBannerAdType_Express
+    YFAdFusionBannerAdType_Express,
+    // 开发者自渲染
+    YFAdFusionBannerAdType_SelfRender
 } YFAdFusionBannerAdType;
 
 @interface YFAdFusionBannerView : UIView
@@ -49,8 +52,10 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) YFAdFusionBannerPlatform platform;
 /// 融合banner返回的广告类型
 @property (nonatomic, assign) YFAdFusionBannerAdType adType;
-/// 广告视图
-@property (nonatomic, strong) UIView *adView;
+/// 广告视图 adType == YFAdFusionBannerAdType_SelfRender时为空
+@property (nonatomic, strong, nullable) UIView *adView;
+/// 开发者自渲染素材数据，adType  != YFAdFusionBannerAdType_SelfRender为空
+@property (nonatomic, strong, nullable) YFAdMedia *mediaData;
 /// 请使用 isValid 校验有效性，该属性无法判断
 @property (nonatomic, assign) BOOL valid;
 /// 是否渲染成功（素材加载完成，图片可以显示或视频可以播放）
@@ -59,7 +64,6 @@ typedef enum : NSUInteger {
 - (void)render;
 /// 广告是否有效(广告无效时不建议再次展示，建议请求新的广告)
 - (BOOL)isValid;
-
 @end
 
 NS_ASSUME_NONNULL_END

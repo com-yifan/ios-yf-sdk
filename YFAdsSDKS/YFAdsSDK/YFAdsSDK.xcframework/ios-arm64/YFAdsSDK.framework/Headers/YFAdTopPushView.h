@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol YFAdTopPushViewDelegate <NSObject>
 
 - (void)topPushViewRenderSuccess;
-- (void)topPushViewRenderFail;
+- (void)topPushViewRenderFailWithError:(nullable NSError *)error noImageUrl:(BOOL)noImageUrl;
 - (void)topPushViewClose:(BOOL)userAction;
 - (void)topPushViewDidShow;
 - (void)topPushViewDidExpourse;
@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 关闭
 - (void)hideTopPushViewWithAnime:(BOOL)on;
 - (void)hideTopPushViewWithAnime:(BOOL)anime time:(NSInteger)time;
+// 恢复播放视频
+- (void)resumePlay;
 
 @end
 

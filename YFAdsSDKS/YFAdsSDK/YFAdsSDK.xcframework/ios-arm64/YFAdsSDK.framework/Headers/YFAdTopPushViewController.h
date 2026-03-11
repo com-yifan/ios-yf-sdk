@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol YFAdTopPushViewControllerDelegate <NSObject>
 
 - (void)topPushViewClose:(BOOL)userAction;
-- (void)topPushViewRenderFail;
+- (void)topPushViewRenderFailWithError:(nullable NSError *)error noImageUrl:(BOOL)noImageUrl;
 - (void)topPushViewRenderSuccess;
 - (void)topPushViewDidShow;
 - (void)topPushViewControllerChanged:(UIViewController *)viewController;

@@ -103,9 +103,6 @@ typedef NS_ENUM(NSInteger, YFAdSourceType) {
 /// adSourceType
 @property(nonatomic, assign, readonly) YFAdSourceType adSourceType;
 
-
-@property(nonatomic, readonly) NSString *ecpm;
-
 /// media extension data
 @property(nonatomic, copy, readonly) NSDictionary *mediaExt;
 

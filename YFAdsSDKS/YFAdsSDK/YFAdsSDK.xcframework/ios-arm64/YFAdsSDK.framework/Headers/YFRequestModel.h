@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YFAdsSDK/YFAdModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -222,5 +223,247 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSNumber *device_screenSize;
 
 @end
+
+
+/// 广告类型
+typedef NS_ENUM(NSUInteger, YFAdRequestAdType) {
+    YFAdRequestAdTypeUnknow = 0,
+    YFAdRequestAdTypeSplash = 1,
+    YFAdRequestAdTypeNative = 2,
+    YFAdRequestAdTypeIntertitial = 3,
+    YFAdRequestAdTypeBanner = 4,
+    YFAdRequestAdTypeDraw = 5,
+    YFAdRequestAdTypeFullScreen = 6,
+    YFAdRequestAdTypeRewardVod = 7,
+    YFAdRequestAdTypePatch = 8
+};
+
+/// 流量类型
+typedef NS_ENUM(NSUInteger, YFAdRequestAppFlowType) {
+    /// app流量
+    YFAdRequestAppFlowTypeApp = 1,
+    /// 快应用
+    YFAdRequestAppFlowTypeMiniApp = 2,
+    /// 快游戏
+    YFAdRequestAppFlowTypeMiniGame = 3,
+};
+
+/// 坐标系类型
+typedef NS_ENUM(NSUInteger, YFAdRequestDeviceGeoType) {
+    YFAdRequestDeviceGeoTypeMars = 0,
+    YFAdRequestDeviceGeoTypeWGS84 = 1,
+};
+
+/// 设备类型
+typedef NS_ENUM(NSInteger, YFAdRequestDeviceType) {
+    /// 未知
+    YFAdRequestDeviceTypeUnknow = -1,
+    /// 手机
+    YFAdRequestDeviceTypePhone = 0,
+    /// 平板
+    YFAdRequestDeviceTypePad = 1,
+    /// PC
+    YFAdRequestDeviceTypePC  = 2,
+    /// TV
+    YFAdRequestDeviceTypeTV  = 3,
+    /// WAP
+    YFAdRequestDeviceTypeWAP = 4,
+    /// 户外广告屏
+    YFAdRequestDeviceTypeAdScreen = 5
+};
+
+/// 网络类型
+typedef NS_ENUM(NSInteger, YFAdRequestDeviceNetworkType) {
+    /// 未知
+    YFAdRequestDeviceNetworkTypeUnknow = -1,
+    /// WiFi
+    YFAdRequestDeviceNetworkTypeWiFi = 1,
+    /// 2G
+    YFAdRequestDeviceNetworkType2G = 2,
+    /// 3G
+    YFAdRequestDeviceNetworkType3G = 3,
+    /// 4G
+    YFAdRequestDeviceNetworkType4G = 4,
+    /// 5G
+    YFAdRequestDeviceNetworkType5G = 5
+};
+
+
+/// 屏幕方向
+typedef NS_ENUM(NSInteger, YFAdRequestDeviceOrientationType) {
+    /// 未知
+    YFAdRequestDeviceOrientationTypeUnknow = -1,
+    /// 竖屏
+    YFAdRequestDeviceOrientationTypePortrait = 0,
+    /// 横屏
+    YFAdRequestDeviceOrientationTypeLandscape = 1,
+};
+
+@class YFRequestAdModel;
+@class YFRequestAppModel;
+@class YFRequestDeviceModel;
+@class YFRequestUserModel;
+@class YFRequestDeviceDbid;
+
+@interface YFRequestModel_New : NSObject<YFAdModel>
+/// 是否需要https 1:https;2:http;3:均可
+@property (nonatomic, assign) NSUInteger secure;
+/// 是否支持微信 默认0 不限制
+@property (nonatomic, assign) NSUInteger supportwx;
+/// 广告请求
+@property (nonatomic, strong) YFRequestAdModel *ad;
+/// 应用信息
+@property (nonatomic, strong) YFRequestAppModel *app;
+/// 设备信息
+@property (nonatomic, strong) YFRequestDeviceModel *device;
+/// 用户信息
+@property (nonatomic, strong) YFRequestUserModel *user;
+/// 最大超时时间
+@property (nonatomic, assign) NSUInteger maxTimeoutMS;
+
+@end
+
+
+@interface YFRequestAdModel: NSObject<YFAdModel>
+/// 广告位id
+@property (nonatomic, copy) NSString *adId;
+/// 出价底价,不填默认为1 单位：分
+@property (nonatomic, assign) NSUInteger bidfloor;
+/// 广告类型
+@property (nonatomic, assign) YFAdRequestAdType adtype;
+/// 广告位宽度
+@property (nonatomic, assign) NSUInteger width;
+/// 广告位高度
+@property (nonatomic, assign) NSUInteger height;
+
+@end
+
+@interface YFRequestAppModel: NSObject<YFAdModel>
+/// 应用id
+@property (nonatomic, copy) NSString *appId;
+/// 应用名称
+@property (nonatomic, copy) NSString *name;
+/// 应用包名
+@property (nonatomic, copy) NSString *bundle;
+/// 应用版本
+@property (nonatomic, copy) NSString *ver;
+/// 苹果商店id
+@property (nonatomic, copy) NSString *appstoreid;
+/// 流量类型
+@property (nonatomic, assign) YFAdRequestAppFlowType flowType;
+/// SDK版本
+@property (nonatomic, copy) NSString *sdkVer;
+
+@end
+
+
+@interface YFRequestDeviceModel : NSObject<YFAdModel>
+/// 国家 'CN'仅支持CN
+@property (nonatomic, copy) NSString *country;
+/// 语言 zh-Hans-CN
+@property (nonatomic, copy) NSString *language;
+/// ipv4地址
+@property (nonatomic, copy) NSString *ip;
+/// ipv6地址
+@property (nonatomic, copy) NSString *ipv6;
+/// 纬度
+@property (nonatomic, assign) NSNumber *lat;
+/// 精度
+@property (nonatomic, assign) NSNumber *lon;
+/// 坐标类型
+@property (nonatomic, assign) YFAdRequestDeviceGeoType geotype;
+/// IMEI号
+@property (nonatomic, copy) NSString *imei;
+/// 广信通id
+@property (nonatomic, copy) NSArray<YFRequestDeviceDbid *> *dbIds;
+/// open_u_uid
+@property (nonatomic, copy) NSString *openUeid;
+/// idfv
+@property (nonatomic, copy) NSString *idfv;
+@property (nonatomic, copy) NSString *idfa;
+/// 屏幕每英寸像素数目,eg:300, 256
+@property (nonatomic, assign) NSUInteger ppi;
+/// 设备密度
+@property (nonatomic, copy) NSString *densit;
+/// 系统 ANDROID or IOS
+@property (nonatomic, copy) NSString *os;
+/// 操作系统三段式或两段式版本号
+@property (nonatomic, copy) NSString *osv;
+/// 设备MAC地址
+@property (nonatomic, copy) NSString *mac;
+/// 设备电量 0-100
+@property (nonatomic, assign) NSUInteger batterylevel;
+/// 设备类型
+@property (nonatomic, assign) YFAdRequestDeviceType type;
+/// 品牌
+@property (nonatomic, copy) NSString *brand;
+/// 设备型号
+@property (nonatomic, copy) NSString *model;
+/// 设备屏幕宽度
+@property (nonatomic, assign) NSUInteger width;
+/// 设备屏幕高度
+@property (nonatomic, assign) NSUInteger height;
+/// 移动设备 imsi。如果imsi取不到值，中国移动：传 46000 中国联通：传46001中国电信：传46003
+@property (nonatomic, assign) NSInteger imsi;
+/// 网络运营商代码：46000
+@property (nonatomic, copy) NSString *carrier;
+/// 网络类型
+@property (nonatomic, assign) YFAdRequestDeviceNetworkType network;
+/// UA
+@property (nonatomic, copy) NSString *ua;
+/// 设备方向
+@property (nonatomic, assign) YFAdRequestDeviceOrientationType orientation;
+/// 应用商店版本号
+@property (nonatomic, copy) NSString *appstorever;
+/// 系统启动标识
+@property (nonatomic, copy) NSString *bootmark;
+/// 系统更新标识
+@property (nonatomic, copy) NSString *updatemark;
+/// 设备号
+@property (nonatomic, copy) NSString *hardwaremachine;
+/// 系统更新时间
+@property (nonatomic, copy) NSString *sysupdatetime;
+/// 设备初始化时间
+@property (nonatomic, copy) NSString *sysinittime;
+/// 设备启动时间
+@property (nonatomic, copy) NSString *startuptime;
+/// 系统编译时间
+@property (nonatomic, copy) NSString *syscmptime;
+/// 已安装列表
+@property (nonatomic, copy) NSString *installedapps;
+/// cpu核数
+@property (nonatomic, assign) NSUInteger cpunum;
+/// 设备名称
+@property (nonatomic, copy) NSString *name;
+/// 屏幕尺寸 4.7
+@property (nonatomic, assign) NSNumber *screensize;
+/// 设备内存
+@property (nonatomic, assign) NSInteger memtotal;
+/// 总存储空间
+@property (nonatomic, assign) NSInteger disktotal;
+/// 时区
+@property (nonatomic, copy) NSString *timezone;
+/// 拼多多id
+@property (nonatomic, copy) NSString *paid;
+
+@end
+
+@interface YFRequestUserModel : NSObject<YFAdModel>
+/// 出生年份
+@property (nonatomic, assign) NSUInteger yob;
+/// 性别
+@property (nonatomic, assign) NSUInteger gender;
+
+@end
+
+/// 广信通id
+@interface YFRequestDeviceDbid: NSObject<YFAdModel>
+
+@property (nonatomic, copy) NSString *dbId;
+@property (nonatomic, copy) NSString *dbIdVer;
+
+@end
+
+
 
 NS_ASSUME_NONNULL_END

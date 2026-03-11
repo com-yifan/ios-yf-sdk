@@ -9,8 +9,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class YFTouchLocModel;
-@class YFMaterialMeta;
+@class YFMaterialMeta_new;
 @class YFAdEventModel;
+@class YFMaterialMetaSId;
 
 typedef NS_ENUM(NSInteger, YFInteractionType){
     ///        0-未知
@@ -154,13 +155,13 @@ typedef NS_ENUM(NSInteger, YFInteractionType){
 
 @property(nonatomic, copy) NSString * eKey;
 
--(instancetype)initWithModel:(YFMaterialMeta *)model;
+-(instancetype)initWithModel:(YFMaterialMeta_new *)model;
 
 @end
 
 @interface YFTouchReportView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame jumpType:(NSInteger)type model:(nullable YFMaterialMeta *)model;
+- (instancetype)initWithFrame:(CGRect)frame jumpType:(NSInteger)type model:(nullable YFMaterialMeta_new *)model;
 
 ///可点击控件数组(子控件)，只有点击在这些控件上才会上报
 @property(nonatomic, strong) NSMutableArray<UIView *> *_Nonnull clickableViews;

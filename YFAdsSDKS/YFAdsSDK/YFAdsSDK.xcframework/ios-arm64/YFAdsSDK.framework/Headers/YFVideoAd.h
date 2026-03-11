@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <YFAdsSDK/YFBaseAdProtocol.h>
 
 @class YFAd, YFAdEventModel;
 NS_ASSUME_NONNULL_BEGIN
@@ -15,7 +16,7 @@ typedef NS_ENUM(NSInteger, YFAdShowDirection) {
     YFAdShowDirection_Horizontal = 1,     //横屏
 };
 
-@interface YFVideoAd : NSObject
+@interface YFVideoAd : NSObject<YFBaseAdProtocol>
 
 
 @property(nonatomic, assign) BOOL shouldMuted;

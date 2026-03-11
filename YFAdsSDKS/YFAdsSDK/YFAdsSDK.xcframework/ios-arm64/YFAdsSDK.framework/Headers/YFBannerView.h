@@ -6,6 +6,8 @@
 #import <YFAdsSDK/YFAdReportModel.h>
 #import <YFAdsSDK/YFVideoView.h>
 #import <YFAdsSDK/YFInvoker.h>
+#import <YFAdsSDK/YFBaseAdProtocol.h>
+#import <YFAdsSDK/YFAdReportWorker.h>
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, YFBannerViewType) {
@@ -61,12 +63,12 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 
 @end
 
-@interface YFBannerView : UIView
+@interface YFBannerView : UIView<YFBaseAdProtocol>
 
 
 @property(nonatomic, weak) id <YFBannerViewDelegate> delegate;
 
-@property(nonatomic, readonly) YFMaterialMeta *materialMetaModel;
+@property(nonatomic, readonly) YFMaterialMeta_new *materialMetaModel;
 @property(nonatomic, copy,readonly) NSString *posId;
 @property(nonatomic, copy,readonly) YFAdEventModel *eventModel;
 @property(nonatomic, assign,readonly) NSUInteger ecpm;
@@ -75,6 +77,7 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 @property(nonatomic, assign) YFBannerViewType type;
 @property(nonatomic, assign) YFPlayerState cuurentPlayState;
 @property (nonatomic, strong) YFVideoView *videoView;
+@property (nonatomic, strong) YFAdReportWorker *reportWorker;
 @property (nonatomic) BOOL hasExposed;
 
 ///是否播放完成
@@ -120,7 +123,7 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 - (void)resetVC:(UIViewController*)VC;
 
 /// 渲染广告
-- (void)loadAdData:(YFMaterialMeta *)materialMeta;
+- (void)loadAdData:(YFMaterialMeta_new *)materialMeta;
 @end
 
 

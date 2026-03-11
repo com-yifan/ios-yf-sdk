@@ -74,6 +74,10 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 @property(nonatomic, copy) NSString *device_geo_lat;
 /// GPS 经度(-180 ~ 180)
 @property(nonatomic, copy) NSString *device_geo_lon;
+
+@property (nonatomic, assign) float geo_lat;
+@property (nonatomic, assign) float geo_lon;
+
 /// ⚠️ 已废弃，请使用 userDefine 替代
 @property(nonatomic, copy) NSString *userId __deprecated_msg("请使用 userDefine 替代");
 

@@ -10,6 +10,8 @@
 #import <YFAdsSDK/YFAd.h>
 #import <YFAdsSDK/YFAdInteractionType.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
+#import <YFAdsSDK/YFBaseAdProtocol.h>
+#import <YFAdsSDK/YFAdReportWorker.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -61,7 +63,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface ADXNativeAd : NSObject
+@interface ADXNativeAd : NSObject<YFBaseAdProtocol>
+
+@property (nonatomic, strong) YFAdReportWorker *reportWorker;
 
 @property (nonatomic, weak) id<ADXNativeAdDelegate>delegate;
 //广告是否已合法加载
@@ -69,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign)NSUInteger ecpm;
 
-@property(nonatomic, strong) YFMaterialMeta *materialModel;
+@property(nonatomic, strong) YFMaterialMeta_new *materialModel;
 
 - (instancetype)initWithPosId:(NSString *)posId eventModel:(YFAdEventModel *)eventModel;
 
@@ -92,6 +96,20 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)registerContainer:(__kindof UIView *)containerView
        withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews;
+
+/**
+ Register clickable views in native ads view.
+ Interaction types can be configured on TikTok Audience Network.
+ Interaction types include view video ad details page, make a call, send email, download the app, open the webpage using a browser,open the webpage within the app, etc.
+ @param containerView : required.
+                        container view of the native ad.
+ @param clickableViews : optional.
+                        Array of views that are clickable.
+ */
+- (void)registerContainer:(__kindof UIView *)containerView
+       withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews
+            withSlidableViews:(NSArray<__kindof UIView *> *_Nullable)slidableViews;
+
 @end
 
 NS_ASSUME_NONNULL_END

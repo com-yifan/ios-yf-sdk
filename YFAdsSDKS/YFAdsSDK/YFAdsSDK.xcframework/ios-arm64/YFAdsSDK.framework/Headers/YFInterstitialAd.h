@@ -11,10 +11,12 @@
 #import <YFAdsSDK/YFAd.h>
 #import <YFAdsSDK/YFAdInteractionType.h>
 #import <YFAdsSDK/YFInterstitialCarouselViewController.h>
+#import <YFAdsSDK/YFBaseAdProtocol.h>
+#import <YFAdsSDK/YFAdInterstitial.h>
 NS_ASSUME_NONNULL_BEGIN
 
 
-@class YFInterstitialAd,YFAdEventModel,YFMaterialMeta;
+@class YFInterstitialAd,YFAdEventModel,YFMaterialMeta_new;
 
 @protocol YFInterstitialAdDelegate <NSObject>
 @optional
@@ -49,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YFInterstitialAd : UIView
+@interface YFInterstitialAd : UIView<YFBaseAdProtocol>
 
 @property (nonatomic, weak) id<YFInterstitialAdDelegate>delegate;
 //广告是否已合法加载
@@ -59,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign)NSUInteger ecpm;
 
-@property(nonatomic, strong) YFMaterialMeta *materialModel;
+@property(nonatomic, strong) YFMaterialMeta_new *materialModel;
 
 @property (nonatomic, assign) BOOL autoClick;
 

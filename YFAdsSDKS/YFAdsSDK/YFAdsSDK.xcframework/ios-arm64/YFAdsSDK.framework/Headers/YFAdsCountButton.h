@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 倒计时结束回调
 @property (nonatomic, copy) void (^countdownCompletion)(BOOL isAuto);
+// 倒计时结束回调
+@property (nonatomic, copy) void (^countdownNoRemoveCompletion)(BOOL isAuto);
 // 点击事件
 @property (nonatomic, copy) void (^tapClick)(void);
 

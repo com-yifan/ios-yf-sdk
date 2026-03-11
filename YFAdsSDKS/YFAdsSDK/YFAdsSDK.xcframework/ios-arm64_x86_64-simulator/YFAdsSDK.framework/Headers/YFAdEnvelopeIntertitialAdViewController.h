@@ -9,14 +9,16 @@
 #import <YFAdsSDK/YFAdReportModel.h>
 #import <YFAdsSDK/YFAdInterstitialViewProtocol.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
+#import <YFAdsSDK/YFAdReportWorker.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdEnvelopeIntertitialAdViewController : YFEnvelopeIntertitialAdViewController
 
 @property(nonatomic, weak) id<YFAdInterstitialViewProtocol> delegate;
+@property (nonatomic, strong) YFAdReportWorker *reportWorker;
 
-- (instancetype)initWithNativeAd:(YFMaterialMeta *)nativeAd model:(YFAdEventModel *)model;
+- (instancetype)initWithNativeAd:(YFMaterialMeta_new *)nativeAd model:(YFAdEventModel *)model;
 
 - (void)show;
 @end

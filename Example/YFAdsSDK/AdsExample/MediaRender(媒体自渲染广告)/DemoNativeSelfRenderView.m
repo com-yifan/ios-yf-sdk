@@ -113,7 +113,7 @@
     
     // 关闭按钮
     self.closeBtn = [[UIButton alloc]init];
-    [self.closeBtn addTarget:self action:@selector(removeFromSuperview) forControlEvents:UIControlEventTouchUpInside];
+    [self.closeBtn addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
     if (@available(iOS 13.0, *)) {
         [self.closeBtn setImage:[UIImage systemImageNamed:@"xmark"] forState:UIControlStateNormal];
     } else {
@@ -155,7 +155,7 @@
     if (self.nativeAdOffer.data.logo) {
         NSLog(@"🔥----logo:%@",self.nativeAdOffer.data.logo);
         self.logoImageView.image = self.nativeAdOffer.data.logo;
-    } 
+    }
     if (!self.nativeAdOffer.data.logoUrl.length&&!self.nativeAdOffer.data.logo) {
         //如果没有logo返回，建议设置一个默认的logo
     }
@@ -272,6 +272,9 @@
             make.top.equalTo(self.iconImageView.mas_bottom).offset(25);
             make.bottom.equalTo(self);
         }];
+        if (self.nativeAdOffer.data.adSourceType == 20) {
+            [self.nativeAdOffer updateVideoViewFrame:CGRectMake(0, 0, kScreenW, kScreenW * 9 / 16.0)];
+        }
     }
 }
 
@@ -281,5 +284,15 @@
     [feedBackView show];
 }
 
+- (void)close {
+    [self removeFromSuperview];
+    if (self.closeAction) {
+        self.closeAction();
+    }
+}
+
+- (void)removeFromSuperview {
+    [super removeFromSuperview];
+}
 
 @end

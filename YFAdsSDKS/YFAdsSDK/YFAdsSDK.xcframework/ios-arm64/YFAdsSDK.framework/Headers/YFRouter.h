@@ -6,7 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-@class YFMaterialMeta;
+#import <YFAdsSDK/YFAdReportWorker.h>
+@class YFMaterialMeta_new;
 @class YFAdEventModel;
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,9 +29,9 @@ typedef NS_ENUM(NSInteger, YFRouterResult){
 ///  是否是 手动点击 manual YES 手动点击事件  NO 自动点击事件
 + (instancetype)shareInstance;
 //  是否是 手动点击 manual YES 手动点击事件  NO 自动点击事件
--(void)addRouterWith:(YFMaterialMeta *)model event:(YFAdEventModel *)event manual:(BOOL)manual complete:(void (^)(YFRouterResult))success;
+-(void)addRouterWith:(YFMaterialMeta_new *)model reportWorker:(YFAdReportWorker *)reportWorker event:(YFAdEventModel *)event manual:(BOOL)manual complete:(void (^)(YFRouterResult))success;
 
--(void)addRouterWith:(YFMaterialMeta *)model complete:(void (^)(YFRouterResult))success;
+-(void)addRouterWith:(YFMaterialMeta_new *)model reportWorker:(YFAdReportWorker *)reportWorker complete:(void (^)(YFRouterResult))success;
 
 @end
 

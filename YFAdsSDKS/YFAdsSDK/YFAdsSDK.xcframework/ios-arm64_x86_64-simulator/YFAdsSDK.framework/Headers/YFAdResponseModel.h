@@ -102,9 +102,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *biddingReportAdn;
 // 插屏轮播间隔 单位：毫秒
 @property (nonatomic, assign) NSInteger ici;
-
 // 插屏轮播次数
 @property (nonatomic, assign) NSInteger icc;
+/// 插屏关联广告位
+@property (nonatomic, copy) NSString *tpAdId;
+/// 关联广告请求时机
+@property (nonatomic, assign) NSInteger dtr;
+/// 关联广告展示时机
+@property (nonatomic, assign) NSInteger dts;
+/// 关联广告展示延迟
+@property (nonatomic, assign) NSInteger dtt;
 @end
 
 @interface FCAdWaterfall : NSObject
@@ -207,6 +214,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ccst;
 /// 悬浮icon初始位置
 @property (nonatomic, assign) YFMallIconAdPostion ip;
+/// 服务端验证 0关闭 1开启
+@property (nonatomic, assign) NSInteger sv;
 /// 1;单向跳转
 /// 2: 双向跳转
 @property (nonatomic, assign) NSInteger isd;

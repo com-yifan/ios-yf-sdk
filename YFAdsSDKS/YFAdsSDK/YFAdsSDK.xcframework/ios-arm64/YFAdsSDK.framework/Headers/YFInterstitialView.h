@@ -8,9 +8,10 @@
 #import <UIKit/UIKit.h>
 #import <YFAdsSDK/YFAdInterstitialViewProtocol.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
+#import <YFAdsSDK/YFAdReportWorker.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class YFAdInterstitialViewProtocol,YFMaterialMeta;
+@class YFAdInterstitialViewProtocol,YFMaterialMeta_new;
 
 @interface YFInterstitialView : UIView
 
@@ -18,7 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL autoClick;
 
-@property (nonatomic, strong) YFMaterialMeta *nativeAd;
+@property (nonatomic, strong) YFAdReportWorker *reportWorker;
+
+@property (nonatomic, strong) YFMaterialMeta_new *nativeAd;
 
 @property (nonatomic, weak) UIViewController *viewController;
 

@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong) UILabel *domainLabel;
 @property(nonatomic, strong) UILabel *warningLabel;
 
+@property (nonatomic, copy) void(^closeAction)(void);
+
 - (instancetype) initWithOffer:(YFAdMedia *)offer;
 
 @end

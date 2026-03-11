@@ -158,6 +158,25 @@ typedef NS_ENUM(NSUInteger, YFMallIconAdPostion) {
     YFMallIconAdPostionBottomRight   = 4,
 };
 
+
+/// 关联顶推请求时机
+typedef NS_ENUM(NSUInteger, TopPushRequestTime) {
+    /// 关联广告请求时
+    TopPushRequestTimeAtLoad = 1,
+    /// 关联广告展示时
+    TopPushRequestTimeAtShow = 2
+};
+
+/// 关联顶推展示时机
+typedef NS_ENUM(NSUInteger, TopPushShowTime) {
+    /// 请求成功后
+    TopPushShowTimeAfterSucceed = 1,
+    /// 关联广告展示后
+    TopPushShowTimeAfterShow = 2,
+    /// 关联广告关闭后
+    TopPushShowTimeAfterClose = 3
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdReportModel : NSObject
@@ -259,7 +278,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * tpid;
 /// 请求ID
 @property (nonatomic, copy) NSString * rID;
-/// 模版ID  2自渲染banner、3信息流
+/// 模版ID 1模板渲染  2自渲染banner、3信息流
 @property (nonatomic, assign) NSInteger renderID;
 
 @property (nonatomic, copy) NSString *sdkVer;
@@ -409,6 +428,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ccst;
 /// 悬浮icon初始位置
 @property (nonatomic, assign) YFMallIconAdPostion ip;
+/// 激励视频服务端验证 0关闭 1开启
+@property (nonatomic, assign) NSInteger sv;
+/// 关联顶推配置
+/// 关联顶推广告配置接口
+@property (nonatomic, copy) NSString *tpAdId;
+/// 关联顶推请求时机
+@property (nonatomic, assign) TopPushRequestTime dtr;
+/// 关联顶推展示时机
+@property (nonatomic, assign) TopPushShowTime dts;
+/// 关联顶推展示延时时间
+@property (nonatomic, assign) NSInteger dtt;
 
 @end
 NS_ASSUME_NONNULL_END

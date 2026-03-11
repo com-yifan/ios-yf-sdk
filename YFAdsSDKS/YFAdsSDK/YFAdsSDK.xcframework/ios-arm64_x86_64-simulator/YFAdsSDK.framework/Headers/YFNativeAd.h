@@ -98,7 +98,7 @@ This method is called when another controller has been showed.
 /**
  Ad material.
  */
-@property(nonatomic, strong, readonly, nullable) YFMaterialMeta *data;
+@property(nonatomic, strong, readonly, nullable) YFMaterialMeta_new *data;
 
 /**
  The delegate for receiving state change messages.

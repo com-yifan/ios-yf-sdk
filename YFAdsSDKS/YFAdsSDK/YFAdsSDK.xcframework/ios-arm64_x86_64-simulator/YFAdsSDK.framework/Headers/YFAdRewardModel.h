@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * devID;
 ///  APP方用户自定义参数  json
 @property (nonatomic, copy) NSString * extra;
+/// 奖励数量
+@property (nonatomic, assign) NSInteger rewardCount;
+/// 奖励名称
+@property (nonatomic, copy) NSString *rewardName;
+
 
 
 ///  用户ID

@@ -11,6 +11,7 @@
 #import <YFAdsSDK/YFAdInteractionType.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
 #import <YFAdsSDK/ADXNativeAd.h>
+#import <YFAdsSDK/YFRequestModel.h>
 NS_ASSUME_NONNULL_BEGIN
 
 
@@ -53,6 +54,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ADXNativeAdsManager : UIView
 
 @property (nonatomic, weak) id<ADXNativeAdsManagerDelegate>delegate;
+
+@property (nonatomic, assign) YFAdRequestAdType adType;
+
 //广告是否已合法加载
 @property (nonatomic, readonly) BOOL isValid;
 //是否开启声音
@@ -60,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign)NSUInteger ecpm;
 
-@property(nonatomic, strong) YFMaterialMeta *materialModel;
+@property(nonatomic, strong) YFMaterialMeta_new *materialModel;
 
 //@property(nonatomic, strong) YFInterstitialView *adView;
 
