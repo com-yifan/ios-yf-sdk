@@ -248,7 +248,7 @@ typedef NS_ENUM(NSUInteger, YFMaterialMetaAssetType) {
 @property (nonatomic, copy) NSString *dplUrl;
 @property (nonatomic, copy) NSString *wxProgramId;
 @property (nonatomic, copy) NSString *wxProgramPath;
-@property (nonatomic, assign) NSString *UniversalUrl;
+@property (nonatomic, copy) NSString *UniversalUrl;
 /// 监测信息
 @property (nonatomic, strong) YFMaterialMetaMonitor *monitor;
 /// 素材信息
