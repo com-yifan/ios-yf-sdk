@@ -146,7 +146,8 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeXU        = 16,
     YFAdnTypeGE        = 17,
     YFAdnTypeIN        = 19,
-    YFAdnTypeJC        = 20
+    YFAdnTypeJC        = 20,
+    YFAdnTypeNAL        = 21
 
 };
 

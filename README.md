@@ -1,9 +1,10 @@
- # 亿帆SDK对接⽂档: V6.0.9.1
+ # 亿帆SDK对接⽂档: V6.1.0.0
 
 ## 1.开发⽂档修改记录
 
 |  版本号   |                                                                                                                                                 修改内容                                                                                                                                                 |                                         更新步骤                                          |   更新时间   |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- |
+| 6.1.0.0 | 1. 优化info.plist的url白名单配置建议，**为确保提升广告收益，请务必参考对接文档【LSApplicationQueriesSchemes⽩名单设置】检查是否均已配置相关scheme**<br/>2. 修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework； | 2026.3.25 |
 | 6.0.9.1 | 1.修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework； | 2026.3.18 |
 | 6.0.9.0 | 1. 升级联盟SDK<br/>2. 优化部分广告样式交互<br/>3. 优化广告转化链路，提升广告价值<br/>4. 激励视频服务端回调能力完善<br/>5. **融合Banner接口调整，增加开发者自渲染类型，详见4.9融合Banner**<br/>6. 修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework；融合banner开发者自渲染类型适配； | 2026.3.11 |
 | 6.0.8.2 | 1.修复已知问题 | 必选：</br> 替换主SDK及各适配器的xcframework | 2026.1.22 |
@@ -57,7 +58,7 @@
 | 百青藤    | 10.032 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
 | 快手     | 5.1.20.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ❌ |
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ | ✅ | ❌ |
-| 亿帆     |  6.0.9.0  | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
+| 亿帆     |  6.1.0.0  | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
 | gromore  | 7.4.0.4 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ | ✅ | ❌ |
 
 **注意:**
@@ -153,7 +154,7 @@ AssetsLibrary.framework
 ***1.1***
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.0.9.1'
+pod 'YFAdsSDK', '6.1.0.0'
 #  百度【必须】
 pod 'BaiduMobAdSDK','10.032'
 # 优量汇【必须】
@@ -177,7 +178,7 @@ pod 'WechatOpenSDK-XCFramework'
 
 ``` Ruby
 # 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.0.9.1'
+pod 'YFAdsSDK/YFAdsSDK', '6.1.0.0'
 
 #  百度【可选】
 pod 'YFAdsSDK/YFAdsBDAdapter'
@@ -334,81 +335,70 @@ tionStatus status) {
 提供APPID和Universal Links给运营进⾏绑定
 ***5.3向微信注册***
 &nbsp;&nbsp;&nbsp;<font color="red">注意：6.0.5.1之后需要媒体自行注册微信opensdk</font>
-``` Object-C
-    [WXApi registerApp:@"<#微信开放平台APPID#>" universalLink:@"<#universalLink#>"];
-```
 
+``` Object-C
+[WXApi registerApp:@"<#微信开放平台APPID#>" universalLink:@"<#universalLink#>"];
+```
 
 **<font color="red">6.LSApplicationQueriesSchemes⽩名单设置：</font>**
 
 为了提升⼴告价值，需要在info.plist⾥⾯配置url⽩名单，确保配置在前50个以内。
 
 ``` XML
-    <key>LSApplicationQueriesSchemes</key>
+<key>LSApplicationQueriesSchemes</key>
 <array>
+	<!-- 强烈推荐配置 -->
 	<string>tbopen</string>
-	<string>alipays</string>
-	<string>imeituan</string>
 	<string>eleme</string>
-	<string>baiduboxapp</string>
-	<string>openapp.jdmobile</string>
-	<string>taptap</string>
-	<string>ctrip</string>
+	<string>imeituan</string>
+	<string>pddopen</string>
+	<string>fleamarket</string>
 	<string>meituanwaimai</string>
-	<string>kwai</string>
-	<string>http</string>
+	<string>openapp.jdmobile</string>
+	<string>baiduboxapp</string>
+	<string>ctrip</string>
 	<string>vipshop</string>
+	<string>wireless1688</string>
+	<string>alipays</string>
+	<string>kwai</string>
+	<string>tongyi</string>
+	<string>taobaoliveshare</string>
+	<!-- 建议补充配置 -->
 	<string>ksnebula</string>
+	<string>dewuapp</string>
 	<string>snssdk1128</string>
 	<string>iting</string>
-	<string>pddopen</string>
-	<string>wireless1688</string>
+	<string>amapuri</string>
+	<string>onetravel</string>
+	<string>tmall</string>
 	<string>qklink</string>
+	<string>sa756c9bff</string>
+	<string>openanjuke</string>
 	<string>hunyuan</string>
+	<string>freereader</string>
 	<string>baiduboxlite</string>
 	<string>iqiyi</string>
-	<string>tmall</string>
-	<string>taobaoliveshare</string>
 	<string>tuhu</string>
-	<string>sa756c9bff</string>
-	<string>youku</string>
+	<string>dianping</string>
 	<string>kugou</string>
-	<string>freereader</string>
-	<string>openanjuke</string>
-	<string>dewuapp</string>
+	<string>taptap</string>
+	<string>soul</string>
+	<string>pinduoduo</string>
+	<string>youku</string>
 	<string>jdmobile</string>
 	<string>yykiwi</string>
-	<string>pinduoduo</string>
-	<string>dianping</string>
-	<string>onetravel</string>
-	<string>fleamarket</string>
-	<string>orpheus</string>
 	<string>cainiao</string>
-	<string>tongyi</string>
+	<string>cdfsunrise</string>
 	<string>com.sogou.sogouinput</string>
-	<string>uclink</string>
-	<string>taobaolite</string>
-	<string>duapp</string>
-	<string>qiyi-iphone</string>
-	<string>diditaxi</string>
-	<string>snssdk2329</string>
-	<string>douyutv</string>
-	<string>openApp.jdMobile</string>
-	<string>openjdjrapp</string>
-	<string>iMeituan</string>
-	<string>tmallopen</string>
-	<string>sinaweibo</string>
-	<string>VSSpecialSwitch</string>
-	<string>zhihu</string>
 	<string>ucbrowser</string>
-	<string>douyuapp</string>
-	<!-- 推荐 -->
-	<string>autohome</string>
-	<string>taobaolive</string>
-	<string>dangdang</string>
-	<string>quark</string>
-	<string>sky20170605</string>
+	<string>taobaotravel</string>
+	<string>sinaweibo</string>
+	<string>zhihu</string>
 	<string>yymobile</string>
+	<string>bbtrp</string>
+	<string>snssdk32</string>
+	<string>taobaolive</string>
+	<string>taobaolite</string>
 </array>
 ```
 
