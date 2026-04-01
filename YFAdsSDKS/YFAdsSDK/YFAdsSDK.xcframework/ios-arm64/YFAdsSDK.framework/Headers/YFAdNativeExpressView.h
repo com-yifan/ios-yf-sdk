@@ -10,11 +10,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithViewController:(UIViewController *)controller;
 // 信息流view
 @property (nonatomic, strong) UIView *expressView;
-// 亿帆模版
+// TSSP模版
 @property (nonatomic, assign) BOOL isYFView;
 // 唯一标识
 @property (nonatomic, assign) NSUInteger tag;
-// 渠道标识 1 穿山甲；2 优量汇；3 百度 4快手  5 亿帆 9 京东  12 adx 14 Tanx
+// 渠道标识 1 穿山甲；2 优量汇；3 百度 4快手  5 TSSP 9 京东  12 adx 14 Tanx
 @property (nonatomic, assign) NSUInteger identifier;
 // 是否有效
 -(BOOL) isValid;

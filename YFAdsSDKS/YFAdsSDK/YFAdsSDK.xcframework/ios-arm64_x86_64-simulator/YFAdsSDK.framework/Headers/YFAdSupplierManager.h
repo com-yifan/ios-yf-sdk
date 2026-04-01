@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadCrossParallelSupplier:(id)model;
 
-/// 调用展示当前已填充广告的最优层，无需等待亿帆SDK执行完成整体逻辑
+/// 调用展示当前已填充广告的最优层，无需等待TSSPSDK执行完成整体逻辑
 - (void)takeResultImmediately;
 
 - (YFAdBaseAdPosition *)getCurrentMaxIntV3Cache;

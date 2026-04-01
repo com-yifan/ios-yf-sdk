@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeCloseBTNAd = 15,
     /// 关闭广告
     YFAdSDKReportEventTypeCloseAd = 16,
-    /// 媒体调用展示当前已填充广告的最优层接口，无需等待亿帆SDK执行完成整体逻辑
+    /// 媒体调用展示当前已填充广告的最优层接口，无需等待TSSPSDK执行完成整体逻辑
     YFAdSDKReportEventTypeForceReturn = 17,
     /// 媒体调用展示当前已填充广告的最优层接口，请求失败
     YFAdSDKReportEventTypeForceReturnFail = 19,
@@ -65,9 +65,9 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeLowECPMFill = 33,
     /// 填充失败
     YFAdSDKReportEventTypeFillFail = 109,
-    /// 自渲染SDK展示 亿帆统计
+    /// 自渲染SDK展示 TSSP统计
     YFAdSDKReportEventTypeCustomSDKShow = 100,
-    /// 亿帆监测的展示，以自渲染广告在手机屏幕中展示50%面积为准，同一个广告重复展示的情况只上报第一次展示
+    /// TSSP监测的展示，以自渲染广告在手机屏幕中展示50%面积为准，同一个广告重复展示的情况只上报第一次展示
     YFAdSDKReportEventTypeExposure = 101,
     /// 实时初始化
     YFAdSDKReportEventTypeRealTimeInit = 112,
@@ -130,7 +130,7 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
 
 };
 
-/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 11 gromore 12 adx;  14 Tanx; 15 AY;  16 XU;  17 GE
+/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 TSSP;  9 京东; 11 gromore 12 adx;  14 Tanx; 15 AY;  16 XU;  17 GE
 typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeUnknow,
     YFAdnTypeCSJ       = 1,
@@ -224,7 +224,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *appSecret;
 
-/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 11 gromore 12 adx;  14 Tanx;
+/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 TSSP;  9 京东; 11 gromore 12 adx;  14 Tanx;
 @property (nonatomic, assign) YFAdnType adnID;
 /// 广告商名称
 @property (nonatomic, copy) NSString *adnName;
@@ -288,7 +288,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// skipBtnStyle 跳过按钮样式
 /*
 1：联盟默认按钮
-2：亿帆胶囊按钮
+2：TSSP胶囊按钮
  */
 @property (nonatomic, assign) NSInteger sbs;
 
@@ -409,7 +409,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ecbc;
 // 关闭按钮延迟生效 ms
 @property (nonatomic, assign) NSInteger cbde;
-// 亿帆关闭按钮[新增]:cbm(0不使用，1倒计时关闭，2手动关闭)
+// TSSP关闭按钮[新增]:cbm(0不使用，1倒计时关闭，2手动关闭)
 @property (nonatomic, assign) NSInteger cbm;
 // 缓存
 @property (nonatomic, assign) NSInteger cacheTimeout;

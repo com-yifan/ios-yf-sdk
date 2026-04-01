@@ -9,7 +9,7 @@
 #if __has_include(<BUAdSDK/BUAdSDK.h>)
 #import <BUAdSDK/BUAdSDK.h>
 NS_ASSUME_NONNULL_BEGIN
-/// 穿山甲亿帆插屏3.0
+/// 穿山甲TSSP插屏3.0
 @interface YFCsjEnvelopeIntertitialAdViewController : YFEnvelopeIntertitialAdViewController
 /// 加载广告
 -(void)loadAdData:(BUNativeAd *)dataObject close:(void(^)(id))close;

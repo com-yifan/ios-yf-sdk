@@ -69,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 展示间隔(单位毫秒)。无该字段表示不限制
 @property (nonatomic, assign) NSInteger showInterval;
 
-// 亿帆自渲染广告增加竞价前的关键词过滤能力 以“,”分割 关键词1,关键词2 606需求新增 先搁置，服务端未启用，SDK未实现
+// TSSP自渲染广告增加竞价前的关键词过滤能力 以“,”分割 关键词1,关键词2 606需求新增 先搁置，服务端未启用，SDK未实现
 @property (nonatomic, strong) NSString *keyFbd;
 
 // 日志开关 1表示开启日志;0或者不存在表示日志关闭状态
@@ -130,7 +130,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface FCAdNetwork : NSObject
-/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 12 adx;  14 Tanx;
+/// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 TSSP;  9 京东; 12 adx;  14 Tanx;
 @property (nonatomic, copy) NSString *networkID;
 /// json字符串，字段不固定，包含ADN SDK所需配置，json字符串， head_bidding标识是否为bidding
 @property (nonatomic, strong) FCAdParam *param;
@@ -147,7 +147,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *wxAppID;
 @property (nonatomic, copy) NSString *wxUniLink;
 @property (nonatomic, copy) NSString *tpid;
-//1: 模板渲染 2: 自染-亿帆 / 联盟自渲染  3: 自染-开发者
+//1: 模板渲染 2: 自染-TSSP / 联盟自渲染  3: 自染-开发者
 @property (nonatomic, assign) NSInteger renderID;
 
 @property (nonatomic, strong) FCAdParamConf *cfg;
@@ -157,7 +157,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface FCAdParamConf : NSObject
-/// 模版跳过按钮样式1：联盟默认按钮 2：亿帆胶囊按钮
+/// 模版跳过按钮样式1：联盟默认按钮 2：TSSP胶囊按钮
 @property (nonatomic, assign) NSInteger sbs;
 /// 关闭按钮尺寸
 @property (nonatomic, assign) NSInteger cbs;

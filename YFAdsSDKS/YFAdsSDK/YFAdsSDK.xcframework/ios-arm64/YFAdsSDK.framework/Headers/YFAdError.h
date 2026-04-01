@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///  系统 10000  开屏 20000  横幅 30000  全屏视频 40000  信息流 50000 激励视频 60000  插屏 70000
 ///
-///   穿上甲 1 快手  2  百度 3   优量汇 4    亿帆 5  京东 9  Gromore6 tanx 7
+///   穿上甲 1 快手  2  百度 3   优量汇 4    TSSP 5  京东 9  Gromore6 tanx 7
 ///
 typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_101    = 101,
@@ -57,7 +57,7 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     YFAdErrorCode_19001  = 19001,
     YFAdErrorCode_19002  = 19002,
     
-    //亿帆
+    //TSSP
     YFAdErrorCode_15001  = 15001,
     YFAdErrorCode_15002  = 15002,
     YFAdErrorCode_15003  = 15003,

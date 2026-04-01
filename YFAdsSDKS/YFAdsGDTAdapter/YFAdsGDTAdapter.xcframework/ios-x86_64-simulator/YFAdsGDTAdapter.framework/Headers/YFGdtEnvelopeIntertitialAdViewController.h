@@ -11,7 +11,7 @@
 #import <YFAdsGDTAdapter/YFGdtAdMediaView.h>
 
 NS_ASSUME_NONNULL_BEGIN
-/// 优量汇亿帆插屏3.0
+/// 优量汇TSSP插屏3.0
 @interface YFGdtEnvelopeIntertitialAdViewController : YFEnvelopeIntertitialAdViewController
 
 @property (nonatomic, strong) YFGdtAdMediaView *adInterView;

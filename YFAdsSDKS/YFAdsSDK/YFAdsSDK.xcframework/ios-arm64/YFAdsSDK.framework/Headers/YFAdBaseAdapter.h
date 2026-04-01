@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAndShowAd;
 /// 移除广告 (banner ，信息流可用)
 - (void)removeAd;
-/// 调用展示当前已填充广告的最优层，无需等待亿帆SDK执行完成整体逻辑
+/// 调用展示当前已填充广告的最优层，无需等待TSSPSDK执行完成整体逻辑
 - (void)takeResultImmediately;
 /// 移除广告 (自渲染插屏)
 - (void)removeCustomRenderAd;

@@ -21,7 +21,7 @@ typedef enum : NSUInteger {
     YFAdFusionBannerPlatform_KS,
     // 京东
     YFAdFusionBannerPlatform_JD,
-    // 亿帆
+    // TSSP
     YFAdFusionBannerPlatform_YF,
     // Tanx
     YFAdFusionBannerPlatform_Tanx,
