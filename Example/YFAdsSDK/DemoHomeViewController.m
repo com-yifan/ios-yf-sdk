@@ -279,7 +279,7 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
     UILabel * title = [[UILabel alloc]initWithFrame:CGRectZero];
     title.frame = CGRectMake(44+5, 0, 150, 40);
     title.font = [UIFont boldSystemFontOfSize:17];
-    title.text = @"亿帆 SDK Demo";
+    title.text = @"TSSP SDK Demo";
     [navView addSubview:title];
   
     self.navigationItem.titleView = navView;

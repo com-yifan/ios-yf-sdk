@@ -143,7 +143,7 @@
     self.FCAdSplash = [self returnAdInstance];
     // 开屏背景图
     _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH)];
-    _bgImageView.image = [UIImage imageNamed:@"splashBg"];
+    _bgImageView.backgroundColor = [UIColor whiteColor];
     // 避免背景图展示时点击到加载展示按钮
     _bgImageView.userInteractionEnabled = YES;
     // 可自行选择添加背景图的对象

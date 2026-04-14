@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'tssp' => 'tssp@qq.com' }
-    s.source  = { :git => "https://github.com/com-tssp/ios-tssp-sdk.git", :tag => "#{s.version}" }
+    s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "6.1.0.1" }
 
     s.ios.deployment_target = '11.0'
     s.platform     = :ios, "11.0"

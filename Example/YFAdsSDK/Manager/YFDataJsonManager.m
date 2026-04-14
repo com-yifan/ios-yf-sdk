@@ -50,7 +50,7 @@ static YFDataJsonManager *manager = nil;
 
 //自定义描述信息，用于log详细打印
 - (NSString *)description {
-    return @"亿帆聚合SDK, 该类用来管理广告请求策略的数据";
+    return @"TSSP聚合SDK, 该类用来管理广告请求策略的数据";
 }
 
 /* * * * * * * * * * * 方法 * * * * * * * * * * */

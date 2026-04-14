@@ -1,4 +1,4 @@
- # 亿帆SDK对接⽂档: V6.1.0.0
+ # TSSPSDK对接⽂档: V6.1.0.0
 
 ## 1.开发⽂档修改记录
 
@@ -21,7 +21,7 @@
 | 6.0.5.3 | 1. 修复已知问题 | 必选：</br> 替换主SDK | 2025.06.10 |
 | 6.0.5.2 | 1. 修复已知问题 | 必选：</br> 替换主SDK | 2025.05.23 |
 | 6.0.5.1 | 1. 更新联盟SDK至618电商大促版本</br>&emsp;&emsp;&emsp;<font color="red">注意：穿山甲不再兼容6.8.0.0以下的版本 </font></br> 2. 优化媒体自渲染接入方法，支持使用loadAd加载媒体自渲染广告<br />3. 修复已知问题。 | 必选：</br> 替换主SDK及各适配器的xcframework | 2025.05.10 |
-| 6.0.5.0 | 1. 更新升级联盟SDK<br /> 2. 新增广告场景超时前主动调用展示的接口，减少因超时丢失广告展示机会，建议开屏场景使用，详见DemoSplashViewController<br /> 3. 优化穿山甲直播拉流预算的接入方案，详见[穿山甲iOS直播拉流接入注意事项](#csj-live-streaming)<br /> 4. 优化Gromore适配方案，详见Cocoapods集成方式<br />5. 广告样式优化<br /> <font color="red">6.【通知】信息流、Banner类接口后续不再维护，统一使用“融合Banner”接口进行对接，建议涉及信息流、Banner场景的媒体联系亿帆运营同学提供最新的“融合Banner”广告位ID进行对接</font> |  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：新增Gromore-Adn适配器支持，podfile中增加以下内容（注意版本号）</br># Gromore-Adn适配器</br>pod 'GMBaiduAdapter', '5.370.2'</br>pod 'GMGdtAdapter', '4.15.10.2'</br>pod 'GMKsAdapter', '3.3.71.1'</br> </br>手动集成：将GMBaiduAdapter、GMGdtAdapter、GMKsAdapter三个适配器拖进项目里</font></br>必选：</br> 替换主SDK及各适配器的xcframework | 2025.04.15 |
+| 6.0.5.0 | 1. 更新升级联盟SDK<br /> 2. 新增广告场景超时前主动调用展示的接口，减少因超时丢失广告展示机会，建议开屏场景使用，详见DemoSplashViewController<br /> 3. 优化穿山甲直播拉流预算的接入方案，详见[穿山甲iOS直播拉流接入注意事项](#csj-live-streaming)<br /> 4. 优化Gromore适配方案，详见Cocoapods集成方式<br />5. 广告样式优化<br /> <font color="red">6.【通知】信息流、Banner类接口后续不再维护，统一使用“融合Banner”接口进行对接，建议涉及信息流、Banner场景的媒体联系TSSP运营同学提供最新的“融合Banner”广告位ID进行对接</font> |  必选：</br>参照Podfile集成或手动导入集成；<br /> <font color="red">Cocoapods集成：新增Gromore-Adn适配器支持，podfile中增加以下内容（注意版本号）</br># Gromore-Adn适配器</br>pod 'GMBaiduAdapter', '5.370.2'</br>pod 'GMGdtAdapter', '4.15.10.2'</br>pod 'GMKsAdapter', '3.3.71.1'</br> </br>手动集成：将GMBaiduAdapter、GMGdtAdapter、GMKsAdapter三个适配器拖进项目里</font></br>必选：</br> 替换主SDK及各适配器的xcframework | 2025.04.15 |
 | 6.0.4.6 | 1. 修复已知问题 | 必选：</br> 替换YFAdsSDK.xcframework | 2025.03.01 |
 | 6.0.4.5 | 1.性能优化 <br />2. 修复已知问题                                                                                                                                                                                                                                                                           | 必选：</br> 替换YFAdsSDK.xcframework；</br> 替换YFAdsKSAdapter.xcframework | 2025.02.21 |
 | 6.0.4.3 | 1.升级联盟SDK<br />2.移除Tanx SDK<br />3.优化按需集成联盟SDK的能力<br />4.优化媒体自渲染能力<br />5.性能优化<br />6.修复已知问题 | 必选：参照Podfile集成或手动导入集成；<br />移除Tanx : <font color="red">Cocoapods集成：Podfile中移除pod 'Tanx'和pod 'YFAdsSDK/YFAdsTXAdapter'；手动集成：移除TanxSDK.library和YFAdsTXAdapter.xcframework</font> | 2025.02.17 |
@@ -58,12 +58,12 @@
 | 百青藤    | 10.032 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
 | 快手     | 5.1.20.1 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ✅   | ❌  | ✅ | ✅ | ❌ |
 | 京东     | 2.6.8 | ✅  | ❌      | ✅  | ✅  | ✅    | ❌      | ❌   | ❌  | ✅ | ✅ | ❌ |
-| 亿帆     |  6.1.0.0  | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
+| TSSP     |  6.1.0.0  | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌  | ✅ | ✅ | ❌ |
 | gromore  | 7.4.0.4 | ✅  | ✅      | ✅  | ✅  | ✅    | ✅      | ❌   | ❌ | ✅ | ✅ | ❌ |
 
 **注意:**
 1.该版本是基于上述SDK平台版本进行开发适配，如需指定其他版本请联系技术同学确认；
-2.SDK⽀持的架构有： x86_64 arm64（**由于联盟支持架构变更，亿帆联盟适配器支持架构也对应删除了arm64架构。故可能不支持模拟器运行，请使用真机测试**）；
+2.SDK⽀持的架构有： x86_64 arm64（**由于联盟支持架构变更，TSSP联盟适配器支持架构也对应删除了arm64架构。故可能不支持模拟器运行，请使用真机测试**）；
 3.原则上⽀持iOS13.0及及以上版本。如需支持较低版本，可通过拆分引入方式。
 
 ## 3. 快速接入
@@ -153,8 +153,8 @@ AssetsLibrary.framework
 通过Cocoapods导⼊三⽅⼴告SDK，以及第三⽅依赖（如遇到拉不下来，可能是github访问问题，可以使⽤VPN），如不清楚需要接入的联盟平台，请咨询运营同学
 ***1.1***
 ``` Ruby
-# 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.1.0.0'
+# TSSPSDK【必须】
+pod 'TSSPSDK', '6.1.0.0'
 #  百度【必须】
 pod 'BaiduMobAdSDK','10.032'
 # 优量汇【必须】
@@ -174,29 +174,29 @@ pod 'KSAdSDK','5.1.20.1'
 pod 'WechatOpenSDK-XCFramework'
 ```
 ***1.2 拆分模块方式引入***
- <font color="red">注意，除了联盟SDK，还需要引入对应的亿帆适配器 pod 'YFAdsSDK/YFAds【XXX】Adapter'，如下代码中所示</font>
+ <font color="red">注意，除了联盟SDK，还需要引入对应的TSSP适配器 pod 'TSSPSDK/YFAds【XXX】Adapter'，如下代码中所示</font>
 
 ``` Ruby
-# 亿帆SDK【必须】
-pod 'YFAdsSDK/YFAdsSDK', '6.1.0.0'
+# TSSPSDK【必须】
+pod 'TSSPSDK/YFAdsSDK', '6.1.0.0'
 
 #  百度【可选】
-pod 'YFAdsSDK/YFAdsBDAdapter'
+pod 'TSSPSDK/YFAdsBDAdapter'
 pod 'BaiduMobAdSDK','10.032'
 
 # 优量汇【可选】
-pod 'YFAdsSDK/YFAdsGDTAdapter'
+pod 'TSSPSDK/YFAdsGDTAdapter'
 pod 'GDTMobSDK' ,'4.15.75'
 
 # 京东【可选】
-pod 'YFAdsSDK/YFAdsJDAdapter'
+pod 'TSSPSDK/YFAdsJDAdapter'
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 
 # 穿山甲【可选】
-pod 'YFAdsSDK/YFAdsCSJAdapter'
+pod 'TSSPSDK/YFAdsCSJAdapter'
 # Gromore【可选】
-pod 'YFAdsSDK/YFAdsGROAdapter'
+pod 'TSSPSDK/YFAdsGROAdapter'
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
 pod 'Ads-CN', '7.4.0.4', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
@@ -205,7 +205,7 @@ pod 'GMGdtAdapter', '4.15.65.0'
 pod 'GMKsAdapter', '4.11.20.1.0'
 
 #  快手【可选】
-pod 'YFAdsSDK/YFAdsKSAdapter'
+pod 'TSSPSDK/YFAdsKSAdapter'
 pod 'KSAdSDK','5.1.20.1'
 
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
@@ -537,7 +537,7 @@ self.splash.showLogoRequire = YES;
 
 ### 4.2 横幅⼴告(停止维护，请使用融合Banner)
 
- <font color="red">横幅广告后续停止维护，历史广告位可继续使用，如有新增的信息流/banner场景，请联系亿帆运营同学提供【融合Banner】类型的广告位ID，并请使用对应的【融合Banner】类进行技术对接</font>
+ <font color="red">横幅广告后续停止维护，历史广告位可继续使用，如有新增的信息流/banner场景，请联系TSSP运营同学提供【融合Banner】类型的广告位ID，并请使用对应的【融合Banner】类进行技术对接</font>
 
 具体示例参照Demo项目中DemoBannerViewController.m
 
@@ -757,7 +757,7 @@ self.splash.showLogoRequire = YES;
 
 ### 4.5 信息流⼴告(停止维护，请使用融合Banner)
 
- <font color="red">信息流广告后续停止维护，历史广告位可继续使用，如有新增的信息流/banner场景，请联系亿帆运营同学提供【融合Banner】类型的广告位ID，并请使用对应的【融合Banner】类进行技术对接</font>
+ <font color="red">信息流广告后续停止维护，历史广告位可继续使用，如有新增的信息流/banner场景，请联系TSSP运营同学提供【融合Banner】类型的广告位ID，并请使用对应的【融合Banner】类进行技术对接</font>
 
 具体示例参照Demo项目中DemoListFeedExpressViewController.m
 
@@ -1264,7 +1264,7 @@ self.splash.showLogoRequire = YES;
 typedef enum : NSUInteger {
     // 横幅
     YFAdFusionBannerAdType_Banner,
-    // 亿帆模板信息流
+    // TSSP模板信息流
     YFAdFusionBannerAdType_CustomNative,
     // 联盟模板信息流
     YFAdFusionBannerAdType_Express,
@@ -1617,12 +1617,12 @@ self.mall.delegate = self;
 19001 : @"京东加载失败",</br>
 19002 : @"京东渲染失败",</br>
 
-15001 : @"亿帆加载失败",</br>
-15002 : @"亿帆渲染失败",</br>
-15003 : @"亿帆无广告填充",</br>
-15004 : @"亿帆视频播放器初始化失败",
-15005 : @"亿帆视频播放器资源出现未知错误",
-15006 : @"亿帆视频播放器资源播放失败",
+15001 : @"TSSP加载失败",</br>
+15002 : @"TSSP渲染失败",</br>
+15003 : @"TSSP无广告填充",</br>
+15004 : @"TSSP视频播放器初始化失败",
+15005 : @"TSSP视频播放器资源出现未知错误",
+15006 : @"TSSP视频播放器资源播放失败",
 
 11001 : @"穿山甲请求广告数据失败",</br>
 11002 : @"穿山甲接收广告加载失败",</br>
@@ -1651,7 +1651,7 @@ self.mall.delegate = self;
 41007 : @"优量汇广告异步请求的服务器验证失败",</br>
 
 ## 6、 隐私协议与合规指南
-根据国家监管要求，请您确保，您开发或运营的APP已配备符合监管要求的《隐私政策》文本，并明确告知终端用户，您的APP集成了亿帆SDK服务。请在《隐私政策》中补充说明本SDK收集和使用个人信息的目的、方式和范围，同时标明本SDK的开发运营者名称及其隐私政策链接。
+根据国家监管要求，请您确保，您开发或运营的APP已配备符合监管要求的《隐私政策》文本，并明确告知终端用户，您的APP集成了TSSPSDK服务。请在《隐私政策》中补充说明本SDK收集和使用个人信息的目的、方式和范围，同时标明本SDK的开发运营者名称及其隐私政策链接。
 此外，您应在APP登录注册页面及首次运行时，通过弹窗、文本链接或附件等简洁、醒目且易于访问的方式，以清晰易懂的语言向用户展示《隐私政策》，确保用户在充分知情的情况下，自愿、明确地作出同意。
-亿帆隐私政策：https://www.yfanads.cn/privacy.html
-亿帆隐私合规指南：https://www.yfanads.cn/guideline.html
+TSSP隐私政策：https://www.yfanads.cn/privacy.html
+TSSP隐私合规指南：https://www.yfanads.cn/guideline.html

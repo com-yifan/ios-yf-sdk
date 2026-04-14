@@ -135,10 +135,10 @@
         // 用户同意隐私协议，直接初始化广告SDK，获取IDFA
         [self requestIDFA];
         [self initAdSDK];
-        [JDStatusBarNotification showWithStatus:@"亿帆SDK初始化" dismissAfter:1.5];
+        [JDStatusBarNotification showWithStatus:@"TSSPSDK初始化" dismissAfter:1.5];
         return;
     }
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"隐私协议" message:@"这是一个隐私协议示例内容，目的在于模拟亿帆广告SDK初始化时机" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"隐私协议" message:@"这是一个隐私协议示例内容，目的在于模拟TSSP广告SDK初始化时机" preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"拒绝并退出" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
         
     }];
@@ -148,7 +148,7 @@
         // 用户同意隐私协议初始化SDK和获取IDFA
         [self requestIDFA];
         [self initAdSDK];
-        [JDStatusBarNotification showWithStatus:@"亿帆SDK初始化" dismissAfter:1.5];
+        [JDStatusBarNotification showWithStatus:@"TSSPSDK初始化" dismissAfter:1.5];
     }];
     [alertController addAction:cancleAction];
     [alertController addAction:sureAction];
@@ -181,8 +181,9 @@
     /// 设置开屏底部视图（可选）不要超过屏幕高度的20%
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
     imageView.image = [UIImage imageNamed:@"app_logo"];
+    imageView.backgroundColor = [UIColor whiteColor];
     UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
-//    bottomLabel.text = @"这是开屏底部视图，不要超过屏幕高度的20%";
+    bottomLabel.text = @"这是开屏底部视图，不要超过屏幕高度的20%";
     bottomLabel.textAlignment = NSTextAlignmentCenter;
     [imageView addSubview:bottomLabel];
     self.coldSplashAd.bottomView = imageView;
@@ -234,7 +235,7 @@
 #pragma mark - YFAdSplashDelegate
 /// 广告数据加载成功
 - (void)fcAdLoadSuccess:(YFAdBaseAdapter *)model {
-    NSLog(@"开屏-亿帆-广告数据加载成功");
+    NSLog(@"开屏-TSSP-广告数据加载成功");
     self.isSplashLoaded = YES;
     if(!self.isEnd) {
         /// 展示广告时移除自定义背景图
@@ -247,42 +248,42 @@
 
 /// 广告曝光成功
 - (void)fcAdExposured:(YFAdBaseAdapter *)model {
-    NSLog( @"开屏-亿帆-广告曝光成功");
+    NSLog( @"开屏-TSSP-广告曝光成功");
 }
 
 ///  获取数据失败
 - (void)fcAdFailedWithError:(NSError *)error adapter:(id)adapter description:(NSDictionary *)description {
-    NSLog(@"开屏-亿帆-广告加载失败-%@", error);
+    NSLog(@"开屏-TSSP-广告加载失败-%@", error);
     [self splashEnd];
 }
 
 /// 广告点击
 - (void)fcAdClicked:(YFAdBaseAdapter *)model {
-    NSLog(@"开屏-亿帆-广告点击");
+    NSLog(@"开屏-TSSP-广告点击");
     /// 部分联盟需要使用当前控制器的navigate，避免背景视图覆盖落地页，需要在点击的时候移除背景视图
     [self->_splashBackgroundView removeFromSuperview];
 }
 
 -(void)fcAdDidCloseOtherController:(id)adapter interactionType:(YFAdInteractionType)interactionType {
-    NSLog(@"开屏-亿帆-广告关闭-fcAdDidCloseOtherController");
+    NSLog(@"开屏-TSSP-广告关闭-fcAdDidCloseOtherController");
 //    [self splashEnd];
 }
 
 /// 广告关闭
 - (void)fcAdDidClose:(YFAdBaseAdapter *)model {
-    NSLog(@"开屏-亿帆-广告关闭");
+    NSLog(@"开屏-TSSP-广告关闭");
     [self splashEnd];
 }
 
 /// 广告倒计时结束
 - (void)fcAdSplashOnAdCountdownToZero {
-    NSLog(@"开屏-亿帆-广告倒计时结束");
+    NSLog(@"开屏-TSSP-广告倒计时结束");
 //    [self splashEnd];
 }
 
 /// 点击了跳过
 - (void)fcAdSplashOnAdSkipClicked {
-    NSLog(@"开屏-亿帆-点击了跳过");
+    NSLog(@"开屏-TSSP-点击了跳过");
 //    [self splashEnd];
 }
 
