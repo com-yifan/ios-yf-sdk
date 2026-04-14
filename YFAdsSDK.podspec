@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-    s.name             = 'YFAdsSDK'
+    s.name             = 'YFAdsOLSDK'
     s.version          = '6.1.0.0'
     s.summary          = 'iOS YFAdsSDK'
     s.description      = <<-DESC
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'yifan' => '576661787@qq.com' }
-    s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "#{s.version}" }
+    s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "6.1.0.2" }
 
     s.ios.deployment_target = '11.0'
     s.platform     = :ios, "11.0"
