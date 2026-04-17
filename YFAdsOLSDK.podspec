@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'YFAdsSDK' do |ss|
-        ss.dependency 'YFAdsSDK/YFAdsSubstrate'
+        ss.dependency 'YFAdsOLSDK/YFAdsSubstrate'
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsSDK/*.xcframework'
         ss.preserve_paths = 'YFAdsSDKS/YFAdsSDK/*.xcframework'
         ss.resources = 'YFAdsSDKS/YFAdsSDK/*.bundle'
@@ -43,31 +43,31 @@ Pod::Spec.new do |s|
 
     s.subspec 'YFAdsBDAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsBDAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsOLSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsGDTAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsGDTAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsOLSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsJDAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsJDAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsOLSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsKSAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsKSAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsOLSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsCSJAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsCSJAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsOLSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsGROAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsGROAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsOLSDK/YFAdsSDK'
     end
 end
