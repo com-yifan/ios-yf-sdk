@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *appSecret;
 
+@property (nonatomic, copy) NSString *appToken;
+
 @property (nonatomic, copy) NSString *platform;
 
 @property (nonatomic, copy) NSString *wxAppId;

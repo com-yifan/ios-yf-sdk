@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0344C8802F9B605F00519165 /* DemoTextLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0344C87E2F9B605F00519165 /* DemoTextLinkViewController.m */; };
 		03929B082DAE501E0050D93D /* DemoEarlyRetrunCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03929AFF2DAE501E0050D93D /* DemoEarlyRetrunCell.xib */; };
 		03929B092DAE501E0050D93D /* DemoCommonSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03929B012DAE501E0050D93D /* DemoCommonSwitchCell.m */; };
 		03929B0A2DAE501E0050D93D /* DemoEarlyRetrunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03929AFE2DAE501E0050D93D /* DemoEarlyRetrunCell.m */; };
@@ -98,6 +99,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0344C87D2F9B605F00519165 /* DemoTextLinkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTextLinkViewController.h; sourceTree = "<group>"; };
+		0344C87E2F9B605F00519165 /* DemoTextLinkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTextLinkViewController.m; sourceTree = "<group>"; };
 		03929AFD2DAE501E0050D93D /* DemoEarlyRetrunCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoEarlyRetrunCell.h; sourceTree = "<group>"; };
 		03929AFE2DAE501E0050D93D /* DemoEarlyRetrunCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEarlyRetrunCell.m; sourceTree = "<group>"; };
 		03929AFF2DAE501E0050D93D /* DemoEarlyRetrunCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoEarlyRetrunCell.xib; sourceTree = "<group>"; };
@@ -269,6 +272,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0344C87F2F9B605F00519165 /* TextLink(文字链广告) */ = {
+			isa = PBXGroup;
+			children = (
+				0344C87D2F9B605F00519165 /* DemoTextLinkViewController.h */,
+				0344C87E2F9B605F00519165 /* DemoTextLinkViewController.m */,
+			);
+			path = "TextLink(文字链广告)";
+			sourceTree = "<group>";
+		};
 		03929B022DAE501E0050D93D /* ConfigCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +426,7 @@
 		039CF8122D222E1F000FA9E2 /* AdsExample */ = {
 			isa = PBXGroup;
 			children = (
+				0344C87F2F9B605F00519165 /* TextLink(文字链广告) */,
 				03AE83CA2ED6FD9A00C11D99 /* Mall(商城) */,
 				03A3E3822E9E21460037D2F6 /* TopPush(顶推广告) */,
 				03929B072DAE501E0050D93D /* AdConfig(参数配置) */,
@@ -846,14 +859,14 @@
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/Core/TTSDKCore.framework/TTSDKCore",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/LiveBase/TTSDKLiveBase.framework/TTSDKLiveBase",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/LivePlayer/Lite/TTSDKLivePlayerLite.framework/TTSDKLivePlayerLite",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/LivePull-VolcLog/TTSDKLivePullVolcLog.framework/TTSDKLivePullVolcLog",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/PlayerCore/LiveLite/TTSDKPlayerCoreLiveLite.framework/TTSDKPlayerCoreLiveLite",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/Reachability/TTSDKReachability.framework/TTSDKReachability",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/SSL/ttboringssl.framework/ttboringssl",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/SSL/ttcrypto.framework/ttcrypto",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/Strategy/Lite/TTSDKStrategyLite.framework/TTSDKStrategyLite",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/TTFFmpeg/LiveLite/TTFFmpeg.framework/TTFFmpeg",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/TTFFmpeg/LiveLite/TTSDKTTFFmpegLiveLite.framework/TTSDKTTFFmpegLiveLite",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/Tools/TTSDKTools.framework/TTSDKTools",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/VolcLog/TTSDKVolcLog.framework/TTSDKVolcLog",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BUTTSDKFramework/VolcLog/VolcBaseLog.framework/VolcBaseLog",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GDTMobSDK/GDTMobSDK.framework/GDTMobSDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GDTMobSDK/Tquic.framework/Tquic",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/KSAdSDK/KSAdSDK.framework/KSAdSDK",
@@ -863,14 +876,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKLiveBase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKLivePlayerLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKLivePullVolcLog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKPlayerCoreLiveLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKReachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ttboringssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ttcrypto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKStrategyLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTFFmpeg.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKTTFFmpegLiveLite.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSDKVolcLog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VolcBaseLog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDTMobSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tquic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSAdSDK.framework",
@@ -960,6 +973,7 @@
 				039CF8B12D222E20000FA9E2 /* DemoDrawChangeViewController.m in Sources */,
 				039CF8B22D222E20000FA9E2 /* YFADFootView.m in Sources */,
 				039CF8B32D222E20000FA9E2 /* YFModelButton.m in Sources */,
+				0344C8802F9B605F00519165 /* DemoTextLinkViewController.m in Sources */,
 				039CF8B52D222E20000FA9E2 /* DemoHomeViewController.m in Sources */,
 				039CF8B62D222E20000FA9E2 /* YFHomeTableViewCell.m in Sources */,
 				039CF8B92D222E20000FA9E2 /* DemoPresentViewController.m in Sources */,

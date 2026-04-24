@@ -147,7 +147,9 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeGE        = 17,
     YFAdnTypeIN        = 19,
     YFAdnTypeJC        = 20,
-    YFAdnTypeNAL        = 21
+    YFAdnTypeNAL        = 21,
+    YFAdnTypeUW        = 23,
+    YFAdnTypeKY        = 24
 
 };
 
@@ -223,6 +225,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *adnAppKey;
 
 @property (nonatomic, copy) NSString *appSecret;
+
+@property (nonatomic, copy) NSString *appToken;
 
 /// 广告商枚举ID 1 穿山甲；2 优量汇；3 百度; 4快手;  5 亿帆;  9 京东; 11 gromore 12 adx;  14 Tanx;
 @property (nonatomic, assign) YFAdnType adnID;
@@ -440,6 +444,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) TopPushShowTime dts;
 /// 关联顶推展示延时时间
 @property (nonatomic, assign) NSInteger dtt;
+/// 顶推展示方向 1、顶部 2、底部
+@property (nonatomic, assign) NSInteger dtsp;
+/// 展示应用icon 1：展示 0：不展示
+@property (nonatomic, assign) NSInteger sai;
 
 @end
 NS_ASSUME_NONNULL_END

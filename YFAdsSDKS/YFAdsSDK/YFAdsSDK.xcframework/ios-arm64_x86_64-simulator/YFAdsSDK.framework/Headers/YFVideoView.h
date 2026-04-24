@@ -127,6 +127,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)videoViewCacheFail:(YFVideoView *)videoView withError:(NSError * _Nullable)error;
 
+@optional
+
+- (void)videoViewDidPlayOneQuarter:(YFVideoView *)videoView;
+
+- (void)videoViewDidPlayOneHalf:(YFVideoView *)videoView;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -144,6 +144,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *potID;
 @property (nonatomic, copy) NSString *appKey;
 @property (nonatomic, copy) NSString *appSecret;
+@property (nonatomic, copy) NSString *appToken;
 @property (nonatomic, copy) NSString *wxAppID;
 @property (nonatomic, copy) NSString *wxUniLink;
 @property (nonatomic, copy) NSString *tpid;
@@ -219,6 +220,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 1;单向跳转
 /// 2: 双向跳转
 @property (nonatomic, assign) NSInteger isd;
+/// 顶推展示方向
+@property (nonatomic, assign) NSInteger dtsp;
+/// 展示应用icon 1：展示 0：不展示
+@property (nonatomic, assign) NSInteger sai;
 
 //新增字段istvp 描述 0~1
 //1 = 100%

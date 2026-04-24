@@ -93,12 +93,6 @@
     [YFAdSDKSetting shareInstance].userId = @"test";
 //    // 是否允许SDK进行声道控制，默认允许
 //    [YFAdSDKSetting shareInstance].allowAudioSetting = YES;
-    
-    // Demo环境配置参数媒体开发者无需使用
-    [YFAdSDKSetting shareInstance].fc_conf_url = [YFEnvironmentManager getFC_CONF_URL];
-    [YFAdSDKSetting shareInstance].fc_upload_url = [YFEnvironmentManager getFC_UPLOAD_URL];
-    [YFAdSDKSetting shareInstance].yf_conf_url = [YFEnvironmentManager getYF_CONF_URL];
-    [YFAdSDKSetting shareInstance].fc_data_url = [YFEnvironmentManager getYF_DATA_URL];
     [YFAdSDKSetting shareInstance].useLocation = YES;
     //SDK注册【必须】 AppID可从运营同学提供的广告配置表中获取
     [YFAdSDKManager setupSDKWithAppId:[YFEnvironmentManager getAPP_ID]];

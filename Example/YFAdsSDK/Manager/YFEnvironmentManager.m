@@ -181,6 +181,10 @@ static YFEnvironmentManager *environmentManager;
     return EnvironmentDic[@"YF_MALL_ID"];
 }
 
++ (NSString *)getTextLink_ID {
+    return EnvironmentDic[@"YF_TEXTLINK_ID"];
+}
+
 + (NSString *)getNATIVE_ID{
     return EnvironmentDic[@"YF_NATIVE_ID"];
 }

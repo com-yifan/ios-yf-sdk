@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) YFAdImageView *iconView;
 @property (nonatomic, strong) YFAdImageView *imageBackView;
 @property (nonatomic, weak, readonly) UIViewController *beforeClickVc;
+@property (nonatomic, assign) YFAdTopPushOpenDirection openDirection;
+@property (nonatomic, assign) BOOL useMainWindowForBottomLayout;
 
 - (instancetype)initWithModel:(id<YFAdTopPushAdInfoProtocol>)model;
 - (void)logoLongTapAction;

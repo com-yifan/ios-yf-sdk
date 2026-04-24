@@ -3,24 +3,24 @@ platform :ios, '11.0'
 source 'https://github.com/CocoaPods/Specs.git'
 target 'YFAdsSDK_Example' do
   
-  # 亿帆SDK【必须】
-#pod 'YFAdsSDK', :path => '../'
-  pod 'YFAdsSDK', '6.1.0.0'
-  #  百度【必须】
-  pod 'BaiduMobAdSDK','10.032'
-  # 优量汇【必须】
-  pod 'GDTMobSDK' ,'4.15.75'
-  # 京东【必须】
-  pod 'JADYun', '2.6.8'
-  pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
-  #  穿山甲【必须】注意：穿山甲70xx版本运行环境配置发生变更，支持系统iOS 13.0及以上版本，请Xcode修改项目支持最低13.0，如需支持13.0以下请联系技术同学获取支持的穿山甲版本
-  pod 'Ads-CN', '7.4.0.4', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
-  # Gromore-Adn适配器
-  pod 'GMBaiduAdapter', '10.02.1'
-  pod 'GMGdtAdapter', '4.15.65.0'
-  pod 'GMKsAdapter', '4.11.20.1.0'
-  # 快手【必须】
-  pod 'KSAdSDK','5.1.20.1'
+# 亿帆SDK【必须】
+pod 'YFAdsSDK', '6.1.1.0'
+#  百度【必须】
+pod 'BaiduMobAdSDK','10.050'
+# 优量汇【必须】
+pod 'GDTMobSDK' ,'4.15.80'
+# 京东【必须】
+pod 'JADYun', '2.6.8'
+pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
+# 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
+pod 'Ads-CN', '7.5.0.7', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+# Gromore-Adn适配器
+pod 'GMBaiduAdapter', '10.032.1'
+pod 'GMGdtAdapter', '4.15.75.0'
+pod 'GMKsAdapter', '4.12.20.1.0'
+# 快手【必须】
+pod 'KSAdSDK','5.3.20.1'
+# 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
   pod 'WechatOpenSDK'
  
  # Demo依赖库

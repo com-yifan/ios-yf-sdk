@@ -198,6 +198,13 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
         },
         @{
             @"image":@"home_list_icon",
+            @"title":@"文字链广告",
+            @"class":@"DemoTextLinkViewController",
+            @"des":@"load success returns YFAdTextLinkView",
+
+        },
+        @{
+            @"image":@"home_list_icon",
             @"title":@"商城广告",
             @"class":@"DemoMallViewController",
             @"des":@"",

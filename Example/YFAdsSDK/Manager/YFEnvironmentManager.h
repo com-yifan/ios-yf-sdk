@@ -58,4 +58,7 @@
 + (NSString *)getYF_DATA_URL;
 
 + (NSString *)getTopPush_ID;
+
++ (NSString *)getTextLink_ID;
+
 @end

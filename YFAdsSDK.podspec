@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'YFAdsSDK'
-    s.version          = '6.1.0.0'
+    s.version          = '6.1.1.0'
     s.summary          = 'iOS YFAdsSDK'
     s.description      = <<-DESC
     欢迎大家使用YFAdsSDK
@@ -30,6 +30,7 @@ Pod::Spec.new do |s|
     s.default_subspecs = 'YFAdsBDAdapter', 'YFAdsGDTAdapter', 'YFAdsJDAdapter', 'YFAdsKSAdapter', 'YFAdsCSJAdapter', 'YFAdsGROAdapter'
 
     s.subspec 'YFAdsSubstrate' do |ss|
+        ss.dependency 'libwebp'
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsSubstrate/*.xcframework'
         ss.preserve_paths = 'YFAdsSDKS/YFAdsSubstrate/*.xcframework'
     end
