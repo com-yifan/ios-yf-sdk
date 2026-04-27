@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL showLogoRequire;
 /// 广告Logo视图
 @property(nonatomic, strong) UIView *bottomView;
+/// 默认使用 SDK 开屏 window，可选传入业务自定义 window ；在showAd前传入
+@property (nonatomic, strong) UIWindow *showInWindow;
 /// 开屏占位视图
 @property(nonatomic, strong) UIView *backgroundView DEPRECATED_MSG_ATTRIBUTE("此属性将废弃SDK不再管理开屏背景图，请参照DemoSplashViewController中bgImageView实现");
 
@@ -30,6 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)setCurrentViewController:(UIViewController *)viewController;
 
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)initWithAdUnitID:(NSString *)pID NS_UNAVAILABLE;
+/// 初始化广告加载器
 -(instancetype)initWithAdUnitID:(NSString *)pID viewController:(UIViewController *)viewController;
 
 @end
