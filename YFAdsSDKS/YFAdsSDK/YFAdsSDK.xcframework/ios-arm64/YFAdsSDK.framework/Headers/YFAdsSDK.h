@@ -197,6 +197,8 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFRewardedVideoModel.h>
 #import <YFAdsSDK/YFAdRSAEncrypt.h>
 
+#import <YFAdsSDK/YFAdsSplashWindow.h>
+
 //#import <YFAdsSDK/YFGradientView.h>
 //#import <YFAdsSDK/NSObject+YFAdModel.h>
 //#import <YFAdsSDK/UIApplication+YFAds.h>
