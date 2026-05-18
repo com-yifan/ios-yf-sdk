@@ -4,22 +4,22 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'YFAdsSDK_Example' do
   
 # 亿帆SDK【必须】
-pod 'YFAdsSDK', '6.1.1.1'
+pod 'YFAdsSDK', '6.1.2.0'
 #  百度【必须】
 pod 'BaiduMobAdSDK','10.050'
 # 优量汇【必须】
-pod 'GDTMobSDK' ,'4.15.80'
+pod 'GDTMobSDK' ,'4.15.90'
 # 京东【必须】
 pod 'JADYun', '2.6.8'
 pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
 # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
-pod 'Ads-CN', '7.5.0.7', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+pod 'Ads-CN', '7.6.0.4', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
 # Gromore-Adn适配器
-pod 'GMBaiduAdapter', '10.032.1'
-pod 'GMGdtAdapter', '4.15.75.0'
-pod 'GMKsAdapter', '4.12.20.1.0'
+pod 'GMBaiduAdapter', '10.050.0'
+pod 'GMGdtAdapter', '4.15.80.0'
+pod 'GMKsAdapter', '5.3.20.1.0'
 # 快手【必须】
-pod 'KSAdSDK','5.3.20.1'
+pod 'KSAdSDK','5.4.10.1'
 # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
   pod 'WechatOpenSDK'
  
