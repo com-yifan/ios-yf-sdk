@@ -5,7 +5,9 @@
 //  Created by 麻明康 on 2025/3/4.
 //
 
-#import <YFAdsSDK/YFAdsSDK.h>
+#import <CoreMotion/CoreMotion.h>
+#import <YFAdsSDK/YFAdBaseView.h>
+#import <YFAdsSDK/YFMotionManager.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
