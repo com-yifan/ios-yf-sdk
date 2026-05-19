@@ -176,6 +176,10 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdTopPushProtocol.h>
 #import <YFAdsSDK/YFAdTopPushAdInfoProtocol.h>
 #import <YFAdsSDK/YFAdTopPushViewController.h>
+#import <YFAdsSDK/YFAdTextLink.h>
+#import <YFAdsSDK/YFAdTextLinkView.h>
+#import <YFAdsSDK/YFAdTextLinkProtocol.h>
+#import <YFAdsSDK/YFAdTextLinkAdInfoProtocol.h>
 
 #import <YFAdsSDK/YFInterstitialCarouselViewController.h>
 #import <YFAdsSDK/YFInterstitialCarouselNavigationController.h>
@@ -192,6 +196,8 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 // 激励服务端验证
 #import <YFAdsSDK/YFRewardedVideoModel.h>
 #import <YFAdsSDK/YFAdRSAEncrypt.h>
+
+#import <YFAdsSDK/YFAdsSplashWindow.h>
 
 //#import <YFAdsSDK/YFGradientView.h>
 //#import <YFAdsSDK/NSObject+YFAdModel.h>

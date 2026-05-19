@@ -23,6 +23,8 @@ typedef enum : NSUInteger {
     YFAdFusionBannerPlatform_JD,
     // 亿帆
     YFAdFusionBannerPlatform_YF,
+    // Gromore
+    YFAdFusionBannerPlatform_GM,
     // Tanx
     YFAdFusionBannerPlatform_Tanx,
     // GE
@@ -35,6 +37,10 @@ typedef enum : NSUInteger {
     YFAdFusionBannerPlatform_JC,
     // NAL
     YFAdFusionBannerPlatform_NAL,
+    // KY
+    YFAdFusionBannerPlatform_KY,
+    // KF
+    YFAdFusionBannerPlatform_KF,
 } YFAdFusionBannerPlatform;
 
 /// 融合Banner返回的广告类型

@@ -108,6 +108,12 @@ typedef NS_ENUM(NSUInteger, YFAdErrorCode) {
     
     // NAL
     YFAdErrorCode_23001 = 23001,
+    // JC
+    YFAdErrorCode_24001 = 24001,
+    // UW
+    YFAdErrorCode_25001 = 25001,
+    // KY
+    YFAdErrorCode_26001 = 26001
 };
 
 @interface YFAdError : NSObject

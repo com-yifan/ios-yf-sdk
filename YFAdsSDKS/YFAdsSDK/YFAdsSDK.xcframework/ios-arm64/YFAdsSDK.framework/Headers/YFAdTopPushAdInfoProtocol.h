@@ -7,6 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import <YFAdsSDK/YFAdReportModel.h>
+
+typedef NS_ENUM(NSUInteger, YFAdTopPushOpenDirection) {
+    YFAdTopPushOpenDirectionTopToBottom = 1,
+    YFAdTopPushOpenDirectionBottomToTop = 2,
+};
 // 顶推广告数据协议
 @protocol YFAdTopPushAdInfoProtocol <NSObject>
 - (NSString * _Nullable)iconUrl;
@@ -16,4 +21,5 @@
 - (NSString * _Nullable)videoUrl;
 - (YFAdEventModel * _Nonnull)eventModel;
 - (BOOL)isVideoAd;
+- (YFAdTopPushOpenDirection)openDirection;
 @end

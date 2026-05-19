@@ -25,6 +25,9 @@ extern NSString *const Adapted_Version_GE;
 extern NSString *const Adapted_Version_IN;
 extern NSString *const Adapted_Version_JC;
 extern NSString *const Adapted_Version_NAL;
+extern NSString *const Adapted_Version_UW;
+extern NSString *const Adapted_Version_KY;
+extern NSString *const Adapted_Version_KF;
 
 //extern NSString *const Adapted_Version_TX;
 
@@ -41,6 +44,9 @@ extern NSString *const SDK_TAG_GE;
 extern NSString *const SDK_TAG_IN;
 extern NSString *const SDK_TAG_JC;
 extern NSString *const SDK_TAG_NAL;
+extern NSString *const SDK_TAG_UW;
+extern NSString *const SDK_TAG_KY;
+extern NSString *const SDK_TAG_KF;
 
 extern NSString *const YFAdSDKTypeAdName;
 extern NSString *const YFAdSDKTypeAdNameSplash;

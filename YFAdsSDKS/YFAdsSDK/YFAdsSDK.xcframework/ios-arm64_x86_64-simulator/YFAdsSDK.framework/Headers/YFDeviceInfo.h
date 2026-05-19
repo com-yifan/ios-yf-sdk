@@ -9,6 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, YFSIMCardState) {
+    YFSIMCardStateUnknown = 0,
+    YFSIMCardStateNoCard = 1,
+    YFSIMCardStateAvailable = 2
+};
+
 @interface YFDeviceInfo : NSObject
 + (nonnull instancetype)sharedInstance;
 
@@ -64,6 +70,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 设备启动时间
 @property (nonatomic, assign) time_t bootSecTime;
+
+@property (nonatomic, assign) YFSIMCardState simCardState;
 
 
 @end
