@@ -150,7 +150,8 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeNAL        = 21,
     YFAdnTypeUW        = 23,
     YFAdnTypeKY        = 24,
-    YFAdnTypeKF        = 25
+    YFAdnTypeKF        = 25,
+    YFAdnTypeZD        = 26
 
 };
 
