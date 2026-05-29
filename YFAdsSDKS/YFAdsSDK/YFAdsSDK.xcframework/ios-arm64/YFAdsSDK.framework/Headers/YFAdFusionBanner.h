@@ -33,10 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithAdUnitID:(NSString *)pID
                   viewController:(nonnull UIViewController *)viewController;
 
-- (void)loadAd NS_UNAVAILABLE;
-- (void)showAd NS_UNAVAILABLE;
 /// 加载广告
 - (void)loadAndShowAd;
+- (void)loadAd NS_UNAVAILABLE;
+- (void)showAd NS_UNAVAILABLE;
+- (void)loadAdSucceed NS_UNAVAILABLE;
+
 @end
 
 NS_ASSUME_NONNULL_END
