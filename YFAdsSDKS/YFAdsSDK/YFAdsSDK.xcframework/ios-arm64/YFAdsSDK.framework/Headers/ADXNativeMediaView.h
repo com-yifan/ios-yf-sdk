@@ -89,6 +89,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithSupplier:(YFAdEventModel*)eventModel;
 
+/**
+ 初始化方法
+
+ @param eventModel 配置参数
+ @param autoPlay 视频类是否自动播放
+ @return ADXNativeMediaView
+ */
+- (instancetype)initWithSupplier:(YFAdEventModel*)eventModel autoPlay:(BOOL)autoPlay;
+
 - (void)refreshData:(ADXNativeAd *)nativeAd;
 // 暂停
 - (void)pauseVideo;

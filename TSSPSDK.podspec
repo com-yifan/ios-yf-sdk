@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'TSSPSDK'
-    s.version          = '6.1.0.0'
+    s.version          = '6.1.2.1'
     s.summary          = 'iOS TSSPSDK'
     s.description      = <<-DESC
     欢迎大家使用TSSPSDK
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'tssp' => 'tssp@qq.com' }
-    s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "6.1.0.1" }
+    s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "6.1.2.1.01" }
 
     s.ios.deployment_target = '11.0'
     s.platform     = :ios, "11.0"
@@ -32,6 +32,7 @@ Pod::Spec.new do |s|
     s.subspec 'YFAdsSubstrate' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsSubstrate/*.xcframework'
         ss.preserve_paths = 'YFAdsSDKS/YFAdsSubstrate/*.xcframework'
+        ss.dependency 'libwebp'
     end
 
     s.subspec 'YFAdsSDK' do |ss|

@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^closeCompletion)(BOOL isAuto);
 
 - (instancetype)initWithModel:(YFAdEventModel *)event;
+
+- (void)reset;
+
 @end
 
 NS_ASSUME_NONNULL_END

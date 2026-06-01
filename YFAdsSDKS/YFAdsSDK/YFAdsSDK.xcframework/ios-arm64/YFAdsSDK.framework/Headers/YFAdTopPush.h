@@ -7,6 +7,7 @@
 
 #import <YFAdsSDK/YFAdBaseAdapter.h>
 #import <YFAdsSDK/YFAdTopPushDelegate.h>
+#import <YFAdsSDK/YFAdTopPushView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

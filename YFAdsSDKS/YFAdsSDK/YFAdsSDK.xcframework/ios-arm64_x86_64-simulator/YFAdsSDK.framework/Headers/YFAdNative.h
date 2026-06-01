@@ -32,7 +32,12 @@ typedef NS_ENUM(NSInteger, YFAdSourceType) {
     YFAdSourceTypeXU        = 16,
     YFAdSourceTypeGE        = 17,
     YFAdSourceTypeIN        = 19,
-    YFAdSourceTypeJC        = 20
+    YFAdSourceTypeJC        = 20,
+    YFAdSourceTypeNAL       = 21,
+    YFAdSourceTypeUW        = 23,
+    YFAdSourceTypeKY        = 24,
+    YFAdSourceTypeKF        = 25,
+    YFAdSourceTypeZD        = 26
 };
 
 
