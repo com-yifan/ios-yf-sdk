@@ -146,8 +146,9 @@
     _bgImageView.backgroundColor = [UIColor whiteColor];
     // 避免背景图展示时点击到加载展示按钮
     _bgImageView.userInteractionEnabled = YES;
+    _bgImageView.image = [UIImage imageNamed:@"anSplashBg"];
     // 可自行选择添加背景图的对象
-    [self.navigationController.view addSubview:_bgImageView];
+    [self.view addSubview:_bgImageView];
     // 添加广告加载提示视图
     [_bgImageView addSubview:self.hotSplashProgressView];
     // 加载开屏广告
@@ -166,15 +167,11 @@
     if (self.slider.value>0) {
         
         splash.showLogoRequire = YES;
-        // 设置底部视图 不要超过屏幕高度20%
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, roundf(self.slider.value*kScreenH/100))];
-        imageView.image = [UIImage imageNamed:@"app_logo"];
+        /// 设置开屏底部视图（可选）不要超过屏幕高度的20%
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
+        imageView.image = [UIImage imageNamed:@"splashBottom"];
         imageView.backgroundColor = [UIColor whiteColor];
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        
-        // bottomView超出25%后，会限制为25%，子视图则会被截断。
-        UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, roundf(10*kScreenH/100))];
-        //    bottomLabel.text = @"这是bottomView的子视图";
+        UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
         bottomLabel.textAlignment = NSTextAlignmentCenter;
         [imageView addSubview:bottomLabel];
         splash.bottomView = imageView;

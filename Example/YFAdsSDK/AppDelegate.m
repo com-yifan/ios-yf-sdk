@@ -58,7 +58,6 @@
     [self showPrivacyAlert];
     // 加载开屏广告
     [self loadColdSplash];
-
     return YES;
 }
 
@@ -175,15 +174,19 @@
     // 自定义的背景图添加至主控制器 广告关闭或者失败时进行移除
     [rootVC.view addSubview:_splashBackgroundView];
     _splashBackgroundView.frame = UIScreen.mainScreen.bounds;
+    // logo图
+    UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_logo"]];
+    logoView.frame = CGRectMake(kScreenW/2 - 80/2, kScreenH/2 - 80/2, 80, 80);
+    [_splashBackgroundView addSubview:logoView];
     /// 注意： 初始化传入当前可见最上层控制器，避免无法弹出落地页，广告位id见广告配置表
     self.coldSplashAd = [[YFAdSplash alloc] initWithAdUnitID:[YFEnvironmentManager getColdSPLASH_ID] viewController:rootVC];
     self.coldSplashAd.delegate = self;
     /// 设置开屏底部视图（可选）不要超过屏幕高度的20%
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
-    imageView.image = [UIImage imageNamed:@"app_logo"];
+    imageView.image = [UIImage imageNamed:@"splashBottom"];
     imageView.backgroundColor = [UIColor whiteColor];
     UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
-    bottomLabel.text = @"这是开屏底部视图，不要超过屏幕高度的20%";
+//    bottomLabel.text = @"这是开屏底部视图，不要超过屏幕高度的20%";
     bottomLabel.textAlignment = NSTextAlignmentCenter;
     [imageView addSubview:bottomLabel];
     self.coldSplashAd.bottomView = imageView;

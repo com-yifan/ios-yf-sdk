@@ -339,9 +339,9 @@ typedef NS_ENUM(NSInteger, SceneSimulateType) {
     self.hot_splash.delegate = self;
     // 开屏广告底图，不要超过屏幕高度的20%否则会影响曝光统计
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 80)];
-    imageView.image = [UIImage imageNamed:@"app_logo"];
+    imageView.image = [UIImage imageNamed:@"splashBottom"];
     UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 80)];
-    bottomLabel.text = @"这是开屏底部视图，不要超过屏幕高度的20%";
+//    bottomLabel.text = @"这是开屏底部视图，不要超过屏幕高度的20%";
     bottomLabel.textAlignment = NSTextAlignmentCenter;
     [imageView addSubview:bottomLabel];
     self.hot_splash.bottomView = imageView;
