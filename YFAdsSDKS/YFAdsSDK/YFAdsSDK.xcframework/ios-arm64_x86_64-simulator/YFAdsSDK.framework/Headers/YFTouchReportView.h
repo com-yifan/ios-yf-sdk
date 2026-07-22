@@ -171,6 +171,9 @@ typedef NS_ENUM(NSInteger, YFInteractionType){
 
 @property(nonatomic, strong) YFTouchLocModel *model;
 
+// 优惠券
+@property (nonatomic, assign) BOOL hasCoupon;
+
 /// 上报点击
 - (void)reportEventWithPoint:(CGPoint)location pointInWindow:(CGPoint)locationInWindow;
 

@@ -203,6 +203,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL sj;
 // 落地页兜底唤起
 @property (nonatomic, assign) BOOL lpaa;
+// 优惠券
+@property (nonatomic, assign) NSInteger sjdc;
 // 文案替换
 @property (nonatomic, assign) BOOL rcs;
 @property (nonatomic, copy) NSString *rt;
@@ -224,6 +226,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger dtsp;
 /// 展示应用icon 1：展示 0：不展示
 @property (nonatomic, assign) NSInteger sai;
+/// 点滑文案
+@property (nonatomic, copy) NSString *sc;
 
 //新增字段istvp 描述 0~1
 //1 = 100%

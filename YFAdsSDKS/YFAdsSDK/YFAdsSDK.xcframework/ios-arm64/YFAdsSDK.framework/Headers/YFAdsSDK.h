@@ -94,6 +94,7 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdXBannerView.h>
 #import <YFAdsSDK/YFAdXBannerView600x410.h>
 #import <YFAdsSDK/YFAdXBannerViewB600x400.h>
+#import <YFAdsSDK/YFAdBannerViewTextOverlay.h>
 #import <YFAdsSDK/YFAdsAnimationView.h>
 #import <YFAdsSDK/YFAdsButton.h>
 #import <YFAdsSDK/YFAdsCloseButton.h>
@@ -198,6 +199,10 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdRSAEncrypt.h>
 
 #import <YFAdsSDK/YFAdsSplashWindow.h>
+#import <YFAdsSDK/YFAdAuthModel.h>
+#import <YFAdsSDK/YFAdCouponModel.h>
+#import <YFAdsSDK/YFAdCouponMinView.h>
+#import <YFAdsSDK/YFAdCouponNormalView.h>
 
 //#import <YFAdsSDK/YFGradientView.h>
 //#import <YFAdsSDK/NSObject+YFAdModel.h>

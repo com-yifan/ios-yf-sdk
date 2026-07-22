@@ -29,6 +29,8 @@ extern NSString *const Adapted_Version_UW;
 extern NSString *const Adapted_Version_KY;
 extern NSString *const Adapted_Version_KF;
 extern NSString *const Adapted_Version_ZD;
+extern NSString *const Adapted_Version_IE;
+extern NSString *const Adapted_Version_NC;
 
 //extern NSString *const Adapted_Version_TX;
 
@@ -49,6 +51,8 @@ extern NSString *const SDK_TAG_UW;
 extern NSString *const SDK_TAG_KY;
 extern NSString *const SDK_TAG_KF;
 extern NSString *const SDK_TAG_ZD;
+extern NSString *const SDK_TAG_IE;
+extern NSString *const SDK_TAG_NC;
 
 extern NSString *const YFAdSDKTypeAdName;
 extern NSString *const YFAdSDKTypeAdNameSplash;
@@ -74,11 +78,14 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 //@property (nonatomic, assign) BOOL logEnable;
 
 /// 是否允许SDK内部对AVAudioSession的category进行设置，默认允许。SDK内部默认使用AVAudioSessionCategoryAmbient。
+/// 当前可映射联盟：AY、CSJ、GDT、GRO、UW、XU。
 @property(nonatomic, assign) BOOL allowAudioSetting;
 
-/// 自定义IDFA，格式需与IDFA格式相同，xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+/// 自定义IDFA，格式需与IDFA格式相同，xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx。
+/// 当前可映射联盟：AY、CSJ、GRO、IE、IN、JC、JD、KF、KS、KY、XU、ZD。
 @property (nonatomic, copy) NSString * customIDFA;
-/// 是否开启定位 默认开启
+/// 是否开启定位，默认开启。
+/// 当前可映射联盟：AY、CSJ、GRO、IE、IN、JC、JD、KF、KS、KY、NAL、XU、ZD。
 @property (nonatomic, assign) BOOL useLocation;
 //  GPS 纬度(-90 ~ 90)
 @property(nonatomic, copy) NSString *device_geo_lat;
@@ -121,15 +128,39 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 
 @property(nonatomic, assign) NSTimeInterval updateLoctionTime;
 
-/// 设置是否允许SDK限制个性化推荐。true限制个性化推荐(关闭个性化推荐)，false不限制(开启个性化推荐)。默认为false开启个性化推荐
+/// 设置是否允许SDK限制个性化推荐。true限制个性化推荐(关闭个性化推荐)，false不限制(开启个性化推荐)。默认为false开启个性化推荐。
+/// 当前可映射联盟：AY、BD、CSJ、GDT、GRO、IE、IN、JC、KF、KS、KY、NAL、UW、XU、ZD。
 @property (nonatomic, assign) BOOL limitPersonal;
+
+/// 是否允许联盟SDK读取IDFA，默认允许。
+/// 当前可映射联盟：CSJ、GRO、GDT、JD、KF、IN、JC、ZD。
+@property (nonatomic, assign) BOOL allowIDFA;
+
+/// 是否允许联盟SDK读取IDFV，默认允许。
+/// 当前可映射联盟：CSJ、GRO、JC。
+@property (nonatomic, assign) BOOL allowIDFV;
+
+/// 是否允许联盟SDK读取IP地址，默认允许。
+/// 当前可映射联盟：JD、ZD。
+@property (nonatomic, assign) BOOL allowIPAddress;
+
+/// 是否允许联盟SDK读取磁盘空间/磁盘权限信息，默认允许。
+/// 当前可映射联盟：CSJ、GRO、ZD。
+@property (nonatomic, assign) BOOL allowDiskInfo;
+
+/// 是否允许联盟SDK读取WiFi BSSID，默认允许。
+/// 当前可映射联盟：CSJ、GRO。
+@property (nonatomic, assign) BOOL allowWiFiBSSID;
 
 @property (nonatomic, assign) BOOL crashRecord;
 
+/// 是否开启摇一摇/扭一扭等传感器交互广告，默认开启。
+/// 当前可映射联盟：AY、BD、CSJ、GRO、GDT、GE、IN、JC、KF、NAL、XU、ZD。
 @property (nonatomic, assign) BOOL shakeAdEnable;
 
 /// 额外控制参数，一般不需要使用
 @property (nonatomic, copy) NSDictionary *extraParam;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -43,6 +43,10 @@ typedef enum : NSUInteger {
     YFAdFusionBannerPlatform_KF,
     // ZD
     YFAdFusionBannerPlatform_ZD,
+    // IE
+    YFAdFusionBannerPlatform_IE,
+    // NC
+    YFAdFusionBannerPlatform_NC,
 } YFAdFusionBannerPlatform;
 
 /// 融合Banner返回的广告类型

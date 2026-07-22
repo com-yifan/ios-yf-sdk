@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<YFAdFusionBannerDelegate> delegate;
 /// 期望的广告宽度[必传]
 @property (nonatomic, assign) CGFloat adWidth;
+/// 期望的广告高度；文字浮层模板生效。宽高任一为0时默认按2:1比例计算，最小返回尺寸为80x50
+@property (nonatomic, assign) CGFloat adHeight;
 /// banner自动刷新时间，单位: 秒；仅融合banner中横幅类型支持，信息流无效
 @property(nonatomic, assign) int refreshInterval;
 /// 期望返回的广告条数（可能存在失败的情况，所以实际返回小于等于该值，默认1条，最多3条）
@@ -38,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAd NS_UNAVAILABLE;
 - (void)showAd NS_UNAVAILABLE;
 - (void)loadAdSucceed NS_UNAVAILABLE;
+
+/// 文字浮层模板统一尺寸计算
++ (CGSize)textOverlayTemplateSizeWithAdWidth:(CGFloat)adWidth adHeight:(CGFloat)adHeight;
 
 @end
 

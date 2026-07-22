@@ -22,6 +22,7 @@ FOUNDATION_EXPORT const unsigned char YFAdsCSJAdapterVersionString[];
 #import <YFAdsCSJAdapter/YFCsjAdBannerView600x410.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewL640x100.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewB600x400.h>
+#import <YFAdsCSJAdapter/YFCsjAdBannerViewTextOverlay.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewN600x260R.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewN600x260.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewR600x150.h>
@@ -41,4 +42,3 @@ FOUNDATION_EXPORT const unsigned char YFAdsCSJAdapterVersionString[];
 #import <YFAdsCSJAdapter/YFCsjRewardVideoAdapter.h>
 #import <YFAdsCSJAdapter/YFCsjSplashAdapter.h>
 #import <YFAdsCSJAdapter/YFCsjEnvelopeIntertitialAdViewController.h>
-

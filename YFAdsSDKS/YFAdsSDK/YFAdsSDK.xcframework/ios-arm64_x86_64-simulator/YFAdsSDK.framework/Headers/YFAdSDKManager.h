@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 初始化(新)
 + (void)setupSDKWithAppId:(NSString *)appId;
 
+/// 初始化并配置SDK参数。服务端合规权限配置下发后优先级高于此处开发者配置。
++ (void)setupSDKWithAppId:(NSString *)appId config:(nullable YFAdSDKSetting *(^)(YFAdSDKSetting *setting))config;
+
 /// 应用ID
 + (NSString *)appID;
 
