@@ -22,6 +22,7 @@ FOUNDATION_EXPORT const unsigned char YFAdsJDAdapterVersionString[];
 #import <YFAdsJDAdapter/YFJDAdBannerView640x100.h>
 #import <YFAdsJDAdapter/YFJDAdBannerViewN600x260.h>
 #import <YFAdsJDAdapter/YFJDAdBannerViewB600x400.h>
+#import <YFAdsJDAdapter/YFJDAdBannerViewTextOverlay.h>
 #import <YFAdsJDAdapter/YFJDAdBannerViewN600x260R.h>
 #import <YFAdsJDAdapter/YFJDAdBannerViewR600x150.h>
 #import <YFAdsJDAdapter/YFJDAdBannerViewR640x100.h>
@@ -40,4 +41,3 @@ FOUNDATION_EXPORT const unsigned char YFAdsJDAdapterVersionString[];
 #import <YFAdsJDAdapter/YFJdEnvelopeIntertitialAdViewController.h>
 
 #import <YFAdsJDAdapter/YFSkipButton.h>
-

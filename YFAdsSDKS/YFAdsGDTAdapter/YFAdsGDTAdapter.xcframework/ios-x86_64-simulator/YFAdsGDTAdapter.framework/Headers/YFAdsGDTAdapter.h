@@ -20,6 +20,7 @@ FOUNDATION_EXPORT const unsigned char YFAdsGDTAdapterVersionString[];
 #import <YFAdsGDTAdapter/YFGdtAdBannerView600x410.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerView640x100.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerViewB600x400.h>
+#import <YFAdsGDTAdapter/YFGdtAdBannerViewTextOverlay.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerViewN600x260.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerViewN600x260R.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerViewR600x150.h>
@@ -39,4 +40,3 @@ FOUNDATION_EXPORT const unsigned char YFAdsGDTAdapterVersionString[];
 #import <YFAdsGDTAdapter/YFGdtSplashAdapter.h>
 #import <YFAdsGDTAdapter/YFGdtRewardVideoAdapter.h>
 #import <YFAdsGDTAdapter/YFGdtEnvelopeIntertitialAdViewController.h>
-

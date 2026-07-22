@@ -75,8 +75,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable NSDictionary *)getConfDataWith:(NSString *)key;
 
 + (void)setConfDataWith:(NSString *)key data:(NSString *)jsonData;
-+ (BOOL)enableAdxCb;
-+ (BOOL)enableAdnCb:(YFAdnType)adn;
+//+ (BOOL)enableAdxCb;
+//+ (BOOL)enableAdnCb:(YFAdnType)adn;
++ (BOOL)enableAdnCbAdId:(NSString *)adId withAdnType:(YFAdnType)adn;
 /// 事件上报条数
 + (NSInteger)eventReportNum;
 // 设置关闭按钮

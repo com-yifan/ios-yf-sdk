@@ -220,6 +220,7 @@ typedef NS_ENUM(NSUInteger, YFMaterialMetaAssetType) {
 @class YFMaterialMetaMonitor;
 @class YFMaterialMetaAsset;
 @class YFMaterialMetaDownload;
+@class YFAdCouponModel;
 //@class YFMaterialMetaSId;
 
 @interface YFMaterialMeta_new: NSObject<YFAdModel>
@@ -255,6 +256,8 @@ typedef NS_ENUM(NSUInteger, YFMaterialMetaAssetType) {
 @property (nonatomic, strong) YFMaterialMetaAsset *asset;
 /// 下载信息
 @property (nonatomic, strong) YFMaterialMetaDownload *download;
+/// 优惠券信息
+@property (nonatomic, strong, nullable) YFAdCouponModel *coupon;
 /// 广告主
 @property (nonatomic, copy) NSString *merchant;
 /// 广告交互类型，用于宏替换

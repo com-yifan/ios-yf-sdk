@@ -10,6 +10,7 @@
 #import <YFAdsSDK/NSObject+YFAdModel.h>
 @class YFAdReportModel;
 @class YFAdEventModel;
+@class YFAdAuthModel;
 //1-应用打开；2-请求(聚合向广告网络发送请求)；3-填充(聚合向广告网络发送请求)；4-展示(聚合向广告网络发送请求)；5-点击(聚合统计的广告)；6-流量请求(应用向聚合发送请求)；7-流量填充(应用向聚合发送请求)|
 //2. 初始化SDK（app初始化SDK时候上报该事件）
 //3. 请求（聚合SDK向ADN发送请求时上报该事件）
@@ -69,6 +70,8 @@ typedef NS_ENUM(NSUInteger, YFAdSDKReportEventType) {
     YFAdSDKReportEventTypeCustomSDKShow = 100,
     /// 亿帆监测的展示，以自渲染广告在手机屏幕中展示50%面积为准，同一个广告重复展示的情况只上报第一次展示
     YFAdSDKReportEventTypeExposure = 101,
+    /// 亿帆权限上报
+    YFAdSDKReportEventTypeAuthList = 111,
     /// 实时初始化
     YFAdSDKReportEventTypeRealTimeInit = 112,
     /// 实时流量请求
@@ -148,10 +151,12 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeIN        = 19,
     YFAdnTypeJC        = 20,
     YFAdnTypeNAL        = 21,
+    YFAdnTypeNC        = 22,
     YFAdnTypeUW        = 23,
     YFAdnTypeKY        = 24,
     YFAdnTypeKF        = 25,
-    YFAdnTypeZD        = 26
+    YFAdnTypeZD        = 26,
+    YFAdnTypeIE        = 27
 
 };
 
@@ -247,6 +252,8 @@ NS_ASSUME_NONNULL_BEGIN
 //1-应用打开；2-请求(聚合向广告网络发送请求)；3-填充(聚合向广告网络发送请求)；4-展示(聚合向广告网络发送请求)；5-点击(聚合统计的广告)；6-流量请求(应用向聚合发送请求)；7-流量填充(应用向聚合发送请求)|
 /// 事件类型
 @property (nonatomic, assign)YFAdSDKReportEventType eType;
+
+@property (nonatomic, strong) NSDictionary *od;
 ///
 @property (nonatomic, copy) NSString * abID;
 /// group ID
@@ -385,6 +392,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL sj;
 // 落地页兜底唤起
 @property (nonatomic, assign) BOOL lpaa;
+// 京东优惠券
+@property (nonatomic, assign) NSInteger sjdc;
 /// 文案替换开关
 @property (nonatomic, assign) BOOL rcs;
 @property (nonatomic, copy) NSString *rt;
@@ -450,6 +459,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger dtsp;
 /// 展示应用icon 1：展示 0：不展示
 @property (nonatomic, assign) NSInteger sai;
+/// 按钮文案 点 + 滑
+@property (nonatomic, copy) NSString *sc;
 
 @end
 NS_ASSUME_NONNULL_END

@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFSplashAnimationView3 : YFAdBaseView
-@property(nonatomic, strong) YFMotionManager *motionManager;
+@property(nonatomic, strong, nullable) YFMotionManager *motionManager;
 
 @property(nonatomic, copy) void (^toTapBarAnimatioShakeOrTwist)(YFMotionSensitivity motionSensitivity, YFMotionStyle motionStyle, YFMotionJump motionJump, CMAccelerometerData *_Nullable accelerometerData, CMDeviceMotion *_Nullable motion);
 
@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initOtherplatformModel:(id)model;
 
 - (void)toStartMotion;
+- (void)toPauseMotion;
 - (void)toStopMotion;
 -(void)reloadUI:(id)model;
 

@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdsAnimationView : YFAdBaseView
 
-@property(nonatomic, strong) YFMotionManager *motionManager;
-@property(nonatomic, strong) YFAnimationView *lotAnimationTap;
-@property(nonatomic, strong) YFAnimationView *lotAnimationBar;
+@property(nonatomic, strong, nullable) YFMotionManager *motionManager;
+@property(nonatomic, strong, nullable) YFAnimationView *lotAnimationTap;
+@property(nonatomic, strong, nullable) YFAnimationView *lotAnimationBar;
 @property(nonatomic, strong) UILabel *word;
 @property(nonatomic, strong) UILabel *subword;
 
@@ -29,10 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initOtherplatformModel:(id)model;
 - (instancetype)initGdtplatformModel:(id)model;
 - (void)toStartMotion;
+- (void)toPauseMotion;
 - (void)toStopMotion;
 - (void)reloadUI:(id)model;
 - (void)reLayout;
 
 @end
 NS_ASSUME_NONNULL_END
-

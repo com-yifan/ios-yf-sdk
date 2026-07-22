@@ -63,7 +63,7 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 
 @end
 
-@interface YFBannerView : UIView<YFBaseAdProtocol>
+@interface YFBannerView : UIView<YFBaseAdProtocol, UIGestureRecognizerDelegate>
 
 
 @property(nonatomic, weak) id <YFBannerViewDelegate> delegate;
@@ -124,6 +124,9 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 
 /// 渲染广告
 - (void)loadAdData:(YFMaterialMeta_new *)materialMeta;
+
+/// 滑动点击手势采点，返回YES时表示滑动结束，可以继续触发点击跳转。
+- (BOOL)yf_updateTouchReportViewWithPan:(UIPanGestureRecognizer *)pan;
 @end
 
 
