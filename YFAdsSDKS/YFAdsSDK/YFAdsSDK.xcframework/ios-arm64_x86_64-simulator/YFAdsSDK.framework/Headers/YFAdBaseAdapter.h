@@ -67,14 +67,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setRootController:(UIViewController *)rootController;
 /// 重新设置delegate
 - (void)setNewDelegate:(id)delegate;
-/// 开屏回调关闭
-- (void)splashAdClose;
 /// 暂时隐藏和显示红包浮窗
 - (void)hideFloatIcon;
 - (void)showFloatIcon;
 /// 插屏状态
 - (void)intertitialDidShowWithModel:(YFAdEventModel *)model;
 - (void)intertitialDidCloseWithModel:(YFAdEventModel *)model;
+// 开屏状态
+- (void)splashDidShowWithModel:(YFAdEventModel *)model;
+- (void)splashDidCloseWithModel:(YFAdEventModel *)model;
 
 @end
 

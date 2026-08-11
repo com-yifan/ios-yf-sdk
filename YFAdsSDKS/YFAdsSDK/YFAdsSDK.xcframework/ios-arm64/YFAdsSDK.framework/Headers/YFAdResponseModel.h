@@ -112,6 +112,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger dts;
 /// 关联广告展示延迟
 @property (nonatomic, assign) NSInteger dtt;
+/// 开屏关联商城id
+@property (nonatomic, copy) NSString *shAdId;
+// 关联商城请求时机
+@property (nonatomic, assign) NSInteger shr;
+// 关联商城展示时机
+@property (nonatomic, assign) NSInteger shs;
+// 关联商城展示延迟
+@property (nonatomic, assign) NSInteger sht;
+
 @end
 
 @interface FCAdWaterfall : NSObject
@@ -199,6 +208,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *ss;
 /// 联盟logo
 @property (nonatomic, assign) BOOL haal;
+/// 联盟logo
+@property (nonatomic, assign) YFAdnType sal;
 /// 快手滑动跳转
 @property (nonatomic, assign) BOOL sj;
 // 落地页兜底唤起
@@ -217,6 +228,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ccst;
 /// 悬浮icon初始位置
 @property (nonatomic, assign) YFMallIconAdPostion ip;
+/// 商城页图片地址
+@property (nonatomic, copy) NSString *si;
+/// 商城页图片地址2
+@property (nonatomic, copy) NSString *lupu;
+@property (nonatomic, assign) GMPriceFunction gmpf;
+@property (nonatomic, assign) NSInteger hcb;
 /// 服务端验证 0关闭 1开启
 @property (nonatomic, assign) NSInteger sv;
 /// 1;单向跳转
