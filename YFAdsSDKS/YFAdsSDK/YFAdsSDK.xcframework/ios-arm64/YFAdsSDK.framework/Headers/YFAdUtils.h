@@ -69,6 +69,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 /// 图片地址
 + (UIImage *)getImageURLWithName:(NSString *)imageName;
+/// 图片
++ (UIImage *)getLogoImage:(YFAdnType)adnType;
++ (YFAdnType)validAdnType:(YFAdnType)adnType fallbackAdnType:(YFAdnType)fallbackAdnType;
 
 + (UIViewController *)getCurrentViewController;
 

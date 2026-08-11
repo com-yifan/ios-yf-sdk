@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFKsEnvelopeIntertitialAdViewController : YFEnvelopeIntertitialAdViewController
 
+@property(nonatomic,copy) void (^beforeCarouseBlock)(void);
+
 - (instancetype)initWithData:(KSNativeAd *)dataObject eventModel:(YFAdEventModel *)model;
 /// 加载广告
 -(void)loadAdData:(KSNativeAd *)nativeAd close:(void(^)(id))close;

@@ -74,9 +74,6 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 @property (nonatomic, copy) NSDictionary *customDefine;
 /// 用户自定义参数，主用于uid定位排查问题。举例：{“UserID”: "xxxxxxx"}
 @property (nonatomic, copy) NSDictionary *userDefine;
-/////控制台日志输出开关, 默认开启 ---> 此接口已弃用，日志打印请联系运营后台打开日志输出
-//@property (nonatomic, assign) BOOL logEnable;
-
 /// 是否允许SDK内部对AVAudioSession的category进行设置，默认允许。SDK内部默认使用AVAudioSessionCategoryAmbient。
 /// 当前可映射联盟：AY、CSJ、GDT、GRO、UW、XU。
 @property(nonatomic, assign) BOOL allowAudioSetting;
@@ -94,11 +91,6 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 
 @property (nonatomic, assign) float geo_lat;
 @property (nonatomic, assign) float geo_lon;
-
-/// ⚠️ 已废弃，请使用 userDefine 替代
-@property(nonatomic, copy) NSString *userId __deprecated_msg("请使用 userDefine 替代");
-
-
 
 
 // MARK: - 其它参数
@@ -158,7 +150,7 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 /// 当前可映射联盟：AY、BD、CSJ、GRO、GDT、GE、IN、JC、KF、NAL、XU、ZD。
 @property (nonatomic, assign) BOOL shakeAdEnable;
 
-/// 额外控制参数，一般不需要使用
+/// 额外控制参数，一般不需要使用。
 @property (nonatomic, copy) NSDictionary *extraParam;
 
 @end

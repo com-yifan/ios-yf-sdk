@@ -117,6 +117,7 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFGlobalMotionActionHandler.h>
 #import <YFAdsSDK/YFGlobalMotionManager.h>
 #import <YFAdsSDK/YFGlobalMotionModel.h>
+#import <YFAdsSDK/YFGlobalTwistManager.h>
 
 #import <YFAdsSDK/YFInterstitialAd.h>
 #import <YFAdsSDK/YFInterstitialAdapter.h>

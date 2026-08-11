@@ -187,6 +187,26 @@ typedef NS_ENUM(NSUInteger, TopPushShowTime) {
     TopPushShowTimeAfterClose = 3
 };
 
+/// 关联商城请求时机
+typedef NS_ENUM(NSUInteger, MallRequestTime) {
+    /// 关联广告请求时
+    MallRequestTimeAtLoad = 1,
+    /// 关联广告展示时
+    MallRequestTimeAtShow = 2
+};
+/// 关联商城展示时机
+typedef NS_ENUM(NSUInteger, MallShowTime) {
+    /// 关联广告关闭时
+    MallShowTimeAtClose = 1,
+};
+
+/// 关联商城展示时机
+typedef NS_ENUM(NSUInteger, GMPriceFunction) {
+    /// gromore价格
+    GMPriceFunctionDefault = 0,
+    GMPriceFunctionWhitelist = 1,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdReportModel : NSObject
@@ -388,6 +408,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *ss;
 /// 1 hidden
 @property (nonatomic, assign) BOOL haal;
+@property (nonatomic, assign) YFAdnType sal;
 /// 快手滑动跳转
 @property (nonatomic, assign) BOOL sj;
 // 落地页兜底唤起
@@ -444,6 +465,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ccst;
 /// 悬浮icon初始位置
 @property (nonatomic, assign) YFMallIconAdPostion ip;
+/// 商城页SH3图片地址
+@property (nonatomic, copy) NSString *si;
+/// 商城页图片地址
+@property (nonatomic, copy) NSString *lupu;
+/// 开屏关联商城id
+@property (nonatomic, copy) NSString *shAdId;
+// 关联商城请求时机
+@property (nonatomic, assign) MallRequestTime shr;
+// 关联商城展示时机
+@property (nonatomic, assign) MallShowTime shs;
+// 关联商城展示延迟
+@property (nonatomic, assign) NSInteger sht;
+
 /// 激励视频服务端验证 0关闭 1开启
 @property (nonatomic, assign) NSInteger sv;
 /// 关联顶推配置
@@ -461,6 +495,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger sai;
 /// 按钮文案 点 + 滑
 @property (nonatomic, copy) NSString *sc;
+
+@property (nonatomic, assign) GMPriceFunction gmpf;
+
+@property (nonatomic, assign) NSInteger hcb;
 
 @end
 NS_ASSUME_NONNULL_END

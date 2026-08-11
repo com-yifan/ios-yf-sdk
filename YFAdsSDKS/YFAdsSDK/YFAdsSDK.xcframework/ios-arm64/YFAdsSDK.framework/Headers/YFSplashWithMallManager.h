@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedInstance;
 - (void)startLoadMallAdWithAdId:(NSString *)adId;
 - (void)showMallAd;
+- (void)delayShowMallAdTime:(NSInteger)time;
 
 /// 隐藏开屏关联红包浮窗
 - (void)hideFloatIcon;
