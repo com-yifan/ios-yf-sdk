@@ -213,11 +213,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 品牌
 @property (nonatomic, copy) NSString * db;
 /// 设备型号
-@property (nonatomic, assign) NSString * dm;
+@property (nonatomic, copy) NSString * dm;
 /// 拓展字段
-@property (nonatomic, retain) NSDictionary *ex;
+@property (nonatomic, copy) NSDictionary *ex;
 /// 拓展字段2
-@property (nonatomic, retain) NSDictionary *ud;
+@property (nonatomic, copy) NSDictionary *ud;
 @end
 
 @interface YFAdEventModel : NSObject<NSCopying>
@@ -253,7 +253,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 事件类型
 @property (nonatomic, assign)YFAdSDKReportEventType eType;
 
-@property (nonatomic, strong) NSDictionary *od;
+@property (nonatomic, copy) NSDictionary *od;
 ///
 @property (nonatomic, copy) NSString * abID;
 /// group ID
@@ -376,7 +376,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) float istvp;
 
 /// 设备型号
-@property (nonatomic, assign) NSString * dm;
+@property (nonatomic, copy) NSString * dm;
 
 /// 设备类型
 @property (nonatomic, assign) NSInteger dt;
@@ -431,7 +431,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 激励视频点击5s样式是否开启 0关闭 1开启
 @property (nonatomic, assign) NSInteger cte;
 ///
-@property (nonatomic, strong) NSArray<NSString *> *wURL;
+@property (nonatomic, copy) NSArray<NSString *> *wURL;
 /// 同一次请求使用相同ua
 @property(nonatomic, copy) NSString *ua;
 ///是否已经记录过本地请求限制，主要用于过滤信息流等存在多次曝光的广告
