@@ -273,7 +273,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 事件类型
 @property (nonatomic, assign)YFAdSDKReportEventType eType;
 
-@property (nonatomic, strong) NSDictionary *od;
+@property (nonatomic, copy) NSDictionary *od;
 ///
 @property (nonatomic, copy) NSString * abID;
 /// group ID
