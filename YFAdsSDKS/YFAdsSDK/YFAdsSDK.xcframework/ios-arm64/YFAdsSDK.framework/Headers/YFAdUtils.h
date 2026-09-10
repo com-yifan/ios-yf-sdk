@@ -71,6 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *)getImageURLWithName:(NSString *)imageName;
 /// 图片
 + (UIImage *)getLogoImage:(YFAdnType)adnType;
+/// sal 非法时回退到原始 ADN，避免服务端下发异常枚举值影响展示。
 + (YFAdnType)validAdnType:(YFAdnType)adnType fallbackAdnType:(YFAdnType)fallbackAdnType;
 
 + (UIViewController *)getCurrentViewController;
