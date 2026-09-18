@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-    s.name             = 'YFAdsSDK'
-    s.version          = '6.1.4.2'
+    s.name             = 'YFAdsCSSDK'
+    s.version          = '6.1.5.0'
     s.summary          = 'iOS YFAdsSDK'
     s.description      = <<-DESC
     欢迎大家使用YFAdsSDK
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'yifan' => '576661787@qq.com' }
-    s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "6.1.4.1.2" }
+    s.source  = { :git => "https://github.com/com-yifan/ios-yf-sdk.git", :tag => "#{s.version}-CS" }
 
     s.ios.deployment_target = '11.0'
     s.platform     = :ios, "11.0"
@@ -44,31 +44,31 @@ Pod::Spec.new do |s|
 
     s.subspec 'YFAdsBDAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsBDAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsCSSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsGDTAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsGDTAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsCSSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsJDAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsJDAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsCSSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsKSAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsKSAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsCSSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsCSJAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsCSJAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsCSSDK/YFAdsSDK'
     end
 
     s.subspec 'YFAdsGROAdapter' do |ss|
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsGROAdapter/*.xcframework'
-        ss.dependency 'YFAdsSDK/YFAdsSDK'
+        ss.dependency 'YFAdsCSSDK/YFAdsSDK'
     end
 end
