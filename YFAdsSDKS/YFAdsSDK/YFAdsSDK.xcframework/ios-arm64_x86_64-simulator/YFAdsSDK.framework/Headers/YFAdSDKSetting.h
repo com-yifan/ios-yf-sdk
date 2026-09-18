@@ -26,9 +26,11 @@ extern NSString *const Adapted_Version_IN;
 extern NSString *const Adapted_Version_JC;
 extern NSString *const Adapted_Version_NAL;
 extern NSString *const Adapted_Version_UW;
+extern NSString *const Adapted_Version_YFUW;
 extern NSString *const Adapted_Version_KY;
 extern NSString *const Adapted_Version_KF;
 extern NSString *const Adapted_Version_ZD;
+extern NSString *const Adapted_Version_YFZD;
 extern NSString *const Adapted_Version_IE;
 extern NSString *const Adapted_Version_NC;
 
@@ -48,9 +50,11 @@ extern NSString *const SDK_TAG_IN;
 extern NSString *const SDK_TAG_JC;
 extern NSString *const SDK_TAG_NAL;
 extern NSString *const SDK_TAG_UW;
+extern NSString *const SDK_TAG_YFUW;
 extern NSString *const SDK_TAG_KY;
 extern NSString *const SDK_TAG_KF;
 extern NSString *const SDK_TAG_ZD;
+extern NSString *const SDK_TAG_YFZD;
 extern NSString *const SDK_TAG_IE;
 extern NSString *const SDK_TAG_NC;
 
@@ -81,9 +85,11 @@ extern NSString *const YFAdSDKTypeAdNameRewardVideo;
 /// 自定义IDFA，格式需与IDFA格式相同，xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx。
 /// 当前可映射联盟：AY、CSJ、GRO、IE、IN、JC、JD、KF、KS、KY、XU、ZD。
 @property (nonatomic, copy) NSString * customIDFA;
-/// 是否开启定位，默认开启。
+/// 是否开启更新定位，默认开启。
 /// 当前可映射联盟：AY、CSJ、GRO、IE、IN、JC、JD、KF、KS、KY、NAL、XU、ZD。
 @property (nonatomic, assign) BOOL useLocation;
+/// 是否允许SDK申请定位权限 默认YES
+@property (nonatomic, assign) BOOL requestLocation;
 //  GPS 纬度(-90 ~ 90)
 @property(nonatomic, copy) NSString *device_geo_lat;
 /// GPS 经度(-180 ~ 180)

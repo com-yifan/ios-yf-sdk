@@ -17,7 +17,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsBDAdapterVersionString[];
 #import <YFAdsBDAdapter/YFBdAdBaseBannerView.h>
 #import <YFAdsBDAdapter/YFBdAdBannerView.h>
 #import <YFAdsBDAdapter/YFBdAdBannerView600x150.h>
-#import <YFAdsBDAdapter/YFBdAdBannerView600x260.h>
 #import <YFAdsBDAdapter/YFBdAdBannerView600x410.h>
 #import <YFAdsBDAdapter/YFBdAdBannerViewB600x400.h>
 #import <YFAdsBDAdapter/YFBdAdBannerViewTextOverlay.h>
@@ -26,7 +25,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsBDAdapterVersionString[];
 #import <YFAdsBDAdapter/YFBdAdBannerViewN600x260R.h>
 #import <YFAdsBDAdapter/YFBdAdBannerViewR600x150.h>
 #import <YFAdsBDAdapter/YFBdAdBannerViewR640x100.h>
-#import <YFAdsBDAdapter/YFBdAdBannerViewTDBP.h>
 #import <YFAdsBDAdapter/YFBdAdEnvelopeVideoView.h>
 #import <YFAdsBDAdapter/YFBdAdInterstitialVideoView.h>
 #import <YFAdsBDAdapter/YFBdAdInterstitialView.h>

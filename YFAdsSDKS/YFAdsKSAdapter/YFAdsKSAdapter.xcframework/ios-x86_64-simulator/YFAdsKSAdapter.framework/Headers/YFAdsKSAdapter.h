@@ -12,9 +12,9 @@ FOUNDATION_EXPORT double YFAdsKSAdapterVersionNumber;
 
 //! Project version string for YFAdsKSAdapter.
 FOUNDATION_EXPORT const unsigned char YFAdsKSAdapterVersionString[];
+#import <YFAdsKSAdapter/YFKsBaseBannerView.h>
 #import <YFAdsKSAdapter/YFKsAdBannerView.h>
 #import <YFAdsKSAdapter/YFKsAdBannerView600x150.h>
-#import <YFAdsKSAdapter/YFKsAdBannerView600x260.h>
 #import <YFAdsKSAdapter/YFKsAdBannerView600x410.h>
 #import <YFAdsKSAdapter/YFKsAdBannerView640x100.h>
 #import <YFAdsKSAdapter/YFKsAdBannerViewB600x400.h>
@@ -23,7 +23,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsKSAdapterVersionString[];
 #import <YFAdsKSAdapter/YFKsAdBannerViewN600x260R.h>
 #import <YFAdsKSAdapter/YFKsAdBannerViewR600x150.h>
 #import <YFAdsKSAdapter/YFKsAdBannerViewR640x100.h>
-#import <YFAdsKSAdapter/YFKsAdBannerViewTDBP.h>
 #import <YFAdsKSAdapter/YFKsAdEnvelopeVideoView.h>
 #import <YFAdsKSAdapter/YFKsAdInterstitialView.h>
 #import <YFAdsKSAdapter/YFKsAdInterstitialVideoView.h>
@@ -39,4 +38,3 @@ FOUNDATION_EXPORT const unsigned char YFAdsKSAdapterVersionString[];
 #import <YFAdsKSAdapter/YFKsSplashAdapter.h>
 #import <YFAdsKSAdapter/YFKsEnvelopeIntertitialAdViewController.h>
 // In this header, you should import all the public headers of your framework using statements like #import <YFAdsKSAdapter/PublicHeader.h>
-

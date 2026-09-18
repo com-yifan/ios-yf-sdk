@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)closeTopPushAd;
 /// 展示广告
 - (void)showAd;
-/// 从当前控制器中展示广告(仅插屏适用)
+/// 从当前控制器中展示广告(仅插屏&激励视频适用)
 - (void)showAdFromViewController:(nullable UIViewController *)viewController;
 
 -(void)recordLimitCount;

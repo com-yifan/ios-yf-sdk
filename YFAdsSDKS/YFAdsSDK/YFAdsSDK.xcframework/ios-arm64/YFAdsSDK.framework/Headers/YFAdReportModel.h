@@ -156,7 +156,9 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeKY        = 24,
     YFAdnTypeKF        = 25,
     YFAdnTypeZD        = 26,
-    YFAdnTypeIE        = 27
+    YFAdnTypeIE        = 27,
+    YFAdnTypeYFUW      = 101,
+    YFAdnTypeYFZD      = 102
 
 };
 
@@ -238,6 +240,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSDictionary *ex;
 /// 拓展字段2
 @property (nonatomic, copy) NSDictionary *ud;
+@end
+
+/// ADX 智能摇扭灵敏度规则。
+@interface YFAdDynamicSensitivityRule : NSObject
+/// ECPM 门槛，单位：分。
+@property (nonatomic, assign) NSInteger e;
+/// 扭一扭角度阈值，单位：度；大于 0 生效，否则使用 SDK 默认 35。
+@property (nonatomic, assign) NSInteger ag;
+/// 摇一摇加速度阈值，单位：m/s²；大于 0 生效，否则使用 SDK 默认 15。
+@property (nonatomic, assign) NSInteger acc;
+/// 摇一摇/扭一扭操作时长，单位：毫秒；默认 0，不限制时长，负值按 0 处理。
+@property (nonatomic, assign) NSInteger ot;
 @end
 
 @interface YFAdEventModel : NSObject<NSCopying>
@@ -390,6 +404,24 @@ NS_ASSUME_NONNULL_BEGIN
 /// 1;单向跳转
 /// 2: 双向跳转
 @property (nonatomic, assign) NSInteger isd;
+
+/// 摇一摇加速度配置，单位：m/s²；解析时仅 > 0 覆盖 SDK 默认 15。
+@property (nonatomic, assign) NSInteger acc;
+/// 扭一扭角度配置，单位：度；解析时仅 > 0 覆盖 SDK 默认 35。
+@property (nonatomic, assign) NSInteger ag;
+/// 摇一摇/扭一扭操作时长，单位：毫秒；默认 0，支持显式配置 0。
+@property (nonatomic, assign) NSInteger ot;
+/// ADX 智能摇扭灵敏度开关，1：开启，0：关闭。
+@property (nonatomic, assign) NSInteger dss;
+/// ADX 智能摇扭灵敏度规则。
+@property (nonatomic, copy, nullable) NSArray<YFAdDynamicSensitivityRule *> *dsr;
+
+/// 根据当前 ECPM 和智能灵敏度规则解析后的摇一摇加速度；未配置或 <= 0 时返回 15 m/s²。
+- (NSInteger)yf_resolvedMotionAcceleration;
+/// 根据当前 ECPM 和智能灵敏度规则解析后的扭一扭角度；未配置或 <= 0 时返回 35 度。
+- (NSInteger)yf_resolvedMotionAngle;
+/// 根据当前 ECPM 和智能灵敏度规则解析后的操作时长（毫秒）；默认 0，允许显式配置 0。
+- (NSInteger)yf_resolvedMotionDuration;
 
 //新增字段istvp 描述 0~100
 //1 = 100%

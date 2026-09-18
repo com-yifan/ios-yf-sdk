@@ -1,5 +1,5 @@
 
-#import <YFAdsSDK/YFAdBaseCustomView.h>
+#import <YFAdsGDTAdapter/YFGdtBaseBannerView.h>
 
 #if __has_include( <GDTMobSDK/GDTUnifiedNativeAdView.h>)
 
@@ -9,11 +9,10 @@
 @class YFGdtAdMediaView;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFGdtAdBannerView640x100: YFAdBaseCustomView
+@interface YFGdtAdBannerView640x100: YFGdtBaseBannerView
 @property (nonatomic, strong) YFGdtAdMediaView *adInterView;
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(float)getViewHeight;
--(void)loadAdData:(id)dataObject close: (void(^)(id))close;
 - (void)resetVC:(UIViewController*)VC;
 
 @end
