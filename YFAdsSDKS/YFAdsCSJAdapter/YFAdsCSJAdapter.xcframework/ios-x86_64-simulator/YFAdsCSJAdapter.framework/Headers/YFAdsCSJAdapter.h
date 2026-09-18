@@ -15,10 +15,10 @@ FOUNDATION_EXPORT const unsigned char YFAdsCSJAdapterVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <YFAdsCSJAdapter/PublicHeader.h>
 
+#import <YFAdsCSJAdapter/YFCsjBaseBannerView.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerView.h>
 #import <YFAdsCSJAdapter/YFCsjSplashView2.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerView600x150.h>
-#import <YFAdsCSJAdapter/YFCsjAdBannerView600x260.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerView600x410.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewL640x100.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewB600x400.h>
@@ -27,7 +27,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsCSJAdapterVersionString[];
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewN600x260.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewR600x150.h>
 #import <YFAdsCSJAdapter/YFCsjAdBannerViewR640x100.h>
-#import <YFAdsCSJAdapter/YFCsjAdBannerViewTDBP.h>
 #import <YFAdsCSJAdapter/YFCsjAdEnvelopeVideoView.h>
 #import <YFAdsCSJAdapter/YFCsjAdInterstitialVideoView.h>
 #import <YFAdsCSJAdapter/YFCsjAdInterstitialView.h>

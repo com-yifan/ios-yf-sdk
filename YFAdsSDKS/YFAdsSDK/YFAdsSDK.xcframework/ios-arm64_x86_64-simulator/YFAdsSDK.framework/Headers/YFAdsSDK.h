@@ -28,16 +28,17 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdBanner.h>
 #import <YFAdsSDK/YFAdBannerDelegate.h>
 #import <YFAdsSDK/YFAdBannerView600x100.h>
+#import <YFAdsSDK/YFAdBaseBannerView.h>
+#import <YFAdsSDK/YFAdBaseVideoBannerView.h>
 #import <YFAdsSDK/YFAdBannerView600x150.h>
-#import <YFAdsSDK/YFAdBannerView600x260.h>
 #import <YFAdsSDK/YFAdBannerViewN600x260.h>
 #import <YFAdsSDK/YFAdBannerViewN600x260R.h>
 #import <YFAdsSDK/YFAdBannerViewR600x150.h>
 #import <YFAdsSDK/YFAdBannerViewR640x100.h>
-#import <YFAdsSDK/YFAdBannerViewTDBP.h>
 #import <YFAdsSDK/YFAdBaseAdPosition.h>
 #import <YFAdsSDK/YFAdBaseAdapter.h>
 #import <YFAdsSDK/YFAdBaseCustomView.h>
+#import <YFAdsSDK/YFAdBaseBannerTemplateView.h>
 #import <YFAdsSDK/YFAdBaseDelegate.h>
 #import <YFAdsSDK/YFAdBaseView.h>
 #import <YFAdsSDK/YFAdCommonDelegate.h>
@@ -204,6 +205,7 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdCouponModel.h>
 #import <YFAdsSDK/YFAdCouponMinView.h>
 #import <YFAdsSDK/YFAdCouponNormalView.h>
+#import <YFAdsSDK/YFAdBaseBannerTemplateView.h>
 
 //#import <YFAdsSDK/YFGradientView.h>
 //#import <YFAdsSDK/NSObject+YFAdModel.h>

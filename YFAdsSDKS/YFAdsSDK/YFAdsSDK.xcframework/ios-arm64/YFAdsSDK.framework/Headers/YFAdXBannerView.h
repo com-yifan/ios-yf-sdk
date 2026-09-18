@@ -1,10 +1,10 @@
 
 #import <UIKit/UIKit.h>
-#import <YFAdsSDK/YFBannerView.h>
+#import <YFAdsSDK/YFAdBaseVideoBannerView.h>
 
-@interface YFAdXBannerView : YFBannerView
+@interface YFAdXBannerView : YFAdBaseVideoBannerView
+
+- (BOOL)yf_shouldNotifyImageRenderSuccess;
 
 @end
-
-
 

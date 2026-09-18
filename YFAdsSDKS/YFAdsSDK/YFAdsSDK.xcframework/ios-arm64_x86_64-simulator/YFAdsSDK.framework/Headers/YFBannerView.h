@@ -16,6 +16,10 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 };
 
 @class YFBannerView;
+@class YFAdMarkImageView;
+@class YFAdsCloseButton;
+@class YFAdImageView;
+@class YFAdsDetailButton;
 
 @protocol YFBannerViewDelegate <NSObject>
 @optional
@@ -76,7 +80,7 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 @property(nonatomic, strong) YFTouchLocModel *touchModel;
 @property(nonatomic, assign) YFBannerViewType type;
 @property(nonatomic, assign) YFPlayerState cuurentPlayState;
-@property (nonatomic, strong) YFVideoView *videoView;
+@property (nonatomic, strong, nullable) YFVideoView *videoView;
 @property (nonatomic, strong) YFAdReportWorker *reportWorker;
 @property (nonatomic) BOOL hasExposed;
 
@@ -117,6 +121,34 @@ typedef NS_ENUM(NSInteger, YFBannerViewType) {
 - (float)scaleWith600_400;
 - (float)scaleWith640_100;
 - (float)scaleWith600_260;
+- (void)yf_prepareBannerFrameWithOriginalFrame:(CGRect)frame height:(CGFloat)height backgroundColor:(nullable UIColor *)backgroundColor;
+- (CGRect)yf_bannerFrameWithOriginalFrame:(CGRect)frame height:(CGFloat)height;
+- (CGFloat)yf_bannerHeightWithWidth:(CGFloat)width minWidth:(CGFloat)minWidth widthRatio:(CGFloat)widthRatio heightRatio:(CGFloat)heightRatio;
+- (CGFloat)yf_bannerHeightWithWidth:(CGFloat)width minWidth:(CGFloat)minWidth widthRatio:(CGFloat)widthRatio heightRatio:(CGFloat)heightRatio extraHeight:(CGFloat)extraHeight preferredHeight:(CGFloat)preferredHeight;
+- (CGFloat)yf_heightForSixToFourTemplate;
+- (CGFloat)yf_heightFor600x260Template;
+- (CGFloat)yf_heightFor600x150Template;
+- (CGFloat)yf_heightFor600x100Template;
+- (CGFloat)yf_heightFor640x100Template;
+- (CGFloat)yf_heightForTDBPTemplate;
+- (CGFloat)yf_currentFrameHeight;
+- (YFAdMarkImageView *)yf_newAdLogoViewWithTraceProvider:(nullable NSArray *(^)(void))traceProvider;
+- (YFAdsCloseButton *)yf_newCloseButtonWithImageName:(NSString *)imageName target:(nullable id)target action:(nullable SEL)action;
+- (YFAdImageView *)yf_newImageContainerWithBackgroundColor:(nullable UIColor *)backgroundColor;
+- (YFAdImageView *)yf_newImageViewWithContentMode:(UIViewContentMode)contentMode backgroundColor:(nullable UIColor *)backgroundColor;
+- (YFAdImageView *)yf_newRoundedImageContainerWithCornerRadius:(CGFloat)cornerRadius backgroundColor:(nullable UIColor *)backgroundColor;
+- (UIView *)yf_newWhiteSubView;
+- (UIView *)yf_newClearSubView;
+- (UIView *)yf_newBlackMaskViewWithAlpha:(CGFloat)alpha;
+- (YFAdsDetailButton *)yf_newDetailButtonWithCornerRadius:(CGFloat)cornerRadius font:(nullable UIFont *)font backgroundColor:(nullable UIColor *)backgroundColor shouldSizeToFit:(BOOL)shouldSizeToFit;
+- (UILabel *)yf_newPlainLabelWithFont:(UIFont *)font textColor:(UIColor *)textColor;
+- (UILabel *)yf_newBannerTitleLabelWithTextColor:(UIColor *)textColor;
+- (UILabel *)yf_newBannerTitleLabelWithFont:(nullable UIFont *)font textColor:(UIColor *)textColor;
+- (UILabel *)yf_newBannerClippedTitleLabelWithFont:(UIFont *)font textColor:(UIColor *)textColor;
+- (UILabel *)yf_newBannerSubtitleLabelWithFont:(UIFont *)font textColor:(UIColor *)textColor numberOfLines:(NSInteger)numberOfLines;
+- (UILabel *)yf_newBannerAlignedSubtitleLabelWithFont:(UIFont *)font textColor:(UIColor *)textColor numberOfLines:(NSInteger)numberOfLines;
+- (UILabel *)yf_newTextOverlayTitleLabel;
+- (YFTouchReportView *)yf_newTouchReportViewWithFrame:(CGRect)frame;
 - (void)toPlayVideo;
 - (void)turnClickBtn;
 /// 重设控制器

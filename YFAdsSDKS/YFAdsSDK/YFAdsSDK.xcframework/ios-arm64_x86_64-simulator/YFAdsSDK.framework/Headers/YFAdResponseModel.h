@@ -239,6 +239,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// 1;单向跳转
 /// 2: 双向跳转
 @property (nonatomic, assign) NSInteger isd;
+/// 摇一摇加速度配置，单位：m/s²；解析时仅 > 0 覆盖 SDK 默认 15。
+@property (nonatomic, assign) NSInteger acc;
+/// 扭一扭角度配置，单位：度；解析时仅 > 0 覆盖 SDK 默认 35。
+@property (nonatomic, assign) NSInteger ag;
+/// 摇一摇/扭一扭操作时长，单位：毫秒；默认 0，支持显式配置 0。
+@property (nonatomic, assign) NSInteger ot;
+/// 智能摇扭灵敏度开关，1：开启，0：关闭
+@property (nonatomic, assign) NSInteger dss;
+/// 智能摇扭灵敏度规则
+@property (nonatomic, copy, nullable) NSArray<YFAdDynamicSensitivityRule *> *dsr;
 /// 顶推展示方向
 @property (nonatomic, assign) NSInteger dtsp;
 /// 展示应用icon 1：展示 0：不展示

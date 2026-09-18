@@ -14,9 +14,9 @@ FOUNDATION_EXPORT double YFAdsGDTAdapterVersionNumber;
 FOUNDATION_EXPORT const unsigned char YFAdsGDTAdapterVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <YFAdsGDTAdapter/PublicHeader.h>
+#import <YFAdsGDTAdapter/YFGdtBaseBannerView.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerView.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerView600x150.h>
-#import <YFAdsGDTAdapter/YFGdtAdBannerView600x260.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerView600x410.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerView640x100.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerViewB600x400.h>
@@ -26,7 +26,6 @@ FOUNDATION_EXPORT const unsigned char YFAdsGDTAdapterVersionString[];
 #import <YFAdsGDTAdapter/YFGdtAdBannerViewR600x150.h>
 #import <YFAdsGDTAdapter/YFGdtAdBannerViewR640x100.h>
 #import <YFAdsGDTAdapter/YFGdtAdEnvelopeVideoView.h>
-#import <YFAdsGDTAdapter/YFGdtAdBannerViewTDBP.h>
 #import <YFAdsGDTAdapter/YFGdtAdInterstitialVideoView.h>
 #import <YFAdsGDTAdapter/YFGdtAdMediaView.h>
 #import <YFAdsGDTAdapter/YFGdtBannerAdapter.h>

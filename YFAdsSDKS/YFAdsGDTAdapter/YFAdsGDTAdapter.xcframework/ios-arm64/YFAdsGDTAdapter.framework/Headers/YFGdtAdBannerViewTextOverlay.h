@@ -1,10 +1,10 @@
-#import <YFAdsSDK/YFAdBaseCustomView.h>
+#import <YFAdsGDTAdapter/YFGdtBaseBannerView.h>
 
 #if __has_include(<GDTMobSDK/GDTUnifiedNativeAdView.h>)
 #import <YFAdsGDTAdapter/YFGdtAdMediaView.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFGdtAdBannerViewTextOverlay : YFAdBaseCustomView
+@interface YFGdtAdBannerViewTextOverlay : YFGdtBaseBannerView
 
 @property (nonatomic, strong) YFGdtAdMediaView *adInterView;
 

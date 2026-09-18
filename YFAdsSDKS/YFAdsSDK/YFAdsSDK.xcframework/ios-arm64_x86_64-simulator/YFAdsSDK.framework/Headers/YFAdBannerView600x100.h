@@ -1,10 +1,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import <YFAdsSDK/YFBannerView.h>
+#import <YFAdsSDK/YFAdBaseVideoBannerView.h>
 
 
-@interface YFAdBannerView600x100 : YFBannerView
+@interface YFAdBannerView600x100 : YFAdBaseVideoBannerView
 
 @end
-

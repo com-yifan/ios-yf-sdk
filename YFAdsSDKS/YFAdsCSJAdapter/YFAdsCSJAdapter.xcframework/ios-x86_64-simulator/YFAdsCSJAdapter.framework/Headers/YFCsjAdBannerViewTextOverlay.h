@@ -1,10 +1,10 @@
-#import <YFAdsSDK/YFAdBaseCustomView.h>
+#import <YFAdsCSJAdapter/YFCsjBaseBannerView.h>
 
 #if __has_include(<BUAdSDK/BUAdSDK.h>)
 #import <BUAdSDK/BUAdSDK.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFCsjAdBannerViewTextOverlay : YFAdBaseCustomView
+@interface YFCsjAdBannerViewTextOverlay : YFCsjBaseBannerView
 
 @property (nonatomic, copy, nullable) void (^clickVideoBlk)(void);
 

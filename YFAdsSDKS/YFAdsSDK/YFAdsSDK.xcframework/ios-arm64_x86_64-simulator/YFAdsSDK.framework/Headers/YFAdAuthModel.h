@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger aipa;
 @property (nonatomic, assign) NSInteger adi;
 @property (nonatomic, assign) NSInteger aas;
+@property (nonatomic, assign) NSInteger rl;
 
 + (instancetype)initWithAdnType:(YFAdnType)adnType;
 - (void)reportEvent;

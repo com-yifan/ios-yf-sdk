@@ -1,5 +1,5 @@
 
-#import <YFAdsSDK/YFAdBaseCustomView.h>
+#import <YFAdsKSAdapter/YFKsBaseBannerView.h>
 
 #if __has_include(<KSAdSDK/KSAdSDK.h>)
 #import <KSAdSDK/KSAdSDK.h>
@@ -9,11 +9,10 @@
 #import <YFAdsSDK/YFAdView.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFKsAdBannerViewB600x400 : YFAdBaseCustomView
+@interface YFKsAdBannerViewB600x400 : YFKsBaseBannerView
 
 -(instancetype)initWithFrame:(CGRect)frame model:(id)model;
 -(float)getViewHeight;
--(void)loadAdData:(KSNativeAd *)dataObject close: (void(^)(id))close;
 
 @end
 
