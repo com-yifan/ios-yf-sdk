@@ -1,0 +1,1 @@
+pod trunk push YFAdsCSSDK.podspec --allow-warnings --skip-tests --verbose --skip-import-validation --synchronous

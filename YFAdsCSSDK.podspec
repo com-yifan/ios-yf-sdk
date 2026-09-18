@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'YFAdsSDK' do |ss|
-        ss.dependency 'YFAdsSDK/YFAdsSubstrate'
+        ss.dependency 'YFAdsCSSDK/YFAdsSubstrate'
         ss.vendored_frameworks = 'YFAdsSDKS/YFAdsSDK/*.xcframework'
         ss.preserve_paths = 'YFAdsSDKS/YFAdsSDK/*.xcframework'
         ss.resources = 'YFAdsSDKS/YFAdsSDK/*.bundle'
