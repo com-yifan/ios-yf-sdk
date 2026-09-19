@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'YFAdsCSSDK'
     s.version          = '6.1.5.0'
-    s.summary          = 'iOS YFAdsSDK'
+    s.summary          = 'iOS YFAdsCSSDK'
     s.description      = <<-DESC
     欢迎大家使用YFAdsSDK
     DESC
