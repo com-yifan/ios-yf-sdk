@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 工具类对象
 + (instancetype)shareInstance;
++ (void)addInterstitialBackgroundCloseToView:(UIView *)view
+                                 eventModel:(YFAdEventModel *)eventModel
+                               closeHandler:(void (^)(void))closeHandler;
 /// 获取当前网络状态
 - (NSInteger)getNetworkType;
 /// 获取当前网络状态
