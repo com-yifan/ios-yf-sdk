@@ -1,0 +1,82 @@
+//  Created by ldm on 2023/05/04.
+//  Copyright © 2023 FC. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <YFAdsSDK/YFAdResponseModel.h>
+#import <YFAdsSDK/YFAdReportModel.h>
+#import <YFAdsSDK/YFAdSupplierManager.h>
+NS_ASSUME_NONNULL_BEGIN
+
+/// 适配器基类
+@interface YFAdBaseAdapter : NSObject
+
+/// 各渠道错误的详细原因
+@property (nonatomic, strong) NSMutableDictionary * errorDescriptions;
+/// 是否填充
+@property(nonatomic, assign) BOOL fill;
+
+@property(nonatomic, assign) NSUInteger ecpm;
+/**
+ * 广告是否有效
+ *
+ * @note 百度在加载完成的回调中不会立马生效。
+ *       非预加载场景建议不要加入此判断。
+ */
+@property (nonatomic, assign) BOOL isValid;
+/// 激励视频是否下载完成
+@property (nonatomic, assign) BOOL isReady;
+/// 自定义唯一标识
+@property (nonatomic, assign) NSInteger tag;
+///  联盟 ID
+@property (nonatomic, assign) NSInteger adnID;
+
+@property (nonatomic, strong) YFAdSupplierManager *mgr;
+/// 控制器(在一次广告周期中 不可更改, 不然会引起未知错误)
+@property(nonatomic, weak) UIViewController *viewController;
+/// 初始化广告位ID
+- (instancetype)initWithAdUnitID:(NSString *)pID;
+/// 加载广告
+- (void)loadAd;
+/// 流量填充
+- (void)loadAdSucceed;
+/// 顶推广告联盟类型
+- (YFAdnType)adnType;
+- (void)closeTopPushAd;
+/// 展示广告
+- (void)showAd;
+/// 从当前控制器中展示广告(仅插屏&激励视频适用)
+- (void)showAdFromViewController:(nullable UIViewController *)viewController;
+
+-(void)recordLimitCount;
+/// 加载并展现
+- (void)loadAndShowAd;
+/// 移除广告 (banner ，信息流可用)
+- (void)removeAd;
+/// 调用展示当前已填充广告的最优层，无需等待亿帆SDK执行完成整体逻辑
+- (void)takeResultImmediately;
+/// 移除广告 (自渲染插屏)
+- (void)removeCustomRenderAd;
+/// 上报
+- (void)reportWithType:(YFAdSDKReportEventType)repoType supplier:(id)supplier error:(nullable NSError *)error;
+///  搜集错误
+- (void)collectErrorWithSupplier:(YFAdEventModel *)supplier error:(NSError *)error;
+/// 取消当前策略请求
+- (void)deallocAdapter;
+/// 设置根控制器
+- (void)setRootController:(UIViewController *)rootController;
+/// 重新设置delegate
+- (void)setNewDelegate:(id)delegate;
+/// 暂时隐藏和显示红包浮窗
+- (void)hideFloatIcon;
+- (void)showFloatIcon;
+/// 插屏状态
+- (void)intertitialDidShowWithModel:(YFAdEventModel *)model;
+- (void)intertitialDidCloseWithModel:(YFAdEventModel *)model;
+// 开屏状态
+- (void)splashDidShowWithModel:(YFAdEventModel *)model;
+- (void)splashDidCloseWithModel:(YFAdEventModel *)model;
+
+@end
+
+NS_ASSUME_NONNULL_END

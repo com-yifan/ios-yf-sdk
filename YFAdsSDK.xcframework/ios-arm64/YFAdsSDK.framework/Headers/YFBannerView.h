@@ -1,0 +1,165 @@
+
+#import <UIKit/UIKit.h>
+#import <YFAdsSDK/YFTouchReportView.h>
+#import <YFAdsSDK/YFAdError.h>
+#import <YFAdsSDK/YFMaterialMeta.h>
+#import <YFAdsSDK/YFAdReportModel.h>
+#import <YFAdsSDK/YFVideoView.h>
+#import <YFAdsSDK/YFInvoker.h>
+#import <YFAdsSDK/YFBaseAdProtocol.h>
+#import <YFAdsSDK/YFAdReportWorker.h>
+NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_ENUM(NSInteger, YFBannerViewType) {
+    YFBannerViewTypeNormal,///普通banner
+    YFBannerViewTypeFeed ///信息流
+};
+
+@class YFBannerView;
+@class YFAdMarkImageView;
+@class YFAdsCloseButton;
+@class YFAdImageView;
+@class YFAdsDetailButton;
+
+@protocol YFBannerViewDelegate <NSObject>
+@optional
+/**
+ *  请求广告条数据成功后调用
+ *  当接收服务器返回的广告数据成功后调用该函数
+ */
+- (void)yfBannerViewDidLoad:(YFBannerView *)bannerView;
+
+/**
+ *  请求广告条数据失败后调用
+ *  当接收服务器返回的广告数据失败后调用该函数
+ */
+- (void)yfBannerViewFailedToLoad:(YFBannerView *)bannerView error:(NSError *)error;
+
+
+/**
+ *
+ * 广告渲染成功
+ */
+- (void)yfBannerNativeExpressOnAdRenderSuccess:(YFBannerView *)bannerView;
+
+/**
+ *  
+ * 广告渲染失败
+ */
+- (void)yfBannerNativeExpressOnAdRenderFail:(YFBannerView *)bannerView error:(NSError *)error;
+/**
+ *  曝光回调
+ */
+- (void)yfBannerViewWillExpose:(YFBannerView *)bannerView error:(nullable NSError *)error;
+
+/**
+ *  点击回调
+ */
+- (void)yfBannerViewClicked:(YFBannerView *)bannerView;
+
+
+/**
+ *  被用户关闭时调用
+ *  会立即关闭当前banner广告，若启用轮播，（刷新间隔 - 当前广告已展示时间）后会展示新的广告
+ *  若未启用轮播或不需要再展示，需在回调中将unifiedBannerView从父view移除置nil
+ */
+- (void)yfBannerViewWillClose:(YFBannerView *)bannerView;
+
+@end
+
+@interface YFBannerView : UIView<YFBaseAdProtocol, UIGestureRecognizerDelegate>
+
+
+@property(nonatomic, weak) id <YFBannerViewDelegate> delegate;
+
+@property(nonatomic, readonly) YFMaterialMeta_new *materialMetaModel;
+@property(nonatomic, copy,readonly) NSString *posId;
+@property(nonatomic, copy,readonly) YFAdEventModel *eventModel;
+@property(nonatomic, assign,readonly) NSUInteger ecpm;
+@property(nonatomic, copy,readonly) NSArray *clickUrls;
+@property(nonatomic, strong) YFTouchLocModel *touchModel;
+@property(nonatomic, assign) YFBannerViewType type;
+@property(nonatomic, assign) YFPlayerState cuurentPlayState;
+@property (nonatomic, strong, nullable) YFVideoView *videoView;
+@property (nonatomic, strong) YFAdReportWorker *reportWorker;
+@property (nonatomic) BOOL hasExposed;
+
+///是否播放完成
+@property (nonatomic, assign) BOOL playFinished;
+/**
+ *  广告是否有效，以下情况会返回NO，建议在展示广告之前判断，否则会影响计费或展示失败
+ *  a.广告未拉取成功
+ *  b.广告过期
+ */
+@property(nonatomic, readonly) BOOL isValid;
+/// 广告素材是否加载完成；视频是否准备好播放/图片加载完成
+@property (nonatomic, assign) BOOL isReady;
+@property(nonatomic, copy) void(^closeAd)(void);
+
+/**
+ *  构造方法
+ *  详解：frame - banner 展示的位置和大小
+ *       placementId - 广告位 ID
+ *       viewController - 视图控制器
+ */
+- (instancetype)initWithFrame:(CGRect)frame
+                        posId:(NSString *)posId
+                        model:(id)model
+               viewController:(UIViewController *)viewController;
+
+/**
+ *  拉取广告
+ */
+- (void)loadAdData;
+
+/**
+ *  获取高度
+ */
+- (float)getViewHeight;
+/// 获取元素缩放比例
+- (float)scaleWith600_150;
+- (float)scaleWith600_400;
+- (float)scaleWith640_100;
+- (float)scaleWith600_260;
+- (void)yf_prepareBannerFrameWithOriginalFrame:(CGRect)frame height:(CGFloat)height backgroundColor:(nullable UIColor *)backgroundColor;
+- (CGRect)yf_bannerFrameWithOriginalFrame:(CGRect)frame height:(CGFloat)height;
+- (CGFloat)yf_bannerHeightWithWidth:(CGFloat)width minWidth:(CGFloat)minWidth widthRatio:(CGFloat)widthRatio heightRatio:(CGFloat)heightRatio;
+- (CGFloat)yf_bannerHeightWithWidth:(CGFloat)width minWidth:(CGFloat)minWidth widthRatio:(CGFloat)widthRatio heightRatio:(CGFloat)heightRatio extraHeight:(CGFloat)extraHeight preferredHeight:(CGFloat)preferredHeight;
+- (CGFloat)yf_heightForSixToFourTemplate;
+- (CGFloat)yf_heightFor600x260Template;
+- (CGFloat)yf_heightFor600x150Template;
+- (CGFloat)yf_heightFor600x100Template;
+- (CGFloat)yf_heightFor640x100Template;
+- (CGFloat)yf_heightForTDBPTemplate;
+- (CGFloat)yf_currentFrameHeight;
+- (YFAdMarkImageView *)yf_newAdLogoViewWithTraceProvider:(nullable NSArray *(^)(void))traceProvider;
+- (YFAdsCloseButton *)yf_newCloseButtonWithImageName:(NSString *)imageName target:(nullable id)target action:(nullable SEL)action;
+- (YFAdImageView *)yf_newImageContainerWithBackgroundColor:(nullable UIColor *)backgroundColor;
+- (YFAdImageView *)yf_newImageViewWithContentMode:(UIViewContentMode)contentMode backgroundColor:(nullable UIColor *)backgroundColor;
+- (YFAdImageView *)yf_newRoundedImageContainerWithCornerRadius:(CGFloat)cornerRadius backgroundColor:(nullable UIColor *)backgroundColor;
+- (UIView *)yf_newWhiteSubView;
+- (UIView *)yf_newClearSubView;
+- (UIView *)yf_newBlackMaskViewWithAlpha:(CGFloat)alpha;
+- (YFAdsDetailButton *)yf_newDetailButtonWithCornerRadius:(CGFloat)cornerRadius font:(nullable UIFont *)font backgroundColor:(nullable UIColor *)backgroundColor shouldSizeToFit:(BOOL)shouldSizeToFit;
+- (UILabel *)yf_newPlainLabelWithFont:(UIFont *)font textColor:(UIColor *)textColor;
+- (UILabel *)yf_newBannerTitleLabelWithTextColor:(UIColor *)textColor;
+- (UILabel *)yf_newBannerTitleLabelWithFont:(nullable UIFont *)font textColor:(UIColor *)textColor;
+- (UILabel *)yf_newBannerClippedTitleLabelWithFont:(UIFont *)font textColor:(UIColor *)textColor;
+- (UILabel *)yf_newBannerSubtitleLabelWithFont:(UIFont *)font textColor:(UIColor *)textColor numberOfLines:(NSInteger)numberOfLines;
+- (UILabel *)yf_newBannerAlignedSubtitleLabelWithFont:(UIFont *)font textColor:(UIColor *)textColor numberOfLines:(NSInteger)numberOfLines;
+- (UILabel *)yf_newTextOverlayTitleLabel;
+- (YFTouchReportView *)yf_newTouchReportViewWithFrame:(CGRect)frame;
+- (void)toPlayVideo;
+- (void)turnClickBtn;
+/// 重设控制器
+- (void)resetVC:(UIViewController*)VC;
+
+/// 渲染广告
+- (void)loadAdData:(YFMaterialMeta_new *)materialMeta;
+
+/// 滑动点击手势采点，返回YES时表示滑动结束，可以继续触发点击跳转。
+- (BOOL)yf_updateTouchReportViewWithPan:(UIPanGestureRecognizer *)pan;
+@end
+
+
+NS_ASSUME_NONNULL_END

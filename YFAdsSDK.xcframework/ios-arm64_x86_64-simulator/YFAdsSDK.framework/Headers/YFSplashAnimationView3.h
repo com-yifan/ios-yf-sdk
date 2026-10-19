@@ -1,0 +1,30 @@
+//
+//  YFSplashAnimationView3.h
+//  YFAdsSDK
+//
+//  Created by 麻明康 on 2025/3/4.
+//
+
+#import <CoreMotion/CoreMotion.h>
+#import <YFAdsSDK/YFAdBaseView.h>
+#import <YFAdsSDK/YFMotionManager.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface YFSplashAnimationView3 : YFAdBaseView
+@property(nonatomic, strong, nullable) YFMotionManager *motionManager;
+
+@property(nonatomic, copy) void (^toTapBarAnimatioShakeOrTwist)(YFMotionSensitivity motionSensitivity, YFMotionStyle motionStyle, YFMotionJump motionJump, CMAccelerometerData *_Nullable accelerometerData, CMDeviceMotion *_Nullable motion);
+
+
+- (instancetype)initModel:(id)model;
+- (instancetype)initOtherplatformModel:(id)model;
+
+- (void)toStartMotion;
+- (void)toPauseMotion;
+- (void)toStopMotion;
+-(void)reloadUI:(id)model;
+
+@end
+
+NS_ASSUME_NONNULL_END
