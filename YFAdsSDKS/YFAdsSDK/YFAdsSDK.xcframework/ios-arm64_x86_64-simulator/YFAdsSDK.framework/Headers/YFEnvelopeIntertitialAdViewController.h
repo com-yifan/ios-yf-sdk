@@ -95,6 +95,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)show;
 /// 关闭
 - (void)close;
+/// 联盟或 ADX 曝光回调后启用背景关闭。
+- (void)yf_enableBackgroundCloseAfterExposure;
 /// 移除布局
 - (void)removeLayout;
 /// 配置事件

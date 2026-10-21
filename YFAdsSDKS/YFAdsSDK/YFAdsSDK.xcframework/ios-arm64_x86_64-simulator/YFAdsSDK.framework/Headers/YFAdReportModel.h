@@ -148,7 +148,7 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeAY        = 15,
     YFAdnTypeXU        = 16,
     YFAdnTypeGE        = 17,
-    YFAdnTypeIN        = 19,
+//    YFAdnTypeIN        = 19,
     YFAdnTypeJC        = 20,
     YFAdnTypeNAL        = 21,
     YFAdnTypeNC        = 22,
@@ -157,6 +157,7 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeKF        = 25,
     YFAdnTypeZD        = 26,
     YFAdnTypeIE        = 27,
+    YFAdnTypeIN        = 28,
     YFAdnTypeYFUW      = 101,
     YFAdnTypeYFZD      = 102
 
@@ -477,6 +478,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ecbc;
 // 关闭按钮延迟生效 ms
 @property (nonatomic, assign) NSInteger cbde;
+
+/// INT_V_2 / INT_V_3 点击非广告区域关闭：仅 1 开启，默认关闭。
+@property (nonatomic, assign) NSInteger coce;
 // 亿帆关闭按钮[新增]:cbm(0不使用，1倒计时关闭，2手动关闭)
 @property (nonatomic, assign) NSInteger cbm;
 // 缓存

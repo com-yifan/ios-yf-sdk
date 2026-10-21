@@ -274,6 +274,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 关闭按钮延迟生效 ms
 @property (nonatomic, assign) NSInteger cbde;
 
+/// INT_V_2 / INT_V_3 点击非广告区域关闭：1 开启，0 或未下发关闭。
+@property (nonatomic, assign) NSInteger coce;
+
 @property (nonatomic, assign) NSInteger cbm;
 /// ADX激励视频5s点击样式
 @property (nonatomic, assign) NSInteger cte;

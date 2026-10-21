@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)destroyTrackTimer;
 /// 本地可见性监测首次命中曝光时调用，先于 exposureBlk；子类可扩展。
 - (void)yf_didTrackExposure;
+/// 仅由联盟曝光回调调用；插屏子类按云控注册背景关闭，不使用本地曝光监测。
+- (void)yf_enableBackgroundCloseAfterExposure;
 /// 广告视图高度
 - (float)getViewHeight;
 /// 设置边距后元素相应缩放
