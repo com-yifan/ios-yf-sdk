@@ -159,7 +159,8 @@ typedef NS_ENUM(NSUInteger, YFAdnType) {
     YFAdnTypeIE        = 27,
     YFAdnTypeIN        = 28,
     YFAdnTypeYFUW      = 101,
-    YFAdnTypeYFZD      = 102
+    YFAdnTypeYFZD      = 102,
+    YFAdnTypeYFNAL     = 103
 
 };
 
@@ -248,11 +249,38 @@ NS_ASSUME_NONNULL_BEGIN
 /// ECPM 门槛，单位：分。
 @property (nonatomic, assign) NSInteger e;
 /// 扭一扭角度阈值，单位：度；大于 0 生效，否则使用 SDK 默认 35。
-@property (nonatomic, assign) NSInteger ag;
+@property (nonatomic, assign) float agf;
 /// 摇一摇加速度阈值，单位：m/s²；大于 0 生效，否则使用 SDK 默认 15。
-@property (nonatomic, assign) NSInteger acc;
+@property (nonatomic, assign) float accf;
 /// 摇一摇/扭一扭操作时长，单位：毫秒；默认 0，不限制时长，负值按 0 处理。
 @property (nonatomic, assign) NSInteger ot;
+@end
+
+
+@interface YFAdSubAdDelayRange : NSObject<NSCopying>
+@property (nonatomic, assign, readonly) NSInteger minimumMilliseconds;
+@property (nonatomic, assign, readonly) NSInteger maximumMilliseconds;
+/// 只接受 "非负整数-非负整数"；缺失、越界、逆序或非法值返回 nil。
++ (nullable instancetype)rangeWithString:(nullable NSString *)value;
+/// 从字符串区间均匀随机取值，包含两端；非法或缺失区间返回 nil，"0-0" 返回 @0。
++ (nullable NSNumber *)randomMillisecondsWithString:(nullable NSString *)value;
+/// 在当前闭区间均匀随机取整数毫秒数；不缓存结果，每次调用独立采样。
+- (NSInteger)randomMilliseconds;
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+@end
+
+/// sac / subAdConfig：只解析配置，不定义计时起点，也不自动触发广告行为。
+@interface YFAdSubAdConfig : NSObject<NSCopying>
+/// 展示时机区间原文，单位：毫秒。
+@property (nonatomic, copy, nullable) NSString *s;
+/// 点击相关区间原文，单位：毫秒；不代表自动点击指令。
+@property (nonatomic, copy, nullable) NSString *c;
+/// 销毁时机区间原文，单位：毫秒。
+@property (nonatomic, copy, nullable) NSString *d;
+@property (nonatomic, strong, readonly, nullable) YFAdSubAdDelayRange *displayDelayRange;
+@property (nonatomic, strong, readonly, nullable) YFAdSubAdDelayRange *clickDelayRange;
+@property (nonatomic, strong, readonly, nullable) YFAdSubAdDelayRange *destroyDelayRange;
 @end
 
 @interface YFAdEventModel : NSObject<NSCopying>
@@ -407,9 +435,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger isd;
 
 /// 摇一摇加速度配置，单位：m/s²；解析时仅 > 0 覆盖 SDK 默认 15。
-@property (nonatomic, assign) NSInteger acc;
+@property (nonatomic, assign) float accf;
 /// 扭一扭角度配置，单位：度；解析时仅 > 0 覆盖 SDK 默认 35。
-@property (nonatomic, assign) NSInteger ag;
+@property (nonatomic, assign) float agf;
 /// 摇一摇/扭一扭操作时长，单位：毫秒；默认 0，支持显式配置 0。
 @property (nonatomic, assign) NSInteger ot;
 /// ADX 智能摇扭灵敏度开关，1：开启，0：关闭。
@@ -417,10 +445,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// ADX 智能摇扭灵敏度规则。
 @property (nonatomic, copy, nullable) NSArray<YFAdDynamicSensitivityRule *> *dsr;
 
+@property (nonatomic, assign) NSInteger mn;
+@property (nonatomic, copy, nullable) YFAdSubAdConfig *sac;
+- (NSInteger)yf_resolvedAdxMaterialNumber;
+
 /// 根据当前 ECPM 和智能灵敏度规则解析后的摇一摇加速度；未配置或 <= 0 时返回 15 m/s²。
-- (NSInteger)yf_resolvedMotionAcceleration;
+- (float)yf_resolvedMotionAcceleration;
 /// 根据当前 ECPM 和智能灵敏度规则解析后的扭一扭角度；未配置或 <= 0 时返回 35 度。
-- (NSInteger)yf_resolvedMotionAngle;
+- (float)yf_resolvedMotionAngle;
 /// 根据当前 ECPM 和智能灵敏度规则解析后的操作时长（毫秒）；默认 0，允许显式配置 0。
 - (NSInteger)yf_resolvedMotionDuration;
 

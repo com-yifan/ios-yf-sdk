@@ -8,12 +8,18 @@
 #import <Foundation/Foundation.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
 #import <YFAdsSDK/YFTouchReportView.h>
+@class YFAdSubAdConfig;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YFAdReportWorker : NSObject
 
 - (instancetype)initWithData:(YFMaterialMeta_new *)data;
+/// 保存当前广告的配置快照，避免缓存复用或外部修改影响后续事件。
+- (instancetype)initWithData:(YFMaterialMeta_new *)data subAdConfig:(nullable YFAdSubAdConfig *)subAdConfig;
+
+/// 本地展示时机，不发送监测请求。
+- (void)notifyPrimaryDisplay;
 
 /// 上报dp唤起成功
 - (void)reportDeeplinkSucceedWithTouchModel:(nullable YFTouchLocModel *)touchModel;
@@ -29,7 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)reportExposureWithTouchModel:(nullable YFTouchLocModel *)touchModel;
 /// 点击监测地址数组（支持宏替换
 - (void)reportClickWithTouchModel:(nullable YFTouchLocModel *)touchModel;
-/// 音/视频广告（播放开始时上报）
+/// 音/视频广告（播放开始时上报）；主广告配置曝光监测时，若先于曝光调用则延后上报一次。
+/// 等待该开始事件的后续播放回调按原顺序补报，并更新曝光时间、尺寸及广告坐标。
 - (void)reportPlayStartWithTouchModel:(nullable YFTouchLocModel *)touchModel;
 /// 音/视频广告（播放四分之一时上报
 - (void)reportPlayOneQuarterWithTouchModel:(nullable YFTouchLocModel *)touchModel;

@@ -13,28 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const AdvanceSdkVersion;
 
-//经过测试的联盟SDK版本号，带在日志里打印
-extern NSString *const Adapted_Version_GDT;
-extern NSString *const Adapted_Version_CSJ;
-extern NSString *const Adapted_Version_KS;
-extern NSString *const Adapted_Version_BD;
-extern NSString *const Adapted_Version_JD;
-extern NSString *const Adapted_Version_AY;
-extern NSString *const Adapted_Version_XU;
-extern NSString *const Adapted_Version_GE;
-extern NSString *const Adapted_Version_IN;
-extern NSString *const Adapted_Version_JC;
-extern NSString *const Adapted_Version_NAL;
-extern NSString *const Adapted_Version_UW;
-extern NSString *const Adapted_Version_YFUW;
-extern NSString *const Adapted_Version_KY;
-extern NSString *const Adapted_Version_KF;
-extern NSString *const Adapted_Version_ZD;
-extern NSString *const Adapted_Version_YFZD;
-extern NSString *const Adapted_Version_IE;
-extern NSString *const Adapted_Version_NC;
-
-//extern NSString *const Adapted_Version_TX;
 
 extern NSString *const SDK_TAG_GDT;
 extern NSString *const SDK_TAG_CSJ;
@@ -55,6 +33,7 @@ extern NSString *const SDK_TAG_KY;
 extern NSString *const SDK_TAG_KF;
 extern NSString *const SDK_TAG_ZD;
 extern NSString *const SDK_TAG_YFZD;
+extern NSString *const SDK_TAG_YFNAL;
 extern NSString *const SDK_TAG_IE;
 extern NSString *const SDK_TAG_NC;
 
