@@ -14,27 +14,17 @@ FOUNDATION_EXPORT double YFAdsSDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <YFAdsSDK/PublicHeader.h>
-#import <YFAdsSDK/ADXNativeAd.h>
-#import <YFAdsSDK/ADXNativeAdsManager.h>
-#import <YFAdsSDK/ADXNativeMediaView.h>
 #import <YFAdsSDK/NSArray+Addition.h>
-#import <YFAdsSDK/NSString+YFUrlEncode.h>
 #import <YFAdsSDK/UIButton+YFEdge.h>
 #import <YFAdsSDK/UIImage+YFImageEffects.h>
 #import <YFAdsSDK/UITapGestureRecognizer+YFBlock.h>
-#import <YFAdsSDK/UIView+ViewVisiable.h>
 #import <YFAdsSDK/UIView+YFAutoLayout.h>
 #import <YFAdsSDK/YFAd.h>
 #import <YFAdsSDK/YFAdBanner.h>
 #import <YFAdsSDK/YFAdBannerDelegate.h>
-#import <YFAdsSDK/YFAdBannerView600x100.h>
 #import <YFAdsSDK/YFAdBaseBannerView.h>
 #import <YFAdsSDK/YFAdBaseVideoBannerView.h>
 #import <YFAdsSDK/YFAdBannerView600x150.h>
-#import <YFAdsSDK/YFAdBannerViewN600x260.h>
-#import <YFAdsSDK/YFAdBannerViewN600x260R.h>
-#import <YFAdsSDK/YFAdBannerViewR600x150.h>
-#import <YFAdsSDK/YFAdBannerViewR640x100.h>
 #import <YFAdsSDK/YFAdBaseAdPosition.h>
 #import <YFAdsSDK/YFAdBaseAdapter.h>
 #import <YFAdsSDK/YFAdBaseCustomView.h>
@@ -43,12 +33,9 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdBaseView.h>
 #import <YFAdsSDK/YFAdCommonDelegate.h>
 #import <YFAdsSDK/YFAdCustomModel.h>
-#import <YFAdsSDK/YFAdDetailViewController.h>
 #import <YFAdsSDK/YFAdDraw.h>
 #import <YFAdsSDK/YFAdDrawDelegate.h>
 #import <YFAdsSDK/YFAdDrawView.h>
-#import <YFAdsSDK/YFAdEmptyAdapter.h>
-#import <YFAdsSDK/YFAdEnvelopeVideoView.h>
 #import <YFAdsSDK/YFAdFeedbackView.h>
 #import <YFAdsSDK/YFAdFullScreenVideo.h>
 #import <YFAdsSDK/YFAdFullScreenVideoDelegate.h>
@@ -59,10 +46,7 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdInteractionType.h>
 #import <YFAdsSDK/YFAdInterstitial.h>
 #import <YFAdsSDK/YFAdInterstitialDelegate.h>
-#import <YFAdsSDK/YFAdInterstitialVideoView.h>
-#import <YFAdsSDK/YFAdInterstitialViewProtocol.h>
 #import <YFAdsSDK/YFAdMarkImageView.h>
-#import <YFAdsSDK/YFAdMarkView.h>
 #import <YFAdsSDK/YFAdMedia.h>
 #import <YFAdsSDK/YFAdMediaDelegate.h>
 #import <YFAdsSDK/YFAdMediaMetal.h>
@@ -88,58 +72,33 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFAdSDKSetting.h>
 #import <YFAdsSDK/YFAdSplash.h>
 #import <YFAdsSDK/YFAdSplashAdExtraDataModel.h>
-#import <YFAdsSDK/YFAdSupplierDelegate.h>
 #import <YFAdsSDK/YFAdSupplierManager.h>
 #import <YFAdsSDK/YFAdUtils.h>
 #import <YFAdsSDK/YFAdView.h>
-#import <YFAdsSDK/YFAdXBannerView.h>
-#import <YFAdsSDK/YFAdXBannerView600x410.h>
-#import <YFAdsSDK/YFAdXBannerViewB600x400.h>
-#import <YFAdsSDK/YFAdBannerViewTextOverlay.h>
 #import <YFAdsSDK/YFAdsAnimationView.h>
 #import <YFAdsSDK/YFAdsButton.h>
 #import <YFAdsSDK/YFAdsCloseButton.h>
 #import <YFAdsSDK/YFAdsCountButton.h>
 #import <YFAdsSDK/YFAdsDetailButton.h>
-#import <YFAdsSDK/YFAdxCustomExpressAdapter.h>
 
 #import <YFAdsSDK/YFAppENVInfo.h>
-#import <YFAdsSDK/YFBannerAdapter.h>
 #import <YFAdsSDK/YFBannerView.h>
 
 #import <YFAdsSDK/YFBlurImageView.h>
 
 
-#import <YFAdsSDK/YFDownloadNetworkTool.h>
 #import <YFAdsSDK/YFFullScreenVideoAd.h>
-#import <YFAdsSDK/YFFusionBannerAdapter.h>
-#import <YFAdsSDK/YFFullScreenVideoAdapter.h>
 
-#import <YFAdsSDK/YFGlobalMotionActionHandler.h>
-#import <YFAdsSDK/YFGlobalMotionManager.h>
-#import <YFAdsSDK/YFGlobalMotionModel.h>
-#import <YFAdsSDK/YFGlobalTwistManager.h>
 
-#import <YFAdsSDK/YFInterstitialAd.h>
-#import <YFAdsSDK/YFInterstitialAdapter.h>
-#import <YFAdsSDK/YFInterstitialView.h>
 #import <YFAdsSDK/YFInvoker.h>
 
 #import <YFAdsSDK/YFKit.h>
 #import <YFAdsSDK/YFKitImpressionTimer.h>
 
-#import <YFAdsSDK/YFManager.h>
 #import <YFAdsSDK/YFMaterialMeta.h>
 #import <YFAdsSDK/YFMotionManager.h>
 #import <YFAdsSDK/YFNativeAd.h>
-#import <YFAdsSDK/YFNativeAdsManager.h>
-#import <YFAdsSDK/YFNativeExpressAdapter.h>
-#import <YFAdsSDK/YFRequestModel.h>
-#import <YFAdsSDK/YFRewardVideoAdapter.h>
-#import <YFAdsSDK/YFRewardedVideoAd.h>
 #import <YFAdsSDK/YFRouter.h>
-#import <YFAdsSDK/YFSerialQueue.h>
-#import <YFAdsSDK/YFSplashAdapter.h>
 #import <YFAdsSDK/YFSplashAnimationView2.h>
 #import <YFAdsSDK/YFSplashAnimationView3.h>
 #import <YFAdsSDK/YFSplashButton.h>
@@ -149,11 +108,9 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 #import <YFAdsSDK/YFTapBarAnimationView.h>
 #import <YFAdsSDK/YFTouchReportView.h>
 #import <YFAdsSDK/YFVideoAd.h>
-#import <YFAdsSDK/YFVideoAdViewController.h>
 #import <YFAdsSDK/YFWeakProxy.h>
 #import <YFAdsSDK/YFAdBaseViewController.h>
 #import <YFAdsSDK/YFEnvelopeIntertitialAdViewController.h>
-#import <YFAdsSDK/YFAdEnvelopeIntertitialAdViewController.h>
 #import <YFAdsSDK/YFForgroundTimer.h>
 #import <YFAdsSDK/YFAdsIntertitialAdDelayTimer.h>
 #import <YFAdsSDK/YFAdMediaProtocol.h>
@@ -168,11 +125,9 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 /// >= 6.0.5.0 +++
 #import <YFAdsSDK/YFSourceDataTool.h>
 #import <YFAdsSDK/YFDeviceInfo.h>
-#import <YFAdsSDK/YFAdInterstitialViewProtocol.h>
 #import <YFAdsSDK/YFAdAdapterInitializeContext.h>
 #import <YFAdsSDK/YFAdAdapterInitializeProtocol.h>
 #import <YFAdsSDK/YFAdAdapterInitializeClassLoader.h>
-#import <YFAdsSDK/YFAdDBManager.h>
 #import <YFAdsSDK/YFAdBaseSplashView.h>
 #import <YFAdsSDK/YFAdTopPush.h>
 #import <YFAdsSDK/YFAdTopPushView.h>
@@ -193,18 +148,11 @@ FOUNDATION_EXPORT const unsigned char YFAdsSDKVersionString[];
 // 商城
 #import <YFAdsSDK/YFAdMall.h>
 #import <YFAdsSDK/YFAdMallDelegate.h>
-#import <YFAdsSDK/YFSplashWithMallManager.h>
 // 关联顶推
-#import <YFAdsSDK/YFIntertitialWithTopPushManager.h>
 // 激励服务端验证
-#import <YFAdsSDK/YFRewardedVideoModel.h>
-#import <YFAdsSDK/YFAdRSAEncrypt.h>
 
 #import <YFAdsSDK/YFAdsSplashWindow.h>
 #import <YFAdsSDK/YFAdAuthModel.h>
-#import <YFAdsSDK/YFAdCouponModel.h>
-#import <YFAdsSDK/YFAdCouponMinView.h>
-#import <YFAdsSDK/YFAdCouponNormalView.h>
 #import <YFAdsSDK/YFAdBaseBannerTemplateView.h>
 
 //#import <YFAdsSDK/YFGradientView.h>

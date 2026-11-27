@@ -157,6 +157,9 @@ typedef NS_ENUM(NSInteger, YFInteractionType){
 
 -(instancetype)initWithModel:(YFMaterialMeta_new *)model;
 
+/// 宏替换原始输入；传感器仅取数值，不传递传感器对象或视图。
+- (NSDictionary<NSString *, id> *)yf_macroParameters;
+
 @end
 
 @interface YFTouchReportView : UIView
