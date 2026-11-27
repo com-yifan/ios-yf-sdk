@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)reportExposureWithTouchModel:(nullable YFTouchLocModel *)touchModel;
 /// 点击监测地址数组（支持宏替换
 - (void)reportClickWithTouchModel:(nullable YFTouchLocModel *)touchModel;
-/// 音/视频广告（播放开始时上报）；主广告配置曝光监测时，若先于曝光调用则延后上报一次。
+/// 音/视频广告（播放开始时上报）；广告配置曝光监测时，若先于曝光调用则延后上报一次。
 /// 等待该开始事件的后续播放回调按原顺序补报，并更新曝光时间、尺寸及广告坐标。
 - (void)reportPlayStartWithTouchModel:(nullable YFTouchLocModel *)touchModel;
 /// 音/视频广告（播放四分之一时上报

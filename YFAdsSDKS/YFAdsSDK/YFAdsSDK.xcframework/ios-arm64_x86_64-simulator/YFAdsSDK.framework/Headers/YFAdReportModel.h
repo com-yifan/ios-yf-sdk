@@ -256,7 +256,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ot;
 @end
 
-/// 副广告延迟闭区间，单位：毫秒；不可变数据对象，只按显式调用采样，不负责调度。
+
 @interface YFAdSubAdDelayRange : NSObject<NSCopying>
 @property (nonatomic, assign, readonly) NSInteger minimumMilliseconds;
 @property (nonatomic, assign, readonly) NSInteger maximumMilliseconds;
@@ -446,7 +446,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSArray<YFAdDynamicSensitivityRule *> *dsr;
 /// ADX 物料数量，1~3；未下发或越界时按 1 请求。
 @property (nonatomic, assign) NSInteger mn;
-/// 副广告配置快照，仅用于客户端读取，不随事件上报。
+
 @property (nonatomic, copy, nullable) YFAdSubAdConfig *sac;
 - (NSInteger)yf_resolvedAdxMaterialNumber;
 
