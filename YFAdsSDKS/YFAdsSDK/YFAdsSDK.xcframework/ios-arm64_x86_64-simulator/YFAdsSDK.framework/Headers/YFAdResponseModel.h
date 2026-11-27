@@ -249,9 +249,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger dss;
 /// 智能摇扭灵敏度规则
 @property (nonatomic, copy, nullable) NSArray<YFAdDynamicSensitivityRule *> *dsr;
-/// ADX 物料数量，1~3；未下发或越界时按 1 请求。
+
 @property (nonatomic, assign) NSInteger mn;
-/// 副广告配置，s/c/d 均为毫秒区间字符串；未下发时为 nil。
+
 @property (nonatomic, strong, nullable) YFAdSubAdConfig *sac;
 /// 顶推展示方向
 @property (nonatomic, assign) NSInteger dtsp;
